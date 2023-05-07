@@ -57,15 +57,15 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="454-2A-u8R">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Qk8-8X-9G8" customClass="MainTabBarController" customModule="RecycledChicken" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hPb-IW-rgj">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Qk8-8X-9G8" customClass="MainTabBarController" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="グループ 974" id="hPb-IW-rgj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.80099345830000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.9137254901960784" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
-                            <integer key="value" value="1"/>
+                            <integer key="value" value="2"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -84,7 +84,7 @@
         <scene sceneID="F6Q-6z-fBG">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="Hmf-vh-5UU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="m5e-qC-Vbx"/>
+                    <tabBarItem key="tabBarItem" title="點數" id="m5e-qC-Vbx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiB-iG-5Ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,7 +94,7 @@
         <scene sceneID="h7B-tH-LyE">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="xX7-of-Mtb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="nFN-bH-nZT"/>
+                    <tabBarItem key="tabBarItem" title="門市" id="nFN-bH-nZT"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVJ-M2-azn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +104,7 @@
         <scene sceneID="9Kc-Yz-oWL">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="VPd-Ph-cNJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xhD-mO-rfB"/>
+                    <tabBarItem key="tabBarItem" title="首頁" id="xhD-mO-rfB"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scp-OK-kg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +114,7 @@
         <scene sceneID="Whl-hU-5wJ">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="QaC-FS-OkQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ava-8T-mBb"/>
+                    <tabBarItem key="tabBarItem" title="AR" id="ava-8T-mBb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2LI-QG-1hR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +124,7 @@
         <scene sceneID="zDx-WF-6jN">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" id="3o3-kq-UYw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="HPt-85-es3"/>
+                    <tabBarItem key="tabBarItem" title="任務" id="HPt-85-es3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04O-QZ-vLT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,6 +132,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="グループ 974" width="1127.6666259765625" height="193"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

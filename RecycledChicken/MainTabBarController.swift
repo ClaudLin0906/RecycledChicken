@@ -20,20 +20,20 @@ class MainTabBarController: UITabBarController {
     
     let noSelectImages:[UIImage?] =
     [
-        UIImage(named: "グループ 76"),
-        UIImage(named: "グループ 77"),
-        UIImage(named: "组 404"),
-        UIImage(named: "グループ 463"),
-        UIImage(named: "グループ 467")
+        UIImage(named: "orderCopy"),
+        UIImage(named: "orderCopy"),
+        UIImage(named: "orderCopy"),
+        UIImage(named: "orderCopy"),
+        UIImage(named: "orderCopy")
     ]
     
     let selectImages:[UIImage?] =
     [
-        UIImage(named: "グループ 76"),
-        UIImage(named: "グループ 77"),
-        UIImage(named: "组 404"),
-        UIImage(named: "グループ 463"),
-        UIImage(named: "グループ 467")
+        UIImage(named: "orderCopy"),
+        UIImage(named: "orderCopy"),
+        UIImage(named: "orderCopy"),
+        UIImage(named: "orderCopy"),
+        UIImage(named: "orderCopy")
     ]
 
     override func viewDidLoad() {
@@ -42,6 +42,7 @@ class MainTabBarController: UITabBarController {
         if #available(iOS 15.0, *) {
             updateTabBarAppearance()
         } else {
+            tabBar.tintColor = CommonColor.shared.color2
             tabBar.isTranslucent = false
         }
     }
@@ -51,6 +52,7 @@ class MainTabBarController: UITabBarController {
     private func updateTabBarAppearance(){
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = CommonColor.shared.color2
         tabBar.standardAppearance = tabBarAppearance
         tabBar.scrollEdgeAppearance = tabBarAppearance
     }
@@ -63,8 +65,8 @@ class MainTabBarController: UITabBarController {
     private func setupItems() {
         
         for (index,value) in tabbarTitle.enumerated(){
-            let noSelectImage = noSelectImages[index]!
-            let SelectImage = selectImages[index]!
+            let noSelectImage = noSelectImages[index]!.withRenderingMode(.alwaysOriginal)
+            let SelectImage = selectImages[index]!.withRenderingMode(.alwaysOriginal)
             if let nc = viewControllers![index] as? UINavigationController {
                 nc.tabBarItem.title = value
                 nc.tabBarItem.image = noSelectImage
