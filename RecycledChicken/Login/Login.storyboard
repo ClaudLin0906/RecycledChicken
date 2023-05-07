@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -129,7 +130,54 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZi-hH-kEY">
                                         <rect key="frame" x="0.0" y="112.66666666666667" width="220" height="37.333333333333329"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmG-Sv-had" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                <rect key="frame" x="30" y="8.6666666666666288" width="20" height="20"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="flp-jZ-kYz"/>
+                                                    <constraint firstAttribute="height" constant="20" id="tpe-ba-13F"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保持登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-jY-0Jz">
+                                                <rect key="frame" x="59.999999999999986" y="10.333333333333313" width="60" height="16.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="dB0-cQ-hd2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘記密碼?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEI-G7-B9N">
+                                                <rect key="frame" x="120" y="10.333333333333313" width="65" height="16.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="Lz7-IU-0V0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efz-7R-eVA" userLabel="underLine">
+                                                <rect key="frame" x="120" y="25.666666666666629" width="65" height="1"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="U4s-7J-zqc"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="yEI-G7-B9N" firstAttribute="leading" secondItem="h0L-jY-0Jz" secondAttribute="trailing" id="0xS-qw-uEo"/>
+                                            <constraint firstItem="h0L-jY-0Jz" firstAttribute="centerY" secondItem="HmG-Sv-had" secondAttribute="centerY" id="PjE-NZ-W0W"/>
+                                            <constraint firstItem="HmG-Sv-had" firstAttribute="centerY" secondItem="MZi-hH-kEY" secondAttribute="centerY" id="dcI-cO-VjM"/>
+                                            <constraint firstItem="efz-7R-eVA" firstAttribute="leading" secondItem="yEI-G7-B9N" secondAttribute="leading" id="fUi-tF-AIc"/>
+                                            <constraint firstItem="efz-7R-eVA" firstAttribute="bottom" secondItem="yEI-G7-B9N" secondAttribute="bottom" id="kaW-J6-XZE"/>
+                                            <constraint firstItem="h0L-jY-0Jz" firstAttribute="leading" secondItem="HmG-Sv-had" secondAttribute="trailing" constant="10" id="mjB-0N-sPO"/>
+                                            <constraint firstAttribute="centerX" secondItem="HmG-Sv-had" secondAttribute="trailing" constant="60" id="oVD-lt-d9G"/>
+                                            <constraint firstItem="efz-7R-eVA" firstAttribute="trailing" secondItem="yEI-G7-B9N" secondAttribute="trailing" id="wB5-Ym-TOQ"/>
+                                            <constraint firstItem="yEI-G7-B9N" firstAttribute="centerY" secondItem="h0L-jY-0Jz" secondAttribute="centerY" id="znL-A1-XQT"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -178,10 +226,13 @@
                             <constraint firstItem="aOM-KG-Vmh" firstAttribute="top" secondItem="lWR-pO-Tbf" secondAttribute="bottom" constant="30" id="yKE-DS-5e8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="keepLoginCheckBox" destination="HmG-Sv-had" id="pSa-po-ye2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="66" y="-2"/>
+            <point key="canvasLocation" x="64.885496183206101" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
@@ -189,5 +240,8 @@
         <image name="グループ 1090" width="1012" height="1012"/>
         <image name="グループ 971" width="445.33334350585938" height="453"/>
         <image name="グループ 974" width="1127.6666259765625" height="193"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

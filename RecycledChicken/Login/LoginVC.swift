@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import M13Checkbox
 
 class LoginVC: UIViewController {
+    
+    @IBOutlet weak var keepLoginCheckBox:M13Checkbox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +19,8 @@ class LoginVC: UIViewController {
     }
     
     private func UIInit(){
-        
+        keepLoginCheckBox.boxType = .square
+        keepLoginCheckBox.stateChangeAnimation = .fill
     }
 
 }

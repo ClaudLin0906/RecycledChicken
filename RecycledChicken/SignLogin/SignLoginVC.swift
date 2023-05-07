@@ -36,7 +36,13 @@ class SignLoginVC: UIViewController {
         if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC {
             VC.modalPresentationStyle = .fullScreen
             present(VC, animated: false)
-
+        }
+    }
+    
+    @IBAction func SignUpBtnAction(_ sender:UIButton) {
+        if let VC = UIStoryboard(name: "Sign", bundle: nil).instantiateViewController(withIdentifier: "Sign") as? SignVC {
+            VC.modalPresentationStyle = .fullScreen
+            present(VC, animated: false)
         }
     }
 

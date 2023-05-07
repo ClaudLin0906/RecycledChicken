@@ -26,6 +26,8 @@
 		59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE272A06693100D7B3CB /* Login.storyboard */; };
 		59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */; };
 		59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE2B2A07639900D7B3CB /* Extension.swift */; };
+		59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE2E2A078D9D00D7B3CB /* SignVC.swift */; };
+		59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE302A078DB300D7B3CB /* Sign.storyboard */; };
 		E502D45E95B044E6B792CC77 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F9B53911A9C86170B05EB4 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		59F6BE272A06693100D7B3CB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		59F6BE2B2A07639900D7B3CB /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		59F6BE2E2A078D9D00D7B3CB /* SignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC.swift; sourceTree = "<group>"; };
+		59F6BE302A078DB300D7B3CB /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,6 @@
 				274FC69F1CE940E8D9DA9668 /* Pods-RecycledChicken.debug.xcconfig */,
 				0C3C0FDA2921D8D50A7579CE /* Pods-RecycledChicken.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +107,7 @@
 				5926C5812A04086400FAB49D /* ViewController.swift */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				59F6BE2D2A078D7100D7B3CB /* Sign */,
 				5926C59C2A06340F00FAB49D /* Login */,
 				5926C5C12A065C9D00FAB49D /* SignLogin */,
 				5926C5972A06329300FAB49D /* Home */,
@@ -145,6 +149,15 @@
 				59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */,
 			);
 			path = SignLogin;
+			sourceTree = "<group>";
+		};
+		59F6BE2D2A078D7100D7B3CB /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				59F6BE2E2A078D9D00D7B3CB /* SignVC.swift */,
+				59F6BE302A078DB300D7B3CB /* Sign.storyboard */,
+			);
+			path = Sign;
 			sourceTree = "<group>";
 		};
 		9F41385B2A51C65BC5A0521C /* Frameworks */ = {
@@ -222,6 +235,7 @@
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
+				59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +296,7 @@
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
 				5926C5A22A06364800FAB49D /* Common.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
+				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
