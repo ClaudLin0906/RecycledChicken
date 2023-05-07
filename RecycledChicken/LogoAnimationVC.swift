@@ -15,12 +15,15 @@ class LogoAnimationVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showLoginVC()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("goodbye")
+    }
 
     private func showLoginVC(){
         if let rootVC = storyboard?.instantiateViewController(withIdentifier: "MainRootVC") as? MainRootVC {

@@ -8,7 +8,8 @@
 import UIKit
 
 class MainRootVC: UIViewController {
-
+    
+    var isFirstOpen: Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +18,10 @@ class MainRootVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showSignLoginVC()
+        if isFirstOpen {
+            isFirstOpen = false
+            showSignLoginVC()
+        }
     }
     
     private func showSignLoginVC(){

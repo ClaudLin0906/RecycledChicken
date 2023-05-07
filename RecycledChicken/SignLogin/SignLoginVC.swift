@@ -40,10 +40,11 @@ class SignLoginVC: UIViewController {
     }
     
     @IBAction func SignUpBtnAction(_ sender:UIButton) {
-        if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC {
-            VC.modalPresentationStyle = .fullScreen
-            present(VC, animated: false)
-        }
+        self.dismiss(animated: false)
+//        if let VC = UIStoryboard(name: "SignVC", bundle: nil).instantiateViewController(withIdentifier: "SignVC") as? SignVC {
+//            VC.modalPresentationStyle = .fullScreen
+//            present(VC, animated: false)
+//        }
     }
 
 }
