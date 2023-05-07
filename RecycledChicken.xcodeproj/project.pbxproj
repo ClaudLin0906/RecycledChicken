@@ -33,6 +33,8 @@
 		59F6BE392A07B56100D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE342A07B55F00D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf */; };
 		59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE352A07B56000D7B3CB /* GenSenMaruGothicTW-Medium.ttf */; };
 		59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE362A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf */; };
+		59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */; };
+		59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE3F2A07B83700D7B3CB /* VerificationCode.storyboard */; };
 		E502D45E95B044E6B792CC77 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F9B53911A9C86170B05EB4 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		59F6BE342A07B55F00D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-ExtraLight.ttf"; sourceTree = "<group>"; };
 		59F6BE352A07B56000D7B3CB /* GenSenMaruGothicTW-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Medium.ttf"; sourceTree = "<group>"; };
 		59F6BE362A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Bold.ttf"; sourceTree = "<group>"; };
+		59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
+		59F6BE3F2A07B83700D7B3CB /* VerificationCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VerificationCode.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				5926C5812A04086400FAB49D /* ViewController.swift */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				59F6BE3C2A07B80900D7B3CB /* VerificationCode */,
 				59F6BE2D2A078D7100D7B3CB /* Sign */,
 				5926C59C2A06340F00FAB49D /* Login */,
 				5926C5C12A065C9D00FAB49D /* SignLogin */,
@@ -173,6 +178,15 @@
 				59F6BE302A078DB300D7B3CB /* Sign.storyboard */,
 			);
 			path = Sign;
+			sourceTree = "<group>";
+		};
+		59F6BE3C2A07B80900D7B3CB /* VerificationCode */ = {
+			isa = PBXGroup;
+			children = (
+				59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */,
+				59F6BE3F2A07B83700D7B3CB /* VerificationCode.storyboard */,
+			);
+			path = VerificationCode;
 			sourceTree = "<group>";
 		};
 		9F41385B2A51C65BC5A0521C /* Frameworks */ = {
@@ -243,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
 				5926C5C02A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf in Resources */,
 				59F6BE382A07B56100D7B3CB /* GenSenMaruGothicTW-Regular.ttf in Resources */,
 				59F6BE392A07B56100D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf in Resources */,
@@ -310,6 +325,7 @@
 			files = (
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
+				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
 				59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */,
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
