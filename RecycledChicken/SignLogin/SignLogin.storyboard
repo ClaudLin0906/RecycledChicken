@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenSenMaruGothicTW-Heavy.ttf">
-            <string>GenSenMaruGothicTW-Heavy-TTF</string>
+        <array key="GenSenMaruGothicTW-Regular.ttf">
+            <string>GenSenMaruGothicTW-Regular-TTF</string>
         </array>
     </customFonts>
     <scenes>
@@ -43,7 +43,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="「這裡就是和我們泥滑島時空糾纏的世界嗎?」" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-9i-2jO">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="17"/>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -66,7 +66,7 @@
 而我們將幫助你們把廢棄物轉換成珍貴的資源
 不只是為了泥滑島
 也為了保護你們的美麗的星球，一同努力吧!</string>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -89,7 +89,7 @@
                                                             <constraint firstAttribute="width" constant="250" id="Ljp-8M-QOz"/>
                                                             <constraint firstAttribute="height" constant="50" id="fbu-OE-4GX"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="會 員 登 入"/>
                                                         <userDefinedRuntimeAttributes>
@@ -108,7 +108,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="e6O-kD-WiS"/>
                                                             <constraint firstAttribute="width" constant="250" id="iYh-BW-frA"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="會 員 註 冊">
                                                             <color key="titleColor" systemColor="labelColor"/>
@@ -118,16 +118,13 @@
                                                                 <integer key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="SignUpBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CaG-pm-5mb"/>
-                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘記帳號密碼?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urw-aj-iMM">
                                                         <rect key="frame" x="146.66666666666666" y="140" width="100" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="593-sR-0Sv"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
