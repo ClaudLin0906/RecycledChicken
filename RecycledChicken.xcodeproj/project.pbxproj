@@ -22,6 +22,8 @@
 		5926C5A22A06364800FAB49D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5A12A06364800FAB49D /* Common.swift */; };
 		5926C5C02A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5926C5BF2A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf */; };
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
+		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
+		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
 		59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */; };
 		59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE272A06693100D7B3CB /* Login.storyboard */; };
 		59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */; };
@@ -62,6 +64,8 @@
 		5926C5A12A06364800FAB49D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5926C5BF2A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Heavy.ttf"; sourceTree = "<group>"; };
 		5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLoginVC.swift; sourceTree = "<group>"; };
+		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
+		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
 		59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignLogin.storyboard; sourceTree = "<group>"; };
 		59F6BE272A06693100D7B3CB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			children = (
 				5926C5982A0632AB00FAB49D /* HomeVC.swift */,
 				5926C59A2A0632BC00FAB49D /* Home.storyboard */,
+				59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */,
+				59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
 				59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
+				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
@@ -351,6 +358,7 @@
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
 				5926C5A22A06364800FAB49D /* Common.swift in Sources */,
+				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
