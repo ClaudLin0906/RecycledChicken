@@ -9,15 +9,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--減碳歷程-->
+        <!--Carbon Reduction LogVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="CarbonReductionLog" title="減碳歷程" id="Y6W-OH-hqX" customClass="CarbonReductionLogVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarbonReductionLog" id="Y6W-OH-hqX" customClass="CarbonReductionLogVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zi8-ff-rLb" userLabel="backgoundView">
+                                <rect key="frame" x="0.0" y="153" width="393" height="699"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Au-Kz-X89">
+                                <rect key="frame" x="20" y="362" width="353" height="128"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0T-m1-kGt" userLabel="content">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="B0T-m1-kGt" firstAttribute="trailing" secondItem="qB7-zh-Y8f" secondAttribute="trailing" id="3kJ-yw-bwj"/>
+                                    <constraint firstItem="B0T-m1-kGt" firstAttribute="top" secondItem="qB7-zh-Y8f" secondAttribute="top" id="KwT-ff-62c"/>
+                                    <constraint firstItem="B0T-m1-kGt" firstAttribute="bottom" secondItem="qB7-zh-Y8f" secondAttribute="bottom" id="ezc-Ly-MLr"/>
+                                    <constraint firstItem="B0T-m1-kGt" firstAttribute="width" secondItem="HyI-PT-XVX" secondAttribute="width" id="fI7-fu-LQy"/>
+                                    <constraint firstItem="B0T-m1-kGt" firstAttribute="leading" secondItem="qB7-zh-Y8f" secondAttribute="leading" id="ipj-EX-iZ1"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="qB7-zh-Y8f"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="HyI-PT-XVX"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="zi8-ff-rLb" secondAttribute="bottom" id="8h6-dW-2ot"/>
+                            <constraint firstItem="5Au-Kz-X89" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ahk-0e-8pH"/>
+                            <constraint firstItem="zi8-ff-rLb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="GLp-Vh-u5Q"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5Au-Kz-X89" secondAttribute="trailing" constant="20" id="Os5-DL-qaY"/>
+                            <constraint firstItem="zi8-ff-rLb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YzQ-f0-EMY"/>
+                            <constraint firstItem="5Au-Kz-X89" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="qBc-g2-T9q"/>
+                            <constraint firstItem="zi8-ff-rLb" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="s8r-OR-RhL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5Au-Kz-X89" secondAttribute="bottom" id="vWD-dc-Rp3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U1I-Rx-UHF"/>
                 </viewController>

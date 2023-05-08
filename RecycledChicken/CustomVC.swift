@@ -8,7 +8,9 @@
 import UIKit
 
 class CustomVC: UIViewController {
-
+    
+    var appearance = UINavigationBarAppearance()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -28,7 +30,7 @@ class CustomVC: UIViewController {
         let backBtn = UIBarButtonItem(image: UIImage(named: "路径 273"), style: .plain, target: self, action: #selector(backBtnPressed))
         backBtn.tintColor = .white
         navigationItem.leftBarButtonItem = backBtn
-        let appearance = UINavigationBarAppearance()
+        appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = CommonColor.shared.color1
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
