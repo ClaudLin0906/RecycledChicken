@@ -14,8 +14,19 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
     @IBOutlet weak var dateLabel:UILabel!
     
     var isCurrentDate:Bool = false {
-        didSet{
-            if
+        willSet{
+            if newValue {
+                backgroundColor = CommonColor.shared.color9
+                weekLabel.textColor = .white
+                dateLabel.textColor = .white
+                self.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+                self.layer.shadowOpacity = 0.6
+            } else {
+                backgroundColor = .clear
+                weekLabel.textColor = .black
+                dateLabel.textColor = .black
+                self.layer.shadowOffset = .zero
+            }
         }
     }
 

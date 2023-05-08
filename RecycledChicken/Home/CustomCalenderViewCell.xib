@@ -40,7 +40,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQx-dB-uqQ">
-                            <rect key="frame" x="0.0" y="35" width="393" height="289"/>
+                            <rect key="frame" x="0.0" y="30" width="393" height="284"/>
                             <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Medium-TTF" family="GenSenMaruGothic TW TTF" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -50,10 +50,10 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="lij-gs-CUk" secondAttribute="trailing" id="Fb8-yG-Cvw"/>
                         <constraint firstItem="lij-gs-CUk" firstAttribute="leading" secondItem="twj-zx-eOf" secondAttribute="leading" id="PNM-aa-tGT"/>
-                        <constraint firstAttribute="bottom" secondItem="hQx-dB-uqQ" secondAttribute="bottom" id="PWU-xE-zyW"/>
+                        <constraint firstAttribute="bottom" secondItem="hQx-dB-uqQ" secondAttribute="bottom" constant="10" id="PWU-xE-zyW"/>
                         <constraint firstItem="lij-gs-CUk" firstAttribute="top" secondItem="twj-zx-eOf" secondAttribute="top" id="SUu-ok-3Y9"/>
                         <constraint firstAttribute="trailing" secondItem="hQx-dB-uqQ" secondAttribute="trailing" id="jEh-p9-P8v"/>
-                        <constraint firstItem="hQx-dB-uqQ" firstAttribute="top" secondItem="lij-gs-CUk" secondAttribute="bottom" constant="5" id="qtP-a1-KeT"/>
+                        <constraint firstItem="hQx-dB-uqQ" firstAttribute="top" secondItem="lij-gs-CUk" secondAttribute="bottom" id="qtP-a1-KeT"/>
                         <constraint firstItem="hQx-dB-uqQ" firstAttribute="leading" secondItem="twj-zx-eOf" secondAttribute="leading" id="vfn-qM-5hU"/>
                     </constraints>
                 </view>

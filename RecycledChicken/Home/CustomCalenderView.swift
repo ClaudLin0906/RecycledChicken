@@ -91,6 +91,8 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
         satCalender.dateLabel.text = String(sevenDaysToShow[5].split(separator: "-")[0])
         sunCalender.dateLabel.text = String(sevenDaysToShow[6].split(separator: "-")[0])
         
+        monCalender.isCurrentDate = true
+        
     }
     
     private func getDates(i: Int, currentDate:Date) -> (String, String){
@@ -107,22 +109,3 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
     }
 }
 
-//extension CustomCalenderView:UICollectionViewDelegate, UICollectionViewDataSource {
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        1
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        7
-//    }
-//
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//    }
-//
-//
-//}
- 
