@@ -100,7 +100,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-ay-1wo" userLabel="backgoundView">
-                                <rect key="frame" x="0.0" y="203" width="393" height="629"/>
+                                <rect key="frame" x="0.0" y="203" width="393" height="699"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.9137254901960784" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -310,7 +310,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pdD-uo-lLA" secondAttribute="trailing" constant="20" id="KsP-dJ-KGE"/>
                             <constraint firstItem="pdD-uo-lLA" firstAttribute="top" secondItem="zyr-ay-1wo" secondAttribute="top" constant="40" id="Lb4-Mt-j8Z"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zyr-ay-1wo" secondAttribute="trailing" id="P8b-no-Ert"/>
-                            <constraint firstAttribute="bottom" secondItem="zyr-ay-1wo" secondAttribute="bottom" constant="20" symbolic="YES" id="WNp-Iz-c5x"/>
+                            <constraint firstAttribute="bottom" secondItem="zyr-ay-1wo" secondAttribute="bottom" constant="-50" id="WNp-Iz-c5x"/>
                             <constraint firstItem="tYp-ML-4l6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="kPi-CR-gjf"/>
                             <constraint firstItem="zyr-ay-1wo" firstAttribute="top" secondItem="Au5-fR-Nsa" secondAttribute="bottom" id="rGs-yh-u8z"/>
                             <constraint firstItem="fdY-cx-ofk" firstAttribute="leading" secondItem="afR-qR-YjO" secondAttribute="leading" id="tbY-jL-5Ra"/>
