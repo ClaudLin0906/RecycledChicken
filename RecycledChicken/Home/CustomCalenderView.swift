@@ -8,6 +8,21 @@
 import UIKit
 
 class CustomCalenderView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var monCalender:CustomCalenderViewCell!
+    
+    @IBOutlet weak var tueCalender:CustomCalenderViewCell!
+    
+    @IBOutlet weak var wedCalender:CustomCalenderViewCell!
+    
+    @IBOutlet weak var thuCalender:CustomCalenderViewCell!
+    
+    @IBOutlet weak var friCalender:CustomCalenderViewCell!
+    
+    @IBOutlet weak var satCalender:CustomCalenderViewCell!
+    
+    @IBOutlet weak var sunCalender:CustomCalenderViewCell!
+    
         
     override init(frame: CGRect) {
         super.init(frame: frame)
