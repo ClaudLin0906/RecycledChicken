@@ -8,6 +8,20 @@
 import UIKit
 
 class BarCodeView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var barcodeImageView:UIImageView!
+    
+    @IBOutlet weak var codeLabel:UILabel!
+
+    var code = ""
+    {
+        didSet {
+            codeLabel.text = oldValue
+            if let barCodeImage = generateBarCode(from: oldValue) {
+                barcodeImageView.image = barCodeImage
+            }
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

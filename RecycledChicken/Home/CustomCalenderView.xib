@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCalenderView" customModule="RecycledChicken" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="235"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3zs-ex-nY1">
+                    <rect key="frame" x="5" y="59" width="383" height="176"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syF-WY-2Cu" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="47.333333333333336" height="176"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o2-u4-MyC" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="67.333333333333329" y="0.0" width="47" height="176"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvn-1m-YwN" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="134.33333333333334" y="0.0" width="47.333333333333343" height="176"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXb-Vx-KmH" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="201.66666666666666" y="0.0" width="47" height="176"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-wt-qaR" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="268.66666666666669" y="0.0" width="47.333333333333314" height="176"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uux-Fq-d3X" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="336" y="0.0" width="47" height="176"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3zs-ex-nY1" secondAttribute="trailing" constant="5" id="KtK-xf-gbo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3zs-ex-nY1" secondAttribute="bottom" id="OTT-Gp-yBp"/>
+                <constraint firstItem="3zs-ex-nY1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Znu-Ub-a6p"/>
+                <constraint firstItem="3zs-ex-nY1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="uv1-Jo-Nuw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-173.2824427480916" y="236.97183098591552"/>
+        </view>
+    </objects>
+</document>
