@@ -1,16 +1,26 @@
 PODS:
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
   - M13Checkbox (3.4.0)
+  - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
+  - Charts
   - M13Checkbox
 
 SPEC REPOS:
   trunk:
+    - Charts
     - M13Checkbox
+    - SwiftAlgorithms
 
 SPEC CHECKSUMS:
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: 89723d41a3b875c466e0ac70d92544c00ca962ca
+PODFILE CHECKSUM: 4897715ab543ae7478416f4857b2fa1f98afd790
 
 COCOAPODS: 1.11.3

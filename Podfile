@@ -8,5 +8,6 @@ target 'RecycledChicken' do
   # Pods for RecycledChicken
 
   pod 'M13Checkbox'
+  pod 'Charts'
 
 end

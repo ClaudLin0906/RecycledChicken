@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Regular.ttf">
+            <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Carbon Reduction LogVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -30,7 +35,7 @@
                                 <rect key="frame" x="20" y="193" width="353" height="625"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0T-m1-kGt" userLabel="content">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="720"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="520"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-IY-1f2" userLabel="step1">
                                                 <rect key="frame" x="0.0" y="50" width="353" height="150"/>
@@ -63,10 +68,24 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sS-8y-LSh" userLabel="step2">
-                                                <rect key="frame" x="10" y="220" width="333" height="500"/>
+                                                <rect key="frame" x="10" y="220" width="333" height="300"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="碳足跡圖表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Se-iw-uAz">
+                                                        <rect key="frame" x="0.0" y="30" width="333" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="Qyc-2E-oxt"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="500" id="aNf-HW-kXc"/>
+                                                    <constraint firstItem="8Se-iw-uAz" firstAttribute="leading" secondItem="3sS-8y-LSh" secondAttribute="leading" id="G2C-yE-Aee"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8Se-iw-uAz" secondAttribute="trailing" id="P8i-Ab-OiH"/>
+                                                    <constraint firstAttribute="height" constant="300" id="aNf-HW-kXc"/>
+                                                    <constraint firstItem="8Se-iw-uAz" firstAttribute="top" secondItem="3sS-8y-LSh" secondAttribute="top" constant="30" id="auD-2B-GyV"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
