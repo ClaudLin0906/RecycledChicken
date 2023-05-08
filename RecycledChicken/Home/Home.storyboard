@@ -5,6 +5,8 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -28,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good morning, Angel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afR-qR-YjO">
-                                        <rect key="frame" x="30" y="15" width="167.33333333333334" height="20"/>
+                                        <rect key="frame" x="30" y="15.33333333333333" width="167.33333333333334" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -52,7 +54,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳戶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcO-Mb-bsb">
-                                        <rect key="frame" x="55" y="15" width="34" height="20"/>
+                                        <rect key="frame" x="55" y="15.333333333333345" width="34" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -61,7 +63,7 @@
                                         <rect key="frame" x="109" y="15" width="20" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="訊息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFO-hx-dt1">
-                                        <rect key="frame" x="134" y="15" width="34" height="20"/>
+                                        <rect key="frame" x="134" y="15.333333333333345" width="34" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -70,7 +72,7 @@
                                         <rect key="frame" x="304" y="15" width="20" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-1Y-6h3">
-                                        <rect key="frame" x="329" y="15" width="34" height="20"/>
+                                        <rect key="frame" x="329" y="15.333333333333345" width="34" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -98,7 +100,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-ay-1wo" userLabel="backgoundView">
-                                <rect key="frame" x="0.0" y="203" width="393" height="649"/>
+                                <rect key="frame" x="0.0" y="203" width="393" height="615"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.9137254901960784" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -110,7 +112,7 @@
                                 <rect key="frame" x="20" y="243" width="353" height="575"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nh5-zu-93u" userLabel="content">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="710"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="750"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMH-HZ-cmw" userLabel="step1">
                                                 <rect key="frame" x="10" y="0.0" width="333" height="200"/>
@@ -153,21 +155,40 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="333" height="250"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="碳竹雞養成" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo6-76-zfY">
-                                                                <rect key="frame" x="50" y="30" width="90" height="21"/>
+                                                                <rect key="frame" x="30" y="30" width="90" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="90" id="Y4G-eq-0Cf"/>
                                                                     <constraint firstAttribute="height" constant="21" id="sU6-wo-n8o"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="18"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wep-Dg-8Xm">
+                                                                <rect key="frame" x="30" y="56" width="90" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="90" id="Bu0-3Z-nyG"/>
+                                                                    <constraint firstAttribute="height" constant="21" id="sZ5-Lh-nq1"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="18"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1087" translatesAutoresizingMaskIntoConstraints="NO" id="khi-Bw-h8S">
+                                                                <rect key="frame" x="166.66666666666663" y="51" width="166.33333333333337" height="199"/>
+                                                            </imageView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.82745098039215681" green="0.69019607843137254" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.88627450980392153" green="0.76078431372549016" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="250" id="Avn-M0-2nH"/>
+                                                            <constraint firstItem="khi-Bw-h8S" firstAttribute="leading" secondItem="ccd-f3-Y9z" secondAttribute="centerX" id="Awg-yn-TXP"/>
+                                                            <constraint firstAttribute="bottom" secondItem="khi-Bw-h8S" secondAttribute="bottom" id="HKf-sX-4cX"/>
                                                             <constraint firstItem="Yo6-76-zfY" firstAttribute="top" secondItem="ccd-f3-Y9z" secondAttribute="top" constant="30" id="OqJ-8j-RJz"/>
-                                                            <constraint firstItem="Yo6-76-zfY" firstAttribute="leading" secondItem="ccd-f3-Y9z" secondAttribute="leading" constant="50" id="u5Q-Ry-wga"/>
+                                                            <constraint firstItem="Wep-Dg-8Xm" firstAttribute="top" secondItem="Yo6-76-zfY" secondAttribute="bottom" constant="5" id="XQM-Qo-BXl"/>
+                                                            <constraint firstItem="khi-Bw-h8S" firstAttribute="top" secondItem="Yo6-76-zfY" secondAttribute="bottom" id="YmD-HD-fZg"/>
+                                                            <constraint firstItem="Wep-Dg-8Xm" firstAttribute="leading" secondItem="Yo6-76-zfY" secondAttribute="leading" id="eAa-u0-rlG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="khi-Bw-h8S" secondAttribute="trailing" id="feX-Dj-SwE"/>
+                                                            <constraint firstItem="Yo6-76-zfY" firstAttribute="leading" secondItem="ccd-f3-Y9z" secondAttribute="leading" constant="30" id="u5Q-Ry-wga"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -181,10 +202,68 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kdK-46-Ifb">
+                                                        <rect key="frame" x="66.666666666666686" y="280" width="200" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="當日養分" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bK-zS-1hV">
+                                                                <rect key="frame" x="0.0" y="0.0" width="56" height="30"/>
+                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gUkPAm.tif" translatesAutoresizingMaskIntoConstraints="NO" id="7ha-XA-vAU">
+                                                                <rect key="frame" x="64.999999999999986" y="0.0" width="27.333333333333329" height="30"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhx-qv-uDe">
+                                                                <rect key="frame" x="101.66666666666667" y="0.0" width="24.666666666666671" height="30"/>
+                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="20"/>
+                                                                <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 52" translatesAutoresizingMaskIntoConstraints="NO" id="7D8-sj-Ibc">
+                                                                <rect key="frame" x="135.33333333333331" y="0.0" width="30.666666666666657" height="30"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHb-lO-QsE">
+                                                                <rect key="frame" x="175.33333333333331" y="0.0" width="24.666666666666657" height="30"/>
+                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="20"/>
+                                                                <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="B04-fF-Lwb"/>
+                                                            <constraint firstAttribute="width" constant="200" id="KQK-Ax-S5U"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybu-Dt-ZtI">
+                                                        <rect key="frame" x="91.666666666666686" y="340" width="150" height="40"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="VlY-Wo-ZLy"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Xfh-yO-pI1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="減 碳 歷 程">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="goToCarbonReductionLog:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="I5h-hy-jma"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="ccd-f3-Y9z" firstAttribute="top" secondItem="Hnz-DH-Lsq" secondAttribute="top" id="30t-Ta-duW"/>
+                                                    <constraint firstItem="ybu-Dt-ZtI" firstAttribute="centerX" secondItem="Hnz-DH-Lsq" secondAttribute="centerX" id="535-rz-6zK"/>
+                                                    <constraint firstItem="kdK-46-Ifb" firstAttribute="centerX" secondItem="Hnz-DH-Lsq" secondAttribute="centerX" id="9TK-3P-C3q"/>
+                                                    <constraint firstItem="kdK-46-Ifb" firstAttribute="top" secondItem="ccd-f3-Y9z" secondAttribute="bottom" constant="30" id="KLw-tK-uVJ"/>
+                                                    <constraint firstItem="ybu-Dt-ZtI" firstAttribute="top" secondItem="kdK-46-Ifb" secondAttribute="bottom" constant="30" id="brA-Oi-drI"/>
                                                     <constraint firstItem="ccd-f3-Y9z" firstAttribute="centerX" secondItem="Hnz-DH-Lsq" secondAttribute="centerX" id="ii0-8H-Ehw"/>
                                                     <constraint firstAttribute="height" constant="400" id="zHL-y6-AI8"/>
                                                 </constraints>
@@ -200,7 +279,7 @@
                                             <constraint firstItem="zud-Ll-WdT" firstAttribute="width" secondItem="AMH-HZ-cmw" secondAttribute="width" id="oUS-aF-KzH"/>
                                             <constraint firstItem="zud-Ll-WdT" firstAttribute="top" secondItem="AMH-HZ-cmw" secondAttribute="bottom" constant="20" id="ovt-2f-hFG"/>
                                             <constraint firstItem="AMH-HZ-cmw" firstAttribute="leading" secondItem="Nh5-zu-93u" secondAttribute="leading" constant="10" id="qtf-FF-FCi"/>
-                                            <constraint firstAttribute="bottom" secondItem="Hnz-DH-Lsq" secondAttribute="bottom" id="sJI-2S-pJ6"/>
+                                            <constraint firstAttribute="bottom" secondItem="Hnz-DH-Lsq" secondAttribute="bottom" constant="40" id="sJI-2S-pJ6"/>
                                             <constraint firstItem="ccd-f3-Y9z" firstAttribute="width" secondItem="x97-no-L30" secondAttribute="width" id="t7c-Az-R7A"/>
                                             <constraint firstItem="Hnz-DH-Lsq" firstAttribute="centerX" secondItem="zud-Ll-WdT" secondAttribute="centerX" id="x4C-R4-70T"/>
                                         </constraints>
@@ -209,10 +288,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Nh5-zu-93u" firstAttribute="top" secondItem="Bal-DZ-JGO" secondAttribute="top" id="0Ai-ek-avw"/>
-                                    <constraint firstItem="Nh5-zu-93u" firstAttribute="trailing" secondItem="Bal-DZ-JGO" secondAttribute="trailing" constant="313" id="8Nl-gm-Qgg"/>
+                                    <constraint firstItem="Nh5-zu-93u" firstAttribute="trailing" secondItem="Bal-DZ-JGO" secondAttribute="trailing" id="8Nl-gm-Qgg"/>
                                     <constraint firstItem="Nh5-zu-93u" firstAttribute="leading" secondItem="Bal-DZ-JGO" secondAttribute="leading" id="KwL-3x-rcP"/>
                                     <constraint firstItem="Nh5-zu-93u" firstAttribute="width" secondItem="t0M-xf-vOU" secondAttribute="width" id="c2X-Za-FXb"/>
-                                    <constraint firstItem="Nh5-zu-93u" firstAttribute="bottom" secondItem="Bal-DZ-JGO" secondAttribute="bottom" constant="420" id="kUq-Cg-W59"/>
+                                    <constraint firstItem="Nh5-zu-93u" firstAttribute="bottom" secondItem="Bal-DZ-JGO" secondAttribute="bottom" id="kUq-Cg-W59"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Bal-DZ-JGO"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="t0M-xf-vOU"/>
@@ -231,7 +310,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pdD-uo-lLA" secondAttribute="trailing" constant="20" id="KsP-dJ-KGE"/>
                             <constraint firstItem="pdD-uo-lLA" firstAttribute="top" secondItem="zyr-ay-1wo" secondAttribute="top" constant="40" id="Lb4-Mt-j8Z"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zyr-ay-1wo" secondAttribute="trailing" id="P8b-no-Ert"/>
-                            <constraint firstAttribute="bottom" secondItem="zyr-ay-1wo" secondAttribute="bottom" id="WNp-Iz-c5x"/>
+                            <constraint firstAttribute="bottom" secondItem="zyr-ay-1wo" secondAttribute="bottom" constant="34" id="WNp-Iz-c5x"/>
                             <constraint firstItem="tYp-ML-4l6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="kPi-CR-gjf"/>
                             <constraint firstItem="zyr-ay-1wo" firstAttribute="top" secondItem="Au5-fR-Nsa" secondAttribute="bottom" id="rGs-yh-u8z"/>
                             <constraint firstItem="fdY-cx-ofk" firstAttribute="leading" secondItem="afR-qR-YjO" secondAttribute="leading" id="tbY-jL-5Ra"/>
@@ -241,6 +320,7 @@
                     <navigationItem key="navigationItem" id="qsC-tK-K4C"/>
                     <connections>
                         <outlet property="barcodeView" destination="x97-no-L30" id="gO9-LE-gFp"/>
+                        <outlet property="carbonReductionLogBtn" destination="ybu-Dt-ZtI" id="pXO-R6-ZAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -269,6 +349,12 @@
     <resources>
         <image name="ehYnxi" width="42.333332061767578" height="50"/>
         <image name="fZyCL6.tif" width="58" height="41"/>
+        <image name="gUkPAm.tif" width="27.333333969116211" height="54.666667938232422"/>
         <image name="y7CRSB.tif" width="53.333332061767578" height="53.333332061767578"/>
+        <image name="グループ 1087" width="981" height="574"/>
+        <image name="グループ 52" width="30.666666030883789" height="53"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

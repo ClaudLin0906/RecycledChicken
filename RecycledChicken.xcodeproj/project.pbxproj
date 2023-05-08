@@ -26,6 +26,9 @@
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
 		59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A452A08E2C600E9FD7F /* CustomCalenderViewCell.xib */; };
+		59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A482A0917D300E9FD7F /* CarbonReductionLogVC.swift */; };
+		59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59997A4A2A0917F700E9FD7F /* CarbonReductionLog.storyboard */; };
+		59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A4C2A09181D00E9FD7F /* CustomVC.swift */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
 		59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */; };
@@ -72,6 +75,9 @@
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
 		59997A452A08E2C600E9FD7F /* CustomCalenderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderViewCell.xib; sourceTree = "<group>"; };
+		59997A482A0917D300E9FD7F /* CarbonReductionLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonReductionLogVC.swift; sourceTree = "<group>"; };
+		59997A4A2A0917F700E9FD7F /* CarbonReductionLog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CarbonReductionLog.storyboard; sourceTree = "<group>"; };
+		59997A4C2A09181D00E9FD7F /* CustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC.swift; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
 		59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignLogin.storyboard; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 				5926C57F2A04086400FAB49D /* SceneDelegate.swift */,
 				5926C5812A04086400FAB49D /* ViewController.swift */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
+				59997A472A0917B300E9FD7F /* CarbonReductionLog */,
 				59F6BE432A07D28600D7B3CB /* Comfirm */,
 				59F6BE3C2A07B80900D7B3CB /* VerificationCode */,
 				59F6BE2D2A078D7100D7B3CB /* Sign */,
@@ -150,6 +157,7 @@
 				5926C5A12A06364800FAB49D /* Common.swift */,
 				59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */,
 				5926C5952A06325700FAB49D /* CustomRootVC.swift */,
+				59997A4C2A09181D00E9FD7F /* CustomVC.swift */,
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
 				59F6BE2B2A07639900D7B3CB /* Extension.swift */,
@@ -195,6 +203,15 @@
 				59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */,
 			);
 			path = SignLogin;
+			sourceTree = "<group>";
+		};
+		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
+			isa = PBXGroup;
+			children = (
+				59997A482A0917D300E9FD7F /* CarbonReductionLogVC.swift */,
+				59997A4A2A0917F700E9FD7F /* CarbonReductionLog.storyboard */,
+			);
+			path = CarbonReductionLog;
 			sourceTree = "<group>";
 		};
 		59F6BE2D2A078D7100D7B3CB /* Sign */ = {
@@ -305,6 +322,7 @@
 				59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
 				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
+				59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
@@ -368,6 +386,7 @@
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
+				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
 				59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */,
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
@@ -379,6 +398,7 @@
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
+				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
 			);
