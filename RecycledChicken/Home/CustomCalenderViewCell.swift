@@ -12,6 +12,12 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
     @IBOutlet weak var weekLabel:UILabel!
     
     @IBOutlet weak var dateLabel:UILabel!
+    
+    var isCurrentDate:Bool = false {
+        didSet{
+            if
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -36,6 +36,13 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
 
     private func customInit(){
         loadNibContent()
+        monCalender.weekLabel.text = "mon"
+        tueCalender.weekLabel.text = "tue"
+        wedCalender.weekLabel.text = "wed"
+        thuCalender.weekLabel.text = "thu"
+        friCalender.weekLabel.text = "fri"
+        satCalender.weekLabel.text = "sat"
+        sunCalender.weekLabel.text = "sun"
         getSevenDays()
     }
     
@@ -49,19 +56,19 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
         var selectedDatesIndex = 0
         switch weekDay {
         case "Sunday":
-            selectedDatesIndex = 0
-        case "Monday":
-            selectedDatesIndex = 1
-        case "Tuesday":
-            selectedDatesIndex = 2
-        case "Wednesday":
-            selectedDatesIndex = 3
-        case "Thurday":
-            selectedDatesIndex = 4
-        case "Friday":
-            selectedDatesIndex = 5
-        case "Saturday":
             selectedDatesIndex = 6
+        case "Monday":
+            selectedDatesIndex = 0
+        case "Tuesday":
+            selectedDatesIndex = 1
+        case "Wednesday":
+            selectedDatesIndex = 2
+        case "Thurday":
+            selectedDatesIndex = 3
+        case "Friday":
+            selectedDatesIndex = 4
+        case "Saturday":
+            selectedDatesIndex = 5
         default:
             break
         }
@@ -72,19 +79,18 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
             sevenDaysToShow.append(getDates(i: newIndex, currentDate: Date()).0)
         }
         
-        let monthToSelectFrom = sevenDaysToShow[3]
         let dateFormatterMonth = DateFormatter()
         dateFormatterMonth.locale = Locale(identifier: "en_US_POSIX")
         dateFormatterMonth.dateFormat = "dd-MM-yyyy"
-        let monthDate = dateFormatterMonth.date(from: monthToSelectFrom)!
         
-        let dateFormatterMonth1 = DateFormatter()
-        dateFormatterMonth1.dateFormat = "MMMM, YYYY"
-        let month = dateFormatterMonth1.string(from: monthDate)
-        print("month \(month)")
-        print("lastDateArr \(sevenDaysToShow.last)")
-        print("firstDateArr \(sevenDaysToShow.first)")
-        print("sevenDaysToShow \(sevenDaysToShow)")
+        monCalender.dateLabel.text = String(sevenDaysToShow[0].split(separator: "-")[0])
+        tueCalender.dateLabel.text = String(sevenDaysToShow[1].split(separator: "-")[0])
+        wedCalender.dateLabel.text = String(sevenDaysToShow[2].split(separator: "-")[0])
+        thuCalender.dateLabel.text = String(sevenDaysToShow[3].split(separator: "-")[0])
+        friCalender.dateLabel.text = String(sevenDaysToShow[4].split(separator: "-")[0])
+        satCalender.dateLabel.text = String(sevenDaysToShow[5].split(separator: "-")[0])
+        sunCalender.dateLabel.text = String(sevenDaysToShow[6].split(separator: "-")[0])
+        
     }
     
     private func getDates(i: Int, currentDate:Date) -> (String, String){
