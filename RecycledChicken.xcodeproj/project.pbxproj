@@ -45,6 +45,8 @@
 		59997A702A0A4A1500E9FD7F /* PersonMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A6F2A0A4A1500E9FD7F /* PersonMessageVC.swift */; };
 		59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59997A712A0A4AD800E9FD7F /* PersonMessage.storyboard */; };
 		59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */; };
+		59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A762A0A53A000E9FD7F /* PersonMessageContentVC.swift */; };
+		59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
 		59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */; };
@@ -110,6 +112,8 @@
 		59997A6F2A0A4A1500E9FD7F /* PersonMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageVC.swift; sourceTree = "<group>"; };
 		59997A712A0A4AD800E9FD7F /* PersonMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonMessage.storyboard; sourceTree = "<group>"; };
 		59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageTableViewCell.swift; sourceTree = "<group>"; };
+		59997A762A0A53A000E9FD7F /* PersonMessageContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageContentVC.swift; sourceTree = "<group>"; };
+		59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonMessageContent.storyboard; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
 		59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignLogin.storyboard; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				5926C57F2A04086400FAB49D /* SceneDelegate.swift */,
 				5926C5812A04086400FAB49D /* ViewController.swift */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
+				59997A752A0A532400E9FD7F /* PersonMessageContent */,
 				59997A6E2A0A49F800E9FD7F /* PersonMessage */,
 				59997A612A0A0C9D00E9FD7F /* Profile */,
 				59997A582A09E4AB00E9FD7F /* RecycleLog */,
@@ -284,6 +289,15 @@
 				59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */,
 			);
 			path = PersonMessage;
+			sourceTree = "<group>";
+		};
+		59997A752A0A532400E9FD7F /* PersonMessageContent */ = {
+			isa = PBXGroup;
+			children = (
+				59997A762A0A53A000E9FD7F /* PersonMessageContentVC.swift */,
+				59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */,
+			);
+			path = PersonMessageContent;
 			sourceTree = "<group>";
 		};
 		59F6BE2D2A078D7100D7B3CB /* Sign */ = {
@@ -400,6 +414,7 @@
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
 				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
 				59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */,
+				59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
 				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
@@ -465,6 +480,7 @@
 				59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
+				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
 				59997A4F2A09384300E9FD7F /* PetView.swift in Sources */,
