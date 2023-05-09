@@ -33,5 +33,11 @@ class HomeVC: CustomRootVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
+    
+    @IBAction func goToProfile(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Profile", bundle: Bundle.main).instantiateViewController(identifier: "Profile") as? ProfileVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
 
 }

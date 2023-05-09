@@ -8,9 +8,7 @@
 import UIKit
 
 class CustomVC: UIViewController {
-    
-    var appearance = UINavigationBarAppearance()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -30,13 +28,26 @@ class CustomVC: UIViewController {
         let backBtn = UIBarButtonItem(image: UIImage(named: "路径 273"), style: .plain, target: self, action: #selector(backBtnPressed))
         backBtn.tintColor = .white
         navigationItem.leftBarButtonItem = backBtn
-        appearance = UINavigationBarAppearance()
+        let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = CommonColor.shared.color1
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    func setDefaultNavigationBackBtn2(){
+        let backBtn = UIBarButtonItem(image: UIImage(named: "路径 273"), style: .plain, target: self, action: #selector(backBtnPressed))
+        backBtn.tintColor = .black
+        navigationItem.leftBarButtonItem = backBtn
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .clear
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
