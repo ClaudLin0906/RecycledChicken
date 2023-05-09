@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RRw-vL-FUa">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Regular.ttf">
+            <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Recycle LogVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="RecycleLog" id="Y6W-OH-hqX" customClass="RecycleLogVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhY-AB-Dwd" userLabel="backgoundView">
+                                <rect key="frame" x="0.0" y="153" width="393" height="749"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6La-be-1nu" customClass="CommonImageButton" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="30" width="120" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Hfh-7n-Kil"/>
+                                            <constraint firstAttribute="width" constant="120" id="Ht9-Cg-d3x"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeAmount:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="u2T-5R-CAC"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d9r-cX-EYf">
+                                        <rect key="frame" x="20" y="65" width="353" height="600"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecycleLogTableViewCell" id="Llh-bH-uTu" customClass="RecycleLogTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="353" height="20"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Llh-bH-uTu" id="CfS-D4-3d6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="DgV-Jy-2WH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="20"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/03/11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBC-3W-26o">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="89" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶(PET)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eru-wJ-rV7">
+                                                                    <rect key="frame" x="145.33333333333334" y="0.0" width="93.666666666666657" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點數:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mII-21-EXa">
+                                                                    <rect key="frame" x="295.33333333333331" y="0.0" width="57.666666666666686" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="DgV-Jy-2WH" secondAttribute="bottom" id="1iK-lL-m1E"/>
+                                                        <constraint firstItem="DgV-Jy-2WH" firstAttribute="leading" secondItem="CfS-D4-3d6" secondAttribute="leading" id="UxJ-Me-r5w"/>
+                                                        <constraint firstItem="DgV-Jy-2WH" firstAttribute="top" secondItem="CfS-D4-3d6" secondAttribute="top" id="ieM-Ah-7Xk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="DgV-Jy-2WH" secondAttribute="trailing" id="ubc-S9-IFu"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Y6W-OH-hqX" id="myY-Zh-yXD"/>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="M5Q-mc-rXC"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="d9r-cX-EYf" secondAttribute="trailing" constant="20" id="7Eu-RJ-KlY"/>
+                                    <constraint firstItem="6La-be-1nu" firstAttribute="leading" secondItem="FhY-AB-Dwd" secondAttribute="leading" constant="30" id="MrB-wg-8Wr"/>
+                                    <constraint firstItem="d9r-cX-EYf" firstAttribute="leading" secondItem="FhY-AB-Dwd" secondAttribute="leading" constant="20" id="VtF-44-YLO"/>
+                                    <constraint firstItem="6La-be-1nu" firstAttribute="top" secondItem="FhY-AB-Dwd" secondAttribute="top" constant="30" id="Wt8-wR-Bl9"/>
+                                    <constraint firstItem="d9r-cX-EYf" firstAttribute="top" secondItem="6La-be-1nu" secondAttribute="bottom" id="lqO-fy-I87"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FhY-AB-Dwd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5kV-e9-Kq3"/>
+                            <constraint firstItem="d9r-cX-EYf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="REt-K1-sdZ"/>
+                            <constraint firstItem="FhY-AB-Dwd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="oHU-pC-gVC"/>
+                            <constraint firstItem="FhY-AB-Dwd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uYx-yG-kqQ"/>
+                            <constraint firstAttribute="bottom" secondItem="FhY-AB-Dwd" secondAttribute="bottom" constant="-50" id="xVP-1H-UNf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GKq-Ip-MsP"/>
+                    <connections>
+                        <outlet property="monthBtn" destination="6La-be-1nu" id="S1G-0I-SMS"/>
+                        <outlet property="tableView" destination="d9r-cX-EYf" id="PaQ-bE-lda"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762.59541984732823" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fdf-f9-K4Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RRw-vL-FUa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Xf-RB-KSr">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="x4n-8l-WNc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M70-dd-I8Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164.12213740458014" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+</document>

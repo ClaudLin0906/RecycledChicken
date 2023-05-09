@@ -23,8 +23,6 @@ class CarbonReductionLogVC: CustomVC {
     }
 
     private func UIInit() {
-
-        view.backgroundColor = CommonColor.shared.color1
         chartView.delegate = self
         
         let l = chartView.legend
@@ -81,6 +79,12 @@ class CarbonReductionLogVC: CustomVC {
         chartView.data = data
         chartView.highlightPerTapEnabled = false
         chartView.highlightValues(nil)
+    }
+    
+    @IBAction func goToRecycleLog(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "RecycleLog", bundle: Bundle.main).instantiateViewController(identifier: "RecycleLog") as? RecycleLogVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
     }
 }
 
