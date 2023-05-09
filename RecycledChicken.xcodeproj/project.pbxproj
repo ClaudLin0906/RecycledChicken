@@ -39,6 +39,7 @@
 		59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A5F2A09FB2800E9FD7F /* RecycleLogTableViewCell.swift */; };
 		59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A642A0A0CD900E9FD7F /* ProfileVC.swift */; };
 		59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59997A662A0A0CFD00E9FD7F /* Profile.storyboard */; };
+		59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A682A0A230700E9FD7F /* ProfileTableViewCell.swift */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
 		59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */; };
@@ -98,6 +99,7 @@
 		59997A5F2A09FB2800E9FD7F /* RecycleLogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleLogTableViewCell.swift; sourceTree = "<group>"; };
 		59997A642A0A0CD900E9FD7F /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		59997A662A0A0CFD00E9FD7F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		59997A682A0A230700E9FD7F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
 		59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignLogin.storyboard; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				59997A642A0A0CD900E9FD7F /* ProfileVC.swift */,
 				59997A662A0A0CFD00E9FD7F /* Profile.storyboard */,
+				59997A682A0A230700E9FD7F /* ProfileTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
+				59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
 				59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
