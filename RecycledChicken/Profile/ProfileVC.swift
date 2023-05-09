@@ -22,6 +22,10 @@ class ProfileVC: CustomVC {
     
     var currentProfileInfo = profileInfo(userName: "", Email: "", cellPhone: "", birthday: "")
     
+    let datePicker = UIDatePicker()
+        
+    let rightNow = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "個人賬戶"
@@ -32,6 +36,30 @@ class ProfileVC: CustomVC {
     private func UIInit(){
         profileTableView.setSeparatorLocation()
         profileTableView.separatorColor = CommonColor.shared.color5
+    }
+    
+    private func createDatePicker(_ textfield:UITextField) {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed(_:)))
+        toolbar.setItems([doneBtn], animated: true)
+        datePicker.frame = CGRect(x: 0, y: 0, width: view.safeAreaLayoutGuide.layoutFrame.width, height: 200)
+        textfield.inputAccessoryView = toolbar
+        textfield.inputView = datePicker
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+    }
+    
+    @objc private func donePressed(_ sender:UIBarButtonItem) {
+        let components = datePicker.calendar.dateComponents([.day, .month, .year], from: datePicker.date)
+        let day = components.day
+        let month = components.month
+        let year = components.year
+        let cells = cellsForTableView(tableView: profileTableView)
+        if let birthdayCell = cells.filter({ return $0.tag == 3})[0] as? ProfileTableViewCell {
+            birthdayCell.info.text = "\(year!)-\(month!)-\(day!)"
+        }
+        view.endEditing(true)
     }
     
     @IBAction func confirm(_ sender:UIButton) {
@@ -64,7 +92,7 @@ class ProfileVC: CustomVC {
         if currentProfileInfo.Email == "" {
             error = true
             errorStr += "Email不能為空"
-        } else if validateEmail(text: currentProfileInfo.Email) {
+        } else if !validateEmail(text: currentProfileInfo.Email) {
             error = true
             errorStr += "Email格式不正確"
         }
@@ -72,7 +100,7 @@ class ProfileVC: CustomVC {
         if currentProfileInfo.cellPhone == "" {
             error = true
             errorStr += "手機不能為空"
-        }else if validateCellPhone(text: currentProfileInfo.cellPhone) {
+        }else if !validateCellPhone(text: currentProfileInfo.cellPhone) {
             error = true
             errorStr += "手機格式不正確"
         }
@@ -82,9 +110,21 @@ class ProfileVC: CustomVC {
             errorStr += "生日不能為空"
         }
         
-        if !error {
-            print("發生錯誤 \(errorStr)")
-            return
+//        if error {
+//            print("發生錯誤 \(errorStr)")
+//            return
+//        }
+        
+        let profileUpdateView = ProfileUpdateView(frame: view.frame)
+
+        view.addSubview(profileUpdateView)
+        
+    }
+    
+    private func showSignLoginVC(){
+        if let VC = UIStoryboard(name: "SignLogin", bundle: nil).instantiateViewController(withIdentifier: "SignLogin") as? SignLoginVC {
+            VC.modalPresentationStyle = .fullScreen
+            present(VC, animated: false)
         }
     }
 
@@ -105,6 +145,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.tag = row
         cell.infoTitle.text = profileInfoArr[row]
+        if row == 3 {
+            createDatePicker(cell.info)
+        }
         return cell
     }
     
