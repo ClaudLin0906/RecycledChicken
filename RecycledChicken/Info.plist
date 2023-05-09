@@ -4,7 +4,12 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>GenSenMaruGothicTW-Bold.ttf</string>
+		<string>GenSenMaruGothicTW-ExtraLight.ttf</string>
+		<string>GenSenMaruGothicTW-Medium.ttf</string>
+		<string>GenSenMaruGothicTW-Light.ttf</string>
 		<string>GenSenMaruGothicTW-Heavy.ttf</string>
+		<string>GenSenMaruGothicTW-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
