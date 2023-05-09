@@ -63,3 +63,32 @@ func pushVC(targetVC:UIViewController, navigation:UINavigationController) {
         }
     }
 }
+
+
+func validateEmail(text:String) -> Bool {
+    let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+    return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: text)
+}
+
+
+func validateCellPhone(text:String) -> Bool{
+    let mobileReg = "^09\\d{8}$"
+    let resgextestMobile = NSPredicate(format: "SELF MATCHES %@", mobileReg).evaluate(with: text)
+    return resgextestMobile
+}
+
+
+func cellsForTableView(tableView:UITableView) -> [UITableViewCell] {
+    var cells:[UITableViewCell] = []
+    let sections = tableView.numberOfSections
+    for section in 0...sections - 1 {
+        let rows = tableView.numberOfRows(inSection: section)
+        for row in 0...rows - 1 {
+            let indexPath = IndexPath(row: row, section: section)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cells.append(cell)
+            }
+        }
+    }
+    return cells
+}

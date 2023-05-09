@@ -12,6 +12,8 @@ class ProfileTableViewCell: UITableViewCell {
     static let identifier = "ProfileTableViewCell"
     
     @IBOutlet weak var infoTitle:UILabel!
+    
+    @IBOutlet weak var info:UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
