@@ -20,22 +20,22 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="ewC-JU-nHV" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-Lm-9Uz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-Lm-9Uz">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonMessageTableViewCell" id="DO6-b4-6p2" customClass="PersonMessageTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="20.333333969116211"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DO6-b4-6p2" id="Z2p-im-EGa">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="20.333333969116211"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-ag-uRG">
-                                                    <rect key="frame" x="20" y="10" width="353" height="0.33333333333333393"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="0.0"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="log-Bk-rKl">
-                                                            <rect key="frame" x="10" y="0.0" width="0.33333333333333393" height="0.33333333333333331"/>
+                                                            <rect key="frame" x="10" y="0.0" width="0.0" height="0.0"/>
                                                             <color key="backgroundColor" red="0.82745098039215681" green="0.69019607843137254" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="log-Bk-rKl" secondAttribute="height" multiplier="1:1" id="pw8-75-Z0F"/>
@@ -78,8 +78,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="eOz-ew-Qrs"/>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="mbg-AL-dYw"/>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="tH2-1m-6X4"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="ZLl-7Q-fgZ"/>
                                 </connections>
                             </tableView>
                         </subviews>

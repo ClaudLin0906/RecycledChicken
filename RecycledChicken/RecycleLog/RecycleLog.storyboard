@@ -39,7 +39,7 @@
                                             <action selector="changeAmount:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="u2T-5R-CAC"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d9r-cX-EYf">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d9r-cX-EYf">
                                         <rect key="frame" x="20" y="65" width="353" height="600"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,8 +88,8 @@
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
-                                            <outlet property="dataSource" destination="Y6W-OH-hqX" id="myY-Zh-yXD"/>
-                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="M5Q-mc-rXC"/>
+                                            <outlet property="dataSource" destination="Y6W-OH-hqX" id="PiM-0d-6N7"/>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="DWA-ER-E2c"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
@@ -121,7 +121,7 @@
                     <navigationItem key="navigationItem" id="GKq-Ip-MsP"/>
                     <connections>
                         <outlet property="monthBtn" destination="6La-be-1nu" id="S1G-0I-SMS"/>
-                        <outlet property="tableView" destination="d9r-cX-EYf" id="PaQ-bE-lda"/>
+                        <outlet property="tableView" destination="d9r-cX-EYf" id="WoE-tm-aKD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
