@@ -115,10 +115,25 @@ class ProfileVC: CustomVC {
 //            return
 //        }
         
-        let profileUpdateView = ProfileUpdateView(frame: view.frame)
-
-        view.addSubview(profileUpdateView)
+        showProfileUpdateView()
         
+    }
+    
+    func showProfileUpdateView (){
+        DispatchQueue.main.async { [self] in
+            let profileUpdateView = ProfileUpdateView(frame: view.frame)
+            profileUpdateView.alpha = 0
+            view.addSubview(profileUpdateView)
+            UIView.animate(withDuration: 1, delay: 0) {
+                profileUpdateView.alpha = 1
+            } completion: { _ in
+                UIView.animate(withDuration: 1, delay: 0) {
+                    profileUpdateView.alpha = 0
+                } completion: { _ in
+                    profileUpdateView.removeFromSuperview()
+                }
+            }
+        }
     }
     
     private func showSignLoginVC(){

@@ -39,5 +39,10 @@ class HomeVC: CustomRootVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
-
+    
+    @IBAction func goToPersonMessage(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PersonMessage", bundle: Bundle.main).instantiateViewController(identifier: "PersonMessage") as? PersonMessageVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
 }

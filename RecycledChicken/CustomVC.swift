@@ -53,6 +53,13 @@ class CustomVC: UIViewController {
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
         view.endEditing(true)
     }
+    
+    func setBackgroundImage(){
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = UIImage(named: "グループ 1089")
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
+    }
 
 }
 

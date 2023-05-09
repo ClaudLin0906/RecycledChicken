@@ -1,0 +1,40 @@
+//
+//  PersonMessageVC.swift
+//  RecycledChicken
+//
+//  Created by 林書郁 on 2023/5/9.
+//
+
+import UIKit
+
+class PersonMessageVC: CustomVC {
+    
+    @IBOutlet weak var personMessageTableView:UITableView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "個人訊息"
+        setDefaultNavigationBackBtn2()
+        personMessageTableView.setSeparatorLocation()
+        // Do any additional setup after loading the view.
+    }
+
+}
+
+extension PersonMessageVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PersonMessageTableViewCell.identifier, for: indexPath) as! PersonMessageTableViewCell
+        return cell
+    }
+    
+    
+}

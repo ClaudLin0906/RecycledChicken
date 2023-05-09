@@ -75,6 +75,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3x-7f-awZ">
+                                        <rect key="frame" x="109" y="15" width="59" height="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="goToPersonMessage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NOt-DG-KKr"/>
+                                        </connections>
+                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="y7CRSB.tif" translatesAutoresizingMaskIntoConstraints="NO" id="6Do-ZF-iTR">
                                         <rect key="frame" x="304" y="15" width="20" height="20"/>
                                     </imageView>
@@ -87,17 +94,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="F3x-7f-awZ" firstAttribute="top" secondItem="kkn-YO-Zan" secondAttribute="top" id="0Uu-tP-B4s"/>
                                     <constraint firstItem="fdY-cx-ofk" firstAttribute="centerY" secondItem="Au5-fR-Nsa" secondAttribute="centerY" id="559-dG-QpM"/>
                                     <constraint firstItem="7wA-1Y-6h3" firstAttribute="centerY" secondItem="6Do-ZF-iTR" secondAttribute="centerY" id="5wf-g8-JCe"/>
                                     <constraint firstItem="kkn-YO-Zan" firstAttribute="centerY" secondItem="fdY-cx-ofk" secondAttribute="centerY" id="7D3-CA-4UV"/>
                                     <constraint firstAttribute="trailing" secondItem="7wA-1Y-6h3" secondAttribute="trailing" constant="30" id="A8G-xf-AHN"/>
                                     <constraint firstItem="6Do-ZF-iTR" firstAttribute="width" secondItem="kkn-YO-Zan" secondAttribute="width" id="Jie-MX-Fg4"/>
                                     <constraint firstItem="gcO-Mb-bsb" firstAttribute="centerY" secondItem="fdY-cx-ofk" secondAttribute="centerY" id="LIl-kg-HGw"/>
+                                    <constraint firstItem="F3x-7f-awZ" firstAttribute="leading" secondItem="kkn-YO-Zan" secondAttribute="leading" id="Pir-4h-Pq4"/>
+                                    <constraint firstItem="F3x-7f-awZ" firstAttribute="trailing" secondItem="uFO-hx-dt1" secondAttribute="trailing" id="Spm-4p-3nF"/>
                                     <constraint firstItem="gcO-Mb-bsb" firstAttribute="leading" secondItem="fdY-cx-ofk" secondAttribute="trailing" constant="5" id="TV6-7R-Qe7"/>
                                     <constraint firstItem="uFO-hx-dt1" firstAttribute="centerY" secondItem="kkn-YO-Zan" secondAttribute="centerY" id="U9j-df-aRB"/>
                                     <constraint firstItem="7wA-1Y-6h3" firstAttribute="baseline" secondItem="uFO-hx-dt1" secondAttribute="baseline" id="V3c-MW-zd5"/>
                                     <constraint firstItem="6Do-ZF-iTR" firstAttribute="height" secondItem="kkn-YO-Zan" secondAttribute="height" id="VaA-0C-DXy"/>
                                     <constraint firstItem="ueC-DT-EX2" firstAttribute="leading" secondItem="fdY-cx-ofk" secondAttribute="leading" id="YEg-xI-MWg"/>
+                                    <constraint firstItem="F3x-7f-awZ" firstAttribute="bottom" secondItem="kkn-YO-Zan" secondAttribute="bottom" id="Zke-jw-6ra"/>
                                     <constraint firstItem="ueC-DT-EX2" firstAttribute="trailing" secondItem="gcO-Mb-bsb" secondAttribute="trailing" id="af9-6J-F4e"/>
                                     <constraint firstItem="kkn-YO-Zan" firstAttribute="height" secondItem="fdY-cx-ofk" secondAttribute="height" id="dn5-dj-xAD"/>
                                     <constraint firstItem="kkn-YO-Zan" firstAttribute="leading" secondItem="gcO-Mb-bsb" secondAttribute="trailing" constant="20" id="fIf-KB-0E3"/>
