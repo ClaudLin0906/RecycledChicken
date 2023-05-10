@@ -50,6 +50,9 @@
 		599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495502A0BE7A3009F1B2E /* LotteryVC.swift */; };
 		599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495522A0BE7E4009F1B2E /* Lottery.storyboard */; };
 		599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */; };
+		599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495572A0BF234009F1B2E /* CommodityVoucherVC.swift */; };
+		5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495592A0BF261009F1B2E /* CommodityVoucher.storyboard */; };
+		5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994955B2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -145,6 +148,9 @@
 		599495502A0BE7A3009F1B2E /* LotteryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryVC.swift; sourceTree = "<group>"; };
 		599495522A0BE7E4009F1B2E /* Lottery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lottery.storyboard; sourceTree = "<group>"; };
 		599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTableViewCell.swift; sourceTree = "<group>"; };
+		599495572A0BF234009F1B2E /* CommodityVoucherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityVoucherVC.swift; sourceTree = "<group>"; };
+		599495592A0BF261009F1B2E /* CommodityVoucher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommodityVoucher.storyboard; sourceTree = "<group>"; };
+		5994955B2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityVoucherTableViewCell.swift; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -255,6 +261,7 @@
 				5975219B2A0BD70800D0B67C /* Point */,
 				5994954F2A0BE77E009F1B2E /* Lottery  */,
 				5926C5832A04086400FAB49D /* Main.storyboard */,
+				599495562A0BF17E009F1B2E /* CommodityVoucher */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
@@ -400,6 +407,16 @@
 				599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */,
 			);
 			path = "Lottery ";
+			sourceTree = "<group>";
+		};
+		599495562A0BF17E009F1B2E /* CommodityVoucher */ = {
+			isa = PBXGroup;
+			children = (
+				599495572A0BF234009F1B2E /* CommodityVoucherVC.swift */,
+				599495592A0BF261009F1B2E /* CommodityVoucher.storyboard */,
+				5994955B2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift */,
+			);
+			path = CommodityVoucher;
 			sourceTree = "<group>";
 		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
@@ -580,6 +597,7 @@
 				597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */,
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
 				597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */,
+				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
@@ -687,6 +705,8 @@
 				597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */,
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
+				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
+				599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
 			);
