@@ -50,7 +50,9 @@ extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 2:
-            break
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ConnectCompany", bundle: Bundle.main).instantiateViewController(identifier: "ConnectCompany") as? ConnectCompanyVC {
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
         case 3:
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PrivacyPolicy", bundle: Bundle.main).instantiateViewController(identifier: "PrivacyPolicy") as? PrivacyPolicyVC {
                 pushVC(targetVC: VC, navigation: navigationController)
