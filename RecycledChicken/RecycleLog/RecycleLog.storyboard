@@ -45,7 +45,7 @@
                                         <color key="separatorColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecycleLogTableViewCell" id="Llh-bH-uTu" customClass="RecycleLogTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecycleLogTableViewCell" id="Llh-bH-uTu" customClass="RecycleLogTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="353" height="20"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Llh-bH-uTu" id="CfS-D4-3d6">
