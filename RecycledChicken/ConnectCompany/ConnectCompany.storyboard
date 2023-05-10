@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xop-NK-kRY" userLabel="backgoundView">
-                                <rect key="frame" x="0.0" y="153" width="393" height="665"/>
+                                <rect key="frame" x="0.0" y="153" width="393" height="715"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -32,16 +32,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af3-Ek-7N2">
-                                <rect key="frame" x="20" y="173" width="353" height="645"/>
+                                <rect key="frame" x="40" y="173" width="313" height="645"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NO8-Mg-pcf" userLabel="content">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="460"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="610"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-cO-phv" userLabel="step1">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請問您是用戶還是合作廠商?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMt-iW-Jcr">
-                                                        <rect key="frame" x="70.333333333333329" y="5" width="212.33333333333337" height="20"/>
+                                                        <rect key="frame" x="50.333333333333329" y="5" width="212.33333333333337" height="20"/>
                                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -56,17 +56,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLy-OB-RGr" userLabel="step2">
-                                                <rect key="frame" x="0.0" y="40" width="353" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <rect key="frame" x="0.0" y="40" width="313" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="EPg-ud-qXf"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDo-pg-0xD" userLabel="step3">
-                                                <rect key="frame" x="0.0" y="90" width="353" height="30"/>
+                                                <rect key="frame" x="0.0" y="90" width="313" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入您的意見內容" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsI-6F-Gi0">
-                                                        <rect key="frame" x="100" y="5" width="153" height="20"/>
+                                                        <rect key="frame" x="80" y="5" width="153" height="20"/>
                                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -80,17 +80,36 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faz-hA-usi" userLabel="steo4">
-                                                <rect key="frame" x="0.0" y="140" width="353" height="150"/>
+                                                <rect key="frame" x="0.0" y="140" width="313" height="300"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1QD-om-nin">
+                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="300"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="p9x-ms-5Qx"/>
+                                                    <constraint firstItem="1QD-om-nin" firstAttribute="top" secondItem="faz-hA-usi" secondAttribute="top" id="A4C-F2-zec"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1QD-om-nin" secondAttribute="trailing" id="dHv-YA-5Mm"/>
+                                                    <constraint firstItem="1QD-om-nin" firstAttribute="leading" secondItem="faz-hA-usi" secondAttribute="leading" id="hsJ-4a-rfW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1QD-om-nin" secondAttribute="bottom" id="jOS-Uw-NG4"/>
+                                                    <constraint firstAttribute="height" constant="300" id="p9x-ms-5Qx"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eml-tA-e8E" userLabel="step5">
-                                                <rect key="frame" x="0.0" y="310" width="353" height="30"/>
+                                                <rect key="frame" x="0.0" y="460" width="313" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您使用的連絡信箱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpC-zY-24I">
-                                                        <rect key="frame" x="108.66666666666666" y="5" width="136" height="20"/>
+                                                        <rect key="frame" x="88.666666666666657" y="5" width="136" height="20"/>
                                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -104,27 +123,69 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELw-2q-AhL" userLabel="step6">
-                                                <rect key="frame" x="0.0" y="360" width="353" height="50"/>
+                                                <rect key="frame" x="0.0" y="510" width="313" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-A1-zCu">
-                                                        <rect key="frame" x="0.0" y="15" width="51" height="20"/>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                                        <rect key="frame" x="5" y="16.333333333333371" width="42" height="17.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fm1-WY-2vs">
+                                                        <rect key="frame" x="52" y="0.0" width="256" height="49"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-Rn-hqf">
+                                                        <rect key="frame" x="0.0" y="49" width="313" height="1"/>
+                                                        <color key="backgroundColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="lOU-E9-DSJ"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="RfM-Rn-hqf" firstAttribute="leading" secondItem="ELw-2q-AhL" secondAttribute="leading" id="2CD-eC-DrP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RfM-Rn-hqf" secondAttribute="trailing" id="5kG-Ef-3e7"/>
+                                                    <constraint firstItem="fm1-WY-2vs" firstAttribute="leading" secondItem="MoM-A1-zCu" secondAttribute="trailing" constant="5" id="Hdw-gh-GOY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fm1-WY-2vs" secondAttribute="trailing" constant="5" id="Lpf-HQ-1I9"/>
                                                     <constraint firstItem="MoM-A1-zCu" firstAttribute="centerY" secondItem="ELw-2q-AhL" secondAttribute="centerY" id="ZNr-zn-9MV"/>
                                                     <constraint firstAttribute="height" constant="50" id="ex8-BP-XuR"/>
-                                                    <constraint firstItem="MoM-A1-zCu" firstAttribute="leading" secondItem="ELw-2q-AhL" secondAttribute="leading" id="iWi-bX-Cc6"/>
+                                                    <constraint firstItem="RfM-Rn-hqf" firstAttribute="top" secondItem="fm1-WY-2vs" secondAttribute="bottom" id="fAz-lZ-fWP"/>
+                                                    <constraint firstItem="MoM-A1-zCu" firstAttribute="leading" secondItem="ELw-2q-AhL" secondAttribute="leading" constant="5" id="iWi-bX-Cc6"/>
+                                                    <constraint firstItem="fm1-WY-2vs" firstAttribute="top" secondItem="ELw-2q-AhL" secondAttribute="top" id="mul-6H-Msc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="RfM-Rn-hqf" secondAttribute="bottom" id="nbW-Dc-jHD"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkI-vZ-awe" userLabel="step7">
-                                                <rect key="frame" x="0.0" y="430" width="353" height="30"/>
+                                                <rect key="frame" x="0.0" y="580" width="313" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcT-WR-qFV">
+                                                        <rect key="frame" x="106.66666666666666" y="-5" width="100" height="40"/>
+                                                        <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="gaY-Cl-xdE"/>
+                                                            <constraint firstAttribute="height" constant="40" id="vhf-uf-Ked"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="送出">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="59f-yK-GDy"/>
+                                                    <constraint firstItem="zcT-WR-qFV" firstAttribute="centerX" secondItem="EkI-vZ-awe" secondAttribute="centerX" id="euQ-dE-wGH"/>
+                                                    <constraint firstItem="zcT-WR-qFV" firstAttribute="centerY" secondItem="EkI-vZ-awe" secondAttribute="centerY" id="ya0-DN-e8N"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -171,11 +232,11 @@
                         <constraints>
                             <constraint firstItem="Xop-NK-kRY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="Cfx-7g-yAT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="af3-Ek-7N2" secondAttribute="bottom" id="D5v-ps-oFx"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="af3-Ek-7N2" secondAttribute="trailing" constant="20" id="MA9-k1-zNd"/>
-                            <constraint firstItem="af3-Ek-7N2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="OIZ-4J-5xZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="af3-Ek-7N2" secondAttribute="trailing" constant="40" id="MA9-k1-zNd"/>
+                            <constraint firstItem="af3-Ek-7N2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="OIZ-4J-5xZ"/>
                             <constraint firstItem="af3-Ek-7N2" firstAttribute="top" secondItem="Xop-NK-kRY" secondAttribute="top" constant="20" id="YSk-RM-UaH"/>
                             <constraint firstItem="Xop-NK-kRY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="eiU-dd-Jlg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Xop-NK-kRY" secondAttribute="bottom" id="orI-ne-sWq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Xop-NK-kRY" secondAttribute="bottom" constant="-50" id="orI-ne-sWq"/>
                             <constraint firstItem="Xop-NK-kRY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xSw-Yx-rCB"/>
                         </constraints>
                     </view>
@@ -205,6 +266,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
