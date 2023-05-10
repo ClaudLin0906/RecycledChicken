@@ -92,3 +92,21 @@ func cellsForTableView(tableView:UITableView) -> [UITableViewCell] {
     }
     return cells
 }
+
+func getTopController() -> UIViewController? {
+    let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+
+    if var topController = keyWindow?.rootViewController {
+        while let presentedViewController = topController.presentedViewController {
+            topController = presentedViewController
+        }
+        return topController
+    }
+    return nil
+}
+
+func addViewFullScreen(v:UIView) {
+    if let topVC = getTopController() {
+        topVC.view.addSubview(v)
+    }
+}

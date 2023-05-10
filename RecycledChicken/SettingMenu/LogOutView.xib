@@ -13,31 +13,58 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogOutView" customModule="RecycledChicken" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="组 1661" translatesAutoresizingMaskIntoConstraints="NO" id="NAR-nD-8Mu">
-                    <rect key="frame" x="96" y="326" width="200" height="200.00000000000006"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 1661" translatesAutoresizingMaskIntoConstraints="NO" id="NAR-nD-8Mu">
+                    <rect key="frame" x="146.66666666666666" y="326" width="100" height="100"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="200" id="Pln-ur-vbQ"/>
+                        <constraint firstAttribute="width" constant="100" id="Pln-ur-vbQ"/>
                         <constraint firstAttribute="width" secondItem="NAR-nD-8Mu" secondAttribute="height" multiplier="1:1" id="ieL-pD-X7t"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="資料已更新" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TF-I7-cbo">
-                    <rect key="frame" x="154" y="416" width="85" height="20"/>
-                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否確定登出本帳號?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TF-I7-cbo">
+                    <rect key="frame" x="0.0" y="456" width="393" height="23.333333333333314"/>
+                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-nB-01P">
+                    <rect key="frame" x="146.66666666666666" y="499.33333333333326" width="100" height="40"/>
+                    <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="GoY-SG-Uax"/>
+                        <constraint firstAttribute="height" constant="40" id="zBK-dQ-pgL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="確 定 登 出">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="logOut:" destination="-1" eventType="touchUpInside" id="T1L-Wg-LiK"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="NAR-nD-8Mu" firstAttribute="width" secondItem="NAR-nD-8Mu" secondAttribute="height" multiplier="1:1" id="IaC-xi-iJV"/>
+                <constraint firstItem="8TF-I7-cbo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="67d-hB-B5j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8TF-I7-cbo" secondAttribute="trailing" id="Ele-Z9-GEg"/>
+                <constraint firstItem="Wcp-nB-01P" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="LsR-Xs-s45"/>
+                <constraint firstItem="Wcp-nB-01P" firstAttribute="top" secondItem="8TF-I7-cbo" secondAttribute="bottom" constant="20" id="X0P-l3-gVh"/>
                 <constraint firstItem="8TF-I7-cbo" firstAttribute="top" secondItem="NAR-nD-8Mu" secondAttribute="bottom" constant="30" id="Zc8-eC-SS9"/>
+                <constraint firstItem="NAR-nD-8Mu" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eR5-YN-wmD"/>
+                <constraint firstItem="8TF-I7-cbo" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="obC-4p-qJ8"/>
+                <constraint firstItem="NAR-nD-8Mu" firstAttribute="centerX" secondItem="8TF-I7-cbo" secondAttribute="centerX" id="xDO-4R-bQ3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-185" y="20"/>

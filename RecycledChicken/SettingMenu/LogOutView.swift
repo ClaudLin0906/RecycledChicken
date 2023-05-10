@@ -8,6 +8,8 @@
 import UIKit
 
 class LogOutView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var logOutBtn:UIButton!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +23,10 @@ class LogOutView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    @IBAction func logOut(_ sender:UIButton){
+        self.removeFromSuperview()
     }
 
 }

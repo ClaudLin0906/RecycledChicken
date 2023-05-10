@@ -39,7 +39,11 @@ class SettingMenuVC: CustomVC {
 extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("123")
+        let row = indexPath.row
+        if row == 4 {
+            let logOutView = LogOutView(frame: view.frame)
+            addViewFullScreen(v: logOutView)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

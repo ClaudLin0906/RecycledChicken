@@ -123,7 +123,7 @@ class ProfileVC: CustomVC {
         DispatchQueue.main.async { [self] in
             let profileUpdateView = ProfileUpdateView(frame: view.frame)
             profileUpdateView.alpha = 0
-            view.addSubview(profileUpdateView)
+            addViewFullScreen(v: profileUpdateView)
             UIView.animate(withDuration: 1, delay: 0) {
                 profileUpdateView.alpha = 1
             } completion: { _ in
