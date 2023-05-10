@@ -46,11 +46,15 @@ extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 1:
-            break
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CommonPronblem", bundle: Bundle.main).instantiateViewController(identifier: "CommonPronblem") as? CommonPronblemVC {
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
         case 2:
             break
         case 3:
-            break
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PrivacyPolicy", bundle: Bundle.main).instantiateViewController(identifier: "PrivacyPolicy") as? PrivacyPolicyVC {
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
         case 4:
             let logOutView = LogOutView(frame: view.frame)
             addViewFullScreen(v: logOutView)
