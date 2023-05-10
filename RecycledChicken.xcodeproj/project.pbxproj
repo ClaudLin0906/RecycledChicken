@@ -45,6 +45,8 @@
 		597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521952A0B948500D0B67C /* ConnectCompany.storyboard */; };
 		597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521972A0BD10600D0B67C /* ConnectSuccessView.swift */; };
 		5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597521992A0BD11700D0B67C /* ConnectSuccessView.xib */; };
+		5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975219E2A0BD74300D0B67C /* PointVC.swift */; };
+		597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521A02A0BD77E00D0B67C /* Point.storyboard */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -135,6 +137,8 @@
 		597521952A0B948500D0B67C /* ConnectCompany.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectCompany.storyboard; sourceTree = "<group>"; };
 		597521972A0BD10600D0B67C /* ConnectSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSuccessView.swift; sourceTree = "<group>"; };
 		597521992A0BD11700D0B67C /* ConnectSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectSuccessView.xib; sourceTree = "<group>"; };
+		5975219E2A0BD74300D0B67C /* PointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointVC.swift; sourceTree = "<group>"; };
+		597521A02A0BD77E00D0B67C /* Point.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Point.storyboard; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				5926C5972A06329300FAB49D /* Home */,
 				5926C5832A04086400FAB49D /* Main.storyboard */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				5975219B2A0BD70800D0B67C /* Point */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
 				59997A5D2A09EDE900E9FD7F /* CommonImageButton.swift */,
@@ -369,6 +374,15 @@
 				597521992A0BD11700D0B67C /* ConnectSuccessView.xib */,
 			);
 			path = ConnectCompany;
+			sourceTree = "<group>";
+		};
+		5975219B2A0BD70800D0B67C /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				5975219E2A0BD74300D0B67C /* PointVC.swift */,
+				597521A02A0BD77E00D0B67C /* Point.storyboard */,
+			);
+			path = Point;
 			sourceTree = "<group>";
 		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
@@ -537,6 +551,7 @@
 				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
+				597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */,
 				59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
@@ -616,6 +631,7 @@
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
 				59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */,
+				5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
 				597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */,
 				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,

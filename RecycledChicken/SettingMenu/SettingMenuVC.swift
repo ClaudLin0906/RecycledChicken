@@ -24,9 +24,13 @@ class SettingMenuVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "會員資料與系統設定"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setDefaultNavigationBackBtn2()
     }
     
     private func UIInit(){

@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="2483" y="-3"/>
         </scene>
-        <!--Home-->
+        <!--Point-->
         <scene sceneID="F6Q-6z-fBG">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="Hmf-vh-5UU" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Point" id="Hmf-vh-5UU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="點數" id="m5e-qC-Vbx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GiB-iG-5Ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
