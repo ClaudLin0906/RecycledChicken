@@ -45,4 +45,10 @@ class HomeVC: CustomRootVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
+    
+    @IBAction func goToSettingMenu(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "SettingMenu", bundle: Bundle.main).instantiateViewController(identifier: "SettingMenu") as? SettingMenuVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
 }

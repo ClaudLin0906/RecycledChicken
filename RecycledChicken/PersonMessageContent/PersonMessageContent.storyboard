@@ -20,14 +20,52 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="fp1-Rf-nLa" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52b-Be-cXd">
+                                <rect key="frame" x="20" y="103" width="353" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeR-cM-VBV">
+                                        <rect key="frame" x="20" y="20" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="KIF-1X-Mpj"/>
+                                            <constraint firstAttribute="width" secondItem="BeR-cM-VBV" secondAttribute="height" multiplier="1:1" id="WWj-Uh-LkC"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="BeR-cM-VBV" firstAttribute="top" secondItem="52b-Be-cXd" secondAttribute="top" constant="20" id="KNK-rh-CQ3"/>
+                                    <constraint firstAttribute="height" constant="300" id="Y90-bb-DeY"/>
+                                    <constraint firstItem="BeR-cM-VBV" firstAttribute="leading" secondItem="52b-Be-cXd" secondAttribute="leading" constant="20" id="gOG-Ot-R6h"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fp1-Rf-nLa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="2Gn-go-RtV"/>
+                            <constraint firstItem="52b-Be-cXd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="3aG-gb-MOD"/>
                             <constraint firstAttribute="bottom" secondItem="fp1-Rf-nLa" secondAttribute="bottom" id="ADa-z7-hpr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="52b-Be-cXd" secondAttribute="trailing" constant="20" id="C4h-3w-QtK"/>
                             <constraint firstItem="fp1-Rf-nLa" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="YnX-hy-o0N"/>
                             <constraint firstItem="fp1-Rf-nLa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="eJJ-ae-TQr"/>
+                            <constraint firstItem="52b-Be-cXd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="wRm-bu-bdz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="smd-cw-DJF"/>
