@@ -16,8 +16,19 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="YC1-bl-Pso" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="YC1-bl-Pso" secondAttribute="bottom" id="Fup-w2-2vU"/>
+                            <constraint firstItem="YC1-bl-Pso" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IJJ-Cw-pxg"/>
+                            <constraint firstItem="YC1-bl-Pso" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="nAf-wy-eVt"/>
+                            <constraint firstItem="YC1-bl-Pso" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="pYM-bv-vzq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="m3v-hw-Syy"/>
                 </viewController>
@@ -45,6 +56,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="グループ 1089" width="1125" height="2436"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
