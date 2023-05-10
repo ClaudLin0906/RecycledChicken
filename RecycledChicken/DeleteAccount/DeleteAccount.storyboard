@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0kR-Dk-eVi">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Regular.ttf">
+            <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Delete AccountVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DeleteAccount" id="Y6W-OH-hqX" customClass="DeleteAccountVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="dNX-kY-HQK" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz3-NW-rkZ">
+                                <rect key="frame" x="40" y="123.00000000000003" width="313" height="500.66666666666674"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【 重要須知】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiZ-fS-3Yz">
+                                        <rect key="frame" x="20" y="20" width="106" height="20"/>
+                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="XiZ-fS-3Yz" firstAttribute="top" secondItem="Zz3-NW-rkZ" secondAttribute="top" constant="20" id="azp-XF-5Cy"/>
+                                    <constraint firstItem="XiZ-fS-3Yz" firstAttribute="leading" secondItem="Zz3-NW-rkZ" secondAttribute="leading" constant="20" id="sCj-cj-RXZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrd-Eb-IDM">
+                                <rect key="frame" x="146.66666666666666" y="643.66666666666663" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="aBq-sv-04Y"/>
+                                    <constraint firstAttribute="height" constant="40" id="qIC-g2-CnA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="刪 除 帳 號">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dNX-kY-HQK" secondAttribute="bottom" id="758-8A-V7T"/>
+                            <constraint firstItem="Vrd-Eb-IDM" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="8LU-qc-G6F"/>
+                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.7" id="90U-9U-K6G"/>
+                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="D20-bz-0gF"/>
+                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="KPA-IW-wnE"/>
+                            <constraint firstItem="dNX-kY-HQK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Kr9-qj-37L"/>
+                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="Q3d-rJ-KV4"/>
+                            <constraint firstItem="Vrd-Eb-IDM" firstAttribute="top" secondItem="Zz3-NW-rkZ" secondAttribute="bottom" constant="20" id="Q8d-KS-jEv"/>
+                            <constraint firstItem="dNX-kY-HQK" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Tal-ax-tIy"/>
+                            <constraint firstItem="dNX-kY-HQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Y93-Mi-HWg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zz3-NW-rkZ" secondAttribute="trailing" constant="40" id="yZa-m6-JQx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vcS-CV-KWX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="741.22137404580144" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8mO-sm-VYk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0kR-Dk-eVi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zoB-Mo-iF3">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="BfL-4j-6Z4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEj-fz-Ahg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-185.49618320610685" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="グループ 1089" width="1125" height="2436"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

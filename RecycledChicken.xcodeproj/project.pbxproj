@@ -33,6 +33,14 @@
 		597521792A0B84A200D0B67C /* SystemSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521782A0B84A200D0B67C /* SystemSettingModel.swift */; };
 		5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975217A2A0B86A700D0B67C /* SwitchTableViewCell.swift */; };
 		5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975217C2A0B86B700D0B67C /* AccountTableViewCell.swift */; };
+		597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975217F2A0B8AB500D0B67C /* DeleteAccountVC.swift */; };
+		597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521812A0B8AE700D0B67C /* DeleteAccount.storyboard */; };
+		597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521842A0B8EB600D0B67C /* BindAccountVC.swift */; };
+		597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521862A0B8EDD00D0B67C /* BindAccount.storyboard */; };
+		5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521892A0B8F4600D0B67C /* PrivacyPolicyVC.swift */; };
+		5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5975218B2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard */; };
+		5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975218E2A0B902C00D0B67C /* CommonPronblemVC.swift */; };
+		597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521902A0B905300D0B67C /* CommonPronblem.storyboard */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -111,6 +119,14 @@
 		597521782A0B84A200D0B67C /* SystemSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingModel.swift; sourceTree = "<group>"; };
 		5975217A2A0B86A700D0B67C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		5975217C2A0B86B700D0B67C /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		5975217F2A0B8AB500D0B67C /* DeleteAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountVC.swift; sourceTree = "<group>"; };
+		597521812A0B8AE700D0B67C /* DeleteAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccount.storyboard; sourceTree = "<group>"; };
+		597521842A0B8EB600D0B67C /* BindAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindAccountVC.swift; sourceTree = "<group>"; };
+		597521862A0B8EDD00D0B67C /* BindAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BindAccount.storyboard; sourceTree = "<group>"; };
+		597521892A0B8F4600D0B67C /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
+		5975218B2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrivacyPolicy.storyboard; sourceTree = "<group>"; };
+		5975218E2A0B902C00D0B67C /* CommonPronblemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPronblemVC.swift; sourceTree = "<group>"; };
+		597521902A0B905300D0B67C /* CommonPronblem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommonPronblem.storyboard; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -200,8 +216,10 @@
 			children = (
 				5926C57D2A04086400FAB49D /* AppDelegate.swift */,
 				5926C57F2A04086400FAB49D /* SceneDelegate.swift */,
-				5926C5812A04086400FAB49D /* ViewController.swift */,
-				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
+				5975218D2A0B900500D0B67C /* CommonPronblem */,
+				597521882A0B8F1200D0B67C /* PrivacyPolicy */,
+				597521832A0B8E9A00D0B67C /* BindAccount */,
+				5975217E2A0B8A9A00D0B67C /* DeleteAccount */,
 				597521732A0B7E0000D0B67C /* SystemSetting */,
 				597521602A0B49A600D0B67C /* SettingMenu */,
 				59997A752A0A532400E9FD7F /* PersonMessageContent */,
@@ -223,6 +241,8 @@
 				59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */,
 				5926C5952A06325700FAB49D /* CustomRootVC.swift */,
 				59997A4C2A09181D00E9FD7F /* CustomVC.swift */,
+				5926C5812A04086400FAB49D /* ViewController.swift */,
+				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
 				59F6BE2B2A07639900D7B3CB /* Extension.swift */,
@@ -293,6 +313,42 @@
 				597521782A0B84A200D0B67C /* SystemSettingModel.swift */,
 			);
 			path = SystemSetting;
+			sourceTree = "<group>";
+		};
+		5975217E2A0B8A9A00D0B67C /* DeleteAccount */ = {
+			isa = PBXGroup;
+			children = (
+				5975217F2A0B8AB500D0B67C /* DeleteAccountVC.swift */,
+				597521812A0B8AE700D0B67C /* DeleteAccount.storyboard */,
+			);
+			path = DeleteAccount;
+			sourceTree = "<group>";
+		};
+		597521832A0B8E9A00D0B67C /* BindAccount */ = {
+			isa = PBXGroup;
+			children = (
+				597521842A0B8EB600D0B67C /* BindAccountVC.swift */,
+				597521862A0B8EDD00D0B67C /* BindAccount.storyboard */,
+			);
+			path = BindAccount;
+			sourceTree = "<group>";
+		};
+		597521882A0B8F1200D0B67C /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				597521892A0B8F4600D0B67C /* PrivacyPolicyVC.swift */,
+				5975218B2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
+		5975218D2A0B900500D0B67C /* CommonPronblem */ = {
+			isa = PBXGroup;
+			children = (
+				5975218E2A0B902C00D0B67C /* CommonPronblemVC.swift */,
+				597521902A0B905300D0B67C /* CommonPronblem.storyboard */,
+			);
+			path = CommonPronblem;
 			sourceTree = "<group>";
 		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
@@ -446,6 +502,7 @@
 			files = (
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
+				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
 				5926C5C02A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf in Resources */,
 				59F6BE382A07B56100D7B3CB /* GenSenMaruGothicTW-Regular.ttf in Resources */,
 				59F6BE392A07B56100D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf in Resources */,
@@ -461,6 +518,7 @@
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
 				59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
+				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
 				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
 				59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */,
@@ -469,8 +527,10 @@
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
+				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
 				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
+				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
 				59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */,
 				59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */,
 			);
@@ -528,8 +588,10 @@
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,
+				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */,
 				59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */,
+				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
 				59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
@@ -537,6 +599,7 @@
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
+				5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */,
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
 				5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */,
 				59997A4F2A09384300E9FD7F /* PetView.swift in Sources */,
@@ -556,6 +619,7 @@
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
+				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,

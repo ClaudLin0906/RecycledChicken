@@ -43,6 +43,27 @@ class SystemSettingVC: CustomVC {
 
 extension SystemSettingVC:UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tag = tableView.tag
+        let row = indexPath.row
+        switch (tag, row){
+        case(0,0):
+            break
+        case(0,1):
+            break
+        case(0,2):
+            break
+        case(1,0):
+            break
+        case(1,1):
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "DeleteAccount", bundle: Bundle.main).instantiateViewController(identifier: "DeleteAccount") as? DeleteAccountVC {
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
+        default:
+            break
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let tag = tableView.tag
         switch tag {
