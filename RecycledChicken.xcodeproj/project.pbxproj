@@ -28,6 +28,11 @@
 		5975216C2A0B648A00D0B67C /* SettingMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975216B2A0B648A00D0B67C /* SettingMenuModel.swift */; };
 		597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975216F2A0B6C7900D0B67C /* LogOutView.swift */; };
 		597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597521712A0B6C8500D0B67C /* LogOutView.xib */; };
+		597521752A0B7E2800D0B67C /* SystemSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521742A0B7E2800D0B67C /* SystemSettingVC.swift */; };
+		597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521762A0B7E5300D0B67C /* SystemSetting.storyboard */; };
+		597521792A0B84A200D0B67C /* SystemSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521782A0B84A200D0B67C /* SystemSettingModel.swift */; };
+		5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975217A2A0B86A700D0B67C /* SwitchTableViewCell.swift */; };
+		5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975217C2A0B86B700D0B67C /* AccountTableViewCell.swift */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -101,6 +106,11 @@
 		5975216B2A0B648A00D0B67C /* SettingMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuModel.swift; sourceTree = "<group>"; };
 		5975216F2A0B6C7900D0B67C /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
 		597521712A0B6C8500D0B67C /* LogOutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutView.xib; sourceTree = "<group>"; };
+		597521742A0B7E2800D0B67C /* SystemSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingVC.swift; sourceTree = "<group>"; };
+		597521762A0B7E5300D0B67C /* SystemSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SystemSetting.storyboard; sourceTree = "<group>"; };
+		597521782A0B84A200D0B67C /* SystemSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingModel.swift; sourceTree = "<group>"; };
+		5975217A2A0B86A700D0B67C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		5975217C2A0B86B700D0B67C /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -192,6 +202,7 @@
 				5926C57F2A04086400FAB49D /* SceneDelegate.swift */,
 				5926C5812A04086400FAB49D /* ViewController.swift */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
+				597521732A0B7E0000D0B67C /* SystemSetting */,
 				597521602A0B49A600D0B67C /* SettingMenu */,
 				59997A752A0A532400E9FD7F /* PersonMessageContent */,
 				59997A6E2A0A49F800E9FD7F /* PersonMessage */,
@@ -270,6 +281,18 @@
 				597521712A0B6C8500D0B67C /* LogOutView.xib */,
 			);
 			path = SettingMenu;
+			sourceTree = "<group>";
+		};
+		597521732A0B7E0000D0B67C /* SystemSetting */ = {
+			isa = PBXGroup;
+			children = (
+				597521742A0B7E2800D0B67C /* SystemSettingVC.swift */,
+				597521762A0B7E5300D0B67C /* SystemSetting.storyboard */,
+				5975217A2A0B86A700D0B67C /* SwitchTableViewCell.swift */,
+				5975217C2A0B86B700D0B67C /* AccountTableViewCell.swift */,
+				597521782A0B84A200D0B67C /* SystemSettingModel.swift */,
+			);
+			path = SystemSetting;
 			sourceTree = "<group>";
 		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
@@ -433,6 +456,7 @@
 				59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */,
 				59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
+				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
 				59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */,
@@ -509,13 +533,16 @@
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
 				59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
+				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
+				5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */,
 				59997A4F2A09384300E9FD7F /* PetView.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
+				597521752A0B7E2800D0B67C /* SystemSettingVC.swift in Sources */,
 				59997A702A0A4A1500E9FD7F /* PersonMessageVC.swift in Sources */,
 				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
 				59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */,
@@ -523,6 +550,7 @@
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
 				5926C5A22A06364800FAB49D /* Common.swift in Sources */,
 				5975216C2A0B648A00D0B67C /* SettingMenuModel.swift in Sources */,
+				597521792A0B84A200D0B67C /* SystemSettingModel.swift in Sources */,
 				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,

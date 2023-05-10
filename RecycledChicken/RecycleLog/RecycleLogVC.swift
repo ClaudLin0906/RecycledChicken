@@ -26,7 +26,6 @@ class RecycleLogVC: CustomVC {
     
     private func UIInit(){
         tableView.setSeparatorLocation()
-        tableView.separatorColor = CommonColor.shared.color5
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
     }

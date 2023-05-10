@@ -35,7 +35,6 @@ class ProfileVC: CustomVC {
     
     private func UIInit(){
         profileTableView.setSeparatorLocation()
-        profileTableView.separatorColor = CommonColor.shared.color5
     }
     
     private func createDatePicker(_ textfield:UITextField) {

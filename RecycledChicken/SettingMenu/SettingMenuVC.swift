@@ -31,7 +31,6 @@ class SettingMenuVC: CustomVC {
     
     private func UIInit(){
         tableView.setSeparatorLocation()
-        tableView.separatorColor = CommonColor.shared.color5
     }
     
 }
@@ -40,9 +39,28 @@ extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
-        if row == 4 {
+        
+        switch row {
+        case 0:
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "SystemSetting", bundle: Bundle.main).instantiateViewController(identifier: "SystemSetting") as? SystemSettingVC {
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
+        case 1:
+            break
+        case 2:
+            break
+        case 3:
+            break
+        case 4:
             let logOutView = LogOutView(frame: view.frame)
             addViewFullScreen(v: logOutView)
+        default:
+            break
+        }
+
+        
+        if row == 4 {
+
         }
     }
     

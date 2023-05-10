@@ -31,6 +31,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="wzz-bC-0ga"/>
                                 </constraints>
+                                <color key="separatorColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingMenuTableViewCell" id="64g-DD-kab" customClass="SettingMenuTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="333" height="43.666667938232422"/>
