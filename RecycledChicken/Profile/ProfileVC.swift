@@ -118,7 +118,7 @@ class ProfileVC: CustomVC {
         
     }
     
-    func showProfileUpdateView (){
+    private func showProfileUpdateView (){
         DispatchQueue.main.async { [self] in
             let profileUpdateView = ProfileUpdateView(frame: view.frame)
             profileUpdateView.alpha = 0

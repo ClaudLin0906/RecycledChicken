@@ -57,9 +57,50 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLy-OB-RGr" userLabel="step2">
                                                 <rect key="frame" x="0.0" y="40" width="313" height="30"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqk-XC-KeB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用戶" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-tz-uIe">
+                                                                <rect key="frame" x="5" y="5" width="283" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bjf-X7-qOJ">
+                                                                <rect key="frame" x="288" y="7.333333333333333" width="20" height="15.333333333333332"/>
+                                                                <color key="tintColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="QtE-w8-jNW"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="teV-q2-RKi"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Bjf-X7-qOJ" firstAttribute="centerY" secondItem="Lqk-XC-KeB" secondAttribute="centerY" id="0b5-qr-Ihc"/>
+                                                            <constraint firstItem="Bjf-X7-qOJ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xfb-tz-uIe" secondAttribute="trailing" id="Gbx-cW-Rp1"/>
+                                                            <constraint firstItem="xfb-tz-uIe" firstAttribute="leading" secondItem="Lqk-XC-KeB" secondAttribute="leading" constant="5" id="Pqx-IC-jJh"/>
+                                                            <constraint firstItem="xfb-tz-uIe" firstAttribute="centerY" secondItem="Lqk-XC-KeB" secondAttribute="centerY" id="rx1-2W-gIm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Bjf-X7-qOJ" secondAttribute="trailing" constant="5" id="xd6-A1-hCa"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="idD-Yh-7mJ" appends="YES" id="6nV-hV-lBd"/>
+                                                        </connections>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="Lqk-XC-KeB" firstAttribute="top" secondItem="WLy-OB-RGr" secondAttribute="top" id="AKI-FU-clf"/>
                                                     <constraint firstAttribute="height" constant="30" id="EPg-ud-qXf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Lqk-XC-KeB" secondAttribute="trailing" id="jkK-hL-J7m"/>
+                                                    <constraint firstItem="Lqk-XC-KeB" firstAttribute="leading" secondItem="WLy-OB-RGr" secondAttribute="leading" id="tTp-P4-Yhl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Lqk-XC-KeB" secondAttribute="bottom" id="xa7-d1-GF9"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDo-pg-0xD" userLabel="step3">
@@ -87,7 +128,7 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -179,6 +220,9 @@
                                                                 <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="mailSendSuccess:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pxP-ys-awY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -241,8 +285,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tDN-Sb-MhN"/>
+                    <connections>
+                        <outlet property="identityLabel" destination="xfb-tz-uIe" id="Szf-uy-g2x"/>
+                        <outlet property="identityView" destination="Lqk-XC-KeB" id="207-83-gyl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="idD-Yh-7mJ">
+                    <connections>
+                        <action selector="showIdentityListDropDown:" destination="Y6W-OH-hqX" id="jGD-AI-C6Y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="741.22137404580144" y="3.5211267605633805"/>
         </scene>
@@ -266,6 +319,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowtriangle.down.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

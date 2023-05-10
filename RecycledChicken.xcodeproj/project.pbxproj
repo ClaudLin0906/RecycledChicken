@@ -43,6 +43,8 @@
 		597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521902A0B905300D0B67C /* CommonPronblem.storyboard */; };
 		597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521932A0B944300D0B67C /* ConnectCompanyVC.swift */; };
 		597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521952A0B948500D0B67C /* ConnectCompany.storyboard */; };
+		597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521972A0BD10600D0B67C /* ConnectSuccessView.swift */; };
+		5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597521992A0BD11700D0B67C /* ConnectSuccessView.xib */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -131,6 +133,8 @@
 		597521902A0B905300D0B67C /* CommonPronblem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommonPronblem.storyboard; sourceTree = "<group>"; };
 		597521932A0B944300D0B67C /* ConnectCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyVC.swift; sourceTree = "<group>"; };
 		597521952A0B948500D0B67C /* ConnectCompany.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectCompany.storyboard; sourceTree = "<group>"; };
+		597521972A0BD10600D0B67C /* ConnectSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSuccessView.swift; sourceTree = "<group>"; };
+		597521992A0BD11700D0B67C /* ConnectSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectSuccessView.xib; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 			children = (
 				597521932A0B944300D0B67C /* ConnectCompanyVC.swift */,
 				597521952A0B948500D0B67C /* ConnectCompany.storyboard */,
+				597521972A0BD10600D0B67C /* ConnectSuccessView.swift */,
+				597521992A0BD11700D0B67C /* ConnectSuccessView.xib */,
 			);
 			path = ConnectCompany;
 			sourceTree = "<group>";
@@ -526,6 +532,7 @@
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
 				59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */,
 				59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */,
+				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
 				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
@@ -641,6 +648,7 @@
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
+				597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */,
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
