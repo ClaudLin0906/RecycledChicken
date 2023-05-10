@@ -47,7 +47,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="746-v9-or6">
-                                                    <rect key="frame" x="40" y="13.333333333333336" width="36" height="17"/>
+                                                    <rect key="frame" x="40" y="13.333333333333336" width="243" height="17"/>
                                                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,6 +63,7 @@
                                                 <constraint firstItem="HIp-1H-FFo" firstAttribute="leading" secondItem="lNO-gd-5d4" secondAttribute="leading" constant="10" id="HKh-1j-ZII"/>
                                                 <constraint firstItem="HIp-1H-FFo" firstAttribute="centerY" secondItem="lNO-gd-5d4" secondAttribute="centerY" id="IcD-16-70t"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2Y2-f5-ZJl" secondAttribute="trailing" constant="10" id="bRI-ZU-3Mu"/>
+                                                <constraint firstItem="746-v9-or6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2Y2-f5-ZJl" secondAttribute="leading" id="cik-lg-EHO"/>
                                                 <constraint firstItem="2Y2-f5-ZJl" firstAttribute="width" secondItem="HIp-1H-FFo" secondAttribute="width" id="h3A-LZ-rn1"/>
                                                 <constraint firstItem="2Y2-f5-ZJl" firstAttribute="height" secondItem="HIp-1H-FFo" secondAttribute="height" id="mkF-Bs-Cx6"/>
                                             </constraints>

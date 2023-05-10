@@ -16,7 +16,7 @@ class SettingMenuVC: CustomVC {
         settingMenuInfo(icon: UIImage(named: "组 431")!, title: "系統設定", rightImage: UIImage(named: "273")!),
         settingMenuInfo(icon: UIImage(named: "组 430")!, title: "常見問題說明", rightImage: UIImage(named: "273")!),
         settingMenuInfo(icon: UIImage(named: "组 428")!, title: "聯絡客服與合作提案", rightImage: UIImage(named: "273")!),
-        settingMenuInfo(icon: UIImage(named: "组 428")!, title: "服務條款與隱私政策", rightImage: UIImage(named: "273")!),
+        settingMenuInfo(icon: UIImage(named: "组 618")!, title: "服務條款與隱私政策", rightImage: UIImage(named: "273")!),
         settingMenuInfo(icon: UIImage(named: "组 423")!, title: "登出", rightImage: nil)
     ]
     

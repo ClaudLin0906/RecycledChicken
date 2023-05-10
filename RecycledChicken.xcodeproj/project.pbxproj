@@ -26,6 +26,8 @@
 		597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */; };
 		5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */; };
 		5975216C2A0B648A00D0B67C /* SettingMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975216B2A0B648A00D0B67C /* SettingMenuModel.swift */; };
+		597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975216F2A0B6C7900D0B67C /* LogOutView.swift */; };
+		597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597521712A0B6C8500D0B67C /* LogOutView.xib */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -97,6 +99,8 @@
 		597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingMenu.storyboard; sourceTree = "<group>"; };
 		597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuTableViewCell.swift; sourceTree = "<group>"; };
 		5975216B2A0B648A00D0B67C /* SettingMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuModel.swift; sourceTree = "<group>"; };
+		5975216F2A0B6C7900D0B67C /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
+		597521712A0B6C8500D0B67C /* LogOutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutView.xib; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */,
 				597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */,
 				5975216B2A0B648A00D0B67C /* SettingMenuModel.swift */,
+				5975216F2A0B6C7900D0B67C /* LogOutView.swift */,
+				597521712A0B6C8500D0B67C /* LogOutView.xib */,
 			);
 			path = SettingMenu;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
 				59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */,
 				59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */,
+				597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */,
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
@@ -526,6 +533,7 @@
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
+				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
