@@ -56,6 +56,10 @@
 		5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994955E2A0BF7B4009F1B2E /* MyTickerVC.swift */; };
 		599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495602A0BF812009F1B2E /* MyTicker.storyboard */; };
 		599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495622A0BF8D9009F1B2E /* MyTickerTableViewCell.swift */; };
+		599495662A0BFA1A009F1B2E /* BuyLotteryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495652A0BFA1A009F1B2E /* BuyLotteryVC.swift */; };
+		599495682A0BFA4F009F1B2E /* BuyLottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495672A0BFA4F009F1B2E /* BuyLottery.storyboard */; };
+		5994956B2A0BFC48009F1B2E /* SpendPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994956A2A0BFC48009F1B2E /* SpendPointView.swift */; };
+		5994956D2A0BFC88009F1B2E /* SpendPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5994956C2A0BFC88009F1B2E /* SpendPointView.xib */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -157,6 +161,10 @@
 		5994955E2A0BF7B4009F1B2E /* MyTickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTickerVC.swift; sourceTree = "<group>"; };
 		599495602A0BF812009F1B2E /* MyTicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyTicker.storyboard; sourceTree = "<group>"; };
 		599495622A0BF8D9009F1B2E /* MyTickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTickerTableViewCell.swift; sourceTree = "<group>"; };
+		599495652A0BFA1A009F1B2E /* BuyLotteryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyLotteryVC.swift; sourceTree = "<group>"; };
+		599495672A0BFA4F009F1B2E /* BuyLottery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyLottery.storyboard; sourceTree = "<group>"; };
+		5994956A2A0BFC48009F1B2E /* SpendPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendPointView.swift; sourceTree = "<group>"; };
+		5994956C2A0BFC88009F1B2E /* SpendPointView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendPointView.xib; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -265,10 +273,12 @@
 				5926C5C12A065C9D00FAB49D /* SignLogin */,
 				5926C5972A06329300FAB49D /* Home */,
 				5975219B2A0BD70800D0B67C /* Point */,
+				599495642A0BF9E0009F1B2E /* BuyLottery */,
 				5994954F2A0BE77E009F1B2E /* Lottery  */,
 				599495562A0BF17E009F1B2E /* CommodityVoucher */,
 				5994955D2A0BF77E009F1B2E /* MyTicker */,
 				5926C5832A04086400FAB49D /* Main.storyboard */,
+				599495692A0BFC12009F1B2E /* CommonUI */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
@@ -436,6 +446,24 @@
 			path = MyTicker;
 			sourceTree = "<group>";
 		};
+		599495642A0BF9E0009F1B2E /* BuyLottery */ = {
+			isa = PBXGroup;
+			children = (
+				599495652A0BFA1A009F1B2E /* BuyLotteryVC.swift */,
+				599495672A0BFA4F009F1B2E /* BuyLottery.storyboard */,
+			);
+			path = BuyLottery;
+			sourceTree = "<group>";
+		};
+		599495692A0BFC12009F1B2E /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				5994956A2A0BFC48009F1B2E /* SpendPointView.swift */,
+				5994956C2A0BFC88009F1B2E /* SpendPointView.xib */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +620,7 @@
 				599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */,
 				59F6BE382A07B56100D7B3CB /* GenSenMaruGothicTW-Regular.ttf in Resources */,
 				59F6BE392A07B56100D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf in Resources */,
+				599495682A0BFA4F009F1B2E /* BuyLottery.storyboard in Resources */,
 				59997A6D2A0A422D00E9FD7F /* ProfileUpdateView.xib in Resources */,
 				59F6BE372A07B56100D7B3CB /* GenSenMaruGothicTW-Light.ttf in Resources */,
 				59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */,
@@ -623,6 +652,7 @@
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
 				59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */,
+				5994956D2A0BFC88009F1B2E /* SpendPointView.xib in Resources */,
 				59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,12 +753,14 @@
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
 				597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */,
+				5994956B2A0BFC48009F1B2E /* SpendPointView.swift in Sources */,
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
 				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
 				599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
+				599495662A0BFA1A009F1B2E /* BuyLotteryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

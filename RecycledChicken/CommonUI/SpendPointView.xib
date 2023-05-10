@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpendPointView" customModule="RecycledChicken" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KyG-V6-8gF">
+                    <rect key="frame" x="20" y="362" width="353" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VGw-wz-Zvb" userLabel="content">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="128"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2t-VS-hG4" userLabel="step1">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="300"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5m-ju-wZX">
+                                            <rect key="frame" x="20" y="10" width="313" height="290"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="Avx-Ht-gGL"/>
+                                        <constraint firstAttribute="bottom" secondItem="L5m-ju-wZX" secondAttribute="bottom" id="J5q-FK-qqd"/>
+                                        <constraint firstItem="L5m-ju-wZX" firstAttribute="top" secondItem="G2t-VS-hG4" secondAttribute="top" constant="10" id="QyC-15-xe9"/>
+                                        <constraint firstItem="L5m-ju-wZX" firstAttribute="leading" secondItem="G2t-VS-hG4" secondAttribute="leading" constant="20" id="g2L-Hr-iCN"/>
+                                        <constraint firstAttribute="trailing" secondItem="L5m-ju-wZX" secondAttribute="trailing" constant="20" id="la5-r5-vpj"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isa-hC-UNk" userLabel="step2">
+                                    <rect key="frame" x="0.0" y="310" width="353" height="50"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7t-Va-S5w">
+                                            <rect key="frame" x="76.666666666666686" y="0.0" width="200" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="L8v-iB-uDm"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="k7t-Va-S5w" firstAttribute="centerX" secondItem="isa-hC-UNk" secondAttribute="centerX" id="LIF-un-CsW"/>
+                                        <constraint firstItem="k7t-Va-S5w" firstAttribute="height" secondItem="isa-hC-UNk" secondAttribute="height" id="WTl-rI-dxj"/>
+                                        <constraint firstItem="k7t-Va-S5w" firstAttribute="centerY" secondItem="isa-hC-UNk" secondAttribute="centerY" id="ZIU-uY-02v"/>
+                                        <constraint firstAttribute="height" constant="50" id="yjq-ZR-vem"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="isa-hC-UNk" firstAttribute="trailing" secondItem="G2t-VS-hG4" secondAttribute="trailing" id="Cef-3e-Xfr"/>
+                                <constraint firstItem="isa-hC-UNk" firstAttribute="leading" secondItem="G2t-VS-hG4" secondAttribute="leading" id="JRg-b8-rjn"/>
+                                <constraint firstItem="G2t-VS-hG4" firstAttribute="top" secondItem="VGw-wz-Zvb" secondAttribute="top" id="KbW-Of-7jc"/>
+                                <constraint firstItem="isa-hC-UNk" firstAttribute="top" secondItem="G2t-VS-hG4" secondAttribute="bottom" constant="10" id="UVC-kN-RKI"/>
+                                <constraint firstItem="G2t-VS-hG4" firstAttribute="leading" secondItem="VGw-wz-Zvb" secondAttribute="leading" id="acv-Qr-s7t"/>
+                                <constraint firstAttribute="trailing" secondItem="G2t-VS-hG4" secondAttribute="trailing" id="tRt-X5-lkY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="VGw-wz-Zvb" firstAttribute="top" secondItem="sXa-jV-PSd" secondAttribute="top" id="6wj-Qv-GnO"/>
+                        <constraint firstItem="VGw-wz-Zvb" firstAttribute="bottom" secondItem="sXa-jV-PSd" secondAttribute="bottom" id="Cdh-oH-gFV"/>
+                        <constraint firstItem="VGw-wz-Zvb" firstAttribute="leading" secondItem="sXa-jV-PSd" secondAttribute="leading" id="Ucn-nq-hPE"/>
+                        <constraint firstItem="VGw-wz-Zvb" firstAttribute="width" secondItem="EcB-Mo-eQp" secondAttribute="width" id="Ypa-5c-LIb"/>
+                        <constraint firstItem="VGw-wz-Zvb" firstAttribute="trailing" secondItem="sXa-jV-PSd" secondAttribute="trailing" id="foo-z7-hcA"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="sXa-jV-PSd"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="EcB-Mo-eQp"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KyG-V6-8gF" secondAttribute="trailing" constant="20" id="48g-i2-CBL"/>
+                <constraint firstItem="KyG-V6-8gF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Vt0-oQ-hpf"/>
+                <constraint firstItem="KyG-V6-8gF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="bqN-mf-f6t"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KyG-V6-8gF" secondAttribute="bottom" id="xdG-zR-xF8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-187" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
