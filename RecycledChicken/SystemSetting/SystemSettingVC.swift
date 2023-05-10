@@ -54,7 +54,9 @@ extension SystemSettingVC:UITableViewDelegate, UITableViewDataSource {
         case(0,2):
             break
         case(1,0):
-            break
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BindAccount", bundle: Bundle.main).instantiateViewController(identifier: "BindAccount") as? BindAccountVC {
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
         case(1,1):
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "DeleteAccount", bundle: Bundle.main).instantiateViewController(identifier: "DeleteAccount") as? DeleteAccountVC {
                 pushVC(targetVC: VC, navigation: navigationController)
