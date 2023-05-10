@@ -53,6 +53,9 @@
 		599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495572A0BF234009F1B2E /* CommodityVoucherVC.swift */; };
 		5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495592A0BF261009F1B2E /* CommodityVoucher.storyboard */; };
 		5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994955B2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift */; };
+		5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994955E2A0BF7B4009F1B2E /* MyTickerVC.swift */; };
+		599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495602A0BF812009F1B2E /* MyTicker.storyboard */; };
+		599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495622A0BF8D9009F1B2E /* MyTickerTableViewCell.swift */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -151,6 +154,9 @@
 		599495572A0BF234009F1B2E /* CommodityVoucherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityVoucherVC.swift; sourceTree = "<group>"; };
 		599495592A0BF261009F1B2E /* CommodityVoucher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommodityVoucher.storyboard; sourceTree = "<group>"; };
 		5994955B2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityVoucherTableViewCell.swift; sourceTree = "<group>"; };
+		5994955E2A0BF7B4009F1B2E /* MyTickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTickerVC.swift; sourceTree = "<group>"; };
+		599495602A0BF812009F1B2E /* MyTicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyTicker.storyboard; sourceTree = "<group>"; };
+		599495622A0BF8D9009F1B2E /* MyTickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTickerTableViewCell.swift; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -260,8 +266,9 @@
 				5926C5972A06329300FAB49D /* Home */,
 				5975219B2A0BD70800D0B67C /* Point */,
 				5994954F2A0BE77E009F1B2E /* Lottery  */,
-				5926C5832A04086400FAB49D /* Main.storyboard */,
 				599495562A0BF17E009F1B2E /* CommodityVoucher */,
+				5994955D2A0BF77E009F1B2E /* MyTicker */,
+				5926C5832A04086400FAB49D /* Main.storyboard */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
@@ -417,6 +424,16 @@
 				5994955B2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift */,
 			);
 			path = CommodityVoucher;
+			sourceTree = "<group>";
+		};
+		5994955D2A0BF77E009F1B2E /* MyTicker */ = {
+			isa = PBXGroup;
+			children = (
+				5994955E2A0BF7B4009F1B2E /* MyTickerVC.swift */,
+				599495602A0BF812009F1B2E /* MyTicker.storyboard */,
+				599495622A0BF8D9009F1B2E /* MyTickerTableViewCell.swift */,
+			);
+			path = MyTicker;
 			sourceTree = "<group>";
 		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
@@ -602,6 +619,7 @@
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
 				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
+				599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
 				59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */,
@@ -662,7 +680,9 @@
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
+				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
 				59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */,
+				599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */,
 				59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */,
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
