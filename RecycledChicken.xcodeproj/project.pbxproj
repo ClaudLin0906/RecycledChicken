@@ -47,6 +47,9 @@
 		5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597521992A0BD11700D0B67C /* ConnectSuccessView.xib */; };
 		5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975219E2A0BD74300D0B67C /* PointVC.swift */; };
 		597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521A02A0BD77E00D0B67C /* Point.storyboard */; };
+		599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495502A0BE7A3009F1B2E /* LotteryVC.swift */; };
+		599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495522A0BE7E4009F1B2E /* Lottery.storyboard */; };
+		599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -139,6 +142,9 @@
 		597521992A0BD11700D0B67C /* ConnectSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectSuccessView.xib; sourceTree = "<group>"; };
 		5975219E2A0BD74300D0B67C /* PointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointVC.swift; sourceTree = "<group>"; };
 		597521A02A0BD77E00D0B67C /* Point.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Point.storyboard; sourceTree = "<group>"; };
+		599495502A0BE7A3009F1B2E /* LotteryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryVC.swift; sourceTree = "<group>"; };
+		599495522A0BE7E4009F1B2E /* Lottery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lottery.storyboard; sourceTree = "<group>"; };
+		599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTableViewCell.swift; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -246,9 +252,10 @@
 				5926C59C2A06340F00FAB49D /* Login */,
 				5926C5C12A065C9D00FAB49D /* SignLogin */,
 				5926C5972A06329300FAB49D /* Home */,
+				5975219B2A0BD70800D0B67C /* Point */,
+				5994954F2A0BE77E009F1B2E /* Lottery  */,
 				5926C5832A04086400FAB49D /* Main.storyboard */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
-				5975219B2A0BD70800D0B67C /* Point */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
 				59997A5D2A09EDE900E9FD7F /* CommonImageButton.swift */,
@@ -383,6 +390,16 @@
 				597521A02A0BD77E00D0B67C /* Point.storyboard */,
 			);
 			path = Point;
+			sourceTree = "<group>";
+		};
+		5994954F2A0BE77E009F1B2E /* Lottery  */ = {
+			isa = PBXGroup;
+			children = (
+				599495502A0BE7A3009F1B2E /* LotteryVC.swift */,
+				599495522A0BE7E4009F1B2E /* Lottery.storyboard */,
+				599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */,
+			);
+			path = "Lottery ";
 			sourceTree = "<group>";
 		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
@@ -538,6 +555,7 @@
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
 				5926C5C02A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf in Resources */,
+				599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */,
 				59F6BE382A07B56100D7B3CB /* GenSenMaruGothicTW-Regular.ttf in Resources */,
 				59F6BE392A07B56100D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf in Resources */,
 				59997A6D2A0A422D00E9FD7F /* ProfileUpdateView.xib in Resources */,
@@ -642,6 +660,7 @@
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
 				5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */,
 				59997A4F2A09384300E9FD7F /* PetView.swift in Sources */,
+				599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
 				597521752A0B7E2800D0B67C /* SystemSettingVC.swift in Sources */,
@@ -660,6 +679,7 @@
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
+				599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */,
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,

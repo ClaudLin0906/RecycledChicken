@@ -27,4 +27,10 @@ class PointVC: CustomRootVC {
         myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
     }
 
+    @IBAction func goToLottery(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Lottery", bundle: Bundle.main).instantiateViewController(identifier: "Lottery") as? LotteryVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
 }
