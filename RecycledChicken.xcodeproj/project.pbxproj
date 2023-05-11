@@ -64,6 +64,8 @@
 		599495742A0C90E7009F1B2E /* BuyCommodity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495732A0C90E7009F1B2E /* BuyCommodity.storyboard */; };
 		599495772A0D0281009F1B2E /* PointRuleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495762A0D0281009F1B2E /* PointRuleVC.swift */; };
 		599495792A0D02B1009F1B2E /* PointRule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495782A0D02B1009F1B2E /* PointRule.storyboard */; };
+		5994957C2A0D2C1E009F1B2E /* StoreMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994957B2A0D2C1E009F1B2E /* StoreMapVC.swift */; };
+		5994957E2A0D2C7B009F1B2E /* StoreMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5994957D2A0D2C7B009F1B2E /* StoreMap.storyboard */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -89,6 +91,10 @@
 		59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */; };
 		59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A762A0A53A000E9FD7F /* PersonMessageContentVC.swift */; };
 		59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */; };
+		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
+		59C2D9A02A0D37330085724F /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D99F2A0D37330085724F /* AR.storyboard */; };
+		59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D9A22A0D37790085724F /* TaskVC.swift */; };
+		59C2D9A52A0D38490085724F /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D9A42A0D38490085724F /* Task.storyboard */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
 		59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */; };
@@ -173,6 +179,8 @@
 		599495732A0C90E7009F1B2E /* BuyCommodity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyCommodity.storyboard; sourceTree = "<group>"; };
 		599495762A0D0281009F1B2E /* PointRuleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRuleVC.swift; sourceTree = "<group>"; };
 		599495782A0D02B1009F1B2E /* PointRule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PointRule.storyboard; sourceTree = "<group>"; };
+		5994957B2A0D2C1E009F1B2E /* StoreMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMapVC.swift; sourceTree = "<group>"; };
+		5994957D2A0D2C7B009F1B2E /* StoreMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreMap.storyboard; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -198,6 +206,10 @@
 		59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageTableViewCell.swift; sourceTree = "<group>"; };
 		59997A762A0A53A000E9FD7F /* PersonMessageContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageContentVC.swift; sourceTree = "<group>"; };
 		59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonMessageContent.storyboard; sourceTree = "<group>"; };
+		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
+		59C2D99F2A0D37330085724F /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
+		59C2D9A22A0D37790085724F /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
+		59C2D9A42A0D38490085724F /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
 		59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignLogin.storyboard; sourceTree = "<group>"; };
@@ -287,8 +299,11 @@
 				5994955D2A0BF77E009F1B2E /* MyTicker */,
 				599495692A0BFC12009F1B2E /* CommonUI */,
 				5994956E2A0C8FD9009F1B2E /* BuyCommodity */,
-				5926C5832A04086400FAB49D /* Main.storyboard */,
 				599495752A0D024D009F1B2E /* PointRule */,
+				5994957A2A0D2BFF009F1B2E /* StoreMap */,
+				59C2D99C2A0D36E30085724F /* AR */,
+				59C2D9A12A0D375E0085724F /* Task */,
+				5926C5832A04086400FAB49D /* Main.storyboard */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
@@ -492,6 +507,15 @@
 			path = PointRule;
 			sourceTree = "<group>";
 		};
+		5994957A2A0D2BFF009F1B2E /* StoreMap */ = {
+			isa = PBXGroup;
+			children = (
+				5994957B2A0D2C1E009F1B2E /* StoreMapVC.swift */,
+				5994957D2A0D2C7B009F1B2E /* StoreMap.storyboard */,
+			);
+			path = StoreMap;
+			sourceTree = "<group>";
+		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +570,24 @@
 			path = PersonMessageContent;
 			sourceTree = "<group>";
 		};
+		59C2D99C2A0D36E30085724F /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				59C2D99D2A0D37000085724F /* ARVC.swift */,
+				59C2D99F2A0D37330085724F /* AR.storyboard */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		59C2D9A12A0D375E0085724F /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				59C2D9A22A0D37790085724F /* TaskVC.swift */,
+				59C2D9A42A0D38490085724F /* Task.storyboard */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
 		59F6BE2D2A078D7100D7B3CB /* Sign */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +635,7 @@
 				5926C5772A04086400FAB49D /* Frameworks */,
 				5926C5782A04086400FAB49D /* Resources */,
 				9943BC2BCFA823E14FF2A8D7 /* [CP] Embed Pods Frameworks */,
+				74409BD19F0D6B99358419CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -664,6 +707,7 @@
 				597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */,
 				599495792A0D02B1009F1B2E /* PointRule.storyboard in Resources */,
 				59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */,
+				59C2D9A52A0D38490085724F /* Task.storyboard in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
@@ -674,7 +718,9 @@
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
 				597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */,
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
+				5994957E2A0D2C7B009F1B2E /* StoreMap.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
+				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
 				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
@@ -712,6 +758,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		74409BD19F0D6B99358419CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9943BC2BCFA823E14FF2A8D7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -739,6 +802,7 @@
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,
+				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
 				59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */,
@@ -751,6 +815,7 @@
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
 				597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */,
 				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,
+				5994957C2A0D2C1E009F1B2E /* StoreMapVC.swift in Sources */,
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
@@ -781,6 +846,7 @@
 				599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */,
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,
+				59C2D99E2A0D37000085724F /* ARVC.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
 				597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */,
@@ -941,6 +1007,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 884W23P95V;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
@@ -975,6 +1042,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 884W23P95V;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";

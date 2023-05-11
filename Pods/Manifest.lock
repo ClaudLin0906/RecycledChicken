@@ -4,27 +4,39 @@ PODS:
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
   - DropDown (2.3.13)
+  - GoogleMaps (7.4.0):
+    - GoogleMaps/Maps (= 7.4.0)
+  - GoogleMaps/Base (7.4.0)
+  - GoogleMaps/Maps (7.4.0):
+    - GoogleMaps/Base
+  - GooglePlaces (7.4.0)
   - M13Checkbox (3.4.0)
   - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
   - Charts
   - DropDown (= 2.3.13)
+  - GoogleMaps (= 7.4.0)
+  - GooglePlaces
   - M13Checkbox
 
 SPEC REPOS:
   trunk:
     - Charts
     - DropDown
+    - GoogleMaps
+    - GooglePlaces
     - M13Checkbox
     - SwiftAlgorithms
 
 SPEC CHECKSUMS:
   Charts: 354f86803d11d9c35de280587fef50d1af063978
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  GoogleMaps: 032f676450ba0779bd8ce16840690915f84e57ac
+  GooglePlaces: 544e908d94860bf6f8fc1865b80d2c7eb6b5f937
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: edf914c64b58cbfc5cdc8f99433bb01d508a06f7
+PODFILE CHECKSUM: 5b15041c70828e71e8b64b7a5dcd75faea74cbdf
 
 COCOAPODS: 1.11.3

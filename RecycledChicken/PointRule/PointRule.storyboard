@@ -17,7 +17,7 @@
         <!--Point RuleVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="PointRuleVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PointRule" id="Y6W-OH-hqX" customClass="PointRuleVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,15 +28,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCX-7S-arG">
                                 <rect key="frame" x="20" y="123" width="353" height="675"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="基本回饋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNr-zd-aaI">
-                                        <rect key="frame" x="155" y="327" width="68" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【基本回饋 】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNr-zd-aaI">
+                                        <rect key="frame" x="30" y="30" width="106" height="20"/>
+                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收一個寶特瓶可獲得10點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjl-Sq-w0R">
+                                        <rect key="frame" x="30" y="50" width="323" height="20"/>
+                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收一個電池可獲得10點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ns-ez-wb5">
+                                        <rect key="frame" x="30" y="70" width="323" height="20"/>
                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Sjl-Sq-w0R" firstAttribute="leading" secondItem="lNr-zd-aaI" secondAttribute="leading" id="PaZ-dI-bAO"/>
+                                    <constraint firstItem="lNr-zd-aaI" firstAttribute="top" secondItem="YCX-7S-arG" secondAttribute="top" constant="30" id="U9e-Cl-a4H"/>
+                                    <constraint firstItem="5ns-ez-wb5" firstAttribute="top" secondItem="Sjl-Sq-w0R" secondAttribute="bottom" id="UU5-s9-AUL"/>
+                                    <constraint firstAttribute="trailing" secondItem="5ns-ez-wb5" secondAttribute="trailing" id="Wqz-lg-eUJ"/>
+                                    <constraint firstItem="5ns-ez-wb5" firstAttribute="leading" secondItem="Sjl-Sq-w0R" secondAttribute="leading" id="XRu-h2-OD5"/>
+                                    <constraint firstItem="Sjl-Sq-w0R" firstAttribute="top" secondItem="lNr-zd-aaI" secondAttribute="bottom" id="iU1-ST-Hfx"/>
+                                    <constraint firstItem="lNr-zd-aaI" firstAttribute="leading" secondItem="YCX-7S-arG" secondAttribute="leading" constant="30" id="nsf-rn-4Om"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sjl-Sq-w0R" secondAttribute="trailing" id="uPF-hC-PH0"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>

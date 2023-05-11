@@ -44,4 +44,12 @@ class PointVC: CustomRootVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
+    
+    @IBAction func goToPointRule(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PointRule", bundle: Bundle.main).instantiateViewController(identifier: "PointRule") as? PointRuleVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
+    
 }

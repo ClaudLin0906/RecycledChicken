@@ -10,5 +10,7 @@ target 'RecycledChicken' do
   pod 'M13Checkbox'
   pod 'Charts'
   pod 'DropDown', '2.3.13'
+  pod 'GoogleMaps', '7.4.0'
+  pod 'GooglePlaces'
 
 end

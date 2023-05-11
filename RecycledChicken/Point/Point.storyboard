@@ -153,6 +153,9 @@
                                                                 <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="goToPointRule:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nac-hY-w3i"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTT-JI-Qj2">
                                                         <rect key="frame" x="106.66666666666666" y="70" width="100" height="40"/>

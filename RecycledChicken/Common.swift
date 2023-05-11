@@ -36,6 +36,11 @@ class CommonColor {
     
 }
 
+class CommonKey {
+    static let shared = CommonKey()
+    let googleMapKey = "AIzaSyCQooOAaz-Lm2IpRZGz26Lx6lTSs9JFvZQ"
+}
+
 protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
