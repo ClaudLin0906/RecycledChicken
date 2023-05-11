@@ -33,4 +33,15 @@ class PointVC: CustomRootVC {
         }
     }
     
+    @IBAction func goToBuyLottery(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
+    @IBAction func goToBuyCommodity(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
 }

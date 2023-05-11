@@ -74,7 +74,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="goToLottery:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nwr-OZ-yL3"/>
+                                                            <action selector="goToBuyLottery:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Rhp-B9-NIO"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -109,6 +109,9 @@
                                                         <state key="normal" title="點 數 購 買 商 品 禮 卷">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="goToBuyCommodity:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zMW-T3-JUm"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

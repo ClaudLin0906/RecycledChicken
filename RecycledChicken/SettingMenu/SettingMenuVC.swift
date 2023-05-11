@@ -34,6 +34,7 @@ class SettingMenuVC: CustomVC {
     }
     
     private func UIInit(){
+        setDefaultNavigationBackBtn2()
         tableView.setSeparatorLocation()
     }
     

@@ -8,6 +8,8 @@
 import UIKit
 
 class SpendPointView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var confirm:UIButton!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +23,10 @@ class SpendPointView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    func setConfirmBtnTitle(_ title:String){
+        confirm.setTitle(title, for: .normal)
     }
 
 }

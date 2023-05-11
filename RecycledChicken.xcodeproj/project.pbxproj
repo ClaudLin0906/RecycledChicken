@@ -60,6 +60,8 @@
 		599495682A0BFA4F009F1B2E /* BuyLottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495672A0BFA4F009F1B2E /* BuyLottery.storyboard */; };
 		5994956B2A0BFC48009F1B2E /* SpendPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994956A2A0BFC48009F1B2E /* SpendPointView.swift */; };
 		5994956D2A0BFC88009F1B2E /* SpendPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5994956C2A0BFC88009F1B2E /* SpendPointView.xib */; };
+		599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994956F2A0C9015009F1B2E /* BuyCommodityVC.swift */; };
+		599495742A0C90E7009F1B2E /* BuyCommodity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495732A0C90E7009F1B2E /* BuyCommodity.storyboard */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -165,6 +167,8 @@
 		599495672A0BFA4F009F1B2E /* BuyLottery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyLottery.storyboard; sourceTree = "<group>"; };
 		5994956A2A0BFC48009F1B2E /* SpendPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendPointView.swift; sourceTree = "<group>"; };
 		5994956C2A0BFC88009F1B2E /* SpendPointView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendPointView.xib; sourceTree = "<group>"; };
+		5994956F2A0C9015009F1B2E /* BuyCommodityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCommodityVC.swift; sourceTree = "<group>"; };
+		599495732A0C90E7009F1B2E /* BuyCommodity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyCommodity.storyboard; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -277,9 +281,10 @@
 				5994954F2A0BE77E009F1B2E /* Lottery  */,
 				599495562A0BF17E009F1B2E /* CommodityVoucher */,
 				5994955D2A0BF77E009F1B2E /* MyTicker */,
-				5926C5832A04086400FAB49D /* Main.storyboard */,
 				599495692A0BFC12009F1B2E /* CommonUI */,
+				5926C5832A04086400FAB49D /* Main.storyboard */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				5994956E2A0C8FD9009F1B2E /* BuyCommodity */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
 				59997A5D2A09EDE900E9FD7F /* CommonImageButton.swift */,
@@ -464,6 +469,15 @@
 			path = CommonUI;
 			sourceTree = "<group>";
 		};
+		5994956E2A0C8FD9009F1B2E /* BuyCommodity */ = {
+			isa = PBXGroup;
+			children = (
+				5994956F2A0C9015009F1B2E /* BuyCommodityVC.swift */,
+				599495732A0C90E7009F1B2E /* BuyCommodity.storyboard */,
+			);
+			path = BuyCommodity;
+			sourceTree = "<group>";
+		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +646,7 @@
 				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
+				599495742A0C90E7009F1B2E /* BuyCommodity.storyboard in Resources */,
 				597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */,
 				59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
@@ -743,6 +758,7 @@
 				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
+				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
