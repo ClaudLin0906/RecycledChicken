@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-QH-83o">
-                                <rect key="frame" x="0.0" y="237" width="393" height="485"/>
+                                <rect key="frame" x="0.0" y="237" width="393" height="402"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMU-Zv-cwG" userLabel="Content">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
@@ -179,10 +179,10 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="zeV-h7-cXo"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Khi-zw-bZk"/>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 974" translatesAutoresizingMaskIntoConstraints="NO" id="22y-KM-Xcw">
-                                <rect key="frame" x="0.0" y="722" width="393" height="130"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="22y-KM-Xcw">
+                                <rect key="frame" x="0.0" y="639" width="393" height="179"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="kFU-fV-dvK"/>
+                                    <constraint firstAttribute="height" constant="179" id="kFU-fV-dvK"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -199,7 +199,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Lg8-fD-3dr" secondAttribute="trailing" id="d0C-SR-IOJ"/>
                             <constraint firstItem="22y-KM-Xcw" firstAttribute="top" secondItem="VH3-QH-83o" secondAttribute="bottom" id="hvB-Ri-gKQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uVt-c4-QmW" secondAttribute="trailing" id="ojs-Gt-xd5"/>
-                            <constraint firstAttribute="bottom" secondItem="22y-KM-Xcw" secondAttribute="bottom" id="rRM-Fl-H1j"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="22y-KM-Xcw" secondAttribute="bottom" id="rRM-Fl-H1j"/>
                             <constraint firstItem="22y-KM-Xcw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vRV-SC-tSK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VH3-QH-83o" secondAttribute="trailing" id="yGk-eY-JGh"/>
                             <constraint firstItem="uVt-c4-QmW" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="yTl-1R-9e8"/>
@@ -217,9 +217,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="footer" width="1127.6666259765625" height="501"/>
         <image name="グループ 1089" width="1125" height="2436"/>
         <image name="グループ 971" width="445.33334350585938" height="453"/>
-        <image name="グループ 974" width="1127.6666259765625" height="193"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

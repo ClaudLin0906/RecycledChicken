@@ -160,10 +160,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 974" translatesAutoresizingMaskIntoConstraints="NO" id="OzJ-Qt-v3n">
-                                <rect key="frame" x="0.0" y="722" width="393" height="130"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="OzJ-Qt-v3n">
+                                <rect key="frame" x="0.0" y="648" width="393" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="JkT-Zk-9mw"/>
+                                    <constraint firstAttribute="height" constant="170" id="JkT-Zk-9mw"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -178,7 +178,7 @@
                             <constraint firstItem="a0s-Ho-EVo" firstAttribute="top" secondItem="6M6-V4-6D3" secondAttribute="bottom" constant="30" id="FC1-Qc-ndf"/>
                             <constraint firstItem="OvW-WF-2Nr" firstAttribute="centerX" secondItem="a0s-Ho-EVo" secondAttribute="centerX" id="HNw-WQ-tFW"/>
                             <constraint firstItem="OvW-WF-2Nr" firstAttribute="centerY" secondItem="a0s-Ho-EVo" secondAttribute="centerY" id="JBU-Id-g18"/>
-                            <constraint firstAttribute="bottom" secondItem="OzJ-Qt-v3n" secondAttribute="bottom" id="hUM-N0-VDa"/>
+                            <constraint firstItem="04P-DB-9WE" firstAttribute="bottom" secondItem="OzJ-Qt-v3n" secondAttribute="bottom" id="hUM-N0-VDa"/>
                             <constraint firstItem="xWk-Ny-o8a" firstAttribute="centerX" secondItem="04P-DB-9WE" secondAttribute="centerX" id="kyS-Pf-RQe"/>
                             <constraint firstItem="6M6-V4-6D3" firstAttribute="top" secondItem="04P-DB-9WE" secondAttribute="top" id="u9n-qT-GzE"/>
                             <constraint firstItem="a0s-Ho-EVo" firstAttribute="leading" secondItem="04P-DB-9WE" secondAttribute="leading" id="ziF-Fi-rUM"/>
@@ -191,9 +191,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="footer" width="1127.6666259765625" height="501"/>
         <image name="グループ 1089" width="1125" height="2436"/>
         <image name="グループ 1090" width="1012" height="1012"/>
         <image name="グループ 971" width="445.33334350585938" height="453"/>
-        <image name="グループ 974" width="1127.6666259765625" height="193"/>
     </resources>
 </document>
