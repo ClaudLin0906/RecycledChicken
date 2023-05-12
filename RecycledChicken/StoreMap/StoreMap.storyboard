@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Regular.ttf">
+            <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Store MapVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -20,8 +25,49 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="Fca-21-ftc" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuV-OU-PP1">
+                                <rect key="frame" x="76.666666666666686" y="123" width="240" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 182" translatesAutoresizingMaskIntoConstraints="NO" id="aY0-Xc-FZc">
+                                        <rect key="frame" x="5" y="5" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="F6j-tZ-MK3"/>
+                                            <constraint firstAttribute="width" secondItem="aY0-Xc-FZc" secondAttribute="height" multiplier="1:1" id="ezT-Wd-aV0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="街道/門市查詢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVg-0I-phu">
+                                        <rect key="frame" x="0.0" y="5" width="240" height="20"/>
+                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkt-ti-JPZ">
+                                        <rect key="frame" x="25" y="0.0" width="215" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="aY0-Xc-FZc" firstAttribute="leading" secondItem="ZuV-OU-PP1" secondAttribute="leading" constant="5" id="6nH-PD-9oR"/>
+                                    <constraint firstAttribute="height" constant="30" id="7F7-Fh-gyo"/>
+                                    <constraint firstItem="aY0-Xc-FZc" firstAttribute="centerY" secondItem="ZuV-OU-PP1" secondAttribute="centerY" id="7KW-lw-2eL"/>
+                                    <constraint firstAttribute="bottom" secondItem="jkt-ti-JPZ" secondAttribute="bottom" id="Gmz-eK-BS7"/>
+                                    <constraint firstItem="jkt-ti-JPZ" firstAttribute="leading" secondItem="aY0-Xc-FZc" secondAttribute="trailing" id="MBG-9K-Jh6"/>
+                                    <constraint firstItem="fVg-0I-phu" firstAttribute="centerY" secondItem="ZuV-OU-PP1" secondAttribute="centerY" id="Xax-eT-NTQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="dNS-yd-Zfc"/>
+                                    <constraint firstItem="jkt-ti-JPZ" firstAttribute="top" secondItem="ZuV-OU-PP1" secondAttribute="top" id="fF2-Q2-Rft"/>
+                                    <constraint firstAttribute="trailing" secondItem="fVg-0I-phu" secondAttribute="trailing" id="iee-vX-0c8"/>
+                                    <constraint firstAttribute="trailing" secondItem="jkt-ti-JPZ" secondAttribute="trailing" id="jZ9-ZB-lnP"/>
+                                    <constraint firstItem="fVg-0I-phu" firstAttribute="leading" secondItem="ZuV-OU-PP1" secondAttribute="leading" id="vhG-kv-yEz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypg-LA-9xT" customClass="GMSMapView">
-                                <rect key="frame" x="20" y="123.00000000000003" width="353" height="500.66666666666674"/>
+                                <rect key="frame" x="20" y="173.00000000000003" width="353" height="500.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -29,17 +75,42 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEl-gS-LnA">
+                                <rect key="frame" x="146.66666666666666" y="748" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0fV-PM-Acu"/>
+                                    <constraint firstAttribute="height" constant="40" id="Mgo-kC-evT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="門市列表">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToStoreList:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2xJ-N2-7in"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ypg-LA-9xT" firstAttribute="top" secondItem="ZuV-OU-PP1" secondAttribute="bottom" constant="20" id="1b1-YK-Tsh"/>
                             <constraint firstAttribute="bottom" secondItem="Fca-21-ftc" secondAttribute="bottom" id="42F-Tl-cfa"/>
-                            <constraint firstItem="ypg-LA-9xT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Mu4-oG-dOX"/>
                             <constraint firstItem="Fca-21-ftc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OMt-lx-DAA"/>
                             <constraint firstItem="ypg-LA-9xT" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.7" id="RnW-BH-ZtW"/>
                             <constraint firstItem="Fca-21-ftc" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="UbR-Oa-saH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ypg-LA-9xT" secondAttribute="trailing" constant="20" id="Uk1-if-FAj"/>
+                            <constraint firstItem="ZuV-OU-PP1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Whb-yw-GCp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZEl-gS-LnA" secondAttribute="bottom" constant="30" id="gbX-q8-RPf"/>
+                            <constraint firstItem="ZEl-gS-LnA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="okd-Le-nZC"/>
                             <constraint firstItem="Fca-21-ftc" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="pcE-Md-Aw2"/>
+                            <constraint firstItem="ZuV-OU-PP1" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="wnc-rP-jJz"/>
                             <constraint firstItem="ypg-LA-9xT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="xRn-BH-zkM"/>
                         </constraints>
                     </view>
@@ -73,6 +144,7 @@
     </scenes>
     <resources>
         <image name="グループ 1089" width="1125" height="2436"/>
+        <image name="组 182" width="36.666667938232422" height="38.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

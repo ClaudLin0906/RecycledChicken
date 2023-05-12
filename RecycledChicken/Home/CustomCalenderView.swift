@@ -48,27 +48,31 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
     
     private func getSevenDays(){
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let dateFormatter1 = DateFormatter()
-        dateFormatter1.dateFormat = "EEEE"
-        let weekDay = dateFormatter1.string(from: Date())
+        dateFormatter.dateFormat = "EEEE"
+        let weekDay = dateFormatter.string(from: Date())
         var selectedDatesIndex = 0
         switch weekDay {
         case "Sunday":
             selectedDatesIndex = 6
+            sunCalender.isCurrentDate = true
         case "Monday":
             selectedDatesIndex = 0
+            monCalender.isCurrentDate = true
         case "Tuesday":
             selectedDatesIndex = 1
+            tueCalender.isCurrentDate = true
         case "Wednesday":
             selectedDatesIndex = 2
+            wedCalender.isCurrentDate = true
         case "Thurday":
             selectedDatesIndex = 3
+            thuCalender.isCurrentDate = true
         case "Friday":
             selectedDatesIndex = 4
+            friCalender.isCurrentDate = true
         case "Saturday":
             selectedDatesIndex = 5
+            satCalender.isCurrentDate = true
         default:
             break
         }
@@ -79,9 +83,11 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
             sevenDaysToShow.append(getDates(i: newIndex, currentDate: Date()).0)
         }
         
-        let dateFormatterMonth = DateFormatter()
-        dateFormatterMonth.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatterMonth.dateFormat = "dd-MM-yyyy"
+        for show in sevenDaysToShow {
+            if show == weekDay {
+                print(show)
+            }
+        }
         
         monCalender.dateLabel.text = String(sevenDaysToShow[0].split(separator: "-")[0])
         tueCalender.dateLabel.text = String(sevenDaysToShow[1].split(separator: "-")[0])
@@ -90,8 +96,6 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
         friCalender.dateLabel.text = String(sevenDaysToShow[4].split(separator: "-")[0])
         satCalender.dateLabel.text = String(sevenDaysToShow[5].split(separator: "-")[0])
         sunCalender.dateLabel.text = String(sevenDaysToShow[6].split(separator: "-")[0])
-        
-        monCalender.isCurrentDate = true
         
     }
     

@@ -39,12 +39,12 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupItems()
-        if #available(iOS 15.0, *) {
-            updateTabBarAppearance()
-        } else {
-            tabBar.tintColor = CommonColor.shared.color2
-            tabBar.isTranslucent = false
-        }
+//        if #available(iOS 15.0, *) {
+//            updateTabBarAppearance()
+//        } else {
+//            tabBar.tintColor = CommonColor.shared.color2
+//            tabBar.isTranslucent = false
+//        }
     }
     
 
@@ -53,26 +53,29 @@ class MainTabBarController: UITabBarController {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
         tabBarAppearance.backgroundColor = CommonColor.shared.color2
+        tabBarAppearance.backgroundImage = UIImage(named: "グループ 974")
         tabBar.standardAppearance = tabBarAppearance
         tabBar.scrollEdgeAppearance = tabBarAppearance
     }
     
-    private func updateTabBarItemAppearance(appearance:UITabBarItemAppearance){
-//        appearance.normal.iconColor =
-    }
-    
 
     private func setupItems() {
-        
         for (index,value) in tabbarTitle.enumerated(){
             let noSelectImage = noSelectImages[index]!.withRenderingMode(.alwaysOriginal)
             let SelectImage = selectImages[index]!.withRenderingMode(.alwaysOriginal)
             if let nc = viewControllers![index] as? UINavigationController {
                 nc.tabBarItem.title = value
+                nc.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.brown], for: .normal)
+                nc.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.brown], for: .selected)
                 nc.tabBarItem.image = noSelectImage
                 nc.tabBarItem.selectedImage = SelectImage
             }
         }
+        let bgView = UIImageView(image: UIImage(named: "グループ 974"))
+        bgView.frame = CGRect(x: 0, y: 0, width: tabBar.bounds.width, height: tabBar.bounds.)
+        self.tabBar.addSubview(bgView)
+        self.tabBar.sendSubviewToBack(bgView)
+
     }
 
 }

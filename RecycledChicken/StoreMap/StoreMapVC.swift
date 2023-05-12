@@ -11,7 +11,7 @@ import GooglePlaces
 class StoreMapVC: CustomRootVC {
 
     @IBOutlet var mapView:GMSMapView!
-    
+        
     var observation: NSKeyValueObservation?
     
     var locationManager = CLLocationManager()
@@ -68,6 +68,13 @@ class StoreMapVC: CustomRootVC {
         locationManager.delegate = self
         
     }
+    
+    @IBAction func goToStoreList(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "StoreList", bundle: Bundle.main).instantiateViewController(identifier: "StoreList") as? StoreListVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
 }
 
 

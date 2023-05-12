@@ -58,7 +58,7 @@
         <scene sceneID="454-2A-u8R">
             <objects>
                 <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Qk8-8X-9G8" customClass="MainTabBarController" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="グループ 974" id="hPb-IW-rgj">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hPb-IW-rgj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.9137254901960784" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -132,7 +132,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="グループ 974" width="1127.6666259765625" height="193"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
