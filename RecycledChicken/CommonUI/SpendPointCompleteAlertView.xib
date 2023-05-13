@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Regular.ttf">
+            <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpendPointCompleteAlertView" customModule="RecycledChicken" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pXf-NG-nty">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 1662" translatesAutoresizingMaskIntoConstraints="NO" id="G8M-WY-PA6">
+                    <rect key="frame" x="121.66666666666669" y="288.66666666666669" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="G8M-WY-PA6" secondAttribute="height" multiplier="1:1" id="C6e-6K-76X"/>
+                        <constraint firstAttribute="width" constant="150" id="CGc-Kc-Rtr"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="購買完成" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29u-7z-C59">
+                    <rect key="frame" x="0.0" y="448.66666666666669" width="393" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="L3c-uL-TtT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="票卷已存入您的票夾" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-VY-Hay">
+                    <rect key="frame" x="120" y="473.66666666666669" width="153" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="o3e-uF-cyI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="OBe-9N-2ed"/>
+            <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ht3-VY-Hay" firstAttribute="top" secondItem="29u-7z-C59" secondAttribute="bottom" constant="5" id="FZ7-la-zlW"/>
+                <constraint firstItem="G8M-WY-PA6" firstAttribute="bottom" secondItem="OBe-9N-2ed" secondAttribute="centerY" id="MVO-yb-Zta"/>
+                <constraint firstItem="29u-7z-C59" firstAttribute="leading" secondItem="OBe-9N-2ed" secondAttribute="leading" id="Owy-Dg-qmS"/>
+                <constraint firstItem="G8M-WY-PA6" firstAttribute="width" secondItem="G8M-WY-PA6" secondAttribute="height" multiplier="1:1" id="X8q-QF-ziK"/>
+                <constraint firstItem="Ht3-VY-Hay" firstAttribute="centerX" secondItem="OBe-9N-2ed" secondAttribute="centerX" id="dix-7u-ZAm"/>
+                <constraint firstItem="OBe-9N-2ed" firstAttribute="trailing" secondItem="29u-7z-C59" secondAttribute="trailing" id="llS-ul-y5A"/>
+                <constraint firstItem="G8M-WY-PA6" firstAttribute="centerX" secondItem="OBe-9N-2ed" secondAttribute="centerX" id="w6Z-Nm-Pdc"/>
+                <constraint firstItem="29u-7z-C59" firstAttribute="top" secondItem="G8M-WY-PA6" secondAttribute="bottom" constant="10" id="wJe-VJ-wWh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-187" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="组 1662" width="598.33331298828125" height="388.66665649414062"/>
+    </resources>
+</document>

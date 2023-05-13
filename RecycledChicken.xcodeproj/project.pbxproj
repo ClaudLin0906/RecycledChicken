@@ -109,6 +109,10 @@
 		59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795852A0F7B7C0031710F /* ReLogin.storyboard */; };
 		59A795882A0F8F2B0031710F /* UpdateDateAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795872A0F8F2B0031710F /* UpdateDateAlertView.swift */; };
 		59A7958A2A0F8F3A0031710F /* UpdateDateAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A795892A0F8F3A0031710F /* UpdateDateAlertView.xib */; };
+		59A7958C2A0F9E820031710F /* SpendPointAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7958B2A0F9E820031710F /* SpendPointAlertView.swift */; };
+		59A7958E2A0F9E9E0031710F /* SpendPointAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A7958D2A0F9E9E0031710F /* SpendPointAlertView.xib */; };
+		59A795902A0F9F6C0031710F /* SpendPointCompleteAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7958F2A0F9F6C0031710F /* SpendPointCompleteAlertView.swift */; };
+		59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
 		59C2D9A02A0D37330085724F /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D99F2A0D37330085724F /* AR.storyboard */; };
 		59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D9A22A0D37790085724F /* TaskVC.swift */; };
@@ -242,6 +246,10 @@
 		59A795852A0F7B7C0031710F /* ReLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReLogin.storyboard; sourceTree = "<group>"; };
 		59A795872A0F8F2B0031710F /* UpdateDateAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateAlertView.swift; sourceTree = "<group>"; };
 		59A795892A0F8F3A0031710F /* UpdateDateAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDateAlertView.xib; sourceTree = "<group>"; };
+		59A7958B2A0F9E820031710F /* SpendPointAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendPointAlertView.swift; sourceTree = "<group>"; };
+		59A7958D2A0F9E9E0031710F /* SpendPointAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendPointAlertView.xib; sourceTree = "<group>"; };
+		59A7958F2A0F9F6C0031710F /* SpendPointCompleteAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendPointCompleteAlertView.swift; sourceTree = "<group>"; };
+		59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendPointCompleteAlertView.xib; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
 		59C2D99F2A0D37330085724F /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		59C2D9A22A0D37790085724F /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
@@ -547,6 +555,10 @@
 				5994956C2A0BFC88009F1B2E /* SpendPointView.xib */,
 				598F39492A0E078400DA9186 /* SearchView.swift */,
 				598F394B2A0E07A500DA9186 /* SearchView.xib */,
+				59A7958F2A0F9F6C0031710F /* SpendPointCompleteAlertView.swift */,
+				59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */,
+				59A7958B2A0F9E820031710F /* SpendPointAlertView.swift */,
+				59A7958D2A0F9E9E0031710F /* SpendPointAlertView.xib */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -797,6 +809,8 @@
 				59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */,
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
 				59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */,
+				59A7958E2A0F9E9E0031710F /* SpendPointAlertView.xib in Resources */,
+				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
 				59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */,
 				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
@@ -925,6 +939,7 @@
 				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,
 				59A795882A0F8F2B0031710F /* UpdateDateAlertView.swift in Sources */,
 				5994957C2A0D2C1E009F1B2E /* StoreMapVC.swift in Sources */,
+				59A795902A0F9F6C0031710F /* SpendPointCompleteAlertView.swift in Sources */,
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
@@ -956,6 +971,7 @@
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
+				59A7958C2A0F9E820031710F /* SpendPointAlertView.swift in Sources */,
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
 				599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */,
 				598F394A2A0E078400DA9186 /* SearchView.swift in Sources */,
