@@ -115,6 +115,9 @@
 		59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */; };
 		59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15A2A0FA82400490BD8 /* IconView.swift */; };
 		59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AFE15C2A0FA82E00490BD8 /* IconView.xib */; };
+		59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */; };
+		59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */; };
+		59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AFE1622A10088700490BD8 /* CompleteTaskAlertView.xib */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
 		59C2D9A02A0D37330085724F /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D99F2A0D37330085724F /* AR.storyboard */; };
 		59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D9A22A0D37790085724F /* TaskVC.swift */; };
@@ -254,6 +257,9 @@
 		59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendPointCompleteAlertView.xib; sourceTree = "<group>"; };
 		59AFE15A2A0FA82400490BD8 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		59AFE15C2A0FA82E00490BD8 /* IconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconView.xib; sourceTree = "<group>"; };
+		59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskAlertView.swift; sourceTree = "<group>"; };
+		59AFE1622A10088700490BD8 /* CompleteTaskAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTaskAlertView.xib; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
 		59C2D99F2A0D37330085724F /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		59C2D9A22A0D37790085724F /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
@@ -563,6 +569,8 @@
 				59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */,
 				59A7958B2A0F9E820031710F /* SpendPointAlertView.swift */,
 				59A7958D2A0F9E9E0031710F /* SpendPointAlertView.xib */,
+				59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */,
+				59AFE1622A10088700490BD8 /* CompleteTaskAlertView.xib */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -696,6 +704,7 @@
 			children = (
 				59C2D9A22A0D37790085724F /* TaskVC.swift */,
 				59C2D9A42A0D38490085724F /* Task.storyboard */,
+				59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -849,6 +858,7 @@
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
 				59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */,
+				59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */,
 				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
 				59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */,
 				599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */,
@@ -951,6 +961,7 @@
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
 				5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */,
+				59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */,
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
 				5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */,
 				59997A4F2A09384300E9FD7F /* PetView.swift in Sources */,
@@ -998,6 +1009,7 @@
 				599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
+				59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */,
 				599495662A0BFA1A009F1B2E /* BuyLotteryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

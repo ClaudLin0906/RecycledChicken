@@ -64,10 +64,12 @@ class StoreMapVC: CustomRootVC {
     }
     
     private func UIInit(){
+        mapView.mapType = .normal
         mapView.delegate = self
         mapView.settings.compassButton = true
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
+        
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
