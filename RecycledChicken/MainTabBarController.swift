@@ -71,11 +71,6 @@ class MainTabBarController: UITabBarController {
                 nc.tabBarItem.selectedImage = SelectImage
             }
         }
-        let bgView = UIImageView(image: UIImage(named: "グループ 974"))
-        bgView.frame = CGRect(x: 0, y: 0, width: tabBar.bounds.width, height: tabBar.bounds.height + 30)
-        self.tabBar.addSubview(bgView)
-        self.tabBar.sendSubviewToBack(bgView)
-
     }
 
 }

@@ -75,37 +75,50 @@
                                 <color key="separatorColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileTableViewCell" id="HXg-ic-TdY" customClass="ProfileTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="293" height="22.333333969116211"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="293" height="21.666666030883789"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXg-ic-TdY" id="MIv-qF-PX1">
-                                            <rect key="frame" x="0.0" y="0.0" width="293" height="22.333333969116211"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="293" height="21.666666030883789"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBq-rz-Qe2">
-                                                    <rect key="frame" x="10" y="1.3333333333333339" width="44" height="19.666666666666664"/>
+                                                    <rect key="frame" x="10" y="1" width="44" height="19.666666666666668"/>
                                                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASe-Di-wmd">
-                                                    <rect key="frame" x="64" y="0.0" width="229" height="22.333333333333332"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcO-kY-mB3" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                    <rect key="frame" x="64" y="1" width="0.0" height="20"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="sHy-cD-ZAD"/>
+                                                        <constraint firstAttribute="width" id="w7e-m9-xLf"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="未填寫" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASe-Di-wmd">
+                                                    <rect key="frame" x="74" y="0.0" width="209" height="21.666666666666668"/>
                                                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ASe-Di-wmd" firstAttribute="top" secondItem="MIv-qF-PX1" secondAttribute="top" id="0BL-2d-sXC"/>
-                                                <constraint firstItem="ASe-Di-wmd" firstAttribute="leading" secondItem="iBq-rz-Qe2" secondAttribute="trailing" constant="10" id="1bo-TW-UVK"/>
+                                                <constraint firstItem="ASe-Di-wmd" firstAttribute="leading" secondItem="jcO-kY-mB3" secondAttribute="trailing" constant="10" id="1bo-TW-UVK"/>
                                                 <constraint firstItem="ASe-Di-wmd" firstAttribute="centerY" secondItem="iBq-rz-Qe2" secondAttribute="centerY" id="5cA-h0-ytE"/>
-                                                <constraint firstAttribute="trailing" secondItem="ASe-Di-wmd" secondAttribute="trailing" id="I3Q-BG-Mw2"/>
+                                                <constraint firstAttribute="trailing" secondItem="ASe-Di-wmd" secondAttribute="trailing" constant="10" id="I3Q-BG-Mw2"/>
                                                 <constraint firstItem="iBq-rz-Qe2" firstAttribute="centerY" secondItem="MIv-qF-PX1" secondAttribute="centerY" id="MOe-T6-keX"/>
+                                                <constraint firstItem="jcO-kY-mB3" firstAttribute="centerY" secondItem="MIv-qF-PX1" secondAttribute="centerY" id="Nsc-nS-aP9"/>
                                                 <constraint firstItem="iBq-rz-Qe2" firstAttribute="leading" secondItem="MIv-qF-PX1" secondAttribute="leading" constant="10" id="Pqp-m1-YwV"/>
                                                 <constraint firstAttribute="bottom" secondItem="ASe-Di-wmd" secondAttribute="bottom" id="YoH-g9-bdF"/>
+                                                <constraint firstItem="jcO-kY-mB3" firstAttribute="leading" secondItem="iBq-rz-Qe2" secondAttribute="trailing" constant="10" id="kON-J1-byR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkBoxWidth" destination="w7e-m9-xLf" id="VKm-PS-fPt"/>
                                             <outlet property="info" destination="ASe-Di-wmd" id="8l1-83-eXN"/>
                                             <outlet property="infoTitle" destination="iBq-rz-Qe2" id="xjh-ra-2tR"/>
+                                            <outlet property="phoneNumberCheckBox" destination="jcO-kY-mB3" id="6uR-Xq-wQB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

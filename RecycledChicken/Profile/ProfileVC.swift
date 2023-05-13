@@ -56,7 +56,7 @@ class ProfileVC: CustomVC {
         let year = components.year
         let cells = cellsForTableView(tableView: profileTableView)
         if let birthdayCell = cells.filter({ return $0.tag == 3})[0] as? ProfileTableViewCell {
-            birthdayCell.info.text = "\(year!)-\(month!)-\(day!)"
+            birthdayCell.info.text = "\(year!)\\\(month!)\\\(day!)"
         }
         view.endEditing(true)
     }
@@ -159,8 +159,15 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.tag = row
         cell.infoTitle.text = profileInfoArr[row]
+        
+        if row == 2 {
+            cell.info.keyboardType = .numberPad
+            cell.checkBoxWidth.constant = 20
+        }
+        
         if row == 3 {
             createDatePicker(cell.info)
+            cell.info.placeholder = "2000/11/11"
         }
         return cell
     }

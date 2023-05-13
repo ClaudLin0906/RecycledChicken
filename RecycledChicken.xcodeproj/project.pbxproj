@@ -107,6 +107,8 @@
 		59A7957D2A0F79170031710F /* UpdatePasswordSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A7957C2A0F79170031710F /* UpdatePasswordSuccessView.xib */; };
 		59A795802A0F7B2E0031710F /* ReLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7957F2A0F7B2E0031710F /* ReLoginVC.swift */; };
 		59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795852A0F7B7C0031710F /* ReLogin.storyboard */; };
+		59A795882A0F8F2B0031710F /* UpdateDateAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795872A0F8F2B0031710F /* UpdateDateAlertView.swift */; };
+		59A7958A2A0F8F3A0031710F /* UpdateDateAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A795892A0F8F3A0031710F /* UpdateDateAlertView.xib */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
 		59C2D9A02A0D37330085724F /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D99F2A0D37330085724F /* AR.storyboard */; };
 		59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D9A22A0D37790085724F /* TaskVC.swift */; };
@@ -238,6 +240,8 @@
 		59A7957C2A0F79170031710F /* UpdatePasswordSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdatePasswordSuccessView.xib; sourceTree = "<group>"; };
 		59A7957F2A0F7B2E0031710F /* ReLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLoginVC.swift; sourceTree = "<group>"; };
 		59A795852A0F7B7C0031710F /* ReLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReLogin.storyboard; sourceTree = "<group>"; };
+		59A795872A0F8F2B0031710F /* UpdateDateAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateAlertView.swift; sourceTree = "<group>"; };
+		59A795892A0F8F3A0031710F /* UpdateDateAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDateAlertView.xib; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
 		59C2D99F2A0D37330085724F /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		59C2D9A22A0D37790085724F /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
@@ -606,6 +610,8 @@
 				59997A682A0A230700E9FD7F /* ProfileTableViewCell.swift */,
 				59997A6A2A0A420C00E9FD7F /* ProfileUpdateView.swift */,
 				59997A6C2A0A422D00E9FD7F /* ProfileUpdateView.xib */,
+				59A795872A0F8F2B0031710F /* UpdateDateAlertView.swift */,
+				59A795892A0F8F3A0031710F /* UpdateDateAlertView.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -804,6 +810,7 @@
 				59C2D9A52A0D38490085724F /* Task.storyboard in Resources */,
 				598F39482A0E06C600DA9186 /* StoreList.storyboard in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
+				59A7958A2A0F8F3A0031710F /* UpdateDateAlertView.xib in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
 				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
@@ -916,6 +923,7 @@
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
 				597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */,
 				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,
+				59A795882A0F8F2B0031710F /* UpdateDateAlertView.swift in Sources */,
 				5994957C2A0D2C1E009F1B2E /* StoreMapVC.swift in Sources */,
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,

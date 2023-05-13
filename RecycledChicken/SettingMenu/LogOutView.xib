@@ -53,17 +53,38 @@
                         <action selector="logOut:" destination="-1" eventType="touchUpInside" id="T1L-Wg-LiK"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqj-3C-8TK">
+                    <rect key="frame" x="146.66666666666666" y="549.33333333333337" width="100" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="取 消">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="logOut:" destination="-1" eventType="touchUpInside" id="Anp-kq-maC"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="eqj-3C-8TK" firstAttribute="centerX" secondItem="Wcp-nB-01P" secondAttribute="centerX" id="457-sb-xK5"/>
                 <constraint firstItem="8TF-I7-cbo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="67d-hB-B5j"/>
+                <constraint firstItem="eqj-3C-8TK" firstAttribute="width" secondItem="Wcp-nB-01P" secondAttribute="width" id="AIZ-y3-c7H"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8TF-I7-cbo" secondAttribute="trailing" id="Ele-Z9-GEg"/>
                 <constraint firstItem="Wcp-nB-01P" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="LsR-Xs-s45"/>
                 <constraint firstItem="Wcp-nB-01P" firstAttribute="top" secondItem="8TF-I7-cbo" secondAttribute="bottom" constant="20" id="X0P-l3-gVh"/>
                 <constraint firstItem="8TF-I7-cbo" firstAttribute="top" secondItem="NAR-nD-8Mu" secondAttribute="bottom" constant="30" id="Zc8-eC-SS9"/>
+                <constraint firstItem="eqj-3C-8TK" firstAttribute="top" secondItem="Wcp-nB-01P" secondAttribute="bottom" constant="10" id="cxn-yF-IGI"/>
                 <constraint firstItem="NAR-nD-8Mu" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eR5-YN-wmD"/>
                 <constraint firstItem="8TF-I7-cbo" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="obC-4p-qJ8"/>
+                <constraint firstItem="eqj-3C-8TK" firstAttribute="height" secondItem="Wcp-nB-01P" secondAttribute="height" id="rKa-cO-DNR"/>
                 <constraint firstItem="NAR-nD-8Mu" firstAttribute="centerX" secondItem="8TF-I7-cbo" secondAttribute="centerX" id="xDO-4R-bQ3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
