@@ -84,19 +84,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1Y-zB-G7H" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="156" y="683.66666666666663" width="79.666666666666686" height="19.666666666666629"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-Bx-YB1" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="156" y="683.66666666666663" width="79.333333333333314" height="19.666666666666629"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HI4-yQ-gxt" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="37" y="683.66666666666663" width="317.66666666666669" height="19.666666666666629"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1Y-zB-G7H" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="130" y="683.66666666666663" width="70" height="19.666666666666629"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="6wY-BV-7zj"/>
+                                    <constraint firstAttribute="width" constant="70" id="jsc-Vw-tVd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-Bx-YB1" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="210" y="683.66666666666663" width="60" height="19.666666666666629"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="7xZ-G4-UHv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HI4-yQ-gxt" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="280" y="683.66666666666663" width="70" height="19.666666666666629"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="3V1-UV-u1b"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEl-gS-LnA">
