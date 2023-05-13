@@ -17,7 +17,8 @@ class SystemSettingVC: CustomVC {
     [
         switchTableViewInfo(title: "APP活動通知", isTrue: false),
         switchTableViewInfo(title: "信件通知", isTrue: true),
-        switchTableViewInfo(title: "回收機消息通知", isTrue: true)
+        switchTableViewInfo(title: "回收機消息通知", isTrue: true),
+        switchTableViewInfo(title: "生物辨識", isTrue: true)
     ]
     
     var accountTableViewInfos:[accountTableViewInfo] =
