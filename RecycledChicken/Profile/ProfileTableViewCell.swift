@@ -18,6 +18,7 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var info:UITextField!
 
     @IBOutlet weak var checkBoxWidth: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         phoneNumberCheckBox.boxType = .square

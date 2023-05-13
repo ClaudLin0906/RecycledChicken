@@ -162,12 +162,14 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         
         if row == 2 {
             cell.info.keyboardType = .numberPad
-            cell.checkBoxWidth.constant = 20
+            cell.phoneNumberCheckBox.isHidden = false
         }
         
         if row == 3 {
             createDatePicker(cell.info)
             cell.info.placeholder = "2000/11/11"
+            cell.phoneNumberCheckBox.isHidden = false
+            
         }
         return cell
     }
