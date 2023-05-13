@@ -115,3 +115,24 @@ func addViewFullScreen(v:UIView) {
         topVC.view.addSubview(v)
     }
 }
+
+func getDayOfTheWeek() -> String{
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEEE"
+    return dateFormatter.string(from: Date())
+}
+
+func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy-MM-dd","yyyy-MMM-dd")) -> (String, String){
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "en_US")
+    var date = currentDate
+    let cal = Calendar.current
+    date = cal.date(byAdding: .day, value: i, to: date)!
+    dateFormatter.dateFormat = dateformat.0
+    let stringFormate1 = dateFormatter.string(from: date)
+    dateFormatter.dateFormat = dateformat.1
+    let stringFormate2 = dateFormatter.string(from: date)
+    return (stringFormate1, stringFormate2)
+}
+
+

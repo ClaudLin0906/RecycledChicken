@@ -47,9 +47,7 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
     }
     
     private func getSevenDays(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let weekDay = dateFormatter.string(from: Date())
+        let weekDay = getDayOfTheWeek()
         var selectedDatesIndex = 0
         switch weekDay {
         case "Sunday":
@@ -84,32 +82,20 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
         }
         
         for show in sevenDaysToShow {
-            if show == weekDay {
+            if show == getDates(i: 0, currentDate: Date()).0 {
                 print(show)
             }
         }
         
-        monCalender.dateLabel.text = String(sevenDaysToShow[0].split(separator: "-")[0])
-        tueCalender.dateLabel.text = String(sevenDaysToShow[1].split(separator: "-")[0])
-        wedCalender.dateLabel.text = String(sevenDaysToShow[2].split(separator: "-")[0])
-        thuCalender.dateLabel.text = String(sevenDaysToShow[3].split(separator: "-")[0])
-        friCalender.dateLabel.text = String(sevenDaysToShow[4].split(separator: "-")[0])
-        satCalender.dateLabel.text = String(sevenDaysToShow[5].split(separator: "-")[0])
-        sunCalender.dateLabel.text = String(sevenDaysToShow[6].split(separator: "-")[0])
+        monCalender.dateLabel.text = String(sevenDaysToShow[0].split(separator: "-")[2])
+        tueCalender.dateLabel.text = String(sevenDaysToShow[1].split(separator: "-")[2])
+        wedCalender.dateLabel.text = String(sevenDaysToShow[2].split(separator: "-")[2])
+        thuCalender.dateLabel.text = String(sevenDaysToShow[3].split(separator: "-")[2])
+        friCalender.dateLabel.text = String(sevenDaysToShow[4].split(separator: "-")[2])
+        satCalender.dateLabel.text = String(sevenDaysToShow[5].split(separator: "-")[2])
+        sunCalender.dateLabel.text = String(sevenDaysToShow[6].split(separator: "-")[2])
         
     }
-    
-    private func getDates(i: Int, currentDate:Date) -> (String, String){
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US")
-        var date = currentDate
-        let cal = Calendar.current
-        date = cal.date(byAdding: .day, value: i, to: date)!
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let stringFormate1 = dateFormatter.string(from: date)
-        dateFormatter.dateFormat = "dd-MMM-yyyy"
-        let stringFormate2 = dateFormatter.string(from: date)
-        return (stringFormate1, stringFormate2)
-    }
+
 }
 

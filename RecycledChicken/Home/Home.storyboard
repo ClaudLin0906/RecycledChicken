@@ -191,17 +191,16 @@
                                                                     <constraint firstAttribute="width" constant="90" id="Y4G-eq-0Cf"/>
                                                                     <constraint firstAttribute="height" constant="21" id="sU6-wo-n8o"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wep-Dg-8Xm">
-                                                                <rect key="frame" x="30" y="56" width="90" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wep-Dg-8Xm">
+                                                                <rect key="frame" x="30" y="56" width="136.66666666666666" height="20"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="90" id="Bu0-3Z-nyG"/>
-                                                                    <constraint firstAttribute="height" constant="21" id="sZ5-Lh-nq1"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="sZ5-Lh-nq1"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -217,6 +216,7 @@
                                                             <constraint firstItem="Yo6-76-zfY" firstAttribute="top" secondItem="ccd-f3-Y9z" secondAttribute="top" constant="30" id="OqJ-8j-RJz"/>
                                                             <constraint firstItem="Wep-Dg-8Xm" firstAttribute="top" secondItem="Yo6-76-zfY" secondAttribute="bottom" constant="5" id="XQM-Qo-BXl"/>
                                                             <constraint firstItem="khi-Bw-h8S" firstAttribute="top" secondItem="Yo6-76-zfY" secondAttribute="bottom" id="YmD-HD-fZg"/>
+                                                            <constraint firstItem="khi-Bw-h8S" firstAttribute="leading" secondItem="Wep-Dg-8Xm" secondAttribute="trailing" id="dxo-0G-BNf"/>
                                                             <constraint firstItem="Wep-Dg-8Xm" firstAttribute="leading" secondItem="Yo6-76-zfY" secondAttribute="leading" id="eAa-u0-rlG"/>
                                                             <constraint firstAttribute="trailing" secondItem="khi-Bw-h8S" secondAttribute="trailing" id="feX-Dj-SwE"/>
                                                             <constraint firstItem="Yo6-76-zfY" firstAttribute="leading" secondItem="ccd-f3-Y9z" secondAttribute="leading" constant="30" id="u5Q-Ry-wga"/>
@@ -352,6 +352,7 @@
                     <connections>
                         <outlet property="barcodeView" destination="x97-no-L30" id="gO9-LE-gFp"/>
                         <outlet property="carbonReductionLogBtn" destination="ybu-Dt-ZtI" id="pXO-R6-ZAh"/>
+                        <outlet property="currentDateLabel" destination="Wep-Dg-8Xm" id="ITI-gL-DPg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
