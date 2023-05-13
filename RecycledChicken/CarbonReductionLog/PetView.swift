@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PetView: UIView,NibOwnerLoadable {
+class PetView: UIView, NibOwnerLoadable {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

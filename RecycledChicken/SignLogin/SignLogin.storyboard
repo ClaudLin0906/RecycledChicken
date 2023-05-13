@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-QH-83o">
-                                <rect key="frame" x="0.0" y="237" width="393" height="402"/>
+                                <rect key="frame" x="0.0" y="237" width="393" height="401"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMU-Zv-cwG" userLabel="Content">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
@@ -180,9 +180,9 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Khi-zw-bZk"/>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="22y-KM-Xcw">
-                                <rect key="frame" x="0.0" y="639" width="393" height="179"/>
+                                <rect key="frame" x="0.0" y="638" width="393" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="kFU-fV-dvK"/>
+                                    <constraint firstAttribute="height" constant="180" id="kFU-fV-dvK"/>
                                 </constraints>
                             </imageView>
                         </subviews>

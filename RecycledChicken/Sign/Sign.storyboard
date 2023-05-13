@@ -145,7 +145,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-Ny-o8a">
-                                <rect key="frame" x="121.66666666666669" y="587" width="150" height="50"/>
+                                <rect key="frame" x="121.66666666666669" y="582" width="150" height="50"/>
                                 <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BeP-Qg-aJL"/>
@@ -161,9 +161,9 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="OzJ-Qt-v3n">
-                                <rect key="frame" x="0.0" y="648" width="393" height="170"/>
+                                <rect key="frame" x="0.0" y="638" width="393" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="JkT-Zk-9mw"/>
+                                    <constraint firstAttribute="height" constant="180" id="JkT-Zk-9mw"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -174,7 +174,7 @@
                             <constraint firstItem="OzJ-Qt-v3n" firstAttribute="trailing" secondItem="04P-DB-9WE" secondAttribute="trailing" id="62d-1X-rFh"/>
                             <constraint firstItem="OzJ-Qt-v3n" firstAttribute="leading" secondItem="04P-DB-9WE" secondAttribute="leading" id="8ma-Tc-H0E"/>
                             <constraint firstItem="04P-DB-9WE" firstAttribute="trailing" secondItem="a0s-Ho-EVo" secondAttribute="trailing" id="9ql-kZ-McC"/>
-                            <constraint firstItem="xWk-Ny-o8a" firstAttribute="top" secondItem="a0s-Ho-EVo" secondAttribute="bottom" constant="20" id="DCX-5B-6nz"/>
+                            <constraint firstItem="xWk-Ny-o8a" firstAttribute="top" secondItem="a0s-Ho-EVo" secondAttribute="bottom" constant="15" id="DCX-5B-6nz"/>
                             <constraint firstItem="a0s-Ho-EVo" firstAttribute="top" secondItem="6M6-V4-6D3" secondAttribute="bottom" constant="30" id="FC1-Qc-ndf"/>
                             <constraint firstItem="OvW-WF-2Nr" firstAttribute="centerX" secondItem="a0s-Ho-EVo" secondAttribute="centerX" id="HNw-WQ-tFW"/>
                             <constraint firstItem="OvW-WF-2Nr" firstAttribute="centerY" secondItem="a0s-Ho-EVo" secondAttribute="centerY" id="JBU-Id-g18"/>

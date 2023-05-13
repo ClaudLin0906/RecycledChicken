@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BattView: UIView,NibOwnerLoadable {
+class BattView: UIView, NibOwnerLoadable {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

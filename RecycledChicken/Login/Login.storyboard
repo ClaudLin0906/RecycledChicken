@@ -193,7 +193,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPq-0X-imi">
-                                <rect key="frame" x="146.66666666666666" y="587" width="100" height="50"/>
+                                <rect key="frame" x="146.66666666666666" y="582" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="DOa-jH-y9U"/>
@@ -209,9 +209,9 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-kR-8Ki">
-                                <rect key="frame" x="0.0" y="648" width="393" height="170"/>
+                                <rect key="frame" x="0.0" y="638" width="393" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="U8w-i9-nPv"/>
+                                    <constraint firstAttribute="height" constant="180" id="U8w-i9-nPv"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -225,7 +225,7 @@
                             <constraint firstItem="3yf-kR-8Ki" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="9R8-qg-uFz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lWR-pO-Tbf" secondAttribute="trailing" id="Caq-sT-qEt"/>
                             <constraint firstItem="ZPq-0X-imi" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="F9C-mE-NXO"/>
-                            <constraint firstItem="ZPq-0X-imi" firstAttribute="top" secondItem="aOM-KG-Vmh" secondAttribute="bottom" constant="20" id="biA-sF-m7a"/>
+                            <constraint firstItem="ZPq-0X-imi" firstAttribute="top" secondItem="aOM-KG-Vmh" secondAttribute="bottom" constant="15" id="biA-sF-m7a"/>
                             <constraint firstItem="lWR-pO-Tbf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jTR-rE-otc"/>
                             <constraint firstItem="aOM-KG-Vmh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mWF-8X-10R"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3yf-kR-8Ki" secondAttribute="bottom" id="sws-cc-Rhl"/>

@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -164,10 +165,34 @@
                                     <constraint firstItem="bgb-6t-Aar" firstAttribute="width" secondItem="hWS-Yl-Xgw" secondAttribute="width" id="uzQ-Ym-D1z"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 974" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-8p-cpP">
-                                <rect key="frame" x="0.0" y="722" width="393" height="130"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="驗證碼錯誤請重新輸入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kh-3F-tZc">
+                                <rect key="frame" x="126.66666666666669" y="427" width="140" height="16.333333333333314"/>
+                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYp-X8-L1Y">
+                                <rect key="frame" x="121.66666666666669" y="582" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="7KK-Im-Qfk"/>
+                                    <constraint firstAttribute="height" constant="40" id="Z4u-zd-Gqv"/>
+                                    <constraint firstAttribute="width" constant="150" id="lP9-VD-jJ8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="重新發送驗證碼">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-8p-cpP">
+                                <rect key="frame" x="0.0" y="638" width="393" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="7KK-Im-Qfk"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -176,15 +201,19 @@
                         <constraints>
                             <constraint firstItem="g5E-mc-KVs" firstAttribute="leading" secondItem="GWu-dP-XPG" secondAttribute="leading" id="3Qy-8m-ZBu"/>
                             <constraint firstItem="g5E-mc-KVs" firstAttribute="top" secondItem="3vC-nO-2Cl" secondAttribute="bottom" constant="30" id="CMX-q7-XdB"/>
+                            <constraint firstItem="0kh-3F-tZc" firstAttribute="centerX" secondItem="GWu-dP-XPG" secondAttribute="centerX" id="Grt-ek-Y7A"/>
                             <constraint firstItem="qKo-8p-cpP" firstAttribute="trailing" secondItem="GWu-dP-XPG" secondAttribute="trailing" id="HpT-ND-uQq"/>
                             <constraint firstItem="Ju8-Ir-Pwe" firstAttribute="bottom" secondItem="p73-49-rKC" secondAttribute="top" constant="-20" id="IH0-4h-60O"/>
                             <constraint firstItem="GWu-dP-XPG" firstAttribute="trailing" secondItem="3vC-nO-2Cl" secondAttribute="trailing" id="JuU-o9-5tC"/>
+                            <constraint firstItem="BYp-X8-L1Y" firstAttribute="top" secondItem="g5E-mc-KVs" secondAttribute="bottom" constant="15" id="KQX-Kv-w0a"/>
+                            <constraint firstItem="BYp-X8-L1Y" firstAttribute="centerX" secondItem="GWu-dP-XPG" secondAttribute="centerX" id="Kr4-RY-Vmk"/>
                             <constraint firstItem="GWu-dP-XPG" firstAttribute="trailing" secondItem="g5E-mc-KVs" secondAttribute="trailing" id="NMg-5p-NqQ"/>
                             <constraint firstItem="p73-49-rKC" firstAttribute="centerY" secondItem="g5E-mc-KVs" secondAttribute="centerY" id="SEU-Jm-V0Y"/>
                             <constraint firstItem="Ju8-Ir-Pwe" firstAttribute="centerX" secondItem="g5E-mc-KVs" secondAttribute="centerX" id="V9S-31-O8D"/>
                             <constraint firstItem="qKo-8p-cpP" firstAttribute="leading" secondItem="GWu-dP-XPG" secondAttribute="leading" id="XT7-y8-e0G"/>
                             <constraint firstItem="3vC-nO-2Cl" firstAttribute="top" secondItem="GWu-dP-XPG" secondAttribute="top" id="cSf-K3-9IA"/>
-                            <constraint firstAttribute="bottom" secondItem="qKo-8p-cpP" secondAttribute="bottom" id="eKQ-H8-oFv"/>
+                            <constraint firstItem="GWu-dP-XPG" firstAttribute="bottom" secondItem="qKo-8p-cpP" secondAttribute="bottom" id="eKQ-H8-oFv"/>
+                            <constraint firstItem="0kh-3F-tZc" firstAttribute="top" secondItem="p73-49-rKC" secondAttribute="bottom" constant="10" id="sdu-fi-YkC"/>
                             <constraint firstItem="p73-49-rKC" firstAttribute="centerX" secondItem="g5E-mc-KVs" secondAttribute="centerX" id="soY-dI-x6k"/>
                         </constraints>
                     </view>
@@ -195,9 +224,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="footer" width="1127.6666259765625" height="501"/>
         <image name="グループ 1089" width="1125" height="2436"/>
         <image name="グループ 1090" width="1012" height="1012"/>
         <image name="グループ 971" width="445.33334350585938" height="453"/>
-        <image name="グループ 974" width="1127.6666259765625" height="193"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

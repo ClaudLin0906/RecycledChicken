@@ -82,7 +82,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8d8-nW-pc6" customClass="PieChartView" customModule="Charts">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8d8-nW-pc6" customClass="RingProgressGroupView" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="50" width="333" height="250"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -213,7 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="U1I-Rx-UHF"/>
                     <connections>
-                        <outlet property="chartView" destination="8d8-nW-pc6" id="giz-Jw-ChJ"/>
+                        <outlet property="progressGroup" destination="8d8-nW-pc6" id="pXN-c6-oBm"/>
                         <outlet property="recycleBtn" destination="iZZ-lD-1hs" id="N2W-4X-CQe"/>
                     </connections>
                 </viewController>
