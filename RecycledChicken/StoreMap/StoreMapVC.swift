@@ -11,6 +11,12 @@ import GooglePlaces
 class StoreMapVC: CustomRootVC {
 
     @IBOutlet var mapView:GMSMapView!
+    
+    @IBOutlet var iconView1:IconView!
+    
+    @IBOutlet var iconView2:IconView!
+    
+    @IBOutlet var iconView3:IconView!
         
     var observation: NSKeyValueObservation?
     
@@ -66,6 +72,15 @@ class StoreMapVC: CustomRootVC {
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self
+        
+        iconView1.icon.backgroundColor = CommonColor.shared.color5
+        iconView1.title.text = "0~40%"
+        
+        iconView2.icon.backgroundColor = CommonColor.shared.color3
+        iconView2.title.text = "50%"
+        
+        iconView3.icon.backgroundColor = #colorLiteral(red: 0.9574549794, green: 0.5093209743, blue: 0.3308191895, alpha: 1)
+        iconView3.title.text = "滿位"
         
     }
     

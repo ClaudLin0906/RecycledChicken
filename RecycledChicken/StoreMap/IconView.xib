@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Regular.ttf">
+            <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="icon" destination="HLo-uV-DVD" id="Jf6-ft-teE"/>
+                <outlet property="title" destination="sef-eB-fRT" id="t4x-a0-Xek"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLo-uV-DVD">
+                    <rect key="frame" x="0.0" y="428.66666666666669" width="20" height="20"/>
+                    <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="HLo-uV-DVD" secondAttribute="height" multiplier="1:1" id="h2Z-t2-wzI"/>
+                        <constraint firstAttribute="width" constant="20" id="yjm-JS-pbr"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sef-eB-fRT">
+                    <rect key="frame" x="25" y="430" width="36" height="17.333333333333314"/>
+                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="HLo-uV-DVD" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="7yv-xB-aQ8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sef-eB-fRT" secondAttribute="trailing" id="8cg-ql-0VN"/>
+                <constraint firstItem="HLo-uV-DVD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9XW-t0-YUh"/>
+                <constraint firstItem="sef-eB-fRT" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="R9g-0X-39n"/>
+                <constraint firstItem="sef-eB-fRT" firstAttribute="leading" secondItem="HLo-uV-DVD" secondAttribute="trailing" constant="5" id="dvM-x8-LtJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="45" y="21"/>
+        </view>
+    </objects>
+</document>

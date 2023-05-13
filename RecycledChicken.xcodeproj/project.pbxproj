@@ -113,6 +113,8 @@
 		59A7958E2A0F9E9E0031710F /* SpendPointAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A7958D2A0F9E9E0031710F /* SpendPointAlertView.xib */; };
 		59A795902A0F9F6C0031710F /* SpendPointCompleteAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7958F2A0F9F6C0031710F /* SpendPointCompleteAlertView.swift */; };
 		59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */; };
+		59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15A2A0FA82400490BD8 /* IconView.swift */; };
+		59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AFE15C2A0FA82E00490BD8 /* IconView.xib */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
 		59C2D9A02A0D37330085724F /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D99F2A0D37330085724F /* AR.storyboard */; };
 		59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D9A22A0D37790085724F /* TaskVC.swift */; };
@@ -250,6 +252,8 @@
 		59A7958D2A0F9E9E0031710F /* SpendPointAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendPointAlertView.xib; sourceTree = "<group>"; };
 		59A7958F2A0F9F6C0031710F /* SpendPointCompleteAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendPointCompleteAlertView.swift; sourceTree = "<group>"; };
 		59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendPointCompleteAlertView.xib; sourceTree = "<group>"; };
+		59AFE15A2A0FA82400490BD8 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		59AFE15C2A0FA82E00490BD8 /* IconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconView.xib; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
 		59C2D99F2A0D37330085724F /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		59C2D9A22A0D37790085724F /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
@@ -586,6 +590,8 @@
 			children = (
 				5994957B2A0D2C1E009F1B2E /* StoreMapVC.swift */,
 				5994957D2A0D2C7B009F1B2E /* StoreMap.storyboard */,
+				59AFE15A2A0FA82400490BD8 /* IconView.swift */,
+				59AFE15C2A0FA82E00490BD8 /* IconView.xib */,
 			);
 			path = StoreMap;
 			sourceTree = "<group>";
@@ -816,6 +822,7 @@
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
 				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
+				59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */,
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
 				599495742A0C90E7009F1B2E /* BuyCommodity.storyboard in Resources */,
 				597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */,
@@ -947,6 +954,7 @@
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
 				5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */,
 				59997A4F2A09384300E9FD7F /* PetView.swift in Sources */,
+				59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */,
 				599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
