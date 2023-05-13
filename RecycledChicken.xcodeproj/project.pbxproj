@@ -103,6 +103,10 @@
 		59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795732A0F72AF0031710F /* ForgetPassword.storyboard */; };
 		59A795772A0F770D0031710F /* ConfirmPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795762A0F770D0031710F /* ConfirmPasswordVC.swift */; };
 		59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795782A0F771E0031710F /* ConfirmPassword.storyboard */; };
+		59A7957B2A0F78F20031710F /* UpdatePasswordSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7957A2A0F78F20031710F /* UpdatePasswordSuccessView.swift */; };
+		59A7957D2A0F79170031710F /* UpdatePasswordSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A7957C2A0F79170031710F /* UpdatePasswordSuccessView.xib */; };
+		59A795802A0F7B2E0031710F /* ReLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7957F2A0F7B2E0031710F /* ReLoginVC.swift */; };
+		59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795852A0F7B7C0031710F /* ReLogin.storyboard */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
 		59C2D9A02A0D37330085724F /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D99F2A0D37330085724F /* AR.storyboard */; };
 		59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D9A22A0D37790085724F /* TaskVC.swift */; };
@@ -230,6 +234,10 @@
 		59A795732A0F72AF0031710F /* ForgetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetPassword.storyboard; sourceTree = "<group>"; };
 		59A795762A0F770D0031710F /* ConfirmPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordVC.swift; sourceTree = "<group>"; };
 		59A795782A0F771E0031710F /* ConfirmPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmPassword.storyboard; sourceTree = "<group>"; };
+		59A7957A2A0F78F20031710F /* UpdatePasswordSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordSuccessView.swift; sourceTree = "<group>"; };
+		59A7957C2A0F79170031710F /* UpdatePasswordSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdatePasswordSuccessView.xib; sourceTree = "<group>"; };
+		59A7957F2A0F7B2E0031710F /* ReLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLoginVC.swift; sourceTree = "<group>"; };
+		59A795852A0F7B7C0031710F /* ReLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReLogin.storyboard; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
 		59C2D99F2A0D37330085724F /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		59C2D9A22A0D37790085724F /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
@@ -315,6 +323,7 @@
 				59F6BE2D2A078D7100D7B3CB /* Sign */,
 				5926C59C2A06340F00FAB49D /* Login */,
 				59A795752A0F75F90031710F /* ConfirmPassword */,
+				59A7957E2A0F7B110031710F /* ReLogin */,
 				5926C5C12A065C9D00FAB49D /* SignLogin */,
 				5926C5972A06329300FAB49D /* Home */,
 				59A795702A0F727B0031710F /* ForgetPassword */,
@@ -634,8 +643,19 @@
 			children = (
 				59A795762A0F770D0031710F /* ConfirmPasswordVC.swift */,
 				59A795782A0F771E0031710F /* ConfirmPassword.storyboard */,
+				59A7957A2A0F78F20031710F /* UpdatePasswordSuccessView.swift */,
+				59A7957C2A0F79170031710F /* UpdatePasswordSuccessView.xib */,
 			);
 			path = ConfirmPassword;
+			sourceTree = "<group>";
+		};
+		59A7957E2A0F7B110031710F /* ReLogin */ = {
+			isa = PBXGroup;
+			children = (
+				59A7957F2A0F7B2E0031710F /* ReLoginVC.swift */,
+				59A795852A0F7B7C0031710F /* ReLogin.storyboard */,
+			);
+			path = ReLogin;
 			sourceTree = "<group>";
 		};
 		59C2D99C2A0D36E30085724F /* AR */ = {
@@ -764,6 +784,7 @@
 				599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */,
 				59F6BE382A07B56100D7B3CB /* GenSenMaruGothicTW-Regular.ttf in Resources */,
 				59F6BE392A07B56100D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf in Resources */,
+				59A7957D2A0F79170031710F /* UpdatePasswordSuccessView.xib in Resources */,
 				599495682A0BFA4F009F1B2E /* BuyLottery.storyboard in Resources */,
 				59997A6D2A0A422D00E9FD7F /* ProfileUpdateView.xib in Resources */,
 				59F6BE372A07B56100D7B3CB /* GenSenMaruGothicTW-Light.ttf in Resources */,
@@ -801,6 +822,7 @@
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
 				59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */,
 				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
+				59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */,
 				599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
@@ -884,6 +906,7 @@
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
 				59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */,
+				59A7957B2A0F78F20031710F /* UpdatePasswordSuccessView.swift in Sources */,
 				599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */,
 				59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */,
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
@@ -906,6 +929,7 @@
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
 				59A795772A0F770D0031710F /* ConfirmPasswordVC.swift in Sources */,
 				59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */,
+				59A795802A0F7B2E0031710F /* ReLoginVC.swift in Sources */,
 				597521752A0B7E2800D0B67C /* SystemSettingVC.swift in Sources */,
 				59997A702A0A4A1500E9FD7F /* PersonMessageVC.swift in Sources */,
 				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
