@@ -20,19 +20,19 @@ class MainTabBarController: UITabBarController {
     
     let noSelectImages:[UIImage?] =
     [
-        UIImage(named: "グループ 457"),
-        UIImage(named: "orderCopy"),
-        UIImage(named: "orderCopy"),
-        UIImage(named: "orderCopy"),
-        UIImage(named: "orderCopy")
+        UIImage(named: "グループ 76"),
+        UIImage(named: "グループ 77"),
+        UIImage(named: "组 226"),
+        UIImage(named: "グループ 82"),
+        UIImage(named: "グループ 86")
     ]
     
     let selectImages:[UIImage?] =
     [
         UIImage(named: "fav-o"),
-        UIImage(named: "orderCopy"),
-        UIImage(named: "orderCopy"),
-        UIImage(named: "orderCopy"),
+        UIImage(named: "location-o"),
+        UIImage(named: "home"),
+        UIImage(named: "scan-o"),
         UIImage(named: "orderCopy")
     ]
 
@@ -47,6 +47,13 @@ class MainTabBarController: UITabBarController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var tabFrame:CGRect = self.tabBar.frame
+        tabFrame.size.height = 70
+        tabFrame.origin.y = self.view.frame.size.height - 70
+        self.tabBar.frame = tabFrame
+    }
 
     @available(iOS 15.0, *)
     private func updateTabBarAppearance(){
