@@ -12,6 +12,13 @@ class RingProgressGroupView: UIView {
 
     let ring1 = RingProgressView()
     let ring2 = RingProgressView()
+    let title:UILabel = {
+       let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     @IBInspectable var ring1StartColor: UIColor = CommonColor.shared.color1 {
         didSet {
@@ -64,13 +71,17 @@ class RingProgressGroupView: UIView {
     private func setup() {
         addSubview(ring1)
         addSubview(ring2)
-        
+        addSubview(title)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         ring1.frame = bounds
         ring2.frame = bounds.insetBy(dx: ringWidth + ringSpacing, dy: ringWidth + ringSpacing)
+        title.centerXAnchor.constraint(equalTo: ring2.centerXAnchor).isActive = true
+        title.centerYAnchor.constraint(equalTo: ring2.centerYAnchor).isActive = true
+        title.widthAnchor.constraint(equalTo: ring2.widthAnchor, multiplier: 0.9).isActive = true
+        title.heightAnchor.constraint(equalTo: ring2.widthAnchor, multiplier: 0.9).isActive = true
     }
 
 }

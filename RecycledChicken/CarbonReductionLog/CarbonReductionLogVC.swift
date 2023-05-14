@@ -13,6 +13,8 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var progressGroup:RingProgressGroupView!
     
+    @IBOutlet weak var carbonReductionNumber:UILabel!
+    
     let parties = ["PET", "BATT"]
     
     override func viewDidLoad() {
@@ -29,6 +31,8 @@ class CarbonReductionLogVC: CustomVC {
         
         progressGroup.ring1.accessibilityLabel = NSLocalizedString("Move", comment: "")
         progressGroup.ring2.accessibilityLabel = NSLocalizedString("Exercise", comment: "")
+        progressGroup.title.font = carbonReductionNumber.font
+        progressGroup.title.text = "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
         
         UIView.animate(withDuration: 0.5) { [self] in
