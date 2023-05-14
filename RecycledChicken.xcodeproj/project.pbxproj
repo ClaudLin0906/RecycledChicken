@@ -22,6 +22,8 @@
 		5926C5A22A06364800FAB49D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5A12A06364800FAB49D /* Common.swift */; };
 		5926C5C02A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5926C5BF2A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf */; };
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
+		59325EC12A113ED100976790 /* DeleteAccountAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */; };
+		59325EC32A113EE000976790 /* DeleteAccountAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */; };
 		597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521612A0B49D300D0B67C /* SettingMenuVC.swift */; };
 		597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */; };
 		5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */; };
@@ -164,6 +166,8 @@
 		5926C5A12A06364800FAB49D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5926C5BF2A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Heavy.ttf"; sourceTree = "<group>"; };
 		5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLoginVC.swift; sourceTree = "<group>"; };
+		59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertView.swift; sourceTree = "<group>"; };
+		59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteAccountAlertView.xib; sourceTree = "<group>"; };
 		597521612A0B49D300D0B67C /* SettingMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuVC.swift; sourceTree = "<group>"; };
 		597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingMenu.storyboard; sourceTree = "<group>"; };
 		597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -449,6 +453,8 @@
 			children = (
 				5975217F2A0B8AB500D0B67C /* DeleteAccountVC.swift */,
 				597521812A0B8AE700D0B67C /* DeleteAccount.storyboard */,
+				59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */,
+				59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */,
 			);
 			path = DeleteAccount;
 			sourceTree = "<group>";
@@ -825,6 +831,7 @@
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
 				59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */,
 				59A7958E2A0F9E9E0031710F /* SpendPointAlertView.xib in Resources */,
+				59325EC32A113EE000976790 /* DeleteAccountAlertView.xib in Resources */,
 				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
 				59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */,
 				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
@@ -1002,6 +1009,7 @@
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
 				597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */,
 				5994956B2A0BFC48009F1B2E /* SpendPointView.swift in Sources */,
+				59325EC12A113ED100976790 /* DeleteAccountAlertView.swift in Sources */,
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				599495772A0D0281009F1B2E /* PointRuleVC.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
