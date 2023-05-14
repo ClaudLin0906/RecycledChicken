@@ -139,14 +139,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-uo-lLA">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-uo-lLA">
                                 <rect key="frame" x="20" y="243" width="353" height="575"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nh5-zu-93u" userLabel="content">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="750"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="760"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMH-HZ-cmw" userLabel="step1">
-                                                <rect key="frame" x="10" y="0.0" width="333" height="200"/>
+                                                <rect key="frame" x="10" y="10" width="333" height="200"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x97-no-L30" customClass="BarCodeView" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="333" height="200"/>
@@ -163,7 +163,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zud-Ll-WdT" userLabel="step2">
-                                                <rect key="frame" x="10" y="220" width="333" height="70"/>
+                                                <rect key="frame" x="10" y="230" width="333" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxW-2f-7vo" customClass="CustomCalenderView" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="333" height="70"/>
@@ -180,7 +180,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hnz-DH-Lsq" userLabel="step3">
-                                                <rect key="frame" x="10" y="310" width="333" height="400"/>
+                                                <rect key="frame" x="10" y="320" width="333" height="400"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccd-f3-Y9z">
                                                         <rect key="frame" x="0.0" y="0.0" width="333" height="250"/>
@@ -305,7 +305,7 @@
                                             <constraint firstItem="zud-Ll-WdT" firstAttribute="centerX" secondItem="AMH-HZ-cmw" secondAttribute="centerX" id="6w8-Nw-Oia"/>
                                             <constraint firstAttribute="trailing" secondItem="AMH-HZ-cmw" secondAttribute="trailing" constant="10" id="8Ch-hW-pgf"/>
                                             <constraint firstItem="Hnz-DH-Lsq" firstAttribute="width" secondItem="zud-Ll-WdT" secondAttribute="width" id="dhA-sp-2ag"/>
-                                            <constraint firstItem="AMH-HZ-cmw" firstAttribute="top" secondItem="Nh5-zu-93u" secondAttribute="top" id="ehB-Za-Gl9"/>
+                                            <constraint firstItem="AMH-HZ-cmw" firstAttribute="top" secondItem="Nh5-zu-93u" secondAttribute="top" constant="10" id="ehB-Za-Gl9"/>
                                             <constraint firstItem="Hnz-DH-Lsq" firstAttribute="top" secondItem="zud-Ll-WdT" secondAttribute="bottom" constant="20" id="irW-tg-XET"/>
                                             <constraint firstItem="zud-Ll-WdT" firstAttribute="width" secondItem="AMH-HZ-cmw" secondAttribute="width" id="oUS-aF-KzH"/>
                                             <constraint firstItem="zud-Ll-WdT" firstAttribute="top" secondItem="AMH-HZ-cmw" secondAttribute="bottom" constant="20" id="ovt-2f-hFG"/>
