@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController {
     
     let noSelectImages:[UIImage?] =
     [
-        UIImage(named: "orderCopy"),
+        UIImage(named: "グループ 457"),
         UIImage(named: "orderCopy"),
         UIImage(named: "orderCopy"),
         UIImage(named: "orderCopy"),
@@ -29,7 +29,7 @@ class MainTabBarController: UITabBarController {
     
     let selectImages:[UIImage?] =
     [
-        UIImage(named: "orderCopy"),
+        UIImage(named: "fav-o"),
         UIImage(named: "orderCopy"),
         UIImage(named: "orderCopy"),
         UIImage(named: "orderCopy"),
@@ -39,20 +39,24 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupItems()
-//        if #available(iOS 15.0, *) {
-//            updateTabBarAppearance()
-//        } else {
-//            tabBar.tintColor = CommonColor.shared.color2
-//            tabBar.isTranslucent = false
-//        }
+        if #available(iOS 15.0, *) {
+            updateTabBarAppearance()
+        } else {
+            tabBar.tintColor = .white
+            tabBar.isTranslucent = false
+        }
     }
     
 
     @available(iOS 15.0, *)
     private func updateTabBarAppearance(){
+        let tabBarItemAppearance = UITabBarItemAppearance()
+        tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        tabBarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.configureWithOpaqueBackground()
-        tabBarAppearance.backgroundColor = CommonColor.shared.color2
+        tabBarAppearance.backgroundColor = CommonColor.shared.color5
         tabBarAppearance.backgroundImage = UIImage(named: "グループ 974")
         tabBar.standardAppearance = tabBarAppearance
         tabBar.scrollEdgeAppearance = tabBarAppearance
@@ -65,10 +69,9 @@ class MainTabBarController: UITabBarController {
             let SelectImage = selectImages[index]!.withRenderingMode(.alwaysOriginal)
             if let nc = viewControllers![index] as? UINavigationController {
                 nc.tabBarItem.title = value
-                nc.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.brown], for: .normal)
-                nc.tabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.brown], for: .selected)
                 nc.tabBarItem.image = noSelectImage
                 nc.tabBarItem.selectedImage = SelectImage
+                nc.tabBarController?.tabBar.backgroundColor = .brown
             }
         }
     }
