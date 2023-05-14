@@ -32,8 +32,9 @@ class CarbonReductionLogVC: CustomVC {
         // Do any additional setup after loading the view.
         
         UIView.animate(withDuration: 0.5) { [self] in
-            progressGroup.ring1.progress = Double(arc4random() % 200) / 100.0
-            progressGroup.ring2.progress = Double(arc4random() % 200) / 100.0
+            let random = Double(arc4random() % 200) / 100.0
+            progressGroup.ring1.progress = 0.7
+            progressGroup.ring2.progress = 0.4
         }
 
     }

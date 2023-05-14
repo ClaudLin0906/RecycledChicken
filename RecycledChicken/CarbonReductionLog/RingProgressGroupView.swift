@@ -13,25 +13,25 @@ class RingProgressGroupView: UIView {
     let ring1 = RingProgressView()
     let ring2 = RingProgressView()
     
-    @IBInspectable var ring1StartColor: UIColor = .red {
+    @IBInspectable var ring1StartColor: UIColor = CommonColor.shared.color1 {
         didSet {
             ring1.startColor = ring1StartColor
         }
     }
     
-    @IBInspectable var ring1EndColor: UIColor = .blue {
+    @IBInspectable var ring1EndColor: UIColor = CommonColor.shared.color1 {
         didSet {
             ring1.endColor = ring1EndColor
         }
     }
     
-    @IBInspectable var ring2StartColor: UIColor = .red {
+    @IBInspectable var ring2StartColor: UIColor = CommonColor.shared.color3 {
         didSet {
             ring2.startColor = ring2StartColor
         }
     }
     
-    @IBInspectable var ring2EndColor: UIColor = .blue {
+    @IBInspectable var ring2EndColor: UIColor = CommonColor.shared.color3 {
         didSet {
             ring2.endColor = ring2EndColor
         }
