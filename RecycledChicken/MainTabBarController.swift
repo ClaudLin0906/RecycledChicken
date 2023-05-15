@@ -44,14 +44,15 @@ class MainTabBarController: UITabBarController {
         } else {
             tabBar.tintColor = .white
             tabBar.isTranslucent = false
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
         }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         var tabFrame:CGRect = self.tabBar.frame
-        tabFrame.size.height = 70
-        tabFrame.origin.y = self.view.frame.size.height - 70
+        tabFrame.size.height = 60
+        tabFrame.origin.y = self.view.frame.size.height - 60
         self.tabBar.frame = tabFrame
     }
 
@@ -65,6 +66,8 @@ class MainTabBarController: UITabBarController {
         tabBarAppearance.configureWithOpaqueBackground()
         tabBarAppearance.backgroundColor = CommonColor.shared.color5
         tabBarAppearance.backgroundImage = UIImage(named: "グループ 974")
+        tabBarAppearance.stackedLayoutAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
+        tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
         tabBar.standardAppearance = tabBarAppearance
         tabBar.scrollEdgeAppearance = tabBarAppearance
     }
