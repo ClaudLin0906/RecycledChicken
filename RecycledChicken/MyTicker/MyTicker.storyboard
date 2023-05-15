@@ -25,22 +25,22 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-wP-wlz" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PgC-Er-VYN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PgC-Er-VYN">
                                 <rect key="frame" x="20" y="103" width="353" height="715"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyTickerTableViewCell" id="3fj-c7-5MR" customClass="MyTickerTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="353" height="150"/>
+                                        <rect key="frame" x="0.0" y="50" width="353" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3fj-c7-5MR" id="JJn-UI-R96">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Oe-dh-f5k" userLabel="step1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="150"/>
+                                                    <rect key="frame" x="20" y="-53" width="313" height="150"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH1-vU-Ols">
-                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="150"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -49,7 +49,7 @@
                                                             </state>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="HH1-vU-Ols" secondAttribute="bottom" id="6hT-It-XlL"/>
                                                         <constraint firstItem="HH1-vU-Ols" firstAttribute="leading" secondItem="3Oe-dh-f5k" secondAttribute="leading" id="Jxt-BC-PcK"/>
@@ -70,13 +70,15 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="3Oe-dh-f5k" secondAttribute="trailing" id="Dl1-vh-07X"/>
-                                                <constraint firstAttribute="bottom" secondItem="3Oe-dh-f5k" secondAttribute="bottom" id="m9j-nd-LtZ"/>
-                                                <constraint firstItem="3Oe-dh-f5k" firstAttribute="leading" secondItem="JJn-UI-R96" secondAttribute="leading" id="nES-Jn-7pU"/>
-                                                <constraint firstItem="3Oe-dh-f5k" firstAttribute="top" secondItem="JJn-UI-R96" secondAttribute="top" id="tiJ-8p-Wtg"/>
+                                                <constraint firstItem="3Oe-dh-f5k" firstAttribute="leading" secondItem="JJn-UI-R96" secondAttribute="leading" constant="20" id="dJL-2f-FrC"/>
+                                                <constraint firstItem="3Oe-dh-f5k" firstAttribute="centerX" secondItem="JJn-UI-R96" secondAttribute="centerX" id="dVL-VQ-ZaJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="3Oe-dh-f5k" secondAttribute="trailing" constant="20" id="dr6-dh-63F"/>
+                                                <constraint firstItem="3Oe-dh-f5k" firstAttribute="centerY" secondItem="JJn-UI-R96" secondAttribute="centerY" id="m5V-MW-1db"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
