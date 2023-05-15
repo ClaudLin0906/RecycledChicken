@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1KQ-lF-Zhn" userLabel="backgoundView">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每週任務" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k43-Uw-Q2N">
@@ -140,7 +140,7 @@
                         <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="k43-Uw-Q2N" firstAttribute="top" secondItem="1KQ-lF-Zhn" secondAttribute="top" constant="50" id="BMh-XH-Jho"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1KQ-lF-Zhn" secondAttribute="bottom" id="CI7-L6-WAw"/>
+                            <constraint firstAttribute="bottom" secondItem="1KQ-lF-Zhn" secondAttribute="bottom" id="CI7-L6-WAw"/>
                             <constraint firstItem="Rvh-Nu-5VR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="SSa-rL-YEh"/>
                             <constraint firstItem="1KQ-lF-Zhn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="XQJ-sD-rgM"/>
                             <constraint firstItem="1KQ-lF-Zhn" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cte-ZM-Cfq"/>
