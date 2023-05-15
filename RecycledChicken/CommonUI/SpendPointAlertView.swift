@@ -22,4 +22,8 @@ class SpendPointAlertView: UIView, NibOwnerLoadable {
     private func customInit(){
         loadNibContent()
     }
+    
+    @IBAction func cancel(_ sender:UIButton) {
+        
+    }
 }

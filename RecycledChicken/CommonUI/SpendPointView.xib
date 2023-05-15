@@ -36,10 +36,10 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nN2-B3-wLp">
                                             <rect key="frame" x="20" y="10" width="313" height="586.33333333333337"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 1091" translatesAutoresizingMaskIntoConstraints="NO" id="xb9-a5-ccT">
-                                                    <rect key="frame" x="0.0" y="436.33333333333331" width="313" height="149.99999999999994"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 1660" translatesAutoresizingMaskIntoConstraints="NO" id="xb9-a5-ccT">
+                                                    <rect key="frame" x="0.0" y="286.33333333333331" width="313" height="299.99999999999994"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="C8p-Jd-HHk"/>
+                                                        <constraint firstAttribute="height" constant="300" id="C8p-Jd-HHk"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -83,7 +83,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="Zg6-go-qip"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="fav-o"/>
+                                                    <state key="normal" image="组 452"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0f-Vo-nLX">
                                                     <rect key="frame" x="49.999999999999986" y="13.333333333333256" width="100.00000000000001" height="23.333333333333329"/>
@@ -94,7 +94,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNu-DI-9bh">
                                                     <rect key="frame" x="160" y="5" width="40" height="40"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="fav-o"/>
+                                                    <state key="normal" image="组 450"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -216,8 +216,9 @@
         </view>
     </objects>
     <resources>
-        <image name="fav-o" width="64" height="67"/>
-        <image name="组 1091" width="919" height="977"/>
+        <image name="组 1660" width="901" height="959"/>
+        <image name="组 450" width="103.33333587646484" height="103.33333587646484"/>
+        <image name="组 452" width="103.33333587646484" height="103.33333587646484"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -23,7 +23,7 @@ class DeleteAccountVC: CustomVC {
     
     @IBAction func deleteAction(_ sender:UIButton) {
         let deleteAccountAlertView = DeleteAccountAlertView(frame: view.frame)
-        view.addSubview(deleteAccountAlertView)
+        keyWindow?.addSubview(deleteAccountAlertView)
     }
 
 }

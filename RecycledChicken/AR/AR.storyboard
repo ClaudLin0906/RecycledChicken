@@ -26,10 +26,10 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmh-R3-tJ0">
-                                <rect key="frame" x="146.66666666666666" y="728" width="100" height="40"/>
+                                <rect key="frame" x="121.66666666666669" y="728" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="UXx-vU-TJD"/>
+                                    <constraint firstAttribute="width" constant="150" id="UXx-vU-TJD"/>
                                     <constraint firstAttribute="height" constant="40" id="a94-N5-aUS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>

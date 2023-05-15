@@ -36,6 +36,12 @@ class CommonColor {
     
 }
 
+let keyWindow = UIApplication.shared.connectedScenes
+        .filter({$0.activationState == .foregroundActive})
+        .compactMap({$0 as? UIWindowScene})
+        .first?.windows
+        .filter({$0.isKeyWindow}).first
+
 class CommonKey {
     static let shared = CommonKey()
     let googleMapKey = "AIzaSyCQooOAaz-Lm2IpRZGz26Lx6lTSs9JFvZQ"
@@ -44,7 +50,6 @@ class CommonKey {
 protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
-
 
 func generateBarCode(from string: String) -> UIImage? {
     let data = string.data(using: .ascii)
@@ -142,3 +147,4 @@ func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
     UIGraphicsEndImageContext()
     return newImage
 }
+
