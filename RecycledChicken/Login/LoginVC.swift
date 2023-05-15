@@ -23,6 +23,10 @@ class LoginVC: UIViewController {
         keepLoginCheckBox.stateChangeAnimation = .fill
     }
     
+    @IBAction func login(_ sender:UIButton){
+        self.dismiss(animated: false)
+    }
+    
     @IBAction func forgetPassword(_ sender:UIButton){
         if let VC = UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgetPassword") as? ForgetPasswordVC {
             VC.modalPresentationStyle = .fullScreen

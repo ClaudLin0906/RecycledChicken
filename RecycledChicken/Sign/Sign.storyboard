@@ -27,9 +27,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="f4U-g7-Q2n" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="f4U-g7-Q2n" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 971" translatesAutoresizingMaskIntoConstraints="NO" id="6M6-V4-6D3">
                                 <rect key="frame" x="243" y="59" width="150" height="128"/>
@@ -159,6 +158,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendVerificationCode:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VBf-m0-Z2L"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="OzJ-Qt-v3n">
                                 <rect key="frame" x="0.0" y="638" width="393" height="180"/>
@@ -177,7 +179,11 @@
                             <constraint firstItem="xWk-Ny-o8a" firstAttribute="top" secondItem="a0s-Ho-EVo" secondAttribute="bottom" constant="15" id="DCX-5B-6nz"/>
                             <constraint firstItem="a0s-Ho-EVo" firstAttribute="top" secondItem="6M6-V4-6D3" secondAttribute="bottom" constant="30" id="FC1-Qc-ndf"/>
                             <constraint firstItem="OvW-WF-2Nr" firstAttribute="centerX" secondItem="a0s-Ho-EVo" secondAttribute="centerX" id="HNw-WQ-tFW"/>
+                            <constraint firstItem="f4U-g7-Q2n" firstAttribute="leading" secondItem="04P-DB-9WE" secondAttribute="leading" id="Hfl-lB-4HC"/>
                             <constraint firstItem="OvW-WF-2Nr" firstAttribute="centerY" secondItem="a0s-Ho-EVo" secondAttribute="centerY" id="JBU-Id-g18"/>
+                            <constraint firstItem="f4U-g7-Q2n" firstAttribute="top" secondItem="cJl-NR-iVn" secondAttribute="top" id="JEn-NX-Sv6"/>
+                            <constraint firstAttribute="bottom" secondItem="f4U-g7-Q2n" secondAttribute="bottom" id="LO4-4H-KpO"/>
+                            <constraint firstItem="f4U-g7-Q2n" firstAttribute="trailing" secondItem="04P-DB-9WE" secondAttribute="trailing" id="MO2-Aw-aPB"/>
                             <constraint firstItem="04P-DB-9WE" firstAttribute="bottom" secondItem="OzJ-Qt-v3n" secondAttribute="bottom" id="hUM-N0-VDa"/>
                             <constraint firstItem="xWk-Ny-o8a" firstAttribute="centerX" secondItem="04P-DB-9WE" secondAttribute="centerX" id="kyS-Pf-RQe"/>
                             <constraint firstItem="6M6-V4-6D3" firstAttribute="top" secondItem="04P-DB-9WE" secondAttribute="top" id="u9n-qT-GzE"/>

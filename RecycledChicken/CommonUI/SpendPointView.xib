@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Heavy.ttf">
+            <string>GenSenMaruGothicTW-Heavy-TTF</string>
+        </array>
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
         </array>
@@ -42,12 +45,29 @@
                                                         <constraint firstAttribute="height" constant="300" id="C8p-Jd-HHk"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="fIq-zJ-f6L">
+                                                    <rect key="frame" x="121.66666666666666" y="536.33333333333337" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="fIq-zJ-f6L" secondAttribute="height" multiplier="1:1" id="H3d-Vp-qWJ"/>
+                                                        <constraint firstAttribute="width" constant="30" id="HZB-Eh-qQq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiE-QL-rr8">
+                                                    <rect key="frame" x="161.66666666666666" y="539.66666666666663" width="36.666666666666657" height="23.333333333333371"/>
+                                                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="xb9-a5-ccT" secondAttribute="trailing" id="0qY-Pb-kI7"/>
                                                 <constraint firstAttribute="bottom" secondItem="xb9-a5-ccT" secondAttribute="bottom" id="7SA-SH-2XR"/>
+                                                <constraint firstItem="fIq-zJ-f6L" firstAttribute="trailing" secondItem="xb9-a5-ccT" secondAttribute="centerX" constant="-5" id="Gcc-hQ-Ui8"/>
                                                 <constraint firstItem="xb9-a5-ccT" firstAttribute="leading" secondItem="nN2-B3-wLp" secondAttribute="leading" id="Ls0-up-TKZ"/>
+                                                <constraint firstItem="hiE-QL-rr8" firstAttribute="centerY" secondItem="fIq-zJ-f6L" secondAttribute="centerY" id="hcZ-Sv-HYP"/>
+                                                <constraint firstItem="hiE-QL-rr8" firstAttribute="leading" secondItem="fIq-zJ-f6L" secondAttribute="trailing" constant="10" id="jMc-47-Bf5"/>
+                                                <constraint firstAttribute="bottom" secondItem="fIq-zJ-f6L" secondAttribute="bottom" constant="20" id="jd8-2d-leb"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -217,6 +237,7 @@
     </objects>
     <resources>
         <image name="组 1660" width="901" height="959"/>
+        <image name="组 396" width="82" height="82"/>
         <image name="组 450" width="103.33333587646484" height="103.33333587646484"/>
         <image name="组 452" width="103.33333587646484" height="103.33333587646484"/>
         <systemColor name="systemBackgroundColor">

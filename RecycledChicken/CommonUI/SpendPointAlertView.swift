@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SpendPointAlertViewDelegate{
+    func confirm(_ sender:UIButton)
+}
+
 class SpendPointAlertView: UIView, NibOwnerLoadable {
+    
+    var delegate:SpendPointAlertViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +29,12 @@ class SpendPointAlertView: UIView, NibOwnerLoadable {
         loadNibContent()
     }
     
+    @IBAction func confirm(_ sender:UIButton) {
+        self.removeFromSuperview()
+        delegate?.confirm(sender)
+    }
+    
     @IBAction func cancel(_ sender:UIButton) {
-        
+        self.removeFromSuperview()
     }
 }
