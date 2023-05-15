@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SpendPointViewDelegate{
+    func btnAction(_ sender:UIButton)
+}
+
 class SpendPointView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var confirm:UIButton!
+    
+    var delegate:SpendPointViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,5 +34,11 @@ class SpendPointView: UIView, NibOwnerLoadable {
     func setConfirmBtnTitle(_ title:String){
         confirm.setTitle(title, for: .normal)
     }
+    
+    @IBAction func btnAction(_sender:UIButton) {
+        delegate?.btnAction(_sender)
+    }
 
 }
+
+

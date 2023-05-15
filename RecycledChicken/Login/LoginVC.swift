@@ -22,5 +22,12 @@ class LoginVC: UIViewController {
         keepLoginCheckBox.boxType = .square
         keepLoginCheckBox.stateChangeAnimation = .fill
     }
+    
+    @IBAction func forgetPassword(_ sender:UIButton){
+        if let VC = UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgetPassword") as? ForgetPasswordVC {
+            VC.modalPresentationStyle = .fullScreen
+            present(VC, animated: false)
+        }
+    }
 
 }

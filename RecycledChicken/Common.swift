@@ -135,4 +135,10 @@ func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy-MM-d
     return (stringFormate1, stringFormate2)
 }
 
-
+func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+    image.draw(in: CGRectMake(0, 0, newSize.width, newSize.height))
+    let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return newImage
+}

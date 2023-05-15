@@ -21,6 +21,16 @@ class BuyCommodityVC: CustomVC {
     
     private func UIInit(){
         spendPointView.setConfirmBtnTitle("確認兌換")
+        spendPointView.delegate = self
+    }
+
+}
+
+extension BuyCommodityVC: SpendPointViewDelegate {
+    
+    func btnAction(_ sender: UIButton) {
+        let spendPointAlertView = SpendPointAlertView(frame: view.frame)
+        view.addSubview(spendPointAlertView)
     }
 
 }

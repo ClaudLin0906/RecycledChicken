@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本次將使用點數2500點" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfG-sV-bEK">
-                    <rect key="frame" x="96.666666666666686" y="409" width="200" height="19.666666666666686"/>
+                    <rect key="frame" x="96.666666666666686" y="109" width="200" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="2HK-hc-LUL"/>
                     </constraints>
@@ -29,7 +29,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩餘點數" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgz-r1-9c8">
-                    <rect key="frame" x="116.66666666666669" y="448.66666666666669" width="70" height="19.666666666666686"/>
+                    <rect key="frame" x="116.66666666666669" y="139" width="70" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="YbV-7Q-rDA"/>
                     </constraints>
@@ -38,20 +38,20 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-Oz-FXn">
-                    <rect key="frame" x="191.66666666666666" y="446" width="25" height="25"/>
+                    <rect key="frame" x="191.66666666666666" y="136.66666666666666" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2Ei-Oz-FXn" secondAttribute="height" multiplier="1:1" id="6Gn-Wr-Now"/>
                         <constraint firstAttribute="height" constant="25" id="qsX-Qy-Eea"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWz-m4-IGd">
-                    <rect key="frame" x="221.66666666666666" y="448.66666666666669" width="28.333333333333343" height="19.666666666666686"/>
+                    <rect key="frame" x="221.66666666666666" y="139" width="28.333333333333343" height="20"/>
                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbS-S6-UNo">
-                    <rect key="frame" x="151.66666666666666" y="488.33333333333331" width="90" height="39.999999999999943"/>
+                    <rect key="frame" x="151.66666666666666" y="179" width="90" height="40"/>
                     <color key="backgroundColor" red="0.82745098039215681" green="0.69019607843137254" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="DjU-Yc-4d6"/>
@@ -69,7 +69,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-qn-oml">
-                    <rect key="frame" x="151.66666666666666" y="548.33333333333337" width="90" height="40"/>
+                    <rect key="frame" x="151.66666666666666" y="239" width="90" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -84,21 +84,21 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="AQw-zR-o7m"/>
-            <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="yfG-sV-bEK" firstAttribute="bottom" secondItem="AQw-zR-o7m" secondAttribute="centerY" constant="-10" id="5gI-c4-4AF"/>
+                <constraint firstItem="yfG-sV-bEK" firstAttribute="top" secondItem="AQw-zR-o7m" secondAttribute="top" constant="50" id="ChJ-dZ-psX"/>
                 <constraint firstItem="Oef-qn-oml" firstAttribute="height" secondItem="XbS-S6-UNo" secondAttribute="height" id="DeS-eF-ow2"/>
                 <constraint firstItem="XbS-S6-UNo" firstAttribute="top" secondItem="NWz-m4-IGd" secondAttribute="bottom" constant="20" id="Msx-S7-mNL"/>
                 <constraint firstItem="2Ei-Oz-FXn" firstAttribute="leading" secondItem="dgz-r1-9c8" secondAttribute="trailing" constant="5" id="PvV-Ft-YoU"/>
                 <constraint firstItem="2Ei-Oz-FXn" firstAttribute="centerY" secondItem="dgz-r1-9c8" secondAttribute="centerY" id="SfQ-7d-GLg"/>
                 <constraint firstItem="yfG-sV-bEK" firstAttribute="centerX" secondItem="AQw-zR-o7m" secondAttribute="centerX" id="V9d-lT-SjI"/>
+                <constraint firstItem="dgz-r1-9c8" firstAttribute="top" secondItem="yfG-sV-bEK" secondAttribute="bottom" constant="10" id="YXR-GL-7J7"/>
                 <constraint firstItem="Oef-qn-oml" firstAttribute="top" secondItem="XbS-S6-UNo" secondAttribute="bottom" constant="20" id="YhC-pN-s0x"/>
                 <constraint firstItem="Oef-qn-oml" firstAttribute="width" secondItem="XbS-S6-UNo" secondAttribute="width" id="coP-np-tj1"/>
                 <constraint firstItem="NWz-m4-IGd" firstAttribute="leading" secondItem="2Ei-Oz-FXn" secondAttribute="trailing" constant="5" id="dHm-aa-yy2"/>
                 <constraint firstItem="dgz-r1-9c8" firstAttribute="trailing" secondItem="AQw-zR-o7m" secondAttribute="centerX" constant="-10" id="dVC-kg-eWc"/>
                 <constraint firstItem="XbS-S6-UNo" firstAttribute="centerX" secondItem="AQw-zR-o7m" secondAttribute="centerX" id="hhc-gu-m17"/>
                 <constraint firstItem="NWz-m4-IGd" firstAttribute="centerY" secondItem="2Ei-Oz-FXn" secondAttribute="centerY" id="tWy-z4-rh3"/>
-                <constraint firstItem="dgz-r1-9c8" firstAttribute="top" secondItem="AQw-zR-o7m" secondAttribute="centerY" constant="10" id="vZn-fL-WOc"/>
                 <constraint firstItem="Oef-qn-oml" firstAttribute="centerX" secondItem="XbS-S6-UNo" secondAttribute="centerX" id="xNs-yw-ivR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

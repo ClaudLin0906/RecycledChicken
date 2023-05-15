@@ -155,7 +155,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘記密碼?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEI-G7-B9N">
-                                                <rect key="frame" x="120" y="10.333333333333313" width="65" height="16.333333333333329"/>
+                                                <rect key="frame" x="120" y="3.6666666666666288" width="65" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="Lz7-IU-0V0"/>
                                                 </constraints>
@@ -164,22 +164,33 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efz-7R-eVA" userLabel="underLine">
-                                                <rect key="frame" x="120" y="25.666666666666629" width="65" height="1"/>
+                                                <rect key="frame" x="120" y="32.666666666666629" width="65" height="1"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="U4s-7J-zqc"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeL-ce-U2f">
+                                                <rect key="frame" x="120" y="3.6666666666666288" width="65" height="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="forgetPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Dv1-0S-gj4"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="yEI-G7-B9N" firstAttribute="leading" secondItem="h0L-jY-0Jz" secondAttribute="trailing" id="0xS-qw-uEo"/>
+                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="bottom" secondItem="yEI-G7-B9N" secondAttribute="bottom" id="7GG-c6-K9f"/>
+                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="top" secondItem="yEI-G7-B9N" secondAttribute="top" id="NMa-e4-KFi"/>
                                             <constraint firstItem="h0L-jY-0Jz" firstAttribute="centerY" secondItem="HmG-Sv-had" secondAttribute="centerY" id="PjE-NZ-W0W"/>
+                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="leading" secondItem="yEI-G7-B9N" secondAttribute="leading" id="bu0-Mh-yQZ"/>
                                             <constraint firstItem="HmG-Sv-had" firstAttribute="centerY" secondItem="MZi-hH-kEY" secondAttribute="centerY" id="dcI-cO-VjM"/>
                                             <constraint firstItem="efz-7R-eVA" firstAttribute="leading" secondItem="yEI-G7-B9N" secondAttribute="leading" id="fUi-tF-AIc"/>
                                             <constraint firstItem="efz-7R-eVA" firstAttribute="bottom" secondItem="yEI-G7-B9N" secondAttribute="bottom" id="kaW-J6-XZE"/>
                                             <constraint firstItem="h0L-jY-0Jz" firstAttribute="leading" secondItem="HmG-Sv-had" secondAttribute="trailing" constant="10" id="mjB-0N-sPO"/>
                                             <constraint firstAttribute="centerX" secondItem="HmG-Sv-had" secondAttribute="trailing" constant="60" id="oVD-lt-d9G"/>
+                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="trailing" secondItem="yEI-G7-B9N" secondAttribute="trailing" id="uzs-pR-eAS"/>
                                             <constraint firstItem="efz-7R-eVA" firstAttribute="trailing" secondItem="yEI-G7-B9N" secondAttribute="trailing" id="wB5-Ym-TOQ"/>
                                             <constraint firstItem="yEI-G7-B9N" firstAttribute="centerY" secondItem="h0L-jY-0Jz" secondAttribute="centerY" id="znL-A1-XQT"/>
                                         </constraints>

@@ -35,7 +35,20 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nN2-B3-wLp">
                                             <rect key="frame" x="20" y="10" width="313" height="586.33333333333337"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 1091" translatesAutoresizingMaskIntoConstraints="NO" id="xb9-a5-ccT">
+                                                    <rect key="frame" x="0.0" y="436.33333333333331" width="313" height="149.99999999999994"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="C8p-Jd-HHk"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="xb9-a5-ccT" secondAttribute="trailing" id="0qY-Pb-kI7"/>
+                                                <constraint firstAttribute="bottom" secondItem="xb9-a5-ccT" secondAttribute="bottom" id="7SA-SH-2XR"/>
+                                                <constraint firstItem="xb9-a5-ccT" firstAttribute="leading" secondItem="nN2-B3-wLp" secondAttribute="leading" id="Ls0-up-TKZ"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                     <integer key="value" value="10"/>
@@ -131,10 +144,10 @@
                                     <rect key="frame" x="0.0" y="716.33333333333337" width="353" height="50"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJz-eA-DXJ">
-                                            <rect key="frame" x="126.66666666666666" y="5" width="100" height="40"/>
+                                            <rect key="frame" x="101.66666666666669" y="5" width="150" height="40"/>
                                             <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="1LP-Y0-G3q"/>
+                                                <constraint firstAttribute="width" constant="150" id="1LP-Y0-G3q"/>
                                                 <constraint firstAttribute="height" constant="40" id="gzp-00-njQ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
@@ -147,6 +160,9 @@
                                                     <integer key="value" value="20"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="btnActionWith_sender:" destination="-1" eventType="touchUpInside" id="WTG-Wb-D3H"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,7 +216,8 @@
         </view>
     </objects>
     <resources>
-        <image name="fav-o" width="668" height="698"/>
+        <image name="fav-o" width="64" height="67"/>
+        <image name="组 1091" width="919" height="977"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

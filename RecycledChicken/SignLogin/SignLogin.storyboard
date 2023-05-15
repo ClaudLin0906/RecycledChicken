@@ -91,7 +91,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="會 員 登 入"/>
+                                                        <state key="normal" title="會員登入"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="25"/>
@@ -110,7 +110,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="會 員 註 冊">
+                                                        <state key="normal" title="會員註冊">
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>

@@ -105,10 +105,10 @@ extension StoreMapVC: GMSMapViewDelegate {
         print("Current location: <\(coordinate.latitude), \(coordinate.longitude)>")
     }
     
-    
     func mapView(_ mapView: GMSMapView, didTapMyLocation location: CLLocationCoordinate2D) {
         print("Current location: <\(location.latitude), \(location.longitude)>")
     }
+
 }
 
 extension StoreMapVC:CLLocationManagerDelegate {
@@ -118,7 +118,14 @@ extension StoreMapVC:CLLocationManagerDelegate {
         let location = locations.last
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
         self.mapView?.animate(to: camera)
-        //Finally stop updating location otherwise it will come again and again in this delegate
+        
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake( (location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
+        marker.map = mapView
+        marker.icon = imageWithImage(image: UIImage(named: "组 227")!, scaledToSize: CGSize(width: 30, height: 30))
+        marker.title = "標題2"
+        marker.snippet = "副標題2"
+        
         self.locationManager.stopUpdatingLocation()
 
     }
