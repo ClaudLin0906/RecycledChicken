@@ -20,5 +20,10 @@ class DeleteAccountVC: CustomVC {
     private func UIInit(){
         
     }
+    
+    @IBAction func deleteAction(_ sender:UIButton) {
+        let deleteAccountAlertView = DeleteAccountAlertView(frame: view.frame)
+        view.addSubview(deleteAccountAlertView)
+    }
 
 }

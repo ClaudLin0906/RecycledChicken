@@ -51,5 +51,11 @@ class PointVC: CustomRootVC {
         }
     }
     
+    @IBAction func goToMyTicker(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "MyTicker", bundle: Bundle.main).instantiateViewController(identifier: "MyTicker") as? MyTickerVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
     
 }
