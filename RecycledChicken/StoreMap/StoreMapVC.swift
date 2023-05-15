@@ -120,11 +120,25 @@ extension StoreMapVC:CLLocationManagerDelegate {
         self.mapView?.animate(to: camera)
         
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake( (location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
+        marker.position = CLLocationCoordinate2DMake( (location?.coordinate.latitude)! + 0.001, (location?.coordinate.longitude)! )
         marker.map = mapView
-        marker.icon = imageWithImage(image: UIImage(named: "组 227")!, scaledToSize: CGSize(width: 30, height: 30))
-        marker.title = "標題2"
-        marker.snippet = "副標題2"
+        marker.icon = imageWithImage(image: UIImage(named: "组 227")!, scaledToSize: CGSize(width: 50, height: 50))
+        marker.title = "標題"
+        marker.snippet = "副標題"
+        
+        let marker1 = GMSMarker()
+        marker1.position = CLLocationCoordinate2DMake( (location?.coordinate.latitude)!, (location?.coordinate.longitude)! + 0.001)
+        marker1.map = mapView
+        marker1.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
+        marker1.title = "標題2"
+        marker1.snippet = "副標題2"
+
+        let marker2 = GMSMarker()
+        marker2.position = CLLocationCoordinate2DMake( (location?.coordinate.latitude)! + 0.001, (location?.coordinate.longitude)! + 0.001)
+        marker2.map = mapView
+        marker2.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
+        marker2.title = "標題3"
+        marker2.snippet = "副標題3"
         
         self.locationManager.stopUpdatingLocation()
 

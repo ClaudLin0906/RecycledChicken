@@ -33,16 +33,20 @@ class SignLoginVC: UIViewController {
     }
     
     @IBAction func LoginBtnAction(_ sender:UIButton) {
-        if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC {
-            VC.modalPresentationStyle = .fullScreen
-            present(VC, animated: false)
+        self.dismiss(animated: false) {
+            if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
+                VC.modalPresentationStyle = .fullScreen
+                topVC.present(VC, animated: false)
+            }
         }
     }
     
     @IBAction func SignUpBtnAction(_ sender:UIButton) {
-        if let VC = UIStoryboard(name: "Sign", bundle: nil).instantiateViewController(withIdentifier: "Sign") as? SignVC {
-            VC.modalPresentationStyle = .fullScreen
-            present(VC, animated: false)
+        self.dismiss(animated: false) {
+            if let VC = UIStoryboard(name: "Sign", bundle: nil).instantiateViewController(withIdentifier: "Sign") as? SignVC, let topVC = getTopController() {
+                VC.modalPresentationStyle = .fullScreen
+                topVC.present(VC, animated: false)
+            }
         }
     }
 
