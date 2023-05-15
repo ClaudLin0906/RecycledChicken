@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1005" translatesAutoresizingMaskIntoConstraints="NO" id="ojO-WX-692">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组39" translatesAutoresizingMaskIntoConstraints="NO" id="ojO-WX-692">
                     <rect key="frame" x="121.66666666666669" y="288.66666666666669" width="150" height="150"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="9wT-ff-1WS"/>
@@ -139,6 +139,6 @@
         </view>
     </objects>
     <resources>
-        <image name="グループ 1005" width="298.33334350585938" height="291"/>
+        <image name="组39" width="230" height="188.66667175292969"/>
     </resources>
 </document>

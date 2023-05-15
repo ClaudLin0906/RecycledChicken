@@ -21,10 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKW-ZR-zqs" userLabel="backgoundView">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ3-NW-8MS" userLabel="background">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmh-R3-tJ0">
                                 <rect key="frame" x="121.66666666666669" y="728" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,7 +51,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1090" translatesAutoresizingMaskIntoConstraints="NO" id="La2-ah-RYb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 3453" translatesAutoresizingMaskIntoConstraints="NO" id="La2-ah-RYb">
                                 <rect key="frame" x="46.666666666666657" y="310.66666666666669" width="300" height="300.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="n52-Ev-Isl"/>
@@ -73,16 +72,16 @@
                         <constraints>
                             <constraint firstItem="zut-ou-63q" firstAttribute="top" secondItem="La2-ah-RYb" secondAttribute="bottom" constant="20" id="Ei7-CZ-bEB"/>
                             <constraint firstItem="zut-ou-63q" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="QXU-XN-JBZ"/>
+                            <constraint firstItem="ZQ3-NW-8MS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Qah-Hk-bbI"/>
                             <constraint firstItem="La2-ah-RYb" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="See-Nl-Zx7"/>
-                            <constraint firstItem="gKW-ZR-zqs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="W6I-cK-Wje"/>
                             <constraint firstItem="lmh-R3-tJ0" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="YnO-l8-l16"/>
+                            <constraint firstAttribute="bottom" secondItem="ZQ3-NW-8MS" secondAttribute="bottom" id="ZEq-SH-fuc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lmh-R3-tJ0" secondAttribute="bottom" constant="50" id="c3c-ZJ-rWV"/>
-                            <constraint firstAttribute="bottom" secondItem="gKW-ZR-zqs" secondAttribute="bottom" id="dqu-e6-cUD"/>
+                            <constraint firstItem="ZQ3-NW-8MS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="eP9-34-tCd"/>
+                            <constraint firstItem="ZQ3-NW-8MS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="haQ-yC-bUD"/>
                             <constraint firstItem="k8o-jO-93K" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="kzD-54-jBz"/>
                             <constraint firstItem="La2-ah-RYb" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="pny-dh-fiR"/>
-                            <constraint firstItem="gKW-ZR-zqs" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="soF-dv-8Bw"/>
                             <constraint firstItem="k8o-jO-93K" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="tvK-di-UDz"/>
-                            <constraint firstItem="gKW-ZR-zqs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yaw-6N-gFw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YGd-Oa-EQ6"/>
@@ -111,6 +110,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="グループ 1090" width="1012" height="1012"/>
+        <image name="グループ 1089" width="1125" height="2436"/>
+        <image name="组 3453" width="672" height="672"/>
     </resources>
 </document>
