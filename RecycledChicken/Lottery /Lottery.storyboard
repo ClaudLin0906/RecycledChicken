@@ -39,23 +39,20 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-00-Az8" userLabel="step1">
                                                     <rect key="frame" x="20" y="-53" width="313" height="150"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnV-Rb-CIf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點 數 抽 獎 專 區" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzm-AI-630">
                                                             <rect key="frame" x="0.0" y="0.0" width="313" height="150"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="點 數 抽 獎 專 區">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="xnV-Rb-CIf" secondAttribute="bottom" id="biZ-p7-9Lo"/>
-                                                        <constraint firstItem="xnV-Rb-CIf" firstAttribute="top" secondItem="jhR-00-Az8" secondAttribute="top" id="eJz-Ew-dRX"/>
+                                                        <constraint firstItem="wzm-AI-630" firstAttribute="leading" secondItem="jhR-00-Az8" secondAttribute="leading" id="Hsq-5S-Mew"/>
+                                                        <constraint firstAttribute="bottom" secondItem="wzm-AI-630" secondAttribute="bottom" id="TEF-ST-HOT"/>
+                                                        <constraint firstItem="wzm-AI-630" firstAttribute="top" secondItem="jhR-00-Az8" secondAttribute="top" id="ZcY-4W-PbK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wzm-AI-630" secondAttribute="trailing" id="mWb-fz-fAu"/>
                                                         <constraint firstAttribute="height" constant="150" id="oTX-uC-wBX"/>
-                                                        <constraint firstItem="xnV-Rb-CIf" firstAttribute="leading" secondItem="jhR-00-Az8" secondAttribute="leading" id="ycm-lr-IYa"/>
-                                                        <constraint firstAttribute="trailing" secondItem="xnV-Rb-CIf" secondAttribute="trailing" id="zly-lF-lVD"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

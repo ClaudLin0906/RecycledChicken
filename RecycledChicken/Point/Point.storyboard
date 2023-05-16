@@ -74,7 +74,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="goToCommodityVoucher:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bg1-uu-Pcw"/>
+                                                            <action selector="goToLottery:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QEe-cz-Cq4"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -110,7 +110,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="goToLottery:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wkE-bg-Njg"/>
+                                                            <action selector="goToCommodityVoucher:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jhs-cX-c62"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
