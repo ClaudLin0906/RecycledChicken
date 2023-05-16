@@ -9,7 +9,7 @@ import UIKit
 
 class TaskVC: CustomRootVC {
     
-    @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var taskTableView:UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class TaskVC: CustomRootVC {
 extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
+        100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,26 +34,27 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row
-        let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-        
-        if row == 0 {
+        let row = indexPath.row        
+        switch row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "寶特瓶回收10瓶"
-        }
-        
-        if row == 1 {
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "電池回收10瓶"
-        }
-        
-        if row == 2 {
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
             cell.title.text = "廣告點擊"
-        }
-        
-        if row == 3 {
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "社群分享"
+            return cell
+        default:
+            return UITableViewCell()
         }
-        
-        return cell
     }
     
 }

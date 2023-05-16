@@ -83,13 +83,21 @@
                                                                 <constraint firstItem="DZ1-3W-L2Y" firstAttribute="centerY" secondItem="4Kh-mX-Klu" secondAttribute="centerY" id="sKw-ka-Tt5"/>
                                                             </constraints>
                                                         </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmW-Cy-R44" userLabel="taskProgressView" customClass="TaskProgressView" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="143.66666666666663" y="0.0" width="179.33333333333337" height="0.0"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="dB3-QH-e1L" firstAttribute="centerY" secondItem="HVs-S3-nqu" secondAttribute="centerY" id="1E9-wb-aM8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KmW-Cy-R44" secondAttribute="trailing" constant="10" id="I0D-Ni-gIV"/>
+                                                        <constraint firstItem="KmW-Cy-R44" firstAttribute="centerY" secondItem="bzU-Ku-0Pd" secondAttribute="centerY" id="L8d-ch-NQ6"/>
                                                         <constraint firstItem="dB3-QH-e1L" firstAttribute="leading" secondItem="HVs-S3-nqu" secondAttribute="leading" constant="20" id="anX-Ys-WgV"/>
                                                         <constraint firstItem="bzU-Ku-0Pd" firstAttribute="centerY" secondItem="HVs-S3-nqu" secondAttribute="centerY" id="cbf-P8-IPq"/>
                                                         <constraint firstItem="bzU-Ku-0Pd" firstAttribute="leading" secondItem="dB3-QH-e1L" secondAttribute="trailing" constant="10" id="jAv-vw-ent"/>
+                                                        <constraint firstItem="KmW-Cy-R44" firstAttribute="leading" secondItem="bzU-Ku-0Pd" secondAttribute="trailing" id="kAb-mG-cwK"/>
+                                                        <constraint firstItem="KmW-Cy-R44" firstAttribute="height" secondItem="bzU-Ku-0Pd" secondAttribute="height" id="sRN-6Y-NNg"/>
                                                         <constraint firstItem="bzU-Ku-0Pd" firstAttribute="height" secondItem="HVs-S3-nqu" secondAttribute="height" id="xyV-pd-R3j"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -176,13 +184,29 @@
                                                                 <constraint firstItem="NIu-ir-pOU" firstAttribute="leading" secondItem="eWb-m0-JkU" secondAttribute="trailing" constant="5" id="ybX-9e-Smv"/>
                                                             </constraints>
                                                         </view>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 3451" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-Zf-tdN">
+                                                            <rect key="frame" x="253" y="-17.666666666666668" width="35" height="35.333333333333336"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="35" id="0sO-i6-400"/>
+                                                                <constraint firstAttribute="width" secondItem="wJW-Zf-tdN" secondAttribute="height" multiplier="1:1" id="Ukg-A0-CL5"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 3452" translatesAutoresizingMaskIntoConstraints="NO" id="2u0-0J-I8I">
+                                                            <rect key="frame" x="293" y="-33" width="30" height="66"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="QoA-hx-anh"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="2u0-0J-I8I" firstAttribute="leading" secondItem="wJW-Zf-tdN" secondAttribute="trailing" constant="5" id="3ou-mF-OrT"/>
                                                         <constraint firstItem="bHa-Aa-Uq7" firstAttribute="height" secondItem="ZZs-co-IKs" secondAttribute="height" id="4vr-Cc-ft1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2u0-0J-I8I" secondAttribute="trailing" constant="10" id="6b0-Tj-jwJ"/>
                                                         <constraint firstItem="zRe-Ad-52Z" firstAttribute="leading" secondItem="ZZs-co-IKs" secondAttribute="leading" constant="20" id="D0W-g3-cOP"/>
                                                         <constraint firstItem="bHa-Aa-Uq7" firstAttribute="centerY" secondItem="ZZs-co-IKs" secondAttribute="centerY" id="DU5-uP-Mew"/>
                                                         <constraint firstItem="bHa-Aa-Uq7" firstAttribute="leading" secondItem="zRe-Ad-52Z" secondAttribute="trailing" constant="10" id="F5T-Rm-b4L"/>
+                                                        <constraint firstItem="2u0-0J-I8I" firstAttribute="centerY" secondItem="bHa-Aa-Uq7" secondAttribute="centerY" id="Uoi-xp-DLE"/>
                                                         <constraint firstItem="zRe-Ad-52Z" firstAttribute="centerY" secondItem="ZZs-co-IKs" secondAttribute="centerY" id="hGq-1Y-cYN"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -203,6 +227,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="ZZs-co-IKs" secondAttribute="bottom" constant="10" id="QCP-xU-dh8"/>
                                                 <constraint firstItem="ZZs-co-IKs" firstAttribute="top" secondItem="izB-xY-fzl" secondAttribute="top" constant="10" id="RbM-py-LDz"/>
                                                 <constraint firstItem="ZZs-co-IKs" firstAttribute="leading" secondItem="izB-xY-fzl" secondAttribute="leading" constant="10" id="U0y-Yg-nGl"/>
+                                                <constraint firstItem="wJW-Zf-tdN" firstAttribute="centerY" secondItem="izB-xY-fzl" secondAttribute="centerY" id="alz-oW-vcm"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZZs-co-IKs" secondAttribute="trailing" constant="10" id="oWa-R9-9ex"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -219,7 +244,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="title" destination="zRe-Ad-52Z" id="n9t-t8-P9c"/>
+                                            <outlet property="title" destination="zRe-Ad-52Z" id="5nX-Xr-hFB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -246,7 +271,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rcg-ho-UNU"/>
                     <connections>
-                        <outlet property="tableView" destination="Rvh-Nu-5VR" id="OlJ-8r-2J5"/>
+                        <outlet property="taskTableView" destination="Rvh-Nu-5VR" id="Veh-Tt-onf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -273,6 +298,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="组 3451" width="137" height="114"/>
+        <image name="组 3452" width="66" height="66"/>
         <image name="组 396" width="82" height="82"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -10,7 +10,9 @@ import UIKit
 class TaskTableViewADCell: UITableViewCell {
     
     static let identifier = "TaskTableViewADCell"
-
+    
+    @IBOutlet weak var title:UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
