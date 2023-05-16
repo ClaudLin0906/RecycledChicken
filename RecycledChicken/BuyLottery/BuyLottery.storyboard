@@ -39,6 +39,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a9v-Sv-0Ri"/>
+                    <connections>
+                        <outlet property="spendPointView" destination="XYE-TE-Tns" id="lfW-Ks-TYf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

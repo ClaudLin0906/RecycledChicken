@@ -152,3 +152,16 @@ func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
     return newImage
 }
 
+func fadeInOutAni(showView:UIView){
+    showView.alpha = 0
+    keyWindow?.addSubview(showView)
+    UIView.animate(withDuration: 2, delay: 0) {
+        showView.alpha = 1
+    } completion: { _ in
+        UIView.animate(withDuration: 2, delay: 1) {
+            showView.alpha = 0
+        } completion: { _ in
+            showView.removeFromSuperview()
+        }
+    }
+}

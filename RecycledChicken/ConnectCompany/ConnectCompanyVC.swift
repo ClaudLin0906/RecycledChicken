@@ -53,17 +53,7 @@ class ConnectCompanyVC: CustomVC {
     func showConnectSuccessView (){
         DispatchQueue.main.async { [self] in
             let connectSuccessView = ConnectSuccessView(frame: view.frame)
-            connectSuccessView.alpha = 0
-            addViewFullScreen(v: connectSuccessView)
-            UIView.animate(withDuration: 2, delay: 0) {
-                connectSuccessView.alpha = 1
-            } completion: { _ in
-                UIView.animate(withDuration: 2, delay: 0) {
-                    connectSuccessView.alpha = 0
-                } completion: { _ in
-                    connectSuccessView.removeFromSuperview()
-                }
-            }
+            fadeInOutAni(showView: connectSuccessView)
         }
     }
 

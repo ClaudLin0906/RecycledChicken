@@ -8,6 +8,8 @@
 import UIKit
 
 class BuyLotteryVC: CustomVC {
+    
+    @IBOutlet weak var spendPointView:SpendPointView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,26 @@ class BuyLotteryVC: CustomVC {
     }
     
     private func UIInit(){
-        
+        spendPointView.delegate = self
     }
 
+}
+
+extension BuyLotteryVC: SpendPointViewDelegate {
+    
+    func btnAction(_ sender: UIButton) {
+        let spendPointAlertView = SpendPointAlertView(frame: view.frame)
+        spendPointAlertView.delegate = self
+        keyWindow?.addSubview(spendPointAlertView)
+    }
+
+}
+
+extension BuyLotteryVC: SpendPointAlertViewDelegate {
+    
+    func confirm(_ sender: UIButton) {
+        let completeTaskAlertView = SpendPointCompleteAlertView(frame: view.frame)
+        fadeInOutAni(showView: completeTaskAlertView)
+    }
+    
 }
