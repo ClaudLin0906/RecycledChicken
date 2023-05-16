@@ -100,6 +100,8 @@
 		59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */; };
 		59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A762A0A53A000E9FD7F /* PersonMessageContentVC.swift */; };
 		59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */; };
+		5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999F05E2A1323EC002F08D8 /* AmountView.swift */; };
+		5999F0612A132409002F08D8 /* AmountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0602A132409002F08D8 /* AmountView.xib */; };
 		59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795492A0F03330031710F /* RingProgressGroupView.swift */; };
 		59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795712A0F72990031710F /* ForgetPasswordVC.swift */; };
 		59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795732A0F72AF0031710F /* ForgetPassword.storyboard */; };
@@ -244,6 +246,8 @@
 		59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageTableViewCell.swift; sourceTree = "<group>"; };
 		59997A762A0A53A000E9FD7F /* PersonMessageContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageContentVC.swift; sourceTree = "<group>"; };
 		59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonMessageContent.storyboard; sourceTree = "<group>"; };
+		5999F05E2A1323EC002F08D8 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
+		5999F0602A132409002F08D8 /* AmountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountView.xib; sourceTree = "<group>"; };
 		59A795492A0F03330031710F /* RingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressGroupView.swift; sourceTree = "<group>"; };
 		59A795712A0F72990031710F /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		59A795732A0F72AF0031710F /* ForgetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetPassword.storyboard; sourceTree = "<group>"; };
@@ -606,6 +610,8 @@
 				5994957D2A0D2C7B009F1B2E /* StoreMap.storyboard */,
 				59AFE15A2A0FA82400490BD8 /* IconView.swift */,
 				59AFE15C2A0FA82E00490BD8 /* IconView.xib */,
+				5999F05E2A1323EC002F08D8 /* AmountView.swift */,
+				5999F0602A132409002F08D8 /* AmountView.xib */,
 			);
 			path = StoreMap;
 			sourceTree = "<group>";
@@ -837,6 +843,7 @@
 				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
 				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
+				5999F0612A132409002F08D8 /* AmountView.xib in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
 				59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */,
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
@@ -992,6 +999,7 @@
 				597521792A0B84A200D0B67C /* SystemSettingModel.swift in Sources */,
 				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
+				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
 				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,

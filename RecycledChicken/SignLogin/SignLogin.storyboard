@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="uVt-c4-QmW" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="uVt-c4-QmW" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 971" translatesAutoresizingMaskIntoConstraints="NO" id="Lg8-fD-3dr">
@@ -32,8 +32,8 @@
                                     <constraint firstAttribute="height" constant="128" id="NwC-nd-Sgc"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-QH-83o">
-                                <rect key="frame" x="0.0" y="237" width="393" height="401"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-QH-83o">
+                                <rect key="frame" x="0.0" y="237" width="393" height="431"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMU-Zv-cwG" userLabel="Content">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
@@ -180,9 +180,9 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Khi-zw-bZk"/>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="22y-KM-Xcw">
-                                <rect key="frame" x="0.0" y="638" width="393" height="180"/>
+                                <rect key="frame" x="0.0" y="668" width="393" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="kFU-fV-dvK"/>
+                                    <constraint firstAttribute="height" constant="150" id="kFU-fV-dvK"/>
                                 </constraints>
                             </imageView>
                         </subviews>
