@@ -34,7 +34,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row        
+        let row = indexPath.row
         switch row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
@@ -51,6 +51,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "社群分享"
+            cell.taskProgressView.setPercent(1, molecular: 0)
             return cell
         default:
             return UITableViewCell()

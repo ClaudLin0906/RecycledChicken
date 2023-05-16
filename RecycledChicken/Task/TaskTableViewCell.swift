@@ -12,6 +12,8 @@ class TaskTableViewCell: UITableViewCell {
     static let identifier = "TaskTableViewCell"
     
     @IBOutlet weak var title:UILabel!
+    
+    @IBOutlet weak var taskProgressView:TaskProgressView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

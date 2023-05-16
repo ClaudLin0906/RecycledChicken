@@ -8,6 +8,10 @@
 import UIKit
 
 class TaskProgressView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var percentLabel:UILabel!
+    
+    @IBOutlet weak var percentprogressView:UIProgressView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +25,11 @@ class TaskProgressView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    func setPercent(_ denominator:Int, molecular:Int){
+        percentLabel.text = "\(molecular)/\(denominator)"
+        percentprogressView.progress = Float(molecular/denominator)
     }
 
 }
