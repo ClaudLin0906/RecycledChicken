@@ -24,27 +24,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ3-NW-8MS" userLabel="background">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmh-R3-tJ0">
-                                <rect key="frame" x="121.66666666666669" y="728" width="150" height="40"/>
-                                <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="UXx-vU-TJD"/>
-                                    <constraint firstAttribute="height" constant="40" id="a94-N5-aUS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="操作說明">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="goToProductDescription:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oyH-Tu-wcU"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lighten AR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8o-jO-93K">
                                 <rect key="frame" x="154" y="153" width="85" height="20"/>
                                 <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
@@ -66,6 +45,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmh-R3-tJ0">
+                                <rect key="frame" x="121.66666666666669" y="758" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="UXx-vU-TJD"/>
+                                    <constraint firstAttribute="height" constant="40" id="a94-N5-aUS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="操作說明">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToProductDescription:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oyH-Tu-wcU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,7 +76,7 @@
                             <constraint firstItem="La2-ah-RYb" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="See-Nl-Zx7"/>
                             <constraint firstItem="lmh-R3-tJ0" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="YnO-l8-l16"/>
                             <constraint firstAttribute="bottom" secondItem="ZQ3-NW-8MS" secondAttribute="bottom" id="ZEq-SH-fuc"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lmh-R3-tJ0" secondAttribute="bottom" constant="50" id="c3c-ZJ-rWV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lmh-R3-tJ0" secondAttribute="bottom" constant="20" id="c3c-ZJ-rWV"/>
                             <constraint firstItem="ZQ3-NW-8MS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="eP9-34-tCd"/>
                             <constraint firstItem="ZQ3-NW-8MS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="haQ-yC-bUD"/>
                             <constraint firstItem="k8o-jO-93K" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="kzD-54-jBz"/>

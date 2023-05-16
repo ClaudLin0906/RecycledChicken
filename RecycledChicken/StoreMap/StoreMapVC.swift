@@ -67,7 +67,7 @@ class StoreMapVC: CustomRootVC {
         mapView.mapType = .normal
         mapView.delegate = self
         mapView.settings.compassButton = true
-        mapView.settings.myLocationButton = true
+        mapView.settings.myLocationButton = false
         mapView.isMyLocationEnabled = true
         
         

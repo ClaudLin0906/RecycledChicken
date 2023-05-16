@@ -44,7 +44,8 @@ class MainTabBarController: UITabBarController {
         } else {
             tabBar.tintColor = .white
             tabBar.isTranslucent = false
-            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
+            tabBar.barTintColor = CommonColor.shared.color5
+//            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 5)
         }
     }
     

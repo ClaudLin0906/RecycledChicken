@@ -102,6 +102,8 @@
 		59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */; };
 		5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999F05E2A1323EC002F08D8 /* AmountView.swift */; };
 		5999F0612A132409002F08D8 /* AmountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0602A132409002F08D8 /* AmountView.xib */; };
+		5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999F0622A134BEF002F08D8 /* WelcomeView.swift */; };
+		5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0642A134C1A002F08D8 /* WelcomeView.xib */; };
 		59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795492A0F03330031710F /* RingProgressGroupView.swift */; };
 		59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795712A0F72990031710F /* ForgetPasswordVC.swift */; };
 		59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795732A0F72AF0031710F /* ForgetPassword.storyboard */; };
@@ -248,6 +250,8 @@
 		59997A782A0A53AF00E9FD7F /* PersonMessageContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonMessageContent.storyboard; sourceTree = "<group>"; };
 		5999F05E2A1323EC002F08D8 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		5999F0602A132409002F08D8 /* AmountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountView.xib; sourceTree = "<group>"; };
+		5999F0622A134BEF002F08D8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		5999F0642A134C1A002F08D8 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		59A795492A0F03330031710F /* RingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressGroupView.swift; sourceTree = "<group>"; };
 		59A795712A0F72990031710F /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		59A795732A0F72AF0031710F /* ForgetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetPassword.storyboard; sourceTree = "<group>"; };
@@ -405,6 +409,8 @@
 				59997A412A08E15400E9FD7F /* CustomCalenderView.xib */,
 				59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */,
 				59997A452A08E2C600E9FD7F /* CustomCalenderViewCell.xib */,
+				5999F0622A134BEF002F08D8 /* WelcomeView.swift */,
+				5999F0642A134C1A002F08D8 /* WelcomeView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -864,6 +870,7 @@
 				598F394C2A0E07A500DA9186 /* SearchView.xib in Resources */,
 				598F39532A0E1F6600DA9186 /* ProductDescription.storyboard in Resources */,
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
+				5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */,
 				597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */,
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
 				5994957E2A0D2C7B009F1B2E /* StoreMap.storyboard in Resources */,
@@ -957,6 +964,7 @@
 				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
+				5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */,
 				59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */,
 				59A7957B2A0F78F20031710F /* UpdatePasswordSuccessView.swift in Sources */,
 				599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */,
