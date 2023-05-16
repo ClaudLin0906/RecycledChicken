@@ -24,6 +24,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func login(_ sender:UIButton){
+        LoginSuccess = true
         self.dismiss(animated: false)
     }
     
