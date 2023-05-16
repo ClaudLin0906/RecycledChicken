@@ -26,21 +26,15 @@ class PointVC: CustomRootVC {
         myTicker.layer.borderWidth = 1
         myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
     }
-
+    
+    @IBAction func goToCommodityVoucher(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CommodityVoucher", bundle: Bundle.main).instantiateViewController(identifier: "CommodityVoucher") as? CommodityVoucherVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
     @IBAction func goToLottery(_ sender:UIButton) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Lottery", bundle: Bundle.main).instantiateViewController(identifier: "Lottery") as? LotteryVC {
-            pushVC(targetVC: VC, navigation: navigationController)
-        }
-    }
-    
-    @IBAction func goToBuyLottery(_ sender:UIButton) {
-        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
-            pushVC(targetVC: VC, navigation: navigationController)
-        }
-    }
-    
-    @IBAction func goToBuyCommodity(_ sender:UIButton) {
-        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
