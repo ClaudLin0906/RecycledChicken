@@ -32,20 +32,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 971" translatesAutoresizingMaskIntoConstraints="NO" id="TJw-v8-csU">
-                                <rect key="frame" x="243" y="59" width="150" height="128"/>
+                                <rect key="frame" x="293" y="58.999999999999993" width="100" height="83.333333333333314"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="9Ot-GH-Hpx"/>
-                                    <constraint firstAttribute="height" constant="128" id="bjt-Dw-kZ7"/>
+                                    <constraint firstAttribute="width" constant="100" id="9Ot-GH-Hpx"/>
+                                    <constraint firstAttribute="width" secondItem="TJw-v8-csU" secondAttribute="height" multiplier="1.2:1" id="tAS-4S-VcF"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1090" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-Kf-v2d">
-                                <rect key="frame" x="0.0" y="217" width="393" height="350"/>
+                                <rect key="frame" x="0.0" y="172.33333333333337" width="393" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="TIa-pa-uO3"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kML-fa-rcg">
-                                <rect key="frame" x="86.666666666666686" y="317" width="220" height="150"/>
+                                <rect key="frame" x="86.666666666666686" y="272.33333333333331" width="220" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入新密碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yI-iZ-Hud">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="37.666666666666664"/>
@@ -137,7 +137,7 @@
                                         <rect key="frame" x="0.0" y="112.66666666666667" width="220" height="37.333333333333329"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tP4-Hy-wHO" customClass="M13Checkbox" customModule="M13Checkbox">
-                                                <rect key="frame" x="79.999999999999986" y="8.6666666666666288" width="20" height="20"/>
+                                                <rect key="frame" x="79.999999999999986" y="8.6666666666666856" width="20" height="20"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>

@@ -31,20 +31,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 971" translatesAutoresizingMaskIntoConstraints="NO" id="6M6-V4-6D3">
-                                <rect key="frame" x="243" y="59" width="150" height="128"/>
+                                <rect key="frame" x="293" y="58.999999999999993" width="100" height="83.333333333333314"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="siR-29-bwf"/>
-                                    <constraint firstAttribute="height" constant="128" id="xVb-ER-1oD"/>
+                                    <constraint firstAttribute="width" secondItem="6M6-V4-6D3" secondAttribute="height" multiplier="1.2:1" id="St7-2h-r9j"/>
+                                    <constraint firstAttribute="width" constant="100" id="siR-29-bwf"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1090" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-Ho-EVo">
-                                <rect key="frame" x="0.0" y="217" width="393" height="350"/>
+                                <rect key="frame" x="0.0" y="172.33333333333337" width="393" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="2sI-bB-nV2"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OvW-WF-2Nr">
-                                <rect key="frame" x="86.666666666666686" y="317" width="220" height="150"/>
+                                <rect key="frame" x="86.666666666666686" y="272.33333333333331" width="220" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-fu-Tik">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="37.666666666666664"/>
@@ -144,7 +144,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-Ny-o8a">
-                                <rect key="frame" x="121.66666666666669" y="582" width="150" height="50"/>
+                                <rect key="frame" x="121.66666666666669" y="537.33333333333337" width="150" height="50"/>
                                 <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BeP-Qg-aJL"/>

@@ -109,6 +109,10 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
             break
         case 1:
             break
+        case 3:
+            isCanEvaluatePolicy { result, reason in
+                
+            }
         default:
             break
         }

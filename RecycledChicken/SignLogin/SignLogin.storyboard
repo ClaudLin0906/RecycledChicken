@@ -26,14 +26,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 971" translatesAutoresizingMaskIntoConstraints="NO" id="Lg8-fD-3dr">
-                                <rect key="frame" x="243" y="59" width="150" height="128"/>
+                                <rect key="frame" x="293" y="58.999999999999993" width="100" height="83.333333333333314"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="DO2-Ka-eLC"/>
-                                    <constraint firstAttribute="height" constant="128" id="NwC-nd-Sgc"/>
+                                    <constraint firstAttribute="width" secondItem="Lg8-fD-3dr" secondAttribute="height" multiplier="1.2:1" id="pSb-Rc-xBT"/>
+                                    <constraint firstAttribute="width" constant="100" id="zpb-iv-w3V"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-QH-83o">
-                                <rect key="frame" x="0.0" y="237" width="393" height="431"/>
+                                <rect key="frame" x="0.0" y="192.33333333333337" width="393" height="474"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMU-Zv-cwG" userLabel="Content">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="315"/>
@@ -80,7 +80,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29D-Lw-PQb" userLabel="Step3">
-                                                <rect key="frame" x="0.0" y="158" width="393" height="157"/>
+                                                <rect key="frame" x="0.0" y="157.99999999999997" width="393" height="157.00000000000003"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84k-bG-uId">
                                                         <rect key="frame" x="71.666666666666686" y="0.0" width="250" height="50"/>
@@ -180,10 +180,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Khi-zw-bZk"/>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="22y-KM-Xcw">
-                                <rect key="frame" x="0.0" y="668" width="393" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="kFU-fV-dvK"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="666.33333333333337" width="393" height="151.66666666666663"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -193,6 +190,7 @@
                             <constraint firstItem="VH3-QH-83o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ApO-46-m3L"/>
                             <constraint firstAttribute="bottom" secondItem="uVt-c4-QmW" secondAttribute="bottom" id="C44-53-epC"/>
                             <constraint firstItem="Lg8-fD-3dr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="KT6-nF-f3h"/>
+                            <constraint firstItem="22y-KM-Xcw" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.2" id="LEl-YK-jFL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="22y-KM-Xcw" secondAttribute="trailing" id="PGu-G6-3S4"/>
                             <constraint firstItem="VH3-QH-83o" firstAttribute="top" secondItem="Lg8-fD-3dr" secondAttribute="bottom" constant="50" id="WPc-jQ-TjN"/>
                             <constraint firstItem="fMU-Zv-cwG" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="XkB-mq-gMj"/>
