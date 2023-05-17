@@ -124,13 +124,6 @@ class ProfileVC: CustomVC {
             fadeInOutAni(showView: profileUpdateView)
         }
     }
-    
-    private func showSignLoginVC(){
-        if let VC = UIStoryboard(name: "SignLogin", bundle: nil).instantiateViewController(withIdentifier: "SignLogin") as? SignLoginVC {
-            VC.modalPresentationStyle = .fullScreen
-            present(VC, animated: false)
-        }
-    }
 
 }
 

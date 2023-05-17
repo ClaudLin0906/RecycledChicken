@@ -51,6 +51,10 @@ class CommonKey {
     let googleMapKey = "AIzaSyCQooOAaz-Lm2IpRZGz26Lx6lTSs9JFvZQ"
 }
 
+public class CommonUserDefaultsKey{
+    static let removeBackground = "removeBackground"
+}
+
 protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }

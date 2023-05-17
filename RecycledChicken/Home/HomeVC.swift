@@ -27,6 +27,7 @@ class HomeVC: CustomRootVC {
             let welcomeView = WelcomeView(frame: UIScreen.main.bounds)
             keyWindow?.addSubview(welcomeView)
             FirstTime = false
+            NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
     }
     

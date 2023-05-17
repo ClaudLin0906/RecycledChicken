@@ -233,3 +233,7 @@ extension NibOwnerLoadable where Self:UIView {
         contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
+
+extension Notification.Name {
+    static let removeBackground = Notification.Name("removeBackground")
+}
