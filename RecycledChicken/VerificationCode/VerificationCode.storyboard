@@ -189,7 +189,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-8p-cpP">
-                                <rect key="frame" x="0.0" y="638" width="393" height="180"/>
+                                <rect key="frame" x="0.0" y="672" width="393" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="7KK-Im-Qfk"/>
                                 </constraints>
@@ -213,7 +213,7 @@
                             <constraint firstItem="qKo-8p-cpP" firstAttribute="leading" secondItem="GWu-dP-XPG" secondAttribute="leading" id="XT7-y8-e0G"/>
                             <constraint firstItem="Pzg-eB-EXa" firstAttribute="top" secondItem="lEb-6j-6P4" secondAttribute="top" id="ZwN-Xp-k9g"/>
                             <constraint firstItem="3vC-nO-2Cl" firstAttribute="top" secondItem="GWu-dP-XPG" secondAttribute="top" id="cSf-K3-9IA"/>
-                            <constraint firstItem="GWu-dP-XPG" firstAttribute="bottom" secondItem="qKo-8p-cpP" secondAttribute="bottom" id="eKQ-H8-oFv"/>
+                            <constraint firstAttribute="bottom" secondItem="qKo-8p-cpP" secondAttribute="bottom" id="eKQ-H8-oFv"/>
                             <constraint firstAttribute="bottom" secondItem="Pzg-eB-EXa" secondAttribute="bottom" id="hFP-cb-LMb"/>
                             <constraint firstItem="0kh-3F-tZc" firstAttribute="top" secondItem="p73-49-rKC" secondAttribute="bottom" constant="10" id="sdu-fi-YkC"/>
                             <constraint firstItem="p73-49-rKC" firstAttribute="centerX" secondItem="g5E-mc-KVs" secondAttribute="centerX" id="soY-dI-x6k"/>

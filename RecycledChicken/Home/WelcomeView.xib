@@ -15,10 +15,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udu-ST-68P">
-                    <rect key="frame" x="39.333333333333343" y="79" width="314.33333333333326" height="719"/>
+                    <rect key="frame" x="19.666666666666657" y="79" width="353.66666666666674" height="719"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtv-n2-Xcp">
-                            <rect key="frame" x="284.33333333333337" y="0.0" width="30" height="30"/>
+                            <rect key="frame" x="323.66666666666663" y="0.0" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="18z-tp-cka"/>
                                 <constraint firstAttribute="height" constant="30" id="LTT-bU-Kia"/>
@@ -53,7 +53,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="udu-ST-68P" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="ElL-My-kc2"/>
-                <constraint firstItem="udu-ST-68P" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.8" id="fh7-u1-40w"/>
+                <constraint firstItem="udu-ST-68P" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.9" id="fh7-u1-40w"/>
                 <constraint firstItem="udu-ST-68P" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="lhW-qU-TwM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="udu-ST-68P" secondAttribute="bottom" constant="20" id="pqU-Gi-FcB"/>
                 <constraint firstItem="udu-ST-68P" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="xt2-Tk-nA8"/>

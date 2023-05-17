@@ -171,7 +171,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="dZE-mW-tHd">
-                                <rect key="frame" x="0.0" y="638" width="393" height="180"/>
+                                <rect key="frame" x="0.0" y="672" width="393" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="9qd-Mk-oAH"/>
                                 </constraints>
@@ -185,7 +185,7 @@
                             <constraint firstItem="kML-fa-rcg" firstAttribute="centerX" secondItem="Wgh-Kf-v2d" secondAttribute="centerX" id="Sad-gK-v0B"/>
                             <constraint firstItem="TJw-v8-csU" firstAttribute="top" secondItem="YGf-eA-8CO" secondAttribute="top" id="UWu-e2-Cam"/>
                             <constraint firstItem="YGf-eA-8CO" firstAttribute="trailing" secondItem="TJw-v8-csU" secondAttribute="trailing" id="VbO-NG-zuN"/>
-                            <constraint firstItem="YGf-eA-8CO" firstAttribute="bottom" secondItem="dZE-mW-tHd" secondAttribute="bottom" id="XW3-mb-ywD"/>
+                            <constraint firstAttribute="bottom" secondItem="dZE-mW-tHd" secondAttribute="bottom" id="XW3-mb-ywD"/>
                             <constraint firstItem="Wgh-Kf-v2d" firstAttribute="leading" secondItem="YGf-eA-8CO" secondAttribute="leading" id="pM2-F9-5Au"/>
                             <constraint firstItem="dZE-mW-tHd" firstAttribute="leading" secondItem="YGf-eA-8CO" secondAttribute="leading" id="pNq-dx-soj"/>
                             <constraint firstItem="dZE-mW-tHd" firstAttribute="trailing" secondItem="YGf-eA-8CO" secondAttribute="trailing" id="rad-xI-igp"/>

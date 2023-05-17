@@ -222,7 +222,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-kR-8Ki">
-                                <rect key="frame" x="0.0" y="638" width="393" height="180"/>
+                                <rect key="frame" x="0.0" y="672" width="393" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="U8w-i9-nPv"/>
                                 </constraints>
@@ -245,7 +245,7 @@
                             <constraint firstItem="lWR-pO-Tbf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jTR-rE-otc"/>
                             <constraint firstItem="aOM-KG-Vmh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mWF-8X-10R"/>
                             <constraint firstItem="Mtm-79-DvR" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="pWB-qI-aga"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3yf-kR-8Ki" secondAttribute="bottom" id="sws-cc-Rhl"/>
+                            <constraint firstAttribute="bottom" secondItem="3yf-kR-8Ki" secondAttribute="bottom" id="sws-cc-Rhl"/>
                             <constraint firstItem="aOM-KG-Vmh" firstAttribute="top" secondItem="lWR-pO-Tbf" secondAttribute="bottom" constant="30" id="yKE-DS-5e8"/>
                         </constraints>
                     </view>

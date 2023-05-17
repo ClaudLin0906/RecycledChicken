@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52b-Be-cXd">
-                                <rect key="frame" x="20" y="103" width="353" height="300"/>
+                                <rect key="frame" x="20" y="123" width="353" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeR-cM-VBV">
                                         <rect key="frame" x="20" y="20" width="70" height="70"/>
@@ -65,7 +65,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="52b-Be-cXd" secondAttribute="trailing" constant="20" id="C4h-3w-QtK"/>
                             <constraint firstItem="fp1-Rf-nLa" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="YnX-hy-o0N"/>
                             <constraint firstItem="fp1-Rf-nLa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="eJJ-ae-TQr"/>
-                            <constraint firstItem="52b-Be-cXd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="wRm-bu-bdz"/>
+                            <constraint firstItem="52b-Be-cXd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="wRm-bu-bdz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="smd-cw-DJF"/>

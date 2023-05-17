@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="JeA-Rx-7R9" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="JeA-Rx-7R9" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hgN-nf-tsL">
                                 <rect key="frame" x="20" y="103" width="353" height="715"/>
@@ -89,6 +88,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hgN-nf-tsL" secondAttribute="trailing" constant="20" id="5VB-XQ-FzU"/>
+                            <constraint firstAttribute="bottom" secondItem="JeA-Rx-7R9" secondAttribute="bottom" id="JVL-s9-3J1"/>
+                            <constraint firstItem="JeA-Rx-7R9" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="YPd-wj-Yar"/>
+                            <constraint firstItem="JeA-Rx-7R9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="irA-lP-dWU"/>
+                            <constraint firstItem="JeA-Rx-7R9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="jSe-eD-499"/>
                             <constraint firstItem="hgN-nf-tsL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="pJC-kz-y3k"/>
                             <constraint firstItem="hgN-nf-tsL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="rO9-Rp-iBx"/>
                             <constraint firstItem="hgN-nf-tsL" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ulw-Qf-AXd"/>

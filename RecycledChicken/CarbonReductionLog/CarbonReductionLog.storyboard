@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="241" height="545"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-og-uPf" userLabel="content">
-                                                <rect key="frame" x="0.0" y="0.0" width="241" height="750"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="241" height="700"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-Hg-eYs" userLabel="step1">
                                                         <rect key="frame" x="20" y="0.0" width="201" height="50"/>
@@ -129,10 +129,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwp-vD-oDl" userLabel="step4">
-                                                        <rect key="frame" x="20" y="230" width="201" height="300"/>
+                                                        <rect key="frame" x="20" y="230" width="201" height="250"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0PQ-En-Vso" customClass="RingProgressGroupView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="300"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="250"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="ring1StartColor">
@@ -155,12 +155,12 @@
                                                             <constraint firstAttribute="bottom" secondItem="0PQ-En-Vso" secondAttribute="bottom" id="MmQ-3h-Rat"/>
                                                             <constraint firstItem="0PQ-En-Vso" firstAttribute="leading" secondItem="kwp-vD-oDl" secondAttribute="leading" id="UMc-Se-YBz"/>
                                                             <constraint firstItem="0PQ-En-Vso" firstAttribute="top" secondItem="kwp-vD-oDl" secondAttribute="top" id="WPP-Xk-BO8"/>
-                                                            <constraint firstAttribute="height" constant="300" id="gou-dt-6bn"/>
+                                                            <constraint firstAttribute="height" constant="250" id="gou-dt-6bn"/>
                                                             <constraint firstAttribute="trailing" secondItem="0PQ-En-Vso" secondAttribute="trailing" id="p6Z-vg-SaT"/>
                                                         </constraints>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFq-GY-mPS" userLabel="step5">
-                                                        <rect key="frame" x="20" y="540" width="201" height="100"/>
+                                                        <rect key="frame" x="20" y="490" width="201" height="100"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 3454" translatesAutoresizingMaskIntoConstraints="NO" id="J4Q-5A-EL8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="201" height="100"/>
@@ -179,7 +179,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UoG-bh-9i4" userLabel="step6">
-                                                        <rect key="frame" x="20" y="650" width="201" height="70"/>
+                                                        <rect key="frame" x="20" y="600" width="201" height="70"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 592" translatesAutoresizingMaskIntoConstraints="NO" id="eUe-IA-dOs">
                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
