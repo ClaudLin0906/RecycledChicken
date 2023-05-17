@@ -162,7 +162,7 @@
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFq-GY-mPS" userLabel="step5">
                                                         <rect key="frame" x="20" y="540" width="201" height="100"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 974" translatesAutoresizingMaskIntoConstraints="NO" id="J4Q-5A-EL8">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 3454" translatesAutoresizingMaskIntoConstraints="NO" id="J4Q-5A-EL8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="201" height="100"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </imageView>
@@ -343,7 +343,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="グループ 974" width="1127.6666259765625" height="193"/>
+        <image name="组 3454" width="808.33331298828125" height="224.66667175292969"/>
         <image name="组 592" width="155" height="168"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
