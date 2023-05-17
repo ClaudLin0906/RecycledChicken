@@ -39,14 +39,15 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupItems()
-        if #available(iOS 15.0, *) {
-            updateTabBarAppearance()
-        } else {
-            tabBar.tintColor = .white
-            tabBar.isTranslucent = false
-            tabBar.barTintColor = CommonColor.shared.color5
-//            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 5)
-        }
+        updateTabBarAppearance()
+//        if #available(iOS 15.0, *) {
+//
+//        } else {
+//            tabBar.tintColor = .white
+//            tabBar.isTranslucent = false
+//            tabBar.barTintColor = CommonColor.shared.color5
+//
+//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,7 +58,6 @@ class MainTabBarController: UITabBarController {
         self.tabBar.frame = tabFrame
     }
 
-    @available(iOS 15.0, *)
     private func updateTabBarAppearance(){
         let tabBarItemAppearance = UITabBarItemAppearance()
         tabBarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -67,10 +67,12 @@ class MainTabBarController: UITabBarController {
         tabBarAppearance.configureWithOpaqueBackground()
         tabBarAppearance.backgroundColor = CommonColor.shared.color5
         tabBarAppearance.backgroundImage = UIImage(named: "グループ 974")
-        tabBarAppearance.stackedLayoutAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
-        tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
+        if #available(iOS 15.0, *) {
+            tabBarAppearance.stackedLayoutAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
+            tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
+            tabBar.scrollEdgeAppearance = tabBarAppearance
+        }
         tabBar.standardAppearance = tabBarAppearance
-        tabBar.scrollEdgeAppearance = tabBarAppearance
     }
     
 

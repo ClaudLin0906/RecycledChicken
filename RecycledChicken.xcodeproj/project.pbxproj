@@ -1205,6 +1205,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "需要您提供權限使用生物辨識登入";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "請提供你的位置";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "請提供你的位置";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1218,10 +1219,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lowcarbonpartridge;
+				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = RecycledChicken;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = RecycledChicken;
+				PROVISIONING_PROFILE_SPECIFIER = lowcarbonPartridge;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = lowcarbonPartridge;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1246,6 +1247,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "需要您提供權限使用生物辨識登入";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "請提供你的位置";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "請提供你的位置";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1259,10 +1261,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = lowcarbonpartridge;
+				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = RecycledChicken;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = RecycledChicken;
+				PROVISIONING_PROFILE_SPECIFIER = lowcarbonPartridge;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = lowcarbonPartridge;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
