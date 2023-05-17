@@ -18,7 +18,7 @@ class SystemSettingVC: CustomVC {
         switchTableViewInfo(title: "APP活動通知", isTrue: false),
         switchTableViewInfo(title: "信件通知", isTrue: true),
         switchTableViewInfo(title: "回收機消息通知", isTrue: true),
-        switchTableViewInfo(title: "生物辨識", isTrue: true)
+        switchTableViewInfo(title: "生物辨識", isTrue: false)
     ]
     
     var accountTableViewInfos:[accountTableViewInfo] =
@@ -86,6 +86,8 @@ extension SystemSettingVC:UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as! SwitchTableViewCell
             let info = switchTableViewInfos[row]
+            cell.delegate = self
+            cell.tag = row
             cell.setCell(info)
             return cell
         case 1:
@@ -97,6 +99,20 @@ extension SystemSettingVC:UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
+}
+
+extension SystemSettingVC:SwitchTableViewCellDelegate{
     
+    func changeStatus(_ sender: UISwitch, tag: Int) {
+        switch tag {
+        case 0:
+            break
+        case 1:
+            break
+        default:
+            break
+        }
+    }
     
+        
 }

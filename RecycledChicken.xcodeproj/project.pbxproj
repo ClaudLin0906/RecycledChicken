@@ -27,6 +27,7 @@
 		5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF52A1364570005686F /* TaskTableViewADCell.swift */; };
 		5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF92A1364EE0005686F /* TaskProgressView.swift */; };
 		5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964AAFB2A1364F70005686F /* TaskProgressView.xib */; };
+		5964AAFE2A14769C0005686F /* LAContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAFD2A14769C0005686F /* LAContextManager.swift */; };
 		597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521612A0B49D300D0B67C /* SettingMenuVC.swift */; };
 		597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */; };
 		5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */; };
@@ -178,6 +179,7 @@
 		5964AAF52A1364570005686F /* TaskTableViewADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewADCell.swift; sourceTree = "<group>"; };
 		5964AAF92A1364EE0005686F /* TaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressView.swift; sourceTree = "<group>"; };
 		5964AAFB2A1364F70005686F /* TaskProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskProgressView.xib; sourceTree = "<group>"; };
+		5964AAFD2A14769C0005686F /* LAContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LAContextManager.swift; sourceTree = "<group>"; };
 		597521612A0B49D300D0B67C /* SettingMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuVC.swift; sourceTree = "<group>"; };
 		597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingMenu.storyboard; sourceTree = "<group>"; };
 		597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				5926C5832A04086400FAB49D /* Main.storyboard */,
 				599495692A0BFC12009F1B2E /* CommonUI */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				5964AAFD2A14769C0005686F /* LAContextManager.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
 				59997A5D2A09EDE900E9FD7F /* CommonImageButton.swift */,
@@ -1046,6 +1049,7 @@
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
 				59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */,
+				5964AAFE2A14769C0005686F /* LAContextManager.swift in Sources */,
 				599495662A0BFA1A009F1B2E /* BuyLotteryVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
