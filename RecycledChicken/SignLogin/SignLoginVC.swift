@@ -49,5 +49,14 @@ class SignLoginVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func forgetPasswordBtnAction(_ sender:UIButton) {
+        self.dismiss(animated: false) {
+            if let VC = UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgetPassword") as? ForgetPasswordVC, let topVC = getTopController() {
+                VC.modalPresentationStyle = .fullScreen
+                topVC.present(VC, animated: false)
+            }
+        }
+    }
 
 }
