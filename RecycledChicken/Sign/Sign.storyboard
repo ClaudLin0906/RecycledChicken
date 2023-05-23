@@ -72,7 +72,7 @@
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-dg-MqN" userLabel="underLine">
                                                 <rect key="frame" x="0.0" y="36.333333333333314" width="220" height="1"/>
-                                                <color key="backgroundColor" red="0.8980392157" green="0.53333333329999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="JpN-My-lBq"/>
                                                 </constraints>
@@ -112,7 +112,7 @@
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9s-DI-ogr" userLabel="underLine">
                                                 <rect key="frame" x="0.0" y="36.666666666666686" width="220" height="1"/>
-                                                <color key="backgroundColor" red="0.8980392157" green="0.53333333329999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="84P-4E-3BO"/>
                                                 </constraints>
