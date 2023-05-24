@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "15FB4D79-CCAD-4C23-A50F-50541403D2E5"
-            shouldBeEnabled = "Yes"
+            uuid = "338E6B91-CE0A-47B5-9D0D-E9B07133C736"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/AppDelegate.swift"
+            filePath = "RecycledChicken/MainTabBarController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "setupItems()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

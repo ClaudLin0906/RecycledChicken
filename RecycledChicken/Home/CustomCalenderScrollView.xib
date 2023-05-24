@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCalenderScrollView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="lastWeek" destination="dOr-xw-jX2" id="xRz-MU-owZ"/>
+                <outlet property="scrollView" destination="f9J-sn-JgH" id="dH0-gv-tgU"/>
+                <outlet property="thisWeek" destination="WfQ-fx-cPJ" id="v5k-Nf-W8t"/>
+                <outlet property="threeWeekago" destination="Dh7-oH-lg4" id="cmr-4S-Qgp"/>
+                <outlet property="twoWeekago" destination="vyz-Sn-Pae" id="Ivx-HG-f0M"/>
+            </connections>
+        </placeholder>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9J-sn-JgH">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gf-I2-3O0" userLabel="contetnt">
+                            <rect key="frame" x="0.0" y="0.0" width="1572" height="759"/>
+                            <subviews>
+                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfQ-fx-cPJ" userLabel="thisWeek" customClass="CustomCalenderView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="1179" y="5" width="393" height="749"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOr-xw-jX2" userLabel="lastWeek" customClass="CustomCalenderView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="786" y="5" width="393" height="749"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyz-Sn-Pae" userLabel="twoWeekAgo" customClass="CustomCalenderView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="393" y="5" width="393" height="749"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dh7-oH-lg4" userLabel="threeWeekAgo" customClass="CustomCalenderView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="5" width="393" height="749"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="WfQ-fx-cPJ" secondAttribute="trailing" id="4FY-el-uGI"/>
+                                <constraint firstItem="Dh7-oH-lg4" firstAttribute="trailing" secondItem="vyz-Sn-Pae" secondAttribute="leading" id="9d4-mK-t9O"/>
+                                <constraint firstItem="vyz-Sn-Pae" firstAttribute="centerY" secondItem="dOr-xw-jX2" secondAttribute="centerY" id="JLM-8X-5HE"/>
+                                <constraint firstItem="Dh7-oH-lg4" firstAttribute="height" secondItem="vyz-Sn-Pae" secondAttribute="height" id="JmU-lo-qic"/>
+                                <constraint firstItem="Dh7-oH-lg4" firstAttribute="centerY" secondItem="vyz-Sn-Pae" secondAttribute="centerY" id="MO8-8q-idL"/>
+                                <constraint firstItem="dOr-xw-jX2" firstAttribute="trailing" secondItem="WfQ-fx-cPJ" secondAttribute="leading" id="Ov2-v6-HQS"/>
+                                <constraint firstItem="vyz-Sn-Pae" firstAttribute="width" secondItem="dOr-xw-jX2" secondAttribute="width" id="Q6X-JW-hqH"/>
+                                <constraint firstItem="Dh7-oH-lg4" firstAttribute="leading" secondItem="9gf-I2-3O0" secondAttribute="leading" id="Q9l-CS-PPc"/>
+                                <constraint firstItem="vyz-Sn-Pae" firstAttribute="height" secondItem="dOr-xw-jX2" secondAttribute="height" id="RUz-Ds-MkM"/>
+                                <constraint firstItem="dOr-xw-jX2" firstAttribute="height" secondItem="WfQ-fx-cPJ" secondAttribute="height" id="Sq1-my-NaA"/>
+                                <constraint firstItem="dOr-xw-jX2" firstAttribute="width" secondItem="WfQ-fx-cPJ" secondAttribute="width" id="aG1-Da-Bin"/>
+                                <constraint firstAttribute="bottom" secondItem="WfQ-fx-cPJ" secondAttribute="bottom" constant="5" id="eNB-Hx-O9T"/>
+                                <constraint firstItem="vyz-Sn-Pae" firstAttribute="trailing" secondItem="dOr-xw-jX2" secondAttribute="leading" id="iqa-AL-oce"/>
+                                <constraint firstItem="WfQ-fx-cPJ" firstAttribute="centerY" secondItem="9gf-I2-3O0" secondAttribute="centerY" id="owV-RM-eht"/>
+                                <constraint firstItem="dOr-xw-jX2" firstAttribute="centerY" secondItem="WfQ-fx-cPJ" secondAttribute="centerY" id="qaa-7J-b41"/>
+                                <constraint firstItem="Dh7-oH-lg4" firstAttribute="width" secondItem="vyz-Sn-Pae" secondAttribute="width" id="tE6-bD-MPg"/>
+                                <constraint firstItem="WfQ-fx-cPJ" firstAttribute="top" secondItem="9gf-I2-3O0" secondAttribute="top" constant="5" id="wmc-0c-0gj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="9gf-I2-3O0" firstAttribute="bottom" secondItem="6HD-n6-XVy" secondAttribute="bottom" id="IUr-bR-CAB"/>
+                        <constraint firstItem="WfQ-fx-cPJ" firstAttribute="width" secondItem="ZNG-v6-nKa" secondAttribute="width" id="PNG-Hq-qvr"/>
+                        <constraint firstItem="9gf-I2-3O0" firstAttribute="height" secondItem="ZNG-v6-nKa" secondAttribute="height" id="Uvx-Zj-IR9"/>
+                        <constraint firstItem="9gf-I2-3O0" firstAttribute="leading" secondItem="6HD-n6-XVy" secondAttribute="leading" id="byI-0i-EQf"/>
+                        <constraint firstItem="9gf-I2-3O0" firstAttribute="trailing" secondItem="6HD-n6-XVy" secondAttribute="trailing" id="fT0-20-Azb"/>
+                        <constraint firstItem="9gf-I2-3O0" firstAttribute="top" secondItem="6HD-n6-XVy" secondAttribute="top" id="wYA-1y-scF"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="6HD-n6-XVy"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="ZNG-v6-nKa"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="f9J-sn-JgH" secondAttribute="trailing" id="3ph-4t-30j"/>
+                <constraint firstItem="f9J-sn-JgH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="R29-9P-eAK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="f9J-sn-JgH" secondAttribute="bottom" id="Ra9-dL-cat"/>
+                <constraint firstItem="f9J-sn-JgH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Y8V-0x-LlJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-167" y="20"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+</document>

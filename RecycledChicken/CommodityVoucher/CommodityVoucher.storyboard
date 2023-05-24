@@ -37,10 +37,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYY-YK-05j" userLabel="step1">
-                                                    <rect key="frame" x="20" y="-34.333333333333336" width="282.33333333333331" height="112.66666666666669"/>
+                                                    <rect key="frame" x="35.333333333333343" y="-34" width="282.33333333333326" height="112"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adceg18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBA-5H-ZHd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="112.66666666666667"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="112"/>
                                                             <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -52,6 +52,7 @@
                                                         <constraint firstAttribute="width" secondItem="WYY-YK-05j" secondAttribute="height" multiplier="2.5:1" id="W1L-56-NJn"/>
                                                         <constraint firstItem="XBA-5H-ZHd" firstAttribute="top" secondItem="WYY-YK-05j" secondAttribute="top" id="XI3-9o-msl"/>
                                                         <constraint firstAttribute="bottom" secondItem="XBA-5H-ZHd" secondAttribute="bottom" id="b28-zR-c2L"/>
+                                                        <constraint firstAttribute="width" secondItem="WYY-YK-05j" secondAttribute="height" multiplier="141:56" id="f0p-jv-tSD"/>
                                                         <constraint firstItem="XBA-5H-ZHd" firstAttribute="leading" secondItem="WYY-YK-05j" secondAttribute="leading" id="qE0-Et-aI6"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -70,9 +71,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="WYY-YK-05j" firstAttribute="centerY" secondItem="fob-oN-fi8" secondAttribute="centerY" id="4L9-4K-D4M"/>
-                                                <constraint firstItem="WYY-YK-05j" firstAttribute="leading" secondItem="fob-oN-fi8" secondAttribute="leading" constant="20" id="UFn-NX-FM4"/>
                                                 <constraint firstItem="WYY-YK-05j" firstAttribute="centerX" secondItem="fob-oN-fi8" secondAttribute="centerX" id="YnA-9T-22E"/>
-                                                <constraint firstAttribute="trailing" secondItem="WYY-YK-05j" secondAttribute="trailing" constant="20" id="YpU-Ow-ZrH"/>
                                                 <constraint firstItem="WYY-YK-05j" firstAttribute="width" secondItem="fob-oN-fi8" secondAttribute="width" multiplier="0.8" id="deO-8l-Lzy"/>
                                             </constraints>
                                         </tableViewCellContentView>

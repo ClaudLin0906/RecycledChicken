@@ -13,6 +13,16 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var dateLabel:UILabel!
     
+    var dateID:String?{
+        willSet{
+            if let newValue = newValue, newValue == getDates(i: 0, currentDate: Date()).0 {
+                isCurrentDate = true
+            }else{
+                isCurrentDate = false
+            }
+        }
+    }
+    
     var isCurrentDate:Bool = false {
         willSet{
             if newValue {
@@ -42,6 +52,10 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
 
     private func customInit(){
         loadNibContent()
+    }
+    
+    @IBAction func btnAction(_ sender:UIButton) {
+        print("123")
     }
 
 }

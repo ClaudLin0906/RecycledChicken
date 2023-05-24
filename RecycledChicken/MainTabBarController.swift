@@ -78,8 +78,9 @@ class MainTabBarController: UITabBarController {
 
     private func setupItems() {
         for (index,value) in tabbarTitle.enumerated(){
-            let noSelectImage = noSelectImages[index]!.withRenderingMode(.alwaysOriginal)
-            let SelectImage = selectImages[index]!.withRenderingMode(.alwaysOriginal)
+            var imageSize = CGSize(width: 40, height: 40)
+            let noSelectImage = noSelectImages[index]!.resize(targetSize: imageSize).withRenderingMode(.alwaysOriginal)
+            let SelectImage = selectImages[index]!.resize(targetSize: imageSize).withRenderingMode(.alwaysOriginal)
             if let nc = viewControllers![index] as? UINavigationController {
                 nc.tabBarItem.title = value
                 nc.tabBarItem.image = noSelectImage

@@ -37,10 +37,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-00-Az8" userLabel="step1">
-                                                    <rect key="frame" x="35.333333333333343" y="-34.333333333333329" width="282.33333333333326" height="112.66666666666669"/>
+                                                    <rect key="frame" x="35.333333333333343" y="-34" width="282.33333333333326" height="112"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點 數 抽 獎 專 區" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzm-AI-630">
-                                                            <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="112.66666666666667"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="112"/>
                                                             <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -53,6 +53,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="wzm-AI-630" secondAttribute="bottom" id="TEF-ST-HOT"/>
                                                         <constraint firstItem="wzm-AI-630" firstAttribute="top" secondItem="jhR-00-Az8" secondAttribute="top" id="ZcY-4W-PbK"/>
                                                         <constraint firstAttribute="trailing" secondItem="wzm-AI-630" secondAttribute="trailing" id="mWb-fz-fAu"/>
+                                                        <constraint firstAttribute="width" secondItem="jhR-00-Az8" secondAttribute="height" multiplier="141:56" id="tyY-RV-p50"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

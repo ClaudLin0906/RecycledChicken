@@ -36,65 +36,49 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
 
     private func customInit(){
         loadNibContent()
-        monCalender.weekLabel.text = "mon"
-        tueCalender.weekLabel.text = "tue"
-        wedCalender.weekLabel.text = "wed"
-        thuCalender.weekLabel.text = "thu"
-        friCalender.weekLabel.text = "fri"
-        satCalender.weekLabel.text = "sat"
-        sunCalender.weekLabel.text = "sun"
-        getSevenDays()
     }
     
-    private func getSevenDays(){
+    private func setCustomCalenderViewCell(_ calenderViewCell:CustomCalenderViewCell,dataInfo:(String, String, Date)){
+        calenderViewCell.dateID = dataInfo.0
+        calenderViewCell.dateLabel.text = String(dataInfo.0.split(separator: "-")[2])
+        calenderViewCell.weekLabel.text = dataInfo.1
+    }
+    
+    func getSevenDays(targetDate:Date){
         let weekDay = getDayOfTheWeek()
         var selectedDatesIndex = 0
         switch weekDay {
-        case "Sunday":
+        case "Sun":
             selectedDatesIndex = 6
-            sunCalender.isCurrentDate = true
-        case "Monday":
+        case "Mon":
             selectedDatesIndex = 0
-            monCalender.isCurrentDate = true
-        case "Tuesday":
+        case "Tue":
             selectedDatesIndex = 1
-            tueCalender.isCurrentDate = true
-        case "Wednesday":
+        case "Wed":
             selectedDatesIndex = 2
-            wedCalender.isCurrentDate = true
-        case "Thurday":
+        case "Thu":
             selectedDatesIndex = 3
-            thuCalender.isCurrentDate = true
-        case "Friday":
+        case "Fri":
             selectedDatesIndex = 4
-            friCalender.isCurrentDate = true
-        case "Saturday":
+        case "Sat":
             selectedDatesIndex = 5
-            satCalender.isCurrentDate = true
         default:
             break
         }
-        var sevenDaysToShow:[String] = []
+        var sevenDaysToShow:[(String, String, Date)] = []
         sevenDaysToShow.removeAll()
         for index in 0..<7 {
             let newIndex = index - selectedDatesIndex
-            sevenDaysToShow.append(getDates(i: newIndex, currentDate: Date()).0)
+//            sevenDaysToShow.append(getDates(i: newIndex, currentDate: Calendar.current.date(byAdding: .day, value: -7, to: Date())!))
+            sevenDaysToShow.append(getDates(i: newIndex, currentDate: targetDate))
         }
-        
-        for show in sevenDaysToShow {
-            if show == getDates(i: 0, currentDate: Date()).0 {
-                print(show)
-            }
-        }
-        
-        monCalender.dateLabel.text = String(sevenDaysToShow[0].split(separator: "-")[2])
-        tueCalender.dateLabel.text = String(sevenDaysToShow[1].split(separator: "-")[2])
-        wedCalender.dateLabel.text = String(sevenDaysToShow[2].split(separator: "-")[2])
-        thuCalender.dateLabel.text = String(sevenDaysToShow[3].split(separator: "-")[2])
-        friCalender.dateLabel.text = String(sevenDaysToShow[4].split(separator: "-")[2])
-        satCalender.dateLabel.text = String(sevenDaysToShow[5].split(separator: "-")[2])
-        sunCalender.dateLabel.text = String(sevenDaysToShow[6].split(separator: "-")[2])
-        
+        setCustomCalenderViewCell(monCalender, dataInfo: sevenDaysToShow[0])
+        setCustomCalenderViewCell(tueCalender, dataInfo: sevenDaysToShow[1])
+        setCustomCalenderViewCell(wedCalender, dataInfo: sevenDaysToShow[2])
+        setCustomCalenderViewCell(thuCalender, dataInfo: sevenDaysToShow[3])
+        setCustomCalenderViewCell(friCalender, dataInfo: sevenDaysToShow[4])
+        setCustomCalenderViewCell(satCalender, dataInfo: sevenDaysToShow[5])
+        setCustomCalenderViewCell(sunCalender, dataInfo: sevenDaysToShow[6])
     }
 
 }

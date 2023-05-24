@@ -57,12 +57,23 @@
                         <constraint firstItem="hQx-dB-uqQ" firstAttribute="leading" secondItem="twj-zx-eOf" secondAttribute="leading" id="vfn-qM-5hU"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ma9-F2-Rmb">
+                    <rect key="frame" x="0.0" y="59" width="393" height="324"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="Ctg-Zp-ehs"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ma9-F2-Rmb" secondAttribute="trailing" id="1M2-xm-QJg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="twj-zx-eOf" secondAttribute="bottom" id="1QY-1x-0rK"/>
+                <constraint firstItem="Ma9-F2-Rmb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="6lV-Z4-O8I"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ma9-F2-Rmb" secondAttribute="bottom" id="8ls-kT-pMP"/>
                 <constraint firstItem="twj-zx-eOf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Dti-tC-USD"/>
+                <constraint firstItem="Ma9-F2-Rmb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gfr-l7-y7m"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="twj-zx-eOf" secondAttribute="trailing" id="sJs-wf-9Rc"/>
                 <constraint firstItem="twj-zx-eOf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="vFS-wH-J6E"/>
             </constraints>
