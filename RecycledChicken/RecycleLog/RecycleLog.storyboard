@@ -40,20 +40,20 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="d9r-cX-EYf">
-                                        <rect key="frame" x="20" y="65" width="353" height="600"/>
+                                        <rect key="frame" x="30" y="65" width="333" height="600"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="separatorColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecycleLogTableViewCell" id="Llh-bH-uTu" customClass="RecycleLogTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="353" height="20"/>
+                                                <rect key="frame" x="0.0" y="50" width="333" height="20"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Llh-bH-uTu" id="CfS-D4-3d6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="20"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="DgV-Jy-2WH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="333" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/03/11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBC-3W-26o">
                                                                     <rect key="frame" x="0.0" y="0.0" width="89" height="20"/>
@@ -62,13 +62,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶(PET)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eru-wJ-rV7">
-                                                                    <rect key="frame" x="145.33333333333334" y="0.0" width="93.666666666666657" height="20"/>
+                                                                    <rect key="frame" x="135.33333333333334" y="0.0" width="93.666666666666657" height="20"/>
                                                                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點數:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mII-21-EXa">
-                                                                    <rect key="frame" x="295.33333333333331" y="0.0" width="57.666666666666686" height="20"/>
+                                                                    <rect key="frame" x="275.33333333333331" y="0.0" width="57.666666666666686" height="20"/>
                                                                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -96,9 +96,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="d9r-cX-EYf" secondAttribute="trailing" constant="20" id="7Eu-RJ-KlY"/>
+                                    <constraint firstAttribute="trailing" secondItem="d9r-cX-EYf" secondAttribute="trailing" constant="30" id="7Eu-RJ-KlY"/>
                                     <constraint firstItem="6La-be-1nu" firstAttribute="leading" secondItem="FhY-AB-Dwd" secondAttribute="leading" constant="30" id="MrB-wg-8Wr"/>
-                                    <constraint firstItem="d9r-cX-EYf" firstAttribute="leading" secondItem="FhY-AB-Dwd" secondAttribute="leading" constant="20" id="VtF-44-YLO"/>
+                                    <constraint firstItem="d9r-cX-EYf" firstAttribute="leading" secondItem="FhY-AB-Dwd" secondAttribute="leading" constant="30" id="VtF-44-YLO"/>
                                     <constraint firstItem="6La-be-1nu" firstAttribute="top" secondItem="FhY-AB-Dwd" secondAttribute="top" constant="30" id="Wt8-wR-Bl9"/>
                                     <constraint firstItem="d9r-cX-EYf" firstAttribute="top" secondItem="6La-be-1nu" secondAttribute="bottom" id="lqO-fy-I87"/>
                                 </constraints>

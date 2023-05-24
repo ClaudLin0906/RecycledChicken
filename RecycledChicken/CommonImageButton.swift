@@ -19,7 +19,7 @@ class CommonImageButton: UIButton {
     lazy var newTitLabel:UILabel = {
         let label = UILabel()
         label.font = titleLabel?.font
-        label.textAlignment = .right
+        label.textAlignment = .left
         label.textColor = titleLabel?.textColor
         return label
     }()

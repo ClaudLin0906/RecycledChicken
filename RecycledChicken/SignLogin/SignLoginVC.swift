@@ -36,7 +36,7 @@ class SignLoginVC: UIViewController {
         self.dismiss(animated: false) {
             if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
                 VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: false)
+                topVC.present(VC, animated: true)
             }
         }
     }
@@ -45,7 +45,7 @@ class SignLoginVC: UIViewController {
         self.dismiss(animated: false) {
             if let VC = UIStoryboard(name: "Sign", bundle: nil).instantiateViewController(withIdentifier: "Sign") as? SignVC, let topVC = getTopController() {
                 VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: false)
+                topVC.present(VC, animated: true)
             }
         }
     }
@@ -54,7 +54,7 @@ class SignLoginVC: UIViewController {
         self.dismiss(animated: false) {
             if let VC = UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgetPassword") as? ForgetPasswordVC, let topVC = getTopController() {
                 VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: false)
+                topVC.present(VC, animated: true)
             }
         }
     }

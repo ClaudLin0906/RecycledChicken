@@ -19,7 +19,7 @@ class SignVC: UIViewController {
         self.dismiss(animated: true) {
             if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC, let topVC = getTopController() {
                 VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: false)
+                topVC.present(VC, animated: true)
             }
         }
     }

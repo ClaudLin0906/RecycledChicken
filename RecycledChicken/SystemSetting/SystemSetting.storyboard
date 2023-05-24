@@ -86,7 +86,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFK-7K-CxL">
-                                                    <rect key="frame" x="26" y="13.333333333333336" width="36" height="17"/>
+                                                    <rect key="frame" x="10" y="13.333333333333336" width="36" height="17"/>
                                                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="nx2-S1-0M7" secondAttribute="trailing" constant="10" id="1Qg-Gf-6I2"/>
-                                                <constraint firstItem="UFK-7K-CxL" firstAttribute="leading" secondItem="aEz-KB-hhh" secondAttribute="leadingMargin" constant="10" id="EPQ-9R-DFC"/>
+                                                <constraint firstItem="UFK-7K-CxL" firstAttribute="leading" secondItem="aEz-KB-hhh" secondAttribute="leading" constant="10" id="EPQ-9R-DFC"/>
                                                 <constraint firstItem="UFK-7K-CxL" firstAttribute="centerY" secondItem="aEz-KB-hhh" secondAttribute="centerY" id="N7m-oR-xoR"/>
                                                 <constraint firstItem="nx2-S1-0M7" firstAttribute="centerY" secondItem="aEz-KB-hhh" secondAttribute="centerY" id="gzx-fC-x79"/>
                                             </constraints>
