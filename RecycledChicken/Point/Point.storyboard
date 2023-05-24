@@ -42,8 +42,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="cKg-fX-gni">
                                 <rect key="frame" x="146.66666666666666" y="173" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="2dI-Zq-mX3"/>
-                                    <constraint firstAttribute="height" constant="30" id="Z9m-hu-5Yl"/>
+                                    <constraint firstAttribute="width" secondItem="cKg-fX-gni" secondAttribute="height" multiplier="1:1" id="Gxn-gX-9r6"/>
+                                    <constraint firstAttribute="width" constant="30" id="VuP-0n-vKc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-zf-126">
