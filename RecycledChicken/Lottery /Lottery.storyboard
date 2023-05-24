@@ -37,10 +37,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-00-Az8" userLabel="step1">
-                                                    <rect key="frame" x="20" y="-53" width="313" height="150"/>
+                                                    <rect key="frame" x="35.333333333333343" y="-34.333333333333329" width="282.33333333333326" height="112.66666666666669"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點 數 抽 獎 專 區" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzm-AI-630">
-                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="112.66666666666667"/>
                                                             <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -49,10 +49,10 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="wzm-AI-630" firstAttribute="leading" secondItem="jhR-00-Az8" secondAttribute="leading" id="Hsq-5S-Mew"/>
+                                                        <constraint firstAttribute="width" secondItem="jhR-00-Az8" secondAttribute="height" multiplier="2.5:1" id="Ouo-Wm-7hl"/>
                                                         <constraint firstAttribute="bottom" secondItem="wzm-AI-630" secondAttribute="bottom" id="TEF-ST-HOT"/>
                                                         <constraint firstItem="wzm-AI-630" firstAttribute="top" secondItem="jhR-00-Az8" secondAttribute="top" id="ZcY-4W-PbK"/>
                                                         <constraint firstAttribute="trailing" secondItem="wzm-AI-630" secondAttribute="trailing" id="mWb-fz-fAu"/>
-                                                        <constraint firstAttribute="height" constant="150" id="oTX-uC-wBX"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -68,10 +68,9 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="jhR-00-Az8" secondAttribute="trailing" constant="20" id="OSf-U7-tjJ"/>
+                                                <constraint firstItem="jhR-00-Az8" firstAttribute="width" secondItem="Xsh-kN-7Ky" secondAttribute="width" multiplier="0.8" id="BwB-Ik-0sy"/>
                                                 <constraint firstItem="jhR-00-Az8" firstAttribute="centerY" secondItem="Xsh-kN-7Ky" secondAttribute="centerY" id="VIG-DL-W60"/>
                                                 <constraint firstItem="jhR-00-Az8" firstAttribute="centerX" secondItem="Xsh-kN-7Ky" secondAttribute="centerX" id="fzL-GF-rD4"/>
-                                                <constraint firstItem="jhR-00-Az8" firstAttribute="leading" secondItem="Xsh-kN-7Ky" secondAttribute="leading" constant="20" id="geZ-J2-Q4n"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

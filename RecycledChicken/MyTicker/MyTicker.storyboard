@@ -37,10 +37,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Oe-dh-f5k" userLabel="step1">
-                                                    <rect key="frame" x="20" y="-53" width="313" height="150"/>
+                                                    <rect key="frame" x="35.333333333333343" y="-34.333333333333336" width="282.33333333333326" height="112.66666666666669"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH1-vU-Ols">
-                                                            <rect key="frame" x="0.0" y="0.0" width="313" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="112.66666666666667"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -54,8 +54,8 @@
                                                         <constraint firstAttribute="bottom" secondItem="HH1-vU-Ols" secondAttribute="bottom" id="6hT-It-XlL"/>
                                                         <constraint firstItem="HH1-vU-Ols" firstAttribute="leading" secondItem="3Oe-dh-f5k" secondAttribute="leading" id="Jxt-BC-PcK"/>
                                                         <constraint firstItem="HH1-vU-Ols" firstAttribute="top" secondItem="3Oe-dh-f5k" secondAttribute="top" id="M9m-PK-35B"/>
-                                                        <constraint firstAttribute="height" constant="150" id="PfL-kN-lcY"/>
                                                         <constraint firstAttribute="trailing" secondItem="HH1-vU-Ols" secondAttribute="trailing" id="oDh-dI-y7e"/>
+                                                        <constraint firstAttribute="width" secondItem="3Oe-dh-f5k" secondAttribute="height" multiplier="2.5:1" id="xbJ-qU-ZG0"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -72,9 +72,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="3Oe-dh-f5k" firstAttribute="leading" secondItem="JJn-UI-R96" secondAttribute="leading" constant="20" id="dJL-2f-FrC"/>
+                                                <constraint firstItem="3Oe-dh-f5k" firstAttribute="width" secondItem="JJn-UI-R96" secondAttribute="width" multiplier="0.8" id="RBg-iK-BZ3"/>
                                                 <constraint firstItem="3Oe-dh-f5k" firstAttribute="centerX" secondItem="JJn-UI-R96" secondAttribute="centerX" id="dVL-VQ-ZaJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="3Oe-dh-f5k" secondAttribute="trailing" constant="20" id="dr6-dh-63F"/>
                                                 <constraint firstItem="3Oe-dh-f5k" firstAttribute="centerY" secondItem="JJn-UI-R96" secondAttribute="centerY" id="m5V-MW-1db"/>
                                             </constraints>
                                         </tableViewCellContentView>

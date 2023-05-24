@@ -34,7 +34,7 @@ extension CommodityVoucherVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        200
+        view.safeAreaLayoutGuide.layoutFrame.height * 0.22
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
