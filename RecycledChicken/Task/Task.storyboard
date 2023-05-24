@@ -186,9 +186,9 @@
                                                             </constraints>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 3451" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-Zf-tdN">
-                                                            <rect key="frame" x="253" y="-17.666666666666668" width="35" height="35.333333333333336"/>
+                                                            <rect key="frame" x="238" y="-25" width="50" height="50"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="35" id="0sO-i6-400"/>
+                                                                <constraint firstAttribute="width" constant="50" id="0sO-i6-400"/>
                                                                 <constraint firstAttribute="width" secondItem="wJW-Zf-tdN" secondAttribute="height" multiplier="1:1" id="Ukg-A0-CL5"/>
                                                             </constraints>
                                                         </imageView>
