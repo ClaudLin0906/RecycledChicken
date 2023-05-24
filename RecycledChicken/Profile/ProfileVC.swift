@@ -56,7 +56,7 @@ class ProfileVC: CustomVC {
         let year = components.year
         let cells = cellsForTableView(tableView: profileTableView)
         if let birthdayCell = cells.filter({ return $0.tag == 3})[0] as? ProfileTableViewCell {
-            birthdayCell.info.text = "\(year!)\\\(month!)\\\(day!)"
+            birthdayCell.info.text = "\(year!)/\(month!)/\(day!)"
         }
         view.endEditing(true)
     }

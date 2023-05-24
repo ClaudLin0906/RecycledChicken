@@ -222,10 +222,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-kR-8Ki">
-                                <rect key="frame" x="0.0" y="672" width="393" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="U8w-i9-nPv"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="700.33333333333337" width="393" height="151.66666666666663"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -241,6 +238,7 @@
                             <constraint firstItem="Mtm-79-DvR" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="GOg-Tn-uGi"/>
                             <constraint firstAttribute="bottom" secondItem="Mtm-79-DvR" secondAttribute="bottom" id="H9h-Bq-eYK"/>
                             <constraint firstItem="Mtm-79-DvR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="HV3-0T-Wfi"/>
+                            <constraint firstItem="3yf-kR-8Ki" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.2" id="Yfd-09-PN9"/>
                             <constraint firstItem="ZPq-0X-imi" firstAttribute="top" secondItem="aOM-KG-Vmh" secondAttribute="bottom" constant="15" id="biA-sF-m7a"/>
                             <constraint firstItem="lWR-pO-Tbf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jTR-rE-otc"/>
                             <constraint firstItem="aOM-KG-Vmh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mWF-8X-10R"/>
@@ -249,13 +247,14 @@
                             <constraint firstItem="aOM-KG-Vmh" firstAttribute="top" secondItem="lWR-pO-Tbf" secondAttribute="bottom" constant="30" id="yKE-DS-5e8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3AU-F3-vtG"/>
                     <connections>
                         <outlet property="keepLoginCheckBox" destination="HmG-Sv-had" id="pSa-po-ye2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64.885496183206101" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="991.60305343511448" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

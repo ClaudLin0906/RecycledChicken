@@ -171,10 +171,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="dZE-mW-tHd">
-                                <rect key="frame" x="0.0" y="672" width="393" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="9qd-Mk-oAH"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="700.33333333333337" width="393" height="151.66666666666663"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YGf-eA-8CO"/>
@@ -189,6 +186,7 @@
                             <constraint firstItem="Wgh-Kf-v2d" firstAttribute="leading" secondItem="YGf-eA-8CO" secondAttribute="leading" id="pM2-F9-5Au"/>
                             <constraint firstItem="dZE-mW-tHd" firstAttribute="leading" secondItem="YGf-eA-8CO" secondAttribute="leading" id="pNq-dx-soj"/>
                             <constraint firstItem="dZE-mW-tHd" firstAttribute="trailing" secondItem="YGf-eA-8CO" secondAttribute="trailing" id="rad-xI-igp"/>
+                            <constraint firstItem="dZE-mW-tHd" firstAttribute="height" secondItem="YGf-eA-8CO" secondAttribute="height" multiplier="0.2" id="s8b-5G-rEG"/>
                             <constraint firstItem="Wgh-Kf-v2d" firstAttribute="top" secondItem="TJw-v8-csU" secondAttribute="bottom" constant="30" id="z2Q-hZ-LtY"/>
                         </constraints>
                     </view>

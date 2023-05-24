@@ -184,11 +184,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 974" translatesAutoresizingMaskIntoConstraints="NO" id="nwL-Dg-AU2">
-                                <rect key="frame" x="0.0" y="722" width="393" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="ve0-M1-2md"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="nwL-Dg-AU2">
+                                <rect key="frame" x="0.0" y="700.33333333333337" width="393" height="151.66666666666663"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j4B-KF-WkX"/>
@@ -198,6 +195,7 @@
                             <constraint firstItem="j4B-KF-WkX" firstAttribute="trailing" secondItem="bdS-wF-RYH" secondAttribute="trailing" id="2K3-18-hdw"/>
                             <constraint firstItem="bdS-wF-RYH" firstAttribute="leading" secondItem="j4B-KF-WkX" secondAttribute="leading" id="3de-Dg-SAc"/>
                             <constraint firstItem="nwL-Dg-AU2" firstAttribute="leading" secondItem="j4B-KF-WkX" secondAttribute="leading" id="46Y-Mk-gpu"/>
+                            <constraint firstItem="nwL-Dg-AU2" firstAttribute="height" secondItem="j4B-KF-WkX" secondAttribute="height" multiplier="0.2" id="Iht-VR-uDs"/>
                             <constraint firstItem="nwL-Dg-AU2" firstAttribute="trailing" secondItem="j4B-KF-WkX" secondAttribute="trailing" id="SwM-dh-TOb"/>
                             <constraint firstItem="j4B-KF-WkX" firstAttribute="trailing" secondItem="66n-1w-Vai" secondAttribute="trailing" id="YYJ-7f-Een"/>
                             <constraint firstItem="dcy-a6-oGh" firstAttribute="centerX" secondItem="bdS-wF-RYH" secondAttribute="centerX" id="Yj2-XS-nK5"/>
@@ -215,10 +213,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="footer" width="1127.6666259765625" height="501"/>
         <image name="グループ 1089" width="1125" height="2436"/>
         <image name="グループ 1090" width="1012" height="1012"/>
         <image name="グループ 971" width="445.33334350585938" height="453"/>
-        <image name="グループ 974" width="1127.6666259765625" height="193"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
