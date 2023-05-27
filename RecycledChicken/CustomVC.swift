@@ -12,6 +12,10 @@ class CustomVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
+        if let font = UIFont(name: "GenSenMaruGothicTW-Light-TTF", size: 20) {
+            let attributes = [NSAttributedString.Key.font: font]
+            self.navigationController?.navigationBar.titleTextAttributes = attributes
+        }
         let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
         view.addGestureRecognizer(closeTap)
     }
