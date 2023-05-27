@@ -12,14 +12,10 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
     @IBOutlet weak var weekLabel:UILabel!
     
     @IBOutlet weak var dateLabel:UILabel!
-    
+        
     var dateID:String?{
-        willSet{
-            if let newValue = newValue, newValue == getDates(i: 0, currentDate: Date()).0 {
-                isCurrentDate = true
-            }else{
-                isCurrentDate = false
-            }
+        didSet{
+            checkIsSelected()
         }
     }
     
@@ -36,6 +32,7 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
                 weekLabel.textColor = .black
                 dateLabel.textColor = .black
                 self.layer.shadowOffset = .zero
+                self.layer.shadowOpacity = 0
             }
         }
     }
@@ -49,13 +46,30 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
         super.init(coder: coder)
         customInit()
     }
+    
+    func checkIsSelected(){
+        if let dateID = dateID  {
+            if dateID == CustomCalenderModel.shared.selectedDate {
+                isCurrentDate = true
+            }else{
+                isCurrentDate = false
+            }
+        }else{
+            print("dateID is nil")
+        }
+    }
 
     private func customInit(){
         loadNibContent()
     }
     
     @IBAction func btnAction(_ sender:UIButton) {
-        print("123")
+        if let dateID = dateID {
+            CustomCalenderModel.shared.selectedDate = dateID
+            if let customCalenderView = self.superview?.superview?.superview as? CustomCalenderView {
+                customCalenderView.checkIsSelected()
+            }
+        }
     }
 
 }

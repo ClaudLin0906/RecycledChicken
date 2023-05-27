@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConfirmPasswordVC: UIViewController {
+class ConfirmPasswordVC: CustomLoginVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

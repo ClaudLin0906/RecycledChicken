@@ -8,7 +8,7 @@
 import UIKit
 import M13Checkbox
 
-class LoginVC: UIViewController {
+class LoginVC: CustomLoginVC {
     
     @IBOutlet weak var keepLoginCheckBox:M13Checkbox!
     

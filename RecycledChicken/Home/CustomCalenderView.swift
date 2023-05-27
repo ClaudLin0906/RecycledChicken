@@ -23,6 +23,7 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var sunCalender:CustomCalenderViewCell!
     
+    lazy var week:[CustomCalenderViewCell] = [ monCalender, tueCalender, wedCalender, thuCalender, friCalender, satCalender, sunCalender ]
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +43,12 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
         calenderViewCell.dateID = dataInfo.0
         calenderViewCell.dateLabel.text = String(dataInfo.0.split(separator: "-")[2])
         calenderViewCell.weekLabel.text = dataInfo.1
+    }
+    
+    func checkIsSelected(){
+        for day in week {
+            day.checkIsSelected()
+        }
     }
     
     func getSevenDays(targetDate:Date){
@@ -69,7 +76,6 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
         sevenDaysToShow.removeAll()
         for index in 0..<7 {
             let newIndex = index - selectedDatesIndex
-//            sevenDaysToShow.append(getDates(i: newIndex, currentDate: Calendar.current.date(byAdding: .day, value: -7, to: Date())!))
             sevenDaysToShow.append(getDates(i: newIndex, currentDate: targetDate))
         }
         setCustomCalenderViewCell(monCalender, dataInfo: sevenDaysToShow[0])

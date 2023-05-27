@@ -24,11 +24,11 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="235"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3zs-ex-nY1">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3zs-ex-nY1">
                     <rect key="frame" x="5" y="59" width="383" height="176"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syF-WY-2Cu" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="176"/>
+                            <rect key="frame" x="0.0" y="0.0" width="46" height="176"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -37,27 +37,27 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o2-u4-MyC" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="54.666666666666671" y="0.0" width="54.666666666666671" height="176"/>
+                            <rect key="frame" x="56" y="0.0" width="46.333333333333343" height="176"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvn-1m-YwN" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="109.33333333333333" y="0.0" width="54.666666666666671" height="176"/>
+                            <rect key="frame" x="112.33333333333331" y="0.0" width="46" height="176"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXb-Vx-KmH" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="164" y="0.0" width="55" height="176"/>
+                            <rect key="frame" x="168.33333333333334" y="0.0" width="46.333333333333343" height="176"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-wt-qaR" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="219" y="0.0" width="54.666666666666686" height="176"/>
+                            <rect key="frame" x="224.66666666666666" y="0.0" width="45.999999999999972" height="176"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uux-Fq-d3X" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="273.66666666666669" y="0.0" width="54.666666666666686" height="176"/>
+                            <rect key="frame" x="280.66666666666669" y="0.0" width="46.333333333333314" height="176"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNL-tM-tkI" customClass="CustomCalenderViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="328.33333333333331" y="0.0" width="54.666666666666686" height="176"/>
+                            <rect key="frame" x="337" y="0.0" width="46" height="176"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>

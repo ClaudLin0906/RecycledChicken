@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VerificationCodeVC: UIViewController {
+class VerificationCodeVC: CustomLoginVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

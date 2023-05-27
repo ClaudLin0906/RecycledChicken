@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgetPasswordVC: UIViewController {
+class ForgetPasswordVC: CustomLoginVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReLoginVC: UIViewController {
+class ReLoginVC: CustomLoginVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

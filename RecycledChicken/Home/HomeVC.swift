@@ -14,7 +14,7 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var carbonReductionLogBtn:UIButton!
     
     @IBOutlet weak var currentDateLabel:UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()

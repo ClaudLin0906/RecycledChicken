@@ -12,8 +12,8 @@ class CustomVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-//        let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
-//        view.addGestureRecognizer(closeTap)
+        let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
+        view.addGestureRecognizer(closeTap)
     }
 
     @objc private func backBtnPressed(){

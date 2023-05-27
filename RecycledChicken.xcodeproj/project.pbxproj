@@ -128,6 +128,8 @@
 		59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */; };
 		59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */; };
 		59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AFE1622A10088700490BD8 /* CompleteTaskAlertView.xib */; };
+		59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */; };
+		59BF29402A21EE8200F24286 /* CustomCalenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
 		59C2D9A02A0D37330085724F /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D99F2A0D37330085724F /* AR.storyboard */; };
 		59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D9A22A0D37790085724F /* TaskVC.swift */; };
@@ -283,6 +285,8 @@
 		59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskAlertView.swift; sourceTree = "<group>"; };
 		59AFE1622A10088700490BD8 /* CompleteTaskAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTaskAlertView.xib; sourceTree = "<group>"; };
+		59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginVC.swift; sourceTree = "<group>"; };
+		59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderModel.swift; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
 		59C2D99F2A0D37330085724F /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		59C2D9A22A0D37790085724F /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */,
 				5926C5952A06325700FAB49D /* CustomRootVC.swift */,
 				59997A4C2A09181D00E9FD7F /* CustomVC.swift */,
+				59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */,
 				5926C5812A04086400FAB49D /* ViewController.swift */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
@@ -416,6 +421,7 @@
 		5926C5972A06329300FAB49D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */,
 				5926C5982A0632AB00FAB49D /* HomeVC.swift */,
 				5926C59A2A0632BC00FAB49D /* Home.storyboard */,
 				59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */,
@@ -1017,6 +1023,7 @@
 				59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */,
 				59A795802A0F7B2E0031710F /* ReLoginVC.swift in Sources */,
 				597521752A0B7E2800D0B67C /* SystemSettingVC.swift in Sources */,
+				59BF29402A21EE8200F24286 /* CustomCalenderModel.swift in Sources */,
 				59997A702A0A4A1500E9FD7F /* PersonMessageVC.swift in Sources */,
 				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
 				59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */,
@@ -1033,6 +1040,7 @@
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
 				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,
+				59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */,
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
