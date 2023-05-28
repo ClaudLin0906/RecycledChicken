@@ -63,10 +63,21 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
         loadNibContent()
     }
     
+    private func getCustomCalenderView()->CustomCalenderView? {
+        var parentResponder: UIResponder? = self.next
+        while parentResponder != nil {
+            if let customCalenderView = parentResponder as? CustomCalenderView {
+                return customCalenderView
+            }
+            parentResponder = parentResponder?.next
+        }
+        return nil
+    }
+    
     @IBAction func btnAction(_ sender:UIButton) {
         if let dateID = dateID {
             CustomCalenderModel.shared.selectedDate = dateID
-            if let customCalenderView = self.superview?.superview?.superview as? CustomCalenderView {
+            if let customCalenderView = getCustomCalenderView() {
                 customCalenderView.checkIsSelected()
             }
         }

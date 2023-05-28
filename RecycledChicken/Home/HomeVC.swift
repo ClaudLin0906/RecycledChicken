@@ -34,9 +34,11 @@ class HomeVC: CustomRootVC {
     private func UIInit(){
         carbonReductionLogBtn.layer.borderWidth = 1
         carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        let weekDay = getDayOfTheWeek()
-        let today = getDates(i: 0, currentDate: Date(),dateformat: ("yyyy/MM/dd","yyyy/MMM/dd"))
-        currentDateLabel.text = "\(today.0)(\(weekDay))"
+        updateCurrentDateInfo()
+    }
+    
+    func updateCurrentDateInfo(){
+        currentDateLabel.text = CustomCalenderModel.shared.selectedDate
     }
     
     @IBAction func goToCarbonReductionLog(_ sender:UIButton) {

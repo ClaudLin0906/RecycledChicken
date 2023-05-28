@@ -143,7 +143,7 @@
                                 <rect key="frame" x="20" y="243" width="353" height="575"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nh5-zu-93u" userLabel="content">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="660"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="610"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMH-HZ-cmw" userLabel="step1">
                                                 <rect key="frame" x="10" y="10" width="333" height="150"/>
@@ -165,25 +165,40 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zud-Ll-WdT" userLabel="step2">
                                                 <rect key="frame" x="10" y="170" width="333" height="80"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxW-2f-7vo" customClass="CustomCalenderScrollView" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="80"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybu-Dt-ZtI">
+                                                        <rect key="frame" x="91.666666666666686" y="20" width="150" height="40"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="VlY-Wo-ZLy"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Xfh-yO-pI1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="減 碳 歷 程">
+                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="goToCarbonReductionLog:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="I5h-hy-jma"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="pxW-2f-7vo" secondAttribute="trailing" id="0tG-zX-xOY"/>
-                                                    <constraint firstItem="pxW-2f-7vo" firstAttribute="top" secondItem="zud-Ll-WdT" secondAttribute="top" id="8Aw-ZV-v02"/>
-                                                    <constraint firstAttribute="bottom" secondItem="pxW-2f-7vo" secondAttribute="bottom" id="QZQ-9d-o6S"/>
-                                                    <constraint firstItem="pxW-2f-7vo" firstAttribute="leading" secondItem="zud-Ll-WdT" secondAttribute="leading" id="hLR-Xa-y9h"/>
+                                                    <constraint firstItem="ybu-Dt-ZtI" firstAttribute="centerX" secondItem="zud-Ll-WdT" secondAttribute="centerX" id="2og-m3-0Q3"/>
+                                                    <constraint firstItem="ybu-Dt-ZtI" firstAttribute="centerY" secondItem="zud-Ll-WdT" secondAttribute="centerY" id="gsm-bF-bGJ"/>
                                                     <constraint firstAttribute="height" constant="80" id="ugi-so-7co"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hnz-DH-Lsq" userLabel="step3">
-                                                <rect key="frame" x="10" y="260" width="333" height="400"/>
+                                                <rect key="frame" x="10" y="260" width="333" height="350"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccd-f3-Y9z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="180"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="150"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="碳竹雞養成" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo6-76-zfY">
                                                                 <rect key="frame" x="20" y="30" width="90" height="20"/>
@@ -205,12 +220,12 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="khi-Bw-h8S">
-                                                                <rect key="frame" x="120" y="0.0" width="213" height="180"/>
+                                                                <rect key="frame" x="120" y="0.0" width="213" height="150"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.88627450980392153" green="0.76078431372549016" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="180" id="Avn-M0-2nH"/>
+                                                            <constraint firstAttribute="height" constant="150" id="Avn-M0-2nH"/>
                                                             <constraint firstAttribute="bottom" secondItem="khi-Bw-h8S" secondAttribute="bottom" id="HKf-sX-4cX"/>
                                                             <constraint firstItem="Yo6-76-zfY" firstAttribute="top" secondItem="ccd-f3-Y9z" secondAttribute="top" constant="30" id="OqJ-8j-RJz"/>
                                                             <constraint firstItem="Wep-Dg-8Xm" firstAttribute="top" secondItem="Yo6-76-zfY" secondAttribute="bottom" constant="5" id="XQM-Qo-BXl"/>
@@ -234,7 +249,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kdK-46-Ifb">
-                                                        <rect key="frame" x="69.000000000000014" y="210" width="195.33333333333337" height="30"/>
+                                                        <rect key="frame" x="69.000000000000014" y="160" width="195.33333333333337" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="當日養分" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bK-zS-1hV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="30"/>
@@ -265,37 +280,25 @@
                                                             <constraint firstAttribute="height" constant="30" id="B04-fF-Lwb"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybu-Dt-ZtI">
-                                                        <rect key="frame" x="91.666666666666686" y="270" width="150" height="40"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxW-2f-7vo" customClass="CustomCalenderScrollView" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="200" width="333" height="80"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="VlY-Wo-ZLy"/>
-                                                            <constraint firstAttribute="height" constant="40" id="Xfh-yO-pI1"/>
+                                                            <constraint firstAttribute="height" constant="80" id="i2U-6V-SHL"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="減 碳 歷 程">
-                                                            <color key="titleColor" systemColor="labelColor"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="20"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="goToCarbonReductionLog:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="I5h-hy-jma"/>
-                                                        </connections>
-                                                    </button>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="pxW-2f-7vo" firstAttribute="top" secondItem="kdK-46-Ifb" secondAttribute="bottom" constant="10" id="2Hy-v1-VJC"/>
                                                     <constraint firstItem="ccd-f3-Y9z" firstAttribute="top" secondItem="Hnz-DH-Lsq" secondAttribute="top" id="30t-Ta-duW"/>
-                                                    <constraint firstItem="ybu-Dt-ZtI" firstAttribute="centerX" secondItem="Hnz-DH-Lsq" secondAttribute="centerX" id="535-rz-6zK"/>
                                                     <constraint firstItem="kdK-46-Ifb" firstAttribute="centerX" secondItem="Hnz-DH-Lsq" secondAttribute="centerX" id="9TK-3P-C3q"/>
-                                                    <constraint firstItem="kdK-46-Ifb" firstAttribute="top" secondItem="ccd-f3-Y9z" secondAttribute="bottom" constant="30" id="KLw-tK-uVJ"/>
-                                                    <constraint firstItem="ybu-Dt-ZtI" firstAttribute="top" secondItem="kdK-46-Ifb" secondAttribute="bottom" constant="30" id="brA-Oi-drI"/>
+                                                    <constraint firstItem="kdK-46-Ifb" firstAttribute="top" secondItem="ccd-f3-Y9z" secondAttribute="bottom" constant="10" id="KLw-tK-uVJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pxW-2f-7vo" secondAttribute="trailing" id="Rw2-G1-0n9"/>
+                                                    <constraint firstItem="pxW-2f-7vo" firstAttribute="centerX" secondItem="Hnz-DH-Lsq" secondAttribute="centerX" id="SiP-ro-Ghv"/>
                                                     <constraint firstItem="ccd-f3-Y9z" firstAttribute="centerX" secondItem="Hnz-DH-Lsq" secondAttribute="centerX" id="ii0-8H-Ehw"/>
-                                                    <constraint firstAttribute="height" constant="400" id="zHL-y6-AI8"/>
+                                                    <constraint firstItem="pxW-2f-7vo" firstAttribute="leading" secondItem="Hnz-DH-Lsq" secondAttribute="leading" id="jbY-ZT-ncq"/>
+                                                    <constraint firstAttribute="height" constant="350" id="zHL-y6-AI8"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

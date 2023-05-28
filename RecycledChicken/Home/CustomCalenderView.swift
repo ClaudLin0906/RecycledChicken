@@ -49,6 +49,17 @@ class CustomCalenderView: UIView, NibOwnerLoadable {
         for day in week {
             day.checkIsSelected()
         }
+        updateHomeDate()
+    }
+    
+    private func updateHomeDate() {
+        var parentResponder: UIResponder? = self.next
+        while parentResponder != nil {
+            if let homeVC = parentResponder as? HomeVC {
+                homeVC.updateCurrentDateInfo()
+            }
+            parentResponder = parentResponder?.next
+        }
     }
     
     func getSevenDays(targetDate:Date){
