@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zi8-ff-rLb" userLabel="backgoundView">
-                                <rect key="frame" x="0.0" y="153" width="321" height="749"/>
+                                <rect key="frame" x="0.0" y="153" width="281" height="749"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.91372549020000005" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -35,19 +35,19 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0D2-rT-qlc" userLabel="ScrollViewBackground">
-                                <rect key="frame" x="40" y="193" width="241" height="545"/>
+                                <rect key="frame" x="40" y="193" width="201" height="545"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJP-tr-1B5">
-                                        <rect key="frame" x="0.0" y="0.0" width="241" height="545"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="545"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-og-uPf" userLabel="content">
-                                                <rect key="frame" x="0.0" y="0.0" width="241" height="670"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="201" height="620"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-Hg-eYs" userLabel="step1">
-                                                        <rect key="frame" x="20" y="0.0" width="201" height="50"/>
+                                                        <rect key="frame" x="20" y="0.0" width="161" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="個 人 累 積 回 收 量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-Jl-2oQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
                                                                 <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -65,24 +65,24 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pe-ia-Zrk" userLabel="step2">
-                                                        <rect key="frame" x="20" y="60" width="201" height="100"/>
+                                                        <rect key="frame" x="20" y="60" width="161" height="80"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3u-br-yi9" customClass="PetView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="s3u-br-yi9" secondAttribute="height" multiplier="1:1" id="vJw-x2-vLl"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEe-nB-T3q" userLabel="spliteLine">
-                                                                <rect key="frame" x="100" y="0.0" width="1" height="100"/>
+                                                                <rect key="frame" x="80" y="0.0" width="1" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="v4T-fj-WZd"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8l-cg-OIY" customClass="BattView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="101" y="0.0" width="100" height="100"/>
+                                                                <rect key="frame" x="81" y="0.0" width="80" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="j8l-cg-OIY" secondAttribute="height" multiplier="1:1" id="Ljw-tI-qtZ"/>
@@ -92,7 +92,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="s3u-br-yi9" firstAttribute="leading" secondItem="9pe-ia-Zrk" secondAttribute="leading" id="1O8-oW-frf"/>
-                                                            <constraint firstAttribute="height" constant="100" id="5ra-P9-kda"/>
+                                                            <constraint firstAttribute="height" constant="80" id="5ra-P9-kda"/>
                                                             <constraint firstItem="rEe-nB-T3q" firstAttribute="centerX" secondItem="9pe-ia-Zrk" secondAttribute="centerX" id="Amx-l8-aoZ"/>
                                                             <constraint firstItem="j8l-cg-OIY" firstAttribute="leading" secondItem="rEe-nB-T3q" secondAttribute="trailing" id="Ihe-iH-jxd"/>
                                                             <constraint firstItem="rEe-nB-T3q" firstAttribute="height" secondItem="s3u-br-yi9" secondAttribute="height" id="Kb4-2E-obc"/>
@@ -106,10 +106,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwH-ET-0Vs" userLabel="step3">
-                                                        <rect key="frame" x="20" y="170" width="201" height="50"/>
+                                                        <rect key="frame" x="20" y="150" width="161" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT7-Mh-0N3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="161" height="40"/>
                                                                 <string key="text">碳竹雞使用者平均年回收量
 寶特瓶 1200 支 / 電池 1000 顆</string>
                                                                 <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
@@ -122,17 +122,17 @@
                                                             <constraint firstAttribute="bottom" secondItem="GT7-Mh-0N3" secondAttribute="bottom" id="GEg-fQ-VNf"/>
                                                             <constraint firstItem="GT7-Mh-0N3" firstAttribute="leading" secondItem="kwH-ET-0Vs" secondAttribute="leading" id="Gid-oJ-KEN"/>
                                                             <constraint firstAttribute="trailing" secondItem="GT7-Mh-0N3" secondAttribute="trailing" id="Q9u-Mm-CVk"/>
-                                                            <constraint firstAttribute="height" constant="50" id="SSC-YS-7FY"/>
+                                                            <constraint firstAttribute="height" constant="40" id="SSC-YS-7FY"/>
                                                             <constraint firstItem="GT7-Mh-0N3" firstAttribute="top" secondItem="kwH-ET-0Vs" secondAttribute="top" id="eFq-0z-6VQ"/>
                                                             <constraint firstItem="GT7-Mh-0N3" firstAttribute="centerX" secondItem="kwH-ET-0Vs" secondAttribute="centerX" id="jIM-VE-oUM"/>
                                                             <constraint firstItem="GT7-Mh-0N3" firstAttribute="centerY" secondItem="kwH-ET-0Vs" secondAttribute="centerY" id="zVC-UT-xaB"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwp-vD-oDl" userLabel="step4">
-                                                        <rect key="frame" x="20" y="230" width="201" height="220"/>
+                                                        <rect key="frame" x="20" y="200" width="161" height="220"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0PQ-En-Vso" customClass="RingProgressGroupView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="220"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="161" height="220"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="ring1StartColor">
@@ -160,10 +160,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFq-GY-mPS" userLabel="step5">
-                                                        <rect key="frame" x="20" y="460" width="201" height="100"/>
+                                                        <rect key="frame" x="20" y="430" width="161" height="80"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 3454" translatesAutoresizingMaskIntoConstraints="NO" id="J4Q-5A-EL8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="161" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </imageView>
                                                         </subviews>
@@ -173,13 +173,13 @@
                                                             <constraint firstAttribute="trailing" secondItem="J4Q-5A-EL8" secondAttribute="trailing" id="9bR-Pd-7Oh"/>
                                                             <constraint firstItem="J4Q-5A-EL8" firstAttribute="centerY" secondItem="IFq-GY-mPS" secondAttribute="centerY" id="C0u-gW-448"/>
                                                             <constraint firstItem="J4Q-5A-EL8" firstAttribute="centerX" secondItem="IFq-GY-mPS" secondAttribute="centerX" id="dzB-Fs-FvJ"/>
-                                                            <constraint firstAttribute="height" constant="100" id="mt4-eW-yjm"/>
+                                                            <constraint firstAttribute="height" constant="80" id="mt4-eW-yjm"/>
                                                             <constraint firstAttribute="bottom" secondItem="J4Q-5A-EL8" secondAttribute="bottom" id="nj5-4c-tQM"/>
                                                             <constraint firstItem="J4Q-5A-EL8" firstAttribute="top" secondItem="IFq-GY-mPS" secondAttribute="top" id="wuv-lS-sHf"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UoG-bh-9i4" userLabel="step6">
-                                                        <rect key="frame" x="20" y="570" width="201" height="70"/>
+                                                        <rect key="frame" x="20" y="520" width="161" height="70"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 592" translatesAutoresizingMaskIntoConstraints="NO" id="eUe-IA-dOs">
                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -190,16 +190,16 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KTL-LY-UgK">
-                                                                <rect key="frame" x="70" y="0.0" width="131" height="70"/>
+                                                                <rect key="frame" x="70" y="0.0" width="91" height="70"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你的減碳量 400Kg CO2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4o-K9-1CC">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="131" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="91" height="35"/>
                                                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*也相當於OO棵樹的減碳量!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMw-cf-6lr">
-                                                                        <rect key="frame" x="0.0" y="35" width="131" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="35" width="91" height="35"/>
                                                                         <fontDescription key="fontDescription" name="GenSenMaruGothicTW-ExtraLight-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -276,7 +276,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZZ-lD-1hs">
-                                <rect key="frame" x="85.666666666666686" y="758" width="150" height="40"/>
+                                <rect key="frame" x="65.666666666666686" y="758" width="150" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="63M-1N-AnH"/>
