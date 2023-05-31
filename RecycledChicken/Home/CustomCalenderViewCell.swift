@@ -63,10 +63,10 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
         loadNibContent()
     }
     
-    private func getCustomCalenderView()->CustomCalenderView? {
+    private func getCalenderScrollView()->CustomCalenderScrollView? {
         var parentResponder: UIResponder? = self.next
         while parentResponder != nil {
-            if let customCalenderView = parentResponder as? CustomCalenderView {
+            if let customCalenderView = parentResponder as? CustomCalenderScrollView {
                 return customCalenderView
             }
             parentResponder = parentResponder?.next
@@ -77,8 +77,11 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
     @IBAction func btnAction(_ sender:UIButton) {
         if let dateID = dateID {
             CustomCalenderModel.shared.selectedDate = dateID
-            if let customCalenderView = getCustomCalenderView() {
-                customCalenderView.checkIsSelected()
+            if let calenderScrollView = getCalenderScrollView() {
+                calenderScrollView.thisWeek.checkIsSelected()
+                calenderScrollView.lastWeek.checkIsSelected()
+                calenderScrollView.twoWeekago.checkIsSelected()
+                calenderScrollView.threeWeekago.checkIsSelected()
             }
         }
     }
