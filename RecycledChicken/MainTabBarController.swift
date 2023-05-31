@@ -49,14 +49,6 @@ class MainTabBarController: UITabBarController {
 //
 //        }
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        var tabFrame:CGRect = self.tabBar.frame
-        tabFrame.size.height = 60
-        tabFrame.origin.y = self.view.frame.size.height - 60
-        self.tabBar.frame = tabFrame
-    }
 
     private func updateTabBarAppearance(){
         let tabBarItemAppearance = UITabBarItemAppearance()

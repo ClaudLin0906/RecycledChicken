@@ -58,7 +58,7 @@
         <scene sceneID="454-2A-u8R">
             <objects>
                 <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Qk8-8X-9G8" customClass="MainTabBarController" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hPb-IW-rgj">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hPb-IW-rgj" customClass="CustomTabbar" customModule="RecycledChicken" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

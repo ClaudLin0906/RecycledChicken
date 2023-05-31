@@ -17,7 +17,7 @@
         <!--Connect CompanyVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ConnectCompany" id="Y6W-OH-hqX" customClass="ConnectCompanyVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConnectCompany" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="ConnectCompanyVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,7 +302,7 @@
         <!--Navigation Controller-->
         <scene sceneID="SEE-ba-Nfb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lcA-wj-zGJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="lcA-wj-zGJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lUF-LK-U9T">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

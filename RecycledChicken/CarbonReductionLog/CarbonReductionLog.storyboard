@@ -20,7 +20,7 @@
         <!--Carbon Reduction LogVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="CarbonReductionLog" id="Y6W-OH-hqX" customClass="CarbonReductionLogVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarbonReductionLog" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="CarbonReductionLogVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,7 +326,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tlR-Hw-YLb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RLS-um-ouE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="RLS-um-ouE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RXc-Qc-06j">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

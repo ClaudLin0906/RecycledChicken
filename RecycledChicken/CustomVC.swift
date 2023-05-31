@@ -17,6 +17,7 @@ class CustomVC: UIViewController {
             self.navigationController?.navigationBar.titleTextAttributes = attributes
         }
         let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
+        closeTap.cancelsTouchesInView = false
         view.addGestureRecognizer(closeTap)
     }
 

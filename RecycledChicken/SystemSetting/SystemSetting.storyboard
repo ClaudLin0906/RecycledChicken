@@ -17,7 +17,7 @@
         <!--System SettingVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SystemSetting" id="Y6W-OH-hqX" customClass="SystemSettingVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SystemSetting" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="SystemSettingVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +146,7 @@
         <!--Navigation Controller-->
         <scene sceneID="08d-KQ-ng7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="STR-qq-Bq9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="STR-qq-Bq9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wy3-jD-lWb">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

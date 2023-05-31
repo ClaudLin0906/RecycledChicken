@@ -16,7 +16,7 @@
         <!--Recycle LogVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="RecycleLog" id="Y6W-OH-hqX" customClass="RecycleLogVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecycleLog" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="RecycleLogVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fdf-f9-K4Q">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RRw-vL-FUa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="RRw-vL-FUa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Xf-RB-KSr">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

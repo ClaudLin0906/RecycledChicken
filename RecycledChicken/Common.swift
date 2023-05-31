@@ -76,7 +76,6 @@ func generateBarCode(from string: String) -> UIImage? {
 func pushVC(targetVC:UIViewController, navigation:UINavigationController) {
     DispatchQueue.main.async {
         if !(navigation.topViewController?.isKind(of: targetVC.classForCoder))!{
-            targetVC.hidesBottomBarWhenPushed = true
             navigation.pushViewController(targetVC, animated: true)
         }
     }

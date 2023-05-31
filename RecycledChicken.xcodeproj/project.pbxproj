@@ -24,6 +24,7 @@
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
 		59325EC12A113ED100976790 /* DeleteAccountAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */; };
 		59325EC32A113EE000976790 /* DeleteAccountAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */; };
+		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF52A1364570005686F /* TaskTableViewADCell.swift */; };
 		5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF92A1364EE0005686F /* TaskProgressView.swift */; };
 		5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964AAFB2A1364F70005686F /* TaskProgressView.xib */; };
@@ -181,6 +182,7 @@
 		5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLoginVC.swift; sourceTree = "<group>"; };
 		59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertView.swift; sourceTree = "<group>"; };
 		59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteAccountAlertView.xib; sourceTree = "<group>"; };
+		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		5964AAF52A1364570005686F /* TaskTableViewADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewADCell.swift; sourceTree = "<group>"; };
 		5964AAF92A1364EE0005686F /* TaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressView.swift; sourceTree = "<group>"; };
 		5964AAFB2A1364F70005686F /* TaskProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskProgressView.xib; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
 				5964AAFD2A14769C0005686F /* LAContextManager.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
+				5933F1332A273954008D5FF7 /* CustomTabbar.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
 				59997A5D2A09EDE900E9FD7F /* CommonImageButton.swift */,
 				59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */,
@@ -1001,6 +1004,7 @@
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
 				59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */,
 				5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */,
+				5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
 				597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */,
 				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,

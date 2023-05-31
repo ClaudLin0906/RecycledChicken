@@ -17,7 +17,7 @@
         <!--Commodity VoucherVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="CommodityVoucher" id="Y6W-OH-hqX" customClass="CommodityVoucherVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommodityVoucher" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="CommodityVoucherVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
         <!--Navigation Controller-->
         <scene sceneID="SrC-7i-l7W">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RbN-H8-FhS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="RbN-H8-FhS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SV2-yC-gSS">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

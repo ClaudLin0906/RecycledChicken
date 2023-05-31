@@ -12,7 +12,7 @@
         <!--Person MessageVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PersonMessage" id="Y6W-OH-hqX" customClass="PersonMessageVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PersonMessage" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="PersonMessageVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +108,7 @@
         <!--Navigation Controller-->
         <scene sceneID="OAk-zd-QIt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LHo-XO-Edu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="LHo-XO-Edu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IcU-WA-DM2">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

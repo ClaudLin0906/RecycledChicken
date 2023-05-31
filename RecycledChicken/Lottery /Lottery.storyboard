@@ -17,7 +17,7 @@
         <!--LotteryVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Lottery" id="Y6W-OH-hqX" customClass="LotteryVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Lottery" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="LotteryVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +108,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PJc-e0-hcN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L3q-rm-ziV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="L3q-rm-ziV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dyN-9c-Ijq">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

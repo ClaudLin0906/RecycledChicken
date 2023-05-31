@@ -12,7 +12,7 @@
         <!--Person Message ContentVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PersonMessageContent" id="Y6W-OH-hqX" customClass="PersonMessageContentVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PersonMessageContent" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="PersonMessageContentVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
         <!--Navigation Controller-->
         <scene sceneID="FOK-UW-Fon">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VMD-xa-bh4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="VMD-xa-bh4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oki-ZJ-pAb">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

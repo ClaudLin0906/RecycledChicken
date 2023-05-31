@@ -12,7 +12,7 @@
         <!--Buy CommodityVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="BuyCommodity" id="Y6W-OH-hqX" customClass="BuyCommodityVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyCommodity" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="BuyCommodityVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Prm-8t-Wzp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FUA-iB-Ary" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="FUA-iB-Ary" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AJ7-lC-is5">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
