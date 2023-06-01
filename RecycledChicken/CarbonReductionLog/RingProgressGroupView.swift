@@ -82,7 +82,7 @@ class RingProgressGroupView: UIView {
         title.centerYAnchor.constraint(equalTo: ring2.centerYAnchor).isActive = true
         title.widthAnchor.constraint(equalTo: ring2.widthAnchor, multiplier: 0.7).isActive = true
         title.heightAnchor.constraint(equalTo: ring2.heightAnchor, multiplier: 0.7).isActive = true
-        title.font = UIFont(name: "GenSenMaruGothicTW-Medium-TTF", size: 14)
+        title.font = UIFont(name: "jf-openhuninn-2.0", size: 14)
     }
 
 }

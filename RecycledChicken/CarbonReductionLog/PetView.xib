@@ -8,12 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Light.ttf">
+            <string>GenSenMaruGothicTW-Light-TTF</string>
+        </array>
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
         </array>
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
+        </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PetView" customModule="RecycledChicken" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PetView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="petAmount" destination="vAs-OG-4PJ" id="I2C-pv-T1w"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="393" height="398"/>
@@ -26,15 +36,21 @@
                         <constraint firstAttribute="width" secondItem="zac-xc-sMx" secondAttribute="height" multiplier="1:1" id="oPT-Xe-Cus"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶 PET" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jan-G0-pYK" userLabel="寶特瓶 PET">
-                    <rect key="frame" x="201.66666666666666" y="59" width="51" height="50"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jan-G0-pYK">
+                    <rect key="frame" x="201.66666666666666" y="59" width="51" height="25"/>
+                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PET" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKG-J5-88Z">
+                    <rect key="frame" x="201.66666666666666" y="84" width="51" height="25"/>
                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80/1200" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAs-OG-4PJ">
-                    <rect key="frame" x="0.0" y="372.33333333333331" width="393" height="25.666666666666686"/>
-                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="22"/>
+                    <rect key="frame" x="0.0" y="376.33333333333331" width="393" height="21.666666666666686"/>
+                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="22"/>
                     <color key="textColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -45,11 +61,15 @@
                 <constraint firstItem="jan-G0-pYK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="0hB-o7-ZXr"/>
                 <constraint firstItem="zac-xc-sMx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="1nd-Ix-9eU"/>
                 <constraint firstItem="zac-xc-sMx" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="-5" id="40R-2N-dgX"/>
+                <constraint firstItem="oKG-J5-88Z" firstAttribute="top" secondItem="zac-xc-sMx" secondAttribute="centerY" id="D4J-7q-NKt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vAs-OG-4PJ" secondAttribute="trailing" id="UIb-WI-MtP"/>
+                <constraint firstItem="oKG-J5-88Z" firstAttribute="bottom" secondItem="zac-xc-sMx" secondAttribute="bottom" id="WZ5-Zq-GAk"/>
+                <constraint firstItem="jan-G0-pYK" firstAttribute="bottom" secondItem="zac-xc-sMx" secondAttribute="centerY" id="X0I-HP-HvV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jan-G0-pYK" secondAttribute="trailing" id="X4a-bj-OAT"/>
                 <constraint firstItem="jan-G0-pYK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="5" id="XPo-Hf-aTC"/>
                 <constraint firstItem="vAs-OG-4PJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gpa-Kb-keN"/>
-                <constraint firstItem="jan-G0-pYK" firstAttribute="height" secondItem="zac-xc-sMx" secondAttribute="height" id="sAz-sd-oE0"/>
+                <constraint firstItem="oKG-J5-88Z" firstAttribute="trailing" secondItem="jan-G0-pYK" secondAttribute="trailing" id="pOE-F2-Uc9"/>
+                <constraint firstItem="oKG-J5-88Z" firstAttribute="leading" secondItem="jan-G0-pYK" secondAttribute="leading" id="sbT-TB-ENI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vAs-OG-4PJ" secondAttribute="bottom" id="yk7-uQ-oem"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

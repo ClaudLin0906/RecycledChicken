@@ -8,6 +8,8 @@
 import UIKit
 
 class PetView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var petAmount:UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +23,7 @@ class PetView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+        print(petAmount.font)
     }
 
 }

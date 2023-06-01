@@ -8,8 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Light.ttf">
+            <string>GenSenMaruGothicTW-Light-TTF</string>
+        </array>
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
         </array>
     </customFonts>
     <objects>
@@ -27,15 +33,21 @@
                         <constraint firstAttribute="width" constant="50" id="IZJ-Qp-ARB"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電池 BATT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKe-NB-av9">
-                    <rect key="frame" x="201.66666666666666" y="59" width="42" height="50"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電池" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKe-NB-av9">
+                    <rect key="frame" x="201.66666666666666" y="59" width="34" height="25"/>
+                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BATT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7c-s1-DVR">
+                    <rect key="frame" x="201.66666666666666" y="84" width="42" height="25"/>
                     <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80/1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0o7-zY-v5R">
-                    <rect key="frame" x="0.0" y="792.33333333333337" width="393" height="25.666666666666629"/>
-                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="22"/>
+                    <rect key="frame" x="0.0" y="796.33333333333337" width="393" height="21.666666666666629"/>
+                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="22"/>
                     <color key="textColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -47,10 +59,14 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0o7-zY-v5R" secondAttribute="bottom" id="5b4-NC-nbR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="centerX" secondItem="kDw-Vt-HGU" secondAttribute="trailing" constant="5" id="Eba-p8-6EA"/>
                 <constraint firstItem="kDw-Vt-HGU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="GZT-qc-S3W"/>
+                <constraint firstItem="Q7c-s1-DVR" firstAttribute="bottom" secondItem="kDw-Vt-HGU" secondAttribute="bottom" id="HPS-By-2HV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0o7-zY-v5R" secondAttribute="trailing" id="Hhd-Ri-in0"/>
-                <constraint firstItem="oKe-NB-av9" firstAttribute="height" secondItem="kDw-Vt-HGU" secondAttribute="height" id="TI9-qV-y3X"/>
+                <constraint firstItem="oKe-NB-av9" firstAttribute="bottom" secondItem="kDw-Vt-HGU" secondAttribute="centerY" id="KnH-Da-hPy"/>
+                <constraint firstItem="Q7c-s1-DVR" firstAttribute="top" secondItem="oKe-NB-av9" secondAttribute="bottom" id="XnL-OK-iFH"/>
+                <constraint firstItem="Q7c-s1-DVR" firstAttribute="leading" secondItem="oKe-NB-av9" secondAttribute="leading" id="cza-CP-PJv"/>
                 <constraint firstItem="0o7-zY-v5R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="i4D-8A-FOB"/>
                 <constraint firstItem="oKe-NB-av9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="icW-pe-9OF"/>
+                <constraint firstItem="Q7c-s1-DVR" firstAttribute="top" secondItem="kDw-Vt-HGU" secondAttribute="centerY" id="mpD-6h-2WN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oKe-NB-av9" secondAttribute="trailing" id="o3L-Jr-VhN"/>
                 <constraint firstItem="0o7-zY-v5R" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="tIx-oS-uIt"/>
             </constraints>
