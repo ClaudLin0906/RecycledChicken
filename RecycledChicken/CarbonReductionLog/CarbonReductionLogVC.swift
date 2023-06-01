@@ -31,14 +31,15 @@ class CarbonReductionLogVC: CustomVC {
         
         progressGroup.ring1.accessibilityLabel = NSLocalizedString("Move", comment: "")
         progressGroup.ring2.accessibilityLabel = NSLocalizedString("Exercise", comment: "")
-        progressGroup.title.font = carbonReductionNumber.font
-        progressGroup.title.text = "Congratulations!\n恭喜你電池回收量\n超額完成!"
+        progressGroup.congratulationsTitle.text = "Congratulations!"
+        progressGroup.congratulationsContent.text = "恭喜你電池回收量\n超額完成!"
+//        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
         
         UIView.animate(withDuration: 0.5) { [self] in
             let random = Double(arc4random() % 200) / 100.0
-            progressGroup.ring1.progress = 0.7
-            progressGroup.ring2.progress = 0.4
+            progressGroup.ring1.progress = 0.9
+            progressGroup.ring2.progress = 1.0
         }
 
     }

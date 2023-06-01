@@ -12,7 +12,15 @@ class RingProgressGroupView: UIView {
 
     let ring1 = RingProgressView()
     let ring2 = RingProgressView()
-    let title:UILabel = {
+    let congratulationsTitle:UILabel = {
+       let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let congratulationsContent:UILabel = {
        let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -71,18 +79,25 @@ class RingProgressGroupView: UIView {
     private func setup() {
         addSubview(ring1)
         addSubview(ring2)
-        addSubview(title)
+        addSubview(congratulationsTitle)
+        addSubview(congratulationsContent)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         ring1.frame = bounds
         ring2.frame = bounds.insetBy(dx: ringWidth + ringSpacing, dy: ringWidth + ringSpacing)
-        title.centerXAnchor.constraint(equalTo: ring2.centerXAnchor).isActive = true
-        title.centerYAnchor.constraint(equalTo: ring2.centerYAnchor).isActive = true
-        title.widthAnchor.constraint(equalTo: ring2.widthAnchor, multiplier: 0.7).isActive = true
-        title.heightAnchor.constraint(equalTo: ring2.heightAnchor, multiplier: 0.7).isActive = true
-        title.font = UIFont(name: "jf-openhuninn-2.0", size: 14)
+        congratulationsTitle.centerXAnchor.constraint(equalTo: ring2.centerXAnchor).isActive = true
+        congratulationsTitle.centerYAnchor.constraint(equalTo: ring2.centerYAnchor,constant: -30).isActive = true
+        congratulationsTitle.widthAnchor.constraint(equalTo: ring2.widthAnchor, multiplier: 0.7).isActive = true
+        congratulationsTitle.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        congratulationsTitle.font = UIFont(name: "jf-openhuninn-2.0", size: 14)
+        
+        congratulationsContent.centerXAnchor.constraint(equalTo: congratulationsTitle.centerXAnchor).isActive = true
+        congratulationsContent.topAnchor.constraint(equalTo: congratulationsTitle.bottomAnchor, constant: 10).isActive = true
+        congratulationsContent.widthAnchor.constraint(equalTo: congratulationsTitle.widthAnchor).isActive = true
+        congratulationsContent.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        congratulationsContent.font = UIFont(name: "GenSenMaruGothicTW-Regular-TTF", size: 14)
     }
 
 }
