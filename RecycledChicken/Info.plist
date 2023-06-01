@@ -11,6 +11,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>jfopenhuninn.ttf</string>
 		<string>GenSenMaruGothicTW-Bold.ttf</string>
 		<string>GenSenMaruGothicTW-ExtraLight.ttf</string>
 		<string>GenSenMaruGothicTW-Medium.ttf</string>

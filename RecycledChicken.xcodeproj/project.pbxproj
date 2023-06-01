@@ -183,6 +183,7 @@
 		59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertView.swift; sourceTree = "<group>"; };
 		59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteAccountAlertView.xib; sourceTree = "<group>"; };
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		5933F1352A283B18008D5FF7 /* jfopenhuninn.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jfopenhuninn.ttf; sourceTree = "<group>"; };
 		5964AAF52A1364570005686F /* TaskTableViewADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewADCell.swift; sourceTree = "<group>"; };
 		5964AAF92A1364EE0005686F /* TaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressView.swift; sourceTree = "<group>"; };
 		5964AAFB2A1364F70005686F /* TaskProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskProgressView.xib; sourceTree = "<group>"; };
@@ -416,6 +417,7 @@
 				59F6BE352A07B56000D7B3CB /* GenSenMaruGothicTW-Medium.ttf */,
 				59F6BE332A07B55F00D7B3CB /* GenSenMaruGothicTW-Regular.ttf */,
 				5926C5BF2A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf */,
+				5933F1352A283B18008D5FF7 /* jfopenhuninn.ttf */,
 				5926C58B2A04086600FAB49D /* Info.plist */,
 			);
 			path = RecycledChicken;

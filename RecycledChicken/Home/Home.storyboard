@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenSenMaruGothicTW-Heavy.ttf">
-            <string>GenSenMaruGothicTW-Heavy-TTF</string>
-        </array>
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+        <array key="jfopenhuninn.ttf">
+            <string>jf-openhuninn-1.0</string>
         </array>
     </customFonts>
     <scenes>
@@ -198,7 +198,7 @@
                                                 <rect key="frame" x="10" y="260" width="333" height="350"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccd-f3-Y9z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="150"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="碳竹雞養成" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo6-76-zfY">
                                                                 <rect key="frame" x="20" y="30" width="90" height="20"/>
@@ -219,13 +219,13 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="khi-Bw-h8S">
-                                                                <rect key="frame" x="120" y="0.0" width="213" height="150"/>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="khi-Bw-h8S">
+                                                                <rect key="frame" x="120" y="0.0" width="213" height="200"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.88627450980392153" green="0.76078431372549016" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="150" id="Avn-M0-2nH"/>
+                                                            <constraint firstAttribute="height" constant="200" id="Avn-M0-2nH"/>
                                                             <constraint firstAttribute="bottom" secondItem="khi-Bw-h8S" secondAttribute="bottom" id="HKf-sX-4cX"/>
                                                             <constraint firstItem="Yo6-76-zfY" firstAttribute="top" secondItem="ccd-f3-Y9z" secondAttribute="top" constant="30" id="OqJ-8j-RJz"/>
                                                             <constraint firstItem="Wep-Dg-8Xm" firstAttribute="top" secondItem="Yo6-76-zfY" secondAttribute="bottom" constant="5" id="XQM-Qo-BXl"/>
@@ -249,7 +249,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kdK-46-Ifb">
-                                                        <rect key="frame" x="69.000000000000014" y="160" width="195.33333333333337" height="30"/>
+                                                        <rect key="frame" x="69.000000000000014" y="210" width="195.33333333333337" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="當日養分" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bK-zS-1hV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="30"/>
@@ -262,7 +262,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhx-qv-uDe">
                                                                 <rect key="frame" x="99.333333333333343" y="0.0" width="24.666666666666671" height="30"/>
-                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="20"/>
                                                                 <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -271,7 +271,7 @@
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHb-lO-QsE">
                                                                 <rect key="frame" x="170.66666666666669" y="0.0" width="24.666666666666657" height="30"/>
-                                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="20"/>
                                                                 <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -281,7 +281,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxW-2f-7vo" customClass="CustomCalenderScrollView" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="200" width="333" height="80"/>
+                                                        <rect key="frame" x="0.0" y="250" width="333" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="i2U-6V-SHL"/>
