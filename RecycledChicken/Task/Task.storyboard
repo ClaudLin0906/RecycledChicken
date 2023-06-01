@@ -12,6 +12,9 @@
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
         </array>
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
+        </array>
     </customFonts>
     <scenes>
         <!--TaskVC-->
@@ -63,11 +66,11 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ1-3W-L2Y">
-                                                                    <rect key="frame" x="35" y="-9.6666666666666661" width="50" height="19.666666666666668"/>
+                                                                    <rect key="frame" x="35" y="-8.3333333333333339" width="50" height="16.666666666666668"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="szG-UP-Bjl"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -154,11 +157,11 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIu-ir-pOU">
-                                                                    <rect key="frame" x="35" y="-9.6666666666666661" width="50" height="19.666666666666668"/>
+                                                                    <rect key="frame" x="35" y="-8.3333333333333339" width="50" height="16.666666666666668"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="taf-0S-2CQ"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>

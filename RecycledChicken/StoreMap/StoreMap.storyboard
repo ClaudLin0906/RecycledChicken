@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Light.ttf">
+            <string>GenSenMaruGothicTW-Light-TTF</string>
+        </array>
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
         </array>
@@ -37,7 +40,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="街道/門市查詢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVg-0I-phu">
                                         <rect key="frame" x="0.0" y="5.3333333333333428" width="240" height="19.666666666666668"/>
-                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -120,7 +123,7 @@
                                     <constraint firstAttribute="width" constant="150" id="0fV-PM-Acu"/>
                                     <constraint firstAttribute="height" constant="40" id="Mgo-kC-evT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="門市列表">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

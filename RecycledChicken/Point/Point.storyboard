@@ -9,8 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GenSenMaruGothicTW-Light.ttf">
+            <string>GenSenMaruGothicTW-Light-TTF</string>
+        </array>
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
         </array>
     </customFonts>
     <scenes>
@@ -52,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="40" id="jQY-CT-ejj"/>
                                     <constraint firstAttribute="width" constant="50" id="nUR-9L-2Yk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -139,7 +145,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTT-JI-Qj2">
                                                         <rect key="frame" x="81.666666666666686" y="10" width="150" height="40"/>
                                                         <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="我的票夾">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -160,7 +166,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="MzW-qw-Wua"/>
                                                             <constraint firstAttribute="width" constant="150" id="tn8-6F-wUs"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="點數機制">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

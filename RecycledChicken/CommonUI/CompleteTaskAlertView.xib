@@ -11,6 +11,9 @@
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
         </array>
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompleteTaskAlertView" customModule="RecycledChicken" customModuleProvider="target"/>
@@ -43,8 +46,8 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgr-SH-3u7">
-                    <rect key="frame" x="196.66666666666666" y="478.66666666666669" width="22.333333333333343" height="30"/>
-                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="20"/>
+                    <rect key="frame" x="196.66666666666666" y="478.66666666666669" width="24.666666666666657" height="30"/>
+                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
