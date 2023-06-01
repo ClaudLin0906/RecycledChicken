@@ -22,7 +22,7 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
     var isCurrentDate:Bool = false {
         willSet{
             if newValue {
-                backgroundColor = CommonColor.shared.color9
+                backgroundColor = CommonColor.shared.color3
                 weekLabel.textColor = .white
                 dateLabel.textColor = .white
                 self.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)

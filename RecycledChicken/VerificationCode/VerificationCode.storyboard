@@ -9,11 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenSenMaruGothicTW-Medium.ttf">
-            <string>GenSenMaruGothicTW-Medium-TTF</string>
+        <array key="GenSenMaruGothicTW-Bold.ttf">
+            <string>GenSenMaruGothicTW-Bold-TTF</string>
         </array>
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
+        </array>
+        <array key="jfopenhuninn.ttf">
+            <string>jf-openhuninn-1.0</string>
         </array>
     </customFonts>
     <scenes>
@@ -43,7 +46,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入驗證碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ju8-Ir-Pwe">
                                 <rect key="frame" x="154.66666666666666" y="286" width="84" height="16.333333333333314"/>
-                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Bold-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,7 +58,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-ku-UfK">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Medium-TTF" family="GenSenMaruGothic TW TTF" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -81,7 +84,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za4-UN-HQ1">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Medium-TTF" family="GenSenMaruGothic TW TTF" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -106,7 +109,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHN-ER-cn3">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Medium-TTF" family="GenSenMaruGothic TW TTF" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -131,7 +134,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-Tr-0Lf">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Medium-TTF" family="GenSenMaruGothic TW TTF" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -177,7 +180,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Z4u-zd-Gqv"/>
                                     <constraint firstAttribute="width" constant="150" id="lP9-VD-jJ8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Bold-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="重新發送驗證碼">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

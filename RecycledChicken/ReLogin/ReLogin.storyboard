@@ -11,9 +11,6 @@
         <array key="GenSenMaruGothicTW-Bold.ttf">
             <string>GenSenMaruGothicTW-Bold-TTF</string>
         </array>
-        <array key="GenSenMaruGothicTW-Heavy.ttf">
-            <string>GenSenMaruGothicTW-Heavy-TTF</string>
-        </array>
         <array key="GenSenMaruGothicTW-Regular.ttf">
             <string>GenSenMaruGothicTW-Regular-TTF</string>
         </array>
@@ -49,7 +46,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入新密碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yI-iZ-Hud">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="37.666666666666664"/>
-                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Bold-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -65,10 +62,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼為8-12位英文數字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-Yg-b5M">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼為8-12位英文數字" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ye8-Yg-b5M">
                                                 <rect key="frame" x="60" y="0.0" width="160" height="37.333333333333336"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Heavy-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFi-pU-06I" userLabel="underLine">
@@ -105,10 +102,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95e-68-wYf">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95e-68-wYf">
                                                 <rect key="frame" x="60" y="0.0" width="160" height="37.666666666666664"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Bold-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELe-72-Eh5" userLabel="underLine">
