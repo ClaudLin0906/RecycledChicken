@@ -157,6 +157,7 @@
 		59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */; };
 		59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */; };
 		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
+		59FE25F72A2B247000E7D3A3 /* 光時代操作說明.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* 光時代操作說明.mp4 */; };
 		E502D45E95B044E6B792CC77 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F9B53911A9C86170B05EB4 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -317,6 +318,7 @@
 		59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmVC.swift; sourceTree = "<group>"; };
 		59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comfirm.storyboard; sourceTree = "<group>"; };
 		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
+		59FE25F62A2B247000E7D3A3 /* 光時代操作說明.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "光時代操作說明.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +416,7 @@
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
 				59F6BE2B2A07639900D7B3CB /* Extension.swift */,
+				59FE25F62A2B247000E7D3A3 /* 光時代操作說明.mp4 */,
 				59F6BE362A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf */,
 				59F6BE342A07B55F00D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf */,
 				59F6BE322A07B55E00D7B3CB /* GenSenMaruGothicTW-Light.ttf */,
@@ -882,6 +885,7 @@
 				59325EC32A113EE000976790 /* DeleteAccountAlertView.xib in Resources */,
 				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
 				5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */,
+				59FE25F72A2B247000E7D3A3 /* 光時代操作說明.mp4 in Resources */,
 				59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */,
 				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
