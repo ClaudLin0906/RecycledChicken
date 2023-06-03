@@ -156,6 +156,7 @@
 		59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */; };
 		59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */; };
 		59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */; };
+		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
 		E502D45E95B044E6B792CC77 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F9B53911A9C86170B05EB4 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -315,6 +316,7 @@
 		59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmVC.swift; sourceTree = "<group>"; };
 		59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comfirm.storyboard; sourceTree = "<group>"; };
+		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -742,6 +744,7 @@
 			children = (
 				59C2D99D2A0D37000085724F /* ARVC.swift */,
 				59C2D99F2A0D37330085724F /* AR.storyboard */,
+				59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -1070,6 +1073,7 @@
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				599495772A0D0281009F1B2E /* PointRuleVC.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
+				59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */,
 				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
 				599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
