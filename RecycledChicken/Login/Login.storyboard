@@ -8,11 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenSenMaruGothicTW-Light.ttf">
-            <string>GenSenMaruGothicTW-Light-TTF</string>
-        </array>
-        <array key="GenSenMaruGothicTW-Regular.ttf">
-            <string>GenSenMaruGothicTW-Regular-TTF</string>
+        <array key="GenJyuuGothic-Normal.ttf">
+            <string>GenJyuuGothic-Normal</string>
         </array>
     </customFonts>
     <scenes>
@@ -45,7 +42,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha9-t1-1jj">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="37.666666666666664"/>
-                                        <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -53,18 +50,18 @@
                                         <rect key="frame" x="0.0" y="37.666666666666686" width="220" height="37.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-N1-95v">
-                                                <rect key="frame" x="0.0" y="10.333333333333313" width="30" height="16.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="8.6666666666666874" width="30" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="c9A-Ih-C1J"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="705-is-zn3">
                                                 <rect key="frame" x="30" y="0.0" width="190" height="37.333333333333336"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="977-a0-R91" userLabel="underLine">
@@ -93,18 +90,18 @@
                                         <rect key="frame" x="0.0" y="75" width="220" height="37.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-p8-d8R">
-                                                <rect key="frame" x="0.0" y="10.666666666666684" width="30" height="16.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="9.0000000000000018" width="30" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="ZUf-bM-u7I"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iPJ-bY-weM" customClass="PasswordTextField" customModule="RecycledChicken" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="0.0" width="190" height="37.666666666666664"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8F-fx-aK1" userLabel="underLine">
@@ -142,11 +139,11 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保持登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-jY-0Jz">
-                                                <rect key="frame" x="59.999999999999986" y="10.333333333333313" width="60" height="16.333333333333329"/>
+                                                <rect key="frame" x="59.999999999999986" y="8.6666666666666874" width="60" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="dB0-cQ-hd2"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Regular-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -156,19 +153,20 @@
                                                     <constraint firstAttribute="width" constant="65" id="Lz7-IU-0V0"/>
                                                     <constraint firstAttribute="height" constant="20" id="kOc-Kx-O8n"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                <color key="textColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efz-7R-eVA" userLabel="underLine">
                                                 <rect key="frame" x="120" y="27.666666666666686" width="65" height="1"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="U4s-7J-zqc"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeL-ce-U2f">
                                                 <rect key="frame" x="120" y="8.6666666666666856" width="65" height="20"/>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="forgetPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Dv1-0S-gj4"/>
@@ -206,7 +204,7 @@
                                     <constraint firstAttribute="width" constant="100" id="DOa-jH-y9U"/>
                                     <constraint firstAttribute="height" constant="40" id="t2O-R8-VZe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="登 入"/>
                                 <userDefinedRuntimeAttributes>

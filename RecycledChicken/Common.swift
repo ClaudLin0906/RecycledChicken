@@ -49,6 +49,7 @@ let keyWindow = UIApplication.shared.connectedScenes
 class CommonKey {
     static let shared = CommonKey()
     let googleMapKey = "AIzaSyAcVNJwxg_jJNKCeX4dDDkqmCL8RmVAbSo"
+    let ARKey = "EE17C-B311A-5F817-F0AAF-2A914"
 }
 
 public class CommonUserDefaultsKey{

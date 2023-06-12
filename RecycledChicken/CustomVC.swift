@@ -12,7 +12,7 @@ class CustomVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-        if let font = UIFont(name: "GenSenMaruGothicTW-Regular-TTF", size: 20) {
+        if let font = UIFont(name: "GenJyuuGothic-Normal", size: 20) {
             let attributes = [NSAttributedString.Key.font: font]
             self.navigationController?.navigationBar.titleTextAttributes = attributes
         }
@@ -36,7 +36,7 @@ class CustomVC: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = CommonColor.shared.color1
-        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GenSenMaruGothicTW-Regular-TTF", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.isTranslucent = false
@@ -49,7 +49,7 @@ class CustomVC: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .clear
-        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GenSenMaruGothicTW-Regular-TTF", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.black]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.isTranslucent = true

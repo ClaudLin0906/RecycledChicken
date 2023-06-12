@@ -97,7 +97,7 @@ class RingProgressGroupView: UIView {
         congratulationsContent.topAnchor.constraint(equalTo: congratulationsTitle.bottomAnchor, constant: 10).isActive = true
         congratulationsContent.widthAnchor.constraint(equalTo: congratulationsTitle.widthAnchor).isActive = true
         congratulationsContent.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        congratulationsContent.font = UIFont(name: "GenSenMaruGothicTW-Regular-TTF", size: 14)
+        congratulationsContent.font = UIFont(name: "GenJyuuGothic-Normal", size: 14)
     }
 
 }

@@ -20,7 +20,6 @@
 		5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5926C59A2A0632BC00FAB49D /* Home.storyboard */; };
 		5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C59D2A06342B00FAB49D /* LoginVC.swift */; };
 		5926C5A22A06364800FAB49D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5A12A06364800FAB49D /* Common.swift */; };
-		5926C5C02A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5926C5BF2A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf */; };
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
 		59325EC12A113ED100976790 /* DeleteAccountAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */; };
 		59325EC32A113EE000976790 /* DeleteAccountAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */; };
@@ -140,24 +139,28 @@
 		59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
+		59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */; };
+		59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A1F2A3722500062D4EB /* GenJyuuGothic-Light.ttf */; };
+		59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A202A3722500062D4EB /* GenJyuuGothic-Heavy.ttf */; };
+		59E69A262A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A212A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf */; };
+		59E69A272A3722510062D4EB /* GenJyuuGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A222A3722510062D4EB /* GenJyuuGothic-Bold.ttf */; };
+		59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A282A37225D0062D4EB /* GenJyuuGothic-Regular.ttf */; };
+		59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A2A2A3722660062D4EB /* GenJyuuGothic-Normal.ttf */; };
+		59E69A2D2A375B650062D4EB /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E69A2C2A375B650062D4EB /* ScannerView.swift */; };
+		59E69A312A376F330062D4EB /* TutorialVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E69A302A376F330062D4EB /* TutorialVideoVC.swift */; };
 		59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */; };
 		59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE272A06693100D7B3CB /* Login.storyboard */; };
 		59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */; };
 		59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE2B2A07639900D7B3CB /* Extension.swift */; };
 		59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE2E2A078D9D00D7B3CB /* SignVC.swift */; };
 		59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE302A078DB300D7B3CB /* Sign.storyboard */; };
-		59F6BE372A07B56100D7B3CB /* GenSenMaruGothicTW-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE322A07B55E00D7B3CB /* GenSenMaruGothicTW-Light.ttf */; };
-		59F6BE382A07B56100D7B3CB /* GenSenMaruGothicTW-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE332A07B55F00D7B3CB /* GenSenMaruGothicTW-Regular.ttf */; };
-		59F6BE392A07B56100D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE342A07B55F00D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf */; };
-		59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE352A07B56000D7B3CB /* GenSenMaruGothicTW-Medium.ttf */; };
-		59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE362A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf */; };
 		59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */; };
 		59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE3F2A07B83700D7B3CB /* VerificationCode.storyboard */; };
 		59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */; };
 		59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */; };
 		59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */; };
 		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
-		59FE25F72A2B247000E7D3A3 /* 光時代操作說明.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* 光時代操作說明.mp4 */; };
+		59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */; };
 		59FE25FA2A36FABD00E7D3A3 /* LiGScannerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59FE25F92A36FABD00E7D3A3 /* LiGScannerKit */; };
 		59FE25FD2A36FAF400E7D3A3 /* GLTFSceneKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59FE25FC2A36FAF400E7D3A3 /* GLTFSceneKit */; };
 		E502D45E95B044E6B792CC77 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F9B53911A9C86170B05EB4 /* Pods_RecycledChicken.framework */; };
@@ -183,7 +186,6 @@
 		5926C59A2A0632BC00FAB49D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5926C59D2A06342B00FAB49D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5926C5A12A06364800FAB49D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		5926C5BF2A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Heavy.ttf"; sourceTree = "<group>"; };
 		5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLoginVC.swift; sourceTree = "<group>"; };
 		59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertView.swift; sourceTree = "<group>"; };
 		59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteAccountAlertView.xib; sourceTree = "<group>"; };
@@ -303,24 +305,28 @@
 		59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderScrollView.xib; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
+		59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Medium.ttf"; sourceTree = "<group>"; };
+		59E69A1F2A3722500062D4EB /* GenJyuuGothic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Light.ttf"; sourceTree = "<group>"; };
+		59E69A202A3722500062D4EB /* GenJyuuGothic-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Heavy.ttf"; sourceTree = "<group>"; };
+		59E69A212A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-ExtraLight.ttf"; sourceTree = "<group>"; };
+		59E69A222A3722510062D4EB /* GenJyuuGothic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Bold.ttf"; sourceTree = "<group>"; };
+		59E69A282A37225D0062D4EB /* GenJyuuGothic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Regular.ttf"; sourceTree = "<group>"; };
+		59E69A2A2A3722660062D4EB /* GenJyuuGothic-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Normal.ttf"; sourceTree = "<group>"; };
+		59E69A2C2A375B650062D4EB /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		59E69A302A376F330062D4EB /* TutorialVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVideoVC.swift; sourceTree = "<group>"; };
 		59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignLogin.storyboard; sourceTree = "<group>"; };
 		59F6BE272A06693100D7B3CB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		59F6BE2B2A07639900D7B3CB /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		59F6BE2E2A078D9D00D7B3CB /* SignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC.swift; sourceTree = "<group>"; };
 		59F6BE302A078DB300D7B3CB /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
-		59F6BE322A07B55E00D7B3CB /* GenSenMaruGothicTW-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Light.ttf"; sourceTree = "<group>"; };
-		59F6BE332A07B55F00D7B3CB /* GenSenMaruGothicTW-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Regular.ttf"; sourceTree = "<group>"; };
-		59F6BE342A07B55F00D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-ExtraLight.ttf"; sourceTree = "<group>"; };
-		59F6BE352A07B56000D7B3CB /* GenSenMaruGothicTW-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Medium.ttf"; sourceTree = "<group>"; };
-		59F6BE362A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenSenMaruGothicTW-Bold.ttf"; sourceTree = "<group>"; };
 		59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
 		59F6BE3F2A07B83700D7B3CB /* VerificationCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VerificationCode.storyboard; sourceTree = "<group>"; };
 		59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmVC.swift; sourceTree = "<group>"; };
 		59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comfirm.storyboard; sourceTree = "<group>"; };
 		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
-		59FE25F62A2B247000E7D3A3 /* 光時代操作說明.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "光時代操作說明.mp4"; sourceTree = "<group>"; };
+		59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TutorialVideo.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,13 +426,14 @@
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
 				59F6BE2B2A07639900D7B3CB /* Extension.swift */,
-				59FE25F62A2B247000E7D3A3 /* 光時代操作說明.mp4 */,
-				59F6BE362A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf */,
-				59F6BE342A07B55F00D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf */,
-				59F6BE322A07B55E00D7B3CB /* GenSenMaruGothicTW-Light.ttf */,
-				59F6BE352A07B56000D7B3CB /* GenSenMaruGothicTW-Medium.ttf */,
-				59F6BE332A07B55F00D7B3CB /* GenSenMaruGothicTW-Regular.ttf */,
-				5926C5BF2A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf */,
+				59E69A222A3722510062D4EB /* GenJyuuGothic-Bold.ttf */,
+				59E69A212A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf */,
+				59E69A282A37225D0062D4EB /* GenJyuuGothic-Regular.ttf */,
+				59E69A2A2A3722660062D4EB /* GenJyuuGothic-Normal.ttf */,
+				59E69A202A3722500062D4EB /* GenJyuuGothic-Heavy.ttf */,
+				59E69A1F2A3722500062D4EB /* GenJyuuGothic-Light.ttf */,
+				59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */,
+				59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */,
 				59C5AF6D2A290E6F002322BE /* jf-openhuninn-2.0.ttf */,
 				5926C58B2A04086600FAB49D /* Info.plist */,
 			);
@@ -749,9 +756,11 @@
 		59C2D99C2A0D36E30085724F /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				59E69A2C2A375B650062D4EB /* ScannerView.swift */,
 				59C2D99D2A0D37000085724F /* ARVC.swift */,
 				59C2D99F2A0D37330085724F /* AR.storyboard */,
 				59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */,
+				59E69A302A376F330062D4EB /* TutorialVideoVC.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -877,15 +886,12 @@
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
 				59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
-				5926C5C02A06490900FAB49D /* GenSenMaruGothicTW-Heavy.ttf in Resources */,
 				599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */,
-				59F6BE382A07B56100D7B3CB /* GenSenMaruGothicTW-Regular.ttf in Resources */,
-				59F6BE392A07B56100D7B3CB /* GenSenMaruGothicTW-ExtraLight.ttf in Resources */,
 				59A7957D2A0F79170031710F /* UpdatePasswordSuccessView.xib in Resources */,
 				599495682A0BFA4F009F1B2E /* BuyLottery.storyboard in Resources */,
 				59997A6D2A0A422D00E9FD7F /* ProfileUpdateView.xib in Resources */,
-				59F6BE372A07B56100D7B3CB /* GenSenMaruGothicTW-Light.ttf in Resources */,
 				59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */,
+				59E69A262A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf in Resources */,
 				59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */,
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
 				59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */,
@@ -893,11 +899,12 @@
 				59325EC32A113EE000976790 /* DeleteAccountAlertView.xib in Resources */,
 				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
 				5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */,
-				59FE25F72A2B247000E7D3A3 /* 光時代操作說明.mp4 in Resources */,
+				59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */,
 				59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */,
 				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
 				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
+				59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */,
 				5999F0612A132409002F08D8 /* AmountView.xib in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
 				59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */,
@@ -905,7 +912,6 @@
 				599495742A0C90E7009F1B2E /* BuyCommodity.storyboard in Resources */,
 				597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */,
 				599495792A0D02B1009F1B2E /* PointRule.storyboard in Resources */,
-				59F6BE3B2A07B56100D7B3CB /* GenSenMaruGothicTW-Bold.ttf in Resources */,
 				59C2D9A52A0D38490085724F /* Task.storyboard in Resources */,
 				598F39482A0E06C600DA9186 /* StoreList.storyboard in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
@@ -913,14 +919,17 @@
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
 				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
+				59E69A272A3722510062D4EB /* GenJyuuGothic-Bold.ttf in Resources */,
 				59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */,
 				59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */,
+				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
 				597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */,
 				598F394C2A0E07A500DA9186 /* SearchView.xib in Resources */,
 				598F39532A0E1F6600DA9186 /* ProductDescription.storyboard in Resources */,
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
 				5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */,
 				597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */,
+				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
 				59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */,
 				5994957E2A0D2C7B009F1B2E /* StoreMap.storyboard in Resources */,
@@ -928,14 +937,15 @@
 				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
+				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
 				59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */,
 				59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */,
-				59F6BE3A2A07B56100D7B3CB /* GenSenMaruGothicTW-Medium.ttf in Resources */,
 				59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */,
 				599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
 				59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */,
+				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
 				5994956D2A0BFC88009F1B2E /* SpendPointView.xib in Resources */,
 				59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */,
 			);
@@ -1011,6 +1021,7 @@
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,
+				59E69A312A376F330062D4EB /* TutorialVideoVC.swift in Sources */,
 				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
@@ -1061,6 +1072,7 @@
 				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
+				59E69A2D2A375B650062D4EB /* ScannerView.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
 				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,
 				59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */,

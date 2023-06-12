@@ -13,12 +13,13 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>GenSenMaruGothicTW-Bold.ttf</string>
-		<string>GenSenMaruGothicTW-ExtraLight.ttf</string>
-		<string>GenSenMaruGothicTW-Medium.ttf</string>
-		<string>GenSenMaruGothicTW-Light.ttf</string>
-		<string>GenSenMaruGothicTW-Heavy.ttf</string>
-		<string>GenSenMaruGothicTW-Regular.ttf</string>
+		<string>GenJyuuGothic-Medium.ttf</string>
+		<string>GenJyuuGothic-Heavy.ttf</string>
+		<string>GenJyuuGothic-Normal.ttf</string>
+		<string>GenJyuuGothic-Regular.ttf</string>
+		<string>GenJyuuGothic-ExtraLight.ttf</string>
+		<string>GenJyuuGothic-Light.ttf</string>
+		<string>GenJyuuGothic-Bold.ttf</string>
 		<string>jf-openhuninn-2.0.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

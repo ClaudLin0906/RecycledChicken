@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 import UserNotifications
+import LiGScannerKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(success)
         }
         application.registerForRemoteNotifications()
+       
+        LiGScanner.sharedInstance().initialize(CommonKey.shared.ARKey)
         return true
     }
 

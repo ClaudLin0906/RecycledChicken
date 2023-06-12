@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenSenMaruGothicTW-Light.ttf">
-            <string>GenSenMaruGothicTW-Light-TTF</string>
+        <array key="GenJyuuGothic-Normal.ttf">
+            <string>GenJyuuGothic-Normal</string>
         </array>
     </customFonts>
     <objects>
@@ -32,7 +32,7 @@
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="所在地區搜尋" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yaf-cr-pZZ">
                     <rect key="frame" x="50" y="59" width="343" height="759"/>
-                    <fontDescription key="fontDescription" name="GenSenMaruGothicTW-Light-TTF" family="GenSenMaruGothic TW TTF" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
