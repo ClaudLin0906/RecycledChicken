@@ -55,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "643FD83A-A413-4387-8C9C-701B95DD43AC"
+            uuid = "D204D671-D0B8-478D-A48C-1A6B25E7CB42"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/CustomVC.swift"
+            filePath = "RecycledChicken/AR/ARVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "setDefaultNavigationBackBtn()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "scannerStatus(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

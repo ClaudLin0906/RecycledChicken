@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -147,7 +147,6 @@
 		59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A282A37225D0062D4EB /* GenJyuuGothic-Regular.ttf */; };
 		59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A2A2A3722660062D4EB /* GenJyuuGothic-Normal.ttf */; };
 		59E69A2D2A375B650062D4EB /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E69A2C2A375B650062D4EB /* ScannerView.swift */; };
-		59E69A312A376F330062D4EB /* TutorialVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E69A302A376F330062D4EB /* TutorialVideoVC.swift */; };
 		59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */; };
 		59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE272A06693100D7B3CB /* Login.storyboard */; };
 		59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */; };
@@ -313,7 +312,6 @@
 		59E69A282A37225D0062D4EB /* GenJyuuGothic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Regular.ttf"; sourceTree = "<group>"; };
 		59E69A2A2A3722660062D4EB /* GenJyuuGothic-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Normal.ttf"; sourceTree = "<group>"; };
 		59E69A2C2A375B650062D4EB /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
-		59E69A302A376F330062D4EB /* TutorialVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVideoVC.swift; sourceTree = "<group>"; };
 		59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignLogin.storyboard; sourceTree = "<group>"; };
 		59F6BE272A06693100D7B3CB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -760,7 +758,6 @@
 				59C2D99D2A0D37000085724F /* ARVC.swift */,
 				59C2D99F2A0D37330085724F /* AR.storyboard */,
 				59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */,
-				59E69A302A376F330062D4EB /* TutorialVideoVC.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -856,7 +853,7 @@
 				};
 			};
 			buildConfigurationList = 5926C5752A04086400FAB49D /* Build configuration list for PBXProject "RecycledChicken" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1021,7 +1018,6 @@
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,
-				59E69A312A376F330062D4EB /* TutorialVideoVC.swift in Sources */,
 				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,

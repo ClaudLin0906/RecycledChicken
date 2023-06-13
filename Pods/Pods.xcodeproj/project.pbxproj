@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -30,176 +30,287 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		01F288EE853DC14B80CED9C1714D2E69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAC17E35C4C855B7DD30B7CFD8A28A0 /* UIKit.framework */; };
-		06E2DC2943C278BE21F2A49E34557DFE /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC50C316FEF88E35D781F3CB9FFA1F /* M13CheckboxAnimationGenerator.swift */; };
-		0B26A779769C29BF8A82292C64B29373 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAC17E35C4C855B7DD30B7CFD8A28A0 /* UIKit.framework */; };
-		16BE8381FEA0F72FEB641EB2F59AB298 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0BCC50A12B61F847D207DBB8CFF0AF /* Foundation.framework */; };
-		1E4844DC36C3CC0B60416B62F5CF7A72 /* MKGradientGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319D89062A83C43CF4340791872871D /* MKGradientGenerator.swift */; };
-		34D86F4481D9328BF45B637B906B3122 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0BCC50A12B61F847D207DBB8CFF0AF /* Foundation.framework */; };
-		3F02052FF61FC3B6485C755BAE331F13 /* Pods-RecycledChicken-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EED45F60F58A535780669AD9E904B1 /* Pods-RecycledChicken-dummy.m */; };
-		46454200482A274AE6EEA5B758A5BBF6 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C595C96E7196227FE128446C17C7A4 /* M13CheckboxRadioPathGenerator.swift */; };
-		493D94B69089A1017F0002C59C1C1FE1 /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2243EDA78166F18F8F662FDA656 /* M13CheckboxDisclosurePathGenerator.swift */; };
-		515E22E4255B6073C1897BDDB091A2B8 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE9E850C3E717DB1AEF70461B1ADDF /* DropDown+Appearance.swift */; };
-		54169FF69CE3BA42ACF37D726389F6A4 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9327004385C8CF279E7EEF764B0C7A6 /* M13CheckboxCheckPathGenerator.swift */; };
-		563FA5012BA9F97CC2CE88789C0667A6 /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC21A0A19C96B58D1F2F386D04FB62A6 /* M13CheckboxPathGenerator.swift */; };
-		5F06B6225B817926F5B7EED2B7EAAE68 /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C55CB20ABBA786ED4701A1B1E2EE39 /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F9A771A696AFFADF871C6325C59B913 /* MKRingProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE1AA877842F06E6BEDFEC66C7D860A /* MKRingProgressView-dummy.m */; };
-		66941464C303817E9EA0BEFB03150675 /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E5D4A6D18CC22578DC2B02E80003DD /* M13CheckboxBounceController.swift */; };
-		68E1653C561E14BBEAC9CF4873570D58 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D9B88746D3E383649836934DBAE278 /* DropDownCell.xib */; };
-		69D606BB12B7287A59C1676B81F1053F /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A93BE50D37278F55020012305922D5D /* M13Checkbox-dummy.m */; };
-		6B4BCDC4DBBD23DF148E0D636101F8D2 /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A08CF0553424041D1628A8126290E6 /* M13CheckboxAddRemovePathGenerator.swift */; };
-		6B904C91A4EBEF6DDE1E2A30B0D1C5EF /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F20F8F0D565AB10B4BE5D0F2AEB43 /* M13CheckboxController.swift */; };
-		6CB78CFBE3D406BEA423D5DFDBCCEEFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553F02396820467C46BFBDBFD5A82BB7 /* CoreGraphics.framework */; };
-		74012B832FAF67F8D62A2B27CDAFE8B5 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D996990665F5052A015127A394A18 /* DPDConstants.swift */; };
-		7709D6210F7C1383200E965AE7E01B76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0BCC50A12B61F847D207DBB8CFF0AF /* Foundation.framework */; };
-		84459C4824533C9C4FD12AFC941F3CE1 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BA7DB245B9E279ECA2853C94A762A /* DropDown.swift */; };
-		848547290C4F9A048743CD149EBAF315 /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D44E84850F6344B3BADFA54F2793FD5 /* DefaultValues.swift */; };
-		861D7AD7293CB4DF53353FC3020C2F1B /* MKRingProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B51FBC85EE2F26001944E49C3C296A3F /* MKRingProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89A72A55273CE358DC4E7600F785C37B /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794FFF0FE34BE7AF9F46D859D04F6998 /* DPDKeyboardListener.swift */; };
-		907338727C09F65DB75AA7AB9E10C3B4 /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E46326CDD0986F66354D3397D8205CA1 /* DropDown-dummy.m */; };
-		9339E470E1F2008F309410A7DD3C6ACE /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC8A98CBEC15E30F8D8E428FA54743 /* M13CheckboxFadeController.swift */; };
-		93AD7BFA1B4E132B2751C5F5556EA946 /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2997193C96953015E22439BE6CD9F6FC /* M13CheckboxFillController.swift */; };
-		9D58EAD4CC5C93CA05E741468D7DFD81 /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5AF7B8BD22F108C6EDFE9D5352BBDB /* M13Checkbox.swift */; };
-		9DF01615EDFF8861EB4D0BA2D8722416 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E2981BD20B08931AEB9389AD93639F /* M13CheckboxDotController.swift */; };
-		A491DFE2AA235D68257781EE47937B5A /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8732315BC5E408B2A6F9655C511EA5 /* M13CheckboxExpandController.swift */; };
-		B4C84B3F1D241191C3351FB3468BDAEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0BCC50A12B61F847D207DBB8CFF0AF /* Foundation.framework */; };
-		B73E510E851686F8184E26986A470458 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDED030FA48F4D3E8147F7B34043BF /* DPDUIView+Extension.swift */; };
-		BDC10974A8641F01C5665C61EA37A153 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A71CC795F250887F8F235D96C6E2B9 /* DropDownCell.swift */; };
-		C44858CF338D87618789A64DFC890702 /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C139849DB448E6A5EB9FCCD2180DDB2 /* M13CheckboxStrokeController.swift */; };
-		CFCC56CBE07D9186D0A743E28E8361B4 /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619ABC00289F26112868C127484FEAAD /* M13Checkbox+IB.swift */; };
-		D0692F6429DA7A7D8D6A356BB7EFA6C8 /* MKRingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816DD270AD849934635739AA68E4DB7 /* MKRingProgressView.swift */; };
-		D22CF47B5EE55E2FEA7D86BAF16476B5 /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42154D0BBC199C1E98CEB9FEB902F0D9 /* M13CheckboxGestureRecognizer.swift */; };
-		D91CA27DD43E06E6CAA5D69ECE2FDA19 /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD9C7F5D9734AAEED27F4683EF5D7C /* M13CheckboxFlatController.swift */; };
-		DF241D31A0BA0B3CADA668406B9524EB /* MKRingProgressLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228C740B0E1E27603552427F1684930 /* MKRingProgressLayer.swift */; };
-		DFAC0F3AC28442275E6F42DFBF85B7B4 /* Pods-RecycledChicken-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E89087010B638FE08096D70701C299D /* Pods-RecycledChicken-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0A8C46EEE733B55971B1CC5ED65C9AA /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B72E2263FC29060DD589139CF34B2B29 /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2840589249FEA416546CD8D43713B45 /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFF2C2B8C0C6623592DE87836CE3D63 /* M13CheckboxSpiralController.swift */; };
+		01F288EE853DC14B80CED9C1714D2E69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2703AD3584A55A59D988E399560C26E0 /* UIKit.framework */; };
+		04A8430BFC619C34E5F4D3878D094380 /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C589787325BE09DEB0BC8EC3664EC468 /* CachedResponseHandler.swift */; };
+		06E2DC2943C278BE21F2A49E34557DFE /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA80F83A4A6FFFF601E0CFB7B50AFA /* M13CheckboxAnimationGenerator.swift */; };
+		079F0820555C5B86C9FBD5EC6344137F /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B151B80EB5EF1655908DF860CC6D431 /* Protected.swift */; };
+		0B26A779769C29BF8A82292C64B29373 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2703AD3584A55A59D988E399560C26E0 /* UIKit.framework */; };
+		11CCD832BD537718892C6A216A38490A /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE316DACCEA30F28AD060B76A08A9A /* URLRequest+Alamofire.swift */; };
+		15C24CE54460248A313635C68F970336 /* Pods-RecycledChicken-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EED45F60F58A535780669AD9E904B1 /* Pods-RecycledChicken-dummy.m */; };
+		16BE8381FEA0F72FEB641EB2F59AB298 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF41FD2D6BCFCF5141A9DA7BD8CBBFB2 /* Foundation.framework */; };
+		197457852FC83E905248660B0F930452 /* AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911CA8D2EC167BA0D370EFC6927C4A3A /* AuthenticationInterceptor.swift */; };
+		1AFD57838680DF58184FF94D14C7F3FF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA635769EF34660C027384D76461C8B4 /* RequestInterceptor.swift */; };
+		1E4844DC36C3CC0B60416B62F5CF7A72 /* MKGradientGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BA8FC8F68814689E5184F29F0E1311 /* MKGradientGenerator.swift */; };
+		282FCD4EA8B05830E9108690B8CD336B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F00247BA3B879A53D0CE5F5224C19 /* Session.swift */; };
+		320C0D7A88AA812EFB20016BA1F5D7AE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66688F246EF78FD9C7FE82D2D57709E7 /* AFError.swift */; };
+		34D86F4481D9328BF45B637B906B3122 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF41FD2D6BCFCF5141A9DA7BD8CBBFB2 /* Foundation.framework */; };
+		385BC4B250B6A6DB8AAAEA77D5B7A46F /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4998BA95D9B6A8FC763C61F5A97FED49 /* Combine.swift */; };
+		3A59D8FBAF9A54906E3644AC80465AFB /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD9DB53455BBDB6FD10E98E5B191B8 /* Notifications.swift */; };
+		3FA127A261BB563409868A0DC21807B2 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918774B2845005AB61C9CB1C51F0103B /* ResponseSerialization.swift */; };
+		46454200482A274AE6EEA5B758A5BBF6 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1259BAB03DE3E5A82C8A787BCD831B9 /* M13CheckboxRadioPathGenerator.swift */; };
+		482B74C0548970BB9C095E2D8530E421 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AAC7CC326AF5A6407E1CA6D5EAFA03 /* ParameterEncoding.swift */; };
+		493D94B69089A1017F0002C59C1C1FE1 /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F78221518D938FD06798D861331D74 /* M13CheckboxDisclosurePathGenerator.swift */; };
+		515E22E4255B6073C1897BDDB091A2B8 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F8CF1A6A94F4F11A98B46AFF5DB3D /* DropDown+Appearance.swift */; };
+		529173B31EFCD3D199E79866AFBEC86C /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9031A8A7EE2862275A6906184594C8 /* HTTPHeaders.swift */; };
+		54169FF69CE3BA42ACF37D726389F6A4 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAC49344E7C65F6D42B3106E1A630B7 /* M13CheckboxCheckPathGenerator.swift */; };
+		563FA5012BA9F97CC2CE88789C0667A6 /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6433D78F339E3EF0D03D8D128F2BF068 /* M13CheckboxPathGenerator.swift */; };
+		5B92A66A66BD639411C3D839A0F87B0C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156A9383017F91D5F8F63013B4A2E134 /* Request.swift */; };
+		5F06B6225B817926F5B7EED2B7EAAE68 /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D59717A1841675421A166A4BD35E2F8B /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F9A771A696AFFADF871C6325C59B913 /* MKRingProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9522F1C8044EB7AB9E4DF083559B6EED /* MKRingProgressView-dummy.m */; };
+		643A7AFFB7AEB70B2B9B7E0926055023 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67387A718E9EC57D414343A009205B8 /* RetryPolicy.swift */; };
+		66941464C303817E9EA0BEFB03150675 /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3379EEAB74883CAE94392262A2E325E /* M13CheckboxBounceController.swift */; };
+		67B10FEAA3B7E5387D20E76B1085E94D /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A009479289B9F8D88D3AB3F6B0CDF2 /* URLSessionConfiguration+Alamofire.swift */; };
+		68E1653C561E14BBEAC9CF4873570D58 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976DA8DD82F430E623A1121E6515D312 /* DropDownCell.xib */; };
+		69D606BB12B7287A59C1676B81F1053F /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EE6FB14C78D289B3FCA08BD6D388DA /* M13Checkbox-dummy.m */; };
+		6B4BCDC4DBBD23DF148E0D636101F8D2 /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0F62B4DBDD4E380DACC1BF461D493 /* M13CheckboxAddRemovePathGenerator.swift */; };
+		6B904C91A4EBEF6DDE1E2A30B0D1C5EF /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB37249649C3D2FCB38DBFEB6F94421 /* M13CheckboxController.swift */; };
+		6CB78CFBE3D406BEA423D5DFDBCCEEFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65CC4CB51CF0E0069B7CA613424035A /* CoreGraphics.framework */; };
+		732C29255F73EF3D83D49BD4F8FEAA8F /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C30AC7F708C3BDD452562FFF7E137A /* MultipartUpload.swift */; };
+		737747B9A98257DB58112C3A23686669 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B26F1B173270421C3C0BA5BA95256 /* MultipartFormData.swift */; };
+		74012B832FAF67F8D62A2B27CDAFE8B5 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880984328871855A1020AB259E957DD3 /* DPDConstants.swift */; };
+		77AB6AF4BFC6DE016DA7C057B5799C84 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D8247A122104ABF5077DD38687265 /* ServerTrustEvaluation.swift */; };
+		78B1DD1219182494A6AFAD26AAB20AA6 /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8508859AE3C58E66EA601CB699CF4D /* Concurrency.swift */; };
+		7D64BC3E6CAA4AB54EAC0AAADE93F578 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1135B9FA52DF29A066D8EED3DBB9C1BA /* OperationQueue+Alamofire.swift */; };
+		81E6A0FF7F286008345ECFA3A2103FA8 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0787342FA31FD42C9E07200E404CC7B /* Alamofire.swift */; };
+		82FD97FBBEFE51E2D3B434AF4954FC93 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF130ABB0421FB1F829EA3A175D01F /* EventMonitor.swift */; };
+		84459C4824533C9C4FD12AFC941F3CE1 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DF821FCD188FBC1E7D24F0C0332B5F /* DropDown.swift */; };
+		848547290C4F9A048743CD149EBAF315 /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F046060F705A10BCAAD169FAC52ED759 /* DefaultValues.swift */; };
+		861D7AD7293CB4DF53353FC3020C2F1B /* MKRingProgressView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 144756D47873917DA2569F157FD1F11B /* MKRingProgressView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89A72A55273CE358DC4E7600F785C37B /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952AD71F074D3E405A3EE3D8F13CDC61 /* DPDKeyboardListener.swift */; };
+		8E698F134A953250D5834C8B83CDAD34 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CE10845A5B6FAAEC453BC5B847C9B /* DispatchQueue+Alamofire.swift */; };
+		8E85763AE29BEF0A46EE875B8F069E8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF41FD2D6BCFCF5141A9DA7BD8CBBFB2 /* Foundation.framework */; };
+		907338727C09F65DB75AA7AB9E10C3B4 /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 872A1AEB5A4C28F82BCAD77F40168E36 /* DropDown-dummy.m */; };
+		9339E470E1F2008F309410A7DD3C6ACE /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A1192386C87CC52A7F19A24F30E88 /* M13CheckboxFadeController.swift */; };
+		93AD7BFA1B4E132B2751C5F5556EA946 /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D68FE76E2DF917BA7D23B2EC4C87312 /* M13CheckboxFillController.swift */; };
+		9D58EAD4CC5C93CA05E741468D7DFD81 /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC658A5E322BE862D4D343ED21E77C2B /* M13Checkbox.swift */; };
+		9DF01615EDFF8861EB4D0BA2D8722416 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCBFB82E7594B76CC22A4C0E123627 /* M13CheckboxDotController.swift */; };
+		A491DFE2AA235D68257781EE47937B5A /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B71936BCA97CF7EABA93C0EC94D30 /* M13CheckboxExpandController.swift */; };
+		A523488C60BF961290D0B1ABB9ADACEC /* RequestCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADD9CE9FB0F98F9BCE119CE589FEA2 /* RequestCompression.swift */; };
+		AA721ECC2B36AFB7D9FE70C83E6D63F9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB1083DC1270C284BA2165980525E7 /* Response.swift */; };
+		B17D933C8F8BC6A4F91AA620D7D7A870 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07EA259F1FAA8B92F98B6EEDE89AA2 /* ParameterEncoder.swift */; };
+		B4C84B3F1D241191C3351FB3468BDAEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF41FD2D6BCFCF5141A9DA7BD8CBBFB2 /* Foundation.framework */; };
+		B73E510E851686F8184E26986A470458 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5FC41EC9DF125370D27278B2FC1F9 /* DPDUIView+Extension.swift */; };
+		BAB17A1C6CAD14B3788973EAF8466C93 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F0ABC5B34A48C7B280DEBEC73E1B6 /* NetworkReachabilityManager.swift */; };
+		BDC10974A8641F01C5665C61EA37A153 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C94EE8F01CBB07D3C644BAF87A7000A /* DropDownCell.swift */; };
+		C04739CBCEE445B66192BFA708655EDF /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E64C58189F4D933A261DD09F1BE67D /* StringEncoding+Alamofire.swift */; };
+		C44858CF338D87618789A64DFC890702 /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED37D264DD6D6F7F08E62959DB111AE /* M13CheckboxStrokeController.swift */; };
+		C8269B42DED12AB1F275648D0BD32E45 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AAF575C306D008702B8B472615DA9F /* URLEncodedFormEncoder.swift */; };
+		CFCC56CBE07D9186D0A743E28E8361B4 /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B7EA5D10A8AA5E4CCF516062BD796 /* M13Checkbox+IB.swift */; };
+		D0560E8E2E5EB407B5D8E0381BF453FA /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F1173A5BA55250BE636F249C45DF9 /* URLConvertible+URLRequestConvertible.swift */; };
+		D0692F6429DA7A7D8D6A356BB7EFA6C8 /* MKRingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ADEA7CC5A2D84843219988FBC8BA61 /* MKRingProgressView.swift */; };
+		D09FBBADAF7C5C757AA5AB5DFE54BD25 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B64C6307558CD33E27F401F2E88209B /* Alamofire-dummy.m */; };
+		D22CF47B5EE55E2FEA7D86BAF16476B5 /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65705771A42A078587315520B94D5B /* M13CheckboxGestureRecognizer.swift */; };
+		D368E6F70C5E6998548A72E65F92432D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6C9F1452C0553C423E368E3251ABD /* Validation.swift */; };
+		D7BCBE1EB4A638403C265CE2199EFF1B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6D318A021E8368CC1B7D01FE6616E /* CFNetwork.framework */; };
+		D91CA27DD43E06E6CAA5D69ECE2FDA19 /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10E907DC0551AFDFC848862BA5EF19 /* M13CheckboxFlatController.swift */; };
+		DF241D31A0BA0B3CADA668406B9524EB /* MKRingProgressLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC0F87D843E14E30D9B53C9DCCFFE4A /* MKRingProgressLayer.swift */; };
+		E0A8C46EEE733B55971B1CC5ED65C9AA /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC77D09CAA5F123E172070FDFD16DC40 /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6251F02EE12804D1B66AE32E716E664 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B578A4F205E8669D41042D3D46C3477 /* SessionDelegate.swift */; };
+		ECE6F23823454A8FDB3F97CE1A7CD182 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246DD5D6576D9D709EF8BCFCAAC6B61A /* RedirectHandler.swift */; };
+		ECF2F956B37A4C28B228BC291A57AD6E /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD234F9CBD373ECAA6C1D4131CF /* RequestTaskMap.swift */; };
+		F038D81F7ABAA15CF03246AD4BF334F7 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD0F2DF2453DAD8CA1112328F36FA9D /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2415AE8678DE2698B7AD7D88B1A5C0F /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD8FC2B34773C33783F55D3DFAD2E01 /* AlamofireExtended.swift */; };
+		F2840589249FEA416546CD8D43713B45 /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5636F7DEC1FDA1D8F42906E04F35069 /* M13CheckboxSpiralController.swift */; };
+		F66CC47AD425C8D57BD149AFD09C2AFE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BB198FD30148D1F62B9B9A735C574 /* HTTPMethod.swift */; };
+		F6E94E8EE1CE35F49B9091BE8748587B /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C6A51C2F45F0B18E8BE2F23AD4D2C /* Result+Alamofire.swift */; };
+		F88BA595E81F53DC8A88E1A5296D3FD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF41FD2D6BCFCF5141A9DA7BD8CBBFB2 /* Foundation.framework */; };
+		F9F42FF7D928CD8D9C25C9CE0D3F46BE /* Pods-RecycledChicken-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E89087010B638FE08096D70701C299D /* Pods-RecycledChicken-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1032F1B87C77C565265F88E7B368AD0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9F9401E9C74C0C393164FD8D86D0068;
-			remoteInfo = DropDown;
-		};
-		529CA963742682D1A4A482B13B85EDE6 /* PBXContainerItemProxy */ = {
+		01B9C7FB7077EA361A5F016AFB729951 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 72C70A12E17485B41B7A7C5DA5AA071C;
 			remoteInfo = MKRingProgressView;
 		};
-		6404B9B58ED4A56A1175D3ACAEEA909D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
-			remoteInfo = GoogleMaps;
-		};
-		97B8FA41B13B035386D395D6D2F72E22 /* PBXContainerItemProxy */ = {
+		4B5046F77D1FA77B9EE3C52193DFD3A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
 			remoteInfo = GooglePlaces;
 		};
-		991175C7C6AD746E9C6AF5DBA53154CD /* PBXContainerItemProxy */ = {
+		5F78D6577534375B350ED5B5ECCE1A1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7111E54EAE43E89F451A75076C3525ED;
 			remoteInfo = M13Checkbox;
 		};
+		6786D0EB1DDC4A9791CC46C39A6CD0C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		8C1D4DD0A172DE2A5D0E52C9AC298621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
+			remoteInfo = GoogleMaps;
+		};
+		CB39343C17470C904A861B76774D0000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9F9401E9C74C0C393164FD8D86D0068;
+			remoteInfo = DropDown;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05CDED030FA48F4D3E8147F7B34043BF /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
-		07D9B88746D3E383649836934DBAE278 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
+		00A009479289B9F8D88D3AB3F6B0CDF2 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
+		01AAF575C306D008702B8B472615DA9F /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
+		04CA80F83A4A6FFFF601E0CFB7B50AFA /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
+		0B64C6307558CD33E27F401F2E88209B /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		0BCD9DB53455BBDB6FD10E98E5B191B8 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		0C3B6B4633D6644A6EDF37F5D240F107 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
 		0E6F6B818B9732780858CCDCA6764E3C /* Pods-RecycledChicken */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RecycledChicken"; path = Pods_RecycledChicken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EAC938A3200D7D3D839303BECAA5A6A /* MKRingProgressView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKRingProgressView-prefix.pch"; sourceTree = "<group>"; };
-		1319D89062A83C43CF4340791872871D /* MKGradientGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKGradientGenerator.swift; path = MKRingProgressView/MKGradientGenerator.swift; sourceTree = "<group>"; };
-		13E2981BD20B08931AEB9389AD93639F /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
-		155B6141701B55B58BBC782C628117EC /* GoogleMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMaps.xcframework; path = Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
-		1930198C2AE4C881AFE66AB3BEADB417 /* M13Checkbox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "M13Checkbox-Info.plist"; sourceTree = "<group>"; };
+		111E4DD2C66F0B2E11FDA160FA726B65 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = "Frameworks/GooglePlaces.xcframework/ios-arm64_x86_64-simulator/GooglePlaces.framework/Resources/GooglePlaces.bundle"; sourceTree = "<group>"; };
+		1135B9FA52DF29A066D8EED3DBB9C1BA /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		114A1192386C87CC52A7F19A24F30E88 /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
+		144756D47873917DA2569F157FD1F11B /* MKRingProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKRingProgressView-umbrella.h"; sourceTree = "<group>"; };
+		156A9383017F91D5F8F63013B4A2E134 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		15A6D318A021E8368CC1B7D01FE6616E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		16FCBFB82E7594B76CC22A4C0E123627 /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
 		1B149C7179C84F520C661D90F633850E /* Pods-RecycledChicken-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RecycledChicken-frameworks.sh"; sourceTree = "<group>"; };
-		1C139849DB448E6A5EB9FCCD2180DDB2 /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
-		1E88DC84FAC3B311E1843DF4561B6897 /* MKRingProgressView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MKRingProgressView-Info.plist"; sourceTree = "<group>"; };
-		23CA3209896B5BED5FC59F68E7FB25CD /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = "Frameworks/GooglePlaces.xcframework/ios-arm64_x86_64-simulator/GooglePlaces.framework/Resources/GooglePlaces.bundle"; sourceTree = "<group>"; };
+		1D0F1173A5BA55250BE636F249C45DF9 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		246DD5D6576D9D709EF8BCFCAAC6B61A /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		2636A8D83CAD3BCE910E5D2E768F05E8 /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
-		2997193C96953015E22439BE6CD9F6FC /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
-		2A93BE50D37278F55020012305922D5D /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
-		2D44E84850F6344B3BADFA54F2793FD5 /* DefaultValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValues.swift; path = Sources/DefaultValues.swift; sourceTree = "<group>"; };
-		3C98A2243EDA78166F18F8F662FDA656 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
-		42154D0BBC199C1E98CEB9FEB902F0D9 /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
+		2703AD3584A55A59D988E399560C26E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2735EDBC14B02931E3FE665D3DFDFE73 /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropDown.modulemap; sourceTree = "<group>"; };
+		36EE6FB14C78D289B3FCA08BD6D388DA /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
+		3BAC49344E7C65F6D42B3106E1A630B7 /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
+		463689D1AC717C349CA029C26FDADA29 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Maps/Frameworks/GoogleMaps.xcframework/ios-arm64/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
+		4901BE3F4B0203CF23092E57BD3E66E5 /* DropDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.debug.xcconfig; sourceTree = "<group>"; };
+		4998BA95D9B6A8FC763C61F5A97FED49 /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
+		4A1CE10845A5B6FAAEC453BC5B847C9B /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		4B578A4F205E8669D41042D3D46C3477 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		4B7423D31E93DD2F4FE3B64008BDFF79 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		4C1D9C5032F929DF0577F3B5881A4D28 /* Pods-RecycledChicken-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RecycledChicken-resources.sh"; sourceTree = "<group>"; };
-		4EC9E1F57AD275F11E961297984C9FF1 /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
-		54E1E60DBF0A0555C8C1EDEBF1B0AE08 /* DropDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.release.xcconfig; sourceTree = "<group>"; };
-		553F02396820467C46BFBDBFD5A82BB7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		57A0015972F18816202D776F061898ED /* DropDown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropDown-Info.plist"; sourceTree = "<group>"; };
-		58C55CB20ABBA786ED4701A1B1E2EE39 /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
-		5AFC50C316FEF88E35D781F3CB9FFA1F /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
-		5C5AF7B8BD22F108C6EDFE9D5352BBDB /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
-		5C891EE4D19174187302768F1B99CD31 /* M13Checkbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.release.xcconfig; sourceTree = "<group>"; };
+		4CD0F62B4DBDD4E380DACC1BF461D493 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
+		4ED37D264DD6D6F7F08E62959DB111AE /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
+		54ADEA7CC5A2D84843219988FBC8BA61 /* MKRingProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRingProgressView.swift; path = MKRingProgressView/MKRingProgressView.swift; sourceTree = "<group>"; };
+		555BB198FD30148D1F62B9B9A735C574 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
+		59A01A402217941D4493914BE6A9FC9B /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = "Frameworks/GooglePlaces.xcframework/ios-arm64/GooglePlaces.framework/Resources/GooglePlaces.bundle"; sourceTree = "<group>"; };
+		5A8B7EA5D10A8AA5E4CCF516062BD796 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
+		5AC0F87D843E14E30D9B53C9DCCFFE4A /* MKRingProgressLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRingProgressLayer.swift; path = MKRingProgressView/MKRingProgressLayer.swift; sourceTree = "<group>"; };
 		5CE79C5BF20743404E59BEFD080A364D /* M13Checkbox */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ECB6D5F76B8307225B975FC45BE5AD4 /* MKRingProgressView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MKRingProgressView.release.xcconfig; sourceTree = "<group>"; };
-		611115DEB79E7588FB8F66D584F663C2 /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsCore.xcframework; path = Maps/Frameworks/GoogleMapsCore.xcframework; sourceTree = "<group>"; };
-		619ABC00289F26112868C127484FEAAD /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
-		642BA7DB245B9E279ECA2853C94A762A /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
-		6EAD914A9EE2BFD7D135962344272785 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Maps/Frameworks/GoogleMaps.xcframework/ios-arm64_x86_64-simulator/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
-		794FFF0FE34BE7AF9F46D859D04F6998 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		5D5E9DD679F1AE9F078140F264248096 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DD8FC2B34773C33783F55D3DFAD2E01 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
+		5EDF130ABB0421FB1F829EA3A175D01F /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
+		6433D78F339E3EF0D03D8D128F2BF068 /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathGenerator.swift; path = Sources/Paths/M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
+		661FD57CD988415852F600F0CBA7C94B /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
+		66688F246EF78FD9C7FE82D2D57709E7 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		6A8508859AE3C58E66EA601CB699CF4D /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Concurrency.swift; sourceTree = "<group>"; };
+		7147F77D16B8632626A1436793AEC635 /* GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.debug.xcconfig; sourceTree = "<group>"; };
+		71E64C58189F4D933A261DD09F1BE67D /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+Alamofire.swift"; path = "Source/StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
+		741292DA67B1F26EA7E97E0158972000 /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
 		7AD0867B43617F935CD66B0D6FE60985 /* Pods-RecycledChicken.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RecycledChicken.modulemap"; sourceTree = "<group>"; };
-		7EB99D9FF11F788A910D2D10EA81D568 /* MKRingProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MKRingProgressView.modulemap; sourceTree = "<group>"; };
-		86679B2FE5FDB635EB9A9B4A83BC83D0 /* GoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.debug.xcconfig; sourceTree = "<group>"; };
-		86D6AEC2DC744F861B3FAFF874F037D1 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = "Frameworks/GooglePlaces.xcframework/ios-arm64/GooglePlaces.framework/Resources/GooglePlaces.bundle"; sourceTree = "<group>"; };
-		8A0BCC50A12B61F847D207DBB8CFF0AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8D8732315BC5E408B2A6F9655C511EA5 /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
+		7BB5FC41EC9DF125370D27278B2FC1F9 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		7BC5686653E154114BBA0CC776C75E6F /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
+		7C10E907DC0551AFDFC848862BA5EF19 /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
+		832FDCD234F9CBD373ECAA6C1D4131CF /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
+		86BFA86C812F8FBA9CFF88B05BCDAF5C /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Maps/Frameworks/GoogleMaps.xcframework/ios-arm64_x86_64-simulator/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
+		872A1AEB5A4C28F82BCAD77F40168E36 /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
+		87ADD9CE9FB0F98F9BCE119CE589FEA2 /* RequestCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestCompression.swift; path = Source/RequestCompression.swift; sourceTree = "<group>"; };
+		880984328871855A1020AB259E957DD3 /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
+		88F78221518D938FD06798D861331D74 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
+		89465D9CDC0C9DA0D976A13DDD6F908D /* MKRingProgressView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MKRingProgressView-Info.plist"; sourceTree = "<group>"; };
 		8E89087010B638FE08096D70701C299D /* Pods-RecycledChicken-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RecycledChicken-umbrella.h"; sourceTree = "<group>"; };
-		8FFF2C2B8C0C6623592DE87836CE3D63 /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
+		8FD0F2DF2453DAD8CA1112328F36FA9D /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		911CA8D2EC167BA0D370EFC6927C4A3A /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
+		918774B2845005AB61C9CB1C51F0103B /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		9522F1C8044EB7AB9E4DF083559B6EED /* MKRingProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKRingProgressView-dummy.m"; sourceTree = "<group>"; };
+		952AD71F074D3E405A3EE3D8F13CDC61 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		976DA8DD82F430E623A1121E6515D312 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
+		9B151B80EB5EF1655908DF860CC6D431 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		9B6725B782188F18CB76A740433F14E4 /* DropDown */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B875B4A3E4520B9CF03FBAF4FA31EC2 /* Pods-RecycledChicken-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecycledChicken-Info.plist"; sourceTree = "<group>"; };
+		9C4F8CF1A6A94F4F11A98B46AFF5DB3D /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		9C94EE8F01CBB07D3C644BAF87A7000A /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
+		9D68FE76E2DF917BA7D23B2EC4C87312 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
+		9D6D726373D09412628BBC44F76E6C27 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0CBE522F7E17BDDB09BFA4FF64D7130 /* GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.release.xcconfig; sourceTree = "<group>"; };
-		AC21A0A19C96B58D1F2F386D04FB62A6 /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathGenerator.swift; path = Sources/Paths/M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
+		A16EF3CEFFA2E7C8BB714D9FDB112668 /* DropDown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropDown-Info.plist"; sourceTree = "<group>"; };
+		A176C66C302A5E3DCF8CD730AAA6A9BD /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		A6F59D28A5E3A4EC251A1DFD0B699B72 /* M13Checkbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.debug.xcconfig; sourceTree = "<group>"; };
+		AA242781F4884066E47D8953F24DB145 /* MKRingProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MKRingProgressView.modulemap; sourceTree = "<group>"; };
 		AD3D99B26C7B34CDCCBBA54668E1A6E5 /* Pods-RecycledChicken-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RecycledChicken-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AD5E017C2EED08948A6A2888BAC9C981 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsBase.xcframework; path = Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
-		AEE1AA877842F06E6BEDFEC66C7D860A /* MKRingProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKRingProgressView-dummy.m"; sourceTree = "<group>"; };
-		B06D996990665F5052A015127A394A18 /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
-		B0A08CF0553424041D1628A8126290E6 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
-		B228C740B0E1E27603552427F1684930 /* MKRingProgressLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRingProgressLayer.swift; path = MKRingProgressView/MKRingProgressLayer.swift; sourceTree = "<group>"; };
-		B51FBC85EE2F26001944E49C3C296A3F /* MKRingProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKRingProgressView-umbrella.h"; sourceTree = "<group>"; };
-		B72E2263FC29060DD589139CF34B2B29 /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
-		B8AE9E850C3E717DB1AEF70461B1ADDF /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
-		B8C595C96E7196227FE128446C17C7A4 /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
-		C1887C9D512B5F60CA2BD984BFECFE91 /* MKRingProgressView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MKRingProgressView.debug.xcconfig; sourceTree = "<group>"; };
-		C2A71CC795F250887F8F235D96C6E2B9 /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
-		C4E5D4A6D18CC22578DC2B02E80003DD /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
-		C816DD270AD849934635739AA68E4DB7 /* MKRingProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRingProgressView.swift; path = MKRingProgressView/MKRingProgressView.swift; sourceTree = "<group>"; };
-		C9327004385C8CF279E7EEF764B0C7A6 /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
-		CE7A8B18D48FF404F5E65CBCFA9FCC39 /* GooglePlaces-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GooglePlaces-xcframeworks.sh"; sourceTree = "<group>"; };
-		D035BD60E8F3C3F14E1325E76712C794 /* GoogleMaps-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GoogleMaps-xcframeworks.sh"; sourceTree = "<group>"; };
+		AE10F1B326C93E7A935E9C2CE124D02B /* GoogleMaps-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GoogleMaps-xcframeworks.sh"; sourceTree = "<group>"; };
+		AEBB67FFB10E6699D0B3CD56C92BBADA /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
+		AEEA37F5B13185D48E4E82DF5078F304 /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
+		B5636F7DEC1FDA1D8F42906E04F35069 /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
+		B6E6C9F1452C0553C423E368E3251ABD /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		B8DF821FCD188FBC1E7D24F0C0332B5F /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
+		BC658A5E322BE862D4D343ED21E77C2B /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
+		BE07EA259F1FAA8B92F98B6EEDE89AA2 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
+		BF0D8247A122104ABF5077DD38687265 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
+		C1259BAB03DE3E5A82C8A787BCD831B9 /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
+		C3C30AC7F708C3BDD452562FFF7E137A /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
+		C4BA8FC8F68814689E5184F29F0E1311 /* MKGradientGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKGradientGenerator.swift; path = MKRingProgressView/MKGradientGenerator.swift; sourceTree = "<group>"; };
+		C589787325BE09DEB0BC8EC3664EC468 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
+		C65CC4CB51CF0E0069B7CA613424035A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		C850C6136C81638EEBAB34700C85D197 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMaps.xcframework; path = Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
+		CC77D09CAA5F123E172070FDFD16DC40 /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
+		CD6CA145D536E9E63AA5643DCA9847A5 /* M13Checkbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.release.xcconfig; sourceTree = "<group>"; };
+		CE65705771A42A078587315520B94D5B /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
+		D0787342FA31FD42C9E07200E404CC7B /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		D23502555F6B003DAE9BEFB6E5B26D1D /* Pods-RecycledChicken-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecycledChicken-acknowledgements.plist"; sourceTree = "<group>"; };
-		D30FCA2A93D3740889EC5444B3244FCF /* GooglePlaces.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GooglePlaces.xcframework; path = Frameworks/GooglePlaces.xcframework; sourceTree = "<group>"; };
-		D6AAECF5A773CF016F74749B9888062E /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
-		D925F4CF4A50F66124BF3D6DDD11EBD9 /* DropDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.debug.xcconfig; sourceTree = "<group>"; };
-		D94161451056B3DD9EAC238C3BBBBF03 /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
-		DD7FF5D70A4E4094EEB4BB465A21889E /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropDown.modulemap; sourceTree = "<group>"; };
-		DFAC17E35C4C855B7DD30B7CFD8A28A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D3379EEAB74883CAE94392262A2E325E /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
+		D59717A1841675421A166A4BD35E2F8B /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
+		DA616FF3A7C7EF060E3A0B9D0F5ED55E /* GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.release.xcconfig; sourceTree = "<group>"; };
+		DAB37249649C3D2FCB38DBFEB6F94421 /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
+		DB116A5A4AC5517ADEE545F9ED02D577 /* M13Checkbox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "M13Checkbox-Info.plist"; sourceTree = "<group>"; };
+		DF41FD2D6BCFCF5141A9DA7BD8CBBFB2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DFFF396A7283A65507AFF68552B0BAE7 /* MKRingProgressView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MKRingProgressView; path = MKRingProgressView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E31A65A5D5D7ECD54C1113A0C565A9A0 /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
-		E46326CDD0986F66354D3397D8205CA1 /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
-		E5CC8A98CBEC15E30F8D8E428FA54743 /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
+		E2AAC7CC326AF5A6407E1CA6D5EAFA03 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		E6AB1083DC1270C284BA2165980525E7 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		E86F0ABC5B34A48C7B280DEBEC73E1B6 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		E9D5F413DB48A82520C78D12F00FF1DC /* MKRingProgressView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MKRingProgressView.debug.xcconfig; sourceTree = "<group>"; };
+		EAFE316DACCEA30F28AD060B76A08A9A /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		EB7378BFA000435A5117356160DDF648 /* Pods-RecycledChicken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RecycledChicken.release.xcconfig"; sourceTree = "<group>"; };
-		EBE3DC61AC298A7B30A96390284099E1 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Maps/Frameworks/GoogleMaps.xcframework/ios-arm64/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
-		F07F20F8F0D565AB10B4BE5D0F2AEB43 /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
-		F3C5045BB0B0D71DC11FC41BBCBB8CB6 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
-		F7CD9C7F5D9734AAEED27F4683EF5D7C /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
-		F9B5757CF26B138659207F1727BC0F7C /* M13Checkbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.debug.xcconfig; sourceTree = "<group>"; };
+		EC4B71936BCA97CF7EABA93C0EC94D30 /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
+		ED3F00247BA3B879A53D0CE5F5224C19 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
+		ED9446A97C8D4A57EF2FC7AE7A496530 /* MKRingProgressView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MKRingProgressView.release.xcconfig; sourceTree = "<group>"; };
+		EF8B26F1B173270421C3C0BA5BA95256 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		F046060F705A10BCAAD169FAC52ED759 /* DefaultValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValues.swift; path = Sources/DefaultValues.swift; sourceTree = "<group>"; };
+		F2B1557418805173483346E2EB0A60FC /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsBase.xcframework; path = Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
+		F31BF39DF4A14308A3151539DAC8B7B6 /* MKRingProgressView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKRingProgressView-prefix.pch"; sourceTree = "<group>"; };
+		F35C6A51C2F45F0B18E8BE2F23AD4D2C /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
+		F67387A718E9EC57D414343A009205B8 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
+		F87CBA7A2BDDBB729E123DEB3F22F56E /* DropDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.release.xcconfig; sourceTree = "<group>"; };
+		F9DF2881AA45F1C0CB402D5E85DA10B6 /* GoogleMapsCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsCore.xcframework; path = Maps/Frameworks/GoogleMapsCore.xcframework; sourceTree = "<group>"; };
 		F9EED45F60F58A535780669AD9E904B1 /* Pods-RecycledChicken-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RecycledChicken-dummy.m"; sourceTree = "<group>"; };
+		FA635769EF34660C027384D76461C8B4 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
+		FD5B200ED73CDFE476FB861FA90C623D /* GooglePlaces-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GooglePlaces-xcframeworks.sh"; sourceTree = "<group>"; };
+		FDA8EC4CE334DCE192326A5212864A11 /* GooglePlaces.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GooglePlaces.xcframework; path = Frameworks/GooglePlaces.xcframework; sourceTree = "<group>"; };
+		FF9031A8A7EE2862275A6906184594C8 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2E763B530AD15173108EF9A514CB0FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F88BA595E81F53DC8A88E1A5296D3FD8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BF6E64D3157435E5797A5278584A4DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BCBE1EB4A638403C265CE2199EFF1B /* CFNetwork.framework in Frameworks */,
+				8E85763AE29BEF0A46EE875B8F069E8E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		656E7DCD5C8673896376C635E7179CF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,14 +330,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72E5E2D27A8BEF7BFBB6951C97A58CC1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7709D6210F7C1383200E965AE7E01B76 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		808BE4E171BD75B6477EC2B77490C2B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,28 +341,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
+		02295E9840B6A3F8E845834884CF02FD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				20D8528256A7AF28D53631225E57465A /* iOS */,
+				976DA8DD82F430E623A1121E6515D312 /* DropDownCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		06C84A5B426729025E37409F4C306E5F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE10F1B326C93E7A935E9C2CE124D02B /* GoogleMaps-xcframeworks.sh */,
+				7147F77D16B8632626A1436793AEC635 /* GoogleMaps.debug.xcconfig */,
+				DA616FF3A7C7EF060E3A0B9D0F5ED55E /* GoogleMaps.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleMaps";
+			sourceTree = "<group>";
+		};
+		07A015C01F41AC60BFA4A37ABD9F023C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0DDC00AB347745E514CD813AE66EC65A /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		0DDC00AB347745E514CD813AE66EC65A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2B1557418805173483346E2EB0A60FC /* GoogleMapsBase.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1438B0369FF6BC5CA57F7EC90C2A7AFC /* DropDown */ = {
+		164C0416254C3E973B7484C45DA31A6E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B06D996990665F5052A015127A394A18 /* DPDConstants.swift */,
-				794FFF0FE34BE7AF9F46D859D04F6998 /* DPDKeyboardListener.swift */,
-				05CDED030FA48F4D3E8147F7B34043BF /* DPDUIView+Extension.swift */,
-				642BA7DB245B9E279ECA2853C94A762A /* DropDown.swift */,
-				B8AE9E850C3E717DB1AEF70461B1ADDF /* DropDown+Appearance.swift */,
-				C2A71CC795F250887F8F235D96C6E2B9 /* DropDownCell.swift */,
-				DD5FE490EBAE8A034B4D90ACBECB0985 /* Resources */,
-				634FDEB28365355042918B7910B9B381 /* Support Files */,
+				AA242781F4884066E47D8953F24DB145 /* MKRingProgressView.modulemap */,
+				9522F1C8044EB7AB9E4DF083559B6EED /* MKRingProgressView-dummy.m */,
+				89465D9CDC0C9DA0D976A13DDD6F908D /* MKRingProgressView-Info.plist */,
+				F31BF39DF4A14308A3151539DAC8B7B6 /* MKRingProgressView-prefix.pch */,
+				144756D47873917DA2569F157FD1F11B /* MKRingProgressView-umbrella.h */,
+				E9D5F413DB48A82520C78D12F00FF1DC /* MKRingProgressView.debug.xcconfig */,
+				ED9446A97C8D4A57EF2FC7AE7A496530 /* MKRingProgressView.release.xcconfig */,
 			);
-			name = DropDown;
-			path = DropDown;
+			name = "Support Files";
+			path = "../Target Support Files/MKRingProgressView";
+			sourceTree = "<group>";
+		};
+		167FB8DA95C971134FE8F3F487CEE166 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59A01A402217941D4493914BE6A9FC9B /* GooglePlaces.bundle */,
+				111E4DD2C66F0B2E11FDA160FA726B65 /* GooglePlaces.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		1B8FC68B45F14EFFA4C60B9163290341 /* Pods-RecycledChicken */ = {
@@ -280,53 +418,72 @@
 			path = "Target Support Files/Pods-RecycledChicken";
 			sourceTree = "<group>";
 		};
-		1BA4EFC3543F1F824EDBE00B2BFFDDE5 /* GoogleMaps */ = {
+		23AB1896519D873B2587B759F37A40D6 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				6010FDB5CE47B205034AFD536D718C98 /* Base */,
-				FFF44FF0ACF52CBC0A68A74153ED1DD4 /* Maps */,
-				980DE99A98100FA0ED07F4E4A2FE0561 /* Support Files */,
+				9C399E23E351D9D9588D40E2FD3EF71C /* Frameworks */,
+				5816DBEF1CB690924DD17077302740FC /* Resources */,
 			);
-			name = GoogleMaps;
-			path = GoogleMaps;
+			name = Maps;
 			sourceTree = "<group>";
 		};
-		1F71508965B4C72F9A5D2B4711D42BD4 /* Frameworks */ = {
+		3E2E7BCF7BC7C3B7BA79E2C749444FFA /* DropDown */ = {
 			isa = PBXGroup;
 			children = (
-				AD5E017C2EED08948A6A2888BAC9C981 /* GoogleMapsBase.xcframework */,
+				880984328871855A1020AB259E957DD3 /* DPDConstants.swift */,
+				952AD71F074D3E405A3EE3D8F13CDC61 /* DPDKeyboardListener.swift */,
+				7BB5FC41EC9DF125370D27278B2FC1F9 /* DPDUIView+Extension.swift */,
+				B8DF821FCD188FBC1E7D24F0C0332B5F /* DropDown.swift */,
+				9C4F8CF1A6A94F4F11A98B46AFF5DB3D /* DropDown+Appearance.swift */,
+				9C94EE8F01CBB07D3C644BAF87A7000A /* DropDownCell.swift */,
+				02295E9840B6A3F8E845834884CF02FD /* Resources */,
+				52A46AF9184C0046769CBD22964F16E2 /* Support Files */,
+			);
+			name = DropDown;
+			path = DropDown;
+			sourceTree = "<group>";
+		};
+		459785CFFD7AF3D6A2894A688B01C2C9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD5B200ED73CDFE476FB861FA90C623D /* GooglePlaces-xcframeworks.sh */,
+				741292DA67B1F26EA7E97E0158972000 /* GooglePlaces.debug.xcconfig */,
+				661FD57CD988415852F600F0CBA7C94B /* GooglePlaces.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GooglePlaces";
+			sourceTree = "<group>";
+		};
+		4CFECC92E87A36E382B5838C4EF2F5CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDA8EC4CE334DCE192326A5212864A11 /* GooglePlaces.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		20D8528256A7AF28D53631225E57465A /* iOS */ = {
+		52A46AF9184C0046769CBD22964F16E2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				553F02396820467C46BFBDBFD5A82BB7 /* CoreGraphics.framework */,
-				8A0BCC50A12B61F847D207DBB8CFF0AF /* Foundation.framework */,
-				DFAC17E35C4C855B7DD30B7CFD8A28A0 /* UIKit.framework */,
+				2735EDBC14B02931E3FE665D3DFDFE73 /* DropDown.modulemap */,
+				872A1AEB5A4C28F82BCAD77F40168E36 /* DropDown-dummy.m */,
+				A16EF3CEFFA2E7C8BB714D9FDB112668 /* DropDown-Info.plist */,
+				0C3B6B4633D6644A6EDF37F5D240F107 /* DropDown-prefix.pch */,
+				CC77D09CAA5F123E172070FDFD16DC40 /* DropDown-umbrella.h */,
+				4901BE3F4B0203CF23092E57BD3E66E5 /* DropDown.debug.xcconfig */,
+				F87CBA7A2BDDBB729E123DEB3F22F56E /* DropDown.release.xcconfig */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/DropDown";
 			sourceTree = "<group>";
 		};
-		50AAB9DA2ECDC5C9F57E714BBF44C588 /* Resources */ = {
+		5816DBEF1CB690924DD17077302740FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				86D6AEC2DC744F861B3FAFF874F037D1 /* GooglePlaces.bundle */,
-				23CA3209896B5BED5FC59F68E7FB25CD /* GooglePlaces.bundle */,
+				463689D1AC717C349CA029C26FDADA29 /* GoogleMaps.bundle */,
+				86BFA86C812F8FBA9CFF88B05BCDAF5C /* GoogleMaps.bundle */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		58DC10ED697178B5713BFE0D7C845694 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
-				5CE79C5BF20743404E59BEFD080A364D /* M13Checkbox */,
-				DFFF396A7283A65507AFF68552B0BAE7 /* MKRingProgressView */,
-				0E6F6B818B9732780858CCDCA6764E3C /* Pods-RecycledChicken */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5A444130C0223125D37B586C70CBC14D /* Targets Support Files */ = {
@@ -337,209 +494,211 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6010FDB5CE47B205034AFD536D718C98 /* Base */ = {
+		5A972B94CDEA88EE5CA6232B1AD29E61 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				1F71508965B4C72F9A5D2B4711D42BD4 /* Frameworks */,
+				15A6D318A021E8368CC1B7D01FE6616E /* CFNetwork.framework */,
+				C65CC4CB51CF0E0069B7CA613424035A /* CoreGraphics.framework */,
+				DF41FD2D6BCFCF5141A9DA7BD8CBBFB2 /* Foundation.framework */,
+				2703AD3584A55A59D988E399560C26E0 /* UIKit.framework */,
 			);
-			name = Base;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		634FDEB28365355042918B7910B9B381 /* Support Files */ = {
+		5FDC3223D1253229F3F8F536F1D86D42 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DD7FF5D70A4E4094EEB4BB465A21889E /* DropDown.modulemap */,
-				E46326CDD0986F66354D3397D8205CA1 /* DropDown-dummy.m */,
-				57A0015972F18816202D776F061898ED /* DropDown-Info.plist */,
-				F3C5045BB0B0D71DC11FC41BBCBB8CB6 /* DropDown-prefix.pch */,
-				B72E2263FC29060DD589139CF34B2B29 /* DropDown-umbrella.h */,
-				D925F4CF4A50F66124BF3D6DDD11EBD9 /* DropDown.debug.xcconfig */,
-				54E1E60DBF0A0555C8C1EDEBF1B0AE08 /* DropDown.release.xcconfig */,
+				6F679C8B62F4C8693B9473AAFBC25B8C /* Alamofire */,
+				3E2E7BCF7BC7C3B7BA79E2C749444FFA /* DropDown */,
+				F6773088CC72BE885098C291AD119EDA /* GoogleMaps */,
+				F03AE5D90EA53BC492CB4271413D8301 /* GooglePlaces */,
+				7C3C2A894356846ACAA9123A7D9B723F /* M13Checkbox */,
+				788498D4161CD237387CC05CEA94C15B /* MKRingProgressView */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/DropDown";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		7CA9B027E980612829359AC83A224912 /* Support Files */ = {
+		6F679C8B62F4C8693B9473AAFBC25B8C /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				CE7A8B18D48FF404F5E65CBCFA9FCC39 /* GooglePlaces-xcframeworks.sh */,
-				4EC9E1F57AD275F11E961297984C9FF1 /* GooglePlaces.debug.xcconfig */,
-				D94161451056B3DD9EAC238C3BBBBF03 /* GooglePlaces.release.xcconfig */,
+				66688F246EF78FD9C7FE82D2D57709E7 /* AFError.swift */,
+				D0787342FA31FD42C9E07200E404CC7B /* Alamofire.swift */,
+				5DD8FC2B34773C33783F55D3DFAD2E01 /* AlamofireExtended.swift */,
+				911CA8D2EC167BA0D370EFC6927C4A3A /* AuthenticationInterceptor.swift */,
+				C589787325BE09DEB0BC8EC3664EC468 /* CachedResponseHandler.swift */,
+				4998BA95D9B6A8FC763C61F5A97FED49 /* Combine.swift */,
+				6A8508859AE3C58E66EA601CB699CF4D /* Concurrency.swift */,
+				4A1CE10845A5B6FAAEC453BC5B847C9B /* DispatchQueue+Alamofire.swift */,
+				5EDF130ABB0421FB1F829EA3A175D01F /* EventMonitor.swift */,
+				FF9031A8A7EE2862275A6906184594C8 /* HTTPHeaders.swift */,
+				555BB198FD30148D1F62B9B9A735C574 /* HTTPMethod.swift */,
+				EF8B26F1B173270421C3C0BA5BA95256 /* MultipartFormData.swift */,
+				C3C30AC7F708C3BDD452562FFF7E137A /* MultipartUpload.swift */,
+				E86F0ABC5B34A48C7B280DEBEC73E1B6 /* NetworkReachabilityManager.swift */,
+				0BCD9DB53455BBDB6FD10E98E5B191B8 /* Notifications.swift */,
+				1135B9FA52DF29A066D8EED3DBB9C1BA /* OperationQueue+Alamofire.swift */,
+				BE07EA259F1FAA8B92F98B6EEDE89AA2 /* ParameterEncoder.swift */,
+				E2AAC7CC326AF5A6407E1CA6D5EAFA03 /* ParameterEncoding.swift */,
+				9B151B80EB5EF1655908DF860CC6D431 /* Protected.swift */,
+				246DD5D6576D9D709EF8BCFCAAC6B61A /* RedirectHandler.swift */,
+				156A9383017F91D5F8F63013B4A2E134 /* Request.swift */,
+				87ADD9CE9FB0F98F9BCE119CE589FEA2 /* RequestCompression.swift */,
+				FA635769EF34660C027384D76461C8B4 /* RequestInterceptor.swift */,
+				832FDCD234F9CBD373ECAA6C1D4131CF /* RequestTaskMap.swift */,
+				E6AB1083DC1270C284BA2165980525E7 /* Response.swift */,
+				918774B2845005AB61C9CB1C51F0103B /* ResponseSerialization.swift */,
+				F35C6A51C2F45F0B18E8BE2F23AD4D2C /* Result+Alamofire.swift */,
+				F67387A718E9EC57D414343A009205B8 /* RetryPolicy.swift */,
+				BF0D8247A122104ABF5077DD38687265 /* ServerTrustEvaluation.swift */,
+				ED3F00247BA3B879A53D0CE5F5224C19 /* Session.swift */,
+				4B578A4F205E8669D41042D3D46C3477 /* SessionDelegate.swift */,
+				71E64C58189F4D933A261DD09F1BE67D /* StringEncoding+Alamofire.swift */,
+				1D0F1173A5BA55250BE636F249C45DF9 /* URLConvertible+URLRequestConvertible.swift */,
+				01AAF575C306D008702B8B472615DA9F /* URLEncodedFormEncoder.swift */,
+				EAFE316DACCEA30F28AD060B76A08A9A /* URLRequest+Alamofire.swift */,
+				00A009479289B9F8D88D3AB3F6B0CDF2 /* URLSessionConfiguration+Alamofire.swift */,
+				B6E6C9F1452C0553C423E368E3251ABD /* Validation.swift */,
+				C3FBA63FBBD6C6FFD6D23C0E753C940E /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GooglePlaces";
+			name = Alamofire;
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		7D65CEA65232F8CBC4197E76F8688998 /* M13Checkbox */ = {
+		788498D4161CD237387CC05CEA94C15B /* MKRingProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				2D44E84850F6344B3BADFA54F2793FD5 /* DefaultValues.swift */,
-				5C5AF7B8BD22F108C6EDFE9D5352BBDB /* M13Checkbox.swift */,
-				619ABC00289F26112868C127484FEAAD /* M13Checkbox+IB.swift */,
-				B0A08CF0553424041D1628A8126290E6 /* M13CheckboxAddRemovePathGenerator.swift */,
-				5AFC50C316FEF88E35D781F3CB9FFA1F /* M13CheckboxAnimationGenerator.swift */,
-				C4E5D4A6D18CC22578DC2B02E80003DD /* M13CheckboxBounceController.swift */,
-				C9327004385C8CF279E7EEF764B0C7A6 /* M13CheckboxCheckPathGenerator.swift */,
-				F07F20F8F0D565AB10B4BE5D0F2AEB43 /* M13CheckboxController.swift */,
-				3C98A2243EDA78166F18F8F662FDA656 /* M13CheckboxDisclosurePathGenerator.swift */,
-				13E2981BD20B08931AEB9389AD93639F /* M13CheckboxDotController.swift */,
-				8D8732315BC5E408B2A6F9655C511EA5 /* M13CheckboxExpandController.swift */,
-				E5CC8A98CBEC15E30F8D8E428FA54743 /* M13CheckboxFadeController.swift */,
-				2997193C96953015E22439BE6CD9F6FC /* M13CheckboxFillController.swift */,
-				F7CD9C7F5D9734AAEED27F4683EF5D7C /* M13CheckboxFlatController.swift */,
-				42154D0BBC199C1E98CEB9FEB902F0D9 /* M13CheckboxGestureRecognizer.swift */,
-				AC21A0A19C96B58D1F2F386D04FB62A6 /* M13CheckboxPathGenerator.swift */,
-				B8C595C96E7196227FE128446C17C7A4 /* M13CheckboxRadioPathGenerator.swift */,
-				8FFF2C2B8C0C6623592DE87836CE3D63 /* M13CheckboxSpiralController.swift */,
-				1C139849DB448E6A5EB9FCCD2180DDB2 /* M13CheckboxStrokeController.swift */,
-				F5CD2896DEAAD2C4F4BF737136C513E9 /* Support Files */,
+				C4BA8FC8F68814689E5184F29F0E1311 /* MKGradientGenerator.swift */,
+				5AC0F87D843E14E30D9B53C9DCCFFE4A /* MKRingProgressLayer.swift */,
+				54ADEA7CC5A2D84843219988FBC8BA61 /* MKRingProgressView.swift */,
+				164C0416254C3E973B7484C45DA31A6E /* Support Files */,
+			);
+			name = MKRingProgressView;
+			path = MKRingProgressView;
+			sourceTree = "<group>";
+		};
+		7C3C2A894356846ACAA9123A7D9B723F /* M13Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				F046060F705A10BCAAD169FAC52ED759 /* DefaultValues.swift */,
+				BC658A5E322BE862D4D343ED21E77C2B /* M13Checkbox.swift */,
+				5A8B7EA5D10A8AA5E4CCF516062BD796 /* M13Checkbox+IB.swift */,
+				4CD0F62B4DBDD4E380DACC1BF461D493 /* M13CheckboxAddRemovePathGenerator.swift */,
+				04CA80F83A4A6FFFF601E0CFB7B50AFA /* M13CheckboxAnimationGenerator.swift */,
+				D3379EEAB74883CAE94392262A2E325E /* M13CheckboxBounceController.swift */,
+				3BAC49344E7C65F6D42B3106E1A630B7 /* M13CheckboxCheckPathGenerator.swift */,
+				DAB37249649C3D2FCB38DBFEB6F94421 /* M13CheckboxController.swift */,
+				88F78221518D938FD06798D861331D74 /* M13CheckboxDisclosurePathGenerator.swift */,
+				16FCBFB82E7594B76CC22A4C0E123627 /* M13CheckboxDotController.swift */,
+				EC4B71936BCA97CF7EABA93C0EC94D30 /* M13CheckboxExpandController.swift */,
+				114A1192386C87CC52A7F19A24F30E88 /* M13CheckboxFadeController.swift */,
+				9D68FE76E2DF917BA7D23B2EC4C87312 /* M13CheckboxFillController.swift */,
+				7C10E907DC0551AFDFC848862BA5EF19 /* M13CheckboxFlatController.swift */,
+				CE65705771A42A078587315520B94D5B /* M13CheckboxGestureRecognizer.swift */,
+				6433D78F339E3EF0D03D8D128F2BF068 /* M13CheckboxPathGenerator.swift */,
+				C1259BAB03DE3E5A82C8A787BCD831B9 /* M13CheckboxRadioPathGenerator.swift */,
+				B5636F7DEC1FDA1D8F42906E04F35069 /* M13CheckboxSpiralController.swift */,
+				4ED37D264DD6D6F7F08E62959DB111AE /* M13CheckboxStrokeController.swift */,
+				DB4D4BC053BCA763B9DB522CF6400D36 /* Support Files */,
 			);
 			name = M13Checkbox;
 			path = M13Checkbox;
 			sourceTree = "<group>";
 		};
-		980DE99A98100FA0ED07F4E4A2FE0561 /* Support Files */ = {
+		9C399E23E351D9D9588D40E2FD3EF71C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D035BD60E8F3C3F14E1325E76712C794 /* GoogleMaps-xcframeworks.sh */,
-				86679B2FE5FDB635EB9A9B4A83BC83D0 /* GoogleMaps.debug.xcconfig */,
-				A0CBE522F7E17BDDB09BFA4FF64D7130 /* GoogleMaps.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleMaps";
-			sourceTree = "<group>";
-		};
-		B0E8BD9A54C00136108ADE98DEEE7CE7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D30FCA2A93D3740889EC5444B3244FCF /* GooglePlaces.xcframework */,
+				C850C6136C81638EEBAB34700C85D197 /* GoogleMaps.xcframework */,
+				F9DF2881AA45F1C0CB402D5E85DA10B6 /* GoogleMapsCore.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9ADB0B9EA8B1C4E438C459D266A5016 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
+				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
+				5CE79C5BF20743404E59BEFD080A364D /* M13Checkbox */,
+				DFFF396A7283A65507AFF68552B0BAE7 /* MKRingProgressView */,
+				0E6F6B818B9732780858CCDCA6764E3C /* Pods-RecycledChicken */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A972B94CDEA88EE5CA6232B1AD29E61 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3FBA63FBBD6C6FFD6D23C0E753C940E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A176C66C302A5E3DCF8CD730AAA6A9BD /* Alamofire.modulemap */,
+				0B64C6307558CD33E27F401F2E88209B /* Alamofire-dummy.m */,
+				5D5E9DD679F1AE9F078140F264248096 /* Alamofire-Info.plist */,
+				9D6D726373D09412628BBC44F76E6C27 /* Alamofire-prefix.pch */,
+				8FD0F2DF2453DAD8CA1112328F36FA9D /* Alamofire-umbrella.h */,
+				7BC5686653E154114BBA0CC776C75E6F /* Alamofire.debug.xcconfig */,
+				4B7423D31E93DD2F4FE3B64008BDFF79 /* Alamofire.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
-				E0E4985DCBA6490F7743B2512A9ADBBF /* Pods */,
-				58DC10ED697178B5713BFE0D7C845694 /* Products */,
+				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
+				5FDC3223D1253229F3F8F536F1D86D42 /* Pods */,
+				B9ADB0B9EA8B1C4E438C459D266A5016 /* Products */,
 				5A444130C0223125D37B586C70CBC14D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D1244444A77A03E13F6CEB46C6B30730 /* Support Files */ = {
+		DB4D4BC053BCA763B9DB522CF6400D36 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7EB99D9FF11F788A910D2D10EA81D568 /* MKRingProgressView.modulemap */,
-				AEE1AA877842F06E6BEDFEC66C7D860A /* MKRingProgressView-dummy.m */,
-				1E88DC84FAC3B311E1843DF4561B6897 /* MKRingProgressView-Info.plist */,
-				0EAC938A3200D7D3D839303BECAA5A6A /* MKRingProgressView-prefix.pch */,
-				B51FBC85EE2F26001944E49C3C296A3F /* MKRingProgressView-umbrella.h */,
-				C1887C9D512B5F60CA2BD984BFECFE91 /* MKRingProgressView.debug.xcconfig */,
-				5ECB6D5F76B8307225B975FC45BE5AD4 /* MKRingProgressView.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MKRingProgressView";
-			sourceTree = "<group>";
-		};
-		DD5FE490EBAE8A034B4D90ACBECB0985 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				07D9B88746D3E383649836934DBAE278 /* DropDownCell.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		E0E4985DCBA6490F7743B2512A9ADBBF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1438B0369FF6BC5CA57F7EC90C2A7AFC /* DropDown */,
-				1BA4EFC3543F1F824EDBE00B2BFFDDE5 /* GoogleMaps */,
-				F75A76BDB7309D6BEBF5C9BFE63FA8C9 /* GooglePlaces */,
-				7D65CEA65232F8CBC4197E76F8688998 /* M13Checkbox */,
-				E1196EB45E0009B03EC6F72BEB19ADC4 /* MKRingProgressView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E1196EB45E0009B03EC6F72BEB19ADC4 /* MKRingProgressView */ = {
-			isa = PBXGroup;
-			children = (
-				1319D89062A83C43CF4340791872871D /* MKGradientGenerator.swift */,
-				B228C740B0E1E27603552427F1684930 /* MKRingProgressLayer.swift */,
-				C816DD270AD849934635739AA68E4DB7 /* MKRingProgressView.swift */,
-				D1244444A77A03E13F6CEB46C6B30730 /* Support Files */,
-			);
-			name = MKRingProgressView;
-			path = MKRingProgressView;
-			sourceTree = "<group>";
-		};
-		EBE01AE85C22F4841B348210303D9C8E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				155B6141701B55B58BBC782C628117EC /* GoogleMaps.xcframework */,
-				611115DEB79E7588FB8F66D584F663C2 /* GoogleMapsCore.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EE6FB939FBABB55B26704A88C2F56CA6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EBE3DC61AC298A7B30A96390284099E1 /* GoogleMaps.bundle */,
-				6EAD914A9EE2BFD7D135962344272785 /* GoogleMaps.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		F5CD2896DEAAD2C4F4BF737136C513E9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D6AAECF5A773CF016F74749B9888062E /* M13Checkbox.modulemap */,
-				2A93BE50D37278F55020012305922D5D /* M13Checkbox-dummy.m */,
-				1930198C2AE4C881AFE66AB3BEADB417 /* M13Checkbox-Info.plist */,
-				E31A65A5D5D7ECD54C1113A0C565A9A0 /* M13Checkbox-prefix.pch */,
-				58C55CB20ABBA786ED4701A1B1E2EE39 /* M13Checkbox-umbrella.h */,
-				F9B5757CF26B138659207F1727BC0F7C /* M13Checkbox.debug.xcconfig */,
-				5C891EE4D19174187302768F1B99CD31 /* M13Checkbox.release.xcconfig */,
+				AEBB67FFB10E6699D0B3CD56C92BBADA /* M13Checkbox.modulemap */,
+				36EE6FB14C78D289B3FCA08BD6D388DA /* M13Checkbox-dummy.m */,
+				DB116A5A4AC5517ADEE545F9ED02D577 /* M13Checkbox-Info.plist */,
+				AEEA37F5B13185D48E4E82DF5078F304 /* M13Checkbox-prefix.pch */,
+				D59717A1841675421A166A4BD35E2F8B /* M13Checkbox-umbrella.h */,
+				A6F59D28A5E3A4EC251A1DFD0B699B72 /* M13Checkbox.debug.xcconfig */,
+				CD6CA145D536E9E63AA5643DCA9847A5 /* M13Checkbox.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/M13Checkbox";
 			sourceTree = "<group>";
 		};
-		F75A76BDB7309D6BEBF5C9BFE63FA8C9 /* GooglePlaces */ = {
+		F03AE5D90EA53BC492CB4271413D8301 /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				B0E8BD9A54C00136108ADE98DEEE7CE7 /* Frameworks */,
-				50AAB9DA2ECDC5C9F57E714BBF44C588 /* Resources */,
-				7CA9B027E980612829359AC83A224912 /* Support Files */,
+				4CFECC92E87A36E382B5838C4EF2F5CF /* Frameworks */,
+				167FB8DA95C971134FE8F3F487CEE166 /* Resources */,
+				459785CFFD7AF3D6A2894A688B01C2C9 /* Support Files */,
 			);
 			name = GooglePlaces;
 			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
-		FFF44FF0ACF52CBC0A68A74153ED1DD4 /* Maps */ = {
+		F6773088CC72BE885098C291AD119EDA /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
-				EBE01AE85C22F4841B348210303D9C8E /* Frameworks */,
-				EE6FB939FBABB55B26704A88C2F56CA6 /* Resources */,
+				07A015C01F41AC60BFA4A37ABD9F023C /* Base */,
+				23AB1896519D873B2587B759F37A40D6 /* Maps */,
+				06C84A5B426729025E37409F4C306E5F /* Support Files */,
 			);
-			name = Maps;
+			name = GoogleMaps;
+			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		264514B3C19ADA59D6C7B62D743BB7C8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFAC0F3AC28442275E6F42DFBF85B7B4 /* Pods-RecycledChicken-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		79B4502275183CA460CDE8C4B0E7A345 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,6 +712,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0A8C46EEE733B55971B1CC5ED65C9AA /* DropDown-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFA165063AD4F3B4A868D7B5062C450D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F42FF7D928CD8D9C25C9CE0D3F46BE /* Pods-RecycledChicken-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED12AA7015568FEE3FAA009FC97DAAD5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F038D81F7ABAA15CF03246AD4BF334F7 /* Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,21 +780,22 @@
 		};
 		E042ED2B8AB10FA491BD8A107EEA91B6 /* Pods-RecycledChicken */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0FB6A34AA07903319FC322C12D277E6 /* Build configuration list for PBXNativeTarget "Pods-RecycledChicken" */;
+			buildConfigurationList = 1FEDBB9DEC702DC7DCFE1916CEBDCBFE /* Build configuration list for PBXNativeTarget "Pods-RecycledChicken" */;
 			buildPhases = (
-				264514B3C19ADA59D6C7B62D743BB7C8 /* Headers */,
-				307A2BAF1058BC4A22FF9C02BF636B8B /* Sources */,
-				72E5E2D27A8BEF7BFBB6951C97A58CC1 /* Frameworks */,
-				6FA62F09F6A28B05B3934325D55866EA /* Resources */,
+				CFA165063AD4F3B4A868D7B5062C450D /* Headers */,
+				C3D1A2D6BF27BD96669C524CF69DB277 /* Sources */,
+				2E763B530AD15173108EF9A514CB0FF4 /* Frameworks */,
+				4922630AD1C4BEE64241DE5D070A7E3A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9FC79B44704DB6FEFDDD2E94BD90A316 /* PBXTargetDependency */,
-				D2F69A3817C5981ED6F575B3F9A6E6E9 /* PBXTargetDependency */,
-				BF70664813DEF87D619EE9DC6EB864CA /* PBXTargetDependency */,
-				9DC00C49D51BCEAAAE1704449C3B1E4F /* PBXTargetDependency */,
-				2D233C589C6235D79B04453FD15DD432 /* PBXTargetDependency */,
+				3BE047BC3D31EF43847649B29303C10A /* PBXTargetDependency */,
+				06814A4DD8991E0BE3AF309FA083F770 /* PBXTargetDependency */,
+				4B0A1019ED6F28500DD4D27744E63DDC /* PBXTargetDependency */,
+				DBD757412A25CDEAF998138660A113CD /* PBXTargetDependency */,
+				DC466B1CAC24B277409841CEBA2B40A3 /* PBXTargetDependency */,
+				4FFA3DA64050ADE8E0216530B8084C31 /* PBXTargetDependency */,
 			);
 			name = "Pods-RecycledChicken";
 			productName = Pods_RecycledChicken;
@@ -644,6 +820,24 @@
 			productReference = 9B6725B782188F18CB76A740433F14E4 /* DropDown */;
 			productType = "com.apple.product-type.framework";
 		};
+		EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7761A54AFA2998F27E0BC2FACC2EB53 /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildPhases = (
+				ED12AA7015568FEE3FAA009FC97DAAD5 /* Headers */,
+				277C3B3F937C6D40D2B777A164FAB89D /* Sources */,
+				5BF6E64D3157435E5797A5278584A4DC /* Frameworks */,
+				565FD2058706F22D2347B30C65280F30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alamofire;
+			productName = Alamofire;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -654,7 +848,7 @@
 				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -662,10 +856,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 58DC10ED697178B5713BFE0D7C845694 /* Products */;
+			productRefGroup = B9ADB0B9EA8B1C4E438C459D266A5016 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
 				E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */,
 				E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */,
 				0C1885900810601510E0C632060FAF26 /* GooglePlaces */,
@@ -677,6 +872,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4922630AD1C4BEE64241DE5D070A7E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4D51C5AB6EFDF65AC8CCCCA58178AF97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -684,7 +886,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6FA62F09F6A28B05B3934325D55866EA /* Resources */ = {
+		565FD2058706F22D2347B30C65280F30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -773,11 +975,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		307A2BAF1058BC4A22FF9C02BF636B8B /* Sources */ = {
+		277C3B3F937C6D40D2B777A164FAB89D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F02052FF61FC3B6485C755BAE331F13 /* Pods-RecycledChicken-dummy.m in Sources */,
+				320C0D7A88AA812EFB20016BA1F5D7AE /* AFError.swift in Sources */,
+				81E6A0FF7F286008345ECFA3A2103FA8 /* Alamofire.swift in Sources */,
+				D09FBBADAF7C5C757AA5AB5DFE54BD25 /* Alamofire-dummy.m in Sources */,
+				F2415AE8678DE2698B7AD7D88B1A5C0F /* AlamofireExtended.swift in Sources */,
+				197457852FC83E905248660B0F930452 /* AuthenticationInterceptor.swift in Sources */,
+				04A8430BFC619C34E5F4D3878D094380 /* CachedResponseHandler.swift in Sources */,
+				385BC4B250B6A6DB8AAAEA77D5B7A46F /* Combine.swift in Sources */,
+				78B1DD1219182494A6AFAD26AAB20AA6 /* Concurrency.swift in Sources */,
+				8E698F134A953250D5834C8B83CDAD34 /* DispatchQueue+Alamofire.swift in Sources */,
+				82FD97FBBEFE51E2D3B434AF4954FC93 /* EventMonitor.swift in Sources */,
+				529173B31EFCD3D199E79866AFBEC86C /* HTTPHeaders.swift in Sources */,
+				F66CC47AD425C8D57BD149AFD09C2AFE /* HTTPMethod.swift in Sources */,
+				737747B9A98257DB58112C3A23686669 /* MultipartFormData.swift in Sources */,
+				732C29255F73EF3D83D49BD4F8FEAA8F /* MultipartUpload.swift in Sources */,
+				BAB17A1C6CAD14B3788973EAF8466C93 /* NetworkReachabilityManager.swift in Sources */,
+				3A59D8FBAF9A54906E3644AC80465AFB /* Notifications.swift in Sources */,
+				7D64BC3E6CAA4AB54EAC0AAADE93F578 /* OperationQueue+Alamofire.swift in Sources */,
+				B17D933C8F8BC6A4F91AA620D7D7A870 /* ParameterEncoder.swift in Sources */,
+				482B74C0548970BB9C095E2D8530E421 /* ParameterEncoding.swift in Sources */,
+				079F0820555C5B86C9FBD5EC6344137F /* Protected.swift in Sources */,
+				ECE6F23823454A8FDB3F97CE1A7CD182 /* RedirectHandler.swift in Sources */,
+				5B92A66A66BD639411C3D839A0F87B0C /* Request.swift in Sources */,
+				A523488C60BF961290D0B1ABB9ADACEC /* RequestCompression.swift in Sources */,
+				1AFD57838680DF58184FF94D14C7F3FF /* RequestInterceptor.swift in Sources */,
+				ECF2F956B37A4C28B228BC291A57AD6E /* RequestTaskMap.swift in Sources */,
+				AA721ECC2B36AFB7D9FE70C83E6D63F9 /* Response.swift in Sources */,
+				3FA127A261BB563409868A0DC21807B2 /* ResponseSerialization.swift in Sources */,
+				F6E94E8EE1CE35F49B9091BE8748587B /* Result+Alamofire.swift in Sources */,
+				643A7AFFB7AEB70B2B9B7E0926055023 /* RetryPolicy.swift in Sources */,
+				77AB6AF4BFC6DE016DA7C057B5799C84 /* ServerTrustEvaluation.swift in Sources */,
+				282FCD4EA8B05830E9108690B8CD336B /* Session.swift in Sources */,
+				E6251F02EE12804D1B66AE32E716E664 /* SessionDelegate.swift in Sources */,
+				C04739CBCEE445B66192BFA708655EDF /* StringEncoding+Alamofire.swift in Sources */,
+				D0560E8E2E5EB407B5D8E0381BF453FA /* URLConvertible+URLRequestConvertible.swift in Sources */,
+				C8269B42DED12AB1F275648D0BD32E45 /* URLEncodedFormEncoder.swift in Sources */,
+				11CCD832BD537718892C6A216A38490A /* URLRequest+Alamofire.swift in Sources */,
+				67B10FEAA3B7E5387D20E76B1085E94D /* URLSessionConfiguration+Alamofire.swift in Sources */,
+				D368E6F70C5E6998548A72E65F92432D /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,45 +1045,59 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C3D1A2D6BF27BD96669C524CF69DB277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15C24CE54460248A313635C68F970336 /* Pods-RecycledChicken-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2D233C589C6235D79B04453FD15DD432 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MKRingProgressView;
-			target = 72C70A12E17485B41B7A7C5DA5AA071C /* MKRingProgressView */;
-			targetProxy = 529CA963742682D1A4A482B13B85EDE6 /* PBXContainerItemProxy */;
-		};
-		9DC00C49D51BCEAAAE1704449C3B1E4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = M13Checkbox;
-			target = 7111E54EAE43E89F451A75076C3525ED /* M13Checkbox */;
-			targetProxy = 991175C7C6AD746E9C6AF5DBA53154CD /* PBXContainerItemProxy */;
-		};
-		9FC79B44704DB6FEFDDD2E94BD90A316 /* PBXTargetDependency */ = {
+		06814A4DD8991E0BE3AF309FA083F770 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DropDown;
 			target = E9F9401E9C74C0C393164FD8D86D0068 /* DropDown */;
-			targetProxy = 1032F1B87C77C565265F88E7B368AD0D /* PBXContainerItemProxy */;
+			targetProxy = CB39343C17470C904A861B76774D0000 /* PBXContainerItemProxy */;
 		};
-		BF70664813DEF87D619EE9DC6EB864CA /* PBXTargetDependency */ = {
+		3BE047BC3D31EF43847649B29303C10A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = GooglePlaces;
-			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
-			targetProxy = 97B8FA41B13B035386D395D6D2F72E22 /* PBXContainerItemProxy */;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 6786D0EB1DDC4A9791CC46C39A6CD0C2 /* PBXContainerItemProxy */;
 		};
-		D2F69A3817C5981ED6F575B3F9A6E6E9 /* PBXTargetDependency */ = {
+		4B0A1019ED6F28500DD4D27744E63DDC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleMaps;
 			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
-			targetProxy = 6404B9B58ED4A56A1175D3ACAEEA909D /* PBXContainerItemProxy */;
+			targetProxy = 8C1D4DD0A172DE2A5D0E52C9AC298621 /* PBXContainerItemProxy */;
+		};
+		4FFA3DA64050ADE8E0216530B8084C31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MKRingProgressView;
+			target = 72C70A12E17485B41B7A7C5DA5AA071C /* MKRingProgressView */;
+			targetProxy = 01B9C7FB7077EA361A5F016AFB729951 /* PBXContainerItemProxy */;
+		};
+		DBD757412A25CDEAF998138660A113CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GooglePlaces;
+			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
+			targetProxy = 4B5046F77D1FA77B9EE3C52193DFD3A3 /* PBXContainerItemProxy */;
+		};
+		DC466B1CAC24B277409841CEBA2B40A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = M13Checkbox;
+			target = 7111E54EAE43E89F451A75076C3525ED /* M13Checkbox */;
+			targetProxy = 5F78D6577534375B350ED5B5ECCE1A1F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1E4FBEF25DBF25F51C2B183360A11B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EC9E1F57AD275F11E961297984C9FF1 /* GooglePlaces.debug.xcconfig */;
+			baseConfigurationReference = 741292DA67B1F26EA7E97E0158972000 /* GooglePlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -861,7 +1114,7 @@
 		};
 		216A65D2080F16B130AA66217C6F2E9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D94161451056B3DD9EAC238C3BBBBF03 /* GooglePlaces.release.xcconfig */;
+			baseConfigurationReference = 661FD57CD988415852F600F0CBA7C94B /* GooglePlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -879,7 +1132,7 @@
 		};
 		4B85E96388E1970A60A207231AF18D9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9B5757CF26B138659207F1727BC0F7C /* M13Checkbox.debug.xcconfig */;
+			baseConfigurationReference = A6F59D28A5E3A4EC251A1DFD0B699B72 /* M13Checkbox.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -977,47 +1230,9 @@
 			};
 			name = Debug;
 		};
-		4C610CB5AF3EEAA4C66E4C0BD40C268B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB7378BFA000435A5117356160DDF648 /* Pods-RecycledChicken.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		4EB54BE791CF663871483FEEAB3AEC18 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C891EE4D19174187302768F1B99CD31 /* M13Checkbox.release.xcconfig */;
+			baseConfigurationReference = CD6CA145D536E9E63AA5643DCA9847A5 /* M13Checkbox.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1114,7 +1329,7 @@
 		};
 		A0D32A92267F8EB045540F58A3FB9721 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0CBE522F7E17BDDB09BFA4FF64D7130 /* GoogleMaps.release.xcconfig */;
+			baseConfigurationReference = DA616FF3A7C7EF060E3A0B9D0F5ED55E /* GoogleMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1132,7 +1347,7 @@
 		};
 		A6F9A3420493DDFF37FE086ABBB8AEA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86679B2FE5FDB635EB9A9B4A83BC83D0 /* GoogleMaps.debug.xcconfig */;
+			baseConfigurationReference = 7147F77D16B8632626A1436793AEC635 /* GoogleMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1149,7 +1364,7 @@
 		};
 		B735AC4B61A60237D61E2445BC238B10 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1887C9D512B5F60CA2BD984BFECFE91 /* MKRingProgressView.debug.xcconfig */;
+			baseConfigurationReference = E9D5F413DB48A82520C78D12F00FF1DC /* MKRingProgressView.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1181,9 +1396,44 @@
 			};
 			name = Debug;
 		};
+		B7D9E7CD650F798EC835C67DACFEBC4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC5686653E154114BBA0CC776C75E6F /* Alamofire.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		C24518E891FAA59668669823639498EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54E1E60DBF0A0555C8C1EDEBF1B0AE08 /* DropDown.release.xcconfig */;
+			baseConfigurationReference = F87CBA7A2BDDBB729E123DEB3F22F56E /* DropDown.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1216,7 +1466,7 @@
 			};
 			name = Release;
 		};
-		C71BEB538CB0DFBFE8C7703206348917 /* Debug */ = {
+		C40F3359BA95B230FF7AD103A73E2A78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2636A8D83CAD3BCE910E5D2E768F05E8 /* Pods-RecycledChicken.debug.xcconfig */;
 			buildSettings = {
@@ -1255,7 +1505,7 @@
 		};
 		E2CDE7BD114C532701D2E79C5CB4CAA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D925F4CF4A50F66124BF3D6DDD11EBD9 /* DropDown.debug.xcconfig */;
+			baseConfigurationReference = 4901BE3F4B0203CF23092E57BD3E66E5 /* DropDown.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1287,9 +1537,83 @@
 			};
 			name = Debug;
 		};
+		E44B38D1FA995FE6E0B82C1B5592C272 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB7378BFA000435A5117356160DDF648 /* Pods-RecycledChicken.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F5F3306F2C09AB4B623C805497E28D51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B7423D31E93DD2F4FE3B64008BDFF79 /* Alamofire.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		F9EEE679BE9C3537C96D6C10D55BB3F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5ECB6D5F76B8307225B975FC45BE5AD4 /* MKRingProgressView.release.xcconfig */;
+			baseConfigurationReference = ED9446A97C8D4A57EF2FC7AE7A496530 /* MKRingProgressView.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1325,6 +1649,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1FEDBB9DEC702DC7DCFE1916CEBDCBFE /* Build configuration list for PBXNativeTarget "Pods-RecycledChicken" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C40F3359BA95B230FF7AD103A73E2A78 /* Debug */,
+				E44B38D1FA995FE6E0B82C1B5592C272 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3490A4869E5596F395557AF5A226555B /* Build configuration list for PBXAggregateTarget "GooglePlaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1379,11 +1712,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0FB6A34AA07903319FC322C12D277E6 /* Build configuration list for PBXNativeTarget "Pods-RecycledChicken" */ = {
+		D7761A54AFA2998F27E0BC2FACC2EB53 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C71BEB538CB0DFBFE8C7703206348917 /* Debug */,
-				4C610CB5AF3EEAA4C66E4C0BD40C268B /* Release */,
+				B7D9E7CD650F798EC835C67DACFEBC4F /* Debug */,
+				F5F3306F2C09AB4B623C805497E28D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

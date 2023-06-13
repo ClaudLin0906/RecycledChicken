@@ -12,5 +12,7 @@ target 'RecycledChicken' do
   pod 'GoogleMaps', '7.4.0'
   pod 'GooglePlaces'
   pod 'MKRingProgressView'
+  pod 'Alamofire'
+  
 
 end

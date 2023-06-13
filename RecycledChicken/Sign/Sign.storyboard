@@ -102,7 +102,7 @@
                                                 <rect key="frame" x="30" y="0.0" width="190" height="37.666666666666664"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9s-DI-ogr" userLabel="underLine">
                                                 <rect key="frame" x="0.0" y="36.666666666666686" width="220" height="1"/>
@@ -182,6 +182,10 @@
                             <constraint firstItem="a0s-Ho-EVo" firstAttribute="leading" secondItem="04P-DB-9WE" secondAttribute="leading" id="ziF-Fi-rUM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="phoneTextfield" destination="hU2-kE-ci9" id="4cB-lV-pk7"/>
+                        <outlet property="userNameTextfield" destination="Y3m-Cj-QiS" id="3Cj-Ts-ihj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

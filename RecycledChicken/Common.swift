@@ -52,6 +52,33 @@ class CommonKey {
     let ARKey = "EE17C-B311A-5F817-F0AAF-2A914"
 }
 
+struct APIUrl {
+    static let domainName = "https://useries.buenooptics.com:8443/app"
+    static let register = "/regist"
+    static let login = "/login"
+    static let changePWD = "/reset"
+    static let smsCode = "/smsCode"
+    static let useRecord = "/useRecord"
+    static let tradeRecord = "/tradeRecord"
+    static let machineStatus = "/machineStatus"
+    static let buyLottery = "/buyLottery"
+    static let checkLotteryItem = "/checkLotteryItem"
+    static let checkLotteryRecord = "/checkLotteryRecord"
+}
+
+struct Certificates {
+  static let stackExchange =
+    Certificates.certificate(filename: "com")
+  
+  private static func certificate(filename: String) -> SecCertificate {
+    let filePath = Bundle.main.path(forResource: filename, ofType: "der")!
+    let data = try! Data(contentsOf: URL(fileURLWithPath: filePath))
+    let certificate = SecCertificateCreateWithData(nil, data as CFData)!
+    
+    return certificate
+  }
+}
+
 public class CommonUserDefaultsKey{
     static let removeBackground = "removeBackground"
 }
