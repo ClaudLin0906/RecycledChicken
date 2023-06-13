@@ -109,6 +109,24 @@ func pushVC(targetVC:UIViewController, navigation:UINavigationController) {
     }
 }
 
+func showAlert(VC:UIViewController, title:String? ,message:String?, alertAction:UIAlertAction?) {
+    DispatchQueue.main.async {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if let alertAction = alertAction {
+            alertVC.addAction(alertAction)
+        }else{
+            alertVC.addAction(UIAlertAction(title: "確定", style: .default))
+        }
+        VC.present(alertVC, animated: false)
+    }
+}
+
+func removeWhitespace(from string: String) -> String {
+    let components = string.components(separatedBy: .whitespaces)
+    let filteredString = components.joined()
+    return filteredString
+}
+
 func validateEmail(text:String) -> Bool {
     let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
     return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: text)

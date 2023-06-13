@@ -29,6 +29,7 @@ class SignVC: CustomLoginVC {
         }
     }
     
+    
     @IBAction func sendVerificationCode(_ sender:UIButton) {
         var alertMsg = ""
         let username = userNameTextfield.text
@@ -38,12 +39,13 @@ class SignVC: CustomLoginVC {
         }
         
         if phone == "" {
-            alertMsg += "電話不能為空"
+            alertMsg += "\n電話不能為空"
         } else if !validateCellPhone(text: phone!) {
-            alertMsg += "電話格式不對"
+            alertMsg += "\n電話格式不對"
         }
-        
+        alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
     }
