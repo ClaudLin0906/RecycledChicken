@@ -16,8 +16,6 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var phoneNumberCheckBox:M13Checkbox!
     
     @IBOutlet weak var info:UITextField!
-
-    @IBOutlet weak var checkBoxWidth: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
