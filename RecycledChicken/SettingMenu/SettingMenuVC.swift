@@ -58,7 +58,7 @@ extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 4:
-            let logOutView = LogOutView(frame: view.frame)
+            let logOutView = LogOutView(frame: UIScreen.main.bounds)
             addViewFullScreen(v: logOutView)
         default:
             break

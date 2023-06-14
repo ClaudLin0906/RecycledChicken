@@ -93,7 +93,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="AQw-zR-o7m"/>
-            <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="0.80470037135948125" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Oef-qn-oml" firstAttribute="height" secondItem="XbS-S6-UNo" secondAttribute="height" id="DeS-eF-ow2"/>
                 <constraint firstItem="XbS-S6-UNo" firstAttribute="top" secondItem="NWz-m4-IGd" secondAttribute="bottom" constant="20" id="Msx-S7-mNL"/>

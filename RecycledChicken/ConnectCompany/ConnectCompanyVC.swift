@@ -65,7 +65,7 @@ class ConnectCompanyVC: CustomVC {
     
     func showConnectSuccessView (){
         DispatchQueue.main.async { [self] in
-            let connectSuccessView = ConnectSuccessView(frame: view.frame)
+            let connectSuccessView = ConnectSuccessView(frame: UIScreen.main.bounds)
             fadeInOutAni(showView: connectSuccessView)
         }
     }
