@@ -20,26 +20,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="pW5-L3-WXD" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5f-EO-IQR">
-                                <rect key="frame" x="39.333333333333343" y="153" width="314.33333333333326" height="615"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="W5f-EO-IQR" secondAttribute="bottom" constant="50" id="BvD-rt-Iux"/>
-                            <constraint firstItem="W5f-EO-IQR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="Dj1-Lp-rYb"/>
-                            <constraint firstItem="W5f-EO-IQR" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Hv4-RH-RTt"/>
                             <constraint firstItem="pW5-L3-WXD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JQ0-aq-Ou9"/>
                             <constraint firstItem="pW5-L3-WXD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="cVN-3s-6vo"/>
                             <constraint firstItem="pW5-L3-WXD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ell-sO-cLD"/>
-                            <constraint firstItem="W5f-EO-IQR" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.8" id="hxP-CV-yhF"/>
                             <constraint firstAttribute="bottom" secondItem="pW5-L3-WXD" secondAttribute="bottom" id="xMA-Qz-G8k"/>
                         </constraints>
                     </view>

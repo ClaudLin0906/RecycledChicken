@@ -14,6 +14,8 @@ class ConnectCompanyVC: CustomVC {
     @IBOutlet weak var identityLabel:UILabel!
     
     let identityListDropDown = DropDown()
+    
+    private var keyMoveSize:CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,17 @@ class ConnectCompanyVC: CustomVC {
     
     private func UIInit(){
         setupIdentityListDropDown()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        keyMoveSize = view.frame.origin.y
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func setupIdentityListDropDown() {
@@ -54,6 +67,20 @@ class ConnectCompanyVC: CustomVC {
         DispatchQueue.main.async { [self] in
             let connectSuccessView = ConnectSuccessView(frame: view.frame)
             fadeInOutAni(showView: connectSuccessView)
+        }
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == keyMoveSize {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != keyMoveSize {
+            self.view.frame.origin.y = keyMoveSize
         }
     }
 
