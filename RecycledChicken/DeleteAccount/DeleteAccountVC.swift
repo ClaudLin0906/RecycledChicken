@@ -11,7 +11,7 @@ class DeleteAccountVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "刪除帳號"
+        title = "刪 除 帳 號"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

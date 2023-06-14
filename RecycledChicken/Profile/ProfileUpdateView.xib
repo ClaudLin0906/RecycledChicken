@@ -34,7 +34,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="IYp-ze-Bes" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="R88-bh-sVB"/>
                 <constraint firstItem="QZ6-qY-8Xb" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Wf2-DB-2f5"/>

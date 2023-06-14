@@ -13,7 +13,7 @@ class LotteryVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "抽獎專區"
+        title = "抽 獎 專 區"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

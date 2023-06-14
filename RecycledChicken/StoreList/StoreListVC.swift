@@ -13,7 +13,7 @@ class StoreListVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "門市列表"
+        title = "門 市 列 表"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

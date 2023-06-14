@@ -272,7 +272,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Xop-NK-kRY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="Cfx-7g-yAT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="af3-Ek-7N2" secondAttribute="bottom" id="D5v-ps-oFx"/>

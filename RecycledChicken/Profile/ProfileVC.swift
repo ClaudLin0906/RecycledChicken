@@ -28,7 +28,7 @@ class ProfileVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "個人賬戶"
+        title = "個 人 賬 戶"
         setDefaultNavigationBackBtn2()
         UIInit()
     }

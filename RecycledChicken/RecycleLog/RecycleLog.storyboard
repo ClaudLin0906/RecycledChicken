@@ -110,7 +110,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FhY-AB-Dwd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5kV-e9-Kq3"/>
                             <constraint firstItem="d9r-cX-EYf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="REt-K1-sdZ"/>

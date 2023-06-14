@@ -13,7 +13,7 @@ class CommodityVoucherVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "商品禮卷"
+        title = "商 品 禮 卷"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

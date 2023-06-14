@@ -12,7 +12,7 @@ class CommonColor {
     
     static let shared = CommonColor()
     
-    var color1 = #colorLiteral(red: 0.3411764706, green: 0.4470588235, blue: 0.4078431373, alpha: 1)
+    var color1 = #colorLiteral(red: 0.2745098039, green: 0.3764705882, blue: 0.3333333333, alpha: 1)
 
     var color2 = #colorLiteral(red: 0.937254902, green: 0.9137254902, blue: 0.8156862745, alpha: 1)
 

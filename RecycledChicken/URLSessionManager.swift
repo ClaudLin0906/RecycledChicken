@@ -6,65 +6,152 @@
 //
 
 import Foundation
+import TrustKit
 
-func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data) -> Void){
-    let task = URLSession.shared.dataTask(with: request){(data,response,error) in
-        if error != nil{
-            print("url發生問題\(error.debugDescription)")
-        }else{
-            if data != nil {
-                completion(data!)
-            }else {
-                print("Data is nil.")
-            }
-            //                guard let resultData = data else {return}
-        }
+class NetworkManager: NSObject {
+    
+    static let shared = NetworkManager()
+    
+    var session: URLSession!
+    
+    private override init() {
+        super.init()
+        TrustKit.initSharedInstance(withConfiguration: [:])
+        session = URLSession.init(configuration: .ephemeral, delegate: self, delegateQueue: nil)
     }
-    task.resume()
+    
+    func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data) -> Void){
+        let task = session.dataTask(with: request){(data,response,error) in
+            if error != nil{
+                print("url發生問題\(error.debugDescription)")
+            }else{
+                if data != nil {
+                    completion(data!)
+                }else {
+                    print("Data is nil.")
+                }
+                //                guard let resultData = data else {return}
+            }
+        }
+        task.resume()
+    }
+
+
+    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, AuthorizationToken:String = "", completion: @escaping (Data) -> Void){
+        let url = URL(string: urlString)!
+        var request = URLRequest(url: url)
+        if parameters != nil {
+            do{
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions())
+            }catch let error{
+                print(error)
+            }
+        }
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(AuthorizationToken, forHTTPHeaderField: "Authorization")
+        fetchedDataByDataTask(from: request, completion: completion)
+     }
+
+    func getJSONBody(urlString: String, parameters: [String: Any]? = nil, authorizationToken:String? = nil, completion: @escaping (Data) -> Void){
+        let url = URL(string: urlString)!
+        var request = URLRequest(url: url)
+        if parameters != nil {
+            do{
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions())
+            }catch let error{
+                print(error)
+            }
+        }
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let authorizationToken = authorizationToken {
+            request.setValue(authorizationToken, forHTTPHeaderField: "Authorization")
+        }
+        fetchedDataByDataTask(from: request, completion: completion)
+     }
+
+    func dataToDictionary(data:Data) -> Dictionary<String,Any>{
+        var dic = Dictionary<String,Any>()
+        do {
+            let json = try JSONSerialization.jsonObject(with:data, options: .mutableContainers)
+            dic = json as! Dictionary<String,Any>
+        } catch  {
+            print("\(error)")
+        }
+        return dic
+    }
+    
+    
+    func request<T: Decodable>(url: URL?, expecting: T.Type, completion: @escaping (_ data: T?, _ error: Error?)-> ()) {
+        
+        guard let url else {
+            print("cannot form url")
+            return
+        }
+        
+        session.dataTask(with: url) { data, response, error in
+            
+            if let error {
+                if error.localizedDescription == "cancelled" {
+                    completion(nil, NSError.init(domain: "", code: -999, userInfo: [NSLocalizedDescriptionKey:"SSL Pinning Failed"]))
+                    return
+                }
+                completion(nil, error)
+                return
+            }
+            
+            guard let data else {
+                completion(nil, NSError.init(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:"something went wrong"]))
+                print("something went wrong")
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let response = try decoder.decode(T.self, from: data)
+                completion(response, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }.resume()
+        
+    }
 }
 
-
-func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, AuthorizationToken:String = "", completion: @escaping (Data) -> Void){
-    let url = URL(string: urlString)!
-    var request = URLRequest(url: url)
-    if parameters != nil {
-        do{
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions())
-        }catch let error{
-            print(error)
+extension NetworkManager: URLSessionDelegate {
+    
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        guard let serverTrust = challenge.protectionSpace.serverTrust, let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0) else {
+            return
         }
-    }
-    request.httpMethod = "POST"
-    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    request.setValue(AuthorizationToken, forHTTPHeaderField: "Authorization")
-    fetchedDataByDataTask(from: request, completion: completion)
- }
+        
+        // Uncomment below for Certificate Pinning
+        
+        //SSL Policy for domain check
+        let policy = NSMutableArray()
+        policy.add(SecPolicyCreateSSL(true, challenge.protectionSpace.host as CFString))
 
-func getJSONBody(urlString: String, parameters: [String: Any]? = nil, authorizationToken:String? = nil, completion: @escaping (Data) -> Void){
-    let url = URL(string: urlString)!
-    var request = URLRequest(url: url)
-    if parameters != nil {
-        do{
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions())
-        }catch let error{
-            print(error)
+        //Evaluate the certificate
+        let isServerTrusted = SecTrustEvaluateWithError(serverTrust, nil)
+
+        //Local and Remote Certificate Data
+        let remoteCertificateData: NSData = SecCertificateCopyData(certificate)
+
+        let pathToCertificate = Bundle.main.path(forResource: "openweathermap.org", ofType: "cer")
+        let localCertificateData: NSData = NSData.init(contentsOfFile: pathToCertificate!)!
+
+        //Compare Data of both certificates
+        if (isServerTrusted && remoteCertificateData.isEqual(to: localCertificateData as Data)) {
+            let credential: URLCredential = URLCredential(trust: serverTrust)
+            print("Certification pinning is successfull")
+            completionHandler(.useCredential, credential)
+        } else {
+            //failure happened
+            print("Certification pinning is failed")
+            completionHandler(.cancelAuthenticationChallenge, nil)
         }
+        
     }
-    request.httpMethod = "GET"
-    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    if let authorizationToken = authorizationToken {
-        request.setValue(authorizationToken, forHTTPHeaderField: "Authorization")
-    }
-    fetchedDataByDataTask(from: request, completion: completion)
- }
-
-func dataToDictionary(data:Data) -> Dictionary<String,Any>{
-    var dic = Dictionary<String,Any>()
-    do {
-        let json = try JSONSerialization.jsonObject(with:data, options: .mutableContainers)
-        dic = json as! Dictionary<String,Any>
-    } catch  {
-        print("\(error)")
-    }
-    return dic
 }

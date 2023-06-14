@@ -11,7 +11,7 @@ class PersonMessageContentVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "個人訊息"
+        title = "個 人 訊 息"
         setDefaultNavigationBackBtn2()
         // Do any additional setup after loading the view.
     }

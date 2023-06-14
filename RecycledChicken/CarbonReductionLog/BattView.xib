@@ -24,7 +24,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ-1" translatesAutoresizingMaskIntoConstraints="NO" id="kDw-Vt-HGU">
                     <rect key="frame" x="141.66666666666666" y="59" width="50" height="50"/>
-                    <color key="tintColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="kDw-Vt-HGU" secondAttribute="height" multiplier="1:1" id="D9U-Bu-C5k"/>
                         <constraint firstAttribute="width" constant="50" id="IZJ-Qp-ARB"/>

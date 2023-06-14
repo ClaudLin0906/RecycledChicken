@@ -14,9 +14,6 @@ class VerificationCodeVC: CustomLoginVC {
     
     var phone:String = ""
     
-    private lazy var session = URLSession(configuration: .default, delegate: self,
-     delegateQueue: nil)
-    
     private let certificates: [Data] = {
             let url = Bundle.main.url(forResource: "cert", withExtension: "der")!
             let data = try! Data(contentsOf: url)
@@ -25,6 +22,23 @@ class VerificationCodeVC: CustomLoginVC {
     
     private struct SMSInfo:Codable {
         var userPhoneNumber:String
+    }
+    
+    struct WeatherResponse: Decodable {
+
+        var main: Main
+
+        struct Main: Decodable {
+            var tempMin: Double
+            var tempMax: Double
+        }
+    }
+    
+    struct WeatherInfo:Codable{
+        var lat:String
+        var lon:String
+        var units:String
+        var appid:String
     }
 
     override func viewDidLoad() {
@@ -36,28 +50,51 @@ class VerificationCodeVC: CustomLoginVC {
     private func sendSMS(){
 //        let smsInfo = SMSInfo(userPhoneNumber: phone)
 //        let smsInfoDic = try? smsInfo.asDictionary()
-//        requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { data in
+//        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { data in
 //            print(String(data: data, encoding: .utf8))
 //        }
         
-        let parameters = "{\n    \"userPhoneNumber\":\"0932266860\"\n}"
-        let postData = parameters.data(using: .utf8)
+        let weatherInfo = WeatherInfo(lat: "28.7041", lon: "77.1025", units: "metric", appid: "26f1ffa29736dc1105d00b93743954d2")
+        let weatherInfoDic = try? weatherInfo.asDictionary()
 
-        var request = URLRequest(url: URL(string: "https://useries.buenooptics.com:8443/app/smsCode")!)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        request.httpMethod = "POST"
-        request.httpBody = postData
-
-        let task = session.dataTask(with: request) { data, response, error in
-          guard let data = data else {
-            print(String(describing: error))
-            return
-          }
-          print(String(data: data, encoding: .utf8)!)
+        NetworkManager.shared.requestWithJSONBody(urlString: "https://api.openweathermap.org/data/2.5/weather", parameters: weatherInfoDic) { data in
+                print(String(data: data, encoding: .utf8))
         }
-
-        task.resume()
+//        var url = URL.init(string: "https://api.openweathermap.org/data/2.5/weather")
+//        
+//        let queryItems = [
+//            URLQueryItem.init(name: "lat", value: "28.7041"),
+//            URLQueryItem.init(name: "lon", value: "77.1025"),
+//            URLQueryItem.init(name: "units", value: "metric"),
+//            URLQueryItem.init(name: "appid", value: "26f1ffa29736dc1105d00b93743954d2"),
+//        ]
+//
+//        if #available(iOS 16.0, *) {
+//            url?.append(queryItems: queryItems)
+//        } else {
+//            // Fallback on earlier versions
+//            var components = URLComponents.init(url: url!, resolvingAgainstBaseURL: false)
+//            components?.queryItems = queryItems
+//            url = components?.url
+//        }
+//        NetworkManager.shared.request(url: url, expecting: WeatherResponse.self) { data, error in
+//            if let error {
+//                let alert = UIAlertController.init(title: error.localizedDescription, message: "", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction.init(title: "Ok", style: .cancel))
+//                DispatchQueue.main.async {
+//                    self.present(alert, animated: true)
+//                }
+//                print(error.localizedDescription)
+//                return
+//            }
+//
+//            if let data {
+//                DispatchQueue.main.async {
+//                    print("tempMin \(data.main.tempMin)")
+//                    print("tempMax \(data.main.tempMax)")
+//                }
+//            }
+//        }
 
     }
     
@@ -65,56 +102,5 @@ class VerificationCodeVC: CustomLoginVC {
         sendSMS()
     }
     
-    private func validate(trust: SecTrust, with policy: SecPolicy) -> Bool {
-      let status = SecTrustSetPolicies(trust, policy)
-      guard status == errSecSuccess else { return false }
-      
-      return SecTrustEvaluateWithError(trust, nil)
-    }
 
-}
-
-extension VerificationCodeVC:URLSessionDelegate {
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-//        if let trust = challenge.protectionSpace.serverTrust, SecTrustGetCertificateCount(trust) > 0 {
-//            let certificateCount = SecTrustGetCertificateCount(trust)
-//
-//            for i in 0..<certificateCount{
-//                guard let certificate = SecTrustGetCertificateAtIndex(trust, i) else {
-//                    continue
-//                }
-//                let data = SecCertificateCopyData(certificate) as Data
-//                if certificates.contains(data) {
-//                    print("成功")
-//                    let certificateData = SecCertificateCopyData(certificate) as Data
-//                    let certificateSubject = SecCertificateCopySubjectSummary(certificate) as! String
-//                    completionHandler(.useCredential, URLCredential(trust: trust))
-//                    return
-//                }
-//            }
-//        }
-//        completionHandler(.cancelAuthenticationChallenge, nil)
-        guard
-          challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
-          let serverTrust = challenge.protectionSpace.serverTrust
-        else {
-            completionHandler(URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
-            return
-        }
-        
-        guard
-          self.validate(trust: serverTrust, with: SecPolicyCreateBasicX509()),
-          let serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0)
-        else {
-          completionHandler(URLSession.AuthChallengeDisposition.cancelAuthenticationChallenge, nil)
-          return
-        }
-        
-        // Here you can do all addition check that you want on `serverCertificate` for example compare the
-        // public keys or the data with the one pinned in your bundle.
-        // I implemented for you a couple of useful methods that you can use here for your all checks.
-        
-        completionHandler(URLSession.AuthChallengeDisposition.useCredential,
-                          URLCredential(trust:serverTrust))
-    }
 }

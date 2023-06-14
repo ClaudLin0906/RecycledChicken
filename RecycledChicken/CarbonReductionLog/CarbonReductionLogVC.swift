@@ -19,7 +19,7 @@ class CarbonReductionLogVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "減碳歷程"
+        title = "減 碳 歷 程"
         UIInit()
         setDefaultNavigationBackBtn()
         
@@ -39,7 +39,7 @@ class CarbonReductionLogVC: CustomVC {
         UIView.animate(withDuration: 0.5) { [self] in
             let random = Double(arc4random() % 200) / 100.0
             progressGroup.ring1.progress = 0.9
-            progressGroup.ring2.progress = 1.0
+            progressGroup.ring2.progress = 0.9
         }
 
     }

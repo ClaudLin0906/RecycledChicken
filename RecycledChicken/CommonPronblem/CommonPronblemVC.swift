@@ -11,7 +11,7 @@ class CommonPronblemVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "常見問題說明"
+        title = "常 見 問 題 說 明"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

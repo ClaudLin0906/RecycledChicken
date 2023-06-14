@@ -19,7 +19,7 @@ class ConnectCompanyVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "聯絡客服與合作提案"
+        title = "聯 絡 客 服 與 合 作 提 案"
         setDefaultNavigationBackBtn()
         UIInit()
         // Do any additional setup after loading the view.
