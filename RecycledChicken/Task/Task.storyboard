@@ -87,7 +87,7 @@
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmW-Cy-R44" userLabel="taskProgressView" customClass="TaskProgressView" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="143.33333333333337" y="0.0" width="179.66666666666663" height="0.0"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -125,6 +125,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="background" destination="HVs-S3-nqu" id="0cb-km-YGH"/>
                                             <outlet property="taskProgressView" destination="KmW-Cy-R44" id="of3-Uf-dIX"/>
                                             <outlet property="title" destination="dB3-QH-e1L" id="GjB-jJ-Io4"/>
                                         </connections>
@@ -225,6 +226,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="background" destination="ZZs-co-IKs" id="nVm-HI-0G5"/>
                                             <outlet property="title" destination="zRe-Ad-52Z" id="5nX-Xr-hFB"/>
                                         </connections>
                                     </tableViewCell>

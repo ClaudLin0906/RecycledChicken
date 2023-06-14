@@ -53,7 +53,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Glh-tN-tmP">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-ku-UfK">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-ku-UfK">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
                                                 <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -79,7 +79,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlf-RR-seX">
                                         <rect key="frame" x="53.333333333333329" y="0.0" width="40" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za4-UN-HQ1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za4-UN-HQ1">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
                                                 <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -104,7 +104,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWS-Yl-Xgw">
                                         <rect key="frame" x="106.66666666666667" y="0.0" width="40.000000000000014" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHN-ER-cn3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHN-ER-cn3">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
                                                 <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -129,7 +129,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-6t-Aar">
                                         <rect key="frame" x="160" y="0.0" width="40" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-Tr-0Lf">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-Tr-0Lf">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
                                                 <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -187,6 +187,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="reSendSMS:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hQm-kk-XdY"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-8p-cpP">
                                 <rect key="frame" x="0.0" y="700.33333333333337" width="393" height="151.66666666666663"/>

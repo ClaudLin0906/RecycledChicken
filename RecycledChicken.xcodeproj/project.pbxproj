@@ -26,6 +26,12 @@
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
 		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
+		5950BF312A385E6F00EEB21C /* cert.der in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF2C2A385E6E00EEB21C /* cert.der */; };
+		5950BF322A385E6F00EEB21C /* cert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF2D2A385E6F00EEB21C /* cert.pem */; };
+		5950BF332A385E6F00EEB21C /* ca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF2E2A385E6F00EEB21C /* ca.pem */; };
+		5950BF342A385E6F00EEB21C /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF2F2A385E6F00EEB21C /* ca.der */; };
+		5950BF352A385E6F00EEB21C /* key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF302A385E6F00EEB21C /* key.pem */; };
+		5950BF372A38635D00EEB21C /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF362A38635D00EEB21C /* cert.cer */; };
 		5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF52A1364570005686F /* TaskTableViewADCell.swift */; };
 		5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF92A1364EE0005686F /* TaskProgressView.swift */; };
 		5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964AAFB2A1364F70005686F /* TaskProgressView.xib */; };
@@ -193,6 +199,12 @@
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		5950BF2C2A385E6E00EEB21C /* cert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert.der; sourceTree = "<group>"; };
+		5950BF2D2A385E6F00EEB21C /* cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.pem; sourceTree = "<group>"; };
+		5950BF2E2A385E6F00EEB21C /* ca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.pem; sourceTree = "<group>"; };
+		5950BF2F2A385E6F00EEB21C /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
+		5950BF302A385E6F00EEB21C /* key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.pem; sourceTree = "<group>"; };
+		5950BF362A38635D00EEB21C /* cert.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.cer; sourceTree = "<group>"; };
 		5964AAF52A1364570005686F /* TaskTableViewADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewADCell.swift; sourceTree = "<group>"; };
 		5964AAF92A1364EE0005686F /* TaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressView.swift; sourceTree = "<group>"; };
 		5964AAFB2A1364F70005686F /* TaskProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskProgressView.xib; sourceTree = "<group>"; };
@@ -417,6 +429,7 @@
 				5964AAFD2A14769C0005686F /* LAContextManager.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5933F1332A273954008D5FF7 /* CustomTabbar.swift */,
+				5950BF2B2A385D6600EEB21C /* Certificate */,
 				5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */,
 				5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
@@ -480,6 +493,19 @@
 				59F6BE252A065D7800D7B3CB /* SignLogin.storyboard */,
 			);
 			path = SignLogin;
+			sourceTree = "<group>";
+		};
+		5950BF2B2A385D6600EEB21C /* Certificate */ = {
+			isa = PBXGroup;
+			children = (
+				5950BF2F2A385E6F00EEB21C /* ca.der */,
+				5950BF2E2A385E6F00EEB21C /* ca.pem */,
+				5950BF362A38635D00EEB21C /* cert.cer */,
+				5950BF2C2A385E6E00EEB21C /* cert.der */,
+				5950BF2D2A385E6F00EEB21C /* cert.pem */,
+				5950BF302A385E6F00EEB21C /* key.pem */,
+			);
+			path = Certificate;
 			sourceTree = "<group>";
 		};
 		597521602A0B49A600D0B67C /* SettingMenu */ = {
@@ -910,11 +936,14 @@
 				59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */,
 				5999F0612A132409002F08D8 /* AmountView.xib in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
+				5950BF342A385E6F00EEB21C /* ca.der in Resources */,
 				59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */,
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
+				5950BF332A385E6F00EEB21C /* ca.pem in Resources */,
 				599495742A0C90E7009F1B2E /* BuyCommodity.storyboard in Resources */,
 				597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */,
 				599495792A0D02B1009F1B2E /* PointRule.storyboard in Resources */,
+				5950BF352A385E6F00EEB21C /* key.pem in Resources */,
 				59C2D9A52A0D38490085724F /* Task.storyboard in Resources */,
 				598F39482A0E06C600DA9186 /* StoreList.storyboard in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
@@ -927,6 +956,7 @@
 				59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
 				597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */,
+				5950BF312A385E6F00EEB21C /* cert.der in Resources */,
 				598F394C2A0E07A500DA9186 /* SearchView.xib in Resources */,
 				598F39532A0E1F6600DA9186 /* ProductDescription.storyboard in Resources */,
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
@@ -950,6 +980,8 @@
 				59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */,
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
 				5994956D2A0BFC88009F1B2E /* SpendPointView.xib in Resources */,
+				5950BF322A385E6F00EEB21C /* cert.pem in Resources */,
+				5950BF372A38635D00EEB21C /* cert.cer in Resources */,
 				59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

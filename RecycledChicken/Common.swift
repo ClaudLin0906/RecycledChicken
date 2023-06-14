@@ -48,8 +48,14 @@ let keyWindow = UIApplication.shared.connectedScenes
 
 class CommonKey {
     static let shared = CommonKey()
-    let googleMapKey = "AIzaSyAcVNJwxg_jJNKCeX4dDDkqmCL8RmVAbSo"
+    let googleMapKey = "AIzaSyAcVNJwxg_jJNKCeX4dDDkqmCL8RmVAbSo"//廠商
+//    let googleMapKey = "AIzaSyCQooOAaz-Lm2IpRZGz26Lx6lTSs9JFvZQ"//Claud
     let ARKey = "EE17C-B311A-5F817-F0AAF-2A914"
+}
+
+class userDefaultKey {
+    static let shared = userDefaultKey()
+    let biometrics = "biometrics"
 }
 
 struct APIUrl {
@@ -64,19 +70,6 @@ struct APIUrl {
     static let buyLottery = "/buyLottery"
     static let checkLotteryItem = "/checkLotteryItem"
     static let checkLotteryRecord = "/checkLotteryRecord"
-}
-
-struct Certificates {
-  static let stackExchange =
-    Certificates.certificate(filename: "com")
-  
-  private static func certificate(filename: String) -> SecCertificate {
-    let filePath = Bundle.main.path(forResource: filename, ofType: "der")!
-    let data = try! Data(contentsOf: URL(fileURLWithPath: filePath))
-    let certificate = SecCertificateCreateWithData(nil, data as CFData)!
-    
-    return certificate
-  }
 }
 
 public class CommonUserDefaultsKey{
@@ -211,5 +204,19 @@ func fadeInOutAni(showView:UIView){
         } completion: { _ in
             showView.removeFromSuperview()
         }
+    }
+}
+
+
+struct Certificates {
+    
+    static let certificate: SecCertificate = Certificates.certificate(filename: "cert")
+    
+    private static func certificate(filename: String) -> SecCertificate {
+        let filePath = Bundle.main.path(forResource: filename, ofType: "cer")!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: filePath))
+        let certificate = SecCertificateCreateWithData(nil, data as CFData)!
+        
+        return certificate
     }
 }

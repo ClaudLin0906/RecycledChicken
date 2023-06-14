@@ -12,6 +12,17 @@ class LoginVC: CustomLoginVC {
     
     @IBOutlet weak var keepLoginCheckBox:M13Checkbox!
     
+    @IBOutlet weak var phoneTextfield:UITextField!
+    
+    @IBOutlet weak var passwordTextfield:UITextField!
+    
+    private struct LoginInfo:Codable {
+        var userPhoneNumber:String
+        var userPassword:String
+    }
+    
+    private var testLoginInfo:LoginInfo = LoginInfo(userPhoneNumber: "0912345678", userPassword: "test123")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -23,7 +34,33 @@ class LoginVC: CustomLoginVC {
         keepLoginCheckBox.stateChangeAnimation = .fill
     }
     
+    
+    
     @IBAction func login(_ sender:UIButton){
+        var alertMsg = ""
+        let phone = phoneTextfield.text
+        let password = passwordTextfield.text
+        
+        if phone == "" {
+            alertMsg += "電話不能為空"
+        } else if !validateCellPhone(text: phone!) {
+            alertMsg += "\n電話格式不對"
+        }
+        
+        if password == "" {
+            alertMsg += "\n密碼不能為空"
+        }
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
+//        let loginInfo = LoginInfo(userPhoneNumber: phone!, userPassword: password!)
+//        let loginInfoDic = try? loginInfo.asDictionary()
+//        let testloginInfoDic = try? testLoginInfo.asDictionary()
+//        requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: testloginInfoDic) { data in
+//            print(String(data: data, encoding: .utf8))
+//        }
         LoginSuccess = true
         self.dismiss(animated: false)
     }

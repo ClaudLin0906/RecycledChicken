@@ -14,6 +14,18 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var title:UILabel!
     
     @IBOutlet weak var taskProgressView:TaskProgressView!
+    
+    @IBOutlet weak var background:UIView!
+    
+    var isFinish = false {
+        willSet{
+            if newValue {
+                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+            }else{
+                background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +37,6 @@ class TaskTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }

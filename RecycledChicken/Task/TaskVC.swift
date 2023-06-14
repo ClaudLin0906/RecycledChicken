@@ -58,4 +58,15 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
+            cell.isFinish = true
+        }
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
+            cell.isFinish = true
+        }
+        
+    }
+    
 }

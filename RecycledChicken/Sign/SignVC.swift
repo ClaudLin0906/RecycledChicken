@@ -12,7 +12,6 @@ class SignVC: CustomLoginVC {
     @IBOutlet weak var userNameTextfield:UITextField!
     
     @IBOutlet weak var phoneTextfield:UITextField!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +19,12 @@ class SignVC: CustomLoginVC {
         // Do any additional setup after loading the view.
     }
     
-    private func goToVerificationCode(){
+    private func goToVerificationCode(username:String, phone:String){
         self.dismiss(animated: true) {
             if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC, let topVC = getTopController() {
                 VC.modalPresentationStyle = .fullScreen
+                VC.username = username
+                VC.phone = phone
                 topVC.present(VC, animated: true)
             }
         }
@@ -48,6 +49,7 @@ class SignVC: CustomLoginVC {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
+        goToVerificationCode(username: username!, phone: phone!)
     }
 
 }
