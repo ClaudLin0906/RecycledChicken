@@ -27,10 +27,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYp-ML-4l6" userLabel="Top1">
-                                <rect key="frame" x="0.0" y="103" width="393" height="50"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good morning, Angel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afR-qR-YjO">
-                                        <rect key="frame" x="30" y="16.666666666666671" width="170.66666666666666" height="16.666666666666671"/>
+                                        <rect key="frame" x="30" y="0.0" width="363" height="40"/>
                                         <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -39,12 +39,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="afR-qR-YjO" firstAttribute="leading" secondItem="tYp-ML-4l6" secondAttribute="leading" constant="30" id="1kc-17-V9e"/>
-                                    <constraint firstAttribute="height" constant="50" id="EK1-7x-x3C"/>
+                                    <constraint firstAttribute="trailing" secondItem="afR-qR-YjO" secondAttribute="trailing" id="2pJ-S4-AQq"/>
+                                    <constraint firstAttribute="height" constant="40" id="EK1-7x-x3C"/>
                                     <constraint firstItem="afR-qR-YjO" firstAttribute="centerY" secondItem="tYp-ML-4l6" secondAttribute="centerY" id="ONJ-kB-NiK"/>
+                                    <constraint firstItem="afR-qR-YjO" firstAttribute="top" secondItem="tYp-ML-4l6" secondAttribute="top" id="jEz-Un-BsI"/>
+                                    <constraint firstItem="afR-qR-YjO" firstAttribute="leading" secondItem="tYp-ML-4l6" secondAttribute="leading" constant="30" id="rRu-yX-Fiw"/>
+                                    <constraint firstAttribute="bottom" secondItem="afR-qR-YjO" secondAttribute="bottom" id="rY9-cm-tTr"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au5-fR-Nsa" userLabel="Top2">
-                                <rect key="frame" x="0.0" y="153" width="393" height="50"/>
+                                <rect key="frame" x="0.0" y="143" width="393" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ehYnxi" translatesAutoresizingMaskIntoConstraints="NO" id="fdY-cx-ofk">
                                         <rect key="frame" x="30" y="15" width="20" height="20"/>
@@ -131,7 +135,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-ay-1wo" userLabel="backgoundView">
-                                <rect key="frame" x="0.0" y="203" width="393" height="699"/>
+                                <rect key="frame" x="0.0" y="193" width="393" height="709"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.9137254901960784" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -140,7 +144,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-uo-lLA">
-                                <rect key="frame" x="20" y="243" width="353" height="575"/>
+                                <rect key="frame" x="20" y="233" width="353" height="585"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nh5-zu-93u" userLabel="content">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="610"/>

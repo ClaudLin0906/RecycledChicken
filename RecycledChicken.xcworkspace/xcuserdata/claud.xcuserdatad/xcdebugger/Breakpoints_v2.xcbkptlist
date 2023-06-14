@@ -78,13 +78,13 @@
             filePath = "RecycledChicken/Common.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "certificate(filename:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "BF9346F6-4CEF-43D7-953A-83DB714DA9F1 - 97dad8f98c8ebc45"
+                  uuid = "BF9346F6-4CEF-43D7-953A-83DB714DA9F1 - 97dad8f98c8ebb7c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -94,12 +94,12 @@
                   urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Common.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
                   offsetFromSymbolStart = "196">
                </Location>
                <Location
-                  uuid = "BF9346F6-4CEF-43D7-953A-83DB714DA9F1 - 97dad8f98c8ebc45"
+                  uuid = "BF9346F6-4CEF-43D7-953A-83DB714DA9F1 - 97dad8f98c8ebb7c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -109,8 +109,8 @@
                   urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Common.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
                   offsetFromSymbolStart = "416">
                </Location>
             </Locations>
@@ -161,6 +161,22 @@
             startingLineNumber = "72"
             endingLineNumber = "72"
             landmarkName = "validate(trust:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D75584C-6155-4003-9C80-5EDA5DBF8643"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/SystemSetting/SystemSettingVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "changeStatus(_:tag:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

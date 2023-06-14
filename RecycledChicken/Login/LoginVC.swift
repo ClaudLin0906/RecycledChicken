@@ -34,7 +34,23 @@ class LoginVC: CustomLoginVC {
         keepLoginCheckBox.stateChangeAnimation = .fill
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserDefaults().bool(forKey: userDefaultKey.shared.biometrics) {
+            evaluatePolicyAction { result, message in
+                if result {
+                    self.loginSuccess()
+                }
+            }
+        }
+    }
     
+    private func loginSuccess(){
+        DispatchQueue.main.async { [self] in
+            LoginSuccess = true
+            dismiss(animated: true)
+        }
+    }
     
     @IBAction func login(_ sender:UIButton){
         var alertMsg = ""
@@ -61,8 +77,7 @@ class LoginVC: CustomLoginVC {
 //        requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: testloginInfoDic) { data in
 //            print(String(data: data, encoding: .utf8))
 //        }
-        LoginSuccess = true
-        self.dismiss(animated: false)
+        loginSuccess()
     }
     
     @IBAction func forgetPassword(_ sender:UIButton){

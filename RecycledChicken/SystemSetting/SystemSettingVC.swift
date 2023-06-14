@@ -116,12 +116,8 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
             break
         case 3:
             if sender.isOn {
-                isCanEvaluatePolicy { result, reason in
-                    if result {
-                        evaluatePolicyAction { scanResult, scanMessage in
-                            UserDefaults().set(true, forKey: userDefaultKey.shared.biometrics)
-                        }
-                    }
+                evaluatePolicyAction { scanResult, scanMessage in
+                    UserDefaults().set(true, forKey: userDefaultKey.shared.biometrics)
                 }
             }else{
                 UserDefaults().set(false, forKey: userDefaultKey.shared.biometrics)
