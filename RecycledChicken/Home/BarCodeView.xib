@@ -28,7 +28,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qqa-GB-3O1">
                     <rect key="frame" x="20" y="79" width="353" height="719"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="會 員 條 碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bY-BU-8Ee">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="會員條碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bY-BU-8Ee" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="YNi-67-zDY"/>

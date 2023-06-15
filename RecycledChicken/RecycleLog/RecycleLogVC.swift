@@ -18,7 +18,7 @@ class RecycleLogVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "回 收 紀 錄"
+        title = "回收紀錄"
         setDefaultNavigationBackBtn()
         UIInit()
         // Do any additional setup after loading the view.

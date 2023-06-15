@@ -23,7 +23,7 @@ class SettingMenuVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "會 員 資 料 與 系 統 設 定"
+        title = "會員資料與系統設定"
         UIInit()
         // Do any additional setup after loading the view.
     }

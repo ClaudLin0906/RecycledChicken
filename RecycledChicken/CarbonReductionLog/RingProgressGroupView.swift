@@ -9,9 +9,16 @@ import UIKit
 import MKRingProgressView
 
 class RingProgressGroupView: UIView {
+    
+    let attributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 10)!,
+        NSAttributedString.Key.foregroundColor: UIColor.black,
+        NSAttributedString.Key.kern: 5 // 設定字距
+    ]
 
     let ring1 = RingProgressView()
     let ring2 = RingProgressView()
+    
     let congratulationsTitle:UILabel = {
        let label = UILabel()
         label.numberOfLines = 0
@@ -91,13 +98,17 @@ class RingProgressGroupView: UIView {
         congratulationsTitle.centerYAnchor.constraint(equalTo: ring2.centerYAnchor,constant: -30).isActive = true
         congratulationsTitle.widthAnchor.constraint(equalTo: ring2.widthAnchor, multiplier: 0.7).isActive = true
         congratulationsTitle.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        congratulationsTitle.font = UIFont(name: "jf-openhuninn-2.0", size: 14)
+        congratulationsTitle.font = UIFont(name: "jf-openhuninn-2.0", size: 10)
         
         congratulationsContent.centerXAnchor.constraint(equalTo: congratulationsTitle.centerXAnchor).isActive = true
         congratulationsContent.topAnchor.constraint(equalTo: congratulationsTitle.bottomAnchor, constant: 10).isActive = true
         congratulationsContent.widthAnchor.constraint(equalTo: congratulationsTitle.widthAnchor).isActive = true
         congratulationsContent.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        congratulationsContent.font = UIFont(name: "GenJyuuGothic-Normal", size: 14)
+        let attrString = NSMutableAttributedString(attributedString: congratulationsContent.attributedText!)
+        attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Normal", size: 10)!, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(5.0), range: NSRange(location: 0, length: attrString.length))
+        congratulationsContent.attributedText = attrString
+
     }
 
 }

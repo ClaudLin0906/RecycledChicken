@@ -29,7 +29,7 @@ class SystemSettingVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "系 統 設 定"
+        title = "系統設定"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

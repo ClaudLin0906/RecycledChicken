@@ -19,7 +19,7 @@ class CarbonReductionLogVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "減 碳 歷 程"
+        title = "減碳歷程"
         UIInit()
         setDefaultNavigationBackBtn()
         

@@ -11,7 +11,7 @@ class BindAccountVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "連 動 與 綁 定 帳 號"
+        title = "連動與綁定帳號"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

@@ -118,6 +118,7 @@
 		5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0642A134C1A002F08D8 /* WelcomeView.xib */; };
 		59A113AF2A39C08700C8295B /* TrustKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59A113AE2A39C08700C8295B /* TrustKit */; };
 		59A113B12A39C0D900C8295B /* openweathermap.org.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B02A39C0D900C8295B /* openweathermap.org.cer */; };
+		59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A113B22A3AA52E00C8295B /* CustomLabel.swift */; };
 		59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795492A0F03330031710F /* RingProgressGroupView.swift */; };
 		59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795712A0F72990031710F /* ForgetPasswordVC.swift */; };
 		59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795732A0F72AF0031710F /* ForgetPassword.storyboard */; };
@@ -292,6 +293,7 @@
 		5999F0622A134BEF002F08D8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5999F0642A134C1A002F08D8 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		59A113B02A39C0D900C8295B /* openweathermap.org.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = openweathermap.org.cer; sourceTree = "<group>"; };
+		59A113B22A3AA52E00C8295B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		59A795492A0F03330031710F /* RingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressGroupView.swift; sourceTree = "<group>"; };
 		59A795712A0F72990031710F /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		59A795732A0F72AF0031710F /* ForgetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetPassword.storyboard; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 				59A7958D2A0F9E9E0031710F /* SpendPointAlertView.xib */,
 				59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */,
 				59AFE1622A10088700490BD8 /* CompleteTaskAlertView.xib */,
+				59A113B22A3AA52E00C8295B /* CustomLabel.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -1061,6 +1064,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				598F394E2A0E0FA800DA9186 /* StoreListTableViewCell.swift in Sources */,
+				59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */,
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,

@@ -14,7 +14,7 @@ class ProductDescriptionVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "操 作 說 明"
+        title = "操作說明"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

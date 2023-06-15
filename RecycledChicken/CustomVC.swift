@@ -8,14 +8,23 @@
 import UIKit
 
 class CustomVC: UIViewController {
+    
+    let attributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.kern: 5 // 設定字距
+    ]
+    
+    let attributes2: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
+        NSAttributedString.Key.foregroundColor: UIColor.black,
+        NSAttributedString.Key.kern: 5 // 設定字距
+    ]
         
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-        if let font = UIFont(name: "GenJyuuGothic-Normal", size: 20) {
-            let attributes = [NSAttributedString.Key.font: font]
-            self.navigationController?.navigationBar.titleTextAttributes = attributes
-        }
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
         let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
         closeTap.cancelsTouchesInView = false
         view.addGestureRecognizer(closeTap)
@@ -36,7 +45,7 @@ class CustomVC: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = CommonColor.shared.color1
-        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = attributes
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.isTranslucent = false
@@ -49,7 +58,7 @@ class CustomVC: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .clear
-        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        appearance.titleTextAttributes = attributes2
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationController?.navigationBar.isTranslucent = true

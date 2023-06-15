@@ -33,7 +33,7 @@
                         <constraint firstAttribute="width" secondItem="zac-xc-sMx" secondAttribute="height" multiplier="1:1" id="oPT-Xe-Cus"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jan-G0-pYK">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jan-G0-pYK" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                     <rect key="frame" x="201.66666666666666" y="59" width="51" height="25"/>
                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                     <nil key="textColor"/>
@@ -73,6 +73,11 @@
             <point key="canvasLocation" x="-158.01526717557252" y="179.57746478873241"/>
         </view>
     </objects>
+    <designables>
+        <designable name="jan-G0-pYK">
+            <size key="intrinsicContentSize" width="51" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <image name="gUkPAm-1" width="53.333332061767578" height="106.66666412353516"/>
     </resources>

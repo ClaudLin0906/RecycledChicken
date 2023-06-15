@@ -105,7 +105,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwH-ET-0Vs" userLabel="step3">
                                                         <rect key="frame" x="20" y="150" width="161" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT7-Mh-0N3">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT7-Mh-0N3" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
                                                                 <string key="text">碳竹雞使用者平均年回收量
 寶特瓶 1200 支 / 電池 1000 顆</string>
@@ -339,6 +339,11 @@
             <point key="canvasLocation" x="-164.12213740458014" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="GT7-Mh-0N3">
+            <size key="intrinsicContentSize" width="228.66666666666666" height="39.666666666666664"/>
+        </designable>
+    </designables>
     <resources>
         <image name="组 3454" width="808.33331298828125" height="224.66667175292969"/>
         <image name="组 592" width="155" height="168"/>

@@ -13,7 +13,7 @@ class BuyCommodityVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "購 買 商 品 序 號"
+        title = "購買商品序號"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.

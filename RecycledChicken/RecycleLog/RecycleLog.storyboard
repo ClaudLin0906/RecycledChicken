@@ -25,10 +25,10 @@
                                 <rect key="frame" x="0.0" y="153" width="393" height="749"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6La-be-1nu" customClass="CommonImageButton" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="30" width="120" height="35"/>
+                                        <rect key="frame" x="30" y="30" width="90" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Hfh-7n-Kil"/>
-                                            <constraint firstAttribute="width" constant="120" id="Ht9-Cg-d3x"/>
+                                            <constraint firstAttribute="width" constant="90" id="Ht9-Cg-d3x"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -46,29 +46,29 @@
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecycleLogTableViewCell" id="Llh-bH-uTu" customClass="RecycleLogTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="333" height="24.333333969116211"/>
+                                                <rect key="frame" x="0.0" y="50" width="333" height="20.333333969116211"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Llh-bH-uTu" id="CfS-D4-3d6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="24.333333969116211"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333969116211"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="DgV-Jy-2WH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="333" height="24.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/03/11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBC-3W-26o">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="88" height="24.333333333333332"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/03/11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBC-3W-26o" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="87" height="20.333333333333332"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶(PET)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eru-wJ-rV7">
-                                                                    <rect key="frame" x="135.33333333333334" y="0.0" width="93" height="24.333333333333332"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶(PET)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eru-wJ-rV7" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="135.66666666666666" y="0.0" width="91" height="20.333333333333332"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點數:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mII-21-EXa">
-                                                                    <rect key="frame" x="275.66666666666669" y="0.0" width="57.333333333333314" height="24.333333333333332"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點數:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mII-21-EXa" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="275.33333333333331" y="0.0" width="57.666666666666686" height="20.333333333333332"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -148,4 +148,15 @@
             <point key="canvasLocation" x="-164.12213740458014" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="eru-wJ-rV7">
+            <size key="intrinsicContentSize" width="91" height="20"/>
+        </designable>
+        <designable name="fBC-3W-26o">
+            <size key="intrinsicContentSize" width="87" height="20"/>
+        </designable>
+        <designable name="mII-21-EXa">
+            <size key="intrinsicContentSize" width="57.666666666666664" height="20"/>
+        </designable>
+    </designables>
 </document>

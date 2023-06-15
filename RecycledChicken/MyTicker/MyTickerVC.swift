@@ -13,7 +13,7 @@ class MyTickerVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "我 的 票 夾"
+        title = "我的票夾"
         setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
