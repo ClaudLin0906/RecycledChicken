@@ -192,14 +192,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-8p-cpP">
-                                <rect key="frame" x="0.0" y="700.33333333333337" width="393" height="151.66666666666663"/>
+                                <rect key="frame" x="0.0" y="685" width="393" height="167"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GWu-dP-XPG"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="g5E-mc-KVs" firstAttribute="leading" secondItem="GWu-dP-XPG" secondAttribute="leading" id="3Qy-8m-ZBu"/>
-                            <constraint firstItem="qKo-8p-cpP" firstAttribute="height" secondItem="GWu-dP-XPG" secondAttribute="height" multiplier="0.2" id="6Au-It-RJa"/>
+                            <constraint firstItem="qKo-8p-cpP" firstAttribute="height" secondItem="GWu-dP-XPG" secondAttribute="height" multiplier="0.22" id="6Au-It-RJa"/>
                             <constraint firstItem="Pzg-eB-EXa" firstAttribute="leading" secondItem="GWu-dP-XPG" secondAttribute="leading" id="AQG-Y8-jKp"/>
                             <constraint firstItem="g5E-mc-KVs" firstAttribute="top" secondItem="3vC-nO-2Cl" secondAttribute="bottom" constant="30" id="CMX-q7-XdB"/>
                             <constraint firstItem="0kh-3F-tZc" firstAttribute="centerX" secondItem="GWu-dP-XPG" secondAttribute="centerX" id="Grt-ek-Y7A"/>
@@ -227,6 +227,17 @@
             <point key="canvasLocation" x="140" y="4"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0kh-3F-tZc">
+            <size key="intrinsicContentSize" width="140" height="19.666666666666668"/>
+        </designable>
+        <designable name="BYp-X8-L1Y">
+            <size key="intrinsicContentSize" width="98" height="32"/>
+        </designable>
+        <designable name="Ju8-Ir-Pwe">
+            <size key="intrinsicContentSize" width="84" height="19.666666666666668"/>
+        </designable>
+    </designables>
     <resources>
         <image name="footer" width="1127.6666259765625" height="501"/>
         <image name="グループ 1089" width="1125" height="2436"/>

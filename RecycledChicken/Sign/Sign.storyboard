@@ -157,7 +157,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="OzJ-Qt-v3n">
-                                <rect key="frame" x="0.0" y="700.33333333333337" width="393" height="151.66666666666663"/>
+                                <rect key="frame" x="0.0" y="685" width="393" height="167"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="04P-DB-9WE"/>
@@ -175,7 +175,7 @@
                             <constraint firstItem="f4U-g7-Q2n" firstAttribute="top" secondItem="cJl-NR-iVn" secondAttribute="top" id="JEn-NX-Sv6"/>
                             <constraint firstAttribute="bottom" secondItem="f4U-g7-Q2n" secondAttribute="bottom" id="LO4-4H-KpO"/>
                             <constraint firstItem="f4U-g7-Q2n" firstAttribute="trailing" secondItem="04P-DB-9WE" secondAttribute="trailing" id="MO2-Aw-aPB"/>
-                            <constraint firstItem="OzJ-Qt-v3n" firstAttribute="height" secondItem="04P-DB-9WE" secondAttribute="height" multiplier="0.2" id="WUC-zH-Jzd"/>
+                            <constraint firstItem="OzJ-Qt-v3n" firstAttribute="height" secondItem="04P-DB-9WE" secondAttribute="height" multiplier="0.22" id="WUC-zH-Jzd"/>
                             <constraint firstAttribute="bottom" secondItem="OzJ-Qt-v3n" secondAttribute="bottom" id="hUM-N0-VDa"/>
                             <constraint firstItem="xWk-Ny-o8a" firstAttribute="centerX" secondItem="04P-DB-9WE" secondAttribute="centerX" id="kyS-Pf-RQe"/>
                             <constraint firstItem="6M6-V4-6D3" firstAttribute="top" secondItem="04P-DB-9WE" secondAttribute="top" id="u9n-qT-GzE"/>
@@ -193,6 +193,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="J5a-fu-Tik">
+            <size key="intrinsicContentSize" width="48.666666666666664" height="19.666666666666668"/>
+        </designable>
         <designable name="xWk-Ny-o8a">
             <size key="intrinsicContentSize" width="112" height="32"/>
         </designable>
