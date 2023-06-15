@@ -12,10 +12,11 @@ class CustomVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-        self.navigationController?.navigationBar.titleTextAttributes = attributes
+        navigationController?.navigationBar.titleTextAttributes = attributes
         let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
         closeTap.cancelsTouchesInView = false
         view.addGestureRecognizer(closeTap)
+
     }
 
     @objc private func backBtnPressed(){
@@ -27,41 +28,37 @@ class CustomVC: UIViewController {
     }
     
     func setDefaultNavigationBackBtn(){
+        navigationController?.navigationBar.isTranslucent = true
         let backBtn = UIBarButtonItem(image: UIImage(named: "路径 273"), style: .plain, target: self, action: #selector(backBtnPressed))
         backBtn.tintColor = .white
         navigationItem.leftBarButtonItem = backBtn
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = CommonColor.shared.color1
-        appearance.titleTextAttributes = attributes
-        navigationController?.navigationBar.standardAppearance = appearance
+        
+        let barAppearance =  UINavigationBarAppearance()
+        barAppearance.configureWithTransparentBackground()
+        barAppearance.backgroundColor = CommonColor.shared.color1
+        barAppearance.titleTextAttributes = attributes
+        navigationController?.navigationBar.standardAppearance = barAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        navigationController?.navigationBar.isTranslucent = false
+        
     }
     
     func setDefaultNavigationBackBtn2(){
+        navigationController?.navigationBar.isTranslucent = true
         let backBtn = UIBarButtonItem(image: UIImage(named: "路径 273"), style: .plain, target: self, action: #selector(backBtnPressed))
         backBtn.tintColor = .black
         navigationItem.leftBarButtonItem = backBtn
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .clear
-        appearance.titleTextAttributes = attributes2
-        navigationController?.navigationBar.standardAppearance = appearance
+        let barAppearance =  UINavigationBarAppearance()
+        barAppearance.configureWithTransparentBackground()
+        barAppearance.backgroundColor = .clear
+        barAppearance.titleTextAttributes = attributes2
+        navigationController?.navigationBar.standardAppearance = barAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        navigationController?.navigationBar.isTranslucent = true
     }
     
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
         view.endEditing(true)
     }
     
-    func setBackgroundImage(){
-        let imageView = UIImageView(frame: view.frame)
-        imageView.image = UIImage(named: "グループ 1089")
-        imageView.contentMode = .scaleAspectFill
-        view.addSubview(imageView)
-    }
 
 }
 

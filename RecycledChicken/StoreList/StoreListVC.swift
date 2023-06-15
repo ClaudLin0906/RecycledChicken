@@ -14,7 +14,6 @@ class StoreListVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "門市列表"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -22,6 +21,12 @@ class StoreListVC: CustomVC {
     private func UIInit(){
         storeListTableView.setSeparatorLocation()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
 
 }
 

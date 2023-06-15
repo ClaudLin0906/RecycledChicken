@@ -14,10 +14,15 @@ class PersonMessageVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "個人訊息"
-        setDefaultNavigationBackBtn2()
         personMessageTableView.setSeparatorLocation()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
 
 }
 

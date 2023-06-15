@@ -14,7 +14,6 @@ class CommodityVoucherVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "商品禮卷"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -22,6 +21,12 @@ class CommodityVoucherVC: CustomVC {
     private func UIInit(){
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
     
 }
 

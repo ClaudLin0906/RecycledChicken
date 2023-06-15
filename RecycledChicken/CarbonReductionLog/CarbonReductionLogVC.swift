@@ -21,8 +21,11 @@ class CarbonReductionLogVC: CustomVC {
         super.viewDidLoad()
         title = "減碳歷程"
         UIInit()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
-        
     }
 
     private func UIInit() {

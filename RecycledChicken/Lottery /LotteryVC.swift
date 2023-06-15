@@ -14,7 +14,6 @@ class LotteryVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "抽獎專區"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -22,6 +21,12 @@ class LotteryVC: CustomVC {
     private func UIInit(){
         tableView.setSeparatorLocation()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
 
 }
 

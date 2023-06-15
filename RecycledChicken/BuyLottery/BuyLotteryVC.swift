@@ -14,7 +14,6 @@ class BuyLotteryVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "購買抽獎序號"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -22,6 +21,12 @@ class BuyLotteryVC: CustomVC {
     private func UIInit(){
         spendPointView.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
 
 }
 

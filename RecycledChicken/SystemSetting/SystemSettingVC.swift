@@ -30,7 +30,6 @@ class SystemSettingVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "系統設定"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -38,6 +37,11 @@ class SystemSettingVC: CustomVC {
     private func UIInit(){
         switchTableView.setSeparatorLocation()
         accountTableView.setSeparatorLocation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
     }
 
 }

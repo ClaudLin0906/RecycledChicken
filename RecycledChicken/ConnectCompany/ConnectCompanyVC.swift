@@ -20,7 +20,6 @@ class ConnectCompanyVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "聯絡客服與合作提案"
-        setDefaultNavigationBackBtn()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -31,6 +30,11 @@ class ConnectCompanyVC: CustomVC {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn()
     }
     
     override func viewDidAppear(_ animated: Bool) {

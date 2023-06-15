@@ -19,7 +19,6 @@ class RecycleLogVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "回收紀錄"
-        setDefaultNavigationBackBtn()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -28,6 +27,11 @@ class RecycleLogVC: CustomVC {
         tableView.setSeparatorLocation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn()
     }
     
     private func setupAmountDropDown() {

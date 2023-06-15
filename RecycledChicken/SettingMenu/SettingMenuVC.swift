@@ -29,8 +29,12 @@ class SettingMenuVC: CustomVC {
     }
     
     private func UIInit(){
-        setDefaultNavigationBackBtn2()
         tableView.setSeparatorLocation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
     }
     
 }

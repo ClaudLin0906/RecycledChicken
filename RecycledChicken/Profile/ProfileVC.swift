@@ -29,13 +29,18 @@ class ProfileVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "個人賬戶"
-        setDefaultNavigationBackBtn2()
         UIInit()
     }
     
     private func UIInit(){
         profileTableView.setSeparatorLocation()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
     
     private func createDatePicker(_ textfield:UITextField) {
         let toolbar = UIToolbar()

@@ -175,7 +175,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Khi-zw-bZk"/>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="22y-KM-Xcw">
-                                <rect key="frame" x="0.0" y="700.33333333333337" width="393" height="151.66666666666663"/>
+                                <rect key="frame" x="0.0" y="685" width="393" height="167"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -186,7 +186,7 @@
                             <constraint firstItem="VH3-QH-83o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ApO-46-m3L"/>
                             <constraint firstAttribute="bottom" secondItem="uVt-c4-QmW" secondAttribute="bottom" id="C44-53-epC"/>
                             <constraint firstItem="Lg8-fD-3dr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="KT6-nF-f3h"/>
-                            <constraint firstItem="22y-KM-Xcw" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.2" id="LEl-YK-jFL"/>
+                            <constraint firstItem="22y-KM-Xcw" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.22" id="LEl-YK-jFL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="22y-KM-Xcw" secondAttribute="trailing" id="PGu-G6-3S4"/>
                             <constraint firstItem="VH3-QH-83o" firstAttribute="top" secondItem="Lg8-fD-3dr" secondAttribute="bottom" constant="50" id="WPc-jQ-TjN"/>
                             <constraint firstItem="fMU-Zv-cwG" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="XkB-mq-gMj"/>
@@ -216,9 +216,6 @@
         </designable>
         <designable name="UJJ-2t-6qK">
             <size key="intrinsicContentSize" width="364.66666666666669" height="142.66666666666666"/>
-        </designable>
-        <designable name="Urw-aj-iMM">
-            <size key="intrinsicContentSize" width="62.666666666666664" height="19.666666666666668"/>
         </designable>
         <designable name="hMQ-3Y-3fH">
             <size key="intrinsicContentSize" width="56" height="32"/>

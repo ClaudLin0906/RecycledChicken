@@ -42,11 +42,6 @@ class ARVC: CustomRootVC {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        cameraView.translatesAutoresizingMaskIntoConstraints = false
-//        cameraView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-//        cameraView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-//        cameraView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-//        cameraView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
     
     @IBAction func goToProductDescription(_ sender:UIButton) {

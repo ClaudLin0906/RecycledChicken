@@ -14,7 +14,6 @@ class BuyCommodityVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "購買商品序號"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -23,6 +22,12 @@ class BuyCommodityVC: CustomVC {
         spendPointView.setConfirmBtnTitle("確認兌換")
         spendPointView.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
 
 }
 

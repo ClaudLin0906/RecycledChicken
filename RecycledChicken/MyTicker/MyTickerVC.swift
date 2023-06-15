@@ -14,7 +14,6 @@ class MyTickerVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "我的票夾"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -22,6 +21,12 @@ class MyTickerVC: CustomVC {
     private func UIInit(){
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
 
 }
 

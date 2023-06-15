@@ -12,7 +12,6 @@ class PointRuleVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "點數機制"
-        setDefaultNavigationBackBtn2()
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -20,5 +19,11 @@ class PointRuleVC: CustomVC {
     private func UIInit(){
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+    }
+
 
 }
