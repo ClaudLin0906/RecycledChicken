@@ -56,7 +56,7 @@
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="16"/>
+                                                                    <real key="value" value="13"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
@@ -153,7 +153,7 @@
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="16"/>
+                                                                    <real key="value" value="13"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
@@ -290,6 +290,17 @@
             <point key="canvasLocation" x="-187.02290076335876" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="dB3-QH-e1L">
+            <size key="intrinsicContentSize" width="43.333333333333336" height="24"/>
+        </designable>
+        <designable name="k43-Uw-Q2N">
+            <size key="intrinsicContentSize" width="68" height="24"/>
+        </designable>
+        <designable name="zRe-Ad-52Z">
+            <size key="intrinsicContentSize" width="43.333333333333336" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <image name="1x" width="1125" height="2436"/>
         <image name="组 3451" width="136.33332824707031" height="113.33333587646484"/>

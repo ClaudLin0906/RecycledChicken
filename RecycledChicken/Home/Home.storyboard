@@ -384,6 +384,23 @@
             <point key="canvasLocation" x="-150.38167938931298" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0bK-zS-1hV">
+            <size key="intrinsicContentSize" width="56" height="19.666666666666668"/>
+        </designable>
+        <designable name="7wA-1Y-6h3">
+            <size key="intrinsicContentSize" width="34" height="24"/>
+        </designable>
+        <designable name="gcO-Mb-bsb">
+            <size key="intrinsicContentSize" width="34" height="24"/>
+        </designable>
+        <designable name="uFO-hx-dt1">
+            <size key="intrinsicContentSize" width="34" height="24"/>
+        </designable>
+        <designable name="ybu-Dt-ZtI">
+            <size key="intrinsicContentSize" width="56" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="2" width="560" height="442"/>
         <image name="ehYnxi" width="42.333332061767578" height="50"/>

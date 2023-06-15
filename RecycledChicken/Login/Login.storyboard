@@ -40,7 +40,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zcl-vW-1gA">
                                 <rect key="frame" x="86.666666666666686" y="272.33333333333331" width="220" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha9-t1-1jj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha9-t1-1jj" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="37.666666666666664"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -254,6 +254,20 @@
             <point key="canvasLocation" x="991.60305343511448" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Ha9-t1-1jj">
+            <size key="intrinsicContentSize" width="36" height="19.666666666666668"/>
+        </designable>
+        <designable name="ZPq-0X-imi">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="h0L-jY-0Jz">
+            <size key="intrinsicContentSize" width="56" height="19.666666666666668"/>
+        </designable>
+        <designable name="yEI-G7-B9N">
+            <size key="intrinsicContentSize" width="62.666666666666664" height="19.666666666666668"/>
+        </designable>
+    </designables>
     <resources>
         <image name="footer" width="1127.6666259765625" height="501"/>
         <image name="グループ 1089" width="1125" height="2436"/>

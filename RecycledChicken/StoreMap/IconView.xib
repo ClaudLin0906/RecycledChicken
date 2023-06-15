@@ -37,7 +37,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sef-eB-fRT" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sef-eB-fRT">
                     <rect key="frame" x="24.999999999999996" y="428.66666666666669" width="35.666666666666657" height="19.666666666666686"/>
                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                     <nil key="textColor"/>
@@ -57,4 +57,9 @@
             <point key="canvasLocation" x="45" y="21"/>
         </view>
     </objects>
+    <designables>
+        <designable name="sef-eB-fRT">
+            <size key="intrinsicContentSize" width="35.666666666666664" height="19.666666666666668"/>
+        </designable>
+    </designables>
 </document>
