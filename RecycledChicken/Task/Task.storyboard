@@ -28,7 +28,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="1x" translatesAutoresizingMaskIntoConstraints="NO" id="pdy-Hj-sPe" userLabel="background">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每週任務" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k43-Uw-Q2N">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每週任務" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k43-Uw-Q2N" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="162.66666666666666" y="153" width="68" height="24"/>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -48,12 +48,17 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVs-S3-nqu" userLabel="background">
                                                     <rect key="frame" x="10" y="10" width="333" height="0.0"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB3-QH-e1L">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB3-QH-e1L" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="20.000000000000004" y="-12" width="43.333333333333343" height="24"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzU-Ku-0Pd">
                                                             <rect key="frame" x="73.333333333333329" y="0.0" width="69.999999999999986" height="0.0"/>
@@ -66,11 +71,11 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ1-3W-L2Y">
-                                                                    <rect key="frame" x="35" y="-8.3333333333333339" width="50" height="16.666666666666668"/>
+                                                                    <rect key="frame" x="35" y="-7.6666666666666661" width="50" height="15.666666666666666"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="szG-UP-Bjl"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -140,12 +145,17 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZs-co-IKs" userLabel="background">
                                                     <rect key="frame" x="10" y="10" width="333" height="0.0"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-Ad-52Z">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-Ad-52Z" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="20.000000000000004" y="-12" width="43.333333333333343" height="24"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHa-Aa-Uq7">
                                                             <rect key="frame" x="73.333333333333329" y="0.0" width="69.999999999999986" height="0.0"/>
@@ -158,11 +168,11 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIu-ir-pOU">
-                                                                    <rect key="frame" x="35" y="-8.3333333333333339" width="50" height="16.666666666666668"/>
+                                                                    <rect key="frame" x="35" y="-7.6666666666666661" width="50" height="15.666666666666666"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="taf-0S-2CQ"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>

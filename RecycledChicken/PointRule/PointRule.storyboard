@@ -28,19 +28,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCX-7S-arG">
                                 <rect key="frame" x="20" y="123" width="353" height="675"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【基本回饋 】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNr-zd-aaI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【基本回饋 】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNr-zd-aaI" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                         <rect key="frame" x="30" y="30" width="106" height="24"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收一個寶特瓶可獲得10點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjl-Sq-w0R">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收一個寶特瓶可獲得10點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjl-Sq-w0R" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                         <rect key="frame" x="30" y="54" width="323" height="24"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收一個電池可獲得10點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ns-ez-wb5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收一個電池可獲得10點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ns-ez-wb5" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                         <rect key="frame" x="30" y="78" width="323" height="24"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                         <nil key="textColor"/>

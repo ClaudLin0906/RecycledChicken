@@ -15,7 +15,7 @@ class VerificationCodeVC: CustomLoginVC {
     var phone:String = ""
     
     private let certificates: [Data] = {
-            let url = Bundle.main.url(forResource: "cert", withExtension: "der")!
+            let url = Bundle.main.url(forResource: "cert", withExtension: "cer")!
             let data = try! Data(contentsOf: url)
             return [data]
     }()
@@ -48,18 +48,18 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func sendSMS(){
-//        let smsInfo = SMSInfo(userPhoneNumber: phone)
-//        let smsInfoDic = try? smsInfo.asDictionary()
-//        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { data in
-//            print(String(data: data, encoding: .utf8))
-//        }
-        
-        let weatherInfo = WeatherInfo(lat: "28.7041", lon: "77.1025", units: "metric", appid: "26f1ffa29736dc1105d00b93743954d2")
-        let weatherInfoDic = try? weatherInfo.asDictionary()
-
-        NetworkManager.shared.requestWithJSONBody(urlString: "https://api.openweathermap.org/data/2.5/weather", parameters: weatherInfoDic) { data in
-                print(String(data: data, encoding: .utf8))
+        let smsInfo = SMSInfo(userPhoneNumber: phone)
+        let smsInfoDic = try? smsInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { data in
+            print(String(data: data, encoding: .utf8))
         }
+        
+//        let weatherInfo = WeatherInfo(lat: "28.7041", lon: "77.1025", units: "metric", appid: "26f1ffa29736dc1105d00b93743954d2")
+//        let weatherInfoDic = try? weatherInfo.asDictionary()
+//
+//        NetworkManager.shared.requestWithJSONBody(urlString: "https://api.openweathermap.org/data/2.5/weather", parameters: weatherInfoDic) { data in
+//                print(String(data: data, encoding: .utf8))
+//        }
 //        var url = URL.init(string: "https://api.openweathermap.org/data/2.5/weather")
 //        
 //        let queryItems = [

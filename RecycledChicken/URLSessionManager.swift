@@ -139,7 +139,7 @@ extension NetworkManager: URLSessionDelegate {
         //Local and Remote Certificate Data
         let remoteCertificateData: NSData = SecCertificateCopyData(certificate)
 
-        let pathToCertificate = Bundle.main.path(forResource: "openweathermap.org", ofType: "cer")
+        let pathToCertificate = Bundle.main.path(forResource: "cert", ofType: "cer")
         let localCertificateData: NSData = NSData.init(contentsOfFile: pathToCertificate!)!
 
         //Compare Data of both certificates

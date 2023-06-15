@@ -41,7 +41,7 @@
                                 <rect key="frame" x="46.666666666666657" y="310.66666666666669" width="300" height="300.00000000000006"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zut-ou-63q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zut-ou-63q" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="77.666666666666686" y="630.66666666666663" width="238" height="47.666666666666629"/>
                                 <string key="text">將鏡頭瞄準Light Code 機器
 並移動手機，使畫面出現感應盤</string>
@@ -58,7 +58,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="操作說明">
+                                <state key="normal" title="操 作 說 明">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

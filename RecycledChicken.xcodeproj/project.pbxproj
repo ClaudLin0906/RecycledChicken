@@ -26,12 +26,6 @@
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
 		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
-		5950BF312A385E6F00EEB21C /* cert.der in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF2C2A385E6E00EEB21C /* cert.der */; };
-		5950BF322A385E6F00EEB21C /* cert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF2D2A385E6F00EEB21C /* cert.pem */; };
-		5950BF332A385E6F00EEB21C /* ca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF2E2A385E6F00EEB21C /* ca.pem */; };
-		5950BF342A385E6F00EEB21C /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF2F2A385E6F00EEB21C /* ca.der */; };
-		5950BF352A385E6F00EEB21C /* key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF302A385E6F00EEB21C /* key.pem */; };
-		5950BF372A38635D00EEB21C /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 5950BF362A38635D00EEB21C /* cert.cer */; };
 		5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF52A1364570005686F /* TaskTableViewADCell.swift */; };
 		5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF92A1364EE0005686F /* TaskProgressView.swift */; };
 		5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964AAFB2A1364F70005686F /* TaskProgressView.xib */; };
@@ -119,6 +113,9 @@
 		59A113AF2A39C08700C8295B /* TrustKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59A113AE2A39C08700C8295B /* TrustKit */; };
 		59A113B12A39C0D900C8295B /* openweathermap.org.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B02A39C0D900C8295B /* openweathermap.org.cer */; };
 		59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A113B22A3AA52E00C8295B /* CustomLabel.swift */; };
+		59A113B72A3ADAE000C8295B /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B42A3ADAE000C8295B /* cert.cer */; };
+		59A113B82A3ADAE000C8295B /* ca.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B52A3ADAE000C8295B /* ca.cer */; };
+		59A113B92A3ADAE000C8295B /* private.key in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B62A3ADAE000C8295B /* private.key */; };
 		59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795492A0F03330031710F /* RingProgressGroupView.swift */; };
 		59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795712A0F72990031710F /* ForgetPasswordVC.swift */; };
 		59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795732A0F72AF0031710F /* ForgetPassword.storyboard */; };
@@ -202,12 +199,6 @@
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
-		5950BF2C2A385E6E00EEB21C /* cert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert.der; sourceTree = "<group>"; };
-		5950BF2D2A385E6F00EEB21C /* cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.pem; sourceTree = "<group>"; };
-		5950BF2E2A385E6F00EEB21C /* ca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.pem; sourceTree = "<group>"; };
-		5950BF2F2A385E6F00EEB21C /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
-		5950BF302A385E6F00EEB21C /* key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.pem; sourceTree = "<group>"; };
-		5950BF362A38635D00EEB21C /* cert.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.cer; sourceTree = "<group>"; };
 		5964AAF52A1364570005686F /* TaskTableViewADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewADCell.swift; sourceTree = "<group>"; };
 		5964AAF92A1364EE0005686F /* TaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressView.swift; sourceTree = "<group>"; };
 		5964AAFB2A1364F70005686F /* TaskProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskProgressView.xib; sourceTree = "<group>"; };
@@ -294,6 +285,9 @@
 		5999F0642A134C1A002F08D8 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		59A113B02A39C0D900C8295B /* openweathermap.org.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = openweathermap.org.cer; sourceTree = "<group>"; };
 		59A113B22A3AA52E00C8295B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		59A113B42A3ADAE000C8295B /* cert.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.cer; sourceTree = "<group>"; };
+		59A113B52A3ADAE000C8295B /* ca.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.cer; sourceTree = "<group>"; };
+		59A113B62A3ADAE000C8295B /* private.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.key; sourceTree = "<group>"; };
 		59A795492A0F03330031710F /* RingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressGroupView.swift; sourceTree = "<group>"; };
 		59A795712A0F72990031710F /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		59A795732A0F72AF0031710F /* ForgetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetPassword.storyboard; sourceTree = "<group>"; };
@@ -505,12 +499,9 @@
 			isa = PBXGroup;
 			children = (
 				59A113B02A39C0D900C8295B /* openweathermap.org.cer */,
-				5950BF2F2A385E6F00EEB21C /* ca.der */,
-				5950BF2E2A385E6F00EEB21C /* ca.pem */,
-				5950BF362A38635D00EEB21C /* cert.cer */,
-				5950BF2C2A385E6E00EEB21C /* cert.der */,
-				5950BF2D2A385E6F00EEB21C /* cert.pem */,
-				5950BF302A385E6F00EEB21C /* key.pem */,
+				59A113B52A3ADAE000C8295B /* ca.cer */,
+				59A113B42A3ADAE000C8295B /* cert.cer */,
+				59A113B62A3ADAE000C8295B /* private.key */,
 			);
 			path = Certificate;
 			sourceTree = "<group>";
@@ -927,10 +918,12 @@
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
 				599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */,
 				59A7957D2A0F79170031710F /* UpdatePasswordSuccessView.xib in Resources */,
+				59A113B72A3ADAE000C8295B /* cert.cer in Resources */,
 				599495682A0BFA4F009F1B2E /* BuyLottery.storyboard in Resources */,
 				59A113B12A39C0D900C8295B /* openweathermap.org.cer in Resources */,
 				59997A6D2A0A422D00E9FD7F /* ProfileUpdateView.xib in Resources */,
 				59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */,
+				59A113B82A3ADAE000C8295B /* ca.cer in Resources */,
 				59E69A262A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf in Resources */,
 				59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */,
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
@@ -947,14 +940,11 @@
 				59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */,
 				5999F0612A132409002F08D8 /* AmountView.xib in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
-				5950BF342A385E6F00EEB21C /* ca.der in Resources */,
 				59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */,
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
-				5950BF332A385E6F00EEB21C /* ca.pem in Resources */,
 				599495742A0C90E7009F1B2E /* BuyCommodity.storyboard in Resources */,
 				597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */,
 				599495792A0D02B1009F1B2E /* PointRule.storyboard in Resources */,
-				5950BF352A385E6F00EEB21C /* key.pem in Resources */,
 				59C2D9A52A0D38490085724F /* Task.storyboard in Resources */,
 				598F39482A0E06C600DA9186 /* StoreList.storyboard in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
@@ -967,7 +957,6 @@
 				59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
 				597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */,
-				5950BF312A385E6F00EEB21C /* cert.der in Resources */,
 				598F394C2A0E07A500DA9186 /* SearchView.xib in Resources */,
 				598F39532A0E1F6600DA9186 /* ProductDescription.storyboard in Resources */,
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
@@ -982,6 +971,7 @@
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
 				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
+				59A113B92A3ADAE000C8295B /* private.key in Resources */,
 				59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */,
 				59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */,
 				59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */,
@@ -991,8 +981,6 @@
 				59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */,
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
 				5994956D2A0BFC88009F1B2E /* SpendPointView.xib in Resources */,
-				5950BF322A385E6F00EEB21C /* cert.pem in Resources */,
-				5950BF372A38635D00EEB21C /* cert.cer in Resources */,
 				59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
