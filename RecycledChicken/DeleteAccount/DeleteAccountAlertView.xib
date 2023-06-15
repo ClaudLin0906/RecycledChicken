@@ -121,7 +121,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="kbJ-On-gLD"/>
-            <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="XGQ-Iv-Edz" firstAttribute="top" secondItem="u2U-fJ-wyy" secondAttribute="bottom" constant="10" id="3wT-6z-GkQ"/>
                 <constraint firstItem="8fB-Fo-pcm" firstAttribute="width" secondItem="R65-q7-4Kl" secondAttribute="width" id="4Js-n8-4BR"/>
@@ -143,6 +143,17 @@
             <point key="canvasLocation" x="-187" y="20"/>
         </view>
     </objects>
+    <designables>
+        <designable name="8fB-Fo-pcm">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="R65-q7-4Kl">
+            <size key="intrinsicContentSize" width="56" height="32"/>
+        </designable>
+        <designable name="u2U-fJ-wyy">
+            <size key="intrinsicContentSize" width="170" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <image name="组39" width="230" height="188.66667175292969"/>
     </resources>

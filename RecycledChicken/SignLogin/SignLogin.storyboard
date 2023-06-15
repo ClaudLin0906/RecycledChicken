@@ -105,10 +105,10 @@
                                                             <action selector="SignUpBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eM2-g2-01q"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘記密碼?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urw-aj-iMM" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="156.66666666666666" y="140" width="80" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘記密碼?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urw-aj-iMM">
+                                                        <rect key="frame" x="161.66666666666666" y="140" width="70" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="80" id="593-sR-0Sv"/>
+                                                            <constraint firstAttribute="width" constant="70" id="593-sR-0Sv"/>
                                                             <constraint firstAttribute="height" constant="20" id="gOi-q3-ycy"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
@@ -116,7 +116,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwF-sk-NgX">
-                                                        <rect key="frame" x="156.66666666666666" y="140" width="80" height="20"/>
+                                                        <rect key="frame" x="161.66666666666666" y="140" width="70" height="20"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="15"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <connections>
@@ -124,7 +124,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzB-8v-q5F" userLabel="underLine">
-                                                        <rect key="frame" x="156.66666666666666" y="159" width="80" height="1"/>
+                                                        <rect key="frame" x="161.66666666666666" y="159" width="70" height="1"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="9fm-yo-1aK"/>
@@ -213,6 +213,12 @@
     <designables>
         <designable name="84k-bG-uId">
             <size key="intrinsicContentSize" width="56" height="32"/>
+        </designable>
+        <designable name="UJJ-2t-6qK">
+            <size key="intrinsicContentSize" width="364.66666666666669" height="142.66666666666666"/>
+        </designable>
+        <designable name="Urw-aj-iMM">
+            <size key="intrinsicContentSize" width="62.666666666666664" height="19.666666666666668"/>
         </designable>
         <designable name="hMQ-3Y-3fH">
             <size key="intrinsicContentSize" width="56" height="32"/>

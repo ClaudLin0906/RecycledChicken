@@ -46,7 +46,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="OBe-9N-2ed"/>
-            <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Ht3-VY-Hay" firstAttribute="top" secondItem="29u-7z-C59" secondAttribute="bottom" constant="5" id="FZ7-la-zlW"/>
                 <constraint firstItem="G8M-WY-PA6" firstAttribute="bottom" secondItem="OBe-9N-2ed" secondAttribute="centerY" id="MVO-yb-Zta"/>
@@ -61,6 +61,14 @@
             <point key="canvasLocation" x="-187" y="20"/>
         </view>
     </objects>
+    <designables>
+        <designable name="29u-7z-C59">
+            <size key="intrinsicContentSize" width="68" height="24"/>
+        </designable>
+        <designable name="Ht3-VY-Hay">
+            <size key="intrinsicContentSize" width="153" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <image name="组 1662" width="598.33331298828125" height="388.66665649414062"/>
     </resources>

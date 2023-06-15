@@ -255,17 +255,8 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="Ha9-t1-1jj">
-            <size key="intrinsicContentSize" width="36" height="19.666666666666668"/>
-        </designable>
         <designable name="ZPq-0X-imi">
             <size key="intrinsicContentSize" width="30" height="32"/>
-        </designable>
-        <designable name="h0L-jY-0Jz">
-            <size key="intrinsicContentSize" width="56" height="19.666666666666668"/>
-        </designable>
-        <designable name="yEI-G7-B9N">
-            <size key="intrinsicContentSize" width="62.666666666666664" height="19.666666666666668"/>
         </designable>
     </designables>
     <resources>

@@ -73,7 +73,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="GBv-jD-Roa" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="4eU-5T-p06"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="centerY" secondItem="GBv-jD-Roa" secondAttribute="bottom" id="588-Va-29P"/>
@@ -94,4 +94,15 @@
             <point key="canvasLocation" x="-131" y="20"/>
         </view>
     </objects>
+    <designables>
+        <designable name="DNq-0F-Cfp">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="RYA-8w-jJh">
+            <size key="intrinsicContentSize" width="238" height="24"/>
+        </designable>
+        <designable name="yTb-5x-rAU">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+    </designables>
 </document>
