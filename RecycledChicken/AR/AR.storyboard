@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmh-R3-tJ0" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="121.66666666666669" y="758" width="150" height="40"/>
+                                <rect key="frame" x="121.66666666666669" y="748" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="UXx-vU-TJD"/>
@@ -83,7 +83,7 @@
                             <constraint firstAttribute="bottom" secondItem="ZQ3-NW-8MS" secondAttribute="bottom" id="ZEq-SH-fuc"/>
                             <constraint firstItem="8Qe-TI-MLl" firstAttribute="bottom" secondItem="La2-ah-RYb" secondAttribute="bottom" id="baL-TR-m9f"/>
                             <constraint firstItem="8Qe-TI-MLl" firstAttribute="top" secondItem="La2-ah-RYb" secondAttribute="top" id="bpD-7t-4gl"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lmh-R3-tJ0" secondAttribute="bottom" constant="20" id="c3c-ZJ-rWV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lmh-R3-tJ0" secondAttribute="bottom" constant="30" id="c3c-ZJ-rWV"/>
                             <constraint firstItem="ZQ3-NW-8MS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="eP9-34-tCd"/>
                             <constraint firstItem="ZQ3-NW-8MS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="haQ-yC-bUD"/>
                             <constraint firstItem="k8o-jO-93K" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="kzD-54-jBz"/>
@@ -120,6 +120,14 @@
             <point key="canvasLocation" x="-187.02290076335876" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="lmh-R3-tJ0">
+            <size key="intrinsicContentSize" width="56" height="32"/>
+        </designable>
+        <designable name="zut-ou-63q">
+            <size key="intrinsicContentSize" width="238" height="47.666666666666664"/>
+        </designable>
+    </designables>
     <resources>
         <image name="グループ 1089" width="1125" height="2436"/>
         <image name="组 3453" width="672" height="672"/>

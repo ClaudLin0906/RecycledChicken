@@ -46,8 +46,8 @@ let keyWindow = UIApplication.shared.windows.filter({ $0.isKeyWindow }).last
 
 class CommonKey {
     static let shared = CommonKey()
-//    let googleMapKey = "AIzaSyAcVNJwxg_jJNKCeX4dDDkqmCL8RmVAbSo"//廠商
-    let googleMapKey = "AIzaSyCQooOAaz-Lm2IpRZGz26Lx6lTSs9JFvZQ"//Claud
+    let googleMapKey = "AIzaSyAcVNJwxg_jJNKCeX4dDDkqmCL8RmVAbSo"//廠商
+//    let googleMapKey = "AIzaSyCQooOAaz-Lm2IpRZGz26Lx6lTSs9JFvZQ"//Claud
     let ARKey = "EE17C-B311A-5F817-F0AAF-2A914"
 }
 
