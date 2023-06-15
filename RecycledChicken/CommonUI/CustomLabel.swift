@@ -17,6 +17,7 @@ import UIKit
         let attrString = NSMutableAttributedString(attributedString: self.attributedText!)
         attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: self.fontFamily, size: self.fontSize)!, range: NSMakeRange(0, attrString.length))
         attrString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(3.0), range: NSRange(location: 0, length: attrString.length))
+        
         self.attributedText = attrString
     }
 

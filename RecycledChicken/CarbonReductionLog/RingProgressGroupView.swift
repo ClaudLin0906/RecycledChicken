@@ -9,12 +9,6 @@ import UIKit
 import MKRingProgressView
 
 class RingProgressGroupView: UIView {
-    
-    let attributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 10)!,
-        NSAttributedString.Key.foregroundColor: UIColor.black,
-        NSAttributedString.Key.kern: 5 // 設定字距
-    ]
 
     let ring1 = RingProgressView()
     let ring2 = RingProgressView()
@@ -106,7 +100,7 @@ class RingProgressGroupView: UIView {
         congratulationsContent.heightAnchor.constraint(equalToConstant: 40).isActive = true
         let attrString = NSMutableAttributedString(attributedString: congratulationsContent.attributedText!)
         attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Normal", size: 10)!, range: NSMakeRange(0, attrString.length))
-        attrString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(5.0), range: NSRange(location: 0, length: attrString.length))
+        attrString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(3.0), range: NSRange(location: 0, length: attrString.length))
         congratulationsContent.attributedText = attrString
 
     }

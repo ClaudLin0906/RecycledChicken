@@ -8,19 +8,7 @@
 import UIKit
 
 class CustomVC: UIViewController {
-    
-    let attributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
-        NSAttributedString.Key.foregroundColor: UIColor.white,
-        NSAttributedString.Key.kern: 5 // 設定字距
-    ]
-    
-    let attributes2: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
-        NSAttributedString.Key.foregroundColor: UIColor.black,
-        NSAttributedString.Key.kern: 5 // 設定字距
-    ]
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = self

@@ -47,7 +47,7 @@
                                                         <constraint firstAttribute="height" constant="20" id="N4S-Rq-CgY"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="746-v9-or6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="746-v9-or6" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                     <rect key="frame" x="40" y="12.000000000000002" width="243" height="19.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                     <nil key="textColor"/>

@@ -40,7 +40,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-cO-phv" userLabel="step1">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請問您是用戶還是合作廠商?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMt-iW-Jcr">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請問您是用戶還是合作廠商?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMt-iW-Jcr" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="50.666666666666686" y="3" width="212" height="24"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -61,7 +61,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqk-XC-KeB">
                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用戶" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-tz-uIe">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用戶" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-tz-uIe" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="3" width="283" height="24"/>
                                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -149,7 +149,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eml-tA-e8E" userLabel="step5">
                                                 <rect key="frame" x="0.0" y="460" width="313" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您使用的連絡信箱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpC-zY-24I">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您使用的連絡信箱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpC-zY-24I" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="88.666666666666657" y="3" width="136" height="24"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -166,7 +166,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELw-2q-AhL" userLabel="step6">
                                                 <rect key="frame" x="0.0" y="510" width="313" height="50"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-A1-zCu">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-A1-zCu" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="15.333333333333373" width="42" height="19.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
