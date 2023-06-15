@@ -26,7 +26,7 @@
                         <constraint firstAttribute="width" constant="150" id="CGc-Kc-Rtr"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="購買完成" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29u-7z-C59">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="購買完成" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29u-7z-C59" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="448.66666666666669" width="393" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="L3c-uL-TtT"/>
@@ -35,7 +35,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="票卷已存入您的票夾" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-VY-Hay">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="票卷已存入您的票夾" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ht3-VY-Hay" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                     <rect key="frame" x="120" y="473.66666666666669" width="153" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="o3e-uF-cyI"/>

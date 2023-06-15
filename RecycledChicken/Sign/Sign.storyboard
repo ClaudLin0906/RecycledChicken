@@ -40,7 +40,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OvW-WF-2Nr">
                                 <rect key="frame" x="86.666666666666686" y="272.33333333333331" width="220" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-fu-Tik">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-fu-Tik" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="37.666666666666664"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -137,12 +137,12 @@
                                     <constraint firstAttribute="height" constant="150" id="b5k-Bb-Peq"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-Ny-o8a">
-                                <rect key="frame" x="121.66666666666669" y="537.33333333333337" width="150" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-Ny-o8a" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="96.666666666666686" y="537.33333333333337" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BeP-Qg-aJL"/>
-                                    <constraint firstAttribute="width" constant="150" id="f12-tC-IQG"/>
+                                    <constraint firstAttribute="width" constant="200" id="f12-tC-IQG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -192,6 +192,11 @@
             <point key="canvasLocation" x="-175" y="4"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="xWk-Ny-o8a">
+            <size key="intrinsicContentSize" width="112" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="footer" width="1127.6666259765625" height="501"/>
         <image name="グループ 1089" width="1125" height="2436"/>

@@ -26,7 +26,7 @@
                         <constraint firstAttribute="width" constant="150" id="rc1-SR-Y0W"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信件已傳送" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNp-6Y-rxs">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信件已傳送" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNp-6Y-rxs" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="448.66666666666669" width="393" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="pk8-aB-c4m"/>
@@ -35,7 +35,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我們會在郵件寄出的一週內回覆您!謝謝" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHr-L1-W0U">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我們會在郵件寄出的一週內回覆您!謝謝" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHr-L1-W0U" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                     <rect key="frame" x="49.333333333333343" y="473.66666666666669" width="294.66666666666663" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="9Ic-4H-56E"/>
