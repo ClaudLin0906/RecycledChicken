@@ -212,13 +212,13 @@
     </scenes>
     <designables>
         <designable name="84k-bG-uId">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="UJJ-2t-6qK">
             <size key="intrinsicContentSize" width="364.66666666666669" height="142.66666666666666"/>
         </designable>
         <designable name="hMQ-3Y-3fH">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

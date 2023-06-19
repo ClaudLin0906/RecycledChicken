@@ -34,7 +34,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寶特瓶" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jan-G0-pYK" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="201.66666666666666" y="59" width="51" height="25"/>
+                    <rect key="frame" x="196.66666666666663" y="59" width="196.33333333333337" height="25"/>
                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PET" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKG-J5-88Z">
-                    <rect key="frame" x="201.66666666666666" y="84" width="51" height="25"/>
+                    <rect key="frame" x="196.66666666666663" y="84" width="196.33333333333337" height="25"/>
                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -75,7 +75,8 @@
                 <constraint firstItem="oKG-J5-88Z" firstAttribute="bottom" secondItem="zac-xc-sMx" secondAttribute="bottom" id="WZ5-Zq-GAk"/>
                 <constraint firstItem="jan-G0-pYK" firstAttribute="bottom" secondItem="zac-xc-sMx" secondAttribute="centerY" id="X0I-HP-HvV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jan-G0-pYK" secondAttribute="trailing" id="X4a-bj-OAT"/>
-                <constraint firstItem="jan-G0-pYK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="5" id="XPo-Hf-aTC"/>
+                <constraint firstItem="jan-G0-pYK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="XPo-Hf-aTC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jan-G0-pYK" secondAttribute="trailing" id="XXw-pS-O2I"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="centerX" secondItem="ZAW-Cw-FMz" secondAttribute="trailing" id="fdK-m9-SPg"/>
                 <constraint firstItem="vAs-OG-4PJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="gpa-Kb-keN"/>
                 <constraint firstItem="oKG-J5-88Z" firstAttribute="trailing" secondItem="jan-G0-pYK" secondAttribute="trailing" id="pOE-F2-Uc9"/>

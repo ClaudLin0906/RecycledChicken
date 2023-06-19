@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import TrustKit
 
 class NetworkManager: NSObject {
     
@@ -16,12 +15,13 @@ class NetworkManager: NSObject {
     
     private override init() {
         super.init()
-        TrustKit.initSharedInstance(withConfiguration: [:])
-        session = URLSession.init(configuration: .ephemeral, delegate: self, delegateQueue: nil)
+//        session = URLSession.init(configuration: .ephemeral, delegate: self, delegateQueue: nil)
+        session = URLSession()
+
     }
     
     func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data) -> Void){
-        let task = session.dataTask(with: request){(data,response,error) in
+        let task = URLSession.shared.dataTask(with: request){(data,response,error) in
             if error != nil{
                 print("url發生問題\(error.debugDescription)")
             }else{

@@ -10,6 +10,14 @@ import Alamofire
 
 class VerificationCodeVC: CustomLoginVC {
     
+    @IBOutlet weak var firstTextField:UITextField!
+    
+    @IBOutlet weak var secondTextField:UITextField!
+    
+    @IBOutlet weak var thirdTextField:UITextField!
+    
+    @IBOutlet weak var fourthTextField:UITextField!
+    
     var username:String = ""
     
     var phone:String = ""
@@ -43,8 +51,17 @@ class VerificationCodeVC: CustomLoginVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIInit()
         sendSMS()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    private func UIInit(){
+        firstTextField.delegate = self
+        secondTextField.delegate = self
+        thirdTextField.delegate = self
+        fourthTextField.delegate = self
     }
     
     private func sendSMS(){
@@ -103,4 +120,36 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
 
+}
+
+extension VerificationCodeVC:UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // 當輸入的字不為空字串時
+        if (string != "") {
+                //當textField不為空字串時
+                if (textField.text == "") {
+                    textField.text = string
+                    //建立一個響應者為目前textField tag的下一個
+                    let nextResponder: UIResponder? = view.viewWithTag(textField.tag + 1)
+                    //只要響應者不是nil就讓他成為第一位響應者這樣就可以連續輸入時自動切到下一格
+                    if (nextResponder != nil) {
+                        nextResponder?.becomeFirstResponder()
+                    }else{
+                    //當tag到最後時響應者會是nil此時執行將鍵盤收起的function
+                        self.view.endEditing(true)
+                    }
+                }
+                return false
+            } else {//當我們按下刪除鍵時相當於輸入空字串
+    
+                textField.text = string
+                //建立一個tag往前的響應者
+                let nextResponder: UIResponder? = view.viewWithTag(textField.tag - 1)
+                if (nextResponder != nil) {
+                //只要響應者不是nil就讓他成為第一位響應者這樣就可以連續輸入時自動切到上一格
+                    nextResponder?.becomeFirstResponder()
+                }
+                return false
+            }
+    }
 }

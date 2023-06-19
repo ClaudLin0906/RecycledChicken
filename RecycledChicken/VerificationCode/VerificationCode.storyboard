@@ -12,8 +12,8 @@
         <array key="GenJyuuGothic-Normal.ttf">
             <string>GenJyuuGothic-Normal</string>
         </array>
-        <array key="jfopenhuninn.ttf">
-            <string>jf-openhuninn-1.0</string>
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
         </array>
     </customFonts>
     <scenes>
@@ -53,22 +53,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Glh-tN-tmP">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-ku-UfK">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lF0-3T-7yj">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.82745098039215681" green="0.69019607843137254" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="d3T-ku-UfK" firstAttribute="leading" secondItem="Glh-tN-tmP" secondAttribute="leading" id="29F-cl-jUJ"/>
-                                            <constraint firstItem="d3T-ku-UfK" firstAttribute="top" secondItem="Glh-tN-tmP" secondAttribute="top" id="BOp-GI-bwS"/>
-                                            <constraint firstItem="d3T-ku-UfK" firstAttribute="centerX" secondItem="Glh-tN-tmP" secondAttribute="centerX" id="OcW-dv-cww"/>
-                                            <constraint firstAttribute="trailing" secondItem="d3T-ku-UfK" secondAttribute="trailing" id="Rzw-fY-BHe"/>
-                                            <constraint firstAttribute="bottom" secondItem="d3T-ku-UfK" secondAttribute="bottom" id="uQ5-cs-Lac"/>
+                                            <constraint firstAttribute="bottom" secondItem="lF0-3T-7yj" secondAttribute="bottom" id="S4P-Gl-CMs"/>
+                                            <constraint firstItem="lF0-3T-7yj" firstAttribute="leading" secondItem="Glh-tN-tmP" secondAttribute="leading" id="k30-bv-om3"/>
+                                            <constraint firstAttribute="trailing" secondItem="lF0-3T-7yj" secondAttribute="trailing" id="kM3-Zk-fPR"/>
                                             <constraint firstAttribute="width" constant="40" id="vFm-Xx-I4h"/>
-                                            <constraint firstItem="d3T-ku-UfK" firstAttribute="centerY" secondItem="Glh-tN-tmP" secondAttribute="centerY" id="xby-KG-SA4"/>
+                                            <constraint firstItem="lF0-3T-7yj" firstAttribute="top" secondItem="Glh-tN-tmP" secondAttribute="top" id="xdW-lv-tnl"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -79,21 +77,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlf-RR-seX">
                                         <rect key="frame" x="53.333333333333329" y="0.0" width="40" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="za4-UN-HQ1">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7r9-lt-dYO">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="za4-UN-HQ1" firstAttribute="top" secondItem="vlf-RR-seX" secondAttribute="top" id="Dvq-P1-y5t"/>
-                                            <constraint firstAttribute="trailing" secondItem="za4-UN-HQ1" secondAttribute="trailing" id="NPX-Ez-HhI"/>
-                                            <constraint firstAttribute="bottom" secondItem="za4-UN-HQ1" secondAttribute="bottom" id="fTT-Ug-e4z"/>
-                                            <constraint firstItem="za4-UN-HQ1" firstAttribute="centerY" secondItem="vlf-RR-seX" secondAttribute="centerY" id="ihO-po-Ych"/>
-                                            <constraint firstItem="za4-UN-HQ1" firstAttribute="centerX" secondItem="vlf-RR-seX" secondAttribute="centerX" id="v8F-FC-dzZ"/>
-                                            <constraint firstItem="za4-UN-HQ1" firstAttribute="leading" secondItem="vlf-RR-seX" secondAttribute="leading" id="y5w-5T-20B"/>
+                                            <constraint firstItem="7r9-lt-dYO" firstAttribute="leading" secondItem="vlf-RR-seX" secondAttribute="leading" id="E2r-y1-WKY"/>
+                                            <constraint firstAttribute="trailing" secondItem="7r9-lt-dYO" secondAttribute="trailing" id="KHb-Lp-hvr"/>
+                                            <constraint firstAttribute="bottom" secondItem="7r9-lt-dYO" secondAttribute="bottom" id="bSg-D8-jZz"/>
+                                            <constraint firstItem="7r9-lt-dYO" firstAttribute="top" secondItem="vlf-RR-seX" secondAttribute="top" id="tuT-su-F2Q"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -104,21 +100,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWS-Yl-Xgw">
                                         <rect key="frame" x="106.66666666666667" y="0.0" width="40.000000000000014" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHN-ER-cn3">
+                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tsa-RW-JO3">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="LHN-ER-cn3" firstAttribute="centerX" secondItem="hWS-Yl-Xgw" secondAttribute="centerX" id="I1z-yv-HcG"/>
-                                            <constraint firstAttribute="bottom" secondItem="LHN-ER-cn3" secondAttribute="bottom" id="IJH-kK-YH4"/>
-                                            <constraint firstItem="LHN-ER-cn3" firstAttribute="centerY" secondItem="hWS-Yl-Xgw" secondAttribute="centerY" id="joc-1P-Zu6"/>
-                                            <constraint firstItem="LHN-ER-cn3" firstAttribute="top" secondItem="hWS-Yl-Xgw" secondAttribute="top" id="ocv-U0-nzu"/>
-                                            <constraint firstAttribute="trailing" secondItem="LHN-ER-cn3" secondAttribute="trailing" id="pyk-5w-gMP"/>
-                                            <constraint firstItem="LHN-ER-cn3" firstAttribute="leading" secondItem="hWS-Yl-Xgw" secondAttribute="leading" id="vhN-t2-5kJ"/>
+                                            <constraint firstItem="Tsa-RW-JO3" firstAttribute="top" secondItem="hWS-Yl-Xgw" secondAttribute="top" id="7Tg-VO-33s"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tsa-RW-JO3" secondAttribute="trailing" id="LHF-j9-cRE"/>
+                                            <constraint firstItem="Tsa-RW-JO3" firstAttribute="leading" secondItem="hWS-Yl-Xgw" secondAttribute="leading" id="OIg-d2-51u"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tsa-RW-JO3" secondAttribute="bottom" id="j5w-lx-AkI"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -129,21 +123,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-6t-Aar">
                                         <rect key="frame" x="160" y="0.0" width="40" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-Tr-0Lf">
+                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqW-fT-mbH">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <fontDescription key="fontDescription" name="jf-openhuninn-1.0" family="jf-openhuninn-1.0" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="w5i-Tr-0Lf" secondAttribute="bottom" id="IC1-qI-vL7"/>
-                                            <constraint firstItem="w5i-Tr-0Lf" firstAttribute="top" secondItem="bgb-6t-Aar" secondAttribute="top" id="Ich-Ou-cxH"/>
-                                            <constraint firstItem="w5i-Tr-0Lf" firstAttribute="centerX" secondItem="bgb-6t-Aar" secondAttribute="centerX" id="KOf-l0-MBs"/>
-                                            <constraint firstAttribute="trailing" secondItem="w5i-Tr-0Lf" secondAttribute="trailing" id="cnP-wZ-L37"/>
-                                            <constraint firstItem="w5i-Tr-0Lf" firstAttribute="centerY" secondItem="bgb-6t-Aar" secondAttribute="centerY" id="hid-tf-WrP"/>
-                                            <constraint firstItem="w5i-Tr-0Lf" firstAttribute="leading" secondItem="bgb-6t-Aar" secondAttribute="leading" id="kap-gw-NxJ"/>
+                                            <constraint firstItem="tqW-fT-mbH" firstAttribute="top" secondItem="bgb-6t-Aar" secondAttribute="top" id="BJA-yQ-UIy"/>
+                                            <constraint firstItem="tqW-fT-mbH" firstAttribute="leading" secondItem="bgb-6t-Aar" secondAttribute="leading" id="F5U-j1-82r"/>
+                                            <constraint firstAttribute="trailing" secondItem="tqW-fT-mbH" secondAttribute="trailing" id="Tjh-PX-v5t"/>
+                                            <constraint firstAttribute="bottom" secondItem="tqW-fT-mbH" secondAttribute="bottom" id="xHA-pQ-xfz"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -221,6 +213,12 @@
                             <constraint firstItem="Pzg-eB-EXa" firstAttribute="trailing" secondItem="GWu-dP-XPG" secondAttribute="trailing" id="suw-jR-nPu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstTextField" destination="lF0-3T-7yj" id="5Ri-41-Ft9"/>
+                        <outlet property="fourthTextField" destination="tqW-fT-mbH" id="mH5-Cf-ePR"/>
+                        <outlet property="secondTextField" destination="7r9-lt-dYO" id="pkZ-3O-7LS"/>
+                        <outlet property="thirdTextField" destination="Tsa-RW-JO3" id="SHC-VR-BnS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
