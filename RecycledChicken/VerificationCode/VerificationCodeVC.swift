@@ -58,10 +58,7 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func UIInit(){
-        firstTextField.delegate = self
-        secondTextField.delegate = self
-        thirdTextField.delegate = self
-        fourthTextField.delegate = self
+        
     }
     
     private func sendSMS(){
