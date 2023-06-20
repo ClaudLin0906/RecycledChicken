@@ -71,13 +71,17 @@ class LoginVC: CustomLoginVC {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
-//        let loginInfo = LoginInfo(userPhoneNumber: phone!, userPassword: password!)
-//        let loginInfoDic = try? loginInfo.asDictionary()
-//        let testloginInfoDic = try? testLoginInfo.asDictionary()
-//        requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: testloginInfoDic) { data in
-//            print(String(data: data, encoding: .utf8))
-//        }
-        loginSuccess()
+        let loginInfo = LoginInfo(userPhoneNumber: phone!, userPassword: password!)
+        let loginInfoDic = try? loginInfo.asDictionary()
+        let testloginInfoDic = try? testLoginInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: testloginInfoDic) { data in
+            let json = NetworkManager.shared.dataToDictionary(data: data)
+            if let token = json["token"] as? String {
+                CommonKey.shared.authToken = token
+                self.loginSuccess()
+            }
+        }
+        
     }
     
     @IBAction func forgetPassword(_ sender:UIButton){

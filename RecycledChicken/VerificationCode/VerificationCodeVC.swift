@@ -65,7 +65,7 @@ class VerificationCodeVC: CustomLoginVC {
         let smsInfo = SMSInfo(userPhoneNumber: phone)
         let smsInfoDic = try? smsInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { data in
-            print(String(data: data, encoding: .utf8))
+            print(String(data: data, encoding: .utf8)!)
         }
         
 //        let weatherInfo = WeatherInfo(lat: "28.7041", lon: "77.1025", units: "metric", appid: "26f1ffa29736dc1105d00b93743954d2")
