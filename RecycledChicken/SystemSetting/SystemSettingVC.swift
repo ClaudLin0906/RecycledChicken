@@ -122,11 +122,13 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
             if sender.isOn {
                 evaluatePolicyAction { scanResult, scanMessage in
                     UserDefaults().set(true, forKey: UserDefaultKey.shared.biometrics)
-
-                    KeychainService.shared.saveJsonToKeychain(jsonString: , account: KeyChainKey.shared.accountInfo)
+                    if let accountInfo = try? CurrentUserInfo.shared.currentAccountInfo.jsonString {
+                        let _ = KeychainService.shared.saveJsonToKeychain(jsonString: accountInfo, account: KeyChainKey.shared.accountInfo)
+                    }
                 }
             }else{
                 UserDefaults().set(false, forKey: UserDefaultKey.shared.biometrics)
+                let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
             }
 
         default:

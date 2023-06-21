@@ -56,4 +56,19 @@ class KeychainService {
         }
         return nil
     }
+    
+    func deleteJSONFromKeychain(account: String) -> Bool {
+        let query: [String: Any] = [
+            kSecClassValue as String: kSecClassGenericPasswordValue,
+            kSecAttrAccountValue as String: account,
+            kSecAttrServiceValue as String: Bundle.main.bundleIdentifier
+        ]
+        
+        let status = SecItemDelete(query as CFDictionary)
+        if status == errSecSuccess {
+            return true
+        }
+        
+        return false
+    }
 }

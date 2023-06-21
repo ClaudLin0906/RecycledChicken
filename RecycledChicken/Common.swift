@@ -75,7 +75,7 @@ class CurrentUserInfo{
     }()
 }
 
-struct AccountInfo:Decodable {
+struct AccountInfo:Codable {
     var phone:String
     var password:String
 }

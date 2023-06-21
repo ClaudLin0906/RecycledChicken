@@ -36,10 +36,11 @@ class LoginVC: CustomLoginVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if UserDefaults().bool(forKey: userDefaultKey.shared.biometrics) {
+        if UserDefaults().bool(forKey: UserDefaultKey.shared.biometrics) {
             evaluatePolicyAction { result, message in
                 if result {
-                    self.loginSuccess()
+                    let accountInfo = CurrentUserInfo.shared.currentAccountInfo
+                    self.loginAction(phone: accountInfo.phone, password: accountInfo.password)
                 }
             }
         }
@@ -67,8 +68,8 @@ class LoginVC: CustomLoginVC {
                 if let token = json["token"] as? String {
                     CommonKey.shared.authToken = ""
                     CommonKey.shared.authToken = token
-                    CurrentUserInfo.shared.phone = phone
-                    CurrentUserInfo.shared.password = password
+                    CurrentUserInfo.shared.currentAccountInfo.phone = phone
+                    CurrentUserInfo.shared.currentAccountInfo.password = password
                     self.loginSuccess()
                 }
             }
