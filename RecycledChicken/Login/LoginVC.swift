@@ -15,13 +15,8 @@ class LoginVC: CustomLoginVC {
     @IBOutlet weak var phoneTextfield:UITextField!
     
     @IBOutlet weak var passwordTextfield:UITextField!
-    
-    private struct LoginInfo:Codable {
-        var userPhoneNumber:String
-        var userPassword:String
-    }
-    
-    private var testLoginInfo:LoginInfo = LoginInfo(userPhoneNumber: "0912345678", userPassword: "test123")
+        
+    private var testLoginInfo:AccountInfo = AccountInfo(phone: "0912345678", password: "test123")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +49,7 @@ class LoginVC: CustomLoginVC {
     }
     
     private func loginAction(phone:String, password:String){
-        let loginInfo = LoginInfo(userPhoneNumber: phone, userPassword: password)
+        let loginInfo = AccountInfo(phone: phone, password: password)
         let loginInfoDic = try? loginInfo.asDictionary()
 //        let testloginInfoDic = try? testLoginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
