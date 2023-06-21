@@ -93,7 +93,7 @@ class NetworkManager: NSObject {
     }
     
     
-    func request<T: Decodable>(url: URL?, expecting: T.Type, completion: @escaping (_ data: T?, _ error: Error?)-> ()) {
+    func request<T: Decodable>(url: URL?, completion: @escaping (_ data: T?, _ error: Error?)-> ()) {
         
         guard let url else {
             print("cannot form url")

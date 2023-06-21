@@ -23,13 +23,13 @@
                     <rect key="frame" x="0.0" y="388.66666666666669" width="393" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="每位會員生日⎡僅能更改一次⎦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYA-8w-jJh" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="26"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
                             <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="確定是要更改為 2011/11/11嗎?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqY-bb-yFT">
-                            <rect key="frame" x="0.0" y="26" width="393" height="24"/>
+                            <rect key="frame" x="0.0" y="30" width="393" height="20"/>
                             <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -96,13 +96,13 @@
     </objects>
     <designables>
         <designable name="DNq-0F-Cfp">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
         <designable name="RYA-8w-jJh">
-            <size key="intrinsicContentSize" width="238" height="24"/>
+            <size key="intrinsicContentSize" width="238" height="20"/>
         </designable>
         <designable name="yTb-5x-rAU">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
     </designables>
 </document>

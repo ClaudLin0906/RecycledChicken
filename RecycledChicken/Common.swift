@@ -75,11 +75,6 @@ class CurrentUserInfo{
     }()
 }
 
-struct AccountInfo:Codable {
-    var userPhoneNumber:String
-    var userPassword:String
-}
-
 struct APIUrl {
     static let domainName = "https://useries.buenooptics.com:8443/app"
     static let register = "/regist"
@@ -92,6 +87,7 @@ struct APIUrl {
     static let buyLottery = "/buyLottery"
     static let checkLotteryItem = "/checkLotteryItem"
     static let checkLotteryRecord = "/checkLotteryRecord"
+    static let searchUserData = "/searchUserData"
 }
 
 let attributes: [NSAttributedString.Key: Any] = [

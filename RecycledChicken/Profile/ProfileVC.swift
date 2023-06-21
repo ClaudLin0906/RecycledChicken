@@ -13,14 +13,7 @@ class ProfileVC: CustomVC {
     
     let profileInfoArr:[String] = ["用戶名稱", "E-mail", "手機號碼", "生日"]
     
-    struct profileInfo {
-        var userName:String
-        var Email:String
-        var cellPhone:String
-        var birthday:String
-    }
-    
-    var currentProfileInfo = profileInfo(userName: "", Email: "", cellPhone: "", birthday: "")
+    var currentProfileInfo = profileInfo(userName: "", Email: "", cellPhone: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber , birthday: "")
     
     let datePicker = UIDatePicker()
         
@@ -34,6 +27,16 @@ class ProfileVC: CustomVC {
     
     private func UIInit(){
         profileTableView.setSeparatorLocation()
+    }
+    
+    private func getUserInfo(){
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
