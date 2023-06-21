@@ -142,8 +142,8 @@
             filePath = "RecycledChicken/VerificationCode/VerificationCodeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "signUpAction(_:)"
             landmarkType = "7">
          </BreakpointContent>

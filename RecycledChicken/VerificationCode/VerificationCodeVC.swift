@@ -22,15 +22,7 @@ class VerificationCodeVC: CustomLoginVC {
     
     var phone:String = ""
     
-    private struct SMSInfo:Codable {
-        var userPhoneNumber:String
-    }
-    
-    private struct SignUpInfo:Codable {
-        var userPhoneNumber:String
-        var userPassword:String
-        var smsCode:String
-    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
