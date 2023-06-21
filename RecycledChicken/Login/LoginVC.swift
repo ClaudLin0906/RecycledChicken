@@ -16,7 +16,7 @@ class LoginVC: CustomLoginVC {
     
     @IBOutlet weak var passwordTextfield:UITextField!
         
-    private var testLoginInfo:AccountInfo = AccountInfo(phone: "0912345678", password: "test123")
+    private var testLoginInfo:AccountInfo = AccountInfo(userPhoneNumber: "0912345678", userPassword: "test123")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class LoginVC: CustomLoginVC {
             evaluatePolicyAction { result, message in
                 if result {
                     let accountInfo = CurrentUserInfo.shared.currentAccountInfo
-                    self.loginAction(phone: accountInfo.phone, password: accountInfo.password)
+                    self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
                 }
             }
         }
@@ -49,7 +49,7 @@ class LoginVC: CustomLoginVC {
     }
     
     private func loginAction(phone:String, password:String){
-        let loginInfo = AccountInfo(phone: phone, password: password)
+        let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
         let loginInfoDic = try? loginInfo.asDictionary()
 //        let testloginInfoDic = try? testLoginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
@@ -63,8 +63,8 @@ class LoginVC: CustomLoginVC {
                 if let token = json["token"] as? String {
                     CommonKey.shared.authToken = ""
                     CommonKey.shared.authToken = token
-                    CurrentUserInfo.shared.currentAccountInfo.phone = phone
-                    CurrentUserInfo.shared.currentAccountInfo.password = password
+                    CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber = phone
+                    CurrentUserInfo.shared.currentAccountInfo.userPassword = password
                     self.loginSuccess()
                 }
             }

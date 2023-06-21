@@ -26,7 +26,7 @@ class NetworkManager: NSObject {
                 completion(nil, nil, error?.localizedDescription)
                 return
             }
-            guard error != nil, httpResponse.statusCode == 200 else {
+            guard error == nil, httpResponse.statusCode == 200 else {
                 completion(nil, httpResponse.statusCode, error?.localizedDescription)
                 return
             }

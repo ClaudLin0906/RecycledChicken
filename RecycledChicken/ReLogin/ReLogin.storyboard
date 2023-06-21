@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="37.666666666666686" width="220" height="37.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTo-bC-FH3">
-                                                <rect key="frame" x="0.0" y="8.6666666666666874" width="60" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="10.333333333333313" width="60" height="16.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="Quv-BW-7Kj"/>
                                                 </constraints>
@@ -91,7 +91,7 @@
                                         <rect key="frame" x="0.0" y="75" width="220" height="37.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼確認" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdL-LW-Wr8">
-                                                <rect key="frame" x="0.0" y="9.0000000000000018" width="60" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="10.666666666666684" width="60" height="16.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="1Sg-qs-Nva"/>
                                                 </constraints>
@@ -140,7 +140,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保持登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1Y-AV-jjk" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                <rect key="frame" x="110" y="8.6666666666666874" width="60" height="19.666666666666671"/>
+                                                <rect key="frame" x="110" y="10.333333333333313" width="60" height="16.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="Aso-Pa-7aD"/>
                                                 </constraints>
@@ -192,10 +192,10 @@
     </scenes>
     <designables>
         <designable name="4yI-iZ-Hud">
-            <size key="intrinsicContentSize" width="84" height="19.666666666666668"/>
+            <size key="intrinsicContentSize" width="84" height="16.333333333333332"/>
         </designable>
         <designable name="T1Y-AV-jjk">
-            <size key="intrinsicContentSize" width="56" height="19.666666666666668"/>
+            <size key="intrinsicContentSize" width="56" height="16.333333333333332"/>
         </designable>
     </designables>
     <resources>

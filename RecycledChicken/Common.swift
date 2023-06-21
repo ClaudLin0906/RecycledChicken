@@ -69,15 +69,15 @@ class CurrentUserInfo{
         if let jsonData = KeychainService.shared.loadJsonDataFromKeychain(account: KeyChainKey.shared.accountInfo), let accountInfo = try? JSONDecoder().decode(AccountInfo.self, from: jsonData) {
             return accountInfo
         }else {
-            return AccountInfo(phone: "", password: "")
+            return AccountInfo(userPhoneNumber: "", userPassword: "")
         }
         
     }()
 }
 
 struct AccountInfo:Codable {
-    var phone:String
-    var password:String
+    var userPhoneNumber:String
+    var userPassword:String
 }
 
 struct APIUrl {
