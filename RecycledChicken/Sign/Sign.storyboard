@@ -49,7 +49,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rw-Hz-rWC">
                                         <rect key="frame" x="0.0" y="37.666666666666686" width="220" height="37.333333333333343"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-qx-4wi">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-qx-4wi">
                                                 <rect key="frame" x="0.0" y="8.6666666666666874" width="30" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="JHI-IN-SYs"/>
@@ -62,7 +62,7 @@
                                                 <rect key="frame" x="30" y="0.0" width="190" height="37.333333333333336"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-dg-MqN" userLabel="underLine">
                                                 <rect key="frame" x="0.0" y="36.333333333333314" width="220" height="1"/>
@@ -89,7 +89,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKk-wP-wvO">
                                         <rect key="frame" x="0.0" y="75" width="220" height="37.666666666666657"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohB-Ws-xaS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohB-Ws-xaS">
                                                 <rect key="frame" x="0.0" y="9.0000000000000018" width="30" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="LCp-qn-srX"/>
@@ -98,11 +98,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-kE-ci9">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-kE-ci9" customClass="PasswordTextField" customModule="RecycledChicken" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="0.0" width="190" height="37.666666666666664"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9s-DI-ogr" userLabel="underLine">
                                                 <rect key="frame" x="0.0" y="36.666666666666686" width="220" height="1"/>
@@ -183,8 +183,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="phoneTextfield" destination="hU2-kE-ci9" id="4cB-lV-pk7"/>
-                        <outlet property="userNameTextfield" destination="Y3m-Cj-QiS" id="3Cj-Ts-ihj"/>
+                        <outlet property="passwordTextfield" destination="hU2-kE-ci9" id="eSR-Wk-iHI"/>
+                        <outlet property="phoneTextfield" destination="Y3m-Cj-QiS" id="n3F-wj-KIz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

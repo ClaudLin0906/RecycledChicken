@@ -18,35 +18,12 @@ class VerificationCodeVC: CustomLoginVC {
     
     @IBOutlet weak var fourthTextField:UITextField!
     
-    var username:String = ""
+    var password:String = ""
     
     var phone:String = ""
     
-    private let certificates: [Data] = {
-            let url = Bundle.main.url(forResource: "cert", withExtension: "cer")!
-            let data = try! Data(contentsOf: url)
-            return [data]
-    }()
-    
     private struct SMSInfo:Codable {
         var userPhoneNumber:String
-    }
-    
-    struct WeatherResponse: Decodable {
-
-        var main: Main
-
-        struct Main: Decodable {
-            var tempMin: Double
-            var tempMax: Double
-        }
-    }
-    
-    struct WeatherInfo:Codable{
-        var lat:String
-        var lon:String
-        var units:String
-        var appid:String
     }
 
     override func viewDidLoad() {
@@ -65,7 +42,6 @@ class VerificationCodeVC: CustomLoginVC {
         let smsInfo = SMSInfo(userPhoneNumber: phone)
         let smsInfoDic = try? smsInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { data in
-            print(String(data: data, encoding: .utf8)!)
         }
         
 //        let weatherInfo = WeatherInfo(lat: "28.7041", lon: "77.1025", units: "metric", appid: "26f1ffa29736dc1105d00b93743954d2")
@@ -123,30 +99,29 @@ extension VerificationCodeVC:UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // 當輸入的字不為空字串時
         if (string != "") {
-                //當textField不為空字串時
-                if (textField.text == "") {
-                    textField.text = string
-                    //建立一個響應者為目前textField tag的下一個
-                    let nextResponder: UIResponder? = view.viewWithTag(textField.tag + 1)
-                    //只要響應者不是nil就讓他成為第一位響應者這樣就可以連續輸入時自動切到下一格
-                    if (nextResponder != nil) {
-                        nextResponder?.becomeFirstResponder()
-                    }else{
-                    //當tag到最後時響應者會是nil此時執行將鍵盤收起的function
-                        self.view.endEditing(true)
-                    }
-                }
-                return false
-            } else {//當我們按下刪除鍵時相當於輸入空字串
-    
+            //當textField不為空字串時
+            if (textField.text == "") {
                 textField.text = string
-                //建立一個tag往前的響應者
-                let nextResponder: UIResponder? = view.viewWithTag(textField.tag - 1)
+                //建立一個響應者為目前textField tag的下一個
+                let nextResponder: UIResponder? = view.viewWithTag(textField.tag + 1)
+                //只要響應者不是nil就讓他成為第一位響應者這樣就可以連續輸入時自動切到下一格
                 if (nextResponder != nil) {
-                //只要響應者不是nil就讓他成為第一位響應者這樣就可以連續輸入時自動切到上一格
                     nextResponder?.becomeFirstResponder()
+                }else{
+                //當tag到最後時響應者會是nil此時執行將鍵盤收起的function
+                    self.view.endEditing(true)
                 }
-                return false
             }
+            return false
+        } else {//當我們按下刪除鍵時相當於輸入空字串
+            textField.text = string
+            //建立一個tag往前的響應者
+            let nextResponder: UIResponder? = view.viewWithTag(textField.tag - 1)
+            if (nextResponder != nil) {
+            //只要響應者不是nil就讓他成為第一位響應者這樣就可以連續輸入時自動切到上一格
+                nextResponder?.becomeFirstResponder()
+            }
+            return false
+        }
     }
 }
