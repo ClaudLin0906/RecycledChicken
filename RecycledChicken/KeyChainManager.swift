@@ -21,12 +21,12 @@ class KeychainService {
     let kSecReturnDataValue = NSString(format: kSecReturnData)
     let kSecMatchLimitOneValue = kSecMatchLimitOne
     
-    func saveJSONToKeychain(jsonString: String, account: String, service: String) -> Bool {
+    func saveJsonToKeychain(jsonString: String, account: String) -> Bool {
         if let data = jsonString.data(using: .utf8) {
             let query: [String: Any] = [
                 kSecClassValue as String: kSecClassGenericPasswordValue,
                 kSecAttrAccountValue as String: account,
-                kSecAttrServiceValue as String: service,
+                kSecAttrServiceValue as String: Bundle.main.bundleIdentifier,
                 kSecValueDataValue as String: data
             ]
             
@@ -39,11 +39,11 @@ class KeychainService {
         return false
     }
     
-    func loadJSONFromKeychain(account: String, service: String) -> String? {
+    func loadJsonDataFromKeychain(account: String) -> Data? {
         let query: [String: Any] = [
             kSecClassValue as String: kSecClassGenericPasswordValue,
             kSecAttrAccountValue as String: account,
-            kSecAttrServiceValue as String: service,
+            kSecAttrServiceValue as String: Bundle.main.bundleIdentifier,
             kSecMatchLimitValue as String: kSecMatchLimitOneValue,
             kSecReturnDataValue as String: kCFBooleanTrue!
         ]
@@ -52,11 +52,8 @@ class KeychainService {
         let status = SecItemCopyMatching(query as CFDictionary, &result)
         
         if status == errSecSuccess {
-            if let data = result as? Data {
-                return String(data: data, encoding: .utf8)
-            }
+            return result as? Data
         }
-        
         return nil
     }
 }

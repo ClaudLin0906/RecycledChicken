@@ -18,7 +18,7 @@ class SystemSettingVC: CustomVC {
         switchTableViewInfo(title: "APP活動通知", isTrue: false),
         switchTableViewInfo(title: "信件通知", isTrue: true),
         switchTableViewInfo(title: "回收機消息通知", isTrue: true),
-        switchTableViewInfo(title: "生物辨識", isTrue: UserDefaults().bool(forKey: userDefaultKey.shared.biometrics))
+        switchTableViewInfo(title: "生物辨識", isTrue: UserDefaults().bool(forKey: UserDefaultKey.shared.biometrics))
     ]
     
     var accountTableViewInfos:[accountTableViewInfo] =
@@ -121,11 +121,12 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
         case 3:
             if sender.isOn {
                 evaluatePolicyAction { scanResult, scanMessage in
-                    UserDefaults().set(true, forKey: userDefaultKey.shared.biometrics)
-                    KeychainService.shared.saveJSONToKeychain(jsonString: <#T##String#>, account: <#T##String#>, service: <#T##String#>)
+                    UserDefaults().set(true, forKey: UserDefaultKey.shared.biometrics)
+
+                    KeychainService.shared.saveJsonToKeychain(jsonString: , account: KeyChainKey.shared.accountInfo)
                 }
             }else{
-                UserDefaults().set(false, forKey: userDefaultKey.shared.biometrics)
+                UserDefaults().set(false, forKey: UserDefaultKey.shared.biometrics)
             }
 
         default:

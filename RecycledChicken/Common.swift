@@ -53,15 +53,31 @@ class CommonKey {
     var authToken = ""
 }
 
-class userDefaultKey {
-    static let shared = userDefaultKey()
+class KeyChainKey {
+    static let shared = KeyChainKey()
+    let accountInfo = "accountInfo"
+}
+
+class UserDefaultKey {
+    static let shared = UserDefaultKey()
     let biometrics = "biometrics"
 }
 
 class CurrentUserInfo{
     static let shared = CurrentUserInfo()
-    var phone = ""
-    var password = ""
+    var currentAccountInfo:AccountInfo = {
+        if let jsonData = KeychainService.shared.loadJsonDataFromKeychain(account: KeyChainKey.shared.accountInfo), let accountInfo = try? JSONDecoder().decode(AccountInfo.self, from: jsonData) {
+            return accountInfo
+        }else {
+            return AccountInfo(phone: "", password: "")
+        }
+        
+    }()
+}
+
+struct AccountInfo:Decodable {
+    var phone:String
+    var password:String
 }
 
 struct APIUrl {
