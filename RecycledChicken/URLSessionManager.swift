@@ -20,24 +20,34 @@ class NetworkManager: NSObject {
 
     }
     
-    func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data) -> Void){
+    func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data?, Int?, String?) -> Void){
         let task = URLSession.shared.dataTask(with: request){(data,response,error) in
-            if error != nil{
-                print("url發生問題\(error.debugDescription)")
-            }else{
-                if data != nil {
-                    completion(data!)
-                }else {
-                    print("Data is nil.")
-                }
-                //                guard let resultData = data else {return}
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(nil, nil, error?.localizedDescription)
+                return
             }
+            guard error == nil, httpResponse.statusCode == 200 else {
+                completion(nil, httpResponse.statusCode, error?.localizedDescription)
+                return
+            }
+            completion(data, httpResponse.statusCode, nil)
+//            if error != nil, let httpResponse = response as? HTTPURLResponse{
+//                print("url發生問題\(error.debugDescription)")
+//                completion(nil, httpResponse.statusCode, error?.localizedDescription)
+//            }else if{
+//                if data != nil {
+//                    completion(data!)
+//                }else {
+//                    print("Data is nil.")
+//                }
+//                //                guard let resultData = data else {return}
+//            }
         }
         task.resume()
     }
 
 
-    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, AuthorizationToken:String = "", completion: @escaping (Data) -> Void){
+    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, AuthorizationToken:String = "", completion: @escaping (Data?, Int?, String?) -> Void){
         let url = URL(string: urlString)!
         var request = URLRequest(url: url)
         if parameters != nil {
@@ -53,7 +63,7 @@ class NetworkManager: NSObject {
         fetchedDataByDataTask(from: request, completion: completion)
      }
 
-    func getJSONBody(urlString: String, parameters: [String: Any]? = nil, authorizationToken:String? = nil, completion: @escaping (Data) -> Void){
+    func getJSONBody(urlString: String, parameters: [String: Any]? = nil, authorizationToken:String? = nil, completion: @escaping (Data?, Int?, String?) -> Void){
         let url = URL(string: urlString)!
         var request = URLRequest(url: url)
         if parameters != nil {

@@ -52,6 +52,27 @@ class LoginVC: CustomLoginVC {
         }
     }
     
+    private func loginAction(phone:String, password:String){
+        let loginInfo = LoginInfo(userPhoneNumber: phone, userPassword: password)
+        let loginInfoDic = try? loginInfo.asDictionary()
+//        let testloginInfoDic = try? testLoginInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            
+            if let data = data {
+                let json = NetworkManager.shared.dataToDictionary(data: data)
+                if let token = json["token"] as? String {
+                    CommonKey.shared.authToken = ""
+                    CommonKey.shared.authToken = token
+                    self.loginSuccess()
+                }
+            }
+        }
+    }
+    
     @IBAction func login(_ sender:UIButton){
         var alertMsg = ""
         let phone = phoneTextfield.text
@@ -71,16 +92,7 @@ class LoginVC: CustomLoginVC {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
-        let loginInfo = LoginInfo(userPhoneNumber: phone!, userPassword: password!)
-        let loginInfoDic = try? loginInfo.asDictionary()
-        let testloginInfoDic = try? testLoginInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: testloginInfoDic) { data in
-            let json = NetworkManager.shared.dataToDictionary(data: data)
-            if let token = json["token"] as? String {
-                CommonKey.shared.authToken = token
-                self.loginSuccess()
-            }
-        }
+        loginAction(phone: phone!, password: password!)
         
     }
     

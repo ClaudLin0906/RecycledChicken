@@ -25,12 +25,17 @@ class VerificationCodeVC: CustomLoginVC {
     private struct SMSInfo:Codable {
         var userPhoneNumber:String
     }
+    
+    private struct SignUpInfo:Codable {
+        var userPhoneNumber:String
+        var userPassword:String
+        var smsCode:String
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
         sendSMS()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -41,7 +46,18 @@ class VerificationCodeVC: CustomLoginVC {
     private func sendSMS(){
         let smsInfo = SMSInfo(userPhoneNumber: phone)
         let smsInfoDic = try? smsInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { data in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in
+            
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            
+            if let data = data {
+                let json = NetworkManager.shared.dataToDictionary(data: data)
+                print(json)
+            }
+
         }
         
 //        let weatherInfo = WeatherInfo(lat: "28.7041", lon: "77.1025", units: "metric", appid: "26f1ffa29736dc1105d00b93743954d2")
@@ -92,6 +108,20 @@ class VerificationCodeVC: CustomLoginVC {
         sendSMS()
     }
     
+    private func signUpAction(_ smsCode:String){
+        guard smsCode.count == 4 else { return }
+        let signUpInfo = SignUpInfo(userPhoneNumber: phone, userPassword: password, smsCode: smsCode)
+        let signUpInfoDic = try? signUpInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.register, parameters: signUpInfoDic) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            
+        }
+        
+    }
+    
 
 }
 
@@ -110,6 +140,7 @@ extension VerificationCodeVC:UITextFieldDelegate{
                 }else{
                 //當tag到最後時響應者會是nil此時執行將鍵盤收起的function
                     self.view.endEditing(true)
+                    signUpAction((firstTextField.text ?? "") + (secondTextField.text ?? "") + (thirdTextField.text ?? "") + (fourthTextField.text ?? ""))
                 }
             }
             return false
