@@ -21,8 +21,6 @@ class VerificationCodeVC: CustomLoginVC {
     var password:String = ""
     
     var phone:String = ""
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,12 +107,8 @@ class VerificationCodeVC: CustomLoginVC {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
-            
         }
-        
     }
-    
-
 }
 
 extension VerificationCodeVC:UITextFieldDelegate{

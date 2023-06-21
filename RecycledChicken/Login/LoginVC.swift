@@ -67,6 +67,8 @@ class LoginVC: CustomLoginVC {
                 if let token = json["token"] as? String {
                     CommonKey.shared.authToken = ""
                     CommonKey.shared.authToken = token
+                    CurrentUserInfo.shared.phone = phone
+                    CurrentUserInfo.shared.password = password
                     self.loginSuccess()
                 }
             }

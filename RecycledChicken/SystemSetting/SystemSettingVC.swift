@@ -122,6 +122,7 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
             if sender.isOn {
                 evaluatePolicyAction { scanResult, scanMessage in
                     UserDefaults().set(true, forKey: userDefaultKey.shared.biometrics)
+                    KeychainService.shared.saveJSONToKeychain(jsonString: <#T##String#>, account: <#T##String#>, service: <#T##String#>)
                 }
             }else{
                 UserDefaults().set(false, forKey: userDefaultKey.shared.biometrics)

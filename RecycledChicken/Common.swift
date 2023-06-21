@@ -58,6 +58,12 @@ class userDefaultKey {
     let biometrics = "biometrics"
 }
 
+class CurrentUserInfo{
+    static let shared = CurrentUserInfo()
+    var phone = ""
+    var password = ""
+}
+
 struct APIUrl {
     static let domainName = "https://useries.buenooptics.com:8443/app"
     static let register = "/regist"
