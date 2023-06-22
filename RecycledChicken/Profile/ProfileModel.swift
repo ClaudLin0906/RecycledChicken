@@ -8,8 +8,9 @@
 import Foundation
 
 struct profileInfo {
+    var userEmail:String
     var userName:String
-    var Email:String
-    var cellPhone:String
-    var birthday:String
+    var userBirth:String
+    var point:Int
+    var userPhoneNumber:String
 }

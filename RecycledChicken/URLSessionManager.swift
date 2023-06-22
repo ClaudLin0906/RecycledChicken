@@ -59,7 +59,7 @@ class NetworkManager: NSObject {
         }
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(AuthorizationToken, forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(AuthorizationToken)", forHTTPHeaderField: "Authorization")
         fetchedDataByDataTask(from: request, completion: completion)
      }
 
@@ -76,7 +76,7 @@ class NetworkManager: NSObject {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         if let authorizationToken = authorizationToken {
-            request.setValue(authorizationToken, forHTTPHeaderField: "Authorization")
+            request.addValue("Bearer \(authorizationToken)", forHTTPHeaderField: "Authorization")
         }
         fetchedDataByDataTask(from: request, completion: completion)
      }

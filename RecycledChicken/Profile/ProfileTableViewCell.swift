@@ -29,5 +29,14 @@ class ProfileTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        info.placeholder = "未填寫"
+        info.inputView = nil
+        info.inputAccessoryView = nil
+        phoneNumberCheckBox.isHidden = true
+    }
+
 
 }

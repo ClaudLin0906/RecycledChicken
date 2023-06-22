@@ -13,7 +13,14 @@ class ProfileVC: CustomVC {
     
     let profileInfoArr:[String] = ["用戶名稱", "E-mail", "手機號碼", "生日"]
     
-    var currentProfileInfo = profileInfo(userName: "", Email: "", cellPhone: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber , birthday: "")
+    var currentProfileInfo:profileInfo?
+    {
+        didSet {
+            DispatchQueue.main.async {
+                self.profileTableView.reloadData()
+            }
+        }
+    }
     
     let datePicker = UIDatePicker()
         
@@ -25,25 +32,45 @@ class ProfileVC: CustomVC {
         UIInit()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+        getUserInfo()
+    }
+    
     private func UIInit(){
         profileTableView.setSeparatorLocation()
     }
     
     private func getUserInfo(){
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
+            if let data = data {
+                let json = NetworkManager.shared.dataToDictionary(data: data)
+                var userInfo = profileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "")
+                if let userPhoneNumber = json["userPhoneNumber"] as? String {
+                    userInfo.userPhoneNumber = userPhoneNumber
+                }
+                if let userEmail = json["userEmail"] as? String {
+                    userInfo.userEmail = userEmail
+                }
+                if let userName = json["userName"] as? String {
+                    userInfo.userName = userName
+                }
+                if let point = json["point"] as? Int {
+                    userInfo.point = point
+                }
+                if let userBirth = json["userBirth"] as? String {
+                    userInfo.userBirth = userBirth
+                }
+                self.currentProfileInfo = userInfo
+            }
             
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setDefaultNavigationBackBtn2()
-    }
-
     
     private func createDatePicker(_ textfield:UITextField) {
         let toolbar = UIToolbar()
@@ -70,6 +97,7 @@ class ProfileVC: CustomVC {
     }
     
     @IBAction func confirm(_ sender:UIButton) {
+        guard var currentProfileInfo = currentProfileInfo else { return }
         let cells = cellsForTableView(tableView: profileTableView)
         for cell in cells {
             if let profileTableViewCell = cell as? ProfileTableViewCell {
@@ -77,50 +105,44 @@ class ProfileVC: CustomVC {
                     currentProfileInfo.userName = profileTableViewCell.info.text ?? ""
                 }
                 if profileTableViewCell.tag == 1 {
-                    currentProfileInfo.Email = profileTableViewCell.info.text ?? ""
+                    currentProfileInfo.userEmail = profileTableViewCell.info.text ?? ""
                 }
                 if profileTableViewCell.tag == 2 {
-                    currentProfileInfo.cellPhone = profileTableViewCell.info.text ?? ""
+                    currentProfileInfo.userPhoneNumber = profileTableViewCell.info.text ?? ""
                 }
                 if profileTableViewCell.tag == 3 {
-                    currentProfileInfo.birthday = profileTableViewCell.info.text ?? ""
+                    currentProfileInfo.userBirth = profileTableViewCell.info.text ?? ""
                 }
             }
         }
         
-        var error = false
         var errorStr = ""
         
         if currentProfileInfo.userName == "" {
-            error = true
             errorStr += "用戶名稱不能為空"
         }
         
-        if currentProfileInfo.Email == "" {
-            error = true
-            errorStr += "Email不能為空"
-        } else if !validateEmail(text: currentProfileInfo.Email) {
-            error = true
-            errorStr += "Email格式不正確"
+        if currentProfileInfo.userEmail == "" {
+            errorStr += "\nEmail不能為空"
+        } else if !validateEmail(text: currentProfileInfo.userEmail) {
+            errorStr += "\nEmail格式不正確"
         }
         
-        if currentProfileInfo.cellPhone == "" {
-            error = true
-            errorStr += "手機不能為空"
-        }else if !validateCellPhone(text: currentProfileInfo.cellPhone) {
-            error = true
-            errorStr += "手機格式不正確"
+        if currentProfileInfo.userPhoneNumber == "" {
+            errorStr += "\n手機不能為空"
+        }else if !validateCellPhone(text: currentProfileInfo.userPhoneNumber) {
+            errorStr += "\n手機格式不正確"
         }
         
-        if currentProfileInfo.birthday == "" {
-            error = true
-            errorStr += "生日不能為空"
+        if currentProfileInfo.userBirth == "" {
+            errorStr += "\n生日不能為空"
         }
         
-//        if error {
-//            print("發生錯誤 \(errorStr)")
-//            return
-//        }
+        errorStr = removeWhitespace(from: errorStr)
+        guard errorStr == "" else {
+            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
+            return
+        }
         
         showProfileUpdateView()
         
@@ -150,17 +172,22 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.tag = row
         cell.infoTitle.text = profileInfoArr[row]
-        
-        if row == 2 {
+        switch row {
+        case 0:
+            cell.info.text = currentProfileInfo?.userName
+        case 1:
+            cell.info.text = currentProfileInfo?.userEmail
+        case 2:
             cell.info.keyboardType = .numberPad
             cell.phoneNumberCheckBox.isHidden = false
-        }
-        
-        if row == 3 {
-            createDatePicker(cell.info)
+            cell.info.text = currentProfileInfo?.userPhoneNumber
+        case 3:
             cell.info.placeholder = "2000/11/11"
+            cell.info.text = currentProfileInfo?.userBirth
             cell.phoneNumberCheckBox.isHidden = false
-            
+            createDatePicker(cell.info)
+        default:
+            break
         }
         return cell
     }
