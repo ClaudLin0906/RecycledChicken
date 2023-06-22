@@ -88,6 +88,7 @@ struct APIUrl {
     static let checkLotteryItem = "/checkLotteryItem"
     static let checkLotteryRecord = "/checkLotteryRecord"
     static let searchUserData = "/searchUserData"
+    static let updateProfile = "/updateProfile"
 }
 
 let attributes: [NSAttributedString.Key: Any] = [

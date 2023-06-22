@@ -36,6 +36,7 @@ class ProfileTableViewCell: UITableViewCell {
         info.inputView = nil
         info.inputAccessoryView = nil
         info.isEnabled = true
+        info.keyboardType = .default
         phoneNumberCheckBox.isHidden = true
     }
 

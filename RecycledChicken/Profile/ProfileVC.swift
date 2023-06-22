@@ -97,7 +97,16 @@ class ProfileVC: CustomVC {
     }
     
     private func updateUserInfo( userInfo:ProfileInfo){
-        
+        let userInfoDic = try? userInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: userInfoDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if let data = data {
+                self.showProfileUpdateView()
+            }
+        }
     }
     
     @IBAction func confirm(_ sender:UIButton) {
@@ -147,7 +156,7 @@ class ProfileVC: CustomVC {
             showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
             return
         }
-        showProfileUpdateView()
+        updateUserInfo(userInfo: newUserInfo)
         
     }
     
