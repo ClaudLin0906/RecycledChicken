@@ -35,6 +35,7 @@ class ProfileTableViewCell: UITableViewCell {
         info.placeholder = "未填寫"
         info.inputView = nil
         info.inputAccessoryView = nil
+        info.isEnabled = true
         phoneNumberCheckBox.isHidden = true
     }
 

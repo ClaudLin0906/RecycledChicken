@@ -13,7 +13,7 @@ class ProfileVC: CustomVC {
     
     let profileInfoArr:[String] = ["用戶名稱", "E-mail", "手機號碼", "生日"]
     
-    var currentProfileInfo:profileInfo?
+    var currentProfileInfo:ProfileInfo?
     {
         didSet {
             DispatchQueue.main.async {
@@ -50,7 +50,7 @@ class ProfileVC: CustomVC {
             }
             if let data = data {
                 let json = NetworkManager.shared.dataToDictionary(data: data)
-                var userInfo = profileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "")
+                var userInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "")
                 if let userPhoneNumber = json["userPhoneNumber"] as? String {
                     userInfo.userPhoneNumber = userPhoneNumber
                 }
@@ -96,45 +96,49 @@ class ProfileVC: CustomVC {
         view.endEditing(true)
     }
     
+    private func updateUserInfo( userInfo:ProfileInfo){
+        
+    }
+    
     @IBAction func confirm(_ sender:UIButton) {
-        guard var currentProfileInfo = currentProfileInfo else { return }
+        var newUserInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "")
         let cells = cellsForTableView(tableView: profileTableView)
         for cell in cells {
             if let profileTableViewCell = cell as? ProfileTableViewCell {
                 if profileTableViewCell.tag == 0 {
-                    currentProfileInfo.userName = profileTableViewCell.info.text ?? ""
+                    newUserInfo.userName = profileTableViewCell.info.text ?? ""
                 }
                 if profileTableViewCell.tag == 1 {
-                    currentProfileInfo.userEmail = profileTableViewCell.info.text ?? ""
+                    newUserInfo.userEmail = profileTableViewCell.info.text ?? ""
                 }
                 if profileTableViewCell.tag == 2 {
-                    currentProfileInfo.userPhoneNumber = profileTableViewCell.info.text ?? ""
+                    newUserInfo.userPhoneNumber = profileTableViewCell.info.text ?? ""
                 }
                 if profileTableViewCell.tag == 3 {
-                    currentProfileInfo.userBirth = profileTableViewCell.info.text ?? ""
+                    newUserInfo.userBirth = profileTableViewCell.info.text ?? ""
                 }
             }
         }
         
         var errorStr = ""
         
-        if currentProfileInfo.userName == "" {
+        if newUserInfo.userName == "" {
             errorStr += "用戶名稱不能為空"
         }
         
-        if currentProfileInfo.userEmail == "" {
+        if newUserInfo.userEmail == "" {
             errorStr += "\nEmail不能為空"
-        } else if !validateEmail(text: currentProfileInfo.userEmail) {
+        } else if !validateEmail(text: newUserInfo.userEmail) {
             errorStr += "\nEmail格式不正確"
         }
         
-        if currentProfileInfo.userPhoneNumber == "" {
+        if newUserInfo.userPhoneNumber == "" {
             errorStr += "\n手機不能為空"
-        }else if !validateCellPhone(text: currentProfileInfo.userPhoneNumber) {
+        }else if !validateCellPhone(text: newUserInfo.userPhoneNumber) {
             errorStr += "\n手機格式不正確"
         }
         
-        if currentProfileInfo.userBirth == "" {
+        if newUserInfo.userBirth == "" {
             errorStr += "\n生日不能為空"
         }
         
@@ -143,7 +147,6 @@ class ProfileVC: CustomVC {
             showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
             return
         }
-        
         showProfileUpdateView()
         
     }
@@ -180,6 +183,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         case 2:
             cell.info.keyboardType = .numberPad
             cell.phoneNumberCheckBox.isHidden = false
+            cell.info.isEnabled = false
             cell.info.text = currentProfileInfo?.userPhoneNumber
         case 3:
             cell.info.placeholder = "2000/11/11"

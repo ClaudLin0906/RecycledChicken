@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct profileInfo {
+struct ProfileInfo {
     var userEmail:String
     var userName:String
     var userBirth:String
