@@ -123,8 +123,6 @@
 		59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795782A0F771E0031710F /* ConfirmPassword.storyboard */; };
 		59A7957B2A0F78F20031710F /* UpdatePasswordSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7957A2A0F78F20031710F /* UpdatePasswordSuccessView.swift */; };
 		59A7957D2A0F79170031710F /* UpdatePasswordSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A7957C2A0F79170031710F /* UpdatePasswordSuccessView.xib */; };
-		59A795802A0F7B2E0031710F /* ReLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7957F2A0F7B2E0031710F /* ReLoginVC.swift */; };
-		59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795852A0F7B7C0031710F /* ReLogin.storyboard */; };
 		59A795882A0F8F2B0031710F /* UpdateDateAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795872A0F8F2B0031710F /* UpdateDateAlertView.swift */; };
 		59A7958A2A0F8F3A0031710F /* UpdateDateAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A795892A0F8F3A0031710F /* UpdateDateAlertView.xib */; };
 		59A7958C2A0F9E820031710F /* SpendPointAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A7958B2A0F9E820031710F /* SpendPointAlertView.swift */; };
@@ -170,8 +168,6 @@
 		59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */; };
 		59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE3F2A07B83700D7B3CB /* VerificationCode.storyboard */; };
 		59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */; };
-		59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */; };
-		59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */; };
 		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
 		59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */; };
 		E502D45E95B044E6B792CC77 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F9B53911A9C86170B05EB4 /* Pods_RecycledChicken.framework */; };
@@ -300,8 +296,6 @@
 		59A795782A0F771E0031710F /* ConfirmPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmPassword.storyboard; sourceTree = "<group>"; };
 		59A7957A2A0F78F20031710F /* UpdatePasswordSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordSuccessView.swift; sourceTree = "<group>"; };
 		59A7957C2A0F79170031710F /* UpdatePasswordSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdatePasswordSuccessView.xib; sourceTree = "<group>"; };
-		59A7957F2A0F7B2E0031710F /* ReLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReLoginVC.swift; sourceTree = "<group>"; };
-		59A795852A0F7B7C0031710F /* ReLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReLogin.storyboard; sourceTree = "<group>"; };
 		59A795872A0F8F2B0031710F /* UpdateDateAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDateAlertView.swift; sourceTree = "<group>"; };
 		59A795892A0F8F3A0031710F /* UpdateDateAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDateAlertView.xib; sourceTree = "<group>"; };
 		59A7958B2A0F9E820031710F /* SpendPointAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendPointAlertView.swift; sourceTree = "<group>"; };
@@ -347,8 +341,6 @@
 		59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
 		59F6BE3F2A07B83700D7B3CB /* VerificationCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VerificationCode.storyboard; sourceTree = "<group>"; };
 		59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmVC.swift; sourceTree = "<group>"; };
-		59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comfirm.storyboard; sourceTree = "<group>"; };
 		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
 		59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TutorialVideo.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -410,12 +402,10 @@
 				59997A612A0A0C9D00E9FD7F /* Profile */,
 				59997A582A09E4AB00E9FD7F /* RecycleLog */,
 				59997A472A0917B300E9FD7F /* CarbonReductionLog */,
-				59F6BE432A07D28600D7B3CB /* Comfirm */,
 				59F6BE3C2A07B80900D7B3CB /* VerificationCode */,
 				59F6BE2D2A078D7100D7B3CB /* Sign */,
 				5926C59C2A06340F00FAB49D /* Login */,
 				59A795752A0F75F90031710F /* ConfirmPassword */,
-				59A7957E2A0F7B110031710F /* ReLogin */,
 				5926C5C12A065C9D00FAB49D /* SignLogin */,
 				5926C5972A06329300FAB49D /* Home */,
 				59A795702A0F727B0031710F /* ForgetPassword */,
@@ -786,15 +776,6 @@
 			path = ConfirmPassword;
 			sourceTree = "<group>";
 		};
-		59A7957E2A0F7B110031710F /* ReLogin */ = {
-			isa = PBXGroup;
-			children = (
-				59A7957F2A0F7B2E0031710F /* ReLoginVC.swift */,
-				59A795852A0F7B7C0031710F /* ReLogin.storyboard */,
-			);
-			path = ReLogin;
-			sourceTree = "<group>";
-		};
 		59C2D99C2A0D36E30085724F /* AR */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,15 +818,6 @@
 				59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */,
 			);
 			path = VerificationCode;
-			sourceTree = "<group>";
-		};
-		59F6BE432A07D28600D7B3CB /* Comfirm */ = {
-			isa = PBXGroup;
-			children = (
-				59F6BE442A07D2B500D7B3CB /* ComfirmVC.swift */,
-				59F6BE462A07D2C300D7B3CB /* Comfirm.storyboard */,
-			);
-			path = Comfirm;
 			sourceTree = "<group>";
 		};
 		9F41385B2A51C65BC5A0521C /* Frameworks */ = {
@@ -942,7 +914,6 @@
 				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
 				5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */,
 				59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */,
-				59F6BE472A07D2C300D7B3CB /* Comfirm.storyboard in Resources */,
 				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
 				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
@@ -983,7 +954,6 @@
 				59A113B92A3ADAE000C8295B /* private.key in Resources */,
 				59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */,
 				59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */,
-				59A795862A0F7B7C0031710F /* ReLogin.storyboard in Resources */,
 				599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
@@ -1078,7 +1048,6 @@
 				59CDA3522A42FC9600E3F74E /* ProfileModel.swift in Sources */,
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
-				59F6BE452A07D2B500D7B3CB /* ComfirmVC.swift in Sources */,
 				5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */,
 				5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */,
 				5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */,
@@ -1104,7 +1073,6 @@
 				59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */,
 				59A113BB2A3ADFCF00C8295B /* CustomButton.swift in Sources */,
 				59CDA3542A4589C600E3F74E /* ForgetPasswordModel.swift in Sources */,
-				59A795802A0F7B2E0031710F /* ReLoginVC.swift in Sources */,
 				597521752A0B7E2800D0B67C /* SystemSettingVC.swift in Sources */,
 				59BF29402A21EE8200F24286 /* CustomCalenderModel.swift in Sources */,
 				59997A702A0A4A1500E9FD7F /* PersonMessageVC.swift in Sources */,

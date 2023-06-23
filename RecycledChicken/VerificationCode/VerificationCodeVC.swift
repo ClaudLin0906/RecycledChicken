@@ -157,7 +157,7 @@ extension VerificationCodeVC:UITextFieldDelegate{
                         case .sign:
                             signUpAction(smsCodeStr)
                         case .forgetPassword:
-                            break
+                            forgetPasswordAction(smsCodeStr)
                         }
                     }
                 }
