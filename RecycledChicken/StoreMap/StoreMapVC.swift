@@ -39,25 +39,26 @@ class StoreMapVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
-                return
-            }
-            if let data = data, let mapInfo = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                self.mapInfo = mapInfo
-                print(self.mapInfo)
-            }
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         if isLocationServicesEnabled() {
            locationManager.startUpdatingLocation()
         } else {
            locationManager.requestWhenInUseAuthorization()
         }
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            
+            if let data = data, let mapInfo = try? JSONDecoder().decode([MapInfo].self, from: data) {
+                self.mapInfo = mapInfo
+            }
+            
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
