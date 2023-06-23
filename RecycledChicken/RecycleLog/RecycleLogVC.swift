@@ -15,6 +15,8 @@ class RecycleLogVC: CustomVC {
     @IBOutlet weak var tableView:UITableView!
     
     let amountDropDown = DropDown()
+    
+    var recycleLogInfos:[RecycleLogInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +29,27 @@ class RecycleLogVC: CustomVC {
         tableView.setSeparatorLocation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
+        getRecycleLogData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
+    }
+    
+    private func getRecycleLogData(){
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.useRecord, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if let data = data {
+                self.recycleLogInfos = try! JSONDecoder().decode([RecycleLogInfo].self, from: data)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     private func setupAmountDropDown() {
@@ -79,7 +97,7 @@ extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        recycleLogInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

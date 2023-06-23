@@ -21,5 +21,9 @@ class RecycleLogTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    
+    func setCell(info:RecycleLogInfo) {
+        
+    }
 
 }

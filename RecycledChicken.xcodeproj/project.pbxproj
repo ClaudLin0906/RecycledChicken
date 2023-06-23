@@ -148,6 +148,7 @@
 		59CDA3522A42FC9600E3F74E /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3512A42FC9600E3F74E /* ProfileModel.swift */; };
 		59CDA3542A4589C600E3F74E /* ForgetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3532A4589C600E3F74E /* ForgetPasswordModel.swift */; };
 		59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3552A4591BC00E3F74E /* ConfirmPasswordModel.swift */; };
+		59CDA3582A45963E00E3F74E /* RecycleLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3572A45963E00E3F74E /* RecycleLogModel.swift */; };
 		59D20CE82A1E4FA600EF87B1 /* CustomCalenderScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */; };
 		59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
@@ -322,6 +323,7 @@
 		59CDA3512A42FC9600E3F74E /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		59CDA3532A4589C600E3F74E /* ForgetPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordModel.swift; sourceTree = "<group>"; };
 		59CDA3552A4591BC00E3F74E /* ConfirmPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordModel.swift; sourceTree = "<group>"; };
+		59CDA3572A45963E00E3F74E /* RecycleLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleLogModel.swift; sourceTree = "<group>"; };
 		59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderScrollView.swift; sourceTree = "<group>"; };
 		59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderScrollView.xib; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
@@ -719,6 +721,7 @@
 				59997A592A09E4E400E9FD7F /* RecycleLogVC.swift */,
 				59997A5B2A09E4F700E9FD7F /* RecycleLog.storyboard */,
 				59997A5F2A09FB2800E9FD7F /* RecycleLogTableViewCell.swift */,
+				59CDA3572A45963E00E3F74E /* RecycleLogModel.swift */,
 			);
 			path = RecycleLog;
 			sourceTree = "<group>";
@@ -1102,6 +1105,7 @@
 				59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */,
 				5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
+				59CDA3582A45963E00E3F74E /* RecycleLogModel.swift in Sources */,
 				59CDA34C2A42DE8B00E3F74E /* VerificationCodeModel.swift in Sources */,
 				59A7958C2A0F9E820031710F /* SpendPointAlertView.swift in Sources */,
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
