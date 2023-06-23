@@ -29,10 +29,26 @@ class StoreMapVC: CustomRootVC {
       }
     }
     
+    var mapInfo:[MapInfo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if let data = data, let mapInfo = try? JSONDecoder().decode([MapInfo].self, from: data) {
+                self.mapInfo = mapInfo
+                print(self.mapInfo)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
