@@ -262,7 +262,7 @@ func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
     return newImage
 }
 
-func fadeInOutAni(showView:UIView){
+func fadeInOutAni(showView:UIView, finishAction:(()->())?){
     showView.alpha = 0
     keyWindow?.addSubview(showView)
     UIView.animate(withDuration: 2, delay: 0) {
@@ -272,6 +272,9 @@ func fadeInOutAni(showView:UIView){
             showView.alpha = 0
         } completion: { _ in
             showView.removeFromSuperview()
+            if let finishAction = finishAction {
+                finishAction()
+            }
         }
     }
 }
@@ -285,7 +288,6 @@ struct Certificates {
         let filePath = Bundle.main.path(forResource: filename, ofType: "cer")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: filePath))
         let certificate = SecCertificateCreateWithData(nil, data as CFData)!
-        
         return certificate
     }
 }

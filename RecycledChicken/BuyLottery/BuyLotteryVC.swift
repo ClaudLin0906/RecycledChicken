@@ -44,7 +44,7 @@ extension BuyLotteryVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton) {
         let completeTaskAlertView = SpendPointCompleteAlertView(frame: view.frame)
-        fadeInOutAni(showView: completeTaskAlertView)
+        fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
     }
     
 }

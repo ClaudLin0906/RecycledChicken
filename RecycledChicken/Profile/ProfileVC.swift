@@ -134,7 +134,7 @@ class ProfileVC: CustomVC {
     private func showProfileUpdateView (){
         DispatchQueue.main.async { [self] in
             let profileUpdateView = ProfileUpdateView(frame: view.frame)
-            fadeInOutAni(showView: profileUpdateView)
+            fadeInOutAni(showView: profileUpdateView, finishAction: nil)
         }
     }
 

@@ -45,7 +45,7 @@ extension BuyCommodityVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton) {
         let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
-        fadeInOutAni(showView: completeTaskAlertView)
+        fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
     }
     
 }
