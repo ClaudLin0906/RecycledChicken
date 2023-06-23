@@ -14,6 +14,8 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var carbonReductionLogBtn:UIButton!
     
     @IBOutlet weak var currentDateLabel:UILabel!
+    
+    @IBOutlet weak var welcomeLabel:UILabel!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +31,20 @@ class HomeVC: CustomRootVC {
             FirstTime = false
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
+        updateCurrentDateInfo()
     }
     
     private func UIInit(){
         carbonReductionLogBtn.layer.borderWidth = 1
         carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        updateCurrentDateInfo()
     }
     
     func updateCurrentDateInfo(){
         currentDateLabel.text = CustomCalenderModel.shared.selectedDate
+        if let username = CurrentUserInfo.shared.currentProfileInfo?.userName{
+            welcomeLabel.text = "Good morning, \(username)"
+        }
+        
     }
     
     @IBAction func goToCarbonReductionLog(_ sender:UIButton) {

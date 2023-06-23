@@ -13,15 +13,6 @@ class ProfileVC: CustomVC {
     
     let profileInfoArr:[String] = ["用戶名稱", "E-mail", "手機號碼", "生日"]
     
-    var currentProfileInfo:ProfileInfo?
-    {
-        didSet {
-            DispatchQueue.main.async {
-                self.profileTableView.reloadData()
-            }
-        }
-    }
-    
     let datePicker = UIDatePicker()
         
     let rightNow = Date()
@@ -35,41 +26,10 @@ class ProfileVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        getUserInfo()
     }
     
     private func UIInit(){
         profileTableView.setSeparatorLocation()
-    }
-    
-    private func getUserInfo(){
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
-                return
-            }
-            if let data = data {
-                let json = NetworkManager.shared.dataToDictionary(data: data)
-                var userInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "")
-                if let userPhoneNumber = json["userPhoneNumber"] as? String {
-                    userInfo.userPhoneNumber = userPhoneNumber
-                }
-                if let userEmail = json["userEmail"] as? String {
-                    userInfo.userEmail = userEmail
-                }
-                if let userName = json["userName"] as? String {
-                    userInfo.userName = userName
-                }
-                if let point = json["point"] as? Int {
-                    userInfo.point = point
-                }
-                if let userBirth = json["userBirth"] as? String {
-                    userInfo.userBirth = userBirth
-                }
-                self.currentProfileInfo = userInfo
-            }
-            
-        }
     }
     
     private func createDatePicker(_ textfield:UITextField) {
@@ -186,17 +146,17 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         cell.infoTitle.text = profileInfoArr[row]
         switch row {
         case 0:
-            cell.info.text = currentProfileInfo?.userName
+            cell.info.text = CurrentUserInfo.shared.currentProfileInfo?.userName
         case 1:
-            cell.info.text = currentProfileInfo?.userEmail
+            cell.info.text = CurrentUserInfo.shared.currentProfileInfo?.userEmail
         case 2:
             cell.info.keyboardType = .numberPad
             cell.phoneNumberCheckBox.isHidden = false
             cell.info.isEnabled = false
-            cell.info.text = currentProfileInfo?.userPhoneNumber
+            cell.info.text = CurrentUserInfo.shared.currentProfileInfo?.userPhoneNumber
         case 3:
             cell.info.placeholder = "2000/11/11"
-            cell.info.text = currentProfileInfo?.userBirth
+            cell.info.text = CurrentUserInfo.shared.currentProfileInfo?.userBirth
             cell.phoneNumberCheckBox.isHidden = false
             createDatePicker(cell.info)
         default:

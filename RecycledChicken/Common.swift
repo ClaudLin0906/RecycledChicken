@@ -73,6 +73,7 @@ class CurrentUserInfo{
         }
         
     }()
+    var currentProfileInfo:ProfileInfo?
 }
 
 struct APIUrl {
@@ -109,6 +110,38 @@ public class CommonUserDefaultsKey{
 
 protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
+}
+
+func getUserInfo(VC:UIViewController, finishAction:(()->())?){
+    NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        guard statusCode == 200 else {
+            showAlert(VC: VC, title: "發生錯誤", message: errorMSG, alertAction: nil)
+            return
+        }
+        if let data = data {
+            let json = NetworkManager.shared.dataToDictionary(data: data)
+            var userInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "")
+            if let userPhoneNumber = json["userPhoneNumber"] as? String {
+                userInfo.userPhoneNumber = userPhoneNumber
+            }
+            if let userEmail = json["userEmail"] as? String {
+                userInfo.userEmail = userEmail
+            }
+            if let userName = json["userName"] as? String {
+                userInfo.userName = userName
+            }
+            if let point = json["point"] as? Int {
+                userInfo.point = point
+            }
+            if let userBirth = json["userBirth"] as? String {
+                userInfo.userBirth = userBirth
+            }
+            CurrentUserInfo.shared.currentProfileInfo = userInfo
+            if let finishAction = finishAction {
+                finishAction()
+            }
+        }
+    }
 }
 
 func generateBarCode(from string: String) -> UIImage? {

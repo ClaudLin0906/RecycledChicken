@@ -65,7 +65,10 @@ class LoginVC: CustomLoginVC {
                     CommonKey.shared.authToken = token
                     CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber = phone
                     CurrentUserInfo.shared.currentAccountInfo.userPassword = password
-                    self.loginSuccess()
+                    getUserInfo(VC: self, finishAction: {
+                        self.loginSuccess()
+                    })
+                    
                 }
             }
         }
