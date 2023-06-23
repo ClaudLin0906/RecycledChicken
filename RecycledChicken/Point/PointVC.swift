@@ -12,6 +12,8 @@ class PointVC: CustomRootVC {
     @IBOutlet weak var ponitRuleBtn:UIButton!
     
     @IBOutlet weak var myTicker:UIButton!
+    
+    @IBOutlet weak var myPoint:UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,13 @@ class PointVC: CustomRootVC {
         ponitRuleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         myTicker.layer.borderWidth = 1
         myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let point = CurrentUserInfo.shared.currentProfileInfo?.point {
+            myPoint.text = String(point)
+        }
     }
     
     @IBAction func goToCommodityVoucher(_ sender:UIButton) {

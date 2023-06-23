@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="width" constant="30" id="VuP-0n-vKc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-zf-126">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-zf-126">
                                 <rect key="frame" x="186.66666666666666" y="168" width="50" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jQY-CT-ejj"/>
@@ -243,6 +243,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ADD-8k-AvY"/>
                     <connections>
+                        <outlet property="myPoint" destination="d1u-zf-126" id="bOT-9w-KKq"/>
                         <outlet property="myTicker" destination="yTT-JI-Qj2" id="lzx-82-ZCv"/>
                         <outlet property="ponitRuleBtn" destination="1cj-bx-TzZ" id="Gbl-tE-Amg"/>
                     </connections>
@@ -270,6 +271,23 @@
             <point key="canvasLocation" x="-187.02290076335876" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1cj-bx-TzZ">
+            <size key="intrinsicContentSize" width="56" height="32"/>
+        </designable>
+        <designable name="Hcv-dW-rKf">
+            <size key="intrinsicContentSize" width="102" height="36"/>
+        </designable>
+        <designable name="Zyi-sb-l2P">
+            <size key="intrinsicContentSize" width="68" height="24"/>
+        </designable>
+        <designable name="a6I-w8-y9C">
+            <size key="intrinsicContentSize" width="136" height="36"/>
+        </designable>
+        <designable name="yTT-JI-Qj2">
+            <size key="intrinsicContentSize" width="56" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="グループ 1089" width="1125" height="2436"/>
         <image name="组 396" width="82" height="82"/>
