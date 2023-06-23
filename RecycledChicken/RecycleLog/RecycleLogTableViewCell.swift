@@ -10,6 +10,12 @@ import UIKit
 class RecycleLogTableViewCell: UITableViewCell {
     
     static let identifier = "RecycleLogTableViewCell"
+    
+    @IBOutlet weak var calendarLabel:UILabel!
+    
+    @IBOutlet weak var recycledItemLabel:UILabel!
+    
+    @IBOutlet weak var amountLabel:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +29,7 @@ class RecycleLogTableViewCell: UITableViewCell {
     }
     
     func setCell(info:RecycleLogInfo) {
-        
+        calendarLabel.text = info.time
     }
 
 }

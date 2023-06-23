@@ -11,3 +11,9 @@ struct RecycleLogInfo: Decodable {
     var storeID:String
     var time:String
 }
+
+struct InfoTime {
+    var year:Int
+    var month:Int
+    var day:Int
+}

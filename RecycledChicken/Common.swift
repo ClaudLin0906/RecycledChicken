@@ -254,6 +254,21 @@ func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy-MM-d
     return (stringFormate1, stringFormate2, date)
 }
 
+func getDateFromStr(dateformat:String = "yyyy-MM-dd HH:mm:ss Z", dateStr:String) -> InfoTime? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = dateformat
+    dateFormatter.locale = Locale(identifier: "zh_Hant_TW")
+    if let date = dateFormatter.date(from: dateStr) {
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        return InfoTime(year: year, month: month, day: day)
+    } else {
+        return nil
+    }
+}
+
 func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
     image.draw(in: CGRectMake(0, 0, newSize.width, newSize.height))

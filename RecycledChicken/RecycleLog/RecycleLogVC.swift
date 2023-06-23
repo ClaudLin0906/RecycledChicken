@@ -29,7 +29,7 @@ class RecycleLogVC: CustomVC {
         tableView.setSeparatorLocation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
-        getRecycleLogData()
+        getRecycleLogData()        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +102,8 @@ extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
+        let info = recycleLogInfos[indexPath.row]
+        cell.setCell(info: info)
         return cell
     }
     

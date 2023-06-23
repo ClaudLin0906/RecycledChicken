@@ -86,6 +86,11 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="amountLabel" destination="mII-21-EXa" id="avF-dQ-TlE"/>
+                                                    <outlet property="calendarLabel" destination="fBC-3W-26o" id="lj8-C5-2vq"/>
+                                                    <outlet property="recycledItemLabel" destination="eru-wJ-rV7" id="vIS-yg-k6w"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
