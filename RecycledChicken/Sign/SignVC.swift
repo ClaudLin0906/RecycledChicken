@@ -19,9 +19,10 @@ class SignVC: CustomLoginVC {
         // Do any additional setup after loading the view.
     }
     
-    private func goToVerificationCode(password:String, phone:String){
+    private func goToVerificationCode(phone:String, password:String ){
         self.dismiss(animated: true) {
             if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC, let topVC = getTopController() {
+                VC.currentType = .sign
                 VC.modalPresentationStyle = .fullScreen
                 VC.password = password
                 VC.phone = phone
@@ -48,7 +49,7 @@ class SignVC: CustomLoginVC {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
-        goToVerificationCode(password: password!, phone: phone!)
+        goToVerificationCode(phone: phone!, password: password!)
     }
 
 }

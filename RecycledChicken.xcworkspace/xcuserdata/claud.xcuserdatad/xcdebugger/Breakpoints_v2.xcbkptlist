@@ -78,8 +78,8 @@
             filePath = "RecycledChicken/Common.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "certificate(filename:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -87,16 +87,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3C3DA269-8099-4730-81F3-E60560DE6223"
+            uuid = "1A9E9AF3-F663-409A-885E-DF2E1DCD6653"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecycledChicken/VerificationCode/VerificationCodeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "signUpAction(_:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "sendSMS()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

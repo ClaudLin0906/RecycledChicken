@@ -21,7 +21,9 @@ class VerificationCodeVC: CustomLoginVC {
     var password:String = ""
     
     var phone:String = ""
-
+    
+    var currentType:VerificationCodeType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -109,6 +111,29 @@ class VerificationCodeVC: CustomLoginVC {
             }
         }
     }
+    
+    private func goToConfirmVC(){
+        self.dismiss(animated: true) {
+            if let VC = UIStoryboard(name: "ConfirmPassword", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPassword") as? ConfirmPasswordVC, let topVC = getTopController() {
+                VC.phone = self.phone
+                VC.modalPresentationStyle = .fullScreen
+                topVC.present(VC, animated: true)
+            }
+        }
+    }
+    
+    private func forgetPasswordAction(_ smsCode:String){
+        guard smsCode.count == 4 else { return }
+        let forgetInfo = ForgetPasswordInfo(userPhoneNumber: phone, smsCode: smsCode)
+        let forgetDic = try? forgetInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCertificate, parameters: forgetDic) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            self.goToConfirmVC()
+        }
+    }
 }
 
 extension VerificationCodeVC:UITextFieldDelegate{
@@ -126,7 +151,15 @@ extension VerificationCodeVC:UITextFieldDelegate{
                 }else{
                 //當tag到最後時響應者會是nil此時執行將鍵盤收起的function
                     self.view.endEditing(true)
-                    signUpAction((firstTextField.text ?? "") + (secondTextField.text ?? "") + (thirdTextField.text ?? "") + (fourthTextField.text ?? ""))
+                    if let currentType = currentType {
+                        let smsCodeStr = (firstTextField.text ?? "") + (secondTextField.text ?? "") + (thirdTextField.text ?? "") + (fourthTextField.text ?? "")
+                        switch currentType {
+                        case .sign:
+                            signUpAction(smsCodeStr)
+                        case .forgetPassword:
+                            break
+                        }
+                    }
                 }
             }
             return false

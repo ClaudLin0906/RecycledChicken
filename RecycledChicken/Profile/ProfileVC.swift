@@ -17,6 +17,15 @@ class ProfileVC: CustomVC {
         
     let rightNow = Date()
     
+    var profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
+    {
+        didSet{
+            DispatchQueue.main.async {
+                self.profileTableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "個人賬戶"
@@ -26,6 +35,9 @@ class ProfileVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+        getUserInfo(VC: self) {
+            self.profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
+        }
     }
     
     private func UIInit(){
@@ -63,7 +75,7 @@ class ProfileVC: CustomVC {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
-            if let data = data {
+            if data != nil {
                 self.showProfileUpdateView()
             }
         }
@@ -117,7 +129,6 @@ class ProfileVC: CustomVC {
             return
         }
         updateUserInfo(userInfo: newUserInfo)
-        
     }
     
     private func showProfileUpdateView (){
@@ -146,17 +157,17 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         cell.infoTitle.text = profileInfoArr[row]
         switch row {
         case 0:
-            cell.info.text = CurrentUserInfo.shared.currentProfileInfo?.userName
+            cell.info.text = profileUserInfo?.userName
         case 1:
-            cell.info.text = CurrentUserInfo.shared.currentProfileInfo?.userEmail
+            cell.info.text = profileUserInfo?.userEmail
         case 2:
             cell.info.keyboardType = .numberPad
             cell.phoneNumberCheckBox.isHidden = false
             cell.info.isEnabled = false
-            cell.info.text = CurrentUserInfo.shared.currentProfileInfo?.userPhoneNumber
+            cell.info.text = profileUserInfo?.userPhoneNumber
         case 3:
             cell.info.placeholder = "2000/11/11"
-            cell.info.text = CurrentUserInfo.shared.currentProfileInfo?.userBirth
+            cell.info.text = profileUserInfo?.userBirth
             cell.phoneNumberCheckBox.isHidden = false
             createDatePicker(cell.info)
         default:

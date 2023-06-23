@@ -10,3 +10,13 @@ import Foundation
 struct SMSInfo:Codable {
     var userPhoneNumber:String
 }
+
+enum VerificationCodeType{
+    case sign
+    case forgetPassword
+}
+
+struct ForgetPasswordInfo:Codable {
+    var userPhoneNumber:String
+    var smsCode:String
+}

@@ -32,5 +32,16 @@ class ForgetPasswordVC: CustomLoginVC {
             return
         }
     }
+    
+    private func goToVerificationCode(phone:String){
+        self.dismiss(animated: true) {
+            if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC, let topVC = getTopController() {
+                VC.currentType = .forgetPassword
+                VC.modalPresentationStyle = .fullScreen
+                VC.phone = phone
+                topVC.present(VC, animated: true)
+            }
+        }
+    }
 
 }
