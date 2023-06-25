@@ -108,21 +108,32 @@ class ProfileVC: CustomVC {
         }
         
         if newUserInfo.userEmail == "" {
-            errorStr += "\nEmail不能為空"
+            errorStr += "Email不能為空"
         } else if !validateEmail(text: newUserInfo.userEmail) {
-            errorStr += "\nEmail格式不正確"
+            errorStr += "Email格式不正確"
+        }
+        
+        errorStr = removeWhitespace(from: errorStr)
+        guard errorStr == "" else {
+            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
+            return
         }
         
         if newUserInfo.userPhoneNumber == "" {
-            errorStr += "\n手機不能為空"
+            errorStr += "手機不能為空"
         }else if !validateCellPhone(text: newUserInfo.userPhoneNumber) {
-            errorStr += "\n手機格式不正確"
+            errorStr += "手機格式不正確"
+        }
+        
+        errorStr = removeWhitespace(from: errorStr)
+        guard errorStr == "" else {
+            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
+            return
         }
         
         if newUserInfo.userBirth == "" {
-            errorStr += "\n生日不能為空"
+            errorStr += "生日不能為空"
         }
-        
         errorStr = removeWhitespace(from: errorStr)
         guard errorStr == "" else {
             showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)

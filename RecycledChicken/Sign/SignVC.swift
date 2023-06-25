@@ -39,10 +39,17 @@ class SignVC: CustomLoginVC {
         if phone == "" {
             alertMsg += "電話不能為空"
         } else if !validateCellPhone(text: phone!) {
-            alertMsg += "\n電話格式不對"
+            alertMsg += "電話格式不對"
         }
+        
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
+        
         if password == "" {
-            alertMsg += "\n密碼不能為空"
+            alertMsg += "密碼不能為空"
         }
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {

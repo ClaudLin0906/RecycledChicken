@@ -29,12 +29,24 @@ class ConfirmPasswordVC: CustomLoginVC {
             alertMsg += "密碼不能為空"
         }
         
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
+        
         if confirmPWd == "" {
-            alertMsg += "\n確認不能為空"
+            alertMsg += "確認不能為空"
+        }
+        
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
         }
         
         if newPWD != confirmPWd{
-            alertMsg += "\n密碼不一致"
+            alertMsg += "密碼不一致"
         }
         
         alertMsg = removeWhitespace(from: alertMsg)
