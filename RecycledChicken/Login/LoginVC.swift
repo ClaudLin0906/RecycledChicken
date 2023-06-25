@@ -54,10 +54,14 @@ class LoginVC: CustomLoginVC {
 //        let testloginInfoDic = try? testLoginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
+                if statusCode == 403 {
+                    showAlert(VC: self, title: "發生錯誤", message: "帳號密碼錯誤", alertAction: nil)
+                    return
+                }
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
-            
+
             if let data = data {
                 let json = NetworkManager.shared.dataToDictionary(data: data)
                 if let token = json["token"] as? String {
@@ -68,7 +72,7 @@ class LoginVC: CustomLoginVC {
                     getUserInfo(VC: self, finishAction: {
                         self.loginSuccess()
                     })
-                    
+
                 }
             }
         }
