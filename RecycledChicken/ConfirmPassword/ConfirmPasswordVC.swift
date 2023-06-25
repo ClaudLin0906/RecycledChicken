@@ -27,6 +27,8 @@ class ConfirmPasswordVC: CustomLoginVC {
         
         if newPWD == "" {
             alertMsg += "密碼不能為空"
+        }else if !validatePassword(text: newPWD!) {
+            alertMsg += "密碼格式不對"
         }
         
         alertMsg = removeWhitespace(from: alertMsg)

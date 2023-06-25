@@ -194,6 +194,11 @@ func validateEmail(text:String) -> Bool {
     return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: text)
 }
 
+func validatePassword(text:String) -> Bool {
+    let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,12}$"
+    return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: text)
+}
+
 
 func validateCellPhone(text:String) -> Bool{
     let mobileReg = "^09\\d{8}$"

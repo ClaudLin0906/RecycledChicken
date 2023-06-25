@@ -50,6 +50,8 @@ class SignVC: CustomLoginVC {
         
         if password == "" {
             alertMsg += "密碼不能為空"
+        }else if !validatePassword(text: password!) {
+            alertMsg += "密碼格式不對"
         }
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
