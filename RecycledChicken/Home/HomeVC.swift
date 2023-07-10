@@ -24,7 +24,7 @@ class HomeVC: CustomRootVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        barcodeView.code = "0200 2344 1256"
+        barcodeView.code = CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber
         if FirstTime && LoginSuccess {
             let welcomeView = WelcomeView(frame: UIScreen.main.bounds)
             keyWindow?.addSubview(welcomeView)

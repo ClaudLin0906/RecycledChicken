@@ -15,9 +15,9 @@ class BarCodeView: UIView, NibOwnerLoadable {
 
     var code = ""
     {
-        didSet {
-            codeLabel.text = oldValue
-            if let barCodeImage = generateBarCode(from: oldValue) {
+        willSet {
+            codeLabel.text = newValue
+            if let barCodeImage = generateBarCode(from: newValue) {
                 barcodeImageView.image = barCodeImage
             }
         }
