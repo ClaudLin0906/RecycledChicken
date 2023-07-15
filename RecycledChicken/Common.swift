@@ -93,6 +93,11 @@ struct APIUrl {
     static let smsCertificate = "/smsCertificate"
 }
 
+struct WebViewUrl{
+    static let PrivacyPolicyURL = "https://www.buenopartners.com.tw/privacy"
+    static let CommonPronblemURL = "https://www.buenopartners.com.tw/faq"
+}
+
 let attributes: [NSAttributedString.Key: Any] = [
     NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
 //    NSAttributedString.Key.foregroundColor: UIColor.white,

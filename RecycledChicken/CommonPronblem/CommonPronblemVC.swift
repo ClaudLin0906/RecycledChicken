@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
+import WebKit
 class CommonPronblemVC: CustomVC {
+    
+    @IBOutlet weak var webView:WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,7 @@ class CommonPronblemVC: CustomVC {
     }
     
     private func UIInit(){
-        
+        webView.load(URLRequest(url: URL(string: WebViewUrl.CommonPronblemURL)!))
     }
     
     override func viewWillAppear(_ animated: Bool) {

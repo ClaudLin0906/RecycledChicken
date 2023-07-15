@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
+import WebKit
 class PrivacyPolicyVC: CustomVC {
+    
+    @IBOutlet weak var webView:WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,7 @@ class PrivacyPolicyVC: CustomVC {
     }
     
     private func UIInit(){
-        
+        webView.load(URLRequest(url: URL(string: WebViewUrl.PrivacyPolicyURL)!))
     }
     
     override func viewWillAppear(_ animated: Bool) {

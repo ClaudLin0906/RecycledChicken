@@ -20,17 +20,32 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="3mB-QZ-6gA" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ux2-dF-SiD">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3mB-QZ-6gA" secondAttribute="bottom" id="DCL-B4-PqB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ux2-dF-SiD" secondAttribute="bottom" id="E9r-RP-2pu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ux2-dF-SiD" secondAttribute="trailing" id="NuS-Ml-mnJ"/>
+                            <constraint firstItem="ux2-dF-SiD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="VV6-10-hNz"/>
                             <constraint firstItem="3mB-QZ-6gA" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="axz-4j-Nl9"/>
                             <constraint firstItem="3mB-QZ-6gA" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="gZ4-ZL-pZ6"/>
+                            <constraint firstItem="ux2-dF-SiD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="nGL-ZG-R4t"/>
                             <constraint firstItem="3mB-QZ-6gA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="y3b-2q-tvi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jJJ-Pc-i6y"/>
+                    <connections>
+                        <outlet property="webView" destination="ux2-dF-SiD" id="7ik-4w-WGt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

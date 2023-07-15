@@ -20,17 +20,32 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="YC1-bl-Pso" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtW-4c-S3w">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ZtW-4c-S3w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7nS-yl-XUY"/>
                             <constraint firstAttribute="bottom" secondItem="YC1-bl-Pso" secondAttribute="bottom" id="Fup-w2-2vU"/>
                             <constraint firstItem="YC1-bl-Pso" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IJJ-Cw-pxg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZtW-4c-S3w" secondAttribute="bottom" id="Rgz-op-BkB"/>
                             <constraint firstItem="YC1-bl-Pso" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="nAf-wy-eVt"/>
                             <constraint firstItem="YC1-bl-Pso" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="pYM-bv-vzq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZtW-4c-S3w" secondAttribute="trailing" id="rid-la-Bp5"/>
+                            <constraint firstItem="ZtW-4c-S3w" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="y3d-0b-qtl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="m3v-hw-Syy"/>
+                    <connections>
+                        <outlet property="webView" destination="ZtW-4c-S3w" id="7eG-KK-cDC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
