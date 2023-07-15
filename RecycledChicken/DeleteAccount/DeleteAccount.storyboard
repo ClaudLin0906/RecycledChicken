@@ -25,29 +25,76 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="dNX-kY-HQK" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz3-NW-rkZ">
-                                <rect key="frame" x="40" y="123.00000000000003" width="313" height="500.66666666666674"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xJ-89-eSB">
+                                <rect key="frame" x="40" y="123" width="313" height="606"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【 重要須知】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiZ-fS-3Yz" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="20" width="106" height="24"/>
-                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCY-hb-Rba" userLabel="content">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="704.33333333333337"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz3-NW-rkZ" userLabel="step1">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="704.33333333333337"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiZ-fS-3Yz" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="20" width="273" height="664.33333333333337"/>
+                                                        <mutableString key="text">刪除帳號這邊的警示語：
+
+1. 點數遺失：刪除帳號將永久移除您在碳竹雞APP上的所有點數餘額、累積優惠券以及其他相關獎勵或福利。請確保您已兌換或使用您的點數和優惠券，以免因刪除帳號而失去這些價值。
+
+2. 停止累積與兌換：刪除帳號將停止您在碳竹雞APP上的所有累積點數和兌換活動。您將無法再累積新的點數，也無法使用現有的點數進行兌換或換取禮品、優惠券或其他獎勵。
+
+3. 關聯資訊遺失：刪除帳號可能會導致您在碳竹雞APP上的所有相關資訊遺失，包括帳戶設定、個人資料、消費記錄、兌換紀錄等。請在刪除帳號之前確保您已保存或備份您重要的資料，以免後悔無法恢復。
+
+4. 無法回復帳號：一旦刪除帳號，您將無法以任何方式恢復或回復該帳號。如果您之後改變主意或需要重新使用該累積點數應用程式，您將需要重新註冊一個新的帳號，並且需要重新累積點數。</mutableString>
+                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="XiZ-fS-3Yz" secondAttribute="trailing" constant="20" id="Fdo-Ch-d45"/>
+                                                    <constraint firstAttribute="bottom" secondItem="XiZ-fS-3Yz" secondAttribute="bottom" constant="20" id="OVP-lv-83G"/>
+                                                    <constraint firstItem="XiZ-fS-3Yz" firstAttribute="top" secondItem="Zz3-NW-rkZ" secondAttribute="top" constant="20" id="azp-XF-5Cy"/>
+                                                    <constraint firstItem="XiZ-fS-3Yz" firstAttribute="leading" secondItem="Zz3-NW-rkZ" secondAttribute="leading" constant="20" id="sCj-cj-RXZ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Zz3-NW-rkZ" secondAttribute="trailing" id="AB0-cv-Cxr"/>
+                                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="top" secondItem="WCY-hb-Rba" secondAttribute="top" id="ILz-l1-vEK"/>
+                                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="leading" secondItem="WCY-hb-Rba" secondAttribute="leading" id="dDe-Zc-kcS"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zz3-NW-rkZ" secondAttribute="bottom" id="gKv-M3-fsK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="XiZ-fS-3Yz" firstAttribute="top" secondItem="Zz3-NW-rkZ" secondAttribute="top" constant="20" id="azp-XF-5Cy"/>
-                                    <constraint firstItem="XiZ-fS-3Yz" firstAttribute="leading" secondItem="Zz3-NW-rkZ" secondAttribute="leading" constant="20" id="sCj-cj-RXZ"/>
+                                    <constraint firstItem="WCY-hb-Rba" firstAttribute="top" secondItem="Nrw-Bm-oO3" secondAttribute="top" id="6l7-16-EET"/>
+                                    <constraint firstItem="WCY-hb-Rba" firstAttribute="trailing" secondItem="Nrw-Bm-oO3" secondAttribute="trailing" constant="240" id="721-Oa-4FN"/>
+                                    <constraint firstItem="WCY-hb-Rba" firstAttribute="width" secondItem="Ts0-FM-kTB" secondAttribute="width" id="DdU-Dr-fTi"/>
+                                    <constraint firstItem="WCY-hb-Rba" firstAttribute="leading" secondItem="Nrw-Bm-oO3" secondAttribute="leading" id="Meu-JO-zgM"/>
+                                    <constraint firstItem="WCY-hb-Rba" firstAttribute="bottom" secondItem="Nrw-Bm-oO3" secondAttribute="bottom" constant="128" id="uPk-2w-Gna"/>
                                 </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Nrw-Bm-oO3"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Ts0-FM-kTB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrd-Eb-IDM" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="146.66666666666666" y="643.66666666666663" width="100" height="40"/>
+                                <rect key="frame" x="146.66666666666666" y="749" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="aBq-sv-04Y"/>
@@ -71,17 +118,16 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6xJ-89-eSB" secondAttribute="trailing" constant="40" id="0ax-ZR-cO3"/>
                             <constraint firstAttribute="bottom" secondItem="dNX-kY-HQK" secondAttribute="bottom" id="758-8A-V7T"/>
                             <constraint firstItem="Vrd-Eb-IDM" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="8LU-qc-G6F"/>
-                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.7" id="90U-9U-K6G"/>
-                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="D20-bz-0gF"/>
-                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="KPA-IW-wnE"/>
+                            <constraint firstItem="6xJ-89-eSB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="H7H-sQ-6ZD"/>
                             <constraint firstItem="dNX-kY-HQK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Kr9-qj-37L"/>
-                            <constraint firstItem="Zz3-NW-rkZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="Q3d-rJ-KV4"/>
-                            <constraint firstItem="Vrd-Eb-IDM" firstAttribute="top" secondItem="Zz3-NW-rkZ" secondAttribute="bottom" constant="20" id="Q8d-KS-jEv"/>
+                            <constraint firstItem="6xJ-89-eSB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="LZN-eF-v0j"/>
+                            <constraint firstItem="Vrd-Eb-IDM" firstAttribute="top" secondItem="6xJ-89-eSB" secondAttribute="bottom" constant="20" id="Q8d-KS-jEv"/>
                             <constraint firstItem="dNX-kY-HQK" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Tal-ax-tIy"/>
                             <constraint firstItem="dNX-kY-HQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Y93-Mi-HWg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zz3-NW-rkZ" secondAttribute="trailing" constant="40" id="yZa-m6-JQx"/>
+                            <constraint firstItem="6xJ-89-eSB" firstAttribute="centerY" secondItem="dNX-kY-HQK" secondAttribute="centerY" id="lmh-fZ-uIb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vcS-CV-KWX"/>
@@ -109,6 +155,14 @@
             <point key="canvasLocation" x="-185.49618320610685" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Vrd-Eb-IDM">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="XiZ-fS-3Yz">
+            <size key="intrinsicContentSize" width="1545.3333333333333" height="213.66666666666666"/>
+        </designable>
+    </designables>
     <resources>
         <image name="グループ 1089" width="1125" height="2436"/>
         <systemColor name="systemBackgroundColor">

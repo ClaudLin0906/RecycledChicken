@@ -15,9 +15,9 @@ class SystemSettingVC: CustomVC {
     
     var switchTableViewInfos:[switchTableViewInfo] =
     [
-        switchTableViewInfo(title: "APP活動通知", isTrue: false),
-        switchTableViewInfo(title: "信件通知", isTrue: true),
-        switchTableViewInfo(title: "回收機消息通知", isTrue: true),
+//        switchTableViewInfo(title: "APP活動通知", isTrue: false),
+//        switchTableViewInfo(title: "信件通知", isTrue: true),
+//        switchTableViewInfo(title: "回收機消息通知", isTrue: true),
         switchTableViewInfo(title: "生物辨識", isTrue: UserDefaults().bool(forKey: UserDefaultKey.shared.biometrics))
     ]
     
