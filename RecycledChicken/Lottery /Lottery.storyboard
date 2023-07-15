@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenJyuuGothic-Normal.ttf">
-            <string>GenJyuuGothic-Normal</string>
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
         </array>
     </customFonts>
     <scenes>
@@ -37,23 +37,105 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-00-Az8" userLabel="step1">
-                                                    <rect key="frame" x="35.333333333333343" y="-34" width="282.33333333333326" height="112"/>
+                                                    <rect key="frame" x="17.666666666666657" y="-43" width="317.66666666666674" height="130"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點數抽獎專區" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzm-AI-630" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="112"/>
-                                                            <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switch" translatesAutoresizingMaskIntoConstraints="NO" id="HPR-JA-KXE">
+                                                            <rect key="frame" x="10" y="10" width="100" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="Qrr-ZV-5Li"/>
+                                                                <constraint firstAttribute="height" constant="70" id="aqL-GU-FaZ"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="參與次數:200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-xT-qBm" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="100" width="100" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="zps-2S-QXE"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="11"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="ohu-bo-54Y">
+                                                            <rect key="frame" x="130" y="10" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="4u6-O4-YgL"/>
+                                                                <constraint firstAttribute="width" secondItem="ohu-bo-54Y" secondAttribute="height" multiplier="1:1" id="zlq-Td-tH0"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmv-EX-kc9" userLabel="point">
+                                                            <rect key="frame" x="165" y="10" width="152.66666666666663" height="30"/>
+                                                            <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="抽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKR-pS-7to" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="130" y="40" width="187.66666666666663" height="50"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活動參與" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gte-w0-KtV" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="130" y="85" width="187.66666666666663" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="11"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開獎日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-lZ-LzW" userLabel="drawTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="130" y="100" width="187.66666666666663" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="3Xf-mN-mc6"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="11"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="wzm-AI-630" firstAttribute="leading" secondItem="jhR-00-Az8" secondAttribute="leading" id="Hsq-5S-Mew"/>
-                                                        <constraint firstAttribute="width" secondItem="jhR-00-Az8" secondAttribute="height" multiplier="2.5:1" id="Ouo-Wm-7hl"/>
-                                                        <constraint firstAttribute="bottom" secondItem="wzm-AI-630" secondAttribute="bottom" id="TEF-ST-HOT"/>
-                                                        <constraint firstItem="wzm-AI-630" firstAttribute="top" secondItem="jhR-00-Az8" secondAttribute="top" id="ZcY-4W-PbK"/>
-                                                        <constraint firstAttribute="trailing" secondItem="wzm-AI-630" secondAttribute="trailing" id="mWb-fz-fAu"/>
-                                                        <constraint firstAttribute="width" secondItem="jhR-00-Az8" secondAttribute="height" multiplier="141:56" id="tyY-RV-p50"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xmv-EX-kc9" secondAttribute="trailing" id="0BS-rC-dPB"/>
+                                                        <constraint firstItem="e8E-lZ-LzW" firstAttribute="trailing" secondItem="SKR-pS-7to" secondAttribute="trailing" id="1sj-I1-guv"/>
+                                                        <constraint firstItem="4hB-xT-qBm" firstAttribute="trailing" secondItem="HPR-JA-KXE" secondAttribute="trailing" id="2Kq-dI-gJx"/>
+                                                        <constraint firstAttribute="height" constant="130" id="4TU-Yg-MHv"/>
+                                                        <constraint firstItem="SKR-pS-7to" firstAttribute="leading" secondItem="ohu-bo-54Y" secondAttribute="leading" id="4sR-xn-hls"/>
+                                                        <constraint firstItem="xmv-EX-kc9" firstAttribute="top" secondItem="ohu-bo-54Y" secondAttribute="top" id="8XO-TI-qVm"/>
+                                                        <constraint firstAttribute="bottom" secondItem="4hB-xT-qBm" secondAttribute="bottom" constant="10" id="8tP-kB-imv"/>
+                                                        <constraint firstItem="xmv-EX-kc9" firstAttribute="leading" secondItem="ohu-bo-54Y" secondAttribute="trailing" constant="5" id="AV9-Fc-7gF"/>
+                                                        <constraint firstItem="4hB-xT-qBm" firstAttribute="leading" secondItem="HPR-JA-KXE" secondAttribute="leading" id="Ar4-IW-2zo"/>
+                                                        <constraint firstItem="Gte-w0-KtV" firstAttribute="leading" secondItem="SKR-pS-7to" secondAttribute="leading" id="Pa3-2g-jKO"/>
+                                                        <constraint firstItem="Gte-w0-KtV" firstAttribute="trailing" secondItem="SKR-pS-7to" secondAttribute="trailing" id="PdB-uc-DNM"/>
+                                                        <constraint firstItem="e8E-lZ-LzW" firstAttribute="bottom" secondItem="4hB-xT-qBm" secondAttribute="bottom" id="RGc-94-rWp"/>
+                                                        <constraint firstItem="HPR-JA-KXE" firstAttribute="leading" secondItem="jhR-00-Az8" secondAttribute="leading" constant="10" id="SDr-Id-88k"/>
+                                                        <constraint firstItem="SKR-pS-7to" firstAttribute="trailing" secondItem="xmv-EX-kc9" secondAttribute="trailing" id="TaD-qF-dbQ"/>
+                                                        <constraint firstItem="SKR-pS-7to" firstAttribute="top" secondItem="xmv-EX-kc9" secondAttribute="bottom" id="WEQ-Xu-b3j"/>
+                                                        <constraint firstItem="xmv-EX-kc9" firstAttribute="bottom" secondItem="ohu-bo-54Y" secondAttribute="bottom" id="Z9J-ta-x6K"/>
+                                                        <constraint firstItem="ohu-bo-54Y" firstAttribute="leading" secondItem="HPR-JA-KXE" secondAttribute="trailing" constant="20" id="elB-RF-djP"/>
+                                                        <constraint firstItem="Gte-w0-KtV" firstAttribute="bottom" secondItem="e8E-lZ-LzW" secondAttribute="top" constant="5" id="gQm-Jq-PTN"/>
+                                                        <constraint firstItem="SKR-pS-7to" firstAttribute="centerY" secondItem="jhR-00-Az8" secondAttribute="centerY" id="kYl-m7-UBp"/>
+                                                        <constraint firstItem="xmv-EX-kc9" firstAttribute="centerY" secondItem="ohu-bo-54Y" secondAttribute="centerY" id="kec-Xe-FQt"/>
+                                                        <constraint firstItem="ohu-bo-54Y" firstAttribute="top" secondItem="HPR-JA-KXE" secondAttribute="top" id="qGK-hV-aNT"/>
+                                                        <constraint firstItem="HPR-JA-KXE" firstAttribute="top" secondItem="jhR-00-Az8" secondAttribute="top" constant="10" id="qiL-0q-Yv9"/>
+                                                        <constraint firstItem="Gte-w0-KtV" firstAttribute="height" secondItem="e8E-lZ-LzW" secondAttribute="height" id="vxu-mQ-DwU"/>
+                                                        <constraint firstItem="e8E-lZ-LzW" firstAttribute="leading" secondItem="SKR-pS-7to" secondAttribute="leading" id="zaX-wx-Cfe"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -69,7 +151,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jhR-00-Az8" firstAttribute="width" secondItem="Xsh-kN-7Ky" secondAttribute="width" multiplier="0.8" id="BwB-Ik-0sy"/>
+                                                <constraint firstItem="jhR-00-Az8" firstAttribute="width" secondItem="Xsh-kN-7Ky" secondAttribute="width" multiplier="0.9" id="BwB-Ik-0sy"/>
                                                 <constraint firstItem="jhR-00-Az8" firstAttribute="centerY" secondItem="Xsh-kN-7Ky" secondAttribute="centerY" id="VIG-DL-W60"/>
                                                 <constraint firstItem="jhR-00-Az8" firstAttribute="centerX" secondItem="Xsh-kN-7Ky" secondAttribute="centerX" id="fzL-GF-rD4"/>
                                             </constraints>
@@ -124,8 +206,24 @@
             <point key="canvasLocation" x="-187.02290076335876" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4hB-xT-qBm">
+            <size key="intrinsicContentSize" width="104.66666666666667" height="20.333333333333332"/>
+        </designable>
+        <designable name="Gte-w0-KtV">
+            <size key="intrinsicContentSize" width="69.333333333333329" height="20.333333333333332"/>
+        </designable>
+        <designable name="SKR-pS-7to">
+            <size key="intrinsicContentSize" width="17.333333333333332" height="20.333333333333332"/>
+        </designable>
+        <designable name="e8E-lZ-LzW">
+            <size key="intrinsicContentSize" width="69.333333333333329" height="20.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="switch" width="246" height="246"/>
         <image name="グループ 1089" width="1125" height="2436"/>
+        <image name="组 396" width="82" height="82"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

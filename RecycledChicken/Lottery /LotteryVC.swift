@@ -39,7 +39,7 @@ extension LotteryVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        view.safeAreaLayoutGuide.layoutFrame.height * 0.22
+        170
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
