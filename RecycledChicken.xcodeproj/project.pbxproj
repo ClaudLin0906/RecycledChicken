@@ -154,6 +154,8 @@
 		59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
+		59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */; };
+		59E1E8402A6293C400396CF9 /* PersonMessageImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */; };
 		59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */; };
 		59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A1F2A3722500062D4EB /* GenJyuuGothic-Light.ttf */; };
 		59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A202A3722500062D4EB /* GenJyuuGothic-Heavy.ttf */; };
@@ -330,6 +332,8 @@
 		59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderScrollView.xib; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
+		59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageImageView.swift; sourceTree = "<group>"; };
+		59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonMessageImageView.xib; sourceTree = "<group>"; };
 		59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Medium.ttf"; sourceTree = "<group>"; };
 		59E69A1F2A3722500062D4EB /* GenJyuuGothic-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Light.ttf"; sourceTree = "<group>"; };
 		59E69A202A3722500062D4EB /* GenJyuuGothic-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Heavy.ttf"; sourceTree = "<group>"; };
@@ -668,6 +672,8 @@
 				59A113B22A3AA52E00C8295B /* CustomLabel.swift */,
 				59997A5D2A09EDE900E9FD7F /* CommonImageButton.swift */,
 				59A113BA2A3ADFCF00C8295B /* CustomButton.swift */,
+				59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */,
+				59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -940,6 +946,7 @@
 				59A7958A2A0F8F3A0031710F /* UpdateDateAlertView.xib in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
+				59E1E8402A6293C400396CF9 /* PersonMessageImageView.xib in Resources */,
 				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
 				59E69A272A3722510062D4EB /* GenJyuuGothic-Bold.ttf in Resources */,
 				59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */,
@@ -1071,6 +1078,7 @@
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
 				5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */,
+				59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */,
 				59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */,
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
 				5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */,

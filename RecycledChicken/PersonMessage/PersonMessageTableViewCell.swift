@@ -10,6 +10,10 @@ import UIKit
 class PersonMessageTableViewCell: UITableViewCell {
     
     static let identifier = "PersonMessageTableViewCell"
+    
+    @IBOutlet weak var titleLabel:CustomLabel!
+    
+    @IBOutlet weak var timeLabel:CustomLabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

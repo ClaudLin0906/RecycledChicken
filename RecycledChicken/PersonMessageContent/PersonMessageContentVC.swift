@@ -8,6 +8,12 @@
 import UIKit
 
 class PersonMessageContentVC: CustomVC {
+    
+    @IBOutlet weak var titleLabel:CustomLabel!
+    
+    @IBOutlet weak var timeLabel:CustomLabel!
+    
+    @IBOutlet weak var contentLabel:CustomLabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

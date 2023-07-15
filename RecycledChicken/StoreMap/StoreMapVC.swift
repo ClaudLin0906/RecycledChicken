@@ -39,6 +39,7 @@ class StoreMapVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if isLocationServicesEnabled() {
            locationManager.startUpdatingLocation()
         } else {
@@ -67,17 +68,31 @@ class StoreMapVC: CustomRootVC {
     }
     
     private func isLocationServicesEnabled() -> Bool {
-        if CLLocationManager.locationServicesEnabled() {
-            switch(CLLocationManager.authorizationStatus()) {
-            case .notDetermined, .restricted, .denied:
-                return false
-            case .authorizedAlways, .authorizedWhenInUse:
-                return true
-            @unknown default:
-                return false
-            }
+        let authorizationStatus: CLAuthorizationStatus
+        if #available(iOS 14, *) {
+            authorizationStatus = locationManager.authorizationStatus
+        } else {
+            authorizationStatus = CLLocationManager.authorizationStatus()
         }
-        return false
+        switch authorizationStatus {
+        case .notDetermined, .restricted, .denied:
+            return false
+        case .authorizedAlways, .authorizedWhenInUse:
+            return true
+        @unknown default:
+            return false
+        }
+//        if CLLocationManager.locationServicesEnabled() {
+//            switch(CLLocationManager.authorizationStatus()) {
+//            case .notDetermined, .restricted, .denied:
+//                return false
+//            case .authorizedAlways, .authorizedWhenInUse:
+//                return true
+//            @unknown default:
+//                return false
+//            }
+//        }
+//        return false
     }
     
     private func UIInit(){
