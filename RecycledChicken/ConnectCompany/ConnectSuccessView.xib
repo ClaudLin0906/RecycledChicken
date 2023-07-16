@@ -61,6 +61,14 @@
             <point key="canvasLocation" x="-187" y="20"/>
         </view>
     </objects>
+    <designables>
+        <designable name="iHr-L1-W0U">
+            <size key="intrinsicContentSize" width="294.33333333333331" height="24"/>
+        </designable>
+        <designable name="kNp-6Y-rxs">
+            <size key="intrinsicContentSize" width="85" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <image name="组 1662" width="598.33331298828125" height="388.66665649414062"/>
     </resources>

@@ -90,7 +90,9 @@ struct APIUrl {
     static let checkLotteryRecord = "/checkLotteryRecord"
     static let searchUserData = "/searchUserData"
     static let updateProfile = "/updateProfile"
-    static let smsCertificate = "/smsCertificate"
+    static let sendEmail = "/sendEmail"
+    static let getQuestList = "/getQuestList"
+    static let forgotPassword = "/forgotPassword"
 }
 
 struct WebViewUrl{

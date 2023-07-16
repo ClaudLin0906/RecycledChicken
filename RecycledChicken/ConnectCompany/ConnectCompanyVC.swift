@@ -12,6 +12,10 @@ class ConnectCompanyVC: CustomVC {
     @IBOutlet weak var identityView:UIView!
     
     @IBOutlet weak var identityLabel:UILabel!
+        
+    @IBOutlet weak var contentView:UITextView!
+    
+    @IBOutlet weak var emailTextfield:UITextField!
     
     let identityListDropDown = DropDown()
     
@@ -59,12 +63,47 @@ class ConnectCompanyVC: CustomVC {
         }
     }
     
+    private func sendEmailAction(content:String, email:String){
+        let username = CurrentUserInfo.shared.currentProfileInfo?.userName ?? ""
+        let identity = identityLabel.text ?? ""
+        let sendEmailInfo = SendEmailInfo(recipient: identity, content: content, email: email, userName: username)
+        let sendEmailDic = try? sendEmailInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.sendEmail, parameters: sendEmailDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if data != nil {
+                self.showConnectSuccessView()
+            }
+        }
+    }
+    
     @IBAction func showIdentityListDropDown(_ tapGesture: UITapGestureRecognizer) {
         identityListDropDown.show()
     }
     
     @IBAction func mailSendSuccess(_ sender:UIButton) {
-        showConnectSuccessView()
+        var alertMsg = ""
+        let email = emailTextfield.text
+        let content = contentView.text
+        
+        if content == "" {
+            alertMsg += "內容不能為空"
+        }
+        
+        if email == "" {
+            alertMsg += "Email不能為空"
+        } else if !validateEmail(text: email!) {
+            alertMsg += "Email格式不正確"
+        }
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
+        sendEmailAction(content: content!, email: email!)
+        
     }
     
     func showConnectSuccessView (){

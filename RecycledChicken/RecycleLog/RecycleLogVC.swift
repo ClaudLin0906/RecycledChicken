@@ -14,9 +14,9 @@ class RecycleLogVC: CustomVC {
     
     @IBOutlet weak var tableView:UITableView!
     
-    let amountDropDown = DropDown()
+    private let amountDropDown = DropDown()
     
-    var recycleLogInfos:[RecycleLogInfo] = []
+    private var recycleLogInfos:[RecycleLogInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -31,6 +31,7 @@ class ForgetPasswordVC: CustomLoginVC {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
+        goToVerificationCode(phone: phone!)
     }
     
     private func goToVerificationCode(phone:String){
@@ -39,6 +40,15 @@ class ForgetPasswordVC: CustomLoginVC {
                 VC.currentType = .forgetPassword
                 VC.modalPresentationStyle = .fullScreen
                 VC.phone = phone
+                topVC.present(VC, animated: true)
+            }
+        }
+    }
+    
+    private func goToConfirmPassword(phone:String){
+        self.dismiss(animated: true) {
+            if let VC = UIStoryboard(name: "ConfirmPassword", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPassword") as? ConfirmPasswordVC, let topVC = getTopController() {
+                VC.modalPresentationStyle = .fullScreen
                 topVC.present(VC, animated: true)
             }
         }

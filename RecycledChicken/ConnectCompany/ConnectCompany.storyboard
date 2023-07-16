@@ -126,7 +126,6 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1QD-om-nin">
                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -167,13 +166,13 @@
                                                 <rect key="frame" x="0.0" y="510" width="313" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-A1-zCu" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="15.333333333333373" width="42" height="19.666666666666671"/>
+                                                        <rect key="frame" x="5" y="15.333333333333373" width="41.333333333333336" height="19.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fm1-WY-2vs">
-                                                        <rect key="frame" x="52" y="0.0" width="256" height="49"/>
+                                                        <rect key="frame" x="51.333333333333343" y="0.0" width="256.66666666666663" height="49"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -286,6 +285,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="tDN-Sb-MhN"/>
                     <connections>
+                        <outlet property="contentView" destination="1QD-om-nin" id="Bag-g9-IAq"/>
+                        <outlet property="emailTextfield" destination="fm1-WY-2vs" id="uSQ-95-5ej"/>
                         <outlet property="identityLabel" destination="xfb-tz-uIe" id="Szf-uy-g2x"/>
                         <outlet property="identityView" destination="Lqk-XC-KeB" id="207-83-gyl"/>
                     </connections>
@@ -324,6 +325,9 @@
         </designable>
         <designable name="MoM-A1-zCu">
             <size key="intrinsicContentSize" width="41.333333333333336" height="19.666666666666668"/>
+        </designable>
+        <designable name="YsI-6F-Gi0">
+            <size key="intrinsicContentSize" width="153" height="24"/>
         </designable>
         <designable name="mpC-zY-24I">
             <size key="intrinsicContentSize" width="136" height="24"/>

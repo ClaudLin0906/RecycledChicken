@@ -10,6 +10,8 @@ import UIKit
 class TaskVC: CustomRootVC {
     
     @IBOutlet weak var taskTableView:UITableView!
+    
+    private var taskInfos:[TaskInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,22 @@ class TaskVC: CustomRootVC {
     
     private func UIInit(){
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestList, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if let data = data {
+                self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: data)
+                DispatchQueue.main.async {
+                    self.taskTableView.reloadData()
+                }
+            }
+        }
     }
 
 }
@@ -30,7 +48,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        taskInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

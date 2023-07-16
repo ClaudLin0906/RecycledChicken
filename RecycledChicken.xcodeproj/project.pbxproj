@@ -55,6 +55,8 @@
 		5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597521992A0BD11700D0B67C /* ConnectSuccessView.xib */; };
 		5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975219E2A0BD74300D0B67C /* PointVC.swift */; };
 		597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521A02A0BD77E00D0B67C /* Point.storyboard */; };
+		59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */; };
+		59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF12A63FA2200678BAF /* TaskModel.swift */; };
 		598F39462A0E068C00DA9186 /* StoreListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F39452A0E068C00DA9186 /* StoreListVC.swift */; };
 		598F39482A0E06C600DA9186 /* StoreList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598F39472A0E06C600DA9186 /* StoreList.storyboard */; };
 		598F394A2A0E078400DA9186 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F39492A0E078400DA9186 /* SearchView.swift */; };
@@ -233,6 +235,8 @@
 		597521992A0BD11700D0B67C /* ConnectSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectSuccessView.xib; sourceTree = "<group>"; };
 		5975219E2A0BD74300D0B67C /* PointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointVC.swift; sourceTree = "<group>"; };
 		597521A02A0BD77E00D0B67C /* Point.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Point.storyboard; sourceTree = "<group>"; };
+		59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyModel.swift; sourceTree = "<group>"; };
+		59835DF12A63FA2200678BAF /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		598F39452A0E068C00DA9186 /* StoreListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListVC.swift; sourceTree = "<group>"; };
 		598F39472A0E06C600DA9186 /* StoreList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreList.storyboard; sourceTree = "<group>"; };
 		598F39492A0E078400DA9186 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -585,6 +589,7 @@
 				597521952A0B948500D0B67C /* ConnectCompany.storyboard */,
 				597521972A0BD10600D0B67C /* ConnectSuccessView.swift */,
 				597521992A0BD11700D0B67C /* ConnectSuccessView.xib */,
+				59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */,
 			);
 			path = ConnectCompany;
 			sourceTree = "<group>";
@@ -811,6 +816,7 @@
 				5964AAF52A1364570005686F /* TaskTableViewADCell.swift */,
 				5964AAF92A1364EE0005686F /* TaskProgressView.swift */,
 				5964AAFB2A1364F70005686F /* TaskProgressView.xib */,
+				59835DF12A63FA2200678BAF /* TaskModel.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -1052,6 +1058,7 @@
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,
+				59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */,
 				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
 				59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
@@ -1141,6 +1148,7 @@
 				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
 				599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
+				59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
 				59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */,
 				5964AAFE2A14769C0005686F /* LAContextManager.swift in Sources */,
