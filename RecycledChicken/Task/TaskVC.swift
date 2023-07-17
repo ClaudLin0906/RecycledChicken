@@ -36,8 +36,14 @@ class TaskVC: CustomRootVC {
             }
             if let data = data {
                 if let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any]{
-                    self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                    print(self.taskInfos)
+                    let taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                    self.taskInfos = taskInfos.filter{
+                        if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
+                            return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
+                        }
+                        return false
+                    }
+                    
                 }
                 DispatchQueue.main.async {
                     self.taskTableView.reloadData()

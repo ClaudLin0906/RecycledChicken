@@ -147,6 +147,7 @@ extension CaseIterable where Self: Equatable {
 }
 
 extension Notification.Name {
+    static let removeBackground = Notification.Name("removeBackground")
     static let sideMenuAction = Notification.Name("sideMenuAction")
 }
 
@@ -245,10 +246,6 @@ extension NibOwnerLoadable where Self:UIView {
         contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
-}
-
-extension Notification.Name {
-    static let removeBackground = Notification.Name("removeBackground")
 }
 
 extension UIImage {

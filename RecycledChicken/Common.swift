@@ -255,6 +255,10 @@ func getDayOfTheWeek() -> String{
     return dateFormatter.string(from: Date())
 }
 
+func isDateWithinInterval(date: Date, start: Date, end: Date) -> Bool {
+    return date >= start && date <= end
+}
+
 func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy-MM-dd","EEE")) -> (String, String, Date){
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "en_US")
@@ -266,6 +270,12 @@ func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy-MM-d
     dateFormatter.dateFormat = dateformat.1
     let stringFormate2 = dateFormatter.string(from: date)
     return (stringFormate1, stringFormate2, date)
+}
+
+func dateFromString(_ dateString: String, format: String = "yyyy-MM-dd HH:mm:ss Z") -> Date? {
+    let dateFormatter = ISO8601DateFormatter()
+    dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+    return dateFormatter.date(from: dateString)
 }
 
 func getDateFromStr(dateformat:String = "yyyy-MM-dd HH:mm:ss Z", dateStr:String) -> InfoTime? {
