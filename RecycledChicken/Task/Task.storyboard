@@ -131,6 +131,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="background" destination="HVs-S3-nqu" id="0cb-km-YGH"/>
+                                            <outlet property="point" destination="DZ1-3W-L2Y" id="lu1-jG-meW"/>
                                             <outlet property="taskProgressView" destination="KmW-Cy-R44" id="of3-Uf-dIX"/>
                                             <outlet property="title" destination="dB3-QH-e1L" id="GjB-jJ-Io4"/>
                                         </connections>
@@ -237,6 +238,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="background" destination="ZZs-co-IKs" id="nVm-HI-0G5"/>
+                                            <outlet property="point" destination="NIu-ir-pOU" id="420-fo-JP9"/>
                                             <outlet property="title" destination="zRe-Ad-52Z" id="5nX-Xr-hFB"/>
                                         </connections>
                                     </tableViewCell>

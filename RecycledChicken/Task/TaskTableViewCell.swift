@@ -17,6 +17,8 @@ class TaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var background:UIView!
     
+    @IBOutlet weak var point:UILabel!
+    
     var isFinish = false {
         willSet{
             if newValue {

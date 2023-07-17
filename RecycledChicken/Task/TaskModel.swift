@@ -14,5 +14,13 @@ struct TaskInfo: Decodable {
     var createTime:String
     var description:String
     var point:Int
-    var type:String
+    var type:TaskType
+}
+
+
+enum TaskType:String, Decodable {
+    case AD = "advertise"
+    case battery = "battery"
+    case share = "share"
+    case bottle = "bottle"
 }

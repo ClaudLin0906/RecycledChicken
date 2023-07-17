@@ -53,27 +53,49 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        switch row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.title.text = "寶特瓶回收10瓶"
-            return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.title.text = "電池回收10瓶"
-            return cell
-        case 2:
+        let info = taskInfos[row]
+        let type = info.type
+        switch type {
+        case .AD:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
             cell.title.text = "廣告點擊"
             return cell
-        case 3:
+        case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "社群分享"
-            cell.taskProgressView.setPercent(1, molecular: 0)
             return cell
-        default:
-            return UITableViewCell()
+        case .battery:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.title.text = "電池回收\(info.count)個"
+            return cell
+        case .bottle:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.title.text = "寶特瓶回收\(info.count)瓶"
+            return cell
         }
+        
+        
+//        switch row {
+//        case 0:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//            cell.title.text = "寶特瓶回收10瓶"
+//            return cell
+//        case 1:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//            cell.title.text = "電池回收10瓶"
+//            return cell
+//        case 2:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
+//            cell.title.text = "廣告點擊"
+//            return cell
+//        case 3:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//            cell.title.text = "社群分享"
+//            cell.taskProgressView.setPercent(1, molecular: 0)
+//            return cell
+//        default:
+//            return UITableViewCell()
+//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
