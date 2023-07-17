@@ -16,6 +16,7 @@ class TaskVC: CustomRootVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
+        getTaskInfo()
         // Do any additional setup after loading the view.
     }
     
@@ -25,13 +26,19 @@ class TaskVC: CustomRootVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    private func getTaskInfo(){
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestList, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
             if let data = data {
-                self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: data)
+                if let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any]{
+                    self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                    print(self.taskInfos)
+                }
                 DispatchQueue.main.async {
                     self.taskTableView.reloadData()
                 }
@@ -42,6 +49,7 @@ class TaskVC: CustomRootVC {
 }
 
 extension TaskVC:UITableViewDelegate, UITableViewDataSource {
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
@@ -63,14 +71,17 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "社群分享"
+            cell.taskProgressView.setPercent(1, molecular: 0)
             return cell
         case .battery:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "電池回收\(info.count)個"
+            cell.taskProgressView.setPercent(info.count, molecular: 0)
             return cell
         case .bottle:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "寶特瓶回收\(info.count)瓶"
+            cell.taskProgressView.setPercent(info.count, molecular: 0)
             return cell
         }
         
@@ -99,12 +110,19 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let info = taskInfos[row]
+        let type = info.type
+        
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
             cell.isFinish = true
         }
-        
+
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
-            cell.isFinish = true
+            let adView = ADView(frame: UIScreen.main.bounds)
+            adView.cell = cell
+            adView.taskInfo = info
+            keyWindow?.addSubview(adView)
         }
         
     }

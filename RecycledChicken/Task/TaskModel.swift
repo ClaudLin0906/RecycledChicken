@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TaskInfo: Decodable {
+struct TaskInfo: Decodable, CustomStringConvertible{
     var startTime:String
     var count:Int
     var endTime:String
@@ -15,6 +15,7 @@ struct TaskInfo: Decodable {
     var description:String
     var point:Int
     var type:TaskType
+    var isFinish:Bool?
 }
 
 

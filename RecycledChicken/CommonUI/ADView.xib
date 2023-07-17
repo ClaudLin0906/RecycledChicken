@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ADView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="webView" destination="4a7-cl-2Vu" id="6rh-JK-zkF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-cl-2Vu">
+                    <rect key="frame" x="20" y="79" width="353" height="719"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-S9-6yk">
+                    <rect key="frame" x="338" y="79" width="35" height="35"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fbj-S9-6yk" secondAttribute="height" multiplier="1:1" id="MN2-od-hsG"/>
+                        <constraint firstAttribute="height" constant="35" id="keZ-sg-WNo"/>
+                    </constraints>
+                    <color key="tintColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
+                        <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                    </state>
+                    <connections>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="iWP-CL-nCK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.80398446787958555" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4a7-cl-2Vu" firstAttribute="trailing" secondItem="fbj-S9-6yk" secondAttribute="trailing" id="0Tt-LO-KQm"/>
+                <constraint firstItem="4a7-cl-2Vu" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="77q-yl-v8Z"/>
+                <constraint firstItem="fbj-S9-6yk" firstAttribute="top" secondItem="4a7-cl-2Vu" secondAttribute="top" id="EsM-Iv-SCo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4a7-cl-2Vu" secondAttribute="trailing" constant="20" id="JzI-CL-f7K"/>
+                <constraint firstItem="4a7-cl-2Vu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Z8m-kr-LiK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4a7-cl-2Vu" secondAttribute="bottom" constant="20" id="e8s-sw-BYJ"/>
+                <constraint firstItem="4a7-cl-2Vu" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="uKJ-l8-Dyq"/>
+                <constraint firstItem="4a7-cl-2Vu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="z4I-mP-RgU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-28" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
