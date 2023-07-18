@@ -18,18 +18,18 @@ class StoreMapVC: CustomRootVC {
     
     @IBOutlet var iconView3:IconView!
         
-    var observation: NSKeyValueObservation?
+    private var observation: NSKeyValueObservation?
     
-    var locationManager = CLLocationManager()
+    private var locationManager = CLLocationManager()
     
-    var location: CLLocation? {
+    private var location: CLLocation? {
       didSet {
         guard oldValue == nil, let firstLocation = location else { return }
         mapView.camera = GMSCameraPosition(target: firstLocation.coordinate, zoom: 14)
       }
     }
     
-    var mapInfo:[MapInfo] = []
+    private var mapInfos:[MapInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +51,9 @@ class StoreMapVC: CustomRootVC {
                 return
             }
             
-            if let data = data, let mapInfo = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                self.mapInfo = mapInfo
+            if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
+                self.mapInfos = mapInfos
             }
-            
         }
     }
     

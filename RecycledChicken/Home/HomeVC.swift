@@ -26,8 +26,8 @@ class HomeVC: CustomRootVC {
         super.viewDidAppear(animated)
         barcodeView.code = CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber
         if FirstTime && LoginSuccess {
-            let welcomeView = WelcomeView(frame: UIScreen.main.bounds)
-            keyWindow?.addSubview(welcomeView)
+            let adView = ADView(frame: UIScreen.main.bounds)
+            keyWindow?.addSubview(adView)
             FirstTime = false
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }

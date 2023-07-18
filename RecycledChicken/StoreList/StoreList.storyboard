@@ -74,6 +74,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="storeAddress" destination="NQj-Lb-aS6" id="Hrm-R0-vGX"/>
+                                            <outlet property="storeName" destination="C4M-1z-Rhd" id="CMf-kC-uHo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -100,6 +104,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J70-IO-r4j"/>
                     <connections>
+                        <outlet property="searchView" destination="mv7-Z4-qUr" id="2og-jw-5OY"/>
                         <outlet property="storeListTableView" destination="3tr-2J-jlc" id="RjC-Je-nBj"/>
                     </connections>
                 </viewController>
@@ -126,6 +131,14 @@
             <point key="canvasLocation" x="-129.00763358778624" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="C4M-1z-Rhd">
+            <size key="intrinsicContentSize" width="85" height="24"/>
+        </designable>
+        <designable name="NQj-Lb-aS6">
+            <size key="intrinsicContentSize" width="260" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <image name="グループ 1089" width="1125" height="2436"/>
         <systemColor name="systemBackgroundColor">

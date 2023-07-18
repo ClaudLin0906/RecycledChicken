@@ -10,6 +10,10 @@ import UIKit
 class StoreListTableViewCell: UITableViewCell {
     
     static let identifier = "StoreListTableViewCell"
+    
+    @IBOutlet weak var storeName:CustomLabel!
+    
+    @IBOutlet weak var storeAddress:CustomLabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +24,11 @@ class StoreListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setCell(mapInfo:MapInfo){
+        storeName.text = mapInfo.storeName
+        storeAddress.text = mapInfo.storeAddress
     }
 
 }

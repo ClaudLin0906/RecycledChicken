@@ -8,23 +8,82 @@
 import UIKit
 
 class StoreListVC: CustomVC {
-
+    
     @IBOutlet weak var storeListTableView:UITableView!
+    
+    @IBOutlet weak var searchView:SearchView!
+    
+    private var mapInfos:[MapInfo] = []
+    
+    private var filterMapInfos:[MapInfo] = []
+    {
+        willSet{
+            DispatchQueue.main.async {
+                self.storeListTableView.reloadData()
+            }
+        }
+    }
+    
+    private var filtered = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "門市列表"
         UIInit()
+        getStoreInfo()
         // Do any additional setup after loading the view.
+    }
+    
+    private func getStoreInfo(){
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            
+            if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
+                self.mapInfos = mapInfos
+                DispatchQueue.main.async {
+                    self.storeListTableView.reloadData()
+                }
+            }
+        }
     }
     
     private func UIInit(){
         storeListTableView.setSeparatorLocation()
+        searchView.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+    }
+    
+    private func filterText(_ query:String?){
+        guard let query = query else { return }
+        filterMapInfos.removeAll()
+        let newData = mapInfos.filter({
+            let storeNameResult =  $0.storeName.range(of: query, options: .caseInsensitive)
+            let storeAddressResult = $0.storeAddress.range(of: query, options: .caseInsensitive)
+            if storeNameResult != nil || storeAddressResult != nil {
+                return true
+            }else{
+                return false
+            }
+        })
+        filterMapInfos.append(contentsOf: newData)
+        if filterMapInfos.isEmpty{
+            filtered = false
+        }else{
+            filtered = true
+        }
+    }
+    
+    @objc private func textFieldDidChange(_ textfield:UITextField){
+        if let text = textfield.text {
+            filterText(text)
+        }
     }
 
 
@@ -33,15 +92,20 @@ class StoreListVC: CustomVC {
 extension StoreListVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        70
+        40
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        if !filterMapInfos.isEmpty {
+            return filterMapInfos.count
+        }
+        return  filtered ? 0 : mapInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTableViewCell.identifier, for: indexPath) as! StoreListTableViewCell
+        let mapInfo = mapInfos[indexPath.row]
+        cell.setCell(mapInfo: mapInfo)
         return cell
     }
     
