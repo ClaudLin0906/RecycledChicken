@@ -160,6 +160,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="drawPeople" destination="4hB-xT-qBm" id="RCt-vN-s5K"/>
                                             <outlet property="drawTime" destination="e8E-lZ-LzW" id="GMP-rH-uSc"/>
                                             <outlet property="duringTime" destination="Gte-w0-KtV" id="bCy-t6-lWh"/>
                                             <outlet property="itemImageView" destination="HPR-JA-KXE" id="Caa-Pp-Dgd"/>
