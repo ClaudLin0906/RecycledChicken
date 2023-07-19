@@ -22,7 +22,7 @@ class PersonMessageContentVC: CustomVC {
                 contentTextView?.text = newValue.message
                 if let date = dateFromString(newValue.createTime) {
                     let createTime = getDates(i: 0, currentDate: date).0
-                    timeLabel.text = newValue.createTime
+                    timeLabel.text = createTime
                 }
             }
         }
