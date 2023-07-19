@@ -16,13 +16,6 @@ class StoreListVC: CustomVC {
     private var mapInfos:[MapInfo] = []
     
     private var filterMapInfos:[MapInfo] = []
-    {
-        willSet{
-            DispatchQueue.main.async {
-                self.storeListTableView.reloadData()
-            }
-        }
-    }
     
     private var filtered = false
     
@@ -63,6 +56,7 @@ class StoreListVC: CustomVC {
     private func filterText(_ query:String?){
         guard let query = query else { return }
         filterMapInfos.removeAll()
+        
         let newData = mapInfos.filter({
             let storeNameResult =  $0.storeName.range(of: query, options: .caseInsensitive)
             let storeAddressResult = $0.storeAddress.range(of: query, options: .caseInsensitive)
@@ -72,11 +66,17 @@ class StoreListVC: CustomVC {
                 return false
             }
         })
+        
         filterMapInfos.append(contentsOf: newData)
-        if filterMapInfos.isEmpty{
-            filtered = false
-        }else{
+        
+        if !filterMapInfos.isEmpty || searchView.textField.text != ""{
             filtered = true
+        }else{
+            filtered = false
+        }
+        
+        DispatchQueue.main.async {
+            self.storeListTableView.reloadData()
         }
     }
     
@@ -104,7 +104,7 @@ extension StoreListVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoreListTableViewCell.identifier, for: indexPath) as! StoreListTableViewCell
-        let mapInfo = mapInfos[indexPath.row]
+        let mapInfo:MapInfo = filtered ? filterMapInfos[indexPath.row] : mapInfos[indexPath.row]
         cell.setCell(mapInfo: mapInfo)
         return cell
     }

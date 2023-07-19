@@ -149,49 +149,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F5762769-1760-4A18-A269-1B639E44BE14"
+            uuid = "B5540D55-83F0-4B48-A96E-7DBFDBF2DEFA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/StoreList/StoreListVC.swift"
+            filePath = "RecycledChicken/Lottery /LotteryVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "textFieldDidChange(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F5762769-1760-4A18-A269-1B639E44BE14 - 6d566cb578d1d6a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.StoreListVC.textFieldDidChange(__C.UITextField) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/StoreList/StoreListVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "81">
-               </Location>
-               <Location
-                  uuid = "F5762769-1760-4A18-A269-1B639E44BE14 - 6d566cb578d1d6a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.StoreListVC.textFieldDidChange(__C.UITextField) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/StoreList/StoreListVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "127">
-               </Location>
-            </Locations>
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "LotteryVC"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

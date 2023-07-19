@@ -34,17 +34,15 @@ class TaskVC: CustomRootVC {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
-            if let data = data {
-                if let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any]{
-                    let taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                    self.taskInfos = taskInfos.filter{
-                        if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
-                            return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
-                        }
-                        return false
+            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+                let taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                self.taskInfos = taskInfos.filter{
+                    if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
+                        return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
                     }
-                    
+                    return false
                 }
+                    
                 DispatchQueue.main.async {
                     self.taskTableView.reloadData()
                 }

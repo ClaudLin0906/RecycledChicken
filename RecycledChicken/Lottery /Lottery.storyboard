@@ -157,6 +157,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="drawTime" destination="e8E-lZ-LzW" id="GMP-rH-uSc"/>
+                                            <outlet property="duringTime" destination="e8E-lZ-LzW" id="GRB-q1-jbs"/>
+                                            <outlet property="itemImageView" destination="HPR-JA-KXE" id="Caa-Pp-Dgd"/>
+                                            <outlet property="itemName" destination="SKR-pS-7to" id="tD7-kt-FXD"/>
+                                            <outlet property="point" destination="xmv-EX-kc9" id="50s-NE-REc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

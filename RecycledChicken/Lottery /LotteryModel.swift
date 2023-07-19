@@ -7,6 +7,13 @@
 
 import Foundation
 
-//struct LotteryInfo: Decodable {
-//     
-//}
+struct LotteryInfo: Decodable {
+    var itemPrice:Int
+    var purchaserCount:Int
+    var activityEndTime:String
+    var activityStartTime:String
+    var createTime:String
+    var picture:String
+    var pictureBig:String
+    var itemName:String
+}

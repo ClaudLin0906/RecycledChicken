@@ -11,6 +11,16 @@ class LotteryTableViewCell: UITableViewCell {
     
     static let identifier = "LotteryTableViewCell"
 
+    @IBOutlet weak var itemImageView: UIImageView!
+    
+    @IBOutlet weak var itemName: CustomLabel!
+        
+    @IBOutlet weak var point: UILabel!
+    
+    @IBOutlet weak var duringTime: CustomLabel!
+    
+    @IBOutlet weak var drawTime: CustomLabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +30,18 @@ class LotteryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setCell(lotteryInfo:LotteryInfo) {
+        itemName.text = lotteryInfo.itemName
+        if let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!) {
+            if let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.itemImageView.image = image
+                }
+            }
+        }
+        duringTime.text = lotteryInfo.activityStartTime + "~" + lotteryInfo.activityEndTime
     }
 
 }
