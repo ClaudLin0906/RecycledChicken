@@ -21,8 +21,6 @@
 		5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C59D2A06342B00FAB49D /* LoginVC.swift */; };
 		5926C5A22A06364800FAB49D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5A12A06364800FAB49D /* Common.swift */; };
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
-		59325EC12A113ED100976790 /* DeleteAccountAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */; };
-		59325EC32A113EE000976790 /* DeleteAccountAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */; };
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
 		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
@@ -146,6 +144,9 @@
 		59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D9A22A0D37790085724F /* TaskVC.swift */; };
 		59C2D9A52A0D38490085724F /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2D9A42A0D38490085724F /* Task.storyboard */; };
 		59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C5AF6D2A290E6F002322BE /* jf-openhuninn-2.0.ttf */; };
+		59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8D9B2A67B3940094CE57 /* DeleteAccountAlertVC.swift */; };
+		59CC8DA02A67B3F10094CE57 /* DeleteAccountAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CC8D9F2A67B3F10094CE57 /* DeleteAccountAlert.storyboard */; };
+		59CC8DA22A67C8CE0094CE57 /* PersonMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DA12A67C8CE0094CE57 /* PersonMessageModel.swift */; };
 		59CDA34A2A42DBA100E3F74E /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */; };
 		59CDA34C2A42DE8B00E3F74E /* VerificationCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */; };
 		59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA34D2A42DEB700E3F74E /* SignModel.swift */; };
@@ -204,8 +205,6 @@
 		5926C59D2A06342B00FAB49D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5926C5A12A06364800FAB49D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLoginVC.swift; sourceTree = "<group>"; };
-		59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertView.swift; sourceTree = "<group>"; };
-		59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteAccountAlertView.xib; sourceTree = "<group>"; };
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
@@ -329,6 +328,9 @@
 		59C2D9A22A0D37790085724F /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		59C2D9A42A0D38490085724F /* Task.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		59C5AF6D2A290E6F002322BE /* jf-openhuninn-2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jf-openhuninn-2.0.ttf"; sourceTree = "<group>"; };
+		59CC8D9B2A67B3940094CE57 /* DeleteAccountAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertVC.swift; sourceTree = "<group>"; };
+		59CC8D9F2A67B3F10094CE57 /* DeleteAccountAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccountAlert.storyboard; sourceTree = "<group>"; };
+		59CC8DA12A67C8CE0094CE57 /* PersonMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageModel.swift; sourceTree = "<group>"; };
 		59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeModel.swift; sourceTree = "<group>"; };
 		59CDA34D2A42DEB700E3F74E /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
@@ -555,8 +557,8 @@
 			children = (
 				5975217F2A0B8AB500D0B67C /* DeleteAccountVC.swift */,
 				597521812A0B8AE700D0B67C /* DeleteAccount.storyboard */,
-				59325EC02A113ED100976790 /* DeleteAccountAlertView.swift */,
-				59325EC22A113EE000976790 /* DeleteAccountAlertView.xib */,
+				59CC8D9B2A67B3940094CE57 /* DeleteAccountAlertVC.swift */,
+				59CC8D9F2A67B3F10094CE57 /* DeleteAccountAlert.storyboard */,
 			);
 			path = DeleteAccount;
 			sourceTree = "<group>";
@@ -770,6 +772,7 @@
 				59997A6F2A0A4A1500E9FD7F /* PersonMessageVC.swift */,
 				59997A712A0A4AD800E9FD7F /* PersonMessage.storyboard */,
 				59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */,
+				59CC8DA12A67C8CE0094CE57 /* PersonMessageModel.swift */,
 			);
 			path = PersonMessage;
 			sourceTree = "<group>";
@@ -940,7 +943,6 @@
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
 				59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */,
 				59A7958E2A0F9E9E0031710F /* SpendPointAlertView.xib in Resources */,
-				59325EC32A113EE000976790 /* DeleteAccountAlertView.xib in Resources */,
 				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
 				5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */,
 				59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */,
@@ -978,6 +980,7 @@
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
 				59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */,
 				5994957E2A0D2C7B009F1B2E /* StoreMap.storyboard in Resources */,
+				59CC8DA02A67B3F10094CE57 /* DeleteAccountAlert.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
@@ -1062,6 +1065,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59CC8DA22A67C8CE0094CE57 /* PersonMessageModel.swift in Sources */,
 				59CDA3502A42FC5000E3F74E /* LoginModel.swift in Sources */,
 				598F394E2A0E0FA800DA9186 /* StoreListTableViewCell.swift in Sources */,
 				59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */,
@@ -1132,6 +1136,7 @@
 				59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */,
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
+				59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */,
 				59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */,
 				5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
@@ -1151,7 +1156,6 @@
 				597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */,
 				5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */,
 				5994956B2A0BFC48009F1B2E /* SpendPointView.swift in Sources */,
-				59325EC12A113ED100976790 /* DeleteAccountAlertView.swift in Sources */,
 				59CDA35A2A45A7B800E3F74E /* StoreMapModel.swift in Sources */,
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				599495772A0D0281009F1B2E /* PointRuleVC.swift in Sources */,

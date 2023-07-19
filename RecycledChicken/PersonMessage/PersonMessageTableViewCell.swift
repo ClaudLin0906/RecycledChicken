@@ -25,5 +25,13 @@ class PersonMessageTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setCell(_ personMessageInfo:PersonMessageInfo) {
+        titleLabel.text = personMessageInfo.message
+        if let date = dateFromString(personMessageInfo.createTime) {
+            let dateStr = getDates(i: 0, currentDate: date).0
+            timeLabel.text = dateStr
+        }
+    }
 
 }

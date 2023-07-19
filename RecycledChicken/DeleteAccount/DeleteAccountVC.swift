@@ -25,9 +25,11 @@ class DeleteAccountVC: CustomVC {
         setDefaultNavigationBackBtn2()
     }
     
-    @IBAction func deleteAction(_ sender:UIButton) {
-        let deleteAccountAlertView = DeleteAccountAlertView(frame: UIScreen.main.bounds)
-        keyWindow?.addSubview(deleteAccountAlertView)
+    @IBAction func deleteAction(_ sender:UIButton) {        
+        if let VC = UIStoryboard(name: "DeleteAccountAlert", bundle: nil).instantiateViewController(withIdentifier: "DeleteAccountAlert") as? DeleteAccountAlertVC {
+            VC.modalPresentationStyle = .fullScreen
+            present(VC, animated: false)
+        }
     }
 
 }

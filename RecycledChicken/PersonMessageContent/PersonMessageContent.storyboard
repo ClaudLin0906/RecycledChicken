@@ -111,6 +111,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="smd-cw-DJF"/>
                     <connections>
+                        <outlet property="contentTextView" destination="Tgb-In-SOz" id="SA4-ZN-yxw"/>
                         <outlet property="timeLabel" destination="oYj-Ye-dHI" id="uV3-f5-1U9"/>
                         <outlet property="titleLabel" destination="BUV-vR-fCH" id="aIb-Y8-qn9"/>
                     </connections>

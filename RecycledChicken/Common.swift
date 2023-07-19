@@ -95,6 +95,7 @@ struct APIUrl {
     static let forgotPassword = "/forgotPassword"
     static let smsCertificate = "/smsCertificate"
     static let getAd = "/getAd"
+    static let getNotification = "/getNotification"
 }
 
 struct WebViewUrl{

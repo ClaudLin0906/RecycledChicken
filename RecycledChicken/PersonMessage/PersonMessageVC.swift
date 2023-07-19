@@ -10,17 +10,39 @@ import UIKit
 class PersonMessageVC: CustomVC {
     
     @IBOutlet weak var personMessageTableView:UITableView!
+    
+    private var personMessageInfos:[PersonMessageInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "個人訊息"
-        personMessageTableView.setSeparatorLocation()
+        UIInit()
+        getData()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+    }
+    
+    private func UIInit(){
+        personMessageTableView.setSeparatorLocation()
+    }
+    
+    private func getData(){
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getNotification, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if let data = data, let personMessageInfos = try? JSONDecoder().decode([PersonMessageInfo].self, from: data) {
+                self.personMessageInfos = personMessageInfos
+                DispatchQueue.main.async {
+                    self.personMessageTableView.reloadData()
+                }
+            }
+        }
     }
 
 
@@ -30,6 +52,7 @@ extension PersonMessageVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PersonMessageContent", bundle: Bundle.main).instantiateViewController(identifier: "PersonMessageContent") as? PersonMessageContentVC {
+            VC.personMessageInfo = personMessageInfos[indexPath.row]
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
@@ -39,11 +62,13 @@ extension PersonMessageVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        personMessageInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonMessageTableViewCell.identifier, for: indexPath) as! PersonMessageTableViewCell
+        let info = personMessageInfos[indexPath.row]
+        cell.setCell(info)
         return cell
     }
     
