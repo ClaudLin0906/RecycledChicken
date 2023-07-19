@@ -16,17 +16,6 @@ class PersonMessageContentVC: CustomVC {
     @IBOutlet weak var contentTextView:UITextView!
     
     var personMessageInfo:PersonMessageInfo?
-    {
-        willSet{
-            if let newValue = newValue {
-                contentTextView?.text = newValue.message
-                if let date = dateFromString(newValue.createTime) {
-                    let createTime = getDates(i: 0, currentDate: date).0
-                    timeLabel.text = createTime
-                }
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +30,14 @@ class PersonMessageContentVC: CustomVC {
     }
     
     private func UIInit(){
-        
+        if let personMessageInfo = personMessageInfo {
+            contentTextView?.text = personMessageInfo.message
+            titleLabel.text = personMessageInfo.message
+            if let date = dateFromString(personMessageInfo.createTime) {
+                let createTime = getDates(i: 0, currentDate: date).0
+                timeLabel.text = createTime
+            }
+        }
     }
 
 
