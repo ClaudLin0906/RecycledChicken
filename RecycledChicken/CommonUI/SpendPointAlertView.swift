@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SpendPointAlertViewDelegate{
+protocol SpendPointAlertViewDelegate {
     func confirm(_ sender:UIButton)
 }
 

@@ -22,8 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本次將使用點數2500點" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfG-sV-bEK" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="71.666666666666686" y="330.33333333333331" width="250" height="16.666666666666686"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本次將使用點數XXXX點" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfG-sV-bEK" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="71.666666666666686" y="328.66666666666669" width="250" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="2HK-hc-LUL"/>
                     </constraints>
@@ -37,7 +37,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩餘點數" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgz-r1-9c8" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="96.666666666666686" y="357" width="90" height="24"/>
+                    <rect key="frame" x="96.666666666666686" y="358.66666666666669" width="90" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="YbV-7Q-rDA"/>
                     </constraints>
@@ -51,20 +51,20 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="2Ei-Oz-FXn">
-                    <rect key="frame" x="191.66666666666666" y="359" width="20" height="20"/>
+                    <rect key="frame" x="191.66666666666666" y="358.66666666666669" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2Ei-Oz-FXn" secondAttribute="height" multiplier="1:1" id="6Gn-Wr-Now"/>
                         <constraint firstAttribute="height" constant="20" id="qsX-Qy-Eea"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWz-m4-IGd">
-                    <rect key="frame" x="216.66666666666666" y="360.66666666666669" width="31.333333333333343" height="16.666666666666686"/>
+                    <rect key="frame" x="216.66666666666666" y="358.66666666666669" width="28.666666666666657" height="20"/>
                     <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbS-S6-UNo" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="121.66666666666669" y="397.33333333333331" width="150" height="40"/>
+                    <rect key="frame" x="121.66666666666669" y="398.66666666666669" width="150" height="40"/>
                     <color key="backgroundColor" red="0.82745098039215681" green="0.69019607843137254" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="DjU-Yc-4d6"/>
@@ -85,7 +85,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-qn-oml" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="121.66666666666669" y="457.33333333333331" width="150" height="40"/>
+                    <rect key="frame" x="121.66666666666669" y="458.66666666666669" width="150" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -126,10 +126,16 @@
     </objects>
     <designables>
         <designable name="Oef-qn-oml">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
         <designable name="XbS-S6-UNo">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
+        </designable>
+        <designable name="dgz-r1-9c8">
+            <size key="intrinsicContentSize" width="68" height="20"/>
+        </designable>
+        <designable name="yfG-sV-bEK">
+            <size key="intrinsicContentSize" width="177.66666666666666" height="20"/>
         </designable>
     </designables>
     <resources>

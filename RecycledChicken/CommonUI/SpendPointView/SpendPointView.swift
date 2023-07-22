@@ -84,10 +84,9 @@ class SpendPointView: UIView, NibOwnerLoadable {
     }
     
     @IBAction func btnAction(_sender:UIButton) {
-        if let lotteryInfo = lotteryInfo {
-            let spendPointInfo = SpendPointInfo(lotteryItemName: lotteryInfo.itemName, lotteryItemCreateTime: lotteryInfo.createTime, count: amount)
-            delegate?.btnAction(_sender, info: spendPointInfo)
-        }
+        guard amount > 0, let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let lotteryInfo = lotteryInfo, profileInfo.point >= (lotteryInfo.itemPrice * amount) else { return }
+        let spendPointInfo = SpendPointInfo(lotteryItemName: lotteryInfo.itemName, lotteryItemCreateTime: lotteryInfo.createTime, count: amount)
+        delegate?.btnAction(_sender, info: spendPointInfo)
     }
 
 }
