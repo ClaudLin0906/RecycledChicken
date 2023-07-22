@@ -10,6 +10,8 @@ import UIKit
 class BuyLotteryVC: CustomVC {
     
     @IBOutlet weak var spendPointView:SpendPointView!
+    
+    var lotteryInfos:[LotteryInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class BuyLotteryVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+        spendPointView.lotteryInfos = self.lotteryInfos
     }
 
 

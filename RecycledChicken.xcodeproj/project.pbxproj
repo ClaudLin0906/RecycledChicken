@@ -147,6 +147,8 @@
 		59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8D9B2A67B3940094CE57 /* DeleteAccountAlertVC.swift */; };
 		59CC8DA02A67B3F10094CE57 /* DeleteAccountAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CC8D9F2A67B3F10094CE57 /* DeleteAccountAlert.storyboard */; };
 		59CC8DA22A67C8CE0094CE57 /* PersonMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DA12A67C8CE0094CE57 /* PersonMessageModel.swift */; };
+		59CC8DA92A6BB3C30094CE57 /* LotteryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DA72A6BB3C30094CE57 /* LotteryItemTableViewCell.swift */; };
+		59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */; };
 		59CDA34A2A42DBA100E3F74E /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */; };
 		59CDA34C2A42DE8B00E3F74E /* VerificationCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */; };
 		59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA34D2A42DEB700E3F74E /* SignModel.swift */; };
@@ -331,6 +333,8 @@
 		59CC8D9B2A67B3940094CE57 /* DeleteAccountAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertVC.swift; sourceTree = "<group>"; };
 		59CC8D9F2A67B3F10094CE57 /* DeleteAccountAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccountAlert.storyboard; sourceTree = "<group>"; };
 		59CC8DA12A67C8CE0094CE57 /* PersonMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageModel.swift; sourceTree = "<group>"; };
+		59CC8DA72A6BB3C30094CE57 /* LotteryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryItemTableViewCell.swift; sourceTree = "<group>"; };
+		59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryItemTableViewCell.xib; sourceTree = "<group>"; };
 		59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeModel.swift; sourceTree = "<group>"; };
 		59CDA34D2A42DEB700E3F74E /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
@@ -675,6 +679,8 @@
 			children = (
 				5994956A2A0BFC48009F1B2E /* SpendPointView.swift */,
 				5994956C2A0BFC88009F1B2E /* SpendPointView.xib */,
+				59CC8DA72A6BB3C30094CE57 /* LotteryItemTableViewCell.swift */,
+				59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */,
 				598F39492A0E078400DA9186 /* SearchView.swift */,
 				598F394B2A0E07A500DA9186 /* SearchView.xib */,
 				59A7958F2A0F9F6C0031710F /* SpendPointCompleteAlertView.swift */,
@@ -926,6 +932,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */,
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
 				59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */,
@@ -1121,6 +1128,7 @@
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */,
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
+				59CC8DA92A6BB3C30094CE57 /* LotteryItemTableViewCell.swift in Sources */,
 				5926C5A22A06364800FAB49D /* Common.swift in Sources */,
 				59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */,
 				59D20CE82A1E4FA600EF87B1 /* CustomCalenderScrollView.swift in Sources */,

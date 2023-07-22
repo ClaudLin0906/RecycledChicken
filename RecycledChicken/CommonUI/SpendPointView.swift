@@ -15,7 +15,20 @@ class SpendPointView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var confirm:UIButton!
     
+    @IBOutlet weak var tableView:UITableView!
+    
+    @IBOutlet weak var itemAmount:UILabel!
+    
+    @IBOutlet weak var needPoint:UILabel!
+    
     var delegate:SpendPointViewDelegate?
+    
+    var lotteryInfos:[LotteryInfo] = []
+    {
+        willSet{
+            tableView.reloadData()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +42,16 @@ class SpendPointView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+        tableView.setSeparatorLocation()
+        tableView.register(UINib(nibName: "LotteryItemTableViewCell", bundle: nil), forCellReuseIdentifier: "LotteryItemTableViewCell")
+    }
+    
+    @IBAction func plusBtn(_ sender:UIButton){
+        
+    }
+    
+    @IBAction func minusBtn(_ sender:UIButton){
+        
     }
     
     func setConfirmBtnTitle(_ title:String){
@@ -41,4 +64,26 @@ class SpendPointView: UIView, NibOwnerLoadable {
 
 }
 
+extension SpendPointView:UITableViewDelegate {
+    
+}
 
+
+extension SpendPointView:UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        200
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        lotteryInfos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LotteryItemTableViewCell", for: indexPath) as! LotteryItemTableViewCell
+        cell.setCell(lotteryInfo: lotteryInfos[indexPath.row])
+        return cell
+    }
+    
+    
+}
