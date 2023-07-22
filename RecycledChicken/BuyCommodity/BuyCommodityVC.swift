@@ -40,6 +40,7 @@ extension BuyCommodityVC: SpendPointViewDelegate {
     
     func btnAction(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointAlertView = SpendPointAlertView(frame: UIScreen.main.bounds)
+        spendPointAlertView.spendPointInfo = info
         spendPointAlertView.delegate = self
         keyWindow?.addSubview(spendPointAlertView)
     }

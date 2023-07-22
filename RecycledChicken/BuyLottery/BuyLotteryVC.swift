@@ -43,6 +43,7 @@ extension BuyLotteryVC: SpendPointViewDelegate {
     
     func btnAction(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointAlertView = SpendPointAlertView(frame: view.frame)
+        spendPointAlertView.spendPointInfo = info
         spendPointAlertView.delegate = self
         keyWindow?.addSubview(spendPointAlertView)
     }

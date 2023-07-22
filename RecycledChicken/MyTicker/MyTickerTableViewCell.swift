@@ -10,6 +10,12 @@ import UIKit
 class MyTickerTableViewCell: UITableViewCell {
     
     static let identifier = "MyTickerTableViewCell"
+    
+    @IBOutlet weak var itemName:CustomLabel!
+    
+    @IBOutlet weak var drawTime:CustomLabel!
+    
+    @IBOutlet weak var UUID:CustomLabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +29,11 @@ class MyTickerTableViewCell: UITableViewCell {
     }
     
     func setCell(_ info:MyTickertInfo){
-        
+        itemName.text = info.itemName
+        if let date = dateFromString(info.buyTime) {
+            drawTime.text = "開獎時間:\(getDates(i: 0, currentDate: date).0)"
+        }
+        UUID.text = info.UUID
     }
 
 }

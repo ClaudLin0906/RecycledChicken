@@ -32,7 +32,9 @@ class MyTickerVC: CustomVC {
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 self.myTickertInfos = try! JSONDecoder().decode([MyTickertInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
