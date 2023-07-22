@@ -21,6 +21,21 @@ class SpendPointView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var needPoint:UILabel!
     
+    private var amount:Int = 0
+    {
+        willSet{
+            DispatchQueue.main.async { [self] in
+                itemAmount.text = String(newValue)
+                let needPointInt = totalNeedPoint * newValue
+                needPoint.text = String(needPointInt)
+            }
+        }
+    }
+    
+    private var subtract:Int = 1
+    
+    private var add:Int = 1
+    
     var delegate:SpendPointViewDelegate?
     
     var lotteryInfos:[LotteryInfo] = []
@@ -29,6 +44,14 @@ class SpendPointView: UIView, NibOwnerLoadable {
             tableView.reloadData()
         }
     }
+    
+    lazy var totalNeedPoint:Int = {
+        var result:Int = 0
+        for needPoint in lotteryInfos {
+            result += needPoint.itemPrice
+        }
+        return result
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,15 +65,25 @@ class SpendPointView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+        amount = 1
+        itemAmount.text = String(amount)
         tableView.setSeparatorLocation()
         tableView.register(UINib(nibName: "LotteryItemTableViewCell", bundle: nil), forCellReuseIdentifier: "LotteryItemTableViewCell")
-    }
-    
-    @IBAction func plusBtn(_ sender:UIButton){
         
     }
     
+    @IBAction func plusBtn(_ sender:UIButton){
+        amount += add
+        if amount > 10 {
+            amount = 10
+        }
+    }
+    
     @IBAction func minusBtn(_ sender:UIButton){
+        amount -= subtract
+        if amount < 0 {
+            amount = 0
+        }
         
     }
     

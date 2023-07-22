@@ -50,6 +50,7 @@ class LotteryTableViewCell: UITableViewCell {
             drawPeople.text = "參與人數:" + String(lotteryInfo.purchaserCount)
             duringTime.font = duringTime.font.withSize(11)
             drawTime.font = duringTime.font.withSize(11)
+            point.text = "\(lotteryInfo.itemPrice)"
         }
     }
 
