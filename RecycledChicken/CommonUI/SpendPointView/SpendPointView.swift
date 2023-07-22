@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SpendPointViewDelegate{
-    func btnAction(_ sender:UIButton)
+    func btnAction(_ sender:UIButton, info:SpendPointInfo)
 }
 
 class SpendPointView: UIView, NibOwnerLoadable {
@@ -26,7 +26,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
         willSet{
             DispatchQueue.main.async { [self] in
                 itemAmount.text = String(newValue)
-                let needPointInt = totalNeedPoint * newValue
+                let needPointInt = (lotteryInfo?.itemPrice ?? 0) * newValue
                 needPoint.text = String(needPointInt)
             }
         }
@@ -38,20 +38,12 @@ class SpendPointView: UIView, NibOwnerLoadable {
     
     var delegate:SpendPointViewDelegate?
     
-    var lotteryInfos:[LotteryInfo] = []
+    var lotteryInfo:LotteryInfo?
     {
         willSet{
             tableView.reloadData()
         }
     }
-    
-    lazy var totalNeedPoint:Int = {
-        var result:Int = 0
-        for needPoint in lotteryInfos {
-            result += needPoint.itemPrice
-        }
-        return result
-    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -92,7 +84,10 @@ class SpendPointView: UIView, NibOwnerLoadable {
     }
     
     @IBAction func btnAction(_sender:UIButton) {
-        delegate?.btnAction(_sender)
+        if let lotteryInfo = lotteryInfo {
+            let spendPointInfo = SpendPointInfo(lotteryItemName: lotteryInfo.itemName, lotteryItemCreateTime: lotteryInfo.createTime, count: amount)
+            delegate?.btnAction(_sender, info: spendPointInfo)
+        }
     }
 
 }
@@ -109,12 +104,14 @@ extension SpendPointView:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        lotteryInfos.count
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LotteryItemTableViewCell", for: indexPath) as! LotteryItemTableViewCell
-        cell.setCell(lotteryInfo: lotteryInfos[indexPath.row])
+        if let lotteryInfo = lotteryInfo {
+            cell.setCell(lotteryInfo: lotteryInfo)
+        }
         return cell
     }
     

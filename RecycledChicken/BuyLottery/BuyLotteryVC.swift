@@ -11,7 +11,7 @@ class BuyLotteryVC: CustomVC {
     
     @IBOutlet weak var spendPointView:SpendPointView!
     
-    var lotteryInfos:[LotteryInfo] = []
+    var lotteryInfo:LotteryInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,9 @@ class BuyLotteryVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        spendPointView.lotteryInfos = self.lotteryInfos
+        if let lotteryInfo = lotteryInfo{
+            spendPointView.lotteryInfo = lotteryInfo
+        }
     }
 
 
@@ -35,7 +37,7 @@ class BuyLotteryVC: CustomVC {
 
 extension BuyLotteryVC: SpendPointViewDelegate {
     
-    func btnAction(_ sender: UIButton) {
+    func btnAction(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointAlertView = SpendPointAlertView(frame: view.frame)
         spendPointAlertView.delegate = self
         keyWindow?.addSubview(spendPointAlertView)

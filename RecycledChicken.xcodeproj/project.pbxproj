@@ -149,6 +149,7 @@
 		59CC8DA22A67C8CE0094CE57 /* PersonMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DA12A67C8CE0094CE57 /* PersonMessageModel.swift */; };
 		59CC8DA92A6BB3C30094CE57 /* LotteryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DA72A6BB3C30094CE57 /* LotteryItemTableViewCell.swift */; };
 		59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */; };
+		59CC8DAF2A6BC0D50094CE57 /* SpendPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DAE2A6BC0D50094CE57 /* SpendPointModel.swift */; };
 		59CDA34A2A42DBA100E3F74E /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */; };
 		59CDA34C2A42DE8B00E3F74E /* VerificationCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */; };
 		59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA34D2A42DEB700E3F74E /* SignModel.swift */; };
@@ -335,6 +336,7 @@
 		59CC8DA12A67C8CE0094CE57 /* PersonMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageModel.swift; sourceTree = "<group>"; };
 		59CC8DA72A6BB3C30094CE57 /* LotteryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryItemTableViewCell.swift; sourceTree = "<group>"; };
 		59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryItemTableViewCell.xib; sourceTree = "<group>"; };
+		59CC8DAE2A6BC0D50094CE57 /* SpendPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendPointModel.swift; sourceTree = "<group>"; };
 		59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeModel.swift; sourceTree = "<group>"; };
 		59CDA34D2A42DEB700E3F74E /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
@@ -677,10 +679,7 @@
 		599495692A0BFC12009F1B2E /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
-				5994956A2A0BFC48009F1B2E /* SpendPointView.swift */,
-				5994956C2A0BFC88009F1B2E /* SpendPointView.xib */,
-				59CC8DA72A6BB3C30094CE57 /* LotteryItemTableViewCell.swift */,
-				59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */,
+				59CC8DAB2A6BC0420094CE57 /* SpendPointView */,
 				598F39492A0E078400DA9186 /* SearchView.swift */,
 				598F394B2A0E07A500DA9186 /* SearchView.xib */,
 				59A7958F2A0F9F6C0031710F /* SpendPointCompleteAlertView.swift */,
@@ -837,6 +836,18 @@
 				59835DF12A63FA2200678BAF /* TaskModel.swift */,
 			);
 			path = Task;
+			sourceTree = "<group>";
+		};
+		59CC8DAB2A6BC0420094CE57 /* SpendPointView */ = {
+			isa = PBXGroup;
+			children = (
+				5994956A2A0BFC48009F1B2E /* SpendPointView.swift */,
+				5994956C2A0BFC88009F1B2E /* SpendPointView.xib */,
+				59CC8DA72A6BB3C30094CE57 /* LotteryItemTableViewCell.swift */,
+				59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */,
+				59CC8DAE2A6BC0D50094CE57 /* SpendPointModel.swift */,
+			);
+			path = SpendPointView;
 			sourceTree = "<group>";
 		};
 		59F6BE2D2A078D7100D7B3CB /* Sign */ = {
@@ -1151,6 +1162,7 @@
 				59CDA3582A45963E00E3F74E /* RecycleLogModel.swift in Sources */,
 				59CDA34C2A42DE8B00E3F74E /* VerificationCodeModel.swift in Sources */,
 				59A7958C2A0F9E820031710F /* SpendPointAlertView.swift in Sources */,
+				59CC8DAF2A6BC0D50094CE57 /* SpendPointModel.swift in Sources */,
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
 				599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */,
 				598F394A2A0E078400DA9186 /* SearchView.swift in Sources */,

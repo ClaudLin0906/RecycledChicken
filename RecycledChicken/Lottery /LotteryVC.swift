@@ -51,9 +51,7 @@ extension LotteryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
-            var infos:[LotteryInfo] = []
-            infos.append(lotteryInfos[indexPath.row])
-            VC.lotteryInfos = infos
+            VC.lotteryInfo = lotteryInfos[indexPath.row]
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }

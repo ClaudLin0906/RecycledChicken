@@ -33,12 +33,12 @@ class BuyCommodityVC: CustomVC {
 
 extension BuyCommodityVC: SpendPointViewDelegate {
     
-    func btnAction(_ sender: UIButton) {
+    func btnAction(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointAlertView = SpendPointAlertView(frame: UIScreen.main.bounds)
         spendPointAlertView.delegate = self
         keyWindow?.addSubview(spendPointAlertView)
     }
-
+    
 }
 
 extension BuyCommodityVC: SpendPointAlertViewDelegate {
