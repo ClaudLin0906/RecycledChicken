@@ -167,6 +167,9 @@
         <designable name="YZX-eh-BuE">
             <size key="intrinsicContentSize" width="40.333333333333336" height="20.333333333333332"/>
         </designable>
+        <designable name="vjX-Sq-E9j">
+            <size key="intrinsicContentSize" width="78" height="20.333333333333332"/>
+        </designable>
     </designables>
     <resources>
         <image name="グループ 1089" width="1125" height="2436"/>
