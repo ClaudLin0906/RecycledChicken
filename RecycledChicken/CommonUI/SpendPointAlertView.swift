@@ -8,12 +8,18 @@
 import UIKit
 
 protocol SpendPointAlertViewDelegate {
-    func confirm(_ sender:UIButton)
+    func confirm(_ sender:UIButton, info:SpendPointInfo)
 }
 
 class SpendPointAlertView: UIView, NibOwnerLoadable {
     
     var delegate:SpendPointAlertViewDelegate?
+    
+    var spendPointInfo:SpendPointInfo?
+    
+    @IBOutlet weak var spendPointLabel:CustomLabel!
+    
+    @IBOutlet weak var remainder:UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,9 +35,20 @@ class SpendPointAlertView: UIView, NibOwnerLoadable {
         loadNibContent()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let spendPointInfo = spendPointInfo, let profile = CurrentUserInfo.shared.currentProfileInfo {
+            spendPointLabel.text = "本次將使用點數\(spendPointInfo.totalPoint)點"
+            let remainderInt = profile.point - (Int(spendPointInfo.totalPoint) ?? 0)
+            remainder.text = String(remainderInt)
+        }
+    }
+    
     @IBAction func confirm(_ sender:UIButton) {
+        if let info = spendPointInfo {
+            delegate?.confirm(sender, info: info)
+        }
         self.removeFromSuperview()
-        delegate?.confirm(sender)
     }
     
     @IBAction func cancel(_ sender:UIButton) {

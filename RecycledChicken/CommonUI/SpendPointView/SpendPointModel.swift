@@ -11,4 +11,5 @@ struct SpendPointInfo:Codable {
     var lotteryItemName:String
     var lotteryItemCreateTime:String
     var count:Int
+    var totalPoint:String
 }

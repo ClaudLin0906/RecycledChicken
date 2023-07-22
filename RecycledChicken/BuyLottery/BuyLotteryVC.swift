@@ -37,6 +37,10 @@ class BuyLotteryVC: CustomVC {
 
 extension BuyLotteryVC: SpendPointViewDelegate {
     
+    func alertMessage(_ message: String) {
+        showAlert(VC: self, title: message, message: nil, alertAction: nil)
+    }
+    
     func btnAction(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointAlertView = SpendPointAlertView(frame: view.frame)
         spendPointAlertView.delegate = self
@@ -47,7 +51,7 @@ extension BuyLotteryVC: SpendPointViewDelegate {
 
 extension BuyLotteryVC: SpendPointAlertViewDelegate {
     
-    func confirm(_ sender: UIButton) {
+    func confirm(_ sender: UIButton, info: SpendPointInfo) {
         let completeTaskAlertView = SpendPointCompleteAlertView(frame: view.frame)
         fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
     }

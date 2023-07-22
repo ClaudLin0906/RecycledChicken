@@ -9,6 +9,7 @@ import UIKit
 
 protocol SpendPointViewDelegate{
     func btnAction(_ sender:UIButton, info:SpendPointInfo)
+    func alertMessage(_ message:String)
 }
 
 class SpendPointView: UIView, NibOwnerLoadable {
@@ -84,8 +85,18 @@ class SpendPointView: UIView, NibOwnerLoadable {
     }
     
     @IBAction func btnAction(_sender:UIButton) {
-        guard amount > 0, let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let lotteryInfo = lotteryInfo, profileInfo.point >= (lotteryInfo.itemPrice * amount) else { return }
-        let spendPointInfo = SpendPointInfo(lotteryItemName: lotteryInfo.itemName, lotteryItemCreateTime: lotteryInfo.createTime, count: amount)
+        
+        guard amount > 0 else {
+            delegate?.alertMessage("數量要大於0")
+            return
+        }
+        
+        guard let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let lotteryInfo = lotteryInfo, profileInfo.point >= (lotteryInfo.itemPrice * amount) else {
+            delegate?.alertMessage("點數不足")
+            return
+        }
+        
+        let spendPointInfo = SpendPointInfo(lotteryItemName: lotteryInfo.itemName, lotteryItemCreateTime: lotteryInfo.createTime, count: amount, totalPoint: String(lotteryInfo.itemPrice * amount))
         delegate?.btnAction(_sender, info: spendPointInfo)
     }
 
