@@ -49,8 +49,16 @@ extension BuyCommodityVC: SpendPointViewDelegate {
 extension BuyCommodityVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
-        let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
-        fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+        spendPointAction(info) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            getUserInfo(VC: self) {
+                let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
+                fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+            }
+        }
     }
     
 }

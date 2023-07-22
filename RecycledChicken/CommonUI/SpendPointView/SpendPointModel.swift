@@ -13,3 +13,11 @@ struct SpendPointInfo:Codable {
     var count:Int
     var totalPoint:String
 }
+
+
+func spendPointAction(_ info: SpendPointInfo, completion: @escaping (Data?, Int?, String?) -> Void){
+    let spendPointInfoDic = try? info.asDictionary()
+    NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.buyLottery, parameters: spendPointInfoDic) { (data, statusCode, errorMSG) in
+        completion(data, statusCode, errorMSG)
+    }
+}

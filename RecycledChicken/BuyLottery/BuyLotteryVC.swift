@@ -52,8 +52,16 @@ extension BuyLotteryVC: SpendPointViewDelegate {
 extension BuyLotteryVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
-        let completeTaskAlertView = SpendPointCompleteAlertView(frame: view.frame)
-        fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+        spendPointAction(info) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            getUserInfo(VC: self) {
+                let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
+                fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+            }
+        }
     }
     
 }
