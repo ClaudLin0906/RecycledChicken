@@ -21,5 +21,9 @@ class MyTickerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setCell(_ info:MyTickertInfo){
+        
+    }
 
 }

@@ -128,6 +128,11 @@
             <point key="canvasLocation" x="-187.02290076335876" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="HH1-vU-Ols">
+            <size key="intrinsicContentSize" width="66" height="36"/>
+        </designable>
+    </designables>
     <resources>
         <image name="グループ 1089" width="1125" height="2436"/>
         <systemColor name="systemBackgroundColor">

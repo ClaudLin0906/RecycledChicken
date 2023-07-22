@@ -49,11 +49,10 @@
                                     <constraint firstAttribute="width" constant="30" id="VuP-0n-vKc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-zf-126">
-                                <rect key="frame" x="186.66666666666666" y="168" width="50" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-zf-126">
+                                <rect key="frame" x="186.66666666666666" y="168" width="15.333333333333343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jQY-CT-ejj"/>
-                                    <constraint firstAttribute="width" constant="50" id="nUR-9L-2Yk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -226,6 +225,7 @@
                             <constraint firstItem="Ijh-z5-Mcy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="C9e-i3-H1z"/>
                             <constraint firstItem="Ijh-z5-Mcy" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="FkI-ql-EXR"/>
                             <constraint firstItem="5cE-lW-dYa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="INh-6B-zcD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d1u-zf-126" secondAttribute="trailing" id="IVN-Sy-MZW"/>
                             <constraint firstItem="5cE-lW-dYa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Kzn-D2-Zbl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5cE-lW-dYa" secondAttribute="trailing" id="UNW-fV-rfv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ufx-CE-M4d" secondAttribute="bottom" id="bl9-Og-ZFU"/>
@@ -273,19 +273,19 @@
     </scenes>
     <designables>
         <designable name="1cj-bx-TzZ">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="Hcv-dW-rKf">
-            <size key="intrinsicContentSize" width="102" height="36"/>
+            <size key="intrinsicContentSize" width="30" height="36"/>
         </designable>
         <designable name="Zyi-sb-l2P">
             <size key="intrinsicContentSize" width="68" height="24"/>
         </designable>
         <designable name="a6I-w8-y9C">
-            <size key="intrinsicContentSize" width="136" height="36"/>
+            <size key="intrinsicContentSize" width="30" height="36"/>
         </designable>
         <designable name="yTT-JI-Qj2">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

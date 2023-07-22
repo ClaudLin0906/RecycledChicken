@@ -58,8 +58,13 @@ extension BuyLotteryVC: SpendPointAlertViewDelegate {
                 return
             }
             getUserInfo(VC: self) {
-                let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
-                fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+                DispatchQueue.main.async { [self] in
+                    let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
+                    fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+                    if let navigationController = navigationController {
+                        navigationController.popToRootViewController(animated: true)
+                    }
+                }
             }
         }
     }
