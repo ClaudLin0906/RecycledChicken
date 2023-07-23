@@ -107,9 +107,13 @@ class ProfileVC: CustomVC {
 //            errorStr += "用戶名稱不能為空"
 //        }
         
-        if newUserInfo.userEmail == "" {
-            errorStr += "Email不能為空"
-        } else if !validateEmail(text: newUserInfo.userEmail) {
+//        if newUserInfo.userEmail == "" {
+//            errorStr += "Email不能為空"
+//        } else if !validateEmail(text: newUserInfo.userEmail) {
+//            errorStr += "Email格式不正確"
+//        }
+        
+        if newUserInfo.userEmail != "" && !validateEmail(text: newUserInfo.userEmail){
             errorStr += "Email格式不正確"
         }
         
@@ -174,12 +178,17 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         case 2:
             cell.info.keyboardType = .numberPad
             cell.phoneNumberCheckBox.isHidden = false
+            cell.phoneNumberCheckBox.checkState = .checked
             cell.info.isEnabled = false
             cell.info.text = profileUserInfo?.userPhoneNumber
         case 3:
             cell.info.placeholder = "2000/11/11"
-            cell.info.text = profileUserInfo?.userBirth
             cell.phoneNumberCheckBox.isHidden = false
+            if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
+                cell.phoneNumberCheckBox.checkState = .checked
+                cell.info.isEnabled = false
+                cell.info.text = profileUserInfo?.userBirth
+            }
             createDatePicker(cell.info)
         default:
             break
