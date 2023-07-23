@@ -97,9 +97,11 @@ class VerificationCodeVC: CustomLoginVC {
             if let data = data {
                 let json = NetworkManager.shared.dataToDictionary(data: data)
                 print(json)
-                let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
-                fadeInOutAni(showView: updatePasswordSuccessView) {
-                    self.goToLoginVC()
+                DispatchQueue.main.async { [self] in
+                    let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
+                    fadeInOutAni(showView: updatePasswordSuccessView) {
+                        self.goToLoginVC()
+                    }
                 }
             }
         }
