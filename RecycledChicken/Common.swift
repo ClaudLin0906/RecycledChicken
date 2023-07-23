@@ -123,6 +123,11 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
+func loginOutRemoveObject(){
+    CurrentUserInfo.shared.currentProfileInfo = nil
+    CommonKey.shared.authToken = ""
+}
+
 func getUserInfo(VC:UIViewController, finishAction:(()->())?){
     NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
         guard statusCode == 200 else {

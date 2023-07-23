@@ -67,7 +67,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="logOut:" destination="-1" eventType="touchUpInside" id="Anp-kq-maC"/>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="8M1-AS-EbI"/>
                     </connections>
                 </button>
             </subviews>
@@ -91,6 +91,17 @@
             <point key="canvasLocation" x="-185" y="20"/>
         </view>
     </objects>
+    <designables>
+        <designable name="8TF-I7-cbo">
+            <size key="intrinsicContentSize" width="189.66666666666666" height="28"/>
+        </designable>
+        <designable name="Wcp-nB-01P">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="eqj-3C-8TK">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="组 1661" width="230" height="216.66667175292969"/>
     </resources>
