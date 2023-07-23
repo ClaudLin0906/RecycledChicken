@@ -10,6 +10,8 @@ import UIKit
 class BuyCommodityVC: CustomVC {
     
     @IBOutlet weak var spendPointView:SpendPointView!
+    
+    var commodityVoucherInfo:CommodityVoucherInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,9 @@ class BuyCommodityVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+        if let commodityVoucherInfo = commodityVoucherInfo{
+            spendPointView.commodityVoucherInfo = commodityVoucherInfo
+        }
     }
 
 

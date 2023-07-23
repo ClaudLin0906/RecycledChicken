@@ -14,6 +14,11 @@ struct SpendPointInfo:Codable {
     var totalPoint:String
 }
 
+enum SpendPointType {
+    case CommodityVoucher
+    case Lottery
+}
+
 
 func spendPointAction(_ info: SpendPointInfo, completion: @escaping (Data?, Int?, String?) -> Void){
     let spendPointInfoDic = try? info.asDictionary()

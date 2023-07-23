@@ -151,6 +151,7 @@
 		59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */; };
 		59CC8DAF2A6BC0D50094CE57 /* SpendPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DAE2A6BC0D50094CE57 /* SpendPointModel.swift */; };
 		59CC8DB12A6BD56D0094CE57 /* MyTickertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DB02A6BD56D0094CE57 /* MyTickertModel.swift */; };
+		59CC8DB32A6D11980094CE57 /* CommodityVoucherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC8DB22A6D11980094CE57 /* CommodityVoucherModel.swift */; };
 		59CDA34A2A42DBA100E3F74E /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */; };
 		59CDA34C2A42DE8B00E3F74E /* VerificationCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */; };
 		59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA34D2A42DEB700E3F74E /* SignModel.swift */; };
@@ -339,6 +340,7 @@
 		59CC8DA82A6BB3C30094CE57 /* LotteryItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryItemTableViewCell.xib; sourceTree = "<group>"; };
 		59CC8DAE2A6BC0D50094CE57 /* SpendPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendPointModel.swift; sourceTree = "<group>"; };
 		59CC8DB02A6BD56D0094CE57 /* MyTickertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTickertModel.swift; sourceTree = "<group>"; };
+		59CC8DB22A6D11980094CE57 /* CommodityVoucherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityVoucherModel.swift; sourceTree = "<group>"; };
 		59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeModel.swift; sourceTree = "<group>"; };
 		59CDA34D2A42DEB700E3F74E /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 				599495572A0BF234009F1B2E /* CommodityVoucherVC.swift */,
 				599495592A0BF261009F1B2E /* CommodityVoucher.storyboard */,
 				5994955B2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift */,
+				59CC8DB22A6D11980094CE57 /* CommodityVoucherModel.swift */,
 			);
 			path = CommodityVoucher;
 			sourceTree = "<group>";
@@ -1158,6 +1161,7 @@
 				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,
 				59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */,
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
+				59CC8DB32A6D11980094CE57 /* CommodityVoucherModel.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */,
 				59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */,

@@ -42,9 +42,20 @@ class SpendPointView: UIView, NibOwnerLoadable {
     var lotteryInfo:LotteryInfo?
     {
         willSet{
+            type = .Lottery
             tableView.reloadData()
         }
     }
+    
+    var commodityVoucherInfo:CommodityVoucherInfo?
+    {
+        willSet{
+            type = .CommodityVoucher
+            tableView.reloadData()
+        }
+    }
+    
+    private var type:SpendPointType = .Lottery
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -119,10 +130,19 @@ extension SpendPointView:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LotteryItemTableViewCell", for: indexPath) as! LotteryItemTableViewCell
-        if let lotteryInfo = lotteryInfo {
-            cell.setCell(lotteryInfo: lotteryInfo)
+        switch type {
+        case .Lottery:
+            if let lotteryInfo = lotteryInfo {
+                cell.setCell(lotteryInfo: lotteryInfo)
+            }
+        case .CommodityVoucher:
+            if let commodityVoucherInfo = commodityVoucherInfo {
+                cell.setCell(commodityVoucherInfo: commodityVoucherInfo)
+            }
         }
+
         return cell
+
     }
     
     
