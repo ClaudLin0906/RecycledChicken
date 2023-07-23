@@ -9,7 +9,11 @@ import UIKit
 
 class ConfirmPasswordVC: CustomLoginVC {
     
-    var phone:String = ""
+    var phone = ""
+    
+    private var newPassword = ""
+    
+    var info:forgetPasswordInfo?
     
     @IBOutlet weak var newPasswordTextField: UITextField!
     
@@ -56,35 +60,18 @@ class ConfirmPasswordVC: CustomLoginVC {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
-        changePassword()
+        newPassword = newPWD ?? ""
+        goToVerificationCode()
     }
     
-    private func goToLoginVC(){
-        self.dismiss(animated: false) {
-            if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
+    private func goToVerificationCode(){
+        self.dismiss(animated: true) { [self] in
+            if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC, let topVC = getTopController() {
+                VC.currentType = .forgetPassword
                 VC.modalPresentationStyle = .fullScreen
+                info = forgetPasswordInfo(userPhoneNumber: phone , newPassword: newPassword, smsCode: "")
+                VC.info = info
                 topVC.present(VC, animated: true)
-            }
-        }
-    }
-    
-    private func changePassword(){
-        let resetPasswordInfo = resetPassword(userPhoneNumber: phone, changePassword: newPasswordTextField.text ?? "")
-        let resetPasswordInfoDic = try? resetPasswordInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.changePWD, parameters: resetPasswordInfoDic) { (data, statusCode, errorMSG) in
-            
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
-                return
-            }
-            
-            if let data = data {
-                let json = NetworkManager.shared.dataToDictionary(data: data)
-                print(json)
-                let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
-                fadeInOutAni(showView: updatePasswordSuccessView) {
-                    self.goToLoginVC()
-                }
             }
         }
     }

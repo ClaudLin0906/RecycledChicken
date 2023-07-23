@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct resetPassword:Codable {
+struct resetPasswordInfo:Codable {
     var userPhoneNumber:String
     var changePassword:String
 }

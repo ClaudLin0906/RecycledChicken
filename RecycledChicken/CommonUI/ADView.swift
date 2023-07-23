@@ -40,7 +40,7 @@ class ADView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
-        var request = URLRequest(url: URL(string: APIUrl.domainName + APIUrl.getAd)!)
+        let request = URLRequest(url: URL(string: APIUrl.domainName + APIUrl.getAd)!)
         webView.load(request)
         timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { timer in
             self.isFinishAction()

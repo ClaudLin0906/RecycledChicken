@@ -108,9 +108,11 @@ class LoginVC: CustomLoginVC {
     }
     
     @IBAction func forgetPassword(_ sender:UIButton){
-        if let VC = UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgetPassword") as? ForgetPasswordVC {
-            VC.modalPresentationStyle = .fullScreen
-            present(VC, animated: false)
+        self.dismiss(animated: true) { [self] in
+            if let VC = UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgetPassword") as? ForgetPasswordVC {
+                VC.modalPresentationStyle = .fullScreen
+                present(VC, animated: true)
+            }
         }
     }
 

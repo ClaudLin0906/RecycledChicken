@@ -103,9 +103,9 @@ class ProfileVC: CustomVC {
         
         var errorStr = ""
         
-        if newUserInfo.userName == "" {
-            errorStr += "用戶名稱不能為空"
-        }
+//        if newUserInfo.userName == "" {
+//            errorStr += "用戶名稱不能為空"
+//        }
         
         if newUserInfo.userEmail == "" {
             errorStr += "Email不能為空"

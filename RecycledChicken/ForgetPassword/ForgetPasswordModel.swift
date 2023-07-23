@@ -7,3 +7,8 @@
 
 import Foundation
 
+struct forgetPasswordInfo:Codable {
+    var userPhoneNumber:String
+    var newPassword:String
+    var smsCode:String
+}

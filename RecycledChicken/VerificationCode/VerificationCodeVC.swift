@@ -24,6 +24,8 @@ class VerificationCodeVC: CustomLoginVC {
     
     var currentType:VerificationCodeType?
     
+    var info:forgetPasswordInfo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -36,6 +38,7 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func sendSMS(){
+        guard let phone = info?.userPhoneNumber else { return }
         let smsInfo = SMSInfo(userPhoneNumber: phone)
         let smsInfoDic = try? smsInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in
@@ -80,15 +83,34 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func forgetPasswordAction(_ smsCode:String){
-        guard smsCode.count == 4 else { return }
-        let forgetInfo = ForgetPasswordInfo(userPhoneNumber: phone, smsCode: smsCode)
-        let forgetDic = try? forgetInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCertificate, parameters: forgetDic) { (data, statusCode, errorMSG) in
+        guard smsCode.count == 4, var info = info else { return }
+        info.smsCode = smsCode
+        let forgetPasswordInfo = info
+        let forgetPasswordInfoDic = try? forgetPasswordInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.forgotPassword, parameters: forgetPasswordInfoDic) { (data, statusCode, errorMSG) in
+            
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
-            self.goToConfirmVC()
+            
+            if let data = data {
+                let json = NetworkManager.shared.dataToDictionary(data: data)
+                print(json)
+                let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
+                fadeInOutAni(showView: updatePasswordSuccessView) {
+                    self.goToLoginVC()
+                }
+            }
+        }
+    }
+    
+    private func goToLoginVC(){
+        self.dismiss(animated: false) {
+            if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
+                VC.modalPresentationStyle = .fullScreen
+                topVC.present(VC, animated: true)
+            }
         }
     }
 }
