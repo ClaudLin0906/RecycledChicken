@@ -28,6 +28,8 @@ class TaskTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    var taskInfo:TaskInfo?
 
     override func awakeFromNib() {
         super.awakeFromNib()

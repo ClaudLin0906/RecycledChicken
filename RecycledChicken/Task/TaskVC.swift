@@ -28,6 +28,21 @@ class TaskVC: CustomRootVC {
         super.viewDidAppear(animated)
     }
     
+    private func sharedAction(completion: @escaping (Bool, String?) -> Void){
+        let activityVC = UIActivityViewController(activityItems: ["test"], applicationActivities: nil)
+        activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+
+            if error != nil {
+                completion(false, error?.localizedDescription)
+                return
+            }
+            if completed {
+                completion(true, nil)
+            }
+        }
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
     private func getTaskInfo(){
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestList, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
@@ -35,13 +50,13 @@ class TaskVC: CustomRootVC {
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                let taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                self.taskInfos = taskInfos.filter{
-                    if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
-                        return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
-                    }
-                    return false
-                }
+                self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+//                self.taskInfos = self.taskInfos.filter{
+//                    if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
+//                        return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
+//                    }
+//                    return false
+//                }
                     
                 DispatchQueue.main.async {
                     self.taskTableView.reloadData()
@@ -71,21 +86,25 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         case .AD:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
             cell.title.text = "廣告點擊"
+            cell.taskInfo = info
             return cell
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "社群分享"
             cell.taskProgressView.setPercent(1, molecular: 0)
+            cell.taskInfo = info
             return cell
         case .battery:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "電池回收\(info.count)個"
             cell.taskProgressView.setPercent(info.count, molecular: 0)
+            cell.taskInfo = info
             return cell
         case .bottle:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "寶特瓶回收\(info.count)瓶"
             cell.taskProgressView.setPercent(info.count, molecular: 0)
+            cell.taskInfo = info
             return cell
         }
         
@@ -116,10 +135,25 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         let info = taskInfos[row]
-        let type = info.type
         
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
-            cell.isFinish = true
+            let type = info.type
+            switch type {
+            case .share:
+                sharedAction { result, errorMSG in
+                    guard result else {
+                        showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
+                        return
+                    }
+                    
+                    if result {
+                        cell.isFinish = true
+                    }
+                }
+            default:
+                break
+            }
+            
         }
 
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {

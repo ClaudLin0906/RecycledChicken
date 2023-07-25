@@ -177,6 +177,18 @@ func biometricsAction(){
     
 }
 
+func dateLastYearSameDay() -> Date? {
+    let calendar = Calendar.current
+    let today = Date()
+    
+    // 使用 DateComponents 來減去一年
+    var dateComponents = DateComponents()
+    dateComponents.year = -1
+    
+    // 計算去年同一天的日期
+    return calendar.date(byAdding: dateComponents, to: today)
+}
+
 
 func pushVC(targetVC:UIViewController, navigation:UINavigationController) {
     DispatchQueue.main.async {
@@ -282,6 +294,11 @@ func dateFromString(_ dateString: String, format: String = "yyyy-MM-dd HH:mm:ss 
     let dateFormatter = ISO8601DateFormatter()
     dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
     return dateFormatter.date(from: dateString)
+}
+
+func getCurrentISO8601DateString() -> String {
+    let dateFormatter = ISO8601DateFormatter()
+    return dateFormatter.string(from: Date())
 }
 
 func getDateFromStr(dateformat:String = "yyyy-MM-dd HH:mm:ss Z", dateStr:String) -> InfoTime? {

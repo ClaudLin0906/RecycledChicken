@@ -16,6 +16,10 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var currentDateLabel:UILabel!
     
     @IBOutlet weak var welcomeLabel:UILabel!
+    
+    @IBOutlet weak var batteryLabel:UILabel!
+    
+    @IBOutlet weak var bottleLabel:UILabel!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,7 @@ class HomeVC: CustomRootVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        currentDateLabel.text = getDates(i: 0, currentDate: Date()).0
         barcodeView.code = CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber
         if FirstTime && LoginSuccess {
             let adView = ADView(frame: UIScreen.main.bounds)
@@ -39,12 +44,39 @@ class HomeVC: CustomRootVC {
         carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
     }
     
+    private func getChoseDateRecycleAmount(){
+        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(CustomCalenderModel.shared.selectedDate)T00:00:00.000+08:00&endTime=\(CustomCalenderModel.shared.selectedDate)T23:59:59.999+08:00"
+        NetworkManager.shared.getJSONBody(urlString: urlStr) { data, statusCode, errorMSG in
+            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+                var useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                var batteryInt = 0
+                var bottleInt = 0
+                for useRecordInfo in useRecordInfos {
+                    if useRecordInfo.battery != nil {
+                        batteryInt += batteryInt
+                    }
+                    if useRecordInfo.bottle != nil {
+                        bottleInt += batteryInt
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.batteryLabel.text = String(batteryInt)
+                    self.bottleLabel.text = String(bottleInt)
+                }
+            }else{
+                DispatchQueue.main.async {
+                    self.batteryLabel.text = "0"
+                    self.bottleLabel.text = "0"
+                }
+            }
+        }
+    }
+    
     func updateCurrentDateInfo(){
-        currentDateLabel.text = CustomCalenderModel.shared.selectedDate
         if let username = CurrentUserInfo.shared.currentProfileInfo?.userName{
             welcomeLabel.text = "Good morning, \(username)"
         }
-        
+        getChoseDateRecycleAmount()
     }
     
     @IBAction func goToCarbonReductionLog(_ sender:UIButton) {

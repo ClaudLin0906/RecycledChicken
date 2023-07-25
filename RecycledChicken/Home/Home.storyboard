@@ -372,6 +372,8 @@
                     <navigationItem key="navigationItem" id="qsC-tK-K4C"/>
                     <connections>
                         <outlet property="barcodeView" destination="x97-no-L30" id="gO9-LE-gFp"/>
+                        <outlet property="batteryLabel" destination="nHb-lO-QsE" id="roS-D4-IdD"/>
+                        <outlet property="bottleLabel" destination="Zhx-qv-uDe" id="jKs-IV-Oww"/>
                         <outlet property="carbonReductionLogBtn" destination="ybu-Dt-ZtI" id="pXO-R6-ZAh"/>
                         <outlet property="currentDateLabel" destination="Wep-Dg-8Xm" id="ITI-gL-DPg"/>
                         <outlet property="welcomeLabel" destination="afR-qR-YjO" id="6Fq-gU-8dQ"/>
@@ -414,7 +416,7 @@
             <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
         <designable name="ybu-Dt-ZtI">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

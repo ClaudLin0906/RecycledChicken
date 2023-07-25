@@ -27,6 +27,8 @@ class TaskTableViewADCell: UITableViewCell {
         }
     }
     
+    var taskInfo:TaskInfo?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
