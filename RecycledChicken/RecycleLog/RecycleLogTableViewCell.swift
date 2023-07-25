@@ -31,8 +31,20 @@ class RecycleLogTableViewCell: UITableViewCell {
     }
     
     func setCell(info:UseRecordInfo) {
-//        calendarLabel.text = info.time
-//        infoTime = getDateFromStr(dateStr: info.time)
+        if let date = dateFromString(info.time) {
+            calendarLabel.text = getDates(i: 0, currentDate: date).0
+        }
+        
+        if let bottle = info.bottle {
+            recycledItemLabel.text = "寶特瓶(PET)"
+            amountLabel.text = String(bottle)
+        }
+        
+        if let battery = info.battery {
+            recycledItemLabel.text = "電池(BATT)"
+            amountLabel.text = String(battery)
+        }
+        
     }
 
 }

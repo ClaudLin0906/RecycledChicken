@@ -46,19 +46,19 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BATT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7c-s1-DVR">
-                    <rect key="frame" x="201.66666666666666" y="84" width="41" height="25"/>
+                    <rect key="frame" x="201.66666666666666" y="84" width="40.666666666666657" height="25"/>
                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obx-Qg-jjY">
-                    <rect key="frame" x="181.33333333333334" y="793.33333333333337" width="15.333333333333343" height="24.666666666666629"/>
+                    <rect key="frame" x="182.66666666666666" y="788.66666666666663" width="14" height="29.333333333333371"/>
                     <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
                     <color key="textColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/1200" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0o7-zY-v5R">
-                    <rect key="frame" x="196.66666666666663" y="798.33333333333337" width="196.33333333333337" height="19.666666666666629"/>
+                    <rect key="frame" x="196.66666666666663" y="794.66666666666663" width="196.33333333333337" height="23.333333333333371"/>
                     <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
                     <color key="textColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
     </objects>
     <designables>
         <designable name="oKe-NB-av9">
-            <size key="intrinsicContentSize" width="34" height="24"/>
+            <size key="intrinsicContentSize" width="34" height="20"/>
         </designable>
     </designables>
     <resources>
