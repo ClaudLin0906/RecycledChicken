@@ -18,6 +18,8 @@ class RecycleLogVC: CustomVC {
     
     private var useRecordInfos:[UseRecordInfo] = []
 
+    private var filterUseRecordInfos:[UseRecordInfo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "回收紀錄"
@@ -48,6 +50,7 @@ class RecycleLogVC: CustomVC {
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 self.useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                self.filterUseRecordInfos = self.useRecordInfos
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -77,14 +80,29 @@ class RecycleLogVC: CustomVC {
             "12月"
         ]
         
-        amountDropDown.selectionAction = { [weak self] (index, item) in
-            self?.monthBtn.setTitle(item)
+        amountDropDown.selectionAction = { [self] (index, item) in
+            monthBtn.setTitle(item)
+            filterUseRecordInfos.removeAll()
+            filterUseRecordInfos = useRecordInfos.filter({ info in
+                if index == 0 {
+                    return true
+                }
+                return timeGetMon(dateStr: info.time) == index
+            })
+            tableView.reloadData()
         }
     }
     
     
     @IBAction func changeAmount(_ sender: UIButton) {
         amountDropDown.show()
+    }
+    
+    private func timeGetMon(dateStr:String)->Int? {
+        if let date = dateFromString(dateStr){
+            return Calendar.current.component(.month, from: date)
+        }
+        return nil
     }
 
 }
@@ -100,12 +118,12 @@ extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        useRecordInfos.count
+        filterUseRecordInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
-        let info = useRecordInfos[indexPath.row]
+        let info = filterUseRecordInfos[indexPath.row]
         cell.setCell(info: info)
         return cell
     }
