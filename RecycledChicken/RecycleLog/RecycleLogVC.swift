@@ -38,7 +38,8 @@ class RecycleLogVC: CustomVC {
     }
     
     private func getRecycleLogData(){
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.useRecord, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(CustomCalenderModel.shared.selectedDate)T00:00:00.000+08:00&endTime=\(CustomCalenderModel.shared.selectedDate)T23:59:59.999+08:00"
+        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return

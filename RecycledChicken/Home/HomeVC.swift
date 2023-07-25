@@ -45,8 +45,9 @@ class HomeVC: CustomRootVC {
     }
     
     private func getChoseDateRecycleAmount(){
+        guard CommonKey.shared.authToken != "" else { return }
         let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(CustomCalenderModel.shared.selectedDate)T00:00:00.000+08:00&endTime=\(CustomCalenderModel.shared.selectedDate)T23:59:59.999+08:00"
-        NetworkManager.shared.getJSONBody(urlString: urlStr) { data, statusCode, errorMSG in
+        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             var batteryInt = 0
             var bottleInt = 0
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
