@@ -16,7 +16,7 @@ class RecycleLogVC: CustomVC {
     
     private let amountDropDown = DropDown()
     
-    private var recycleLogInfos:[RecycleLogInfo] = []
+    private var useRecordInfos:[UseRecordInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +29,25 @@ class RecycleLogVC: CustomVC {
         tableView.setSeparatorLocation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
-        getRecycleLogData()        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
+        getRecycleLogData()        
     }
     
     private func getRecycleLogData(){
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(CustomCalenderModel.shared.selectedDate)T00:00:00.000+08:00&endTime=\(CustomCalenderModel.shared.selectedDate)T23:59:59.999+08:00"
+        guard let dateLastYear = dateLastYearSameDay() else { return }
+        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(dateFromStringISO8601(date: dateLastYear))&endTime=\(dateFromStringISO8601(date: Date()))"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
-            if let data = data {
-                self.recycleLogInfos = try! JSONDecoder().decode([RecycleLogInfo].self, from: data)
+            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+                self.useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -98,12 +100,12 @@ extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        recycleLogInfos.count
+        useRecordInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
-        let info = recycleLogInfos[indexPath.row]
+        let info = useRecordInfos[indexPath.row]
         cell.setCell(info: info)
         return cell
     }

@@ -15,12 +15,17 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var carbonReductionNumber:UILabel!
     
+    @IBOutlet weak var petView:PetView!
+    
+    @IBOutlet weak var battView:BattView!
+    
     let parties = ["PET", "BATT"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "減碳歷程"
         UIInit()
+        getRecycleLogData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,15 +43,40 @@ class CarbonReductionLogVC: CustomVC {
         progressGroup.congratulationsContent.text = "恭喜你電池回收量\n超額完成!"
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
-        
-        UIView.animate(withDuration: 0.5) { [self] in
-            let random = Double(arc4random() % 200) / 100.0
-            progressGroup.ring1.progress = 0.9
-            progressGroup.ring2.progress = 0.9
-        }
 
     }
     
+    private func getRecycleLogData(){
+        guard let dateLastYear = dateLastYearSameDay() else { return }
+        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(dateFromStringISO8601(date: dateLastYear))&endTime=\(dateFromStringISO8601(date: Date()))"
+        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            var batteryInt = 0
+            var bottleInt = 0
+            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+                var useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                for useRecordInfo in useRecordInfos {
+                    if let battery = useRecordInfo.battery {
+                        batteryInt += battery
+                    }
+                    if let bottle = useRecordInfo.bottle {
+                        bottleInt += bottle
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.battView.battAmount.text = String(batteryInt)
+                    self.petView.petAmount.text = String(bottleInt)
+                    UIView.animate(withDuration: 0.5) { [self] in
+                        progressGroup.ring1.progress = Double(batteryInt)/1200
+                        progressGroup.ring2.progress = Double(bottleInt)/1200
+                    }
+                }
+            }
+        }
+    }
     
     @IBAction func goToRecycleLog(_ sender:UIButton) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "RecycleLog", bundle: Bundle.main).instantiateViewController(identifier: "RecycleLog") as? RecycleLogVC {

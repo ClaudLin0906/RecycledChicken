@@ -8,6 +8,8 @@
 import UIKit
 
 class BattView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var battAmount:UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)

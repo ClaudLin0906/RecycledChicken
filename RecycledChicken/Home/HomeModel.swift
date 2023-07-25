@@ -6,10 +6,3 @@
 //
 
 import Foundation
-
-struct UseRecordInfo:Decodable {
-    var storeName:String
-    var time:String
-    var battery:Int?
-    var bottle:Int?
-}

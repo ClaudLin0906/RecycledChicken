@@ -108,7 +108,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT7-Mh-0N3" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
                                                                 <string key="text">碳竹雞使用者平均年回收量
-寶特瓶 1200 支 / 電池 1000 顆</string>
+寶特瓶 1200 支 / 電池 1200 顆</string>
                                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -272,7 +272,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="U1I-Rx-UHF"/>
                     <connections>
+                        <outlet property="battView" destination="j8l-cg-OIY" id="dry-22-15n"/>
                         <outlet property="carbonReductionNumber" destination="GT7-Mh-0N3" id="dfQ-8h-e1m"/>
+                        <outlet property="petView" destination="s3u-br-yi9" id="hjV-Qv-8KK"/>
                         <outlet property="progressGroup" destination="0PQ-En-Vso" id="Mjc-6v-Cdd"/>
                         <outlet property="recycleBtn" destination="iZZ-lD-1hs" id="N2W-4X-CQe"/>
                     </connections>
@@ -303,6 +305,9 @@
     <designables>
         <designable name="GT7-Mh-0N3">
             <size key="intrinsicContentSize" width="223.33333333333334" height="47.666666666666664"/>
+        </designable>
+        <designable name="iZZ-lD-1hs">
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
     </designables>
     <resources>

@@ -30,9 +30,9 @@ class RecycleLogTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(info:RecycleLogInfo) {
-        calendarLabel.text = info.time
-        infoTime = getDateFromStr(dateStr: info.time)
+    func setCell(info:UseRecordInfo) {
+//        calendarLabel.text = info.time
+//        infoTime = getDateFromStr(dateStr: info.time)
     }
 
 }

@@ -290,15 +290,18 @@ func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy-MM-d
     return (stringFormate1, stringFormate2, date)
 }
 
-func dateFromString(_ dateString: String, format: String = "yyyy-MM-dd HH:mm:ss Z") -> Date? {
+func dateFromString(_ dateString: String) -> Date? {
     let dateFormatter = ISO8601DateFormatter()
     dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
     return dateFormatter.date(from: dateString)
 }
 
-func getCurrentISO8601DateString() -> String {
+func dateFromStringISO8601(date:Date) -> String {
     let dateFormatter = ISO8601DateFormatter()
-    return dateFormatter.string(from: Date())
+    dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+    dateFormatter.timeZone = TimeZone(secondsFromGMT: 8 * 60 * 60)
+    let dateString = dateFormatter.string(from: date)
+    return dateString
 }
 
 func getDateFromStr(dateformat:String = "yyyy-MM-dd HH:mm:ss Z", dateStr:String) -> InfoTime? {
@@ -352,4 +355,11 @@ struct Certificates {
         let certificate = SecCertificateCreateWithData(nil, data as CFData)!
         return certificate
     }
+}
+
+struct UseRecordInfo:Decodable {
+    var storeName:String
+    var time:String
+    var battery:Int?
+    var bottle:Int?
 }
