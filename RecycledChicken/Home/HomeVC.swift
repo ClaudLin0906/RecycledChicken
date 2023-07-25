@@ -47,10 +47,10 @@ class HomeVC: CustomRootVC {
     private func getChoseDateRecycleAmount(){
         let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(CustomCalenderModel.shared.selectedDate)T00:00:00.000+08:00&endTime=\(CustomCalenderModel.shared.selectedDate)T23:59:59.999+08:00"
         NetworkManager.shared.getJSONBody(urlString: urlStr) { data, statusCode, errorMSG in
+            var batteryInt = 0
+            var bottleInt = 0
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 var useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                var batteryInt = 0
-                var bottleInt = 0
                 for useRecordInfo in useRecordInfos {
                     if useRecordInfo.battery != nil {
                         batteryInt += batteryInt
@@ -59,15 +59,11 @@ class HomeVC: CustomRootVC {
                         bottleInt += batteryInt
                     }
                 }
-                DispatchQueue.main.async {
-                    self.batteryLabel.text = String(batteryInt)
-                    self.bottleLabel.text = String(bottleInt)
-                }
-            }else{
-                DispatchQueue.main.async {
-                    self.batteryLabel.text = "0"
-                    self.bottleLabel.text = "0"
-                }
+
+            }
+            DispatchQueue.main.async {
+                self.batteryLabel.text = String(batteryInt)
+                self.bottleLabel.text = String(bottleInt)
             }
         }
     }
