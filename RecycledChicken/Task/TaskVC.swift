@@ -14,11 +14,6 @@ class TaskVC: CustomRootVC {
     private var taskInfos:[TaskInfo] = []
     
     private var taskStatuss:[TaskStatus] = []
-    {
-        didSet{
-            checkTaskStatus()
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +30,6 @@ class TaskVC: CustomRootVC {
         super.viewWillAppear(animated)
         if taskInfos.count > 0 {
             getTaskStatus()
-        }
-    }
-    
-    private func checkTaskStatus(){
-        guard taskInfos.count > 0, taskStatuss.count > 0 else { return }
-        var filterTaskInfos:[TaskInfo] = []
-        DispatchQueue.main.async {
-            self.taskTableView.reloadData()
         }
     }
     
@@ -69,6 +56,9 @@ class TaskVC: CustomRootVC {
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 self.taskStatuss = try! JSONDecoder().decode([TaskStatus].self, from: JSONSerialization.data(withJSONObject: dic))
+                DispatchQueue.main.async {
+                    self.taskTableView.reloadData()
+                }
             }
         }
     }
@@ -80,13 +70,7 @@ class TaskVC: CustomRootVC {
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                let originalTaskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                for originalTaskInfo in originalTaskInfos {
-                    var taskInfo = originalTaskInfo
-                    taskInfo.isFinish = false
-                    self.taskInfos.append(taskInfo)
-                }
-
+                self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
 //                self.taskInfos = self.taskInfos.filter{
 //                    if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
 //                        return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
@@ -113,7 +97,13 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        let info = taskInfos[row]
+        var info = taskInfos[row]
+        info.isFinish = false
+        for taskStatus in taskStatuss {
+            if taskStatus.createTime == info.createTime && taskStatus.type == info.type {
+                info.isFinish = true
+            }
+        }
         let type = info.type
         switch type {
         case .AD:
@@ -140,29 +130,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             cell.taskInfo = info
             return cell
         }
-        
-        
-//        switch row {
-//        case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-//            cell.title.text = "寶特瓶回收10瓶"
-//            return cell
-//        case 1:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-//            cell.title.text = "電池回收10瓶"
-//            return cell
-//        case 2:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
-//            cell.title.text = "廣告點擊"
-//            return cell
-//        case 3:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-//            cell.title.text = "社群分享"
-//            cell.taskProgressView.setPercent(1, molecular: 0)
-//            return cell
-//        default:
-//            return UITableViewCell()
-//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -180,6 +147,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                     info.isFinish = result
                     cell.taskInfo = info
                     cell.finishAction()
+                    cell.taskProgressView.setPercent(1, molecular: 1)
                 }
             default:
                 break
