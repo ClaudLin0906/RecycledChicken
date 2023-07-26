@@ -14,6 +14,11 @@ class TaskVC: CustomRootVC {
     private var taskInfos:[TaskInfo] = []
     
     private var taskStatuss:[TaskStatus] = []
+    {
+        didSet{
+            checkTaskStatus()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,29 +33,14 @@ class TaskVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+        if taskInfos.count > 0 {
+            getTaskStatus()
+        }
     }
     
     private func checkTaskStatus(){
         guard taskInfos.count > 0, taskStatuss.count > 0 else { return }
-        var filterTaskInfo:[TaskInfo] = []
-        for taskInfo in taskInfos {
-            var newTaskinfo = taskInfo
-            for taskStatus in taskStatuss {
-                if taskInfo.createTime == taskStatus.createTime && taskInfo.type == taskStatus.type {
-                    newTaskinfo.isFinish = true
-                }else{
-                    newTaskinfo.isFinish = false
-                }
-            }
-            newTaskinfo = taskInfo
-            filterTaskInfo.append(newTaskinfo)
-        }
-        taskInfos = filterTaskInfo
+        var filterTaskInfos:[TaskInfo] = []
         DispatchQueue.main.async {
             self.taskTableView.reloadData()
         }
@@ -79,7 +69,6 @@ class TaskVC: CustomRootVC {
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 self.taskStatuss = try! JSONDecoder().decode([TaskStatus].self, from: JSONSerialization.data(withJSONObject: dic))
-                self.checkTaskStatus()
             }
         }
     }
@@ -91,7 +80,13 @@ class TaskVC: CustomRootVC {
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                let originalTaskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                for originalTaskInfo in originalTaskInfos {
+                    var taskInfo = originalTaskInfo
+                    taskInfo.isFinish = false
+                    self.taskInfos.append(taskInfo)
+                }
+
 //                self.taskInfos = self.taskInfos.filter{
 //                    if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
 //                        return isDateWithinInterval(date: Date(), start: startDate, end: endDate)

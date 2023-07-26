@@ -55,10 +55,22 @@ extension UITextField {
     
 }
 
-extension Array {
+extension Array where Element: Hashable  {
+    
     func toData()-> Data? {
         return try? NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: true)
     }
+    
+    func removingDuplicates() -> [Element] {
+        var addedDict = [Element: Bool]()
+        return filter {
+          addedDict.updateValue(true, forKey: $0) == nil
+        }
+     }
+     mutating func removeDuplicates() {
+        self = self.removingDuplicates()
+     }
+    
 }
 
 extension UIViewController {
