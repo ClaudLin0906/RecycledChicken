@@ -50,6 +50,7 @@ class TaskTableViewCell: UITableViewCell {
             guard statusCode == 200 else {
                 return
             }
+            print(statusCode!)
         }
     }
     

@@ -182,10 +182,8 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
-        let info = taskInfos[row]
-        
+        var info = taskInfos[row]
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
-            cell.taskInfo = info
             let type = info.type
             switch type {
             case .share:
@@ -194,14 +192,12 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                         showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
                         return
                     }
-                    if result {
-                        cell.taskInfo?.isFinish = true
-                    }
+                    info.isFinish = result
+                    cell.taskInfo = info
                 }
             default:
                 break
             }
-            
         }
 
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {

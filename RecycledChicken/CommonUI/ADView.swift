@@ -34,8 +34,7 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func isFinishAction() {
-        cell?.isFinish = true
-        taskInfo?.isFinish = true
+        cell?.taskInfo = taskInfo
     }
     
     private func customInit(){
