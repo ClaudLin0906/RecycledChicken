@@ -14,6 +14,10 @@ class TaskVC: CustomRootVC {
     private var taskInfos:[TaskInfo] = []
     
     private var taskStatuss:[TaskStatus] = []
+    
+    private var batteryInt = 0
+    
+    private var bottleInt = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +33,13 @@ class TaskVC: CustomRootVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if taskInfos.count > 0 {
-            getTaskStatus()
+            updateInfo()
         }
+    }
+    
+    private func updateInfo(){
+        getTaskStatus()
+        getRecycleCount()
     }
     
     private func sharedAction(completion: @escaping (Bool, String?) -> Void){
@@ -77,7 +86,31 @@ class TaskVC: CustomRootVC {
 //                    }
 //                    return false
 //                }
-                self.getTaskStatus()
+                self.updateInfo()
+            }
+        }
+    }
+    
+    private func getRecycleCount(){
+        bottleInt = 0
+        batteryInt = 0
+        let startTime = getDates(i: 0, currentDate: Date()).0
+        let endTime = getDates(i: 6, currentDate: Date()).0
+        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
+        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                for useRecordInfo in useRecordInfos {
+                    if let battery = useRecordInfo.battery {
+                        self.batteryInt += battery
+                    }
+                    if let bottle = useRecordInfo.bottle {
+                        self.bottleInt += bottle
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.taskTableView.reloadData()
+                }
             }
         }
     }
@@ -120,14 +153,20 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         case .battery:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "電池回收\(info.count)個"
-            cell.taskProgressView.setPercent(info.count, molecular: 0)
+            if batteryInt >= info.count {
+                info.isFinish = true
+            }
             cell.taskInfo = info
+            cell.taskProgressView.setPercent(info.count, molecular: batteryInt)
             return cell
         case .bottle:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "寶特瓶回收\(info.count)瓶"
-            cell.taskProgressView.setPercent(info.count, molecular: 0)
+            if bottleInt >= info.count {
+                info.isFinish = true
+            }
             cell.taskInfo = info
+            cell.taskProgressView.setPercent(info.count, molecular: bottleInt)
             return cell
         }
     }
@@ -139,15 +178,17 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             let type = info.type
             switch type {
             case .share:
-                sharedAction { result, errorMSG in
-                    guard result else {
-                        showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
-                        return
+                if let isFinish = info.isFinish, !isFinish {
+                    sharedAction { result, errorMSG in
+                        guard result else {
+                            showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
+                            return
+                        }
+                        info.isFinish = result
+                        cell.taskInfo = info
+                        cell.finishAction()
+                        cell.taskProgressView.setPercent(1, molecular: 1)
                     }
-                    info.isFinish = result
-                    cell.taskInfo = info
-                    cell.finishAction()
-                    cell.taskProgressView.setPercent(1, molecular: 1)
                 }
             default:
                 break
