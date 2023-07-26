@@ -19,7 +19,7 @@ struct TaskInfo: Decodable, CustomStringConvertible{
 }
 
 struct TaskStatus: Decodable{
-    var type:String
+    var type:TaskType
     var finishTime:String
     var createTime:String
 }
@@ -30,4 +30,10 @@ enum TaskType:String, Decodable {
     case battery = "battery"
     case share = "share"
     case bottle = "bottle"
+}
+
+
+struct FinishTaskInfo:Codable {
+    var questCreateTime:String
+    var questType:String
 }

@@ -12,8 +12,18 @@ class TaskVC: CustomRootVC {
     @IBOutlet weak var taskTableView:UITableView!
     
     private var taskInfos:[TaskInfo] = []
+    {
+        willSet{
+            checkTaskStatus()
+        }
+    }
     
     private var taskStatuss:[TaskStatus] = []
+    {
+        willSet{
+            checkTaskStatus()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +43,25 @@ class TaskVC: CustomRootVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+    }
+    
+    private func checkTaskStatus(){
+        guard taskInfos.count > 0, taskStatuss.count > 0 else { return }
+        var filterTaskInfo:[TaskInfo] = []
+        for taskInfo in taskInfos {
+            var newTaskinfo = taskInfo
+            for taskStatus in taskStatuss {
+                if taskInfo.createTime == taskStatus.createTime && taskInfo.type == taskStatus.type {
+                    newTaskinfo.isFinish = true
+                }else{
+                    newTaskinfo.isFinish = false
+                }
+            }
+            newTaskinfo = taskInfo
+            filterTaskInfo.append(newTaskinfo)
+        }
+        taskInfos = filterTaskInfo
     }
     
     private func sharedAction(completion: @escaping (Bool, String?) -> Void){
@@ -156,6 +185,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         let info = taskInfos[row]
         
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
+            cell.taskInfo = info
             let type = info.type
             switch type {
             case .share:
@@ -164,9 +194,8 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                         showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
                         return
                     }
-                    
                     if result {
-                        cell.isFinish = true
+                        cell.taskInfo?.isFinish = true
                     }
                 }
             default:

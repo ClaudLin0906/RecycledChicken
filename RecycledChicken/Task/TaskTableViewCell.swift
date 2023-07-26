@@ -19,17 +19,16 @@ class TaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var point:UILabel!
     
-    var isFinish = false {
+    var taskInfo:TaskInfo?
+    {
         willSet{
-            if newValue {
-                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+            if let newValue = newValue, let isFinish = newValue.isFinish, isFinish {
+                finishAction()
             }else{
                 background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             }
         }
     }
-    
-    var taskInfo:TaskInfo?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +39,18 @@ class TaskTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func finishAction(){
+        guard let taskInfo = taskInfo else { return }
+        background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+        let finishTaskInfo = FinishTaskInfo(questCreateTime: taskInfo.createTime, questType: taskInfo.type.rawValue)
+        let finishTaskInfoDic = try?  finishTaskInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                return
+            }
+        }
     }
     
 
