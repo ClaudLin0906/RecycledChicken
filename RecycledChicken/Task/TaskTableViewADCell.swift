@@ -44,7 +44,7 @@ class TaskTableViewADCell: UITableViewCell {
         background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
         let finishTaskInfo = FinishTaskInfo(questCreateTime: taskInfo.createTime, questType: taskInfo.type.rawValue)
         let finishTaskInfoDic = try?  finishTaskInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 return
             }
