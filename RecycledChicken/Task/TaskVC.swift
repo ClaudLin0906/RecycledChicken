@@ -12,18 +12,8 @@ class TaskVC: CustomRootVC {
     @IBOutlet weak var taskTableView:UITableView!
     
     private var taskInfos:[TaskInfo] = []
-    {
-        willSet{
-            checkTaskStatus()
-        }
-    }
     
     private var taskStatuss:[TaskStatus] = []
-    {
-        willSet{
-            checkTaskStatus()
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +28,6 @@ class TaskVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getTaskStatus()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,6 +51,9 @@ class TaskVC: CustomRootVC {
             filterTaskInfo.append(newTaskinfo)
         }
         taskInfos = filterTaskInfo
+        DispatchQueue.main.async {
+            self.taskTableView.reloadData()
+        }
     }
     
     private func sharedAction(completion: @escaping (Bool, String?) -> Void){
@@ -87,6 +79,7 @@ class TaskVC: CustomRootVC {
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 self.taskStatuss = try! JSONDecoder().decode([TaskStatus].self, from: JSONSerialization.data(withJSONObject: dic))
+                self.checkTaskStatus()
             }
         }
     }
@@ -105,10 +98,7 @@ class TaskVC: CustomRootVC {
 //                    }
 //                    return false
 //                }
-                    
-                DispatchQueue.main.async {
-                    self.taskTableView.reloadData()
-                }
+                self.getTaskStatus()
             }
         }
     }
@@ -194,6 +184,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                     }
                     info.isFinish = result
                     cell.taskInfo = info
+                    cell.finishAction()
                 }
             default:
                 break
