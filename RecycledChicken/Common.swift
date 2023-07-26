@@ -96,6 +96,8 @@ struct APIUrl {
     static let smsCertificate = "/smsCertificate"
     static let getAd = "/getAd"
     static let getNotification = "/getNotification"
+    static let quest = "/quest"
+    static let getQuestStatus = "/getQuestStatus"
 }
 
 struct WebViewUrl{

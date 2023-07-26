@@ -242,5 +242,68 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE41CDED-F6EC-4D1D-8491-ECACBA505F7C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/Task/TaskVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "getTaskStatus()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DE41CDED-F6EC-4D1D-8491-ECACBA505F7C - c8d235d25e33b505"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.TaskVC.getTaskStatus() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Task/TaskVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "415">
+               </Location>
+               <Location
+                  uuid = "DE41CDED-F6EC-4D1D-8491-ECACBA505F7C - c8d235d25e33b505"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.TaskVC.getTaskStatus() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Task/TaskVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "499">
+               </Location>
+               <Location
+                  uuid = "DE41CDED-F6EC-4D1D-8491-ECACBA505F7C - c8d235d25e33b505"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.TaskVC.getTaskStatus() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Task/TaskVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "978">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

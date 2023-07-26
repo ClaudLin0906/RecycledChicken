@@ -12,6 +12,8 @@ class TaskVC: CustomRootVC {
     @IBOutlet weak var taskTableView:UITableView!
     
     private var taskInfos:[TaskInfo] = []
+    
+    private var taskStatuss:[TaskStatus] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,11 @@ class TaskVC: CustomRootVC {
     
     private func UIInit(){
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getTaskStatus()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,6 +48,18 @@ class TaskVC: CustomRootVC {
             }
         }
         self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    private func getTaskStatus(){
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+                self.taskStatuss = try! JSONDecoder().decode([TaskStatus].self, from: JSONSerialization.data(withJSONObject: dic))
+            }
+        }
     }
     
     private func getTaskInfo(){

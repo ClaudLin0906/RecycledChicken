@@ -18,6 +18,12 @@ struct TaskInfo: Decodable, CustomStringConvertible{
     var isFinish:Bool?
 }
 
+struct TaskStatus: Decodable{
+    var type:String
+    var finishTime:String
+    var createTime:String
+}
+
 
 enum TaskType:String, Decodable {
     case AD = "advertise"
