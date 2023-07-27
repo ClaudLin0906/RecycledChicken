@@ -8,6 +8,12 @@
 import UIKit
 
 class AmountView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var storeName:UILabel!
+    
+    @IBOutlet weak var bottleCount:UILabel!
+    
+    @IBOutlet weak var batteryCount:UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)

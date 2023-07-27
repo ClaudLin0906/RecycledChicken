@@ -82,7 +82,7 @@ class ProfileVC: CustomVC {
     }
     
     @IBAction func confirm(_ sender:UIButton) {
-        var newUserInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "")
+        var newUserInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "", experiencePoint: 0)
         let cells = cellsForTableView(tableView: profileTableView)
         for cell in cells {
             if let profileTableViewCell = cell as? ProfileTableViewCell {

@@ -197,49 +197,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "82C5EA3E-B79C-4444-9C06-5A735600F91D"
+            uuid = "6EF02ED4-E03F-4F7E-8F81-814545DE58CE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Profile/ProfileVC.swift"
+            filePath = "RecycledChicken/Task/TaskVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "updateUserInfo(userInfo:)"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "getTaskInfo()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "82C5EA3E-B79C-4444-9C06-5A735600F91D - b3b610f168e2ceab"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.ProfileVC.updateUserInfo(userInfo: RecycledChicken.ProfileInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Profile/ProfileVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "217">
-               </Location>
-               <Location
-                  uuid = "82C5EA3E-B79C-4444-9C06-5A735600F91D - f1990469be339e67"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.ProfileVC.updateUserInfo(userInfo: RecycledChicken.ProfileInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Profile/ProfileVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "214">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7037A6A2-959E-4BE2-803D-9F6398F25ED0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/Task/TaskVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "getTaskStatus()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

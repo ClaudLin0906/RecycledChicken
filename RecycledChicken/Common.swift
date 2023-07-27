@@ -138,7 +138,7 @@ func getUserInfo(VC:UIViewController, finishAction:(()->())?){
         }
         if let data = data {
             let json = NetworkManager.shared.dataToDictionary(data: data)
-            var userInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "")
+            var userInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "", experiencePoint: 0)
             if let userPhoneNumber = json["userPhoneNumber"] as? String {
                 userInfo.userPhoneNumber = userPhoneNumber
             }
@@ -154,12 +154,123 @@ func getUserInfo(VC:UIViewController, finishAction:(()->())?){
             if let userBirth = json["userBirth"] as? String {
                 userInfo.userBirth = userBirth
             }
+            if let experiencePoint = json["experiencePoint"] as? Int {
+                userInfo.experiencePoint = experiencePoint
+            }
+            userInfo = computeGrade(userinfo: userInfo)
+            
             CurrentUserInfo.shared.currentProfileInfo = userInfo
             if let finishAction = finishAction {
                 finishAction()
             }
         }
     }
+}
+
+private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
+    var newUserInfo = userinfo
+    let experiencePoint = userinfo.experiencePoint
+    if experiencePoint >= 0 && experiencePoint <= 100{
+        newUserInfo.levelInfo?.level = 1
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 100 && experiencePoint <= 400 {
+        newUserInfo.levelInfo?.level = 2
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 400 && experiencePoint <= 900 {
+        newUserInfo.levelInfo?.level = 3
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 900 && experiencePoint <= 1600 {
+        newUserInfo.levelInfo?.level = 4
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 1600 && experiencePoint <= 2500 {
+        newUserInfo.levelInfo?.level = 5
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 2500 && experiencePoint <= 3600 {
+        newUserInfo.levelInfo?.level = 6
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 3600 && experiencePoint <= 4900 {
+        newUserInfo.levelInfo?.level = 7
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 4900 && experiencePoint <= 6400 {
+        newUserInfo.levelInfo?.level = 8
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 6400 && experiencePoint <= 8100 {
+        newUserInfo.levelInfo?.level = 9
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint > 8100 && experiencePoint <= 10000 {
+        newUserInfo.levelInfo?.level = 10
+        newUserInfo.levelInfo?.chickenLevel = 1
+        newUserInfo.levelInfo?.chickenLevelName = "碳員"
+    }
+    else if experiencePoint >= 10000 && experiencePoint <= 10100{
+        newUserInfo.levelInfo?.level = 1
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 10100 && experiencePoint <= 10400 {
+        newUserInfo.levelInfo?.level = 2
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 10400 && experiencePoint <= 10900 {
+        newUserInfo.levelInfo?.level = 3
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 10900 && experiencePoint <= 11600 {
+        newUserInfo.levelInfo?.level = 4
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 11600 && experiencePoint <= 12500 {
+        newUserInfo.levelInfo?.level = 5
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 12500 && experiencePoint <= 13600 {
+        newUserInfo.levelInfo?.level = 6
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 13600 && experiencePoint <= 14900 {
+        newUserInfo.levelInfo?.level = 7
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 14900 && experiencePoint <= 16400 {
+        newUserInfo.levelInfo?.level = 8
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 16400 && experiencePoint <= 18100 {
+        newUserInfo.levelInfo?.level = 9
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 18100 && experiencePoint <= 20000 {
+        newUserInfo.levelInfo?.level = 10
+        newUserInfo.levelInfo?.chickenLevel = 2
+        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    return newUserInfo
 }
 
 func generateBarCode(from string: String) -> UIImage? {

@@ -13,4 +13,12 @@ struct ProfileInfo:Codable {
     var userBirth:String
     var point:Int
     var userPhoneNumber:String
+    var experiencePoint:Int
+    var levelInfo:LevelInfo?
+}
+
+struct LevelInfo:Codable {
+    var chickenLevel:Int?
+    var level:Int?
+    var chickenLevelName:String?
 }

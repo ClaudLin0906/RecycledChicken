@@ -10,13 +10,15 @@ import GoogleMaps
 import GooglePlaces
 class StoreMapVC: CustomRootVC {
 
-    @IBOutlet var mapView:GMSMapView!
+    @IBOutlet weak var mapView:GMSMapView!
     
-    @IBOutlet var iconView1:IconView!
+    @IBOutlet weak var iconView1:IconView!
     
-    @IBOutlet var iconView2:IconView!
+    @IBOutlet weak var iconView2:IconView!
     
-    @IBOutlet var iconView3:IconView!
+    @IBOutlet weak var iconView3:IconView!
+    
+    @IBOutlet weak var amountView:AmountView!
         
     private var observation: NSKeyValueObservation?
     

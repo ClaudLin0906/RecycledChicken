@@ -66,7 +66,7 @@ class ARVC: CustomRootVC {
 }
 
 //extension ARVC:LiGScannerDelegate{
-//    
+//
 //    func scannerStatus(_ status: ScannerStatus) {
 //        var msg = "Scanner Status: ";
 //        switch (status) {
@@ -88,15 +88,15 @@ class ARVC: CustomRootVC {
 //        }
 //        print(msg)
 //    }
-//    
+//
 //    func scannerResult(_ ids: [LightID]) {
 //        let count = ids.count
 //        if (count > 0) {
 //            let lightId = ids[0]
 //            scannerView.send(lightId)
 //        }
-//        
+//
 //    }
-//    
-//    
+//
+//
 //}
