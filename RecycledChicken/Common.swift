@@ -352,115 +352,115 @@ private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     else if experiencePoint > 50400 && experiencePoint <= 50900 {
         newUserInfo.levelInfo?.level = 3
     }
-    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+    else if experiencePoint > 50900 && experiencePoint <= 51600 {
         newUserInfo.levelInfo?.level = 4
     }
-    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+    else if experiencePoint > 51600 && experiencePoint <= 52500 {
         newUserInfo.levelInfo?.level = 5
     }
-    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+    else if experiencePoint > 52500 && experiencePoint <= 53600 {
         newUserInfo.levelInfo?.level = 6
     }
-    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+    else if experiencePoint > 53600 && experiencePoint <= 54900 {
         newUserInfo.levelInfo?.level = 7
     }
-    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+    else if experiencePoint > 54900 && experiencePoint <= 56400 {
         newUserInfo.levelInfo?.level = 8
     }
-    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+    else if experiencePoint > 56400 && experiencePoint <= 58100 {
         newUserInfo.levelInfo?.level = 9
     }
-    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+    else if experiencePoint > 58100 && experiencePoint <= 60000 {
         newUserInfo.levelInfo?.level = 10
     }
-    else if experiencePoint > 30000 && experiencePoint <= 30100{
+    else if experiencePoint > 60000 && experiencePoint <= 60100{
         newUserInfo.levelInfo?.level = 1
     }
-    else if experiencePoint > 30100 && experiencePoint <= 30400 {
+    else if experiencePoint > 60100 && experiencePoint <= 60400 {
         newUserInfo.levelInfo?.level = 2
     }
-    else if experiencePoint > 30400 && experiencePoint <= 30900 {
+    else if experiencePoint > 60400 && experiencePoint <= 60900 {
         newUserInfo.levelInfo?.level = 3
     }
-    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+    else if experiencePoint > 60900 && experiencePoint <= 61600 {
         newUserInfo.levelInfo?.level = 4
     }
-    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+    else if experiencePoint > 61600 && experiencePoint <= 62500 {
         newUserInfo.levelInfo?.level = 5
     }
-    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+    else if experiencePoint > 62500 && experiencePoint <= 63600 {
         newUserInfo.levelInfo?.level = 6
     }
-    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+    else if experiencePoint > 63600 && experiencePoint <= 64900 {
         newUserInfo.levelInfo?.level = 7
     }
-    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+    else if experiencePoint > 64900 && experiencePoint <= 66400 {
         newUserInfo.levelInfo?.level = 8
     }
-    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+    else if experiencePoint > 66400 && experiencePoint <= 68100 {
         newUserInfo.levelInfo?.level = 9
     }
-    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+    else if experiencePoint > 68100 && experiencePoint <= 70000 {
         newUserInfo.levelInfo?.level = 10
     }
-    else if experiencePoint > 30000 && experiencePoint <= 30100{
+    else if experiencePoint > 70000 && experiencePoint <= 70100{
         newUserInfo.levelInfo?.level = 1
     }
-    else if experiencePoint > 30100 && experiencePoint <= 30400 {
+    else if experiencePoint > 70100 && experiencePoint <= 70400 {
         newUserInfo.levelInfo?.level = 2
     }
-    else if experiencePoint > 30400 && experiencePoint <= 30900 {
+    else if experiencePoint > 70400 && experiencePoint <= 70900 {
         newUserInfo.levelInfo?.level = 3
     }
-    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+    else if experiencePoint > 70900 && experiencePoint <= 71600 {
         newUserInfo.levelInfo?.level = 4
     }
-    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+    else if experiencePoint > 71600 && experiencePoint <= 72500 {
         newUserInfo.levelInfo?.level = 5
     }
-    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+    else if experiencePoint > 72500 && experiencePoint <= 73600 {
         newUserInfo.levelInfo?.level = 6
     }
-    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+    else if experiencePoint > 73600 && experiencePoint <= 74900 {
         newUserInfo.levelInfo?.level = 7
     }
-    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+    else if experiencePoint > 74900 && experiencePoint <= 76400 {
         newUserInfo.levelInfo?.level = 8
     }
-    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+    else if experiencePoint > 76400 && experiencePoint <= 78100 {
         newUserInfo.levelInfo?.level = 9
     }
-    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+    else if experiencePoint > 78100 && experiencePoint <= 80000 {
         newUserInfo.levelInfo?.level = 10
     }
-    else if experiencePoint > 30000 && experiencePoint <= 30100{
+    else if experiencePoint > 80000 && experiencePoint <= 80100{
         newUserInfo.levelInfo?.level = 1
     }
-    else if experiencePoint > 30100 && experiencePoint <= 30400 {
+    else if experiencePoint > 80100 && experiencePoint <= 80400 {
         newUserInfo.levelInfo?.level = 2
     }
-    else if experiencePoint > 30400 && experiencePoint <= 30900 {
+    else if experiencePoint > 80400 && experiencePoint <= 80900 {
         newUserInfo.levelInfo?.level = 3
     }
-    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+    else if experiencePoint > 80900 && experiencePoint <= 81600 {
         newUserInfo.levelInfo?.level = 4
     }
-    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+    else if experiencePoint > 81600 && experiencePoint <= 82500 {
         newUserInfo.levelInfo?.level = 5
     }
-    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+    else if experiencePoint > 82500 && experiencePoint <= 83600 {
         newUserInfo.levelInfo?.level = 6
     }
-    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+    else if experiencePoint > 83600 && experiencePoint <= 84900 {
         newUserInfo.levelInfo?.level = 7
     }
-    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+    else if experiencePoint > 84900 && experiencePoint <= 86400 {
         newUserInfo.levelInfo?.level = 8
     }
-    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+    else if experiencePoint > 86400 && experiencePoint <= 88100 {
         newUserInfo.levelInfo?.level = 9
     }
-    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+    else if experiencePoint > 88100 && experiencePoint <= 90000 {
         newUserInfo.levelInfo?.level = 10
     }
     return newUserInfo
