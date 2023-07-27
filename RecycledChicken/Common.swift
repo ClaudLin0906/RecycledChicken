@@ -170,329 +170,330 @@ func getUserInfo(VC:UIViewController, finishAction:(()->())?){
 private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     var newUserInfo = userinfo
     let experiencePoint = userinfo.experiencePoint
-    
+    var levelInfo:LevelInfo = LevelInfo(level: 1, chickenLevel: .one)
     if experiencePoint >= 0 && experiencePoint <= 10000{
-        newUserInfo.levelInfo?.chickenLevel = .one
+        levelInfo.chickenLevel = .one
     }else if experiencePoint > 10000 && experiencePoint <= 20000{
-        newUserInfo.levelInfo?.chickenLevel = .two
+        levelInfo.chickenLevel = .two
     }else if experiencePoint > 20000 && experiencePoint <= 30000{
-        newUserInfo.levelInfo?.chickenLevel = .three
+        levelInfo.chickenLevel = .three
     }else if experiencePoint > 30000 && experiencePoint <= 40000{
-        newUserInfo.levelInfo?.chickenLevel = .four
+        levelInfo.chickenLevel = .four
     }else if experiencePoint > 40000 && experiencePoint <= 50000{
-        newUserInfo.levelInfo?.chickenLevel = .five
+        levelInfo.chickenLevel = .five
     }else if experiencePoint > 50000 && experiencePoint <= 60000{
-        newUserInfo.levelInfo?.chickenLevel = .six
+        levelInfo.chickenLevel = .six
     }else if experiencePoint > 60000 && experiencePoint <= 70000{
-        newUserInfo.levelInfo?.chickenLevel = .seven
+        levelInfo.chickenLevel = .seven
     }else if experiencePoint > 70000 && experiencePoint <= 80000{
-        newUserInfo.levelInfo?.chickenLevel = .eight
+        levelInfo.chickenLevel = .eight
     }else if experiencePoint > 80000 && experiencePoint <= 90000{
-        newUserInfo.levelInfo?.chickenLevel = .nine
+        levelInfo.chickenLevel = .nine
     }else if experiencePoint > 90000 && experiencePoint <= 100000{
-        newUserInfo.levelInfo?.chickenLevel = .ten
+        levelInfo.chickenLevel = .ten
     }
     
     if experiencePoint >= 0 && experiencePoint <= 100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 100 && experiencePoint <= 400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 400 && experiencePoint <= 900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 900 && experiencePoint <= 1600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 1600 && experiencePoint <= 2500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 2500 && experiencePoint <= 3600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 3600 && experiencePoint <= 4900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 4900 && experiencePoint <= 6400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 6400 && experiencePoint <= 8100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 8100 && experiencePoint <= 10000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 10000 && experiencePoint <= 10100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 10100 && experiencePoint <= 10400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 10400 && experiencePoint <= 10900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 10900 && experiencePoint <= 11600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 11600 && experiencePoint <= 12500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 12500 && experiencePoint <= 13600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 13600 && experiencePoint <= 14900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 14900 && experiencePoint <= 16400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 16400 && experiencePoint <= 18100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 18100 && experiencePoint <= 20000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 20000 && experiencePoint <= 20100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 20100 && experiencePoint <= 20400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 20400 && experiencePoint <= 20900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 20900 && experiencePoint <= 21600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 21600 && experiencePoint <= 22500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 22500 && experiencePoint <= 23600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 23600 && experiencePoint <= 24900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 24900 && experiencePoint <= 26400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 26400 && experiencePoint <= 28100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 28100 && experiencePoint <= 30000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 30000 && experiencePoint <= 30100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 30100 && experiencePoint <= 30400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 30400 && experiencePoint <= 30900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 30900 && experiencePoint <= 31600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 31600 && experiencePoint <= 32500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 32500 && experiencePoint <= 33600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 33600 && experiencePoint <= 34900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 34900 && experiencePoint <= 36400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 36400 && experiencePoint <= 38100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 38100 && experiencePoint <= 40000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 40000 && experiencePoint <= 40100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 40100 && experiencePoint <= 40400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 40400 && experiencePoint <= 40900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 40900 && experiencePoint <= 41600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 41600 && experiencePoint <= 42500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 42500 && experiencePoint <= 43600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 43600 && experiencePoint <= 44900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 44900 && experiencePoint <= 46400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 46400 && experiencePoint <= 48100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 48100 && experiencePoint <= 50000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 50000 && experiencePoint <= 50100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 50100 && experiencePoint <= 50400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 50400 && experiencePoint <= 50900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 50900 && experiencePoint <= 51600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 51600 && experiencePoint <= 52500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 52500 && experiencePoint <= 53600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 53600 && experiencePoint <= 54900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 54900 && experiencePoint <= 56400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 56400 && experiencePoint <= 58100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 58100 && experiencePoint <= 60000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 60000 && experiencePoint <= 60100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 60100 && experiencePoint <= 60400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 60400 && experiencePoint <= 60900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 60900 && experiencePoint <= 61600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 61600 && experiencePoint <= 62500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 62500 && experiencePoint <= 63600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 63600 && experiencePoint <= 64900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 64900 && experiencePoint <= 66400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 66400 && experiencePoint <= 68100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 68100 && experiencePoint <= 70000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 70000 && experiencePoint <= 70100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 70100 && experiencePoint <= 70400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 70400 && experiencePoint <= 70900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 70900 && experiencePoint <= 71600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 71600 && experiencePoint <= 72500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 72500 && experiencePoint <= 73600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 73600 && experiencePoint <= 74900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 74900 && experiencePoint <= 76400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 76400 && experiencePoint <= 78100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 78100 && experiencePoint <= 80000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 80000 && experiencePoint <= 80100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 80100 && experiencePoint <= 80400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 80400 && experiencePoint <= 80900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 80900 && experiencePoint <= 81600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 81600 && experiencePoint <= 82500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 82500 && experiencePoint <= 83600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 83600 && experiencePoint <= 84900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 84900 && experiencePoint <= 86400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 86400 && experiencePoint <= 88100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 88100 && experiencePoint <= 90000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
     else if experiencePoint > 90000 && experiencePoint <= 90100{
-        newUserInfo.levelInfo?.level = 1
+        levelInfo.level = 1
     }
     else if experiencePoint > 90100 && experiencePoint <= 90400 {
-        newUserInfo.levelInfo?.level = 2
+        levelInfo.level = 2
     }
     else if experiencePoint > 90400 && experiencePoint <= 90900 {
-        newUserInfo.levelInfo?.level = 3
+        levelInfo.level = 3
     }
     else if experiencePoint > 90900 && experiencePoint <= 91600 {
-        newUserInfo.levelInfo?.level = 4
+        levelInfo.level = 4
     }
     else if experiencePoint > 91600 && experiencePoint <= 92500 {
-        newUserInfo.levelInfo?.level = 5
+        levelInfo.level = 5
     }
     else if experiencePoint > 92500 && experiencePoint <= 93600 {
-        newUserInfo.levelInfo?.level = 6
+        levelInfo.level = 6
     }
     else if experiencePoint > 93600 && experiencePoint <= 94900 {
-        newUserInfo.levelInfo?.level = 7
+        levelInfo.level = 7
     }
     else if experiencePoint > 94900 && experiencePoint <= 96400 {
-        newUserInfo.levelInfo?.level = 8
+        levelInfo.level = 8
     }
     else if experiencePoint > 96400 && experiencePoint <= 98100 {
-        newUserInfo.levelInfo?.level = 9
+        levelInfo.level = 9
     }
     else if experiencePoint > 98100 && experiencePoint <= 100000 {
-        newUserInfo.levelInfo?.level = 10
+        levelInfo.level = 10
     }
+    newUserInfo.levelInfo = levelInfo
     return newUserInfo
 }
 
