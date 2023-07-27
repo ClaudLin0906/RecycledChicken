@@ -463,6 +463,36 @@ private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     else if experiencePoint > 88100 && experiencePoint <= 90000 {
         newUserInfo.levelInfo?.level = 10
     }
+    else if experiencePoint > 90000 && experiencePoint <= 90100{
+        newUserInfo.levelInfo?.level = 1
+    }
+    else if experiencePoint > 90100 && experiencePoint <= 90400 {
+        newUserInfo.levelInfo?.level = 2
+    }
+    else if experiencePoint > 90400 && experiencePoint <= 90900 {
+        newUserInfo.levelInfo?.level = 3
+    }
+    else if experiencePoint > 90900 && experiencePoint <= 91600 {
+        newUserInfo.levelInfo?.level = 4
+    }
+    else if experiencePoint > 91600 && experiencePoint <= 92500 {
+        newUserInfo.levelInfo?.level = 5
+    }
+    else if experiencePoint > 92500 && experiencePoint <= 93600 {
+        newUserInfo.levelInfo?.level = 6
+    }
+    else if experiencePoint > 93600 && experiencePoint <= 94900 {
+        newUserInfo.levelInfo?.level = 7
+    }
+    else if experiencePoint > 94900 && experiencePoint <= 96400 {
+        newUserInfo.levelInfo?.level = 8
+    }
+    else if experiencePoint > 96400 && experiencePoint <= 98100 {
+        newUserInfo.levelInfo?.level = 9
+    }
+    else if experiencePoint > 98100 && experiencePoint <= 100000 {
+        newUserInfo.levelInfo?.level = 10
+    }
     return newUserInfo
 }
 
