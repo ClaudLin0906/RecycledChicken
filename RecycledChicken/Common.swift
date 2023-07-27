@@ -170,105 +170,298 @@ func getUserInfo(VC:UIViewController, finishAction:(()->())?){
 private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     var newUserInfo = userinfo
     let experiencePoint = userinfo.experiencePoint
+    
+    if experiencePoint >= 0 && experiencePoint <= 10000{
+        newUserInfo.levelInfo?.chickenLevel = .one
+    }else if experiencePoint > 10000 && experiencePoint <= 20000{
+        newUserInfo.levelInfo?.chickenLevel = .two
+    }else if experiencePoint > 20000 && experiencePoint <= 30000{
+        newUserInfo.levelInfo?.chickenLevel = .three
+    }else if experiencePoint > 30000 && experiencePoint <= 40000{
+        newUserInfo.levelInfo?.chickenLevel = .four
+    }else if experiencePoint > 40000 && experiencePoint <= 50000{
+        newUserInfo.levelInfo?.chickenLevel = .five
+    }else if experiencePoint > 50000 && experiencePoint <= 60000{
+        newUserInfo.levelInfo?.chickenLevel = .six
+    }else if experiencePoint > 60000 && experiencePoint <= 70000{
+        newUserInfo.levelInfo?.chickenLevel = .seven
+    }else if experiencePoint > 70000 && experiencePoint <= 80000{
+        newUserInfo.levelInfo?.chickenLevel = .eight
+    }else if experiencePoint > 80000 && experiencePoint <= 90000{
+        newUserInfo.levelInfo?.chickenLevel = .nine
+    }else if experiencePoint > 90000 && experiencePoint <= 100000{
+        newUserInfo.levelInfo?.chickenLevel = .ten
+    }
+    
     if experiencePoint >= 0 && experiencePoint <= 100{
         newUserInfo.levelInfo?.level = 1
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 100 && experiencePoint <= 400 {
         newUserInfo.levelInfo?.level = 2
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 400 && experiencePoint <= 900 {
         newUserInfo.levelInfo?.level = 3
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 900 && experiencePoint <= 1600 {
         newUserInfo.levelInfo?.level = 4
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 1600 && experiencePoint <= 2500 {
         newUserInfo.levelInfo?.level = 5
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 2500 && experiencePoint <= 3600 {
         newUserInfo.levelInfo?.level = 6
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 3600 && experiencePoint <= 4900 {
         newUserInfo.levelInfo?.level = 7
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 4900 && experiencePoint <= 6400 {
         newUserInfo.levelInfo?.level = 8
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 6400 && experiencePoint <= 8100 {
         newUserInfo.levelInfo?.level = 9
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
     else if experiencePoint > 8100 && experiencePoint <= 10000 {
         newUserInfo.levelInfo?.level = 10
-        newUserInfo.levelInfo?.chickenLevel = 1
-        newUserInfo.levelInfo?.chickenLevelName = "碳員"
     }
-    else if experiencePoint >= 10000 && experiencePoint <= 10100{
+    else if experiencePoint > 10000 && experiencePoint <= 10100{
         newUserInfo.levelInfo?.level = 1
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 10100 && experiencePoint <= 10400 {
         newUserInfo.levelInfo?.level = 2
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 10400 && experiencePoint <= 10900 {
         newUserInfo.levelInfo?.level = 3
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 10900 && experiencePoint <= 11600 {
         newUserInfo.levelInfo?.level = 4
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 11600 && experiencePoint <= 12500 {
         newUserInfo.levelInfo?.level = 5
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 12500 && experiencePoint <= 13600 {
         newUserInfo.levelInfo?.level = 6
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 13600 && experiencePoint <= 14900 {
         newUserInfo.levelInfo?.level = 7
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 14900 && experiencePoint <= 16400 {
         newUserInfo.levelInfo?.level = 8
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 16400 && experiencePoint <= 18100 {
         newUserInfo.levelInfo?.level = 9
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
     }
     else if experiencePoint > 18100 && experiencePoint <= 20000 {
         newUserInfo.levelInfo?.level = 10
-        newUserInfo.levelInfo?.chickenLevel = 2
-        newUserInfo.levelInfo?.chickenLevelName = "割草雞"
+    }
+    else if experiencePoint > 20000 && experiencePoint <= 20100{
+        newUserInfo.levelInfo?.level = 1
+    }
+    else if experiencePoint > 20100 && experiencePoint <= 20400 {
+        newUserInfo.levelInfo?.level = 2
+    }
+    else if experiencePoint > 20400 && experiencePoint <= 20900 {
+        newUserInfo.levelInfo?.level = 3
+    }
+    else if experiencePoint > 20900 && experiencePoint <= 21600 {
+        newUserInfo.levelInfo?.level = 4
+    }
+    else if experiencePoint > 21600 && experiencePoint <= 22500 {
+        newUserInfo.levelInfo?.level = 5
+    }
+    else if experiencePoint > 22500 && experiencePoint <= 23600 {
+        newUserInfo.levelInfo?.level = 6
+    }
+    else if experiencePoint > 23600 && experiencePoint <= 24900 {
+        newUserInfo.levelInfo?.level = 7
+    }
+    else if experiencePoint > 24900 && experiencePoint <= 26400 {
+        newUserInfo.levelInfo?.level = 8
+    }
+    else if experiencePoint > 26400 && experiencePoint <= 28100 {
+        newUserInfo.levelInfo?.level = 9
+    }
+    else if experiencePoint > 28100 && experiencePoint <= 30000 {
+        newUserInfo.levelInfo?.level = 10
+    }
+    else if experiencePoint > 30000 && experiencePoint <= 30100{
+        newUserInfo.levelInfo?.level = 1
+    }
+    else if experiencePoint > 30100 && experiencePoint <= 30400 {
+        newUserInfo.levelInfo?.level = 2
+    }
+    else if experiencePoint > 30400 && experiencePoint <= 30900 {
+        newUserInfo.levelInfo?.level = 3
+    }
+    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+        newUserInfo.levelInfo?.level = 4
+    }
+    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+        newUserInfo.levelInfo?.level = 5
+    }
+    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+        newUserInfo.levelInfo?.level = 6
+    }
+    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+        newUserInfo.levelInfo?.level = 7
+    }
+    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+        newUserInfo.levelInfo?.level = 8
+    }
+    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+        newUserInfo.levelInfo?.level = 9
+    }
+    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+        newUserInfo.levelInfo?.level = 10
+    }
+    else if experiencePoint > 40000 && experiencePoint <= 40100{
+        newUserInfo.levelInfo?.level = 1
+    }
+    else if experiencePoint > 40100 && experiencePoint <= 40400 {
+        newUserInfo.levelInfo?.level = 2
+    }
+    else if experiencePoint > 40400 && experiencePoint <= 40900 {
+        newUserInfo.levelInfo?.level = 3
+    }
+    else if experiencePoint > 40900 && experiencePoint <= 41600 {
+        newUserInfo.levelInfo?.level = 4
+    }
+    else if experiencePoint > 41600 && experiencePoint <= 42500 {
+        newUserInfo.levelInfo?.level = 5
+    }
+    else if experiencePoint > 42500 && experiencePoint <= 43600 {
+        newUserInfo.levelInfo?.level = 6
+    }
+    else if experiencePoint > 43600 && experiencePoint <= 44900 {
+        newUserInfo.levelInfo?.level = 7
+    }
+    else if experiencePoint > 44900 && experiencePoint <= 46400 {
+        newUserInfo.levelInfo?.level = 8
+    }
+    else if experiencePoint > 46400 && experiencePoint <= 48100 {
+        newUserInfo.levelInfo?.level = 9
+    }
+    else if experiencePoint > 48100 && experiencePoint <= 50000 {
+        newUserInfo.levelInfo?.level = 10
+    }
+    else if experiencePoint > 50000 && experiencePoint <= 50100{
+        newUserInfo.levelInfo?.level = 1
+    }
+    else if experiencePoint > 50100 && experiencePoint <= 50400 {
+        newUserInfo.levelInfo?.level = 2
+    }
+    else if experiencePoint > 50400 && experiencePoint <= 50900 {
+        newUserInfo.levelInfo?.level = 3
+    }
+    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+        newUserInfo.levelInfo?.level = 4
+    }
+    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+        newUserInfo.levelInfo?.level = 5
+    }
+    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+        newUserInfo.levelInfo?.level = 6
+    }
+    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+        newUserInfo.levelInfo?.level = 7
+    }
+    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+        newUserInfo.levelInfo?.level = 8
+    }
+    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+        newUserInfo.levelInfo?.level = 9
+    }
+    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+        newUserInfo.levelInfo?.level = 10
+    }
+    else if experiencePoint > 30000 && experiencePoint <= 30100{
+        newUserInfo.levelInfo?.level = 1
+    }
+    else if experiencePoint > 30100 && experiencePoint <= 30400 {
+        newUserInfo.levelInfo?.level = 2
+    }
+    else if experiencePoint > 30400 && experiencePoint <= 30900 {
+        newUserInfo.levelInfo?.level = 3
+    }
+    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+        newUserInfo.levelInfo?.level = 4
+    }
+    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+        newUserInfo.levelInfo?.level = 5
+    }
+    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+        newUserInfo.levelInfo?.level = 6
+    }
+    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+        newUserInfo.levelInfo?.level = 7
+    }
+    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+        newUserInfo.levelInfo?.level = 8
+    }
+    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+        newUserInfo.levelInfo?.level = 9
+    }
+    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+        newUserInfo.levelInfo?.level = 10
+    }
+    else if experiencePoint > 30000 && experiencePoint <= 30100{
+        newUserInfo.levelInfo?.level = 1
+    }
+    else if experiencePoint > 30100 && experiencePoint <= 30400 {
+        newUserInfo.levelInfo?.level = 2
+    }
+    else if experiencePoint > 30400 && experiencePoint <= 30900 {
+        newUserInfo.levelInfo?.level = 3
+    }
+    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+        newUserInfo.levelInfo?.level = 4
+    }
+    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+        newUserInfo.levelInfo?.level = 5
+    }
+    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+        newUserInfo.levelInfo?.level = 6
+    }
+    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+        newUserInfo.levelInfo?.level = 7
+    }
+    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+        newUserInfo.levelInfo?.level = 8
+    }
+    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+        newUserInfo.levelInfo?.level = 9
+    }
+    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+        newUserInfo.levelInfo?.level = 10
+    }
+    else if experiencePoint > 30000 && experiencePoint <= 30100{
+        newUserInfo.levelInfo?.level = 1
+    }
+    else if experiencePoint > 30100 && experiencePoint <= 30400 {
+        newUserInfo.levelInfo?.level = 2
+    }
+    else if experiencePoint > 30400 && experiencePoint <= 30900 {
+        newUserInfo.levelInfo?.level = 3
+    }
+    else if experiencePoint > 30900 && experiencePoint <= 31600 {
+        newUserInfo.levelInfo?.level = 4
+    }
+    else if experiencePoint > 31600 && experiencePoint <= 32500 {
+        newUserInfo.levelInfo?.level = 5
+    }
+    else if experiencePoint > 32500 && experiencePoint <= 33600 {
+        newUserInfo.levelInfo?.level = 6
+    }
+    else if experiencePoint > 33600 && experiencePoint <= 34900 {
+        newUserInfo.levelInfo?.level = 7
+    }
+    else if experiencePoint > 34900 && experiencePoint <= 36400 {
+        newUserInfo.levelInfo?.level = 8
+    }
+    else if experiencePoint > 36400 && experiencePoint <= 38100 {
+        newUserInfo.levelInfo?.level = 9
+    }
+    else if experiencePoint > 38100 && experiencePoint <= 40000 {
+        newUserInfo.levelInfo?.level = 10
     }
     return newUserInfo
 }

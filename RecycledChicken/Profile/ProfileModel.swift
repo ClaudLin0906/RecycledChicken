@@ -18,7 +18,19 @@ struct ProfileInfo:Codable {
 }
 
 struct LevelInfo:Codable {
-    var chickenLevel:Int?
     var level:Int?
-    var chickenLevelName:String?
+    var chickenLevel:chickenLevel?
+}
+
+enum chickenLevel:Codable {
+    case one
+    case two
+    case three
+    case four
+    case five
+    case six
+    case seven
+    case eight
+    case nine
+    case ten
 }
