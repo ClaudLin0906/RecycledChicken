@@ -63,6 +63,10 @@ class UserDefaultKey {
     let biometrics = "biometrics"
 }
 
+struct LevelObject{
+    var 
+}
+
 class CurrentUserInfo{
     static let shared = CurrentUserInfo()
     var currentAccountInfo:AccountInfo = {
@@ -157,9 +161,7 @@ func getUserInfo(VC:UIViewController, finishAction:(()->())?){
             if let experiencePoint = json["experiencePoint"] as? Int {
                 userInfo.experiencePoint = experiencePoint
             }
-            userInfo = computeGrade(userinfo: userInfo)
-            
-            CurrentUserInfo.shared.currentProfileInfo = userInfo
+            CurrentUserInfo.shared.currentProfileInfo = computeGrade(userinfo: userInfo)
             if let finishAction = finishAction {
                 finishAction()
             }
@@ -495,6 +497,10 @@ private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     }
     newUserInfo.levelInfo = levelInfo
     return newUserInfo
+}
+
+func levelOgject()-> {
+    CurrentUserInfo.shared.currentProfileInfo
 }
 
 func generateBarCode(from string: String) -> UIImage? {
