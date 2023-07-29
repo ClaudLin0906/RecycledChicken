@@ -229,33 +229,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8210B9C4-44A1-4A10-8476-248C4CE4D2D9"
+            uuid = "696371A7-9A93-4C6A-9F6B-C5A703887907"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecycledChicken/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B390E982-AC95-4E28-9F4F-9966AB6A0720"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Home/HomeVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "696371A7-9A93-4C6A-9F6B-C5A703887907 - 2b577c5816e65467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in RecycledChicken.HomeVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "589">
+               </Location>
+               <Location
+                  uuid = "696371A7-9A93-4C6A-9F6B-C5A703887907 - 2b577c5816e65467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in RecycledChicken.HomeVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "623">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

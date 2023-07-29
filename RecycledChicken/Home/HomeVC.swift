@@ -69,8 +69,9 @@ class HomeVC: CustomRootVC {
             case 10:
                 image = UIImage(named: "RecycledLevel10")
             default:
-                return image
+                image = nil
             }
+            return image
         }
         return nil
     }
