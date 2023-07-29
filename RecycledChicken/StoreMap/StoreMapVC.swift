@@ -68,6 +68,10 @@ class StoreMapVC: CustomRootVC {
         locationManager.stopUpdatingLocation()
     }
     
+    private func addMarker(){
+        
+    }
+    
     private func isLocationServicesEnabled() -> Bool {
         let authorizationStatus: CLAuthorizationStatus
         if #available(iOS 14, *) {

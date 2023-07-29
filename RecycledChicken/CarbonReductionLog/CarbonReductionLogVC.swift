@@ -25,12 +25,12 @@ class CarbonReductionLogVC: CustomVC {
         super.viewDidLoad()
         title = "減碳歷程"
         UIInit()
-        getRecycleLogData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
+        getRecycleLogData()
     }
 
     private func UIInit() {
@@ -41,6 +41,7 @@ class CarbonReductionLogVC: CustomVC {
         progressGroup.ring2.accessibilityLabel = NSLocalizedString("Exercise", comment: "")
         progressGroup.congratulationsTitle.text = "Congratulations!"
         progressGroup.congratulationsContent.text = "恭喜你電池回收量\n超額完成!"
+        progressGroup.congratulationsContent.isHidden = true
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
 
@@ -70,8 +71,13 @@ class CarbonReductionLogVC: CustomVC {
                     self.battView.battAmount.text = String(batteryInt)
                     self.petView.petAmount.text = String(bottleInt)
                     UIView.animate(withDuration: 0.5) { [self] in
-                        progressGroup.ring1.progress = Double(batteryInt)/1200
-                        progressGroup.ring2.progress = Double(bottleInt)/1200
+                        let batteryprogress = Double(batteryInt)/1200
+                        let bottleprogress = Double(bottleInt)/1200
+                        progressGroup.ring1.progress = batteryprogress
+                        progressGroup.ring2.progress = batteryprogress
+                        if batteryprogress >= 1 && bottleprogress >= 1{
+                            progressGroup.congratulationsContent.isHidden = false
+                        }
                     }
                 }
             }

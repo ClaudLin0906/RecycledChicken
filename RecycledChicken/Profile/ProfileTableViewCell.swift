@@ -21,6 +21,7 @@ class ProfileTableViewCell: UITableViewCell {
         super.awakeFromNib()
         phoneNumberCheckBox.boxType = .square
         phoneNumberCheckBox.stateChangeAnimation = .fill
+        phoneNumberCheckBox.isEnabled = false
         // Initialization code
     }
 
