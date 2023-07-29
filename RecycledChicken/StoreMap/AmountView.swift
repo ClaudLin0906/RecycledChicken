@@ -14,6 +14,19 @@ class AmountView: UIView, NibOwnerLoadable {
     @IBOutlet weak var bottleCount:UILabel!
     
     @IBOutlet weak var batteryCount:UILabel!
+    
+    var mapInfo:MapInfo? {
+        willSet{
+            if let newValue = newValue {
+                self.isHidden = false
+                storeName.text = newValue.storeName
+                bottleCount.text = "還可以投:\(newValue.remainingProcessable.bottle)瓶"
+                batteryCount.text = "還可以投:\(newValue.remainingProcessable.bottle)顆"
+            }else{
+                self.isHidden = true
+            }
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

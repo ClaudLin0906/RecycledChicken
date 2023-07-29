@@ -77,6 +77,7 @@ class StoreMapVC: CustomRootVC {
                         maker.position = coordinate
                         maker.map = mapView
                         maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
+                        maker.title = mapInfo.storeName
                     }
                 }
             }
@@ -98,17 +99,6 @@ class StoreMapVC: CustomRootVC {
         @unknown default:
             return false
         }
-//        if CLLocationManager.locationServicesEnabled() {
-//            switch(CLLocationManager.authorizationStatus()) {
-//            case .notDetermined, .restricted, .denied:
-//                return false
-//            case .authorizedAlways, .authorizedWhenInUse:
-//                return true
-//            @unknown default:
-//                return false
-//            }
-//        }
-//        return false
     }
     
     private func UIInit(){
@@ -146,8 +136,19 @@ class StoreMapVC: CustomRootVC {
 extension StoreMapVC: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        
-        true
+        let mapInfoArr = mapInfos.filter { mapInfo in
+            if let title = marker.title {
+                if title == mapInfo.storeName {
+                    return true
+                }
+            }
+            return false
+        }
+        if !mapInfoArr.isEmpty {
+            let mapInfo = mapInfoArr[0]
+            amountView.mapInfo = mapInfo
+        }
+        return true
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
@@ -167,29 +168,6 @@ extension StoreMapVC:CLLocationManagerDelegate {
         let location = locations.last
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
         self.mapView?.animate(to: camera)
-        
-                let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2DMake( (location?.coordinate.latitude)! + 0.001, (location?.coordinate.longitude)! )
-                marker.map = mapView
-                marker.icon = imageWithImage(image: UIImage(named: "组 227")!, scaledToSize: CGSize(width: 50, height: 50))
-                marker.title = "標題"
-                marker.snippet = "副標題"
-        
-                let marker1 = GMSMarker()
-                marker1.position = CLLocationCoordinate2DMake( (location?.coordinate.latitude)!, (location?.coordinate.longitude)! + 0.001)
-                marker1.map = mapView
-                marker1.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
-                marker1.title = "標題2"
-                marker1.snippet = "副標題2"
-        
-                let marker2 = GMSMarker()
-                marker2.position = CLLocationCoordinate2DMake( (location?.coordinate.latitude)! + 0.001, (location?.coordinate.longitude)! + 0.001)
-                marker2.map = mapView
-                marker2.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
-                marker2.title = "標題3"
-                marker2.snippet = "副標題3"
-                
-                self.locationManager.stopUpdatingLocation()
     }
 
 }
