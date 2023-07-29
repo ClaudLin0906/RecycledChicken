@@ -41,10 +41,15 @@ class CarbonReductionLogVC: CustomVC {
         progressGroup.ring2.accessibilityLabel = NSLocalizedString("Exercise", comment: "")
         progressGroup.congratulationsTitle.text = "Congratulations!"
         progressGroup.congratulationsContent.text = "恭喜你電池回收量\n超額完成!"
-        progressGroup.congratulationsContent.isHidden = true
+        isHiddenCongratulations(true)
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
 
+    }
+    
+    private func isHiddenCongratulations(_ isHidden:Bool) {
+        progressGroup.congratulationsContent.isHidden = isHidden
+        progressGroup.congratulationsTitle.isHidden = isHidden
     }
     
     private func getRecycleLogData(){
@@ -76,7 +81,7 @@ class CarbonReductionLogVC: CustomVC {
                         progressGroup.ring1.progress = batteryprogress
                         progressGroup.ring2.progress = batteryprogress
                         if batteryprogress >= 1 && bottleprogress >= 1{
-                            progressGroup.congratulationsContent.isHidden = false
+                            isHiddenCongratulations(false)
                         }
                     }
                 }
