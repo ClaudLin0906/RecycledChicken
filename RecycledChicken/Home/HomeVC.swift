@@ -22,6 +22,8 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var bottleLabel:UILabel!
     
     @IBOutlet weak var chickenLevelImageView:UIImageView!
+    
+    @IBOutlet weak var trendChartImageView:UIImageView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +37,42 @@ class HomeVC: CustomRootVC {
                 if let levelObject = getLevelObject(), let image = levelObject.chicken {
                     self.chickenLevelImageView.image = image
                 }
+                if let image = self.getTrendChart() {
+                    self.trendChartImageView.image = image
+                }
             }
         })
+    }
+    
+    private func getTrendChart() -> UIImage?{
+        if let levelInfo = CurrentUserInfo.shared.currentProfileInfo?.levelInfo {
+            var image:UIImage?
+            switch levelInfo.level {
+            case 1:
+                image = UIImage(named: "RecycledLevel1")
+            case 2:
+                image = UIImage(named: "RecycledLevel2")
+            case 3:
+                image = UIImage(named: "RecycledLevel3")
+            case 4:
+                image = UIImage(named: "RecycledLevel4")
+            case 5:
+                image = UIImage(named: "RecycledLevel5")
+            case 6:
+                image = UIImage(named: "RecycledLevel6")
+            case 7:
+                image = UIImage(named: "RecycledLevel7")
+            case 8:
+                image = UIImage(named: "RecycledLevel8")
+            case 9:
+                image = UIImage(named: "RecycledLevel9")
+            case 10:
+                image = UIImage(named: "RecycledLevel10")
+            default:
+                return image
+            }
+        }
+        return nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
