@@ -64,7 +64,9 @@ class UserDefaultKey {
 }
 
 struct LevelObject{
-    var 
+    var icon:UIImage?
+    var chicken:UIImage?
+    var chickenName:String
 }
 
 class CurrentUserInfo{
@@ -499,8 +501,32 @@ private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     return newUserInfo
 }
 
-func levelOgject()-> {
-    CurrentUserInfo.shared.currentProfileInfo
+func getLevelObject()-> LevelObject?{
+    let chickenLevel = CurrentUserInfo.shared.currentProfileInfo?.levelInfo?.chickenLevel
+    switch chickenLevel {
+    case.one:
+        return LevelObject(icon: UIImage(named: "level1-icon"), chicken: UIImage(named: "level1"), chickenName: "碳員")
+    case.two:
+        return LevelObject(icon: UIImage(named: "level2-icon"), chicken: UIImage(named: "level2"), chickenName: "割草雞")
+    case.three:
+        return LevelObject(icon: UIImage(named: "level3-icon"), chicken: UIImage(named: "level3"), chickenName: "潛水雞")
+    case.four:
+        return LevelObject(icon: UIImage(named: "level4-icon"), chicken: UIImage(named: "level4"), chickenName: "技術雞")
+    case.five:
+        return LevelObject(icon: UIImage(named: "level5-icon"), chicken: UIImage(named: "level5"), chickenName: "挖土雞")
+    case.six:
+        return LevelObject(icon: UIImage(named: "level6-icon"), chicken: UIImage(named: "level6"), chickenName: "紳士雞")
+    case.seven:
+        return LevelObject(icon: UIImage(named: "level7-icon"), chicken: UIImage(named: "level7"), chickenName: "發電雞")
+    case.eight:
+        return LevelObject(icon: UIImage(named: "level8-icon"), chicken: UIImage(named: "level8"), chickenName: "冒險雞")
+    case.nine:
+        return LevelObject(icon: UIImage(named: "level9-icon"), chicken: UIImage(named: "level9"), chickenName: "花雕雞")
+    case.ten:
+        return LevelObject(icon: UIImage(named: "level10-icon"), chicken: UIImage(named: "level10"), chickenName: "碳長")
+    case .none:
+        return nil
+    }
 }
 
 func generateBarCode(from string: String) -> UIImage? {

@@ -20,10 +20,23 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var batteryLabel:UILabel!
     
     @IBOutlet weak var bottleLabel:UILabel!
+    
+    @IBOutlet weak var chickenLevelImageView:UIImageView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getUserInfo(VC: self, finishAction: {
+            DispatchQueue.main.async {
+                if let levelObject = getLevelObject(), let image = levelObject.chicken {
+                    self.chickenLevelImageView.image = image
+                }
+            }
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
