@@ -11,6 +11,8 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var profileTableView:UITableView!
     
+    @IBOutlet weak var chickenLeverLabel:CustomLabel!
+    
     let profileInfoArr:[String] = ["用戶名稱", "E-mail", "手機號碼", "生日"]
     
     let datePicker = UIDatePicker()
@@ -42,6 +44,9 @@ class ProfileVC: CustomVC {
     
     private func UIInit(){
         profileTableView.setSeparatorLocation()
+        if let chickenName = getLevelObject()?.chickenName as? String{
+            chickenLeverLabel.text = "目前等級為\(chickenName)雞"
+        }
     }
     
     private func createDatePicker(_ textfield:UITextField) {
