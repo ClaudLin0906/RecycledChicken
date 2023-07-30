@@ -137,6 +137,10 @@
 		59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */; };
 		59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */; };
 		59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AFE1622A10088700490BD8 /* CompleteTaskAlertView.xib */; };
+		59B682F32A76A0C7008F5135 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B682F22A76A0C6008F5135 /* ScanViewController.swift */; };
+		59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B682F42A76A0D3008F5135 /* ARViewController.swift */; };
+		59B682F72A76A2CA008F5135 /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B682F62A76A2CA008F5135 /* Scan.storyboard */; };
+		59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B682F92A76A5EB008F5135 /* ARViewController.storyboard */; };
 		59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */; };
 		59BF29402A21EE8200F24286 /* CustomCalenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
@@ -329,6 +333,10 @@
 		59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskAlertView.swift; sourceTree = "<group>"; };
 		59AFE1622A10088700490BD8 /* CompleteTaskAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteTaskAlertView.xib; sourceTree = "<group>"; };
+		59B682F22A76A0C6008F5135 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		59B682F42A76A0D3008F5135 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		59B682F62A76A2CA008F5135 /* Scan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scan.storyboard; sourceTree = "<group>"; };
+		59B682F92A76A5EB008F5135 /* ARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARViewController.storyboard; sourceTree = "<group>"; };
 		59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginVC.swift; sourceTree = "<group>"; };
 		59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderModel.swift; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
@@ -830,6 +838,10 @@
 		59C2D99C2A0D36E30085724F /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				59B682F42A76A0D3008F5135 /* ARViewController.swift */,
+				59B682F92A76A5EB008F5135 /* ARViewController.storyboard */,
+				59B682F22A76A0C6008F5135 /* ScanViewController.swift */,
+				59B682F62A76A2CA008F5135 /* Scan.storyboard */,
 				59E69A2C2A375B650062D4EB /* ScannerView.swift */,
 				59C2D99D2A0D37000085724F /* ARVC.swift */,
 				59C2D99F2A0D37330085724F /* AR.storyboard */,
@@ -994,6 +1006,7 @@
 				59C2D9A52A0D38490085724F /* Task.storyboard in Resources */,
 				598F39482A0E06C600DA9186 /* StoreList.storyboard in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
+				59B682F72A76A2CA008F5135 /* Scan.storyboard in Resources */,
 				59A7958A2A0F8F3A0031710F /* UpdateDateAlertView.xib in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
@@ -1020,6 +1033,7 @@
 				59997A722A0A4AD800E9FD7F /* PersonMessage.storyboard in Resources */,
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
 				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
+				59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */,
 				59A113B92A3ADAE000C8295B /* private.key in Resources */,
 				59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */,
 				59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */,
@@ -1107,6 +1121,7 @@
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,
 				59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */,
+				59B682F32A76A0C7008F5135 /* ScanViewController.swift in Sources */,
 				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
 				59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
@@ -1133,6 +1148,7 @@
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
+				59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */,
 				5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */,
 				59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */,
 				59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */,
@@ -1355,15 +1371,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = 85QZ2RDHW3;
+				DEVELOPMENT_TEAM = ZGKQJLMLMH;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "需要您提供權限使用生物辨識登入";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"請您提供相機權限\"";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "請您提供生物辨識權限";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "請提供你的位置";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "請提供你的位置";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1371,6 +1388,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1379,8 +1397,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = lowcarbonPartridge;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = lowcarbonPartridge;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1397,15 +1415,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = 85QZ2RDHW3;
+				DEVELOPMENT_TEAM = ZGKQJLMLMH;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "需要您提供權限使用生物辨識登入";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"請您提供相機權限\"";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "請您提供生物辨識權限";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "請提供你的位置";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "請提供你的位置";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1413,6 +1432,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1421,8 +1441,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = lowcarbonPartridge;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = lowcarbonPartridge;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

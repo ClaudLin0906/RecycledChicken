@@ -47,8 +47,10 @@ class CircularCameraView: UIView {
             previewLayer.session = captureSession
             previewLayer.videoGravity = .resizeAspectFill
             layer.addSublayer(previewLayer)
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.captureSession.startRunning()
+            }
             
-            captureSession.startRunning()
         } catch {
             print("Error setting up camera input: \(error.localizedDescription)")
         }

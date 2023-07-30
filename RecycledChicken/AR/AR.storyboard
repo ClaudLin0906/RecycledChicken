@@ -37,10 +37,14 @@
                                     <constraint firstAttribute="width" secondItem="La2-ah-RYb" secondAttribute="height" multiplier="1:1" id="smn-TS-wBs"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qe-TI-MLl" customClass="ScannerView" customModule="RecycledChicken" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMe-Ov-PI5">
                                 <rect key="frame" x="46.666666666666657" y="310.66666666666669" width="300" height="300.00000000000006"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="btnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="wFm-TS-xY7"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zut-ou-63q" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="77.666666666666686" y="630.66666666666663" width="238" height="47.666666666666629"/>
                                 <string key="text">將鏡頭瞄準Light Code 機器
@@ -74,27 +78,27 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8Qe-TI-MLl" firstAttribute="leading" secondItem="La2-ah-RYb" secondAttribute="leading" id="5jX-1W-06M"/>
+                            <constraint firstItem="qMe-Ov-PI5" firstAttribute="trailing" secondItem="La2-ah-RYb" secondAttribute="trailing" id="9e0-fE-zc4"/>
                             <constraint firstItem="zut-ou-63q" firstAttribute="top" secondItem="La2-ah-RYb" secondAttribute="bottom" constant="20" id="Ei7-CZ-bEB"/>
+                            <constraint firstItem="qMe-Ov-PI5" firstAttribute="bottom" secondItem="La2-ah-RYb" secondAttribute="bottom" id="MlE-2x-G3T"/>
                             <constraint firstItem="zut-ou-63q" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="QXU-XN-JBZ"/>
                             <constraint firstItem="ZQ3-NW-8MS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Qah-Hk-bbI"/>
                             <constraint firstItem="La2-ah-RYb" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="See-Nl-Zx7"/>
                             <constraint firstItem="lmh-R3-tJ0" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="YnO-l8-l16"/>
                             <constraint firstAttribute="bottom" secondItem="ZQ3-NW-8MS" secondAttribute="bottom" id="ZEq-SH-fuc"/>
-                            <constraint firstItem="8Qe-TI-MLl" firstAttribute="bottom" secondItem="La2-ah-RYb" secondAttribute="bottom" id="baL-TR-m9f"/>
-                            <constraint firstItem="8Qe-TI-MLl" firstAttribute="top" secondItem="La2-ah-RYb" secondAttribute="top" id="bpD-7t-4gl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lmh-R3-tJ0" secondAttribute="bottom" constant="30" id="c3c-ZJ-rWV"/>
+                            <constraint firstItem="qMe-Ov-PI5" firstAttribute="leading" secondItem="La2-ah-RYb" secondAttribute="leading" id="cgz-GL-AT5"/>
+                            <constraint firstItem="qMe-Ov-PI5" firstAttribute="top" secondItem="La2-ah-RYb" secondAttribute="top" id="dvM-7C-chf"/>
                             <constraint firstItem="ZQ3-NW-8MS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="eP9-34-tCd"/>
                             <constraint firstItem="ZQ3-NW-8MS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="haQ-yC-bUD"/>
                             <constraint firstItem="k8o-jO-93K" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="kzD-54-jBz"/>
                             <constraint firstItem="La2-ah-RYb" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="pny-dh-fiR"/>
-                            <constraint firstItem="8Qe-TI-MLl" firstAttribute="trailing" secondItem="La2-ah-RYb" secondAttribute="trailing" id="scR-dF-9Mj"/>
                             <constraint firstItem="k8o-jO-93K" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="tvK-di-UDz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YGd-Oa-EQ6"/>
                     <connections>
-                        <outlet property="scannerView" destination="8Qe-TI-MLl" id="mGO-N5-Jtt"/>
+                        <outlet property="cameraImageView" destination="La2-ah-RYb" id="Trz-aQ-ivl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

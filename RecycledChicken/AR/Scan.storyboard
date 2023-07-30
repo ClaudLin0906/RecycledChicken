@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="98Y-dR-hVE">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scan View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Scan" id="Y6W-OH-hqX" customClass="ScanViewController" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyF-gN-64c" userLabel="Scanner View" customClass="ScannerView" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="264" width="393" height="393"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dyF-gN-64c" secondAttribute="height" multiplier="1:1" id="ovg-Ts-b5Y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dyF-gN-64c" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="8fD-gC-nAR"/>
+                            <constraint firstItem="dyF-gN-64c" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="LIh-JE-ZhP"/>
+                            <constraint firstItem="dyF-gN-64c" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="e4s-m9-s3R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="55z-DX-IN0"/>
+                    <connections>
+                        <outlet property="scannerView" destination="dyF-gN-64c" id="iZa-jy-wnG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730.53435114503816" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5He-uF-fSK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="98Y-dR-hVE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qVJ-0S-guR">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="BWG-KJ-Mqc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HPr-cq-Vvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-196.18320610687022" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+</document>

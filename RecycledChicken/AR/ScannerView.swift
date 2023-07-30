@@ -70,14 +70,14 @@ class ScannerView : UIView {
     
     override func draw(_ rect: CGRect) {
         if let context = UIGraphicsGetCurrentContext() {
-            context.setStrokeColor(CGColor(red: 1, green: 1, blue: 1, alpha: 0))
+            context.setStrokeColor(CGColor(red: 1, green: 1, blue: 1, alpha: 1))
             context.setLineWidth(2.0)
             let windowWidth = frame.size.width
             let windowHeight = frame.size.height
             let frameRect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: windowWidth, height: windowHeight))
             context.stroke(frameRect)
-            let areaWidth = windowWidth / 2
-            let areaHeight = windowHeight / 2
+            let areaWidth = windowWidth / 4
+            let areaHeight = windowHeight / 4
             let areaCenter = CGPoint(x: (windowWidth - areaWidth) / 2, y: (windowHeight - areaHeight) / 2)
             let areaRect = CGRect(origin: areaCenter, size: CGSize(width: areaWidth, height: areaHeight))
             context.stroke(areaRect)
