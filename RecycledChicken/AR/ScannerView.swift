@@ -1,6 +1,6 @@
 import Foundation
 import UIKit
-//import LiGScannerKit
+import LiGScannerKit
 
 class CycleView : UIView {
     
@@ -84,31 +84,31 @@ class ScannerView : UIView {
         }
     }
     
-//    func send(_ lightID: LightID) {
-//    
-//        DispatchQueue.main.async {
-//
-//            let windowWidth = Float(self.frame.size.width)
-//            let windowHeight = Float(self.frame.size.height.native)
-//            let aimPosX = CGFloat(windowWidth * lightID.coordinateX)
-//            let aimPosY = CGFloat(windowHeight * lightID.coordinateY)
-//            
-//            if lightID.isDetected {
-//                self.cycleView.text = String(lightID.deviceId)
-//                self.cycleView.textHidden = false
-//            } else {
-//                self.cycleView.text = ""
-//                self.cycleView.textHidden = true
-//            }
-//            
-//            if lightID.isReady {
-//                self.cycleView.backgroundColor = .green
-//            } else {
-//                self.cycleView.backgroundColor = .yellow
-//            }
-//            
-//            self.cycleView.center.x = aimPosX
-//            self.cycleView.center.y = aimPosY
-//        }
-//    }
+    func send(_ lightID: LightID) {
+    
+        DispatchQueue.main.async {
+
+            let windowWidth = Float(self.frame.size.width)
+            let windowHeight = Float(self.frame.size.height.native)
+            let aimPosX = CGFloat(windowWidth * lightID.coordinateX)
+            let aimPosY = CGFloat(windowHeight * lightID.coordinateY)
+            
+            if lightID.isDetected {
+                self.cycleView.text = String(lightID.deviceId)
+                self.cycleView.textHidden = false
+            } else {
+                self.cycleView.text = ""
+                self.cycleView.textHidden = true
+            }
+            
+            if lightID.isReady {
+                self.cycleView.backgroundColor = .green
+            } else {
+                self.cycleView.backgroundColor = .yellow
+            }
+            
+            self.cycleView.center.x = aimPosX
+            self.cycleView.center.y = aimPosY
+        }
+    }
 }
