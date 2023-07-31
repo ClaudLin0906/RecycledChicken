@@ -79,7 +79,7 @@ class CarbonReductionLogVC: CustomVC {
                         let batteryprogress = Double(batteryInt)/1200
                         let bottleprogress = Double(bottleInt)/1200
                         progressGroup.ring1.progress = batteryprogress
-                        progressGroup.ring2.progress = batteryprogress
+                        progressGroup.ring2.progress = bottleprogress
                         if batteryprogress >= 1 && bottleprogress >= 1{
                             isHiddenCongratulations(false)
                         }

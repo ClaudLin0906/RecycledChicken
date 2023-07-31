@@ -113,12 +113,6 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
         print(tag)
         switch tag {
         case 0:
-            break
-        case 1:
-            break
-        case 2:
-            break
-        case 3:
             if sender.isOn {
                 evaluatePolicyAction { scanResult, scanMessage in
                     UserDefaults().set(true, forKey: UserDefaultKey.shared.biometrics)
@@ -130,7 +124,6 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
                 UserDefaults().set(false, forKey: UserDefaultKey.shared.biometrics)
                 let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
             }
-
         default:
             break
         }
