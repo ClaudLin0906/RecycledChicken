@@ -38,7 +38,13 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func sendSMS(){
-        guard let phone = info?.userPhoneNumber else { return }
+        switch currentType {
+        case .forgetPassword:
+            phone = info?.userPhoneNumber ?? ""
+        default:
+            break
+        }
+        
         let smsInfo = SMSInfo(userPhoneNumber: phone)
         let smsInfoDic = try? smsInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in

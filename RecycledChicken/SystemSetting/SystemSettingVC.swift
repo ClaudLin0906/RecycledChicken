@@ -23,7 +23,7 @@ class SystemSettingVC: CustomVC {
     
     var accountTableViewInfos:[accountTableViewInfo] =
     [
-        accountTableViewInfo(title: "連動與綁定帳號"),
+//        accountTableViewInfo(title: "連動與綁定帳號"),
         accountTableViewInfo(title: "刪除帳號")
     ]
     

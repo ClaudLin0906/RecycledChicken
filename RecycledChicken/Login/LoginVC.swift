@@ -38,7 +38,11 @@ class LoginVC: CustomLoginVC {
                     self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
                 }
             }
+        }else if UserDefaults().bool(forKey: UserDefaultKey.shared.keepLogin) {
+            let accountInfo = CurrentUserInfo.shared.currentAccountInfo
+            self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
         }
+        
     }
     
     private func loginSuccess(){
@@ -69,6 +73,11 @@ class LoginVC: CustomLoginVC {
                     CommonKey.shared.authToken = token
                     CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber = phone
                     CurrentUserInfo.shared.currentAccountInfo.userPassword = password
+//                    var keepLogin = false
+//                    if self.keepLoginCheckBox.checkState == .checked {
+//                        keepLogin = true
+//                    }
+//                    UserDefaults().set(keepLogin, forKey: UserDefaultKey.shared.keepLogin)
                     self.loginSuccess()
                 }
             }
@@ -99,7 +108,7 @@ class LoginVC: CustomLoginVC {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
-
+        
         loginAction(phone: phone!, password: password!)
         
     }
