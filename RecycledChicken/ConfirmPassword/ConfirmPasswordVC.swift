@@ -19,9 +19,16 @@ class ConfirmPasswordVC: CustomLoginVC {
     
     @IBOutlet weak var confirmNewPasswordTextField: UITextField!
     
+    @IBOutlet weak var goHomeBtn:CustomButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        UIInit()
+    }
+    
+    private func UIInit(){
+        goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
     }
     
     @IBAction func confirm(_ sender:UIButton) {

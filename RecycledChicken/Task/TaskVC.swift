@@ -196,7 +196,8 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         }
 
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
-            let adView = ADView(frame: UIScreen.main.bounds)
+//            let adView = ADView(frame: UIScreen.main.bounds)
+            let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
             adView.cell = cell
             adView.taskInfo = info
             keyWindow?.addSubview(adView)

@@ -13,10 +13,16 @@ class SignVC: CustomLoginVC {
     
     @IBOutlet weak var passwordTextfield:UITextField!
     
+    @IBOutlet weak var goHomeBtn:CustomButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UIInit()
         // Do any additional setup after loading the view.
+    }
+    
+    private func UIInit(){
+        goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
     }
     
     private func goToVerificationCode(phone:String, password:String ){

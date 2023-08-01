@@ -47,7 +47,7 @@ let keyWindow = UIApplication.shared.windows.filter({ $0.isKeyWindow }).last
 
 class CommonKey {
     static let shared = CommonKey()
-    let googleMapKey = "AIzaSyAcVNJwxg_jJNKCeX4dDDkqmCL8RmVAbSo"//廠商
+    let googleMapKey = "AIzaSyDma1zKcZksbUMQwoSjfWCPfwslnGQoxWo"//廠商
 //    let googleMapKey = "AIzaSyCQooOAaz-Lm2IpRZGz26Lx6lTSs9JFvZQ"//Claud
     let ARKey = "EE17C-B311A-5F817-F0AAF-2A914"
     var authToken = ""
@@ -105,6 +105,7 @@ struct APIUrl {
     static let getNotification = "/getNotification"
     static let quest = "/quest"
     static let getQuestStatus = "/getQuestStatus"
+    static let taskAD = "https://www.buenopartners.com.tw/recyclepunk"
 }
 
 struct WebViewUrl{

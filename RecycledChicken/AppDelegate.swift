@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         application.registerForRemoteNotifications()
        
-//        LiGScanner.sharedInstance().initialize(CommonKey.shared.ARKey)
+        LiGScanner.sharedInstance().initialize(CommonKey.shared.ARKey)
         return true
     }
 

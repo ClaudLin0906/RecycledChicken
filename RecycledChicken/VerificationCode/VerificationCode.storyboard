@@ -195,6 +195,20 @@
                                     <action selector="reSendSMS:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hQm-kk-XdY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-eq-yoM" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="121.66666666666669" y="587.33333333333337" width="150" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="回首頁">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-8p-cpP">
                                 <rect key="frame" x="0.0" y="685" width="393" height="167"/>
                             </imageView>
@@ -204,6 +218,7 @@
                         <constraints>
                             <constraint firstItem="g5E-mc-KVs" firstAttribute="leading" secondItem="GWu-dP-XPG" secondAttribute="leading" id="3Qy-8m-ZBu"/>
                             <constraint firstItem="qKo-8p-cpP" firstAttribute="height" secondItem="GWu-dP-XPG" secondAttribute="height" multiplier="0.22" id="6Au-It-RJa"/>
+                            <constraint firstItem="VK4-eq-yoM" firstAttribute="top" secondItem="BYp-X8-L1Y" secondAttribute="bottom" constant="10" id="9mK-qT-u4k"/>
                             <constraint firstItem="Pzg-eB-EXa" firstAttribute="leading" secondItem="GWu-dP-XPG" secondAttribute="leading" id="AQG-Y8-jKp"/>
                             <constraint firstItem="g5E-mc-KVs" firstAttribute="top" secondItem="3vC-nO-2Cl" secondAttribute="bottom" constant="30" id="CMX-q7-XdB"/>
                             <constraint firstItem="0kh-3F-tZc" firstAttribute="centerX" secondItem="GWu-dP-XPG" secondAttribute="centerX" id="Grt-ek-Y7A"/>
@@ -213,8 +228,11 @@
                             <constraint firstItem="BYp-X8-L1Y" firstAttribute="top" secondItem="g5E-mc-KVs" secondAttribute="bottom" constant="15" id="KQX-Kv-w0a"/>
                             <constraint firstItem="BYp-X8-L1Y" firstAttribute="centerX" secondItem="GWu-dP-XPG" secondAttribute="centerX" id="Kr4-RY-Vmk"/>
                             <constraint firstItem="GWu-dP-XPG" firstAttribute="trailing" secondItem="g5E-mc-KVs" secondAttribute="trailing" id="NMg-5p-NqQ"/>
+                            <constraint firstItem="VK4-eq-yoM" firstAttribute="height" secondItem="BYp-X8-L1Y" secondAttribute="height" id="OL8-yJ-95K"/>
+                            <constraint firstItem="VK4-eq-yoM" firstAttribute="width" secondItem="BYp-X8-L1Y" secondAttribute="width" id="R7x-DD-F3x"/>
                             <constraint firstItem="p73-49-rKC" firstAttribute="centerY" secondItem="g5E-mc-KVs" secondAttribute="centerY" id="SEU-Jm-V0Y"/>
                             <constraint firstItem="Ju8-Ir-Pwe" firstAttribute="centerX" secondItem="g5E-mc-KVs" secondAttribute="centerX" id="V9S-31-O8D"/>
+                            <constraint firstItem="VK4-eq-yoM" firstAttribute="centerX" secondItem="BYp-X8-L1Y" secondAttribute="centerX" id="W4K-mV-Q43"/>
                             <constraint firstItem="qKo-8p-cpP" firstAttribute="leading" secondItem="GWu-dP-XPG" secondAttribute="leading" id="XT7-y8-e0G"/>
                             <constraint firstItem="Pzg-eB-EXa" firstAttribute="top" secondItem="lEb-6j-6P4" secondAttribute="top" id="ZwN-Xp-k9g"/>
                             <constraint firstItem="3vC-nO-2Cl" firstAttribute="top" secondItem="GWu-dP-XPG" secondAttribute="top" id="cSf-K3-9IA"/>
@@ -228,6 +246,7 @@
                     <connections>
                         <outlet property="firstTextField" destination="lF0-3T-7yj" id="5Ri-41-Ft9"/>
                         <outlet property="fourthTextField" destination="tqW-fT-mbH" id="mH5-Cf-ePR"/>
+                        <outlet property="goHomeBtn" destination="VK4-eq-yoM" id="K61-OA-CtV"/>
                         <outlet property="secondTextField" destination="7r9-lt-dYO" id="pkZ-3O-7LS"/>
                         <outlet property="thirdTextField" destination="Tsa-RW-JO3" id="SHC-VR-BnS"/>
                     </connections>
@@ -242,10 +261,13 @@
             <size key="intrinsicContentSize" width="140" height="19.666666666666668"/>
         </designable>
         <designable name="BYp-X8-L1Y">
-            <size key="intrinsicContentSize" width="98" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="Ju8-Ir-Pwe">
             <size key="intrinsicContentSize" width="84" height="19.666666666666668"/>
+        </designable>
+        <designable name="VK4-eq-yoM">
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

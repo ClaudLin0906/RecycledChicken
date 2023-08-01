@@ -18,5 +18,14 @@ class CustomLoginVC: UIViewController {
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
         view.endEditing(true)
     }
+    
+    @objc func goSignLoginVC(_ sender:CustomButton){
+        self.dismiss(animated: false) {
+            if let VC = UIStoryboard(name: "SignLogin", bundle: nil).instantiateViewController(withIdentifier: "SignLogin") as? SignLoginVC, let topVC = getTopController() {
+                VC.modalPresentationStyle = .fullScreen
+                topVC.present(VC, animated: true)
+            }
+        }
+    }
 
 }

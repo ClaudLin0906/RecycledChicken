@@ -2,7 +2,7 @@ import UIKit
 import LiGScannerKit
 
 class ScanViewController: CustomVC, LiGScannerDelegate {
-
+    
     @IBOutlet var scannerView: ScannerView!
     
     let scanner = LiGScanner.sharedInstance()
@@ -46,7 +46,6 @@ class ScanViewController: CustomVC, LiGScannerDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
         stopScan()
     }
 

@@ -11,12 +11,18 @@ class ForgetPasswordVC: CustomLoginVC {
     
     @IBOutlet weak var phoneTextfield:UITextField!
     
+    @IBOutlet weak var goHomeBtn:CustomButton!
+    
     private var phone:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UIInit()
         // Do any additional setup after loading the view.
+    }
+    
+    private func UIInit(){
+        goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
     }
     
     @IBAction func sendSMS(_ sender:UIButton){

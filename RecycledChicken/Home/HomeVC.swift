@@ -81,7 +81,8 @@ class HomeVC: CustomRootVC {
         currentDateLabel.text = getDates(i: 0, currentDate: Date()).0
         barcodeView.code = CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber
         if FirstTime && LoginSuccess {
-            let adView = ADView(frame: UIScreen.main.bounds)
+//            let adView = ADView(frame: UIScreen.main.bounds)
+            let adView = ADView(frame: UIScreen.main.bounds, type: .isHome)
             keyWindow?.addSubview(adView)
             FirstTime = false
             NotificationCenter.default.post(name: .removeBackground, object: nil)

@@ -18,6 +18,8 @@ class VerificationCodeVC: CustomLoginVC {
     
     @IBOutlet weak var fourthTextField:UITextField!
     
+    @IBOutlet weak var goHomeBtn:CustomButton!
+    
     var password:String = ""
     
     var phone:String = ""
@@ -34,7 +36,7 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func UIInit(){
-        
+        goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
     }
     
     private func sendSMS(){

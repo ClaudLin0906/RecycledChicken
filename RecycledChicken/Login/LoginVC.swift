@@ -15,6 +15,8 @@ class LoginVC: CustomLoginVC {
     @IBOutlet weak var phoneTextfield:UITextField!
     
     @IBOutlet weak var passwordTextfield:UITextField!
+    
+    @IBOutlet weak var goHomeBtn:CustomButton!
         
     private var testLoginInfo:AccountInfo = AccountInfo(userPhoneNumber: "0912345678", userPassword: "test123")
     
@@ -27,6 +29,7 @@ class LoginVC: CustomLoginVC {
     private func UIInit(){
         keepLoginCheckBox.boxType = .square
         keepLoginCheckBox.stateChangeAnimation = .fill
+        goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {

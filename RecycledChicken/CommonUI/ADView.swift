@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+
 class ADView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var webView: WKWebView!
@@ -16,6 +17,19 @@ class ADView: UIView, NibOwnerLoadable {
     var taskInfo:TaskInfo?
     
     var timer:Timer?
+    
+    enum ADType{
+        case isHome
+        case isTask
+    }
+    
+    var type:ADType = .isHome
+    
+    init(frame: CGRect, type:ADType) {
+        super.init(frame: frame)
+        self.type = type
+        customInit()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,12 +52,42 @@ class ADView: UIView, NibOwnerLoadable {
         cell?.finishAction()
     }
     
-    private func customInit(){
-        loadNibContent()
-        let request = URLRequest(url: URL(string: APIUrl.domainName + APIUrl.getAd)!)
+    private func taskAction(){
+        let request = URLRequest(url: URL(string: APIUrl.taskAD)!)
         webView.load(request)
+    }
+    
+    private func webviewLoadAction(_ request:URLRequest){
+        DispatchQueue.main.async { [self] in
+            webView.load(request)
+        }
         timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { timer in
             self.isFinishAction()
+        }
+    }
+    
+    private func HomeAction(){
+        let request = URLRequest(url: URL(string: APIUrl.domainName + APIUrl.getAd)!)
+        URLSession.shared.dataTask(with: request) { [self]  data, response, error in
+            guard let data = data, error == nil, let urlStr = String(data: data, encoding: .utf8), let url = URL(string: urlStr) else {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            webviewLoadAction(URLRequest(url: url))
+            
+        }.resume()
+    }
+    
+    private func customInit(){
+        loadNibContent()
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
+        webView.scrollView.backgroundColor = .clear
+        switch type {
+        case.isHome:
+            HomeAction()
+        case .isTask:
+            taskAction()
         }
     }
 }
