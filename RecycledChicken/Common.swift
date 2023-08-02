@@ -113,9 +113,9 @@ struct WebViewUrl{
     static let CommonPronblemURL = "https://www.buenopartners.com.tw/faq"
 }
 
-let attributes: [NSAttributedString.Key: Any] = [
+var attributes: [NSAttributedString.Key: Any] = [
     NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
-//    NSAttributedString.Key.foregroundColor: UIColor.white,
+    NSAttributedString.Key.foregroundColor: UIColor.white,
     NSAttributedString.Key.kern: 5 // 設定字距
 ]
 

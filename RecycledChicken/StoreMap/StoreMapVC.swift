@@ -168,6 +168,7 @@ extension StoreMapVC:CLLocationManagerDelegate {
         let location = locations.last
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
         self.mapView?.animate(to: camera)
+        locationManager.stopUpdatingLocation()
     }
 
 }
