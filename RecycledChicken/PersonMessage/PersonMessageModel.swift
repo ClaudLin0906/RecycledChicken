@@ -9,6 +9,7 @@ import Foundation
 
 struct PersonMessageInfo:Decodable {
     var topicKey:String
+    var title:String
     var message:String
     var createTime:String
 }

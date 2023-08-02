@@ -32,7 +32,7 @@ class PersonMessageContentVC: CustomVC {
     private func UIInit(){
         if let personMessageInfo = personMessageInfo {
             contentTextView?.text = personMessageInfo.message
-            titleLabel.text = personMessageInfo.message
+            titleLabel.text = personMessageInfo.title
             if let date = dateFromString(personMessageInfo.createTime) {
                 let createTime = getDates(i: 0, currentDate: date).0
                 timeLabel.text = createTime
