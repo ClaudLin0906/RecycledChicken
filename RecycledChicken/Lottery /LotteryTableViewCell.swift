@@ -40,13 +40,14 @@ class LotteryTableViewCell: UITableViewCell {
         let activityEndTimeDate = dateFromString(lotteryInfo.activityEndTime)
         let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
         let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
+        let lotteryDrawDate = lotteryInfo.lotteryDrawDate
         DispatchQueue.main.async { [self] in
             if let data = data, let image = UIImage(data: data) {
                 itemImageView.image = image
             }
             itemName.text = lotteryInfo.itemName
             duringTime.text = "活動時間:" + StartDate + "~" + EndDate
-            drawTime.text = "開獎日期:" + EndDate
+            drawTime.text = "開獎日期:" + lotteryDrawDate
             drawPeople.text = "參與人數:" + String(lotteryInfo.purchaserCount)
             duringTime.font = duringTime.font.withSize(11)
             drawTime.font = duringTime.font.withSize(11)

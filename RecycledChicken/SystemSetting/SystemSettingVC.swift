@@ -121,8 +121,7 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
                     }
                 }
             }else{
-                UserDefaults().set(false, forKey: UserDefaultKey.shared.biometrics)
-                let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
+                removeBiometricsAction()
             }
         default:
             break

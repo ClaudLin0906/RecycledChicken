@@ -12,6 +12,7 @@ struct LotteryInfo: Decodable {
     var purchaserCount:Int
     var activityEndTime:String
     var activityStartTime:String
+    var lotteryDrawDate:String
     var createTime:String
     var picture:String
     var pictureBig:String

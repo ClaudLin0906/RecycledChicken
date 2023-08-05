@@ -136,6 +136,12 @@ protocol NibOwnerLoadable: AnyObject {
 func loginOutRemoveObject(){
     CurrentUserInfo.shared.currentProfileInfo = nil
     CommonKey.shared.authToken = ""
+    removeBiometricsAction()
+}
+
+func removeBiometricsAction(){
+    UserDefaults().set(false, forKey: UserDefaultKey.shared.biometrics)
+    let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
 }
 
 func getUserInfo(VC:UIViewController, finishAction:(()->())?){
