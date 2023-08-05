@@ -15,7 +15,11 @@ class ProfileVC: CustomVC {
     
     let profileInfoArr:[String] = ["用戶名稱", "E-mail", "手機號碼", "生日"]
     
-    let datePicker = UIDatePicker()
+    let datePicker:UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.maximumDate = Date()
+        return datePicker
+    }()
         
     let rightNow = Date()
     
@@ -63,12 +67,24 @@ class ProfileVC: CustomVC {
     
     @objc private func donePressed(_ sender:UIBarButtonItem) {
         let components = datePicker.calendar.dateComponents([.day, .month, .year], from: datePicker.date)
-        let day = components.day
-        let month = components.month
+        let day:String = {
+            let day = components.day
+            if day! <= 9 {
+                return "0\(day ?? 0)"
+            }
+            return String(day!)
+        }()
+        let month:String = {
+            let month = components.month
+            if month! <= 9 {
+                return "0\(month ?? 0)"
+            }
+            return String(month!)
+        }()
         let year = components.year
         let cells = cellsForTableView(tableView: profileTableView)
         if let birthdayCell = cells.filter({ return $0.tag == 3})[0] as? ProfileTableViewCell {
-            birthdayCell.info.text = "\(year!)/\(month!)/\(day!)"
+            birthdayCell.info.text = "\(year!)/\(month)/\(day)"
         }
         view.endEditing(true)
     }
