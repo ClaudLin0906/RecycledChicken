@@ -43,7 +43,7 @@ class TaskVC: CustomRootVC {
     }
     
     private func sharedAction(completion: @escaping (Bool, String?) -> Void){
-        let activityVC = UIActivityViewController(activityItems: ["test"], applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: ["https://apps.apple.com/app/id6449214570"], applicationActivities: nil)
         activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
 
             if error != nil {
