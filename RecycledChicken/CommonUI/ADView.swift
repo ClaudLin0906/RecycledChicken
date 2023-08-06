@@ -54,7 +54,7 @@ class ADView: UIView, NibOwnerLoadable {
     
     private func taskAction(){
         let request = URLRequest(url: URL(string: APIUrl.taskAD)!)
-        webView.load(request)
+        webviewLoadAction(request)
     }
     
     private func webviewLoadAction(_ request:URLRequest){

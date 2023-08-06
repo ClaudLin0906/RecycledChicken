@@ -22,14 +22,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组39" translatesAutoresizingMaskIntoConstraints="NO" id="6Wv-c6-zSo">
-                                <rect key="frame" x="121.66666666666669" y="363.66666666666669" width="150" height="150.00000000000006"/>
+                                <rect key="frame" x="121.66666666666669" y="238.66666666666663" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="FQj-sz-X71"/>
                                     <constraint firstAttribute="width" secondItem="6Wv-c6-zSo" secondAttribute="height" multiplier="1:1" id="MAE-Yc-yN9"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入密碼以刪除帳號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w1-ll-Mhg" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="111.66666666666669" y="523.66666666666663" width="170" height="20"/>
+                                <rect key="frame" x="111.66666666666669" y="398.66666666666669" width="170" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="tcG-BR-m69"/>
                                 </constraints>
@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dz0-KE-Lbo" userLabel="textFieldView">
-                                <rect key="frame" x="39.333333333333343" y="553.66666666666663" width="314.33333333333326" height="30"/>
+                                <rect key="frame" x="39.333333333333343" y="428.66666666666669" width="314.33333333333326" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AW-ih-Ne8">
                                         <rect key="frame" x="0.0" y="5" width="60" height="19.666666666666668"/>
@@ -80,7 +80,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgf-jB-7O7" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="146.66666666666666" y="593.66666666666663" width="100" height="40"/>
+                                <rect key="frame" x="146.66666666666666" y="468.66666666666669" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="dcf-PD-0Gp"/>
@@ -101,7 +101,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4q-s3-Qks" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="146.66666666666666" y="643.66666666666663" width="100" height="40"/>
+                                <rect key="frame" x="146.66666666666666" y="518.66666666666663" width="100" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -132,7 +132,7 @@
                             <constraint firstItem="Dz0-KE-Lbo" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="c7h-RZ-X5f"/>
                             <constraint firstItem="7w1-ll-Mhg" firstAttribute="top" secondItem="6Wv-c6-zSo" secondAttribute="bottom" constant="10" id="k0S-D2-hNh"/>
                             <constraint firstItem="7w1-ll-Mhg" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="niV-xk-35Z"/>
-                            <constraint firstItem="6Wv-c6-zSo" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="wna-bx-hnk"/>
+                            <constraint firstItem="6Wv-c6-zSo" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="centerY" constant="-50" id="wna-bx-hnk"/>
                             <constraint firstItem="Rgf-jB-7O7" firstAttribute="top" secondItem="Dz0-KE-Lbo" secondAttribute="bottom" constant="10" id="yEZ-b4-LdC"/>
                         </constraints>
                     </view>

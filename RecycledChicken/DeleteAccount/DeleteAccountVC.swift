@@ -27,6 +27,7 @@ class DeleteAccountVC: CustomVC {
     
     @IBAction func deleteAction(_ sender:UIButton) {        
         if let VC = UIStoryboard(name: "DeleteAccountAlert", bundle: nil).instantiateViewController(withIdentifier: "DeleteAccountAlert") as? DeleteAccountAlertVC {
+            VC.superVC = self
             VC.modalPresentationStyle = .fullScreen
             present(VC, animated: false)
         }

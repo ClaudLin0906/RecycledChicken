@@ -77,6 +77,9 @@ class VerificationCodeVC: CustomLoginVC {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
+            DispatchQueue.main.async {
+                self.goToLoginVC()
+            }
         }
     }
     

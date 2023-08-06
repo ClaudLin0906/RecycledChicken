@@ -10,14 +10,20 @@ import UIKit
 class DeleteAccountAlertVC: UIViewController {
     
     @IBOutlet weak var passwordTextField:UITextField!
+    
+    weak var superVC:UIViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
+        view.addGestureRecognizer(closeTap)
         // Do any additional setup after loading the view.
     }
     
-
+    @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    
     @IBAction func cancel(_ sender:UIButton) {
         self.dismiss(animated: true)
     }
@@ -42,7 +48,23 @@ class DeleteAccountAlertVC: UIViewController {
     }
 
     private func deleteAccountAction(_ password:String){
-        self.dismiss(animated: true)
+        let deleteDic = try? DeleteInfo(password: password).asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.delete, parameters: deleteDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            loginOutRemoveObject()
+            DispatchQueue.main.async {
+                self.dismiss(animated: true) {
+                    if let VC = UIStoryboard(name: "SignLogin", bundle: nil).instantiateViewController(withIdentifier: "SignLogin") as? SignLoginVC, let topVC = getTopController() {
+                        self.superVC?.navigationController?.popToRootViewController(animated: false)
+                        VC.modalPresentationStyle = .fullScreen
+                        topVC.present(VC, animated: true)
+                    }
+                }
+            }
+        }
     }
 
 }
