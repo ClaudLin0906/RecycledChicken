@@ -73,7 +73,9 @@ class ADView: UIView, NibOwnerLoadable {
                 print(error?.localizedDescription ?? "")
                 return
             }
-            webviewLoadAction(URLRequest(url: url))
+            DispatchQueue.main.async { [self] in
+                webView.load(URLRequest(url: url))
+            }
             
         }.resume()
     }
