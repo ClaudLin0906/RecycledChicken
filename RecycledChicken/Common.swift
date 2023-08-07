@@ -84,7 +84,7 @@ class CurrentUserInfo{
 }
 
 struct APIUrl {
-    static let domainName = "https://useries.buenooptics.com:8443/app"
+    static let domainName = "https://useries.buenooptics.com:443/app"
     static let register = "/regist"
     static let login = "/login"
     static let changePWD = "/reset"

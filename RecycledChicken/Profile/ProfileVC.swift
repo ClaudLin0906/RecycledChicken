@@ -85,11 +85,13 @@ class ProfileVC: CustomVC {
         let cells = cellsForTableView(tableView: profileTableView)
         if let birthdayCell = cells.filter({ return $0.tag == 3})[0] as? ProfileTableViewCell {
             birthdayCell.info.text = "\(year!)/\(month)/\(day)"
+            birthdayCell.phoneNumberCheckBox.checkState = .checked
+            birthdayCell.info.isEnabled = false
         }
         view.endEditing(true)
     }
     
-    private func updateUserInfo( userInfo:ProfileInfo){
+    func updateUserInfo( userInfo:ProfileInfo){
         let userInfoDic = try? userInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: userInfoDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
@@ -164,7 +166,15 @@ class ProfileVC: CustomVC {
             showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
             return
         }
-        updateUserInfo(userInfo: newUserInfo)
+        
+        if profileUserInfo?.userBirth != newUserInfo.userBirth && newUserInfo.userBirth != "" {
+            let updateDateAlertView = UpdateDateAlertView(frame: view.frame)
+            updateDateAlertView.VC = self
+            updateDateAlertView.userInfo = newUserInfo
+            keyWindow?.addSubview(updateDateAlertView)
+        }else{
+            updateUserInfo(userInfo: newUserInfo)
+        }
     }
     
     private func showProfileUpdateView (){
@@ -206,8 +216,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             cell.info.placeholder = "2000/11/11"
             cell.phoneNumberCheckBox.isHidden = false
             if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
-                cell.phoneNumberCheckBox.checkState = .checked
-                cell.info.isEnabled = false
+//                cell.phoneNumberCheckBox.checkState = .checked
+//                cell.info.isEnabled = false
                 cell.info.text = profileUserInfo?.userBirth
             }
             createDatePicker(cell.info)
