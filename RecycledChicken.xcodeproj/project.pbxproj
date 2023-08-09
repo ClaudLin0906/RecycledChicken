@@ -23,6 +23,10 @@
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		593CDE2A2A7F5E13007E1D10 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CDE292A7F5E13007E1D10 /* DeleteModel.swift */; };
+		593CDE662A83D229007E1D10 /* ca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE652A83D229007E1D10 /* ca.pem */; };
+		593CDE682A83D22F007E1D10 /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE672A83D22F007E1D10 /* cert.cer */; };
+		593CDE6A2A83D236007E1D10 /* certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE692A83D236007E1D10 /* certificate.p12 */; };
+		593CDE6C2A83D23E007E1D10 /* private.key in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE6B2A83D23E007E1D10 /* private.key */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
 		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
 		5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF52A1364570005686F /* TaskTableViewADCell.swift */; };
@@ -114,11 +118,7 @@
 		5999F0612A132409002F08D8 /* AmountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0602A132409002F08D8 /* AmountView.xib */; };
 		5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999F0622A134BEF002F08D8 /* WelcomeView.swift */; };
 		5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0642A134C1A002F08D8 /* WelcomeView.xib */; };
-		59A113B12A39C0D900C8295B /* openweathermap.org.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B02A39C0D900C8295B /* openweathermap.org.cer */; };
 		59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A113B22A3AA52E00C8295B /* CustomLabel.swift */; };
-		59A113B72A3ADAE000C8295B /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B42A3ADAE000C8295B /* cert.cer */; };
-		59A113B82A3ADAE000C8295B /* ca.cer in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B52A3ADAE000C8295B /* ca.cer */; };
-		59A113B92A3ADAE000C8295B /* private.key in Resources */ = {isa = PBXBuildFile; fileRef = 59A113B62A3ADAE000C8295B /* private.key */; };
 		59A113BB2A3ADFCF00C8295B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A113BA2A3ADFCF00C8295B /* CustomButton.swift */; };
 		59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795492A0F03330031710F /* RingProgressGroupView.swift */; };
 		59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795712A0F72990031710F /* ForgetPasswordVC.swift */; };
@@ -220,6 +220,10 @@
 		5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLoginVC.swift; sourceTree = "<group>"; };
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		593CDE292A7F5E13007E1D10 /* DeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModel.swift; sourceTree = "<group>"; };
+		593CDE652A83D229007E1D10 /* ca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.pem; sourceTree = "<group>"; };
+		593CDE672A83D22F007E1D10 /* cert.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.cer; sourceTree = "<group>"; };
+		593CDE692A83D236007E1D10 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
+		593CDE6B2A83D23E007E1D10 /* private.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.key; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		5964AAF52A1364570005686F /* TaskTableViewADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewADCell.swift; sourceTree = "<group>"; };
@@ -311,11 +315,7 @@
 		5999F0602A132409002F08D8 /* AmountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountView.xib; sourceTree = "<group>"; };
 		5999F0622A134BEF002F08D8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5999F0642A134C1A002F08D8 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
-		59A113B02A39C0D900C8295B /* openweathermap.org.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = openweathermap.org.cer; sourceTree = "<group>"; };
 		59A113B22A3AA52E00C8295B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
-		59A113B42A3ADAE000C8295B /* cert.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.cer; sourceTree = "<group>"; };
-		59A113B52A3ADAE000C8295B /* ca.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.cer; sourceTree = "<group>"; };
-		59A113B62A3ADAE000C8295B /* private.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.key; sourceTree = "<group>"; };
 		59A113BA2A3ADFCF00C8295B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		59A795492A0F03330031710F /* RingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressGroupView.swift; sourceTree = "<group>"; };
 		59A795712A0F72990031710F /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
@@ -545,10 +545,10 @@
 		5950BF2B2A385D6600EEB21C /* Certificate */ = {
 			isa = PBXGroup;
 			children = (
-				59A113B02A39C0D900C8295B /* openweathermap.org.cer */,
-				59A113B52A3ADAE000C8295B /* ca.cer */,
-				59A113B42A3ADAE000C8295B /* cert.cer */,
-				59A113B62A3ADAE000C8295B /* private.key */,
+				593CDE652A83D229007E1D10 /* ca.pem */,
+				593CDE6B2A83D23E007E1D10 /* private.key */,
+				593CDE692A83D236007E1D10 /* certificate.p12 */,
+				593CDE672A83D22F007E1D10 /* cert.cer */,
 			);
 			path = Certificate;
 			sourceTree = "<group>";
@@ -981,12 +981,9 @@
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
 				599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */,
 				59A7957D2A0F79170031710F /* UpdatePasswordSuccessView.xib in Resources */,
-				59A113B72A3ADAE000C8295B /* cert.cer in Resources */,
 				599495682A0BFA4F009F1B2E /* BuyLottery.storyboard in Resources */,
-				59A113B12A39C0D900C8295B /* openweathermap.org.cer in Resources */,
 				59997A6D2A0A422D00E9FD7F /* ProfileUpdateView.xib in Resources */,
 				59F6BE262A065D7800D7B3CB /* SignLogin.storyboard in Resources */,
-				59A113B82A3ADAE000C8295B /* ca.cer in Resources */,
 				59E69A262A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf in Resources */,
 				59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */,
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
@@ -997,6 +994,7 @@
 				59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */,
 				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
+				593CDE662A83D229007E1D10 /* ca.pem in Resources */,
 				597521772A0B7E5300D0B67C /* SystemSetting.storyboard in Resources */,
 				59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */,
 				5999F0612A132409002F08D8 /* AmountView.xib in Resources */,
@@ -1018,6 +1016,7 @@
 				59E69A272A3722510062D4EB /* GenJyuuGothic-Bold.ttf in Resources */,
 				59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */,
 				59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */,
+				593CDE682A83D22F007E1D10 /* cert.cer in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
 				597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */,
 				598F394C2A0E07A500DA9186 /* SearchView.xib in Resources */,
@@ -1025,6 +1024,7 @@
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
 				5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */,
 				598752002A64EB8600775D4A /* ADView.xib in Resources */,
+				593CDE6C2A83D23E007E1D10 /* private.key in Resources */,
 				597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */,
 				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
@@ -1037,12 +1037,12 @@
 				597521822A0B8AE700D0B67C /* DeleteAccount.storyboard in Resources */,
 				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
 				59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */,
-				59A113B92A3ADAE000C8295B /* private.key in Resources */,
 				59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */,
 				59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */,
 				599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
+				593CDE6A2A83D236007E1D10 /* certificate.p12 in Resources */,
 				59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */,
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
 				5994956D2A0BFC88009F1B2E /* SpendPointView.xib in Resources */,

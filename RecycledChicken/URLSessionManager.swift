@@ -15,13 +15,12 @@ class NetworkManager: NSObject {
     
     private override init() {
         super.init()
-//        session = URLSession.init(configuration: .ephemeral, delegate: self, delegateQueue: nil)
-        session = URLSession()
-
+        let configuration = URLSessionConfiguration.default
+        session = URLSession(configuration: configuration, delegate: self, delegateQueue:OperationQueue.main)
     }
     
     func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data?, Int?, String?) -> Void){
-        let task = URLSession.shared.dataTask(with: request){(data,response,error) in
+        let task = session.dataTask(with: request){(data,response,error) in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(nil, nil, error?.localizedDescription)
                 return
@@ -31,17 +30,6 @@ class NetworkManager: NSObject {
                 return
             }
             completion(data, httpResponse.statusCode, nil)
-//            if error != nil, let httpResponse = response as? HTTPURLResponse{
-//                print("url發生問題\(error.debugDescription)")
-//                completion(nil, httpResponse.statusCode, error?.localizedDescription)
-//            }else if{
-//                if data != nil {
-//                    completion(data!)
-//                }else {
-//                    print("Data is nil.")
-//                }
-//                //                guard let resultData = data else {return}
-//            }
         }
         task.resume()
     }
@@ -92,6 +80,37 @@ class NetworkManager: NSObject {
         return dic
     }
     
+    private func extractIdentity() -> IdentityAndTrust {
+        print("URLSessionDelegate 获取客户端证书相关信息")
+        var identityAndTrust:IdentityAndTrust!
+        var securityError:OSStatus = errSecSuccess
+        
+        let path: String = Bundle.main.path(forResource: "certificate", ofType: "p12")!
+        let PKCS12Data = NSData(contentsOfFile:path)!
+        let key = kSecImportExportPassphrase as NSString
+        let options: NSDictionary = [key : "0000"] //客户端证书密码
+        //create variable for holding security information
+        //var privateKeyRef: SecKeyRef? = nil
+        
+        var items : CFArray?
+        
+        securityError = SecPKCS12Import(PKCS12Data, options, &items)
+        
+        if securityError == errSecSuccess, let certItems:CFArray = items {
+            let certItemsArray:Array = certItems as Array
+            let dict:AnyObject? = certItemsArray.first
+            if let certEntry:Dictionary = dict as? Dictionary<String, AnyObject> {
+                let identityPointer:AnyObject? = certEntry["identity"];
+                let secIdentityRef:SecIdentity = identityPointer as! SecIdentity
+                let trustPointer:AnyObject? = certEntry["trust"]
+                let trustRef:SecTrust = trustPointer as! SecTrust
+                let chainPointer:AnyObject? = certEntry["chain"]
+                identityAndTrust = IdentityAndTrust(identityRef: secIdentityRef, trust: trustRef, certArray:  chainPointer!)
+            }
+        }
+        return identityAndTrust;
+    }
+    
     
     func request<T: Decodable>(url: URL?, completion: @escaping (_ data: T?, _ error: Error?)-> ()) {
         
@@ -133,35 +152,61 @@ class NetworkManager: NSObject {
 extension NetworkManager: URLSessionDelegate {
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        guard let serverTrust = challenge.protectionSpace.serverTrust, let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0) else {
-            return
-        }
-        
-        // Uncomment below for Certificate Pinning
-        
-        //SSL Policy for domain check
-        let policy = NSMutableArray()
-        policy.add(SecPolicyCreateSSL(true, challenge.protectionSpace.host as CFString))
-
-        //Evaluate the certificate
-        let isServerTrusted = SecTrustEvaluateWithError(serverTrust, nil)
-
-        //Local and Remote Certificate Data
-        let remoteCertificateData: NSData = SecCertificateCopyData(certificate)
-
-        let pathToCertificate = Bundle.main.path(forResource: "cert", ofType: "cer")
-        let localCertificateData: NSData = NSData.init(contentsOfFile: pathToCertificate!)!
-
-        //Compare Data of both certificates
-        if (isServerTrusted && remoteCertificateData.isEqual(to: localCertificateData as Data)) {
-            let credential: URLCredential = URLCredential(trust: serverTrust)
-            print("Certification pinning is successfull")
-            completionHandler(.useCredential, credential)
+        print("URLSessionDelegate 证书认证！")
+        //认证服务器证书
+        if challenge.protectionSpace.authenticationMethod == (NSURLAuthenticationMethodServerTrust) {
+            print("URLSessionDelegate 服务端证书认证！")
+            guard let serverTrust:SecTrust = challenge.protectionSpace.serverTrust,
+                  let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0),
+                  let remoteCertificateData = CFBridgingRetain(SecCertificateCopyData(certificate)) else {
+                
+                completionHandler(.cancelAuthenticationChallenge, nil)
+                return
+            }
+            
+            guard let cerPath = Bundle.main.path(forResource: "cert", ofType: "cer") else {
+                completionHandler(.cancelAuthenticationChallenge, nil)
+                return
+            }
+            let cerUrl = URL(fileURLWithPath:cerPath)
+            guard let localCertificateData = try? Data(contentsOf: cerUrl) else {
+                completionHandler(.cancelAuthenticationChallenge, nil)
+                return
+            }
+            
+            if (remoteCertificateData.isEqual(localCertificateData)) {
+                let credential = URLCredential(trust: serverTrust)
+                challenge.sender?.use(credential, for: challenge)
+                completionHandler(URLSession.AuthChallengeDisposition.useCredential, credential)
+                
+            } else {
+                //completionHandler(.cancelAuthenticationChallenge, nil)
+                completionHandler(.performDefaultHandling, nil)
+            }
+            
+        } else if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodClientCertificate {
+            //认证客户端证书
+            print("URLSessionDelegate 客户端证书认证！")
+            //获取客户端证书相关信息
+            let identityAndTrust:IdentityAndTrust = self.extractIdentity()
+            
+            let urlCredential:URLCredential = URLCredential(identity: identityAndTrust.identityRef,
+                                                            certificates: identityAndTrust.certArray as? [AnyObject],
+                                                            persistence: URLCredential.Persistence.forSession)
+            
+            completionHandler(.useCredential, urlCredential)
+            
         } else {
-            //failure happened
-            print("Certification pinning is failed")
-            completionHandler(.cancelAuthenticationChallenge, nil)
+            // 其它情况（不接受认证）
+            print("URLSessionDelegate 其它情况（不接受认证）")
+            completionHandler(.cancelAuthenticationChallenge, nil);
         }
-        
     }
+}
+
+//定义一个结构体，存储认证相关信息
+struct IdentityAndTrust {
+    var identityRef:SecIdentity
+    var trust:SecTrust
+    var certArray:AnyObject
 }

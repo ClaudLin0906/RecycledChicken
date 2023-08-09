@@ -149,17 +149,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "26080898-14F2-4E98-9837-FDA460720CC0"
+            uuid = "6A80A162-54D3-4FC4-93C1-08BCD8B53BA8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Lottery /LotteryVC.swift"
+            filePath = "RecycledChicken/Task/TaskVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "getData()"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6A80A162-54D3-4FC4-93C1-08BCD8B53BA8 - 16144637d537438c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.TaskVC.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Task/TaskVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "820">
+               </Location>
+               <Location
+                  uuid = "6A80A162-54D3-4FC4-93C1-08BCD8B53BA8 - 16144637d537438c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.TaskVC.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/Task/TaskVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "864">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -12,6 +12,9 @@ class TaskVC: CustomRootVC {
     @IBOutlet weak var taskTableView:UITableView!
     
     private var taskInfos:[TaskInfo] = []
+    {
+        
+    }
     
     private var taskStatuss:[TaskStatus] = []
     
@@ -22,7 +25,6 @@ class TaskVC: CustomRootVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
-        getTaskInfo()
         // Do any additional setup after loading the view.
     }
     
@@ -32,9 +34,7 @@ class TaskVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if taskInfos.count > 0 {
-            updateInfo()
-        }
+        getTaskInfo()
     }
     
     private func updateInfo(){
