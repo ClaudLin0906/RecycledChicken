@@ -13,7 +13,9 @@ class TaskVC: CustomRootVC {
     
     private var taskInfos:[TaskInfo] = []
     {
-        
+        willSet{
+            print(newValue.count)
+        }
     }
     
     private var taskStatuss:[TaskStatus] = []

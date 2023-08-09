@@ -66,18 +66,15 @@ class ADView: UIView, NibOwnerLoadable {
         }
     }
     
-    private func HomeAction(){
-        let request = URLRequest(url: URL(string: APIUrl.domainName + APIUrl.getAd)!)
-        URLSession.shared.dataTask(with: request) { [self]  data, response, error in
-            guard let data = data, error == nil, let urlStr = String(data: data, encoding: .utf8), let url = URL(string: urlStr) else {
-                print(error?.localizedDescription ?? "")
+    private func HomeAction(){        
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAd) { (data, statusCode, errorMSG) in
+            guard let data = data, let urlStr = String(data: data, encoding: .utf8), let url = URL(string: urlStr) else {
                 return
             }
             DispatchQueue.main.async { [self] in
                 webView.load(URLRequest(url: url))
             }
-            
-        }.resume()
+        }
     }
     
     private func customInit(){
