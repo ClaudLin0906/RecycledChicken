@@ -121,7 +121,6 @@ class TaskVC: CustomRootVC {
 
 extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
@@ -175,19 +174,17 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
-        var info = taskInfos[row]
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
-            let type = info.type
+            let type = cell.taskInfo?.type
             switch type {
             case .share:
-                if let isFinish = info.isFinish, !isFinish {
+                if let isFinish = cell.taskInfo?.isFinish, !isFinish {
                     sharedAction { result, errorMSG in
                         guard result else {
                             showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
                             return
                         }
-                        info.isFinish = result
-                        cell.taskInfo = info
+                        cell.taskInfo?.isFinish = result
                         cell.finishAction()
                         cell.taskProgressView.setPercent(1, molecular: 1)
                     }
@@ -201,7 +198,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
 //            let adView = ADView(frame: UIScreen.main.bounds)
             let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
             adView.cell = cell
-            adView.taskInfo = info
+            adView.taskInfo = cell.taskInfo
             keyWindow?.addSubview(adView)
         }
         
