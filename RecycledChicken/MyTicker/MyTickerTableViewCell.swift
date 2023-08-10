@@ -30,7 +30,7 @@ class MyTickerTableViewCell: UITableViewCell {
     
     func setCell(_ info:MyTickertInfo){
         itemName.text = info.itemName
-        if let date = dateFromString(info.buyTime) {
+        if let date = dateFromString(info.lotteryDrawDate) {
             drawTime.text = "開獎時間:\(getDates(i: 0, currentDate: date).0)"
         }
         UUID.text = info.UUID

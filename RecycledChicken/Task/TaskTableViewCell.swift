@@ -22,10 +22,12 @@ class TaskTableViewCell: UITableViewCell {
     var taskInfo:TaskInfo?
     {
         willSet{
-            if let newValue = newValue, let isFinish = newValue.isFinish, isFinish {
-                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
-            }else{
-                background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            if let newValue = newValue {
+                if let isFinish = newValue.isFinish, isFinish{
+                    background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                }else{
+                    background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                }
             }
         }
     }

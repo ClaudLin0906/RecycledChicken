@@ -2,7 +2,6 @@ import UIKit
 import LiGScannerKit
 
 class ScanViewController: CustomVC, LiGScannerDelegate {
-    
     @IBOutlet var scannerView: ScannerView!
     
     let scanner = LiGScanner.sharedInstance()
@@ -50,7 +49,7 @@ class ScanViewController: CustomVC, LiGScannerDelegate {
     }
 
     func scannerStatus(_ status: ScannerStatus) {
-        
+
         var msg = "Scanner Status: ";
         switch (status) {
         case .noCameraPermission:          msg.append("No Camera Permission")
@@ -70,9 +69,9 @@ class ScanViewController: CustomVC, LiGScannerDelegate {
         default:                           msg.append("Other Status (\(status.rawValue))")
         }
     }
-    
+
     func updateLightIDMessage(_ id: LightID) {
-        
+
         var text = ""
 
         var status = ""
@@ -91,12 +90,12 @@ class ScanViewController: CustomVC, LiGScannerDelegate {
 
         text.append(contentsOf: "Status: \(status)\n")
         text.append(String(format: "Coordinate: [ %.2f, %.2f ]\n", id.coordinateX, id.coordinateY))
-        
+
         if (id.isDetected) {
             text.append(String(format: "Detection: %.2f ms\n", id.detectionTime))
             text.append(String(format: "Decoded: %.2f ms\n", id.decodedTime))
         }
-        
+
         if (id.isReady) {
             text.append(String(format: "Rotation: [ %.2f, %.2f, %.2f ]\n", id.rotation.x, id.rotation.y, id.rotation.z))
             text.append(String(format: "Translation: [ %.2f, %.2f, %.2f ]\n", id.translation.x / 1000, id.translation.y / 1000, id.translation.z / 1000))

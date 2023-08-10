@@ -15,6 +15,18 @@ class ADView: UIView, NibOwnerLoadable {
     var cell:TaskTableViewADCell?
     
     var taskInfo:TaskInfo?
+    {
+        didSet{
+            if taskInfo != nil {
+                switch type {
+                case.isHome:
+                    HomeAction()
+                case .isTask:
+                    taskAction()
+                }
+            }
+        }
+    }
     
     var timer:Timer?
     
@@ -53,8 +65,10 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func taskAction(){
-        let request = URLRequest(url: URL(string: APIUrl.taskAD)!)
-        webviewLoadAction(request)
+        if let urlStr = taskInfo?.url, let url = URL(string: urlStr){
+            let request = URLRequest(url: url)
+            webviewLoadAction(request)
+        }
     }
     
     private func webviewLoadAction(_ request:URLRequest){
@@ -82,11 +96,8 @@ class ADView: UIView, NibOwnerLoadable {
         webView.isOpaque = false
         webView.backgroundColor = .clear
         webView.scrollView.backgroundColor = .clear
-        switch type {
-        case.isHome:
+        if type == .isHome {
             HomeAction()
-        case .isTask:
-            taskAction()
         }
     }
 }

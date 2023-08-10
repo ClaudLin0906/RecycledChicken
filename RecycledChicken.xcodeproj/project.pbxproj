@@ -21,6 +21,7 @@
 		5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C59D2A06342B00FAB49D /* LoginVC.swift */; };
 		5926C5A22A06364800FAB49D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5A12A06364800FAB49D /* Common.swift */; };
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
+		59294D9B2A853EEA0016FEA4 /* LiGScannerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59294D9A2A853EEA0016FEA4 /* LiGScannerKit */; };
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		593CDE2A2A7F5E13007E1D10 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CDE292A7F5E13007E1D10 /* DeleteModel.swift */; };
 		593CDE662A83D229007E1D10 /* ca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE652A83D229007E1D10 /* ca.pem */; };
@@ -142,7 +143,6 @@
 		59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B682F42A76A0D3008F5135 /* ARViewController.swift */; };
 		59B682F72A76A2CA008F5135 /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B682F62A76A2CA008F5135 /* Scan.storyboard */; };
 		59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B682F92A76A5EB008F5135 /* ARViewController.storyboard */; };
-		59BDE5832A7954990080FA68 /* LiGScannerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BDE5822A7954990080FA68 /* LiGScannerKit */; };
 		59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */; };
 		59BF29402A21EE8200F24286 /* CustomCalenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
@@ -403,8 +403,8 @@
 			files = (
 				59C926DF2A84831A00EB6418 /* FirebaseMessaging in Frameworks */,
 				E502D45E95B044E6B792CC77 /* Pods_RecycledChicken.framework in Frameworks */,
-				59BDE5832A7954990080FA68 /* LiGScannerKit in Frameworks */,
 				59C926DD2A84831A00EB6418 /* FirebaseAnalytics in Frameworks */,
+				59294D9B2A853EEA0016FEA4 /* LiGScannerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -934,9 +934,9 @@
 			);
 			name = RecycledChicken;
 			packageProductDependencies = (
-				59BDE5822A7954990080FA68 /* LiGScannerKit */,
 				59C926DC2A84831A00EB6418 /* FirebaseAnalytics */,
 				59C926DE2A84831A00EB6418 /* FirebaseMessaging */,
+				59294D9A2A853EEA0016FEA4 /* LiGScannerKit */,
 			);
 			productName = RecycledChicken;
 			productReference = 5926C57A2A04086400FAB49D /* RecycledChicken.app */;
@@ -967,8 +967,8 @@
 			);
 			mainGroup = 5926C5712A04086400FAB49D;
 			packageReferences = (
-				59BDE5812A7954990080FA68 /* XCRemoteSwiftPackageReference "ios-scanner-sdk-sample" */,
 				59C926DB2A84831900EB6418 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				59294D992A853EEA0016FEA4 /* XCRemoteSwiftPackageReference "ios-scanner-sdk-sample" */,
 			);
 			productRefGroup = 5926C57B2A04086400FAB49D /* Products */;
 			projectDirPath = "";
@@ -1497,7 +1497,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		59BDE5812A7954990080FA68 /* XCRemoteSwiftPackageReference "ios-scanner-sdk-sample" */ = {
+		59294D992A853EEA0016FEA4 /* XCRemoteSwiftPackageReference "ios-scanner-sdk-sample" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.com/lig-corp/ios-scanner-sdk-sample";
 			requirement = {
@@ -1516,9 +1516,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		59BDE5822A7954990080FA68 /* LiGScannerKit */ = {
+		59294D9A2A853EEA0016FEA4 /* LiGScannerKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 59BDE5812A7954990080FA68 /* XCRemoteSwiftPackageReference "ios-scanner-sdk-sample" */;
+			package = 59294D992A853EEA0016FEA4 /* XCRemoteSwiftPackageReference "ios-scanner-sdk-sample" */;
 			productName = LiGScannerKit;
 		};
 		59C926DC2A84831A00EB6418 /* FirebaseAnalytics */ = {

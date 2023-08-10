@@ -16,6 +16,7 @@ struct TaskInfo: Decodable, CustomStringConvertible, Hashable{
     var point:Int
     var type:TaskType
     var isFinish:Bool?
+    var url:String?
 }
 
 struct TaskStatus: Decodable{

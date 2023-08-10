@@ -216,8 +216,8 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             cell.info.placeholder = "2000/11/11"
             cell.phoneNumberCheckBox.isHidden = false
             if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
-//                cell.phoneNumberCheckBox.checkState = .checked
-//                cell.info.isEnabled = false
+                cell.phoneNumberCheckBox.checkState = .checked
+                cell.info.isEnabled = false
                 cell.info.text = profileUserInfo?.userBirth
             }
             createDatePicker(cell.info)

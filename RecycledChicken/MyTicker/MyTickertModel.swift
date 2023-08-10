@@ -11,4 +11,7 @@ struct MyTickertInfo:Decodable {
     var itemName:String
     var UUID:String
     var buyTime:String
+    var activityStartTime:String
+    var activityEndTime:String
+    var lotteryDrawDate:String
 }

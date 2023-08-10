@@ -44,8 +44,10 @@ class TaskVC: CustomRootVC {
         getRecycleCount()
     }
     
-    private func sharedAction(completion: @escaping (Bool, String?) -> Void){
-        let activityVC = UIActivityViewController(activityItems: ["https://apps.apple.com/app/id6449214570"], applicationActivities: nil)
+    private func sharedAction(taskInfo:TaskInfo, completion: @escaping (Bool, String?) -> Void){
+//        let url = "https://apps.apple.com/app/id6449214570"
+        let url = taskInfo.url
+        let activityVC = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
         activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
 
             if error != nil {
@@ -143,17 +145,20 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         case .AD:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
             cell.title.text = "廣告點擊"
+            cell.point.text = String(info.point)
             cell.taskInfo = info
             return cell
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "社群分享"
+            cell.point.text = String(info.point)
             cell.taskProgressView.setPercent(1, molecular: 0)
             cell.taskInfo = info
             return cell
         case .battery:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "電池回收\(info.count)個"
+            cell.point.text = String(info.point)
             if batteryInt >= info.count {
                 info.isFinish = true
             }
@@ -163,6 +168,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         case .bottle:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.title.text = "寶特瓶回收\(info.count)瓶"
+            cell.point.text = String(info.point)
             if bottleInt >= info.count {
                 info.isFinish = true
             }
@@ -178,8 +184,8 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             let type = cell.taskInfo?.type
             switch type {
             case .share:
-                if let isFinish = cell.taskInfo?.isFinish, !isFinish {
-                    sharedAction { result, errorMSG in
+                if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo{
+                    sharedAction(taskInfo: taskInfo, completion: { result, errorMSG in
                         guard result else {
                             showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
                             return
@@ -187,7 +193,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                         cell.taskInfo?.isFinish = result
                         cell.finishAction()
                         cell.taskProgressView.setPercent(1, molecular: 1)
-                    }
+                    })
                 }
             default:
                 break
@@ -196,12 +202,13 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
 
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
 //            let adView = ADView(frame: UIScreen.main.bounds)
-            let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
-            adView.cell = cell
-            adView.taskInfo = cell.taskInfo
-            keyWindow?.addSubview(adView)
+            if let isFinish = cell.taskInfo?.isFinish, !isFinish {
+                let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
+                adView.cell = cell
+                adView.taskInfo = cell.taskInfo
+                keyWindow?.addSubview(adView)
+            }
         }
-        
     }
     
 }
