@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>895913372656-rti8rjnqr0e1a6fec7j3oim1ghn0qsoa.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.895913372656-rti8rjnqr0e1a6fec7j3oim1ghn0qsoa</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>895913372656-622pmkseb0mlmilccnbtvtgcik0rh58r.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCWufxjhldiekUurs33rYpJXHvXT0gKGh8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>895913372656</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>lowcarbon.partridge</string>
+	<key>PROJECT_ID</key>
+	<string>recyclepunk-52158</string>
+	<key>STORAGE_BUCKET</key>
+	<string>recyclepunk-52158.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:895913372656:ios:f8910e0ae20eaa98348b35</string>
+</dict>
+</plist>

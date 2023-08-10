@@ -9,6 +9,8 @@ import UIKit
 import GoogleMaps
 import UserNotifications
 import LiGScannerKit
+import FirebaseCore
+import FirebaseMessaging
 //https://gitlab.com/lig-corp/ios-scanner-sdk-sample
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         GMSServices.provideAPIKey(CommonKey.shared.googleMapKey)
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
@@ -23,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(success)
         }
         application.registerForRemoteNotifications()
-       
+        Messaging.messaging().delegate = self
         LiGScanner.sharedInstance().initialize(CommonKey.shared.ARKey)
         return true
     }
@@ -57,3 +60,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 }
 
 
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+      print("Firebase registration token: \(String(describing: fcmToken))")
+      // TODO: If necessary send token to application server.
+      // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+}
