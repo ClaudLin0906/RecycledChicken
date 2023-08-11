@@ -144,20 +144,20 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         switch type {
         case .AD:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
-            cell.title.text = "廣告點擊"
+            cell.title.text = info.description
             cell.point.text = String(info.point)
             cell.taskInfo = info
             return cell
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.title.text = "社群分享"
+            cell.title.text = info.description
             cell.point.text = String(info.point)
             cell.taskProgressView.setPercent(1, molecular: 0)
             cell.taskInfo = info
             return cell
         case .battery:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.title.text = "電池回收\(info.count)個"
+            cell.title.text = info.description
             cell.point.text = String(info.point)
             if batteryInt >= info.count {
                 info.isFinish = true
@@ -167,7 +167,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             return cell
         case .bottle:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.title.text = "寶特瓶回收\(info.count)瓶"
+            cell.title.text = info.description
             cell.point.text = String(info.point)
             if bottleInt >= info.count {
                 info.isFinish = true
