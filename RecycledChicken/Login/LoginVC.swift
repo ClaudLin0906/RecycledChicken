@@ -61,16 +61,16 @@ class LoginVC: CustomLoginVC {
 //        let testloginInfoDic = try? testLoginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                if statusCode == 403 {
-                    showAlert(VC: self, title: "發生錯誤", message: "帳號密碼錯誤", alertAction: nil)
-                    return
-                }
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+//                if statusCode == 403  {
+//                    showAlert(VC: self, title: "發生錯誤", message: "帳號密碼錯誤", alertAction: nil)
+//                    return
+//                }
+//                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "帳號密碼有誤", message: nil, alertAction: nil)
                 return
             }
 
             if let data = data {
-                print(String(data: data, encoding: .utf8))
                 let json = NetworkManager.shared.dataToDictionary(data: data)
                 if let token = json["token"] as? String {
                     CommonKey.shared.authToken = ""

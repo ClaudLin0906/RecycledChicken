@@ -99,7 +99,6 @@ class VerificationCodeVC: CustomLoginVC {
         let forgetPasswordInfo = info
         let forgetPasswordInfoDic = try? forgetPasswordInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.forgotPassword, parameters: forgetPasswordInfoDic) { (data, statusCode, errorMSG) in
-            
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
