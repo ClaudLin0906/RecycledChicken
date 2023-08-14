@@ -70,6 +70,7 @@ class LoginVC: CustomLoginVC {
             }
 
             if let data = data {
+                print(String(data: data, encoding: .utf8))
                 let json = NetworkManager.shared.dataToDictionary(data: data)
                 if let token = json["token"] as? String {
                     CommonKey.shared.authToken = ""

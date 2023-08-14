@@ -63,6 +63,19 @@ class ConnectCompanyVC: CustomVC {
         }
     }
     
+    private func moveView(contentInsets:CGFloat){
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0) {
+            self.view.bounds.origin.y = contentInsets
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            print(touch.location(in: contentView))
+            print(touch.location(in: emailTextfield))
+        }
+    }
+    
     private func sendEmailAction(content:String, email:String){
         let username = CurrentUserInfo.shared.currentProfileInfo?.userName ?? ""
         let identity = identityLabel.text ?? ""
@@ -107,7 +120,7 @@ class ConnectCompanyVC: CustomVC {
     }
     
     func showConnectSuccessView (){
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async {
             let connectSuccessView = ConnectSuccessView(frame: UIScreen.main.bounds)
             fadeInOutAni(showView: connectSuccessView, finishAction: nil)
         }
@@ -116,15 +129,24 @@ class ConnectCompanyVC: CustomVC {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == keyMoveSize {
-                self.view.frame.origin.y -= keyboardSize.height/1.8
+                var viewMaxY:CGFloat = 0
+                if contentView.isFirstResponder {
+                    if let contentViewFrameInWindow = contentView.superview?.convert(contentView.frame, to: nil) {
+                        viewMaxY = contentViewFrameInWindow.maxY
+                    }
+                } else if emailTextfield.isFirstResponder {
+                    if let emailTextfieldFrameInWindow = emailTextfield.superview?.convert(emailTextfield.frame, to: nil) {
+                        viewMaxY = emailTextfieldFrameInWindow.maxY
+                    }
+                }
+                let contentInsets = keyboardSize.height - (view.bounds.height - viewMaxY)
+                moveView(contentInsets: contentInsets)
             }
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != keyMoveSize {
-            self.view.frame.origin.y = keyMoveSize
-        }
+        self.view.bounds.origin.y = 0
     }
 
 }
