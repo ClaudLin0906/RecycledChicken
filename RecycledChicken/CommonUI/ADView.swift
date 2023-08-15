@@ -60,7 +60,9 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func isFinishAction() {
-        cell?.taskInfo = taskInfo
+        var newTaskInfo = cell?.taskInfo
+        newTaskInfo?.isFinish = true
+        cell?.taskInfo = newTaskInfo
         cell?.finishAction()
     }
     

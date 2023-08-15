@@ -4,10 +4,6 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>NSFaceIDUsageDescription</key>
-	<string>請您提供生物辨識權限</string>
-	<key>NSCameraUsageDescription</key>
-	<string>&quot;請您提供相機權限&quot;</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>LSApplicationQueriesSchemes</key>

@@ -144,36 +144,23 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         switch type {
         case .AD:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
-            cell.title.text = info.description
-            cell.point.text = String(info.point)
             cell.taskInfo = info
+            cell.setCell()
             return cell
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.title.text = info.description
-            cell.point.text = String(info.point)
-            cell.taskProgressView.setPercent(1, molecular: 0)
             cell.taskInfo = info
+            cell.setCell()
             return cell
         case .battery:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.title.text = info.description
-            cell.point.text = String(info.point)
-            if batteryInt >= info.count {
-                info.isFinish = true
-            }
             cell.taskInfo = info
-            cell.taskProgressView.setPercent(info.count, molecular: batteryInt)
+            cell.setCell(batteryInt: batteryInt)
             return cell
         case .bottle:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.title.text = info.description
-            cell.point.text = String(info.point)
-            if bottleInt >= info.count {
-                info.isFinish = true
-            }
             cell.taskInfo = info
-            cell.taskProgressView.setPercent(info.count, molecular: bottleInt)
+            cell.setCell(bottleInt: bottleInt)
             return cell
         }
     }
@@ -184,15 +171,16 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             let type = cell.taskInfo?.type
             switch type {
             case .share:
-                if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo{
+                if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo {
                     sharedAction(taskInfo: taskInfo, completion: { result, errorMSG in
                         guard result else {
                             showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
                             return
                         }
-                        cell.taskInfo?.isFinish = result
+                        var newTaskInfo = taskInfo
+                        newTaskInfo.isFinish = result
+                        cell.taskInfo? = newTaskInfo
                         cell.finishAction()
-                        cell.taskProgressView.setPercent(1, molecular: 1)
                     })
                 }
             default:
