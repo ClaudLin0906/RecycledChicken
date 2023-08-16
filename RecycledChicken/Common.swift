@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-
 class CommonColor {
     
     static let shared = CommonColor()
@@ -174,9 +173,11 @@ func getUserInfo(VC:UIViewController, finishAction:(()->())?){
             }
             
             CurrentUserInfo.shared.currentProfileInfo = computeGrade(userinfo: userInfo)
+            
             if let finishAction = finishAction {
                 finishAction()
             }
+
         }
     }
 }

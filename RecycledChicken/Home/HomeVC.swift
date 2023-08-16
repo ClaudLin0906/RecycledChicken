@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseMessaging
 class HomeVC: CustomRootVC {
     
     @IBOutlet weak var barcodeView:BarCodeView!
@@ -41,6 +41,11 @@ class HomeVC: CustomRootVC {
                     self.trendChartImageView.image = image
                 }
             }
+            
+            Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
+              print("Subscribed to \(CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) topic")
+            }
+            
         })
     }
     
