@@ -118,6 +118,15 @@ class TaskVC: CustomRootVC {
             }
         }
     }
+    
+    private func signAlert(){
+        let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
+            loginOutRemoveObject()
+            goToSignVC()
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        showAlert(VC: self, title: "碳員招募中！一起探索泥滑島的秘密", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+    }
 
 }
 
@@ -166,6 +175,10 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard CurrentUserInfo.shared.isGuest == false else {
+            signAlert()
+            return
+        }
         let row = indexPath.row
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
             let type = cell.taskInfo?.type

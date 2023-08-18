@@ -50,6 +50,7 @@ class LotteryVC: CustomVC {
 extension LotteryVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard CurrentUserInfo.shared.isGuest == false else { return }
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
             VC.lotteryInfo = lotteryInfos[indexPath.row]
             pushVC(targetVC: VC, navigation: navigationController)

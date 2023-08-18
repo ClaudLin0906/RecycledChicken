@@ -29,6 +29,15 @@ class PointVC: CustomRootVC {
         myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
     }
     
+    private func signAlert(){
+        let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
+            loginOutRemoveObject()
+            goToSignVC()
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        showAlert(VC: self, title: "加入修復計畫，即可獲得來自尼滑倒贈與的金幣！", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getUserInfo(VC: self) {
@@ -57,6 +66,10 @@ class PointVC: CustomRootVC {
     }
     
     @IBAction func goToMyTicker(_ sender:UIButton) {
+        guard CurrentUserInfo.shared.isGuest == false else {
+            signAlert()
+            return
+        }
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "MyTicker", bundle: Bundle.main).instantiateViewController(identifier: "MyTicker") as? MyTickerVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }

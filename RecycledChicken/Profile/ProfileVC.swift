@@ -105,6 +105,7 @@ class ProfileVC: CustomVC {
     }
     
     @IBAction func confirm(_ sender:UIButton) {
+        guard CurrentUserInfo.shared.isGuest == false else { return } 
         var newUserInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "", experiencePoint: 0)
         let cells = cellsForTableView(tableView: profileTableView)
         for cell in cells {
@@ -177,7 +178,7 @@ class ProfileVC: CustomVC {
         }
     }
     
-    private func showProfileUpdateView (){
+    private func showProfileUpdateView() {
         DispatchQueue.main.async { [self] in
             let profileUpdateView = ProfileUpdateView(frame: view.frame)
             fadeInOutAni(showView: profileUpdateView, finishAction: nil)
@@ -204,8 +205,14 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         switch row {
         case 0:
             cell.info.text = profileUserInfo?.userName
+            if CurrentUserInfo.shared.isGuest {
+                cell.info.isEnabled = false
+            }
         case 1:
             cell.info.text = profileUserInfo?.userEmail
+            if CurrentUserInfo.shared.isGuest {
+                cell.info.isEnabled = false
+            }
         case 2:
             cell.info.keyboardType = .numberPad
             cell.phoneNumberCheckBox.isHidden = false
@@ -215,10 +222,15 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         case 3:
             cell.info.placeholder = "2000/11/11"
             cell.phoneNumberCheckBox.isHidden = false
+            
             if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
                 cell.phoneNumberCheckBox.checkState = .checked
                 cell.info.isEnabled = false
                 cell.info.text = profileUserInfo?.userBirth
+            }
+            
+            if CurrentUserInfo.shared.isGuest {
+                cell.info.isEnabled = false
             }
             createDatePicker(cell.info)
         default:

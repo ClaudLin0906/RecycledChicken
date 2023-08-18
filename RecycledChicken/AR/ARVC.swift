@@ -44,6 +44,15 @@ class ARVC: CustomRootVC {
         }
     }
     
+    private func signAlert(){
+        let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
+            loginOutRemoveObject()
+            goToSignVC()
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        showAlert(VC: self, title: "碳員招募中！一起探索泥滑島的秘密", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+    }
+    
     private func startScan() {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.scanner.stop()
@@ -59,6 +68,10 @@ class ARVC: CustomRootVC {
     }
     
     @IBAction func btnAction(_ sender:UIButton) {
+        guard CurrentUserInfo.shared.isGuest == false else {
+            signAlert()
+            return
+        }
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Scan", bundle: Bundle.main).instantiateViewController(identifier: "Scan") as? ScanViewController {
             pushVC(targetVC: VC, navigation: navigationController)
         }

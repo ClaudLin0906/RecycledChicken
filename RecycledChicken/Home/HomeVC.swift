@@ -129,24 +129,24 @@ class HomeVC: CustomRootVC {
     }
     
     func updateCurrentDateInfo(){
-        if let username = CurrentUserInfo.shared.currentProfileInfo?.userName{
+        if let username = CurrentUserInfo.shared.currentProfileInfo?.userName , username != ""{
             welcomeLabel.text = "Good morning, \(username)"
         }
         getChoseDateRecycleAmount()
     }
     
-    private func signAlert(){
+    private func signAlert(_ title:String){
         let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
             loginOutRemoveObject()
             goToSignVC()
         }
         let cancelAction = UIAlertAction(title: "取消", style: .cancel)
-        showAlert(VC: self, title: "請先註冊為會員，加入泥滑島修復計畫！", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+        showAlert(VC: self, title: title, message: nil, alertAction: alertAction, cancelAction: cancelAction)
     }
     
     @IBAction func goToCarbonReductionLog(_ sender:UIButton) {
         guard CurrentUserInfo.shared.isGuest == false else {
-            signAlert()
+            signAlert("加入修復計畫，解鎖更多碳竹雞角色！")
             return
         }
         
@@ -164,7 +164,7 @@ class HomeVC: CustomRootVC {
     
     @IBAction func goToPersonMessage(_ sender:UIButton) {
         guard CurrentUserInfo.shared.isGuest == false else {
-            signAlert()
+            signAlert("請先註冊為會員，加入泥滑島修復計畫！")
             return
         }
         
