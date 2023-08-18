@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="barcodeImageView" destination="wQ7-dy-quO" id="6mv-rb-2Y0"/>
                 <outlet property="codeLabel" destination="UAc-4R-JNr" id="YtC-7e-vm1"/>
+                <outlet property="titleLabel" destination="9bY-BU-8Ee" id="sJO-0P-o1p"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -79,6 +80,11 @@
             <point key="canvasLocation" x="-172" y="20"/>
         </view>
     </objects>
+    <designables>
+        <designable name="9bY-BU-8Ee">
+            <size key="intrinsicContentSize" width="68" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -12,6 +12,8 @@ class BarCodeView: UIView, NibOwnerLoadable {
     @IBOutlet weak var barcodeImageView:UIImageView!
     
     @IBOutlet weak var codeLabel:UILabel!
+    
+    @IBOutlet weak var titleLabel:UILabel!
 
     var code = ""
     {
@@ -35,6 +37,14 @@ class BarCodeView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    func setTitle(){
+        if CurrentUserInfo.shared.isGuest {
+            titleLabel.text = "訪客模式"
+        }else {
+            titleLabel.text = "會員條碼"
+        }
     }
 
 }

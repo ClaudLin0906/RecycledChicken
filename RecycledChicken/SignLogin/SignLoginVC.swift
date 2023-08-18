@@ -43,18 +43,32 @@ class SignLoginVC: CustomLoginVC {
     
     @IBAction func SignUpBtnAction(_ sender:UIButton) {
         self.dismiss(animated: false) {
-            if let VC = UIStoryboard(name: "Sign", bundle: nil).instantiateViewController(withIdentifier: "Sign") as? SignVC, let topVC = getTopController() {
-                VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: true)
-            }
+            goToSignVC()
         }
     }
     
-    @IBAction func forgetPasswordBtnAction(_ sender:UIButton) {
-        self.dismiss(animated: false) {
-            if let VC = UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateViewController(withIdentifier: "ForgetPassword") as? ForgetPasswordVC, let topVC = getTopController() {
-                VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: true)
+    private func loginSuccess(){
+        DispatchQueue.main.async { [self] in
+            LoginSuccess = true
+            dismiss(animated: true)
+        }
+    }
+    
+    @IBAction func guestBtnAction(_ sender:UIButton) {
+        let loginInfo = AccountInfo(userPhoneNumber: GuestInfo.shared.guestAccount, userPassword: GuestInfo.shared.guestPassword)
+        let loginInfoDic = try? loginInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: nil, alertAction: nil)
+                return
+            }
+            if let data = data {
+                let json = NetworkManager.shared.dataToDictionary(data: data)
+                if let token = json["token"] as? String {
+                    CommonKey.shared.authToken = ""
+                    CommonKey.shared.authToken = token
+                    self.loginSuccess()
+                }
             }
         }
     }

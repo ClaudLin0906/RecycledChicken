@@ -70,7 +70,9 @@ struct LevelObject{
 }
 
 class CurrentUserInfo{
+    
     static let shared = CurrentUserInfo()
+    
     var currentAccountInfo:AccountInfo = {
         if let jsonData = KeychainService.shared.loadJsonDataFromKeychain(account: KeyChainKey.shared.accountInfo), let accountInfo = try? JSONDecoder().decode(AccountInfo.self, from: jsonData) {
             return accountInfo
@@ -79,7 +81,29 @@ class CurrentUserInfo{
         }
         
     }()
+    
     var currentProfileInfo:ProfileInfo?
+    {
+        willSet{
+            if let newValue = newValue, newValue.userPhoneNumber == "0000000000" {
+                isGuest = true
+            }else{
+                isGuest = false
+            }
+        }
+    }
+    
+    var isGuest = false
+}
+
+class GuestInfo {
+    
+    static let shared = GuestInfo()
+    
+    var guestAccount = "0000000000"
+    
+    var guestPassword = "0000000000"
+    
 }
 
 struct APIUrl {
@@ -136,6 +160,8 @@ protocol NibOwnerLoadable: AnyObject {
 func loginOutRemoveObject(){
     CurrentUserInfo.shared.currentProfileInfo = nil
     CommonKey.shared.authToken = ""
+    LoginSuccess = false
+    FirstTime = true
     removeBiometricsAction()
 }
 
@@ -579,7 +605,7 @@ func pushVC(targetVC:UIViewController, navigation:UINavigationController) {
     }
 }
 
-func showAlert(VC:UIViewController, title:String? ,message:String?, alertAction:UIAlertAction?) {
+func showAlert(VC:UIViewController, title:String? ,message:String?, alertAction:UIAlertAction?, cancelAction:UIAlertAction? = nil) {
     DispatchQueue.main.async {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if let alertAction = alertAction {
@@ -587,7 +613,17 @@ func showAlert(VC:UIViewController, title:String? ,message:String?, alertAction:
         }else{
             alertVC.addAction(UIAlertAction(title: "確定", style: .default))
         }
+        if let cancelAction = cancelAction {
+            alertVC.addAction(cancelAction)
+        }
         VC.present(alertVC, animated: false)
+    }
+}
+
+func goToSignVC(){
+    if let VC = UIStoryboard(name: "Sign", bundle: nil).instantiateViewController(withIdentifier: "Sign") as? SignVC, let topVC = getTopController() {
+        VC.modalPresentationStyle = .fullScreen
+        topVC.present(VC, animated: true)
     }
 }
 

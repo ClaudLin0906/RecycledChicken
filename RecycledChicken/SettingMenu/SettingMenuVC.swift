@@ -11,7 +11,9 @@ class SettingMenuVC: CustomVC {
     
     @IBOutlet weak var tableView:UITableView!
     
-    let settingMenuInfoArr:[settingMenuInfo] =
+    private var settingMenuInfoArr:[settingMenuInfo] = []
+    
+    private let defaultSettingMenuInfoArr:[settingMenuInfo] =
     [
         settingMenuInfo(icon: UIImage(named: "组 431")!, title: "系統設定", rightImage: UIImage(named: "273")!),
         settingMenuInfo(icon: UIImage(named: "组 430")!, title: "常見問題說明", rightImage: UIImage(named: "273")!),
@@ -20,10 +22,19 @@ class SettingMenuVC: CustomVC {
         settingMenuInfo(icon: UIImage(named: "组 423")!, title: "登出", rightImage: nil)
     ]
     
+    private let guestSettingMenuInfoArr:[settingMenuInfo] =
+    [
+        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "登出", rightImage: nil)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "會員資料與系統設定"
+        if CurrentUserInfo.shared.isGuest {
+            settingMenuInfoArr.append(contentsOf: guestSettingMenuInfoArr)
+        }else{
+            settingMenuInfoArr.append(contentsOf: defaultSettingMenuInfoArr)
+        }
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -37,17 +48,28 @@ class SettingMenuVC: CustomVC {
         setDefaultNavigationBackBtn2()
     }
     
+    private func logOutAction(){
+        let logOutView = LogOutView(frame: UIScreen.main.bounds)
+        logOutView.superVC = self
+        addViewFullScreen(v: logOutView)
+    }
+    
 }
 
 extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let row = indexPath.row
         
         switch row {
         case 0:
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "SystemSetting", bundle: Bundle.main).instantiateViewController(identifier: "SystemSetting") as? SystemSettingVC {
-                pushVC(targetVC: VC, navigation: navigationController)
+            if CurrentUserInfo.shared.isGuest {
+                logOutAction()
+            }else{
+                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "SystemSetting", bundle: Bundle.main).instantiateViewController(identifier: "SystemSetting") as? SystemSettingVC {
+                    pushVC(targetVC: VC, navigation: navigationController)
+                }
             }
         case 1:
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CommonPronblem", bundle: Bundle.main).instantiateViewController(identifier: "CommonPronblem") as? CommonPronblemVC {
@@ -62,16 +84,9 @@ extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 4:
-            let logOutView = LogOutView(frame: UIScreen.main.bounds)
-            logOutView.superVC = self
-            addViewFullScreen(v: logOutView)
+            logOutAction()
         default:
             break
-        }
-
-        
-        if row == 4 {
-
         }
     }
     

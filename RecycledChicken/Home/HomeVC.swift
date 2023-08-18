@@ -40,8 +40,11 @@ class HomeVC: CustomRootVC {
                 if let image = self.getTrendChart() {
                     self.trendChartImageView.image = image
                 }
+                
+                self.barcodeView.code = CurrentUserInfo.shared.currentProfileInfo?.userPhoneNumber ?? "0912345678"
+                self.barcodeView.setTitle()
             }
-            
+
             Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
               print("Subscribed to \(CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) topic")
             }
@@ -83,8 +86,7 @@ class HomeVC: CustomRootVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        currentDateLabel.text = getDates(i: 0, currentDate: Date()).0
-        barcodeView.code = CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber
+        
         if FirstTime && LoginSuccess {
 //            let adView = ADView(frame: UIScreen.main.bounds)
             let adView = ADView(frame: UIScreen.main.bounds, type: .isHome)
@@ -92,6 +94,8 @@ class HomeVC: CustomRootVC {
             FirstTime = false
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
+        
+        currentDateLabel.text = getDates(i: 0, currentDate: Date()).0
         updateCurrentDateInfo()
     }
     
@@ -101,7 +105,7 @@ class HomeVC: CustomRootVC {
     }
     
     private func getChoseDateRecycleAmount(){
-        guard CommonKey.shared.authToken != "" else { return }
+        guard CommonKey.shared.authToken != "", CurrentUserInfo.shared.isGuest == false else { return }
         let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(CustomCalenderModel.shared.selectedDate)T00:00:00.000+08:00&endTime=\(CustomCalenderModel.shared.selectedDate)T23:59:59.999+08:00"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             var batteryInt = 0
@@ -131,10 +135,25 @@ class HomeVC: CustomRootVC {
         getChoseDateRecycleAmount()
     }
     
+    private func signAlert(){
+        let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
+            loginOutRemoveObject()
+            goToSignVC()
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        showAlert(VC: self, title: "請先註冊為會員，加入泥滑島修復計畫！", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+    }
+    
     @IBAction func goToCarbonReductionLog(_ sender:UIButton) {
+        guard CurrentUserInfo.shared.isGuest == false else {
+            signAlert()
+            return
+        }
+        
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CarbonReductionLog", bundle: Bundle.main).instantiateViewController(identifier: "CarbonReductionLog") as? CarbonReductionLogVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
+        
     }
     
     @IBAction func goToProfile(_ sender:UIButton) {
@@ -144,9 +163,15 @@ class HomeVC: CustomRootVC {
     }
     
     @IBAction func goToPersonMessage(_ sender:UIButton) {
+        guard CurrentUserInfo.shared.isGuest == false else {
+            signAlert()
+            return
+        }
+        
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PersonMessage", bundle: Bundle.main).instantiateViewController(identifier: "PersonMessage") as? PersonMessageVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
+        
     }
     
     @IBAction func goToSettingMenu(_ sender:UIButton) {
