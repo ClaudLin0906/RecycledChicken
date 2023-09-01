@@ -35,7 +35,7 @@ class PointVC: CustomRootVC {
             goToSignVC()
         }
         let cancelAction = UIAlertAction(title: "取消", style: .cancel)
-        showAlert(VC: self, title: "加入修復計畫，即可獲得來自尼滑倒贈與的金幣！", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+        showAlert(VC: self, title: "加入修復計畫，即可獲得來自泥滑島贈與的金幣！", message: nil, alertAction: alertAction, cancelAction: cancelAction)
     }
     
     override func viewWillAppear(_ animated: Bool) {

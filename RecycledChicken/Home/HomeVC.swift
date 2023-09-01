@@ -46,7 +46,6 @@ class HomeVC: CustomRootVC {
             }
 
             Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
-              print("Subscribed to \(CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) topic")
             }
             
         })
