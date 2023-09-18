@@ -1,7 +1,7 @@
 import UIKit
 import ARKit
 import SceneKit
-import LiGScannerKit
+//import LiGScannerKit
 
 class ARViewController: CustomVC, ARSCNViewDelegate, ARSessionDelegate {
     
@@ -42,7 +42,7 @@ class ARViewController: CustomVC, ARSCNViewDelegate, ARSessionDelegate {
     }
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        LiGScanner.sharedInstance().calibration(frame.camera)
+//        LiGScanner.sharedInstance().calibration(frame.camera)
     }
     
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {

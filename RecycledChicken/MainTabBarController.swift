@@ -14,7 +14,7 @@ class MainTabBarController: UITabBarController {
         "點數",
         "門市",
         "首頁",
-        "AR",
+//        "AR",
         "任務"
     ]
     
@@ -23,7 +23,7 @@ class MainTabBarController: UITabBarController {
         UIImage(named: "グループ 76"),
         UIImage(named: "グループ 77"),
         UIImage(named: "组 226"),
-        UIImage(named: "グループ 82"),
+//        UIImage(named: "グループ 82"),
         UIImage(named: "グループ 86")
     ]
     
@@ -32,7 +32,7 @@ class MainTabBarController: UITabBarController {
         UIImage(named: "fav-o"),
         UIImage(named: "location-o"),
         UIImage(named: "home"),
-        UIImage(named: "scan-o"),
+//        UIImage(named: "scan-o"),
         UIImage(named: "orderCopy")
     ]
 

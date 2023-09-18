@@ -128,8 +128,10 @@ class HomeVC: CustomRootVC {
     }
     
     func updateCurrentDateInfo(){
-        if let username = CurrentUserInfo.shared.currentProfileInfo?.userName , username != ""{
+        if let username = CurrentUserInfo.shared.currentProfileInfo?.userName , username != "" {
             welcomeLabel.text = "Good morning, \(username)"
+        }else{
+            welcomeLabel.text = "Good morning"
         }
         getChoseDateRecycleAmount()
     }

@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import LiGScannerKit
+//import LiGScannerKit
 class ARVC: CustomRootVC {
     
     @IBOutlet weak var cameraImageView:UIImageView!
     
-    let scanner = LiGScanner.sharedInstance()
+//    let scanner = LiGScanner.sharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,14 +55,14 @@ class ARVC: CustomRootVC {
     
     private func startScan() {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.scanner.stop()
-            self.scanner.start()
+//            self.scanner.stop()
+//            self.scanner.start()
         }
     }
     
     private func stopScan() {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.scanner.stop()
+//            self.scanner.stop()
         }
         
     }

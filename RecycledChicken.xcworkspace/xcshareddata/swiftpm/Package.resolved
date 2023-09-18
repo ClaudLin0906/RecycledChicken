@@ -64,15 +64,6 @@
       }
     },
     {
-      "identity" : "ios-scanner-sdk-sample",
-      "kind" : "remoteSourceControl",
-      "location" : "https://gitlab.com/lig-corp/ios-scanner-sdk-sample",
-      "state" : {
-        "branch" : "master",
-        "revision" : "bd94c797277e6864e07c65e5ad8e46f5e9a7097e"
-      }
-    },
-    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",

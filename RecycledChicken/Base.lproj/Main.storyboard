@@ -73,7 +73,6 @@
                         <segue destination="Hmf-vh-5UU" kind="relationship" relationship="viewControllers" id="yaf-O8-bkY"/>
                         <segue destination="xX7-of-Mtb" kind="relationship" relationship="viewControllers" id="cIt-53-Fzd"/>
                         <segue destination="VPd-Ph-cNJ" kind="relationship" relationship="viewControllers" id="dMq-6e-wmK"/>
-                        <segue destination="Nta-ZE-xfT" kind="relationship" relationship="viewControllers" id="gbI-pX-obZ"/>
                         <segue destination="QcV-LU-UXz" kind="relationship" relationship="viewControllers" id="RBP-6Y-bcP"/>
                     </connections>
                 </tabBarController>
@@ -115,7 +114,7 @@
         <scene sceneID="vV7-ro-uOm">
             <objects>
                 <viewControllerPlaceholder storyboardName="Task" id="QcV-LU-UXz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9Cq-dr-jcM"/>
+                    <tabBarItem key="tabBarItem" title="任務" id="9Cq-dr-jcM"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJf-Ir-Pke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,7 +8,7 @@
 import UIKit
 import GoogleMaps
 import UserNotifications
-import LiGScannerKit
+//import LiGScannerKit
 import FirebaseCore
 import FirebaseMessaging
 //https://gitlab.com/lig-corp/ios-scanner-sdk-sample
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         application.registerForRemoteNotifications()
         Messaging.messaging().delegate = self
-        LiGScanner.sharedInstance().initialize(CommonKey.shared.ARKey)
+//        LiGScanner.sharedInstance().initialize(CommonKey.shared.ARKey)
         return true
     }
 
