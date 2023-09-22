@@ -74,11 +74,14 @@ class VerificationCodeVC: CustomLoginVC {
         let signUpInfoDic = try? signUpInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.register, parameters: signUpInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG)
                 return
             }
             DispatchQueue.main.async {
-                self.goToLoginVC()
+                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
+                    self.goToLoginVC()
+                }
+                showAlert(VC: self, title: "註冊成功, 請重新登入", alertAction: alertAction)
             }
         }
     }
@@ -117,7 +120,7 @@ class VerificationCodeVC: CustomLoginVC {
         }
     }
     
-    private func goToLoginVC(){
+    func goToLoginVC(){
         self.dismiss(animated: false) {
             if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
                 VC.modalPresentationStyle = .fullScreen
