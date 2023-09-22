@@ -605,7 +605,7 @@ func pushVC(targetVC:UIViewController, navigation:UINavigationController) {
     }
 }
 
-func showAlert(VC:UIViewController, title:String? ,message:String? = nil, alertAction:UIAlertAction? = nil, cancelAction:UIAlertAction? = nil) {
+func showAlert(VC:UIViewController, title:String?, message:String? = nil, alertAction:UIAlertAction? = nil, cancelAction:UIAlertAction? = nil) {
     DispatchQueue.main.async {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if let alertAction = alertAction {
