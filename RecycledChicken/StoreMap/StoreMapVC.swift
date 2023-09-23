@@ -19,6 +19,8 @@ class StoreMapVC: CustomRootVC {
     @IBOutlet weak var iconView3:IconView!
     
     @IBOutlet weak var amountView:AmountView!
+    
+    @IBOutlet weak var searchTextField:UITextField!
         
     private var observation: NSKeyValueObservation?
     
@@ -122,6 +124,16 @@ class StoreMapVC: CustomRootVC {
         iconView3.icon.backgroundColor = #colorLiteral(red: 0.9574549794, green: 0.5093209743, blue: 0.3308191895, alpha: 1)
         iconView3.title.text = "滿位"
         
+        
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        imageView.image = UIImage(named: "组 182")
+        imageView.center = leftView.center
+        imageView.contentMode = .scaleAspectFit
+        leftView.addSubview(imageView)
+        searchTextField.leftViewMode = .always
+        searchTextField.leftView = leftView
+        searchTextField.clearButtonMode = .always
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {
