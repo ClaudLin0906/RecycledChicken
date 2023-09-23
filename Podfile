@@ -13,6 +13,4 @@ target 'RecycledChicken' do
   pod 'GooglePlaces'
   pod 'MKRingProgressView'
   pod 'Alamofire'
-  
-
 end

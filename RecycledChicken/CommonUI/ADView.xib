@@ -8,9 +8,16 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ADView" customModule="RecycledChicken" customModuleProvider="target">
             <connections>
+                <outlet property="closeBtn" destination="fbj-S9-6yk" id="A3h-K5-LBi"/>
+                <outlet property="countdownLabel" destination="Fb6-Zx-DS8" id="Wjs-Nj-L9h"/>
                 <outlet property="webView" destination="4a7-cl-2Vu" id="6rh-JK-zkF"/>
             </connections>
         </placeholder>
@@ -33,7 +40,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </wkWebView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-S9-6yk">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-S9-6yk">
                     <rect key="frame" x="338" y="79" width="35" height="35"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -49,15 +56,25 @@
                         <action selector="cancel:" destination="-1" eventType="touchUpInside" id="iWP-CL-nCK"/>
                     </connections>
                 </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb6-Zx-DS8">
+                    <rect key="frame" x="338" y="79" width="35" height="35"/>
+                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="14"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.80398446787958555" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="4a7-cl-2Vu" firstAttribute="trailing" secondItem="fbj-S9-6yk" secondAttribute="trailing" id="0Tt-LO-KQm"/>
+                <constraint firstItem="Fb6-Zx-DS8" firstAttribute="bottom" secondItem="fbj-S9-6yk" secondAttribute="bottom" id="6yP-mR-NXv"/>
                 <constraint firstItem="4a7-cl-2Vu" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="77q-yl-v8Z"/>
+                <constraint firstItem="Fb6-Zx-DS8" firstAttribute="trailing" secondItem="fbj-S9-6yk" secondAttribute="trailing" id="7lD-2N-GJc"/>
                 <constraint firstItem="fbj-S9-6yk" firstAttribute="top" secondItem="4a7-cl-2Vu" secondAttribute="top" id="EsM-Iv-SCo"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4a7-cl-2Vu" secondAttribute="trailing" constant="20" id="JzI-CL-f7K"/>
                 <constraint firstItem="4a7-cl-2Vu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Z8m-kr-LiK"/>
+                <constraint firstItem="Fb6-Zx-DS8" firstAttribute="top" secondItem="fbj-S9-6yk" secondAttribute="top" id="bjV-In-fF9"/>
+                <constraint firstItem="Fb6-Zx-DS8" firstAttribute="leading" secondItem="fbj-S9-6yk" secondAttribute="leading" id="e0d-od-Pwh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4a7-cl-2Vu" secondAttribute="bottom" constant="20" id="e8s-sw-BYJ"/>
                 <constraint firstItem="4a7-cl-2Vu" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="uKJ-l8-Dyq"/>
                 <constraint firstItem="4a7-cl-2Vu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="z4I-mP-RgU"/>

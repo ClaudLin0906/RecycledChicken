@@ -15,7 +15,7 @@ class LotteryVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "抽獎專區"
+        title = "活動/抽獎專區"
         UIInit()
         getData()
         // Do any additional setup after loading the view.

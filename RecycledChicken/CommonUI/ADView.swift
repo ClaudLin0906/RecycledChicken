@@ -12,7 +12,13 @@ class ADView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var countdownLabel:UILabel!
+    
+    @IBOutlet weak var closeBtn:UIButton!
+    
     var cell:TaskTableViewADCell?
+    
+    var type:ADType = .isHome
     
     var taskInfo:TaskInfo?
     {
@@ -28,14 +34,16 @@ class ADView: UIView, NibOwnerLoadable {
         }
     }
     
-    var timer:Timer?
+    private var timer:Timer?
+    
+    private var remainingSeconds: Int = 30
+    
+    private var countdownTimer: Timer?
     
     enum ADType{
         case isHome
         case isTask
     }
-    
-    var type:ADType = .isHome
     
     init(frame: CGRect, type:ADType) {
         super.init(frame: frame)
@@ -67,18 +75,17 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func taskAction(){
-        if let urlStr = taskInfo?.url, let url = URL(string: urlStr){
+        if let urlStr = taskInfo?.url, let url = URL(string: urlStr) {
             let request = URLRequest(url: url)
             webviewLoadAction(request)
+            countdownLabel.isHidden = false
         }
     }
     
-    private func webviewLoadAction(_ request:URLRequest){
+    private func webviewLoadAction(_ request:URLRequest) {
+        
         DispatchQueue.main.async { [self] in
             webView.load(request)
-        }
-        timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { timer in
-            self.isFinishAction()
         }
     }
     
@@ -98,8 +105,43 @@ class ADView: UIView, NibOwnerLoadable {
         webView.isOpaque = false
         webView.backgroundColor = .clear
         webView.scrollView.backgroundColor = .clear
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
         if type == .isHome {
             HomeAction()
+        }
+    }
+}
+
+
+extension ADView: WKUIDelegate {
+    
+}
+
+extension ADView: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        switch type {
+        case .isHome:
+            closeBtn.isHidden = false
+        case .isTask:
+            countdownLabel.isHidden = false
+            countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] timer in
+                
+                countdownLabel.text = "\(remainingSeconds)"
+                remainingSeconds -= 1
+                
+                if remainingSeconds == 0 {
+                    countdownTimer?.invalidate()
+                    countdownTimer = nil
+                    countdownLabel.isHidden = true
+                    closeBtn.isHidden = false
+                }
+            })
+            
+            timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { timer in
+                self.isFinishAction()
+            }
         }
     }
 }
