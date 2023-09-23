@@ -34,7 +34,7 @@ class StoreMapVC: CustomRootVC {
     }
     
     private var mapInfos:[MapInfo] = []
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -57,7 +57,7 @@ class StoreMapVC: CustomRootVC {
             
             if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
                 self.mapInfos = mapInfos
-                self.addMarker()
+                self.addMarker(mapInfos)
             }
         }
     }
@@ -66,14 +66,12 @@ class StoreMapVC: CustomRootVC {
         locationManager.stopUpdatingLocation()
     }
     
-    private func addMarker(){
-        guard mapInfos.count > 0 else { return }
+    private func addMarker(_ infos:[MapInfo]) {
         DispatchQueue.main.async { [self] in
             mapView?.clear()
-            for mapInfo in mapInfos {
+            for mapInfo in infos {
                 let maker = GMSMarker()
-                let coordinateArr = try? mapInfo.coordinate.components(separatedBy: ", ")
-                if let coordinateArr = coordinateArr, coordinateArr.count == 2{
+                if let coordinateArr = try? mapInfo.coordinate.components(separatedBy: ", "), coordinateArr.count == 2 {
                     if let latitude = Double(coordinateArr[0]), let longitude = Double(coordinateArr[1]) {
                         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                         maker.position = coordinate
@@ -134,11 +132,23 @@ class StoreMapVC: CustomRootVC {
         searchTextField.leftViewMode = .always
         searchTextField.leftView = leftView
         searchTextField.clearButtonMode = .always
+        searchTextField.addTarget( self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "StoreList", bundle: Bundle.main).instantiateViewController(identifier: "StoreList") as? StoreListVC {
             pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text {
+            if text.trimmingCharacters(in: .whitespaces) != "" {
+                let containMapInfos = mapInfos.filter({$0.storeName.contains(text) || $0.storeAddress.contains(text)})
+                addMarker(containMapInfos)
+            }else{
+                addMarker(mapInfos)
+            }
         }
     }
     
