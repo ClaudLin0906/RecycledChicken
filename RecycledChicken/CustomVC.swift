@@ -58,7 +58,6 @@ class CustomVC: UIViewController {
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
         view.endEditing(true)
     }
-    
 
 }
 

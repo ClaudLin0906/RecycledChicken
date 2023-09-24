@@ -191,13 +191,13 @@
     </scenes>
     <designables>
         <designable name="Wdg-o3-XW1">
-            <size key="intrinsicContentSize" width="73" height="20"/>
+            <size key="intrinsicContentSize" width="72.666666666666671" height="24"/>
         </designable>
         <designable name="ZEl-gS-LnA">
-            <size key="intrinsicContentSize" width="30" height="29"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="fyj-Mw-dme">
-            <size key="intrinsicContentSize" width="220" height="13"/>
+            <size key="intrinsicContentSize" width="220" height="15.666666666666666"/>
         </designable>
     </designables>
     <resources>
