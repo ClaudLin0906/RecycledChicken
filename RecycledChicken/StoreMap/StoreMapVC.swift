@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+
 class StoreMapVC: CustomRootVC {
 
     @IBOutlet weak var mapView:GMSMapView!
@@ -33,7 +34,9 @@ class StoreMapVC: CustomRootVC {
       }
     }
     
-    private var mapInfos:[MapInfo] = []
+    private var mapInfosData:[MapInfo] = []
+    
+    private var currentMapInfos:[MapInfo] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +59,9 @@ class StoreMapVC: CustomRootVC {
             }
             
             if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                self.mapInfos = mapInfos
-                self.addMarker(mapInfos)
+                self.mapInfosData = mapInfos
+                self.currentMapInfos = self.mapInfosData
+                self.addMarker(self.currentMapInfos)
             }
         }
     }
@@ -144,10 +148,12 @@ class StoreMapVC: CustomRootVC {
     @objc private func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             if text.trimmingCharacters(in: .whitespaces) != "" {
-                let containMapInfos = mapInfos.filter({$0.storeName.contains(text) || $0.storeAddress.contains(text)})
-                addMarker(containMapInfos)
+                currentMapInfos.removeAll()
+                currentMapInfos = mapInfosData.filter({$0.storeName.contains(text) || $0.storeAddress.contains(text)})
+                addMarker(currentMapInfos)
             }else{
-                addMarker(mapInfos)
+                currentMapInfos = mapInfosData
+                addMarker(currentMapInfos)
             }
         }
     }
@@ -158,7 +164,7 @@ class StoreMapVC: CustomRootVC {
 extension StoreMapVC: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        let mapInfoArr = mapInfos.filter { mapInfo in
+        let mapInfoArr = currentMapInfos.filter { mapInfo in
             if let title = marker.title {
                 if title == mapInfo.storeName {
                     return true
