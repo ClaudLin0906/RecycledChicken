@@ -76,7 +76,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKR-pS-7to" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="34" width="198.66666666666663" height="13.666666666666664"/>
+                                                            <rect key="frame" x="126.99999999999999" y="34" width="198.66666666666663" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="r8Z-B3-ACQ"/>
                                                             </constraints>
@@ -85,21 +85,18 @@
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="11"/>
+                                                                    <real key="value" value="14"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duringTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gte-w0-KtV" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="47.666666666666671" width="198.66666666666663" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="ttQ-BG-83s"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="126.99999999999999" y="74" width="198.66666666666663" height="6.6666666666666714"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="2"/>
                                                             <color key="textColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="9"/>
+                                                                    <real key="value" value="11"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
                                                                     <real key="value" value="0.0"/>
@@ -107,13 +104,13 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drawTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-lZ-LzW" userLabel="drawTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="67.666666666666657" width="198.66666666666663" height="20"/>
+                                                            <rect key="frame" x="126.99999999999999" y="80.666666666666657" width="198.66666666666663" height="7"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="7"/>
                                                             <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="9"/>
+                                                                    <real key="value" value="11"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
                                                                     <real key="value" value="0.0"/>

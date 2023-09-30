@@ -142,6 +142,8 @@ extension ADView: WKNavigationDelegate {
             timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { timer in
                 self.isFinishAction()
             }
+            RunLoop.main.add(countdownTimer!, forMode: .common)
+            RunLoop.main.add(timer!, forMode: .common)
         }
     }
 }

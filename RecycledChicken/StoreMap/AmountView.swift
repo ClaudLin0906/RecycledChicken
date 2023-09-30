@@ -20,8 +20,8 @@ class AmountView: UIView, NibOwnerLoadable {
             if let newValue = newValue {
                 self.isHidden = false
                 storeName.text = newValue.storeName
-                bottleCount.text = "還可以投:\(newValue.remainingProcessable.bottle)瓶"
-                batteryCount.text = "還可以投:\(newValue.remainingProcessable.battery)顆"
+                bottleCount.text = "還可以投:\(newValue.remainingProcessable.bottle ?? 0)瓶"
+                batteryCount.text = "還可以投:\(newValue.remainingProcessable.battery ?? 0)顆"
             }else{
                 self.isHidden = true
             }

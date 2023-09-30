@@ -18,8 +18,8 @@ struct MapInfo: Decodable {
     var coordinate:String
 }
 
-struct remainingProcessableInfo: Decodable{
-    var bottle:Int
-    var battery:Int
+struct remainingProcessableInfo: Decodable {
+    var bottle:Int?
+    var battery:Int?
 }
 
