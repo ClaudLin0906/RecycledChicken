@@ -35,7 +35,7 @@ class StoreListVC: CustomVC {
             }
             
             if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                self.mapInfos = mapInfos.filter({$0.isVisible})
+                self.mapInfos = mapInfos
                 DispatchQueue.main.async {
                     self.storeListTableView.reloadData()
                 }

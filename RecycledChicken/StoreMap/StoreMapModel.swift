@@ -8,7 +8,7 @@
 import Foundation
 
 struct MapInfo: Decodable {
-    var isVisible:Bool
+    var isVisible:Bool?
     var storeName:String
     var storeID:String
     var cellPath:String

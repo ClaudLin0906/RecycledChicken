@@ -32,7 +32,15 @@ class LotteryVC: CustomVC {
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.lotteryInfos = try! JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
+                    self.lotteryInfos = data.filter({ lotteryInfo in
+                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime) {
+                            let dateInterval = DateInterval(start: startDate, end: endDate)
+                            return dateInterval.contains(Date())
+                        }
+                        return false
+                    })
+                }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="街道/門市查詢" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8po-G9-5dk">
-                                <rect key="frame" x="76.666666666666686" y="123" width="240" height="30"/>
+                                <rect key="frame" x="76.666666666666686" y="103" width="240" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9M3-hv-L71"/>
@@ -44,7 +44,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypg-LA-9xT" customClass="GMSMapView">
-                                <rect key="frame" x="20" y="173.00000000000003" width="353" height="500.66666666666674"/>
+                                <rect key="frame" x="20" y="153.00000000000003" width="353" height="500.66666666666674"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -53,7 +53,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPh-12-JyV" customClass="AmountView" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="121.66666666666669" y="563.66666666666663" width="150" height="100"/>
+                                <rect key="frame" x="121.66666666666669" y="543.66666666666663" width="150" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="IlE-gd-ROe"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點擊地圖上的碳竹雞可顯示機台剩餘回收數量" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyj-Mw-dme" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="30" y="683.66666666666663" width="333" height="15.666666666666629"/>
+                                <rect key="frame" x="30" y="663.66666666666663" width="333" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="機台狀態:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdg-o3-XW1" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="40" y="683.66666666666663" width="80" height="24"/>
+                                <rect key="frame" x="40" y="663.66666666666663" width="80" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="1Oh-vE-JBh"/>
                                 </constraints>
@@ -81,21 +81,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1Y-zB-G7H" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="130" y="683.66666666666663" width="70" height="24"/>
+                                <rect key="frame" x="130" y="663.66666666666663" width="70" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="jsc-Vw-tVd"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-Bx-YB1" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="210" y="683.66666666666663" width="60" height="24"/>
+                                <rect key="frame" x="210" y="663.66666666666663" width="60" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="7xZ-G4-UHv"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HI4-yQ-gxt" customClass="IconView" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="280" y="683.66666666666663" width="70" height="24"/>
+                                <rect key="frame" x="280" y="663.66666666666663" width="70" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="3V1-UV-u1b"/>
@@ -147,7 +147,7 @@
                             <constraint firstItem="z1Y-zB-G7H" firstAttribute="centerY" secondItem="Wdg-o3-XW1" secondAttribute="centerY" id="fUt-yA-ShR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZEl-gS-LnA" secondAttribute="bottom" constant="30" id="gbX-q8-RPf"/>
                             <constraint firstItem="fyj-Mw-dme" firstAttribute="top" secondItem="ypg-LA-9xT" secondAttribute="bottom" constant="10" id="kZs-cX-lcN"/>
-                            <constraint firstItem="8po-G9-5dk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="lpe-in-k2t"/>
+                            <constraint firstItem="8po-G9-5dk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="lpe-in-k2t"/>
                             <constraint firstItem="ZEl-gS-LnA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="okd-Le-nZC"/>
                             <constraint firstItem="Fca-21-ftc" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="pcE-Md-Aw2"/>
                             <constraint firstItem="5gF-Bx-YB1" firstAttribute="leading" secondItem="z1Y-zB-G7H" secondAttribute="trailing" constant="10" id="q2j-be-bWW"/>
