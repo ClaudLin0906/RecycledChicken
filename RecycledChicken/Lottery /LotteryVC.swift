@@ -34,7 +34,7 @@ class LotteryVC: CustomVC {
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
                     self.lotteryInfos = data.filter({ lotteryInfo in
-                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime) {
+                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
                             let dateInterval = DateInterval(start: startDate, end: endDate)
                             return dateInterval.contains(Date())
                         }
