@@ -1294,7 +1294,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
@@ -1357,7 +1357,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
@@ -1388,7 +1388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
@@ -1399,7 +1399,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
 				INFOPLIST_KEY_NSCameraUsageDescription = "請您提供相機權限，才能使用AR功能";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "請您提供生物辨識權限，方便之後做快速登入";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "請您提供定位權限，才能讓地圖上顯示跟炭竹雞的距離";
 				INFOPLIST_KEY_NSLocationUsageDescription = "請您提供定位權限，才能讓地圖上顯示跟炭竹雞的距離";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "請您提供定位權限，才能讓地圖上顯示跟炭竹雞的距離";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "your data will be used to deliver personalized ads to you\n";
@@ -1435,7 +1435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
@@ -1446,7 +1446,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
 				INFOPLIST_KEY_NSCameraUsageDescription = "請您提供相機權限，才能使用AR功能";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "請您提供生物辨識權限，方便之後做快速登入";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "請您提供定位權限，才能讓地圖上顯示跟炭竹雞的距離";
 				INFOPLIST_KEY_NSLocationUsageDescription = "請您提供定位權限，才能讓地圖上顯示跟炭竹雞的距離";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "請您提供定位權限，才能讓地圖上顯示跟炭竹雞的距離";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "your data will be used to deliver personalized ads to you\n";
