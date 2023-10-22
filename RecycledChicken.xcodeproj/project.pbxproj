@@ -33,6 +33,15 @@
 		5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF92A1364EE0005686F /* TaskProgressView.swift */; };
 		5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964AAFB2A1364F70005686F /* TaskProgressView.xib */; };
 		5964AAFE2A14769C0005686F /* LAContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAFD2A14769C0005686F /* LAContextManager.swift */; };
+		596CFF182AE5052A00635E32 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596CFF172AE5052900635E32 /* WidgetKit.framework */; };
+		596CFF1A2AE5052A00635E32 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596CFF192AE5052A00635E32 /* SwiftUI.framework */; };
+		596CFF1D2AE5052A00635E32 /* RecycledChickenWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596CFF1C2AE5052A00635E32 /* RecycledChickenWidgetBundle.swift */; };
+		596CFF1F2AE5052A00635E32 /* RecycledChickenWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596CFF1E2AE5052A00635E32 /* RecycledChickenWidgetLiveActivity.swift */; };
+		596CFF212AE5052A00635E32 /* RecycledChickenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596CFF202AE5052A00635E32 /* RecycledChickenWidget.swift */; };
+		596CFF242AE5052C00635E32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596CFF232AE5052C00635E32 /* Assets.xcassets */; };
+		596CFF262AE5052C00635E32 /* RecycledChickenWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 596CFF222AE5052A00635E32 /* RecycledChickenWidget.intentdefinition */; };
+		596CFF272AE5052C00635E32 /* RecycledChickenWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 596CFF222AE5052A00635E32 /* RecycledChickenWidget.intentdefinition */; };
+		596CFF2A2AE5052C00635E32 /* RecycledChickenWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 596CFF162AE5052900635E32 /* RecycledChickenWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521612A0B49D300D0B67C /* SettingMenuVC.swift */; };
 		597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */; };
 		5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */; };
@@ -199,6 +208,30 @@
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		596CFF282AE5052C00635E32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5926C5722A04086400FAB49D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 596CFF152AE5052900635E32;
+			remoteInfo = RecycledChickenWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		596CFF2B2AE5052D00635E32 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				596CFF2A2AE5052C00635E32 /* RecycledChickenWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycledChicken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0DC3033FBF88A70BF0BC1 /* Pods-RecycledChicken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.release.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.release.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +264,15 @@
 		5964AAF92A1364EE0005686F /* TaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressView.swift; sourceTree = "<group>"; };
 		5964AAFB2A1364F70005686F /* TaskProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskProgressView.xib; sourceTree = "<group>"; };
 		5964AAFD2A14769C0005686F /* LAContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LAContextManager.swift; sourceTree = "<group>"; };
+		596CFF162AE5052900635E32 /* RecycledChickenWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RecycledChickenWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		596CFF172AE5052900635E32 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		596CFF192AE5052A00635E32 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		596CFF1C2AE5052A00635E32 /* RecycledChickenWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledChickenWidgetBundle.swift; sourceTree = "<group>"; };
+		596CFF1E2AE5052A00635E32 /* RecycledChickenWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledChickenWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		596CFF202AE5052A00635E32 /* RecycledChickenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledChickenWidget.swift; sourceTree = "<group>"; };
+		596CFF222AE5052A00635E32 /* RecycledChickenWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = RecycledChickenWidget.intentdefinition; sourceTree = "<group>"; };
+		596CFF232AE5052C00635E32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		596CFF252AE5052C00635E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		597521612A0B49D300D0B67C /* SettingMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuVC.swift; sourceTree = "<group>"; };
 		597521632A0B4A0C00D0B67C /* SettingMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingMenu.storyboard; sourceTree = "<group>"; };
 		597521692A0B612C00D0B67C /* SettingMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -406,6 +448,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		596CFF132AE5052900635E32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596CFF1A2AE5052A00635E32 /* SwiftUI.framework in Frameworks */,
+				596CFF182AE5052A00635E32 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -422,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				5926C57C2A04086400FAB49D /* RecycledChicken */,
+				596CFF1B2AE5052A00635E32 /* RecycledChickenWidget */,
 				5926C57B2A04086400FAB49D /* Products */,
 				1BFBEAAC89F55B7215D2C4A1 /* Pods */,
 				7F42C919E152E0D5262491EE /* Frameworks */,
@@ -432,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				5926C57A2A04086400FAB49D /* RecycledChicken.app */,
+				596CFF162AE5052900635E32 /* RecycledChickenWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -556,6 +609,19 @@
 				593CDE672A83D22F007E1D10 /* cert.cer */,
 			);
 			path = Certificate;
+			sourceTree = "<group>";
+		};
+		596CFF1B2AE5052A00635E32 /* RecycledChickenWidget */ = {
+			isa = PBXGroup;
+			children = (
+				596CFF1C2AE5052A00635E32 /* RecycledChickenWidgetBundle.swift */,
+				596CFF1E2AE5052A00635E32 /* RecycledChickenWidgetLiveActivity.swift */,
+				596CFF202AE5052A00635E32 /* RecycledChickenWidget.swift */,
+				596CFF222AE5052A00635E32 /* RecycledChickenWidget.intentdefinition */,
+				596CFF232AE5052C00635E32 /* Assets.xcassets */,
+				596CFF252AE5052C00635E32 /* Info.plist */,
+			);
+			path = RecycledChickenWidget;
 			sourceTree = "<group>";
 		};
 		597521602A0B49A600D0B67C /* SettingMenu */ = {
@@ -908,6 +974,8 @@
 			isa = PBXGroup;
 			children = (
 				3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */,
+				596CFF172AE5052900635E32 /* WidgetKit.framework */,
+				596CFF192AE5052A00635E32 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -925,10 +993,12 @@
 				5926C5782A04086400FAB49D /* Resources */,
 				ECFBB85C82BD7F9B177D2078 /* [CP] Embed Pods Frameworks */,
 				73281FE8083D337B1066DC58 /* [CP] Copy Pods Resources */,
+				596CFF2B2AE5052D00635E32 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				596CFF292AE5052C00635E32 /* PBXTargetDependency */,
 			);
 			name = RecycledChicken;
 			packageProductDependencies = (
@@ -938,6 +1008,23 @@
 			productName = RecycledChicken;
 			productReference = 5926C57A2A04086400FAB49D /* RecycledChicken.app */;
 			productType = "com.apple.product-type.application";
+		};
+		596CFF152AE5052900635E32 /* RecycledChickenWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 596CFF2E2AE5052D00635E32 /* Build configuration list for PBXNativeTarget "RecycledChickenWidgetExtension" */;
+			buildPhases = (
+				596CFF122AE5052900635E32 /* Sources */,
+				596CFF132AE5052900635E32 /* Frameworks */,
+				596CFF142AE5052900635E32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecycledChickenWidgetExtension;
+			productName = RecycledChickenWidgetExtension;
+			productReference = 596CFF162AE5052900635E32 /* RecycledChickenWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -950,6 +1037,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					5926C5792A04086400FAB49D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					596CFF152AE5052900635E32 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -971,6 +1061,7 @@
 			projectRoot = "";
 			targets = (
 				5926C5792A04086400FAB49D /* RecycledChicken */,
+				596CFF152AE5052900635E32 /* RecycledChickenWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1054,6 +1145,14 @@
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
 				5994956D2A0BFC88009F1B2E /* SpendPointView.xib in Resources */,
 				59F6BE312A078DB300D7B3CB /* Sign.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596CFF142AE5052900635E32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596CFF242AE5052C00635E32 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1188,6 +1287,7 @@
 				5926C5A22A06364800FAB49D /* Common.swift in Sources */,
 				59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */,
 				59D20CE82A1E4FA600EF87B1 /* CustomCalenderScrollView.swift in Sources */,
+				596CFF272AE5052C00635E32 /* RecycledChickenWidget.intentdefinition in Sources */,
 				598F39462A0E068C00DA9186 /* StoreListVC.swift in Sources */,
 				5975216C2A0B648A00D0B67C /* SettingMenuModel.swift in Sources */,
 				597521792A0B84A200D0B67C /* SystemSettingModel.swift in Sources */,
@@ -1239,7 +1339,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		596CFF122AE5052900635E32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596CFF1D2AE5052A00635E32 /* RecycledChickenWidgetBundle.swift in Sources */,
+				596CFF212AE5052A00635E32 /* RecycledChickenWidget.swift in Sources */,
+				596CFF1F2AE5052A00635E32 /* RecycledChickenWidgetLiveActivity.swift in Sources */,
+				596CFF262AE5052C00635E32 /* RecycledChickenWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		596CFF292AE5052C00635E32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 596CFF152AE5052900635E32 /* RecycledChickenWidgetExtension */;
+			targetProxy = 596CFF282AE5052C00635E32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5926C5832A04086400FAB49D /* Main.storyboard */ = {
@@ -1385,6 +1504,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3875E129FF487C1791895B2 /* Pods-RecycledChicken.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
@@ -1432,6 +1552,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38F0DC3033FBF88A70BF0BC1 /* Pods-RecycledChicken.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
@@ -1475,6 +1596,64 @@
 			};
 			name = Release;
 		};
+		596CFF2C2AE5052D00635E32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85QZ2RDHW3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecycledChickenWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RecycledChickenWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge.RecycledChickenWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		596CFF2D2AE5052D00635E32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85QZ2RDHW3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RecycledChickenWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RecycledChickenWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge.RecycledChickenWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1492,6 +1671,15 @@
 			buildConfigurations = (
 				5926C58F2A04086600FAB49D /* Debug */,
 				5926C5902A04086600FAB49D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		596CFF2E2AE5052D00635E32 /* Build configuration list for PBXNativeTarget "RecycledChickenWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				596CFF2C2AE5052D00635E32 /* Debug */,
+				596CFF2D2AE5052D00635E32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
