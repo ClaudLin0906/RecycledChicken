@@ -41,11 +41,16 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct RecycledChickenWidgetEntryView : View {
+    
     var entry: Provider.Entry
    
     var body: some View {
-        HStack{
-            Image(systemName: "globe")
+        return GeometryReader { geometry in
+            HStack{
+                Image(systemName: "globe")
+                    .resizable()
+                    .frame(width: geometry.size.width * 0.4, height:  geometry.size.height * 0.8,alignment: .center)
+            } .frame(maxWidth:  geometry.size.width * 0.5, maxHeight: .infinity)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("backgroundColor"))
