@@ -124,7 +124,7 @@ extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
         let info = filterUseRecordInfos[indexPath.row]
-        cell.setCell(info: info)
+        cell.setCell(info)
         return cell
     }
     
