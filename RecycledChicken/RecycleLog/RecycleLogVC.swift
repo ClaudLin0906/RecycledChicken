@@ -10,15 +10,21 @@ import DropDown
 
 class RecycleLogVC: CustomVC {
     
+    private struct RecycleLogInfo {
+        var time:Date
+        var battery:Int = 0
+        var bottle:Int = 0
+    }
+    
     @IBOutlet weak var monthBtn:CommonImageButton!
     
     @IBOutlet weak var tableView:UITableView!
     
     private let amountDropDown = DropDown()
-    
-    private var useRecordInfos:[UseRecordInfo] = []
+        
+    private var recycleLogInfos:[RecycleLogInfo] = []
 
-    private var filterUseRecordInfos:[UseRecordInfo] = []
+    private var filterUseRecordInfos:[RecycleLogInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,13 +55,46 @@ class RecycleLogVC: CustomVC {
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                self.filterUseRecordInfos = self.useRecordInfos
+                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                self.useRecordInfoHandle(useRecordInfos)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             }
         }
+    }
+    
+    private func useRecordInfoHandle(_ data:[UseRecordInfo]) {
+        
+        var integratedDict: [Date: (battery: Int, bottle: Int)] = [:]
+        for datum in data {
+            if let date = dateFromString(datum.time){
+                let dayComponent = Calendar.current.startOfDay(for: date)
+                if var existingValues = integratedDict[dayComponent] {
+                    existingValues.battery += datum.battery ?? 0
+                    existingValues.bottle += datum.bottle ?? 0
+                    integratedDict[dayComponent] = existingValues
+                } else {
+                    integratedDict[dayComponent] = (battery: datum.battery ?? 0, bottle: datum.bottle ?? 0)
+                }
+            }
+        }
+        
+        for dateKey in integratedDict.keys {
+            if let info = integratedDict[dateKey] {
+                var recycleLogInfo = RecycleLogInfo(time: dateKey)
+                if info.battery > 0 {
+                    recycleLogInfo.battery = info.battery
+                    recycleLogInfos.append(recycleLogInfo)
+                }
+                if info.bottle > 0 {
+                    recycleLogInfo.bottle = info.bottle
+                    recycleLogInfos.append(recycleLogInfo)
+                }
+            }
+        }
+        filterUseRecordInfos = recycleLogInfos
+        
     }
     
     private func setupAmountDropDown() {
@@ -83,26 +122,18 @@ class RecycleLogVC: CustomVC {
         amountDropDown.selectionAction = { [self] (index, item) in
             monthBtn.setTitle(item)
             filterUseRecordInfos.removeAll()
-            filterUseRecordInfos = useRecordInfos.filter({ info in
+            filterUseRecordInfos = recycleLogInfos.filter({ info in
                 if index == 0 {
                     return true
                 }
-                return timeGetMon(dateStr: info.time) == index
+                return Calendar.current.component(.month, from: getDates(i: 0, currentDate: info.time).2) == index
             })
             tableView.reloadData()
         }
     }
     
-    
     @IBAction func changeAmount(_ sender: UIButton) {
         amountDropDown.show()
-    }
-    
-    private func timeGetMon(dateStr:String)->Int? {
-        if let date = dateFromString(dateStr){
-            return Calendar.current.component(.month, from: date)
-        }
-        return nil
     }
 
 }
@@ -124,7 +155,12 @@ extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
         let info = filterUseRecordInfos[indexPath.row]
-        cell.setCell(info)
+        if info.bottle > 0 {
+            cell.setCell(info.time, bottle: info.bottle, battery: nil)
+        }
+        if info.battery > 0 {
+            cell.setCell(info.time, bottle: nil, battery: info.battery)
+        }
         return cell
     }
     
