@@ -13,7 +13,7 @@ class CustomCalenderViewCell: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var dateLabel:UILabel!
         
-    var dateID:String?{
+    var dateID:String? {
         didSet{
             checkIsSelected()
         }

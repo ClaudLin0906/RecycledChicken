@@ -28,6 +28,7 @@ class HomeVC: CustomRootVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
+//        NotificationCenter.default.addObserver(self, selector: #selector(receiveCalenderCell(_:)), name: .calenderCellOnCilck, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,7 +106,16 @@ class HomeVC: CustomRootVC {
     
     private func getChoseDateRecycleAmount(){
         guard CommonKey.shared.authToken != "", CurrentUserInfo.shared.isGuest == false else { return }
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(CustomCalenderModel.shared.selectedDate)T00:00:00.000+08:00&endTime=\(CustomCalenderModel.shared.selectedDate)T23:59:59.999+08:00"
+        computeDate(CustomCalenderModel.shared.selectedDate, endTime: CustomCalenderModel.shared.selectedDate, completion: { batteryStr, bottleStr in
+            DispatchQueue.main.async {
+                self.batteryLabel.text = batteryStr
+                self.bottleLabel.text = bottleStr
+            }
+        })
+    }
+    
+    private func computeDate(_ startTime:String, endTime:String, completion: @escaping (String, String) -> Void){
+        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)T00:00:00.000%2B08:00&endTime=\(endTime)T23:59:59.999%2B08:00"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             var batteryInt = 0
             var bottleInt = 0
@@ -120,10 +130,7 @@ class HomeVC: CustomRootVC {
                     }
                 }
             }
-            DispatchQueue.main.async {
-                self.batteryLabel.text = String(batteryInt)
-                self.bottleLabel.text = String(bottleInt)
-            }
+            completion(String(batteryInt), String(bottleInt))
         }
     }
     

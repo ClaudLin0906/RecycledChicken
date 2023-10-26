@@ -37,7 +37,6 @@ class RecycleLogVC: CustomVC {
         tableView.setSeparatorLocation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +66,7 @@ class RecycleLogVC: CustomVC {
     private func useRecordInfoHandle(_ data:[UseRecordInfo]) {
         
         var integratedDict: [Date: (battery: Int, bottle: Int)] = [:]
+        
         for datum in data {
             if let date = dateFromString(datum.time){
                 let dayComponent = Calendar.current.startOfDay(for: date)
@@ -93,8 +93,8 @@ class RecycleLogVC: CustomVC {
                 }
             }
         }
-        filterUseRecordInfos = recycleLogInfos
         
+        filterUseRecordInfos = recycleLogInfos
     }
     
     private func setupAmountDropDown() {
