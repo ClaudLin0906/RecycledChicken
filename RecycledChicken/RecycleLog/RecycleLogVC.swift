@@ -93,7 +93,7 @@ class RecycleLogVC: CustomVC {
                 }
             }
         }
-        
+        recycleLogInfos.sort{$0.time < $1.time }
         filterUseRecordInfos = recycleLogInfos
     }
     
@@ -157,11 +157,14 @@ extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
         let info = filterUseRecordInfos[indexPath.row]
         if info.bottle > 0 {
             cell.setCell(info.time, bottle: info.bottle, battery: nil)
+            return cell
         }
         if info.battery > 0 {
             cell.setCell(info.time, bottle: nil, battery: info.battery)
+            return cell
         }
         return cell
+       
     }
     
 }

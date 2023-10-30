@@ -32,7 +32,6 @@ class RecycleLogTableViewCell: UITableViewCell {
     
     func setCell(_ date:Date, bottle:Int?, battery:Int?) {
         calendarLabel.text = getDates(i: 0, currentDate: date).0
-        
         if let bottle = bottle {
             recycledItemLabel.text = "寶特瓶(PET)"
             amountLabel.text = String(bottle)
