@@ -24,7 +24,7 @@ class LotteryVC: CustomVC {
     
     private func UIInit(){
         tableView.setSeparatorLocation()
-        tableView.showAnimatedSkeleton(usingColor: .lightGray, transition: .crossDissolve(0.25))
+        tableView.showAnimatedSkeleton()
     }
     
     private func getData(){

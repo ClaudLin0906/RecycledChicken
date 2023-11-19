@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class StoreListVC: CustomVC {
     
@@ -38,6 +39,10 @@ class StoreListVC: CustomVC {
                 self.mapInfos = mapInfos
                 DispatchQueue.main.async {
                     self.storeListTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.storeListTableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
+                    })
                 }
             }
         }
@@ -46,6 +51,7 @@ class StoreListVC: CustomVC {
     private func UIInit(){
         storeListTableView.setSeparatorLocation()
         searchView.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        storeListTableView.showAnimatedSkeleton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,10 +80,7 @@ class StoreListVC: CustomVC {
         }else{
             filtered = false
         }
-        
-        DispatchQueue.main.async {
-            self.storeListTableView.reloadData()
-        }
+
     }
     
     @objc private func textFieldDidChange(_ textfield:UITextField){
@@ -85,21 +88,37 @@ class StoreListVC: CustomVC {
             filterText(text)
         }
     }
+    
+    private func getTableViewCount() -> Int{
+        if !filterMapInfos.isEmpty {
+            return filterMapInfos.count
+        }
+        return  filtered ? 0 : mapInfos.count
+    }
 
 
 }
 
-extension StoreListVC:UITableViewDelegate, UITableViewDataSource {
+extension StoreListVC:UITableViewDelegate, SkeletonTableViewDataSource {
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        StoreListTableViewCell.identifier
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         40
     }
     
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        getTableViewCount()
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        nil
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !filterMapInfos.isEmpty {
-            return filterMapInfos.count
-        }
-        return  filtered ? 0 : mapInfos.count
+        getTableViewCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

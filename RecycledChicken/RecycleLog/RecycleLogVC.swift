@@ -7,7 +7,7 @@
 
 import UIKit
 import DropDown
-
+import SkeletonView
 class RecycleLogVC: CustomVC {
     
     private struct RecycleLogInfo {
@@ -35,6 +35,7 @@ class RecycleLogVC: CustomVC {
     
     private func UIInit(){
         tableView.setSeparatorLocation()
+        tableView.startSkeletonAnimation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
     }
@@ -58,6 +59,10 @@ class RecycleLogVC: CustomVC {
                 self.useRecordInfoHandle(useRecordInfos)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                        self.tableView.stopSkeletonAnimation()
+//                        self.view.hideSkeleton()
+//                    })
                 }
             }
         }
@@ -138,10 +143,18 @@ class RecycleLogVC: CustomVC {
 
 }
 
-extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
+extension RecycleLogVC: UITableViewDelegate, SkeletonTableViewDataSource {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        RecycleLogTableViewCell.identifier
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        filterUseRecordInfos.count
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        nil
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -164,7 +177,6 @@ extension RecycleLogVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return cell
-       
     }
     
 }

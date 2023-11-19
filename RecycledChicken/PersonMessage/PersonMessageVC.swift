@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class PersonMessageVC: CustomVC {
     
@@ -28,6 +29,8 @@ class PersonMessageVC: CustomVC {
     
     private func UIInit(){
         personMessageTableView.setSeparatorLocation()
+        personMessageTableView.showAnimatedSkeleton()
+
     }
     
     private func getData(){
@@ -40,6 +43,10 @@ class PersonMessageVC: CustomVC {
                 self.personMessageInfos = personMessageInfos
                 DispatchQueue.main.async {
                     self.personMessageTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.personMessageTableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
+                    })
                 }
             }
         }
@@ -48,7 +55,19 @@ class PersonMessageVC: CustomVC {
 
 }
 
-extension PersonMessageVC: UITableViewDelegate, UITableViewDataSource {
+extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        PersonMessageTableViewCell.identifier
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        personMessageInfos.count
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        nil
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PersonMessageContent", bundle: Bundle.main).instantiateViewController(identifier: "PersonMessageContent") as? PersonMessageContentVC {
