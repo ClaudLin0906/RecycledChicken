@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class LotteryVC: CustomVC {
     
@@ -23,6 +24,7 @@ class LotteryVC: CustomVC {
     
     private func UIInit(){
         tableView.setSeparatorLocation()
+        tableView.showAnimatedSkeleton(usingColor: .lightGray, transition: .crossDissolve(0.25))
     }
     
     private func getData(){
@@ -43,6 +45,10 @@ class LotteryVC: CustomVC {
                 }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.tableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
+                    })
                 }
             }
         }
@@ -55,7 +61,22 @@ class LotteryVC: CustomVC {
 
 }
 
-extension LotteryVC: UITableViewDelegate, UITableViewDataSource {
+extension LotteryVC: UITableViewDelegate, SkeletonTableViewDataSource {    
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        LotteryTableViewCell.identifier
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        lotteryInfos.count
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: LotteryTableViewCell.identifier, for: indexPath) as! LotteryTableViewCell
+        let row = indexPath.row
+        cell.setCell(lotteryInfo: lotteryInfos[row])
+        return cell
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard CurrentUserInfo.shared.isGuest == false else { return }
@@ -64,11 +85,11 @@ extension LotteryVC: UITableViewDelegate, UITableViewDataSource {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         lotteryInfos.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LotteryTableViewCell.identifier, for: indexPath) as! LotteryTableViewCell
         let row = indexPath.row
