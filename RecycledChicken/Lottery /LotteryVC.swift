@@ -72,10 +72,7 @@ extension LotteryVC: UITableViewDelegate, SkeletonTableViewDataSource {
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LotteryTableViewCell.identifier, for: indexPath) as! LotteryTableViewCell
-        let row = indexPath.row
-        cell.setCell(lotteryInfo: lotteryInfos[row])
-        return cell
+        nil
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
