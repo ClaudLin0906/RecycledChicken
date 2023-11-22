@@ -59,10 +59,10 @@ class RecycleLogVC: CustomVC {
                 self.useRecordInfoHandle(useRecordInfos)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                        self.tableView.stopSkeletonAnimation()
-//                        self.view.hideSkeleton()
-//                    })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.tableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
+                    })
                 }
             }
         }

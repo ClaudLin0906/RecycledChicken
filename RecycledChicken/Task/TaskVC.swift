@@ -179,7 +179,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             signAlert()
             return
         }
-        let row = indexPath.row
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
             let type = cell.taskInfo?.type
             switch type {

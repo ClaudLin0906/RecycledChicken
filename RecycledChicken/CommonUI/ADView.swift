@@ -33,9 +33,7 @@ class ADView: UIView, NibOwnerLoadable {
             }
         }
     }
-    
-    private var timer:Timer?
-    
+        
     private var remainingSeconds: Int = 30
     
     private var countdownTimer: Timer?
@@ -44,6 +42,8 @@ class ADView: UIView, NibOwnerLoadable {
         case isHome
         case isTask
     }
+    
+    private var isFirstTime = true
     
     init(frame: CGRect, type:ADType) {
         super.init(frame: frame)
@@ -62,8 +62,6 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     @IBAction func cancel(_ sender:UIButton){
-        timer?.invalidate()
-        timer = nil
         self.removeFromSuperview()
     }
     
@@ -125,25 +123,22 @@ extension ADView: WKNavigationDelegate {
         case .isHome:
             closeBtn.isHidden = false
         case .isTask:
+            guard isFirstTime else{ return }
+            isFirstTime = false
             countdownLabel.isHidden = false
             countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] timer in
-                
-                countdownLabel.text = "\(remainingSeconds)"
+                print("remainingSeconds \(remainingSeconds)")
                 remainingSeconds -= 1
-                
+                countdownLabel.text = "\(remainingSeconds)"
                 if remainingSeconds == 0 {
-                    countdownTimer?.invalidate()
-                    countdownTimer = nil
                     countdownLabel.isHidden = true
                     closeBtn.isHidden = false
+                    countdownTimer?.invalidate()
+                    countdownTimer = nil
+                    isFinishAction()
                 }
             })
-            
-            timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { timer in
-                self.isFinishAction()
-            }
             RunLoop.main.add(countdownTimer!, forMode: .common)
-            RunLoop.main.add(timer!, forMode: .common)
         }
     }
 }
