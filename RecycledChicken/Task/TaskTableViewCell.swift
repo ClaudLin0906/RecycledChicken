@@ -50,19 +50,21 @@ class TaskTableViewCell: UITableViewCell {
         switch taskInfo.type {
         case.battery:
             if batteryInt >= taskInfo.count {
+                finishAction()
                 self.taskInfo?.isFinish = true
             }
-            taskProgressView.setPercent(taskInfo.count, molecular: batteryInt)
+            taskProgressView.setPercent(batteryInt, denominator: taskInfo.count)
         case.bottle:
             if bottleInt >= taskInfo.count {
+                finishAction()
                 self.taskInfo?.isFinish = true
             }
-            taskProgressView.setPercent(taskInfo.count, molecular: bottleInt)
+            taskProgressView.setPercent(bottleInt, denominator: taskInfo.count)
         case.share:
             if let isFinish = taskInfo.isFinish, isFinish {
-                taskProgressView.setPercent(1, molecular: 1)
+                taskProgressView.setPercent(1, denominator: 1)
             }else{
-                taskProgressView.setPercent(1, molecular: 0)
+                taskProgressView.setPercent(0, denominator: 1)
             }
         default:
             break
@@ -71,7 +73,6 @@ class TaskTableViewCell: UITableViewCell {
     
     func finishAction(){
         guard let taskInfo = taskInfo else { return }
-        background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
         let finishTaskInfo = FinishTaskInfo(questCreateTime: taskInfo.createTime, questType: taskInfo.type.rawValue)
         let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
