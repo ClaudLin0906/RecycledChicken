@@ -115,7 +115,7 @@ class HomeVC: CustomRootVC {
     }
     
     private func computeDate(_ startTime:String, endTime:String, completion: @escaping (String, String) -> Void){
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)T00:00:00.000%2B08:00&endTime=\(endTime)T23:59:59.999%2B08:00"
+        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             var batteryInt = 0
             var bottleInt = 0

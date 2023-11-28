@@ -53,8 +53,10 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     private func getRecycleLogData(){
-        guard let dateLastYear = dateLastYearSameDay(), let startTime = dateFromStringISO8601(date: dateLastYear).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let endTime = dateFromStringISO8601(date: Date()).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime.replacingOccurrences(of: "+", with: "%2B"))&endTime=\(endTime.replacingOccurrences(of: "+", with: "%2B"))"
+        guard let dateLastYear = dateLastYearSameDay() else { return }
+        let startTime = dateFromStringISO8601(date: dateLastYear)
+        let endTime = dateFromStringISO8601(date: Date())
+        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)&endTime=\(endTime)"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)

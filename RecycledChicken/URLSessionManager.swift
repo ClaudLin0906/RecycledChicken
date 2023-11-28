@@ -36,7 +36,7 @@ class NetworkManager: NSObject {
 
 
     func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, AuthorizationToken:String = "", completion: @escaping (Data?, Int?, String?) -> Void){
-        let url = URL(string: urlString)!
+        let url = URL(string: urlString.urlEncoded())!
         var request = URLRequest(url: url)
         if parameters != nil {
             do{
@@ -52,7 +52,7 @@ class NetworkManager: NSObject {
      }
 
     func getJSONBody(urlString: String, parameters: [String: Any]? = nil, authorizationToken:String? = nil, completion: @escaping (Data?, Int?, String?) -> Void){
-        let url = URL(string: urlString)!
+        let url = URL(string: urlString.urlEncoded())!
         var request = URLRequest(url: url)
         if parameters != nil {
             do{

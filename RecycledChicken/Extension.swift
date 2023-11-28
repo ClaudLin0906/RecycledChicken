@@ -218,6 +218,12 @@ extension String {
         UUID().uuidString.replacingOccurrences(of: "-", with: "")
     }
     
+    func urlEncoded() -> String {
+        var encodeUrlString = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        encodeUrlString = encodeUrlString?.replacingOccurrences(of: "+", with: "%2B")
+        return encodeUrlString ?? ""
+    }
+    
 }
 
 extension UIView {
