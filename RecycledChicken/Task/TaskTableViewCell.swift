@@ -49,17 +49,17 @@ class TaskTableViewCell: UITableViewCell {
         point.text = String(taskInfo.point)
         switch taskInfo.type {
         case.battery:
+            taskProgressView.setPercent(batteryInt, denominator: taskInfo.count)
             if batteryInt >= taskInfo.count {
                 finishAction()
                 self.taskInfo?.isFinish = true
             }
-            taskProgressView.setPercent(batteryInt, denominator: taskInfo.count)
         case.bottle:
+            taskProgressView.setPercent(bottleInt, denominator: taskInfo.count)
             if bottleInt >= taskInfo.count {
                 finishAction()
                 self.taskInfo?.isFinish = true
             }
-            taskProgressView.setPercent(bottleInt, denominator: taskInfo.count)
         case.share:
             if let isFinish = taskInfo.isFinish, isFinish {
                 taskProgressView.setPercent(1, denominator: 1)

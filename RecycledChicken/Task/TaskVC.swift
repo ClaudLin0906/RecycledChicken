@@ -61,7 +61,7 @@ class TaskVC: CustomRootVC {
         self.present(activityVC, animated: true, completion: nil)
     }
     
-    private func getTaskStatus(){
+    private func getTaskStatus() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
@@ -76,7 +76,7 @@ class TaskVC: CustomRootVC {
         }
     }
     
-    private func getTaskInfo(){
+    private func getTaskInfo() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestList, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
@@ -84,7 +84,7 @@ class TaskVC: CustomRootVC {
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                self.taskInfos = self.taskInfos.filter{
+                self.taskInfos = self.taskInfos.filter {
                     if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
                         return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
                     }
@@ -147,6 +147,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         for taskStatus in taskStatuss {
             if taskStatus.createTime == info.createTime && taskStatus.type == info.type {
                 info.isFinish = true
+                break
             }
         }
         let type = info.type
@@ -201,7 +202,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         }
 
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
-//            let adView = ADView(frame: UIScreen.main.bounds)
             if let isFinish = cell.taskInfo?.isFinish, !isFinish {
                 let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
                 adView.cell = cell
