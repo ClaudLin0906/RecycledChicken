@@ -149,7 +149,7 @@ let attributes2: [NSAttributedString.Key: Any] = [
     NSAttributedString.Key.kern: 5 // 設定字距
 ]
 
-public class CommonUserDefaultsKey{
+public class CommonUserDefaultsKey {
     static let removeBackground = "removeBackground"
 }
 
@@ -668,7 +668,6 @@ func cellsForTableView(tableView:UITableView) -> [UITableViewCell] {
 
 func getTopController() -> UIViewController? {
     let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-
     if var topController = keyWindow?.rootViewController {
         while let presentedViewController = topController.presentedViewController {
             topController = presentedViewController
