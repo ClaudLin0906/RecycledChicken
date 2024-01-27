@@ -98,8 +98,9 @@ class TaskVC: CustomRootVC {
     private func getRecycleCount(){
         bottleInt = 0
         batteryInt = 0
-        let startTime = getDates(i: 0, currentDate: Date()).0
-        let endTime = getDates(i: 6, currentDate: Date()).0
+        let sevenDays = getSevenDaysArray(targetDate: Date())
+        let startTime = sevenDays[0].0
+        let endTime = sevenDays[6].0
         let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {

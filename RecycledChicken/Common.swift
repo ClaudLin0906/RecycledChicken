@@ -683,7 +683,7 @@ func addViewFullScreen(v:UIView) {
     }
 }
 
-func getDayOfTheWeek() -> String{
+func getDayOfTheWeek() -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "EEE"
     return dateFormatter.string(from: Date())
@@ -741,6 +741,35 @@ func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
     let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
     UIGraphicsEndImageContext()
     return newImage
+}
+
+func getSevenDaysArray(targetDate:Date) -> [(String, String, Date)] {
+    let weekDay = getDayOfTheWeek()
+    var selectedDatesIndex = 0
+    switch weekDay {
+    case "Sun":
+        selectedDatesIndex = 6
+    case "Mon":
+        selectedDatesIndex = 0
+    case "Tue":
+        selectedDatesIndex = 1
+    case "Wed":
+        selectedDatesIndex = 2
+    case "Thu":
+        selectedDatesIndex = 3
+    case "Fri":
+        selectedDatesIndex = 4
+    case "Sat":
+        selectedDatesIndex = 5
+    default:
+        break
+    }
+    var sevenDaysToShow:[(String, String, Date)] = []
+    for index in 0..<7 {
+        let newIndex = index - selectedDatesIndex
+        sevenDaysToShow.append(getDates(i: newIndex, currentDate: targetDate))
+    }
+    return sevenDaysToShow
 }
 
 func fadeInOutAni(showView:UIView, finishAction:(()->())?){

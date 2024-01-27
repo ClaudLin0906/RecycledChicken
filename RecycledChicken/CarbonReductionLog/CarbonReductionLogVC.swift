@@ -65,7 +65,7 @@ class CarbonReductionLogVC: CustomVC {
             var batteryInt = 0
             var bottleInt = 0
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                var useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
                 for useRecordInfo in useRecordInfos {
                     if let battery = useRecordInfo.battery {
                         batteryInt += battery
