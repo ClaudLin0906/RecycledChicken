@@ -146,6 +146,8 @@
 		59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B682F42A76A0D3008F5135 /* ARViewController.swift */; };
 		59B682F72A76A2CA008F5135 /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B682F62A76A2CA008F5135 /* Scan.storyboard */; };
 		59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B682F92A76A5EB008F5135 /* ARViewController.storyboard */; };
+		59BB68B22B69F6100095E2A5 /* ReSendVerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BB68B12B69F6100095E2A5 /* ReSendVerificationCodeView.swift */; };
+		59BB68B42B69F62B0095E2A5 /* ReSendVerificationCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59BB68B32B69F62B0095E2A5 /* ReSendVerificationCodeView.xib */; };
 		59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */; };
 		59BF29402A21EE8200F24286 /* CustomCalenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
@@ -345,6 +347,8 @@
 		59B682F42A76A0D3008F5135 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		59B682F62A76A2CA008F5135 /* Scan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scan.storyboard; sourceTree = "<group>"; };
 		59B682F92A76A5EB008F5135 /* ARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARViewController.storyboard; sourceTree = "<group>"; };
+		59BB68B12B69F6100095E2A5 /* ReSendVerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSendVerificationCodeView.swift; sourceTree = "<group>"; };
+		59BB68B32B69F62B0095E2A5 /* ReSendVerificationCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReSendVerificationCodeView.xib; sourceTree = "<group>"; };
 		59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginVC.swift; sourceTree = "<group>"; };
 		59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderModel.swift; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
@@ -909,6 +913,8 @@
 				59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */,
 				59F6BE3F2A07B83700D7B3CB /* VerificationCode.storyboard */,
 				59CDA34B2A42DE8B00E3F74E /* VerificationCodeModel.swift */,
+				59BB68B12B69F6100095E2A5 /* ReSendVerificationCodeView.swift */,
+				59BB68B32B69F62B0095E2A5 /* ReSendVerificationCodeView.xib */,
 			);
 			path = VerificationCode;
 			sourceTree = "<group>";
@@ -1051,6 +1057,7 @@
 				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
 				59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */,
+				59BB68B42B69F62B0095E2A5 /* ReSendVerificationCodeView.xib in Resources */,
 				5994957E2A0D2C7B009F1B2E /* StoreMap.storyboard in Resources */,
 				59CC8DA02A67B3F10094CE57 /* DeleteAccountAlert.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
@@ -1249,6 +1256,7 @@
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
+				59BB68B22B69F6100095E2A5 /* ReSendVerificationCodeView.swift in Sources */,
 				59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */,
 				5964AAFE2A14769C0005686F /* LAContextManager.swift in Sources */,
 				599495662A0BFA1A009F1B2E /* BuyLotteryVC.swift in Sources */,

@@ -7,6 +7,8 @@
 
 import UIKit
 import Alamofire
+import Combine
+import CombineHelper
 
 class VerificationCodeVC: CustomLoginVC {
     
@@ -20,6 +22,8 @@ class VerificationCodeVC: CustomLoginVC {
     
     @IBOutlet weak var goHomeBtn:CustomButton!
     
+    @IBOutlet weak var reSendBtn:CustomButton!
+    
     var password:String = ""
     
     var phone:String = ""
@@ -28,6 +32,10 @@ class VerificationCodeVC: CustomLoginVC {
     
     var info:forgetPasswordInfo?
     
+    private var cancellables: Set<AnyCancellable> = []
+    
+    private var reSendVerificationCodeView = ReSendVerificationCodeView()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -39,29 +47,60 @@ class VerificationCodeVC: CustomLoginVC {
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
     }
     
+    private func startCountdown() {
+        Timer.publish(every: 1, on: .main, in: .default)
+            .autoconnect()
+            .scan(60) { currentCount, _ in
+                return currentCount > 0 ? currentCount - 1 : 0
+            }
+            .sink { count in
+                self.reSendVerificationCodeView.reciprocalLabel.text = "(\(count))"
+                if count == 0 {
+                    self.stopCountdown()
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func stopCountdown() {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+        reSendVerificationCodeView.removeFromSuperview()
+    }
+    
+    private func addReSendVerificationCodeView() {
+        reSendVerificationCodeView = ReSendVerificationCodeView(frame: CGRect(x: 0, y: 0, width: reSendBtn.frame.width, height: reSendBtn.frame.height))
+        reSendBtn.addSubview(reSendVerificationCodeView)
+    }
+    
     private func sendSMS(){
-        switch currentType {
-        case .forgetPassword:
-            phone = info?.userPhoneNumber ?? ""
-        default:
-            break
-        }
         
-        let smsInfo = SMSInfo(userPhoneNumber: phone)
-        let smsInfoDic = try? smsInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in
-            
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
-                return
-            }
-            
-            if let data = data {
-                let json = NetworkManager.shared.dataToDictionary(data: data)
-                print(json)
-            }
-            
-        }
+        self.startCountdown()
+        self.addReSendVerificationCodeView()
+        
+//        switch currentType {
+//        case .forgetPassword:
+//            phone = info?.userPhoneNumber ?? ""
+//        default:
+//            break
+//        }
+//        
+//        let smsInfo = SMSInfo(userPhoneNumber: phone)
+//        let smsInfoDic = try? smsInfo.asDictionary()
+//        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in
+//            
+//            guard statusCode == 200 else {
+//                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+//                return
+//            }
+//            
+//            if let data = data {
+//                let json = NetworkManager.shared.dataToDictionary(data: data)
+//                self.startCountdown()
+//                self.addReSendVerificationCodeView()
+//            }
+//            
+//        }
     }
     
     @IBAction func reSendSMS(_ sender:UIButton) {
