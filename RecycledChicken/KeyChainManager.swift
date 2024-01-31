@@ -29,7 +29,6 @@ class KeychainService {
                 kSecAttrServiceValue as String: Bundle.main.bundleIdentifier,
                 kSecValueDataValue as String: data
             ]
-            
             let status = SecItemAdd(query as CFDictionary, nil)
             if status == errSecSuccess {
                 return true

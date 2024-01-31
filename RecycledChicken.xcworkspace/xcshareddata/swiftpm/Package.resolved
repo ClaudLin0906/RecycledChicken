@@ -10,6 +10,24 @@
       }
     },
     {
+      "identity" : "combinedatasources",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/combineopensource/CombineDataSources",
+      "state" : {
+        "revision" : "362795e0336f2c1637036f692a3b5d05806302b4",
+        "version" : "0.2.5"
+      }
+    },
+    {
+      "identity" : "combinehelper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ytyubox/CombineHelper",
+      "state" : {
+        "branch" : "master",
+        "revision" : "fb3ae9c0d6c5332c5974870eb2b0faffa507244f"
+      }
+    },
+    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",

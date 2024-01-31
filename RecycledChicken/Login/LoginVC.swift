@@ -7,6 +7,8 @@
 
 import UIKit
 import M13Checkbox
+import Combine
+import CombineHelper
 
 class LoginVC: CustomLoginVC {
     
@@ -19,7 +21,11 @@ class LoginVC: CustomLoginVC {
     @IBOutlet weak var goHomeBtn:CustomButton!
         
     private var testLoginInfo:AccountInfo = AccountInfo(userPhoneNumber: "0912345678", userPassword: "test123")
+            
+    @UserDefault(UserDefaultKey.shared.biometrics, defaultValue: false) var biometrics:Bool
     
+    @UserDefault(UserDefaultKey.shared.keepLogin, defaultValue: false) var keepLogin:Bool
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -34,14 +40,14 @@ class LoginVC: CustomLoginVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if UserDefaults().bool(forKey: UserDefaultKey.shared.biometrics) {
+        if biometrics {
             evaluatePolicyAction { result, message in
                 if result {
                     let accountInfo = CurrentUserInfo.shared.currentAccountInfo
                     self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
                 }
             }
-        }else if UserDefaults().bool(forKey: UserDefaultKey.shared.keepLogin) {
+        }else if keepLogin {
             let accountInfo = CurrentUserInfo.shared.currentAccountInfo
             self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
         }
@@ -58,14 +64,8 @@ class LoginVC: CustomLoginVC {
     private func loginAction(phone:String, password:String){
         let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
         let loginInfoDic = try? loginInfo.asDictionary()
-//        let testloginInfoDic = try? testLoginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-//                if statusCode == 403  {
-//                    showAlert(VC: self, title: "發生錯誤", message: "帳號密碼錯誤", alertAction: nil)
-//                    return
-//                }
-//                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 showAlert(VC: self, title: "帳號密碼有誤", message: nil, alertAction: nil)
                 return
             }
@@ -77,11 +77,6 @@ class LoginVC: CustomLoginVC {
                     CommonKey.shared.authToken = token
                     CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber = phone
                     CurrentUserInfo.shared.currentAccountInfo.userPassword = password
-//                    var keepLogin = false
-//                    if self.keepLoginCheckBox.checkState == .checked {
-//                        keepLogin = true
-//                    }
-//                    UserDefaults().set(keepLogin, forKey: UserDefaultKey.shared.keepLogin)
                     self.loginSuccess()
                 }
             }
@@ -89,31 +84,31 @@ class LoginVC: CustomLoginVC {
     }
     
     @IBAction func login(_ sender:UIButton){
-        var alertMsg = ""
-        let phone = phoneTextfield.text
-        let password = passwordTextfield.text
-        
-        if phone == "" {
-            alertMsg += "電話不能為空"
-        } else if !validateCellPhone(text: phone!) {
-            alertMsg += "電話格式不對"
-        }
-        alertMsg = removeWhitespace(from: alertMsg)
-        guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
-            return
-        }
-        
-        if password == "" {
-            alertMsg += "密碼不能為空"
-        }
-        alertMsg = removeWhitespace(from: alertMsg)
-        guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
-            return
-        }
-        
-        loginAction(phone: phone!, password: password!)
+//        var alertMsg = ""
+//        let phone = phoneTextfield.text
+//        let password = passwordTextfield.text
+//
+//        if phone == "" {
+//            alertMsg += "電話不能為空"
+//        } else if !validateCellPhone(text: phone!) {
+//            alertMsg += "電話格式不對"
+//        }
+//        alertMsg = removeWhitespace(from: alertMsg)
+//        guard alertMsg == "" else {
+//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+//            return
+//        }
+//
+//        if password == "" {
+//            alertMsg += "密碼不能為空"
+//        }
+//        alertMsg = removeWhitespace(from: alertMsg)
+//        guard alertMsg == "" else {
+//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+//            return
+//        }
+//
+//        loginAction(phone: phone!, password: password!)
         
     }
     

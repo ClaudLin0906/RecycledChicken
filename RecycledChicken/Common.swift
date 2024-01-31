@@ -69,7 +69,7 @@ struct LevelObject{
     var chickenName:String
 }
 
-class CurrentUserInfo{
+class CurrentUserInfo {
     
     static let shared = CurrentUserInfo()
     
@@ -79,7 +79,6 @@ class CurrentUserInfo{
         }else {
             return AccountInfo(userPhoneNumber: "", userPassword: "")
         }
-        
     }()
     
     var currentProfileInfo:ProfileInfo?
