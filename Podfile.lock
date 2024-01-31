@@ -9,6 +9,7 @@ PODS:
   - GooglePlaces (7.4.0)
   - M13Checkbox (3.4.0)
   - MKRingProgressView (2.3.0)
+  - SwiftGifOrigin (1.7.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - GooglePlaces
   - M13Checkbox
   - MKRingProgressView
+  - SwiftGifOrigin (~> 1.7.0)
 
 SPEC REPOS:
   trunk:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - GooglePlaces
     - M13Checkbox
     - MKRingProgressView
+    - SwiftGifOrigin
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
@@ -34,7 +37,8 @@ SPEC CHECKSUMS:
   GooglePlaces: 544e908d94860bf6f8fc1865b80d2c7eb6b5f937
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   MKRingProgressView: f534209b9a1edc0beb2ea613e6b953ea2195b565
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
 
-PODFILE CHECKSUM: bd3d3148abc778bdfe941fac359587c168d48d13
+PODFILE CHECKSUM: 178e1b591d8030a8b532469f9412e7fe08d343ff
 
 COCOAPODS: 1.11.3

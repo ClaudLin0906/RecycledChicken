@@ -58,7 +58,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳戶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcO-Mb-bsb" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="55" y="15" width="34" height="20"/>
+                                        <rect key="frame" x="55" y="13" width="34" height="24"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                         <rect key="frame" x="109" y="15" width="20" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="訊息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFO-hx-dt1" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="134" y="15" width="34" height="20"/>
+                                        <rect key="frame" x="134" y="13" width="34" height="24"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -100,7 +100,7 @@
                                         <rect key="frame" x="304" y="15" width="20" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-1Y-6h3" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="329" y="15" width="34" height="20"/>
+                                        <rect key="frame" x="329" y="13" width="34" height="24"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -277,7 +277,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kdK-46-Ifb">
-                                                        <rect key="frame" x="82.333333333333329" y="220" width="168.66666666666669" height="30"/>
+                                                        <rect key="frame" x="81.333333333333329" y="220" width="170.66666666666669" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="當日養分" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bK-zS-1hV" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="30"/>
@@ -289,16 +289,16 @@
                                                                 <rect key="frame" x="64.000000000000014" y="0.0" width="27.333333333333329" height="30"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhx-qv-uDe">
-                                                                <rect key="frame" x="99.333333333333329" y="0.0" width="11.333333333333329" height="30"/>
+                                                                <rect key="frame" x="99.333333333333329" y="0.0" width="12.333333333333329" height="30"/>
                                                                 <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
                                                                 <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 52" translatesAutoresizingMaskIntoConstraints="NO" id="7D8-sj-Ibc">
-                                                                <rect key="frame" x="118.66666666666667" y="0.0" width="30.666666666666671" height="30"/>
+                                                                <rect key="frame" x="119.66666666666667" y="0.0" width="30.666666666666671" height="30"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHb-lO-QsE">
-                                                                <rect key="frame" x="157.33333333333337" y="0.0" width="11.333333333333343" height="30"/>
+                                                                <rect key="frame" x="158.33333333333337" y="0.0" width="12.333333333333343" height="30"/>
                                                                 <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
                                                                 <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -415,19 +415,19 @@
     </scenes>
     <designables>
         <designable name="0bK-zS-1hV">
-            <size key="intrinsicContentSize" width="56" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="56" height="19.666666666666668"/>
         </designable>
         <designable name="7wA-1Y-6h3">
-            <size key="intrinsicContentSize" width="34" height="20"/>
+            <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
         <designable name="gcO-Mb-bsb">
-            <size key="intrinsicContentSize" width="34" height="20"/>
+            <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
         <designable name="uFO-hx-dt1">
-            <size key="intrinsicContentSize" width="34" height="20"/>
+            <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
         <designable name="ybu-Dt-ZtI">
-            <size key="intrinsicContentSize" width="56" height="29"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
     </designables>
     <resources>

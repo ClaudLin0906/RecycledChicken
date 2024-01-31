@@ -86,12 +86,13 @@ class HomeVC: CustomRootVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         if FirstTime && LoginSuccess {
-//            let adView = ADView(frame: UIScreen.main.bounds)
-            let adView = ADView(frame: UIScreen.main.bounds, type: .isHome)
-            keyWindow?.addSubview(adView)
             FirstTime = false
+            let  adbannerView = ADBannerView(frame: UIScreen.main.bounds)
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+                adbannerView.changeBanner()
+            }
+            keyWindow?.addSubview(adbannerView)
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
         

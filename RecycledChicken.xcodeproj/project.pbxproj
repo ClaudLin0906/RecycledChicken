@@ -65,6 +65,11 @@
 		59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */; };
 		59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF12A63FA2200678BAF /* TaskModel.swift */; };
 		59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF32A6406DA00678BAF /* LotteryModel.swift */; };
+		5985D6BA2B6A1A2E00DE6EBA /* BannerCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5985D6B92B6A1A2E00DE6EBA /* BannerCollectionVC.swift */; };
+		5985D6BE2B6A1F7A00DE6EBA /* ADBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5985D6BD2B6A1F7A00DE6EBA /* ADBannerView.swift */; };
+		5985D6C02B6A1F8100DE6EBA /* ADBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5985D6BF2B6A1F8100DE6EBA /* ADBannerView.xib */; };
+		5985D6C32B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5985D6C12B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift */; };
+		5985D6C42B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5985D6C22B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib */; };
 		598751FE2A64EB6800775D4A /* ADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598751FD2A64EB6800775D4A /* ADView.swift */; };
 		598752002A64EB8600775D4A /* ADView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 598751FF2A64EB8600775D4A /* ADView.xib */; };
 		598F39462A0E068C00DA9186 /* StoreListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F39452A0E068C00DA9186 /* StoreListVC.swift */; };
@@ -266,6 +271,11 @@
 		59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyModel.swift; sourceTree = "<group>"; };
 		59835DF12A63FA2200678BAF /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		59835DF32A6406DA00678BAF /* LotteryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryModel.swift; sourceTree = "<group>"; };
+		5985D6B92B6A1A2E00DE6EBA /* BannerCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionVC.swift; sourceTree = "<group>"; };
+		5985D6BD2B6A1F7A00DE6EBA /* ADBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADBannerView.swift; sourceTree = "<group>"; };
+		5985D6BF2B6A1F8100DE6EBA /* ADBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADBannerView.xib; sourceTree = "<group>"; };
+		5985D6C12B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		5985D6C22B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADBannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		598751FD2A64EB6800775D4A /* ADView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADView.swift; sourceTree = "<group>"; };
 		598751FF2A64EB8600775D4A /* ADView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADView.xib; sourceTree = "<group>"; };
 		598F39452A0E068C00DA9186 /* StoreListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListVC.swift; sourceTree = "<group>"; };
@@ -524,9 +534,9 @@
 			isa = PBXGroup;
 			children = (
 				59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */,
+				59C73F452A700C6A0019E87D /* HomeModel.swift */,
 				5926C5982A0632AB00FAB49D /* HomeVC.swift */,
 				5926C59A2A0632BC00FAB49D /* Home.storyboard */,
-				59C73F452A700C6A0019E87D /* HomeModel.swift */,
 				59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */,
 				59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */,
 				59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */,
@@ -537,6 +547,10 @@
 				59997A452A08E2C600E9FD7F /* CustomCalenderViewCell.xib */,
 				5999F0622A134BEF002F08D8 /* WelcomeView.swift */,
 				5999F0642A134C1A002F08D8 /* WelcomeView.xib */,
+				5985D6BD2B6A1F7A00DE6EBA /* ADBannerView.swift */,
+				5985D6BF2B6A1F8100DE6EBA /* ADBannerView.xib */,
+				5985D6C12B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift */,
+				5985D6C22B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -736,6 +750,7 @@
 				59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */,
 				598751FD2A64EB6800775D4A /* ADView.swift */,
 				598751FF2A64EB8600775D4A /* ADView.xib */,
+				5985D6B92B6A1A2E00DE6EBA /* BannerCollectionVC.swift */,
 				59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */,
 			);
 			path = CommonUI;
@@ -1004,6 +1019,7 @@
 				59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */,
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
+				5985D6C02B6A1F8100DE6EBA /* ADBannerView.xib in Resources */,
 				59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
 				599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */,
@@ -1030,6 +1046,7 @@
 				59997A462A08E2C600E9FD7F /* CustomCalenderViewCell.xib in Resources */,
 				599495742A0C90E7009F1B2E /* BuyCommodity.storyboard in Resources */,
 				597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */,
+				5985D6C42B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib in Resources */,
 				599495792A0D02B1009F1B2E /* PointRule.storyboard in Resources */,
 				59C2D9A52A0D38490085724F /* Task.storyboard in Resources */,
 				598F39482A0E06C600DA9186 /* StoreList.storyboard in Resources */,
@@ -1182,6 +1199,7 @@
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
 				59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */,
+				5985D6BE2B6A1F7A00DE6EBA /* ADBannerView.swift in Sources */,
 				5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */,
 				59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */,
 				59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */,
@@ -1218,6 +1236,7 @@
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
 				59E69A2D2A375B650062D4EB /* ScannerView.swift in Sources */,
+				5985D6BA2B6A1A2E00DE6EBA /* BannerCollectionVC.swift in Sources */,
 				59C73F462A700C6A0019E87D /* HomeModel.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
 				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,
@@ -1239,6 +1258,7 @@
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,
 				59C2D99E2A0D37000085724F /* ARVC.swift in Sources */,
+				5985D6C32B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift in Sources */,
 				598F39512A0E1F2F00DA9186 /* ProductDescriptionVC.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
