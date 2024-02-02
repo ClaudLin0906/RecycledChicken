@@ -184,6 +184,9 @@
 		59CDA35A2A45A7B800E3F74E /* StoreMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CDA3592A45A7B800E3F74E /* StoreMapModel.swift */; };
 		59D20CE82A1E4FA600EF87B1 /* CustomCalenderScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */; };
 		59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */; };
+		59DA15D72B6CE57100B228D3 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA15D62B6CE57100B228D3 /* HomeCollectionViewCell.swift */; };
+		59DA15D92B6CF5CA00B228D3 /* RecycledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA15D82B6CF5CA00B228D3 /* RecycledItemView.swift */; };
+		59DA15DB2B6CF5E300B228D3 /* RecycledItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DA15DA2B6CF5E300B228D3 /* RecycledItemView.xib */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
 		59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */; };
@@ -388,6 +391,9 @@
 		59CDA3592A45A7B800E3F74E /* StoreMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMapModel.swift; sourceTree = "<group>"; };
 		59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderScrollView.swift; sourceTree = "<group>"; };
 		59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderScrollView.xib; sourceTree = "<group>"; };
+		59DA15D62B6CE57100B228D3 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		59DA15D82B6CF5CA00B228D3 /* RecycledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledItemView.swift; sourceTree = "<group>"; };
+		59DA15DA2B6CF5E300B228D3 /* RecycledItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecycledItemView.xib; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
 		59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageImageView.swift; sourceTree = "<group>"; };
@@ -537,6 +543,9 @@
 				59C73F452A700C6A0019E87D /* HomeModel.swift */,
 				5926C5982A0632AB00FAB49D /* HomeVC.swift */,
 				5926C59A2A0632BC00FAB49D /* Home.storyboard */,
+				59DA15D62B6CE57100B228D3 /* HomeCollectionViewCell.swift */,
+				59DA15D82B6CF5CA00B228D3 /* RecycledItemView.swift */,
+				59DA15DA2B6CF5E300B228D3 /* RecycledItemView.xib */,
 				59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */,
 				59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */,
 				59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */,
@@ -1018,6 +1027,7 @@
 			files = (
 				59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */,
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
+				59DA15DB2B6CF5E300B228D3 /* RecycledItemView.xib in Resources */,
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
 				5985D6C02B6A1F8100DE6EBA /* ADBannerView.xib in Resources */,
 				59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */,
@@ -1176,6 +1186,7 @@
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
 				5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */,
+				59DA15D92B6CF5CA00B228D3 /* RecycledItemView.swift in Sources */,
 				59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */,
 				593CDE2A2A7F5E13007E1D10 /* DeleteModel.swift in Sources */,
 				59A7957B2A0F78F20031710F /* UpdatePasswordSuccessView.swift in Sources */,
@@ -1274,6 +1285,7 @@
 				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
 				599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
+				59DA15D72B6CE57100B228D3 /* HomeCollectionViewCell.swift in Sources */,
 				59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */,
 				5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */,
 				59BB68B22B69F6100095E2A5 /* ReSendVerificationCodeView.swift in Sources */,

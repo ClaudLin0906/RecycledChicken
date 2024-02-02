@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import M13Checkbox
 class ADBannerView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var collectionView:UICollectionView!
@@ -15,6 +16,8 @@ class ADBannerView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var pageControl:UIPageControl!
     
+    @IBOutlet weak var checkBox:M13Checkbox!
+    
     private var currentIndexSubject = PassthroughSubject<Int, Never>()
 
     private var currentIndex:Int = 0
@@ -22,6 +25,8 @@ class ADBannerView: UIView, NibOwnerLoadable {
     private var bannerCount:Int = 4
     
     private var cancellables: Set<AnyCancellable> = []
+    
+    @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: nil) var displayToday:String?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,11 +39,16 @@ class ADBannerView: UIView, NibOwnerLoadable {
     }
     
     @IBAction func btnHandle(_ sender:UIButton) {
+        if checkBox.checkState == .checked {
+            displayToday = getDates(i: 0, currentDate: Date()).0
+        }
         removeFromSuperview()
     }
     
     private func customInit(){
         loadNibContent()
+        checkBox.boxType = .square
+        checkBox.stateChangeAnimation = .fill
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "ADBannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ADBannerCollectionViewCell")
@@ -55,11 +65,6 @@ class ADBannerView: UIView, NibOwnerLoadable {
                 self?.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
             }
             .store(in: &cancellables)
-    }
-    
-    @IBAction private func changePage(_ sender:UIPageControl) {
-        currentIndex = sender.currentPage - 1
-        currentIndexSubject.send(currentIndex)
     }
     
     func changeBanner() {

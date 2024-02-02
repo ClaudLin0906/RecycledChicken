@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ADBannerView" customModule="RecycledChicken" customModuleProvider="target">
             <connections>
+                <outlet property="checkBox" destination="1ng-Q3-yUb" id="yj0-Kj-3YC"/>
                 <outlet property="collectionView" destination="K8d-pQ-RhT" id="KfF-3g-DTg"/>
                 <outlet property="collectionViewFlowLayout" destination="UCm-er-jI1" id="Kh9-Zb-Nhv"/>
                 <outlet property="pageControl" destination="pvz-cW-usA" id="wFt-DJ-G3F"/>
@@ -21,8 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="K8d-pQ-RhT">
-                    <rect key="frame" x="20" y="79" width="353" height="719"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="K8d-pQ-RhT">
+                    <rect key="frame" x="20" y="225.66666666666663" width="353" height="426"/>
                     <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UCm-er-jI1">
                         <size key="itemSize" width="128" height="128"/>
@@ -36,14 +37,11 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </collectionView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pvz-cW-usA">
-                    <rect key="frame" x="138.66666666666666" y="762" width="116" height="26"/>
-                    <connections>
-                        <action selector="changePage:" destination="-1" eventType="valueChanged" id="Gek-AQ-UCV"/>
-                    </connections>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pvz-cW-usA">
+                    <rect key="frame" x="126" y="661.66666666666663" width="141" height="26"/>
                 </pageControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puL-7n-GCf">
-                    <rect key="frame" x="338" y="79" width="35" height="35"/>
+                    <rect key="frame" x="338" y="225.66666666666666" width="35" height="34.999999999999972"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="Mp5-VD-mZf"/>
@@ -58,24 +56,52 @@
                         <action selector="btnHandle:" destination="-1" eventType="touchUpInside" id="Sjo-4Q-7qY"/>
                     </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-h8-Duc">
+                    <rect key="frame" x="138.33333333333334" y="697.66666666666663" width="116.66666666666666" height="20"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ng-Q3-yUb" customClass="M13Checkbox" customModule="M13Checkbox">
+                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="GBe-vb-beb"/>
+                                <constraint firstAttribute="height" constant="20" id="W4Y-98-CR5"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日不顯示" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKh-yJ-yM0" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="30.000000000000007" y="0.0" width="86.666666666666686" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80044140460000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="puL-7n-GCf" firstAttribute="trailing" secondItem="K8d-pQ-RhT" secondAttribute="trailing" id="4y9-Mb-gy3"/>
                 <constraint firstItem="puL-7n-GCf" firstAttribute="width" secondItem="puL-7n-GCf" secondAttribute="height" multiplier="1:1" id="5t9-XO-D66"/>
+                <constraint firstItem="K8d-pQ-RhT" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="FfZ-Fa-Fu7"/>
+                <constraint firstItem="K8d-pQ-RhT" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="Kbz-Jo-lnn"/>
                 <constraint firstItem="K8d-pQ-RhT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="aiq-3l-Azb"/>
+                <constraint firstItem="TIC-h8-Duc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="bcq-g0-n2R"/>
                 <constraint firstItem="pvz-cW-usA" firstAttribute="centerX" secondItem="K8d-pQ-RhT" secondAttribute="centerX" id="hZJ-52-y4X"/>
-                <constraint firstItem="pvz-cW-usA" firstAttribute="bottom" secondItem="K8d-pQ-RhT" secondAttribute="bottom" constant="-10" id="oMi-oy-hol"/>
-                <constraint firstItem="K8d-pQ-RhT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="sN7-Dl-yAM"/>
+                <constraint firstItem="TIC-h8-Duc" firstAttribute="top" secondItem="pvz-cW-usA" secondAttribute="bottom" constant="10" id="j2x-d4-jfI"/>
+                <constraint firstItem="pvz-cW-usA" firstAttribute="top" secondItem="K8d-pQ-RhT" secondAttribute="bottom" constant="10" id="oMi-oy-hol"/>
+                <constraint firstItem="pvz-cW-usA" firstAttribute="width" secondItem="K8d-pQ-RhT" secondAttribute="width" multiplier="0.4" id="sT9-Hs-qSg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="K8d-pQ-RhT" secondAttribute="trailing" constant="20" id="wL9-k5-tG5"/>
                 <constraint firstItem="puL-7n-GCf" firstAttribute="top" secondItem="K8d-pQ-RhT" secondAttribute="top" id="yog-eH-7iu"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="K8d-pQ-RhT" secondAttribute="bottom" constant="20" id="zro-wf-5PU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="66" y="21"/>
         </view>
     </objects>
+    <designables>
+        <designable name="VKh-yJ-yM0">
+            <size key="intrinsicContentSize" width="86.666666666666671" height="20.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>

@@ -7,10 +7,19 @@
 
 import UIKit
 import FirebaseMessaging
+import Combine
 class HomeVC: CustomRootVC {
     
-    @IBOutlet weak var barcodeView:BarCodeView!
+    @IBOutlet weak var collectionView:UICollectionView!
     
+    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var recycledCollectionView:UICollectionView!
+    
+    @IBOutlet weak var recycledCollectionViewFlowLayout:UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var pageControl:UIPageControl!
+        
     @IBOutlet weak var carbonReductionLogBtn:UIButton!
     
     @IBOutlet weak var currentDateLabel:UILabel!
@@ -24,6 +33,24 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var chickenLevelImageView:UIImageView!
     
     @IBOutlet weak var trendChartImageView:UIImageView!
+    
+    private var currentIndexSubject = PassthroughSubject<Int, Never>()
+    
+    private var currentIndex:Int = 0
+    
+    private var bannerCount:Int = 4
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
+    private var recyceledSortInfo:[RecyceledSortInfo] =
+    [
+        RecyceledSortInfo(chineseName: "寶特瓶", englishName: "PET", iconName: "pet", count: 0, sort: .bottle),
+        RecyceledSortInfo(chineseName: "電池", englishName: "BATTERY", iconName: "battery", count: 0, sort: .battery),
+        RecyceledSortInfo(chineseName: "紙杯", englishName: "PAPPERCUB", iconName: "papperCub", count: 0, sort: .papperCub),
+        RecyceledSortInfo(chineseName: "鋁罐", englishName: "ALUMINUMCAN", iconName: "aluminumCan", count: 0, sort: .aluminumCan)
+    ]
+    
+    @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: "") var displayToday:String
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +60,13 @@ class HomeVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        collectionViewFlowLayout.itemSize = collectionView.frame.size
+        collectionViewFlowLayout.estimatedItemSize = .zero
+        collectionViewFlowLayout.minimumInteritemSpacing = 0
+        collectionViewFlowLayout.minimumLineSpacing = 0
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        pageControl.currentPage = currentIndex
+        pageControl.numberOfPages = bannerCount
         getUserInfo(VC: self, finishAction: {
             DispatchQueue.main.async {
                 if let levelObject = getLevelObject(), let image = levelObject.chicken {
@@ -41,9 +75,6 @@ class HomeVC: CustomRootVC {
                 if let image = self.getTrendChart() {
                     self.trendChartImageView.image = image
                 }
-                
-                self.barcodeView.code = CurrentUserInfo.shared.currentProfileInfo?.userPhoneNumber ?? "0912345678"
-                self.barcodeView.setTitle()
             }
 
             Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
@@ -87,15 +118,16 @@ class HomeVC: CustomRootVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if FirstTime && LoginSuccess {
-            FirstTime = false
-            let  adbannerView = ADBannerView(frame: UIScreen.main.bounds)
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
-                adbannerView.changeBanner()
+            if displayToday != getDates(i: 0, currentDate: Date()).0 {
+                FirstTime = false
+                let  adbannerView = ADBannerView(frame: UIScreen.main.bounds)
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+                    adbannerView.changeBanner()
+                }
+                keyWindow?.addSubview(adbannerView)
             }
-            keyWindow?.addSubview(adbannerView)
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
-        
         currentDateLabel.text = getDates(i: 0, currentDate: Date()).0
         updateCurrentDateInfo()
     }
@@ -103,6 +135,15 @@ class HomeVC: CustomRootVC {
     private func UIInit(){
         carbonReductionLogBtn.layer.borderWidth = 1
         carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
+        currentIndexSubject
+            .sink { [weak self] index in
+                self?.pageControl.currentPage = index
+                self?.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+            }
+            .store(in: &cancellables)
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
+            self.changeBanner()
+        }
     }
     
     private func getChoseDateRecycleAmount(){
@@ -140,6 +181,14 @@ class HomeVC: CustomRootVC {
             welcomeLabel.text = "Good morning, \(username)"
         }
         getChoseDateRecycleAmount()
+    }
+    
+    private func changeBanner() {
+        currentIndex += 1
+        if currentIndex > (bannerCount - 1) {
+            currentIndex = 0
+        }
+        currentIndexSubject.send(currentIndex)
     }
     
     private func signAlert(_ title:String){
@@ -186,4 +235,19 @@ class HomeVC: CustomRootVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
+}
+
+
+extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        bannerCount
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+        return cell
+
+    }
+    
 }
