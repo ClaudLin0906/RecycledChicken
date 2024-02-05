@@ -61,6 +61,11 @@ class HomeVC: CustomRootVC {
         bannerCollectionViewFlowLayout.minimumInteritemSpacing = 0
         bannerCollectionViewFlowLayout.minimumLineSpacing = 0
         bannerCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: mallCollectionView.frame.height) 
+        mallCollectionViewFlowLayout.estimatedItemSize = .zero
+        mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
+        mallCollectionViewFlowLayout.minimumLineSpacing = 0
+        mallCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         pageControl.currentPage = currentIndex
         pageControl.numberOfPages = bannerCount
         getUserInfo(VC: self, finishAction: {
@@ -245,12 +250,21 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if collectionView == bannerCollectionView {
             return bannerCount
         }
+        
+        if collectionView == mallCollectionView {
+            return 3
+        }
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == bannerCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+            return cell
+        }
+        
+        if collectionView == mallCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MallCollectionViewCell", for: indexPath) as! MallCollectionViewCell
             return cell
         }
         

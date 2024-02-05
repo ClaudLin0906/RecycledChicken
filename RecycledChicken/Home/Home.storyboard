@@ -387,23 +387,65 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MallCollectionViewCell" id="L8I-Qf-KIK" customClass="MallCollectionViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="210"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="61.333333333333343" height="210"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5o6-mf-5Ue">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="210"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="61.333333333333343" height="210"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9o7-hv-5Fl">
-                                                                            <rect key="frame" x="5" y="5" width="118" height="200"/>
+                                                                            <rect key="frame" x="5" y="5" width="51.333333333333336" height="200"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPB-IO-7eh">
-                                                                                    <rect key="frame" x="-61" y="35.666666666666629" width="240" height="128"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applelogo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vPB-IO-7eh">
+                                                                                    <rect key="frame" x="0.0" y="0.3333333333333286" width="51.333333333333336" height="198.33333333333331"/>
+                                                                                    <color key="backgroundColor" systemColor="systemMintColor"/>
+                                                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                            <integer key="value" value="20"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </imageView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QcJ-yl-V5a">
+                                                                                    <rect key="frame" x="5" y="100" width="41.333333333333336" height="95"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-3n-maM" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="47.666666666666664"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                            <userDefinedRuntimeAttributes>
+                                                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                                                    <real key="value" value="15"/>
+                                                                                                </userDefinedRuntimeAttribute>
+                                                                                            </userDefinedRuntimeAttributes>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjb-We-kba" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                                            <rect key="frame" x="0.0" y="47.666666666666657" width="41.333333333333336" height="47.333333333333343"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                            <userDefinedRuntimeAttributes>
+                                                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                                                    <real key="value" value="15"/>
+                                                                                                </userDefinedRuntimeAttribute>
+                                                                                            </userDefinedRuntimeAttributes>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </stackView>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
+                                                                                <constraint firstItem="QcJ-yl-V5a" firstAttribute="leading" secondItem="9o7-hv-5Fl" secondAttribute="leading" constant="5" id="1KS-e9-it6"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="QcJ-yl-V5a" secondAttribute="trailing" constant="5" id="4Aw-lt-HbY"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="QcJ-yl-V5a" secondAttribute="bottom" constant="5" id="BK2-Sj-ZXU"/>
+                                                                                <constraint firstItem="QcJ-yl-V5a" firstAttribute="top" secondItem="9o7-hv-5Fl" secondAttribute="centerY" id="FSH-vu-8aE"/>
                                                                                 <constraint firstAttribute="height" constant="200" id="Mft-0g-loh"/>
+                                                                                <constraint firstItem="vPB-IO-7eh" firstAttribute="leading" secondItem="9o7-hv-5Fl" secondAttribute="leading" id="ZZB-Ah-bgO"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="vPB-IO-7eh" secondAttribute="trailing" id="rIa-4x-uPl"/>
+                                                                                <constraint firstItem="vPB-IO-7eh" firstAttribute="top" secondItem="9o7-hv-5Fl" secondAttribute="top" id="ufe-8f-3CS"/>
+                                                                                <constraint firstItem="vPB-IO-7eh" firstAttribute="height" secondItem="9o7-hv-5Fl" secondAttribute="height" id="xL9-kM-Vd7"/>
                                                                             </constraints>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -595,6 +637,9 @@
         <designable name="gcO-Mb-bsb">
             <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
+        <designable name="mjb-We-kba">
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+        </designable>
         <designable name="uFO-hx-dt1">
             <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
@@ -604,6 +649,7 @@
     </designables>
     <resources>
         <image name="RecycledLevel1" width="588.66668701171875" height="434"/>
+        <image name="applelogo" catalog="system" width="105" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="ehYnxi" width="42.333332061767578" height="50"/>
         <image name="fZyCL6.tif" width="58" height="41"/>
@@ -614,6 +660,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
