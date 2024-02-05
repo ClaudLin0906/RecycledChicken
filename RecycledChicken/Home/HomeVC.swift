@@ -14,28 +14,30 @@ class HomeVC: CustomRootVC {
     
     @IBOutlet weak var bannerCollectionViewFlowLayout: UICollectionViewFlowLayout!
     
-    @IBOutlet weak var recycledCollectionView:UICollectionView!
-    
-    @IBOutlet weak var recycledCollectionViewFlowLayout:UICollectionViewFlowLayout!
-    
     @IBOutlet weak var pageControl:UIPageControl!
         
     @IBOutlet weak var carbonReductionLogBtn:UIButton!
-    
-    @IBOutlet weak var currentDateLabel:UILabel!
-    
+        
     @IBOutlet weak var welcomeLabel:UILabel!
-    
-    @IBOutlet weak var batteryLabel:UILabel!
-    
-    @IBOutlet weak var bottleLabel:UILabel!
     
     @IBOutlet weak var chickenLevelImageView:UIImageView!
     
+    @IBOutlet weak var chickenLevelLabel:CustomLabel!
+    
     @IBOutlet weak var trendChartImageView:UIImageView!
     
-    private var recyceledSorts:[RecyceledSort] = [.bottle, .battery, .papperCub, .aluminumCan]
+    @IBOutlet weak var petItemView:RecycledItemView!
+        
+    @IBOutlet weak var batteryItemView:RecycledItemView!
     
+    @IBOutlet weak var papperCubItemView:RecycledItemView!
+    
+    @IBOutlet weak var aluminumCanItemView:RecycledItemView!
+    
+    @IBOutlet weak var mallCollectionView:UICollectionView!
+    
+    @IBOutlet weak var mallCollectionViewFlowLayout: UICollectionViewFlowLayout!
+
     private var currentIndexSubject = PassthroughSubject<Int, Never>()
     
     private var currentIndex:Int = 0
@@ -59,11 +61,6 @@ class HomeVC: CustomRootVC {
         bannerCollectionViewFlowLayout.minimumInteritemSpacing = 0
         bannerCollectionViewFlowLayout.minimumLineSpacing = 0
         bannerCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        recycledCollectionViewFlowLayout.itemSize = CGSize(width: recycledCollectionView.frame.width / 4 - 5, height: recycledCollectionView.frame.height)
-        recycledCollectionViewFlowLayout.estimatedItemSize = .zero
-        recycledCollectionViewFlowLayout.minimumInteritemSpacing = 5
-        recycledCollectionViewFlowLayout.minimumLineSpacing = 5
-        recycledCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         pageControl.currentPage = currentIndex
         pageControl.numberOfPages = bannerCount
         getUserInfo(VC: self, finishAction: {
@@ -74,6 +71,8 @@ class HomeVC: CustomRootVC {
                 if let image = self.getTrendChart() {
                     self.trendChartImageView.image = image
                 }
+                
+                self.chickenLevelLabel.text = "目前等級：潛水雞"
             }
 
             Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
@@ -127,7 +126,6 @@ class HomeVC: CustomRootVC {
             }
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
-        currentDateLabel.text = getDates(i: 0, currentDate: Date()).0
         updateCurrentDateInfo()
     }
     
@@ -143,14 +141,17 @@ class HomeVC: CustomRootVC {
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
             self.changeBanner()
         }
+        petItemView.setInfo(.bottle)
+        batteryItemView.setInfo(.battery)
+        papperCubItemView.setInfo(.papperCub)
+        aluminumCanItemView.setInfo(.aluminumCan)
     }
     
     private func getChoseDateRecycleAmount(){
         guard CommonKey.shared.authToken != "", CurrentUserInfo.shared.isGuest == false else { return }
         computeDate(CustomCalenderModel.shared.selectedDate, endTime: CustomCalenderModel.shared.selectedDate, completion: { batteryStr, bottleStr in
             DispatchQueue.main.async {
-                self.batteryLabel.text = batteryStr
-                self.bottleLabel.text = bottleStr
+                
             }
         })
     }
@@ -241,9 +242,6 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if collectionView == recycledCollectionView {
-            return recyceledSorts.count
-        }
         if collectionView == bannerCollectionView {
             return bannerCount
         }
@@ -251,12 +249,6 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == recycledCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecycledItemCollectionViewCell", for: indexPath) as! RecycledItemCollectionViewCell
-            cell.setCell(recyceledSorts[indexPath.row])
-            return cell
-        }
-        
         if collectionView == bannerCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             return cell

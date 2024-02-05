@@ -62,6 +62,8 @@
 		5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597521992A0BD11700D0B67C /* ConnectSuccessView.xib */; };
 		5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975219E2A0BD74300D0B67C /* PointVC.swift */; };
 		597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521A02A0BD77E00D0B67C /* Point.storyboard */; };
+		597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597E7F132B70D7660018528A /* RecycledItemView.swift */; };
+		597E7F162B70D76C0018528A /* RecycledItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597E7F152B70D76C0018528A /* RecycledItemView.xib */; };
 		59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */; };
 		59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF12A63FA2200678BAF /* TaskModel.swift */; };
 		59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF32A6406DA00678BAF /* LotteryModel.swift */; };
@@ -185,9 +187,9 @@
 		59D20CE82A1E4FA600EF87B1 /* CustomCalenderScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */; };
 		59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */; };
 		59DA15D72B6CE57100B228D3 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA15D62B6CE57100B228D3 /* HomeCollectionViewCell.swift */; };
-		59DA15DD2B70A31100B228D3 /* RecycledItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA15DC2B70A31100B228D3 /* RecycledItemCollectionViewCell.swift */; };
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
+		59DBA12D2B70EB9F009E5BBD /* MallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DBA12C2B70EB9F009E5BBD /* MallCollectionViewCell.swift */; };
 		59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */; };
 		59E1E8402A6293C400396CF9 /* PersonMessageImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */; };
 		59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */; };
@@ -270,6 +272,8 @@
 		597521992A0BD11700D0B67C /* ConnectSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectSuccessView.xib; sourceTree = "<group>"; };
 		5975219E2A0BD74300D0B67C /* PointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointVC.swift; sourceTree = "<group>"; };
 		597521A02A0BD77E00D0B67C /* Point.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Point.storyboard; sourceTree = "<group>"; };
+		597E7F132B70D7660018528A /* RecycledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledItemView.swift; sourceTree = "<group>"; };
+		597E7F152B70D76C0018528A /* RecycledItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecycledItemView.xib; sourceTree = "<group>"; };
 		59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyModel.swift; sourceTree = "<group>"; };
 		59835DF12A63FA2200678BAF /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		59835DF32A6406DA00678BAF /* LotteryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryModel.swift; sourceTree = "<group>"; };
@@ -391,9 +395,9 @@
 		59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderScrollView.swift; sourceTree = "<group>"; };
 		59D20CE92A1E4FB200EF87B1 /* CustomCalenderScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderScrollView.xib; sourceTree = "<group>"; };
 		59DA15D62B6CE57100B228D3 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		59DA15DC2B70A31100B228D3 /* RecycledItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
+		59DBA12C2B70EB9F009E5BBD /* MallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallCollectionViewCell.swift; sourceTree = "<group>"; };
 		59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageImageView.swift; sourceTree = "<group>"; };
 		59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonMessageImageView.xib; sourceTree = "<group>"; };
 		59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Medium.ttf"; sourceTree = "<group>"; };
@@ -541,8 +545,10 @@
 				59C73F452A700C6A0019E87D /* HomeModel.swift */,
 				5926C5982A0632AB00FAB49D /* HomeVC.swift */,
 				5926C59A2A0632BC00FAB49D /* Home.storyboard */,
+				597E7F132B70D7660018528A /* RecycledItemView.swift */,
+				597E7F152B70D76C0018528A /* RecycledItemView.xib */,
 				59DA15D62B6CE57100B228D3 /* HomeCollectionViewCell.swift */,
-				59DA15DC2B70A31100B228D3 /* RecycledItemCollectionViewCell.swift */,
+				59DBA12C2B70EB9F009E5BBD /* MallCollectionViewCell.swift */,
 				59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */,
 				59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */,
 				59D20CE72A1E4FA600EF87B1 /* CustomCalenderScrollView.swift */,
@@ -1024,6 +1030,7 @@
 			files = (
 				59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */,
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
+				597E7F162B70D76C0018528A /* RecycledItemView.xib in Resources */,
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
 				5985D6C02B6A1F8100DE6EBA /* ADBannerView.xib in Resources */,
 				59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */,
@@ -1168,9 +1175,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */,
 				59CC8DA22A67C8CE0094CE57 /* PersonMessageModel.swift in Sources */,
 				59CDA3502A42FC5000E3F74E /* LoginModel.swift in Sources */,
 				598F394E2A0E0FA800DA9186 /* StoreListTableViewCell.swift in Sources */,
+				59DBA12D2B70EB9F009E5BBD /* MallCollectionViewCell.swift in Sources */,
 				59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */,
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
@@ -1266,7 +1275,6 @@
 				59C2D99E2A0D37000085724F /* ARVC.swift in Sources */,
 				5985D6C32B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift in Sources */,
 				598F39512A0E1F2F00DA9186 /* ProductDescriptionVC.swift in Sources */,
-				59DA15DD2B70A31100B228D3 /* RecycledItemCollectionViewCell.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
 				5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */,
