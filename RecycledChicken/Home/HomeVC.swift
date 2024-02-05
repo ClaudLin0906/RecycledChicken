@@ -61,7 +61,7 @@ class HomeVC: CustomRootVC {
         bannerCollectionViewFlowLayout.minimumInteritemSpacing = 0
         bannerCollectionViewFlowLayout.minimumLineSpacing = 0
         bannerCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: mallCollectionView.frame.height) 
+        mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: mallCollectionView.frame.height)
         mallCollectionViewFlowLayout.estimatedItemSize = .zero
         mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
         mallCollectionViewFlowLayout.minimumLineSpacing = 0
@@ -239,6 +239,11 @@ class HomeVC: CustomRootVC {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "SettingMenu", bundle: Bundle.main).instantiateViewController(identifier: "SettingMenu") as? SettingMenuVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
+    }
+    
+    @IBAction func openURLForMall(_ sender:UIButton) {
+        guard let url = URL(string: "https://tw.yahoo.com/") else { return }
+        UIApplication.shared.open(url)
     }
 }
 

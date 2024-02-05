@@ -373,7 +373,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="etd-Mn-iFm">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="etd-Mn-iFm">
                                                         <rect key="frame" x="0.0" y="30.333333333333371" width="333" height="100"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -397,7 +397,7 @@
                                                                             <rect key="frame" x="5" y="5" width="51.333333333333336" height="200"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applelogo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vPB-IO-7eh">
-                                                                                    <rect key="frame" x="0.0" y="0.3333333333333286" width="51.333333333333336" height="198.33333333333331"/>
+                                                                                    <rect key="frame" x="0.0" y="0.3333333333333286" width="51.333333333333336" height="138.33333333333331"/>
                                                                                     <color key="backgroundColor" systemColor="systemMintColor"/>
                                                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <userDefinedRuntimeAttributes>
@@ -416,7 +416,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                             <userDefinedRuntimeAttributes>
                                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                                                    <real key="value" value="15"/>
+                                                                                                    <real key="value" value="12"/>
                                                                                                 </userDefinedRuntimeAttribute>
                                                                                             </userDefinedRuntimeAttributes>
                                                                                         </label>
@@ -427,7 +427,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                             <userDefinedRuntimeAttributes>
                                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                                                    <real key="value" value="15"/>
+                                                                                                    <real key="value" value="12"/>
                                                                                                 </userDefinedRuntimeAttribute>
                                                                                             </userDefinedRuntimeAttributes>
                                                                                         </label>
@@ -445,7 +445,7 @@
                                                                                 <constraint firstItem="vPB-IO-7eh" firstAttribute="leading" secondItem="9o7-hv-5Fl" secondAttribute="leading" id="ZZB-Ah-bgO"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="vPB-IO-7eh" secondAttribute="trailing" id="rIa-4x-uPl"/>
                                                                                 <constraint firstItem="vPB-IO-7eh" firstAttribute="top" secondItem="9o7-hv-5Fl" secondAttribute="top" id="ufe-8f-3CS"/>
-                                                                                <constraint firstItem="vPB-IO-7eh" firstAttribute="height" secondItem="9o7-hv-5Fl" secondAttribute="height" id="xL9-kM-Vd7"/>
+                                                                                <constraint firstItem="vPB-IO-7eh" firstAttribute="height" secondItem="9o7-hv-5Fl" secondAttribute="height" multiplier="0.7" id="xL9-kM-Vd7"/>
                                                                             </constraints>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -496,6 +496,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPp-oJ-YKv">
                                                         <rect key="frame" x="233" y="130.33333333333337" width="100" height="50"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="openURLForMall:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h9T-3c-5Lw"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdT-wx-wTm" userLabel="line">
                                                         <rect key="frame" x="0.0" y="190.33333333333337" width="333" height="1"/>
