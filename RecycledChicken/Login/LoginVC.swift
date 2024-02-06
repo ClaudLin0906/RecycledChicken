@@ -62,7 +62,8 @@ class LoginVC: CustomLoginVC {
     }
     
     private func loginAction(phone:String, password:String){
-        let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
+//        let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
+        let loginInfo = testLoginInfo
         let loginInfoDic = try? loginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
@@ -84,29 +85,29 @@ class LoginVC: CustomLoginVC {
     }
     
     @IBAction func login(_ sender:UIButton){
-        var alertMsg = ""
+//        var alertMsg = ""
         let phone = phoneTextfield.text
         let password = passwordTextfield.text
-
-        if phone == "" {
-            alertMsg += "電話不能為空"
-        } else if !validateCellPhone(text: phone!) {
-            alertMsg += "電話格式不對"
-        }
-        alertMsg = removeWhitespace(from: alertMsg)
-        guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
-            return
-        }
-
-        if password == "" {
-            alertMsg += "密碼不能為空"
-        }
-        alertMsg = removeWhitespace(from: alertMsg)
-        guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
-            return
-        }
+//
+//        if phone == "" {
+//            alertMsg += "電話不能為空"
+//        } else if !validateCellPhone(text: phone!) {
+//            alertMsg += "電話格式不對"
+//        }
+//        alertMsg = removeWhitespace(from: alertMsg)
+//        guard alertMsg == "" else {
+//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+//            return
+//        }
+//
+//        if password == "" {
+//            alertMsg += "密碼不能為空"
+//        }
+//        alertMsg = removeWhitespace(from: alertMsg)
+//        guard alertMsg == "" else {
+//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+//            return
+//        }
 
         loginAction(phone: phone!, password: password!)
         

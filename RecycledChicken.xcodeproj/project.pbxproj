@@ -131,7 +131,6 @@
 		5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0642A134C1A002F08D8 /* WelcomeView.xib */; };
 		59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A113B22A3AA52E00C8295B /* CustomLabel.swift */; };
 		59A113BB2A3ADFCF00C8295B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A113BA2A3ADFCF00C8295B /* CustomButton.swift */; };
-		59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795492A0F03330031710F /* RingProgressGroupView.swift */; };
 		59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795712A0F72990031710F /* ForgetPasswordVC.swift */; };
 		59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A795732A0F72AF0031710F /* ForgetPassword.storyboard */; };
 		59A795772A0F770D0031710F /* ConfirmPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795762A0F770D0031710F /* ConfirmPasswordVC.swift */; };
@@ -190,6 +189,10 @@
 		59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */; };
 		59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */; };
 		59DBA12D2B70EB9F009E5BBD /* MallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DBA12C2B70EB9F009E5BBD /* MallCollectionViewCell.swift */; };
+		59DBA12F2B71EEA8009E5BBD /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DBA12E2B71EEA8009E5BBD /* DropDownView.swift */; };
+		59DBA1312B71EEE6009E5BBD /* DropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DBA1302B71EEE6009E5BBD /* DropDownView.xib */; };
+		59DBA1352B71F4CD009E5BBD /* RingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */; };
+		59DBA1372B71F521009E5BBD /* RingProgressSingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */; };
 		59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */; };
 		59E1E8402A6293C400396CF9 /* PersonMessageImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */; };
 		59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */; };
@@ -341,7 +344,6 @@
 		5999F0642A134C1A002F08D8 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		59A113B22A3AA52E00C8295B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		59A113BA2A3ADFCF00C8295B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		59A795492A0F03330031710F /* RingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressGroupView.swift; sourceTree = "<group>"; };
 		59A795712A0F72990031710F /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		59A795732A0F72AF0031710F /* ForgetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetPassword.storyboard; sourceTree = "<group>"; };
 		59A795762A0F770D0031710F /* ConfirmPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordVC.swift; sourceTree = "<group>"; };
@@ -398,6 +400,10 @@
 		59DB96AB2A08C32400ACAC31 /* BarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeView.swift; sourceTree = "<group>"; };
 		59DB96AD2A08C33C00ACAC31 /* BarCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarCodeView.xib; sourceTree = "<group>"; };
 		59DBA12C2B70EB9F009E5BBD /* MallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallCollectionViewCell.swift; sourceTree = "<group>"; };
+		59DBA12E2B71EEA8009E5BBD /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		59DBA1302B71EEE6009E5BBD /* DropDownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownView.xib; sourceTree = "<group>"; };
+		59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingProgressGroupView.swift; sourceTree = "<group>"; };
+		59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressSingleView.swift; sourceTree = "<group>"; };
 		59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageImageView.swift; sourceTree = "<group>"; };
 		59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonMessageImageView.xib; sourceTree = "<group>"; };
 		59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GenJyuuGothic-Medium.ttf"; sourceTree = "<group>"; };
@@ -809,8 +815,11 @@
 				59997A502A09385400E9FD7F /* PetView.xib */,
 				59997A522A09428000E9FD7F /* BattView.swift */,
 				59997A542A09429700E9FD7F /* BattView.xib */,
-				59A795492A0F03330031710F /* RingProgressGroupView.swift */,
+				59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */,
+				59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */,
 				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
+				59DBA12E2B71EEA8009E5BBD /* DropDownView.swift */,
+				59DBA1302B71EEE6009E5BBD /* DropDownView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1098,6 +1107,7 @@
 				59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */,
 				59A795792A0F771E0031710F /* ConfirmPassword.storyboard in Resources */,
 				59AFE1632A10088700490BD8 /* CompleteTaskAlertView.xib in Resources */,
+				59DBA1312B71EEE6009E5BBD /* DropDownView.xib in Resources */,
 				599495612A0BF812009F1B2E /* MyTicker.storyboard in Resources */,
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
@@ -1177,6 +1187,7 @@
 			files = (
 				597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */,
 				59CC8DA22A67C8CE0094CE57 /* PersonMessageModel.swift in Sources */,
+				59DBA1352B71F4CD009E5BBD /* RingProgressGroupView.swift in Sources */,
 				59CDA3502A42FC5000E3F74E /* LoginModel.swift in Sources */,
 				598F394E2A0E0FA800DA9186 /* StoreListTableViewCell.swift in Sources */,
 				59DBA12D2B70EB9F009E5BBD /* MallCollectionViewCell.swift in Sources */,
@@ -1197,11 +1208,13 @@
 				59CDA34A2A42DBA100E3F74E /* KeyChainManager.swift in Sources */,
 				599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */,
 				59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */,
+				59DBA1372B71F521009E5BBD /* RingProgressSingleView.swift in Sources */,
 				59CDA3522A42FC9600E3F74E /* ProfileModel.swift in Sources */,
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
 				5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */,
 				5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */,
+				59DBA12F2B71EEA8009E5BBD /* DropDownView.swift in Sources */,
 				59C73F482A702B400019E87D /* CarbonReductionLogModel.swift in Sources */,
 				5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
@@ -1227,7 +1240,6 @@
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
 				59A795772A0F770D0031710F /* ConfirmPasswordVC.swift in Sources */,
-				59A7954A2A0F03330031710F /* RingProgressGroupView.swift in Sources */,
 				59A113BB2A3ADFCF00C8295B /* CustomButton.swift in Sources */,
 				59CDA3542A4589C600E3F74E /* ForgetPasswordModel.swift in Sources */,
 				597521752A0B7E2800D0B67C /* SystemSettingVC.swift in Sources */,

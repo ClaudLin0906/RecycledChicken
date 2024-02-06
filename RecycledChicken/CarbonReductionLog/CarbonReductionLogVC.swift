@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 import MKRingProgressView
 class CarbonReductionLogVC: CustomVC {
         
@@ -18,6 +19,8 @@ class CarbonReductionLogVC: CustomVC {
     @IBOutlet weak var petView:PetView!
     
     @IBOutlet weak var battView:BattView!
+    
+    @IBOutlet weak var dropDownView:UIView!
     
     let parties = ["PET", "BATT"]
     
@@ -36,7 +39,6 @@ class CarbonReductionLogVC: CustomVC {
     private func UIInit() {
         recycleBtn.layer.borderWidth = 1
         recycleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        
         progressGroup.ring1.accessibilityLabel = NSLocalizedString("Move", comment: "")
         progressGroup.ring2.accessibilityLabel = NSLocalizedString("Exercise", comment: "")
         progressGroup.congratulationsTitle.text = "Congratulations!"
