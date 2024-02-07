@@ -333,13 +333,13 @@
     </scenes>
     <designables>
         <designable name="GT7-Mh-0N3">
-            <size key="intrinsicContentSize" width="228.66666666666666" height="39.666666666666664"/>
+            <size key="intrinsicContentSize" width="223.33333333333334" height="47.666666666666664"/>
         </designable>
         <designable name="iZZ-lD-1hs">
-            <size key="intrinsicContentSize" width="56" height="29"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="rlC-Jl-2oQ">
-            <size key="intrinsicContentSize" width="136" height="20"/>
+            <size key="intrinsicContentSize" width="136" height="24"/>
         </designable>
     </designables>
     <resources>
