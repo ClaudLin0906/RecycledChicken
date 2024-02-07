@@ -37,21 +37,30 @@ class CommonColor {
 
 
 enum RecyceledSort: CaseIterable {
+    
     case bottle
     case battery
     case papperCub
     case aluminumCan
+    case publicTransport
     
     func getInfo() -> RecyceledSortInfo {
+        let bottleColor = #colorLiteral(red: 0.8862745098, green: 0.7607843137, blue: 0.4901960784, alpha: 1)
+        let batteryColor = #colorLiteral(red: 0.2666666667, green: 0.4901960784, blue: 0.4156862745, alpha: 1)
+        let papperCubColor = #colorLiteral(red: 0.6862745098, green: 0.5764705882, blue: 0.4431372549, alpha: 1)
+        let aluminumCanColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
+        let publicTransportColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
         switch self {
         case .bottle:
-            return RecyceledSortInfo(chineseName: "寶特瓶", englishName: "PET", iconName: "pet")
+            return RecyceledSortInfo(chineseName: "寶特瓶", englishName: "PET", iconName: "pet", color: bottleColor)
         case .battery:
-            return RecyceledSortInfo(chineseName: "電池", englishName: "BATTERY", iconName: "battery")
+            return RecyceledSortInfo(chineseName: "電池", englishName: "BATTERY", iconName: "battery", color: batteryColor)
         case .papperCub:
-            return RecyceledSortInfo(chineseName: "紙杯", englishName: "PAPPERCUB", iconName: "papperCub")
+            return RecyceledSortInfo(chineseName: "紙杯", englishName: "PAPPERCUB", iconName: "papperCub", color: papperCubColor)
         case .aluminumCan:
-            return RecyceledSortInfo(chineseName: "鋁罐", englishName: "ALUMINUM CAN", iconName: "aluminumCan")
+            return RecyceledSortInfo(chineseName: "鋁罐", englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor)
+        case .publicTransport:
+            return RecyceledSortInfo(chineseName: "大眾運輸", englishName: "publicTransport", iconName: "bus", color: publicTransportColor)
         }
     }
     
@@ -61,6 +70,7 @@ struct RecyceledSortInfo {
     var chineseName: String
     var englishName: String
     var iconName: String
+    var color:UIColor
 }
 
 

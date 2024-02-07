@@ -21,6 +21,14 @@ class CarbonReductionLogVC: CustomVC {
     @IBOutlet weak var battView:BattView!
     
     @IBOutlet weak var dropDownView:UIView!
+        
+    private var recyceledSortInfos:[RecyceledSortInfo] = {
+        var arr:[RecyceledSortInfo] = []
+        for i in RecyceledSort.allCases {
+            arr.append(i.getInfo())
+        }
+        return arr
+    }()
     
     let parties = ["PET", "BATT"]
     
@@ -46,8 +54,12 @@ class CarbonReductionLogVC: CustomVC {
         isHiddenCongratulations(true)
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
-
     }
+    
+    private func setValueOfDropDown(_ info:RecyceledSortInfo) {
+        
+    }
+    
     
     private func isHiddenCongratulations(_ isHidden:Bool) {
         progressGroup.congratulationsContent.isHidden = isHidden

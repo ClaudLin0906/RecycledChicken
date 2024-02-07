@@ -82,8 +82,17 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXL-cK-kjS" userLabel="step2">
                                                         <rect key="frame" x="20" y="60" width="273" height="200"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvR-A6-eH4" customClass="RecycledRingInfoView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <rect key="frame" x="27.333333333333314" y="0.0" width="218.33333333333337" height="200"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            </view>
+                                                        </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="cvR-A6-eH4" firstAttribute="width" secondItem="UXL-cK-kjS" secondAttribute="width" multiplier="0.9" id="9iB-1c-t5w"/>
+                                                            <constraint firstItem="cvR-A6-eH4" firstAttribute="centerY" secondItem="UXL-cK-kjS" secondAttribute="centerY" id="aGY-ew-myd"/>
                                                             <constraint firstAttribute="height" constant="200" id="bB2-tP-J1V"/>
+                                                            <constraint firstItem="cvR-A6-eH4" firstAttribute="height" secondItem="UXL-cK-kjS" secondAttribute="height" id="g6u-md-HI2"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -98,6 +107,7 @@
                                             </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="cvR-A6-eH4" firstAttribute="centerX" secondItem="NJP-tr-1B5" secondAttribute="centerX" id="7z3-dV-3rs"/>
                                             <constraint firstItem="Oge-og-uPf" firstAttribute="trailing" secondItem="NYS-0K-Xsi" secondAttribute="trailing" id="C7b-Xh-rsb"/>
                                             <constraint firstItem="Oge-og-uPf" firstAttribute="bottom" secondItem="NYS-0K-Xsi" secondAttribute="bottom" id="IiY-cd-biq"/>
                                             <constraint firstItem="Oge-og-uPf" firstAttribute="top" secondItem="NYS-0K-Xsi" secondAttribute="top" id="dSY-zb-ZFE"/>
@@ -169,6 +179,7 @@
                     <connections>
                         <outlet property="battView" destination="j8l-cg-OIY" id="dry-22-15n"/>
                         <outlet property="carbonReductionNumber" destination="GT7-Mh-0N3" id="dfQ-8h-e1m"/>
+                        <outlet property="dropDownView" destination="KyE-ZL-0e7" id="u6e-ar-DiP"/>
                         <outlet property="petView" destination="s3u-br-yi9" id="hjV-Qv-8KK"/>
                         <outlet property="progressGroup" destination="0PQ-En-Vso" id="Mjc-6v-Cdd"/>
                         <outlet property="recycleBtn" destination="iZZ-lD-1hs" id="N2W-4X-CQe"/>
@@ -322,10 +333,13 @@
     </scenes>
     <designables>
         <designable name="GT7-Mh-0N3">
-            <size key="intrinsicContentSize" width="223.33333333333334" height="47.666666666666664"/>
+            <size key="intrinsicContentSize" width="228.66666666666666" height="39.666666666666664"/>
         </designable>
         <designable name="iZZ-lD-1hs">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
+        </designable>
+        <designable name="rlC-Jl-2oQ">
+            <size key="intrinsicContentSize" width="136" height="20"/>
         </designable>
     </designables>
     <resources>
