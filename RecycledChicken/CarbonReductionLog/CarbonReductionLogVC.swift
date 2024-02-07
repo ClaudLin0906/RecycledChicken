@@ -14,13 +14,15 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var progressGroup:RingProgressGroupView!
     
+    @IBOutlet weak var recycledRingInfoView:RecycledRingInfoView!
+    
     @IBOutlet weak var carbonReductionNumber:UILabel!
     
     @IBOutlet weak var petView:PetView!
     
     @IBOutlet weak var battView:BattView!
     
-    @IBOutlet weak var dropDownView:UIView!
+    @IBOutlet weak var dropDownView:DropDownView!
         
     private var recyceledSortInfos:[RecyceledSortInfo] = {
         var arr:[RecyceledSortInfo] = []
@@ -45,6 +47,8 @@ class CarbonReductionLogVC: CustomVC {
     }
 
     private func UIInit() {
+        recycledRingInfoView.setRecycledRingInfo(recyceledSortInfos.first!, 10, 20)
+        dropDownView.sortLabel.text = recyceledSortInfos.first?.chineseName
         recycleBtn.layer.borderWidth = 1
         recycleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         progressGroup.ring1.accessibilityLabel = NSLocalizedString("Move", comment: "")

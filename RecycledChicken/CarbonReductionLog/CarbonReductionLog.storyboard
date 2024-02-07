@@ -179,10 +179,11 @@
                     <connections>
                         <outlet property="battView" destination="j8l-cg-OIY" id="dry-22-15n"/>
                         <outlet property="carbonReductionNumber" destination="GT7-Mh-0N3" id="dfQ-8h-e1m"/>
-                        <outlet property="dropDownView" destination="KyE-ZL-0e7" id="u6e-ar-DiP"/>
+                        <outlet property="dropDownView" destination="KyE-ZL-0e7" id="Cl9-pi-qC8"/>
                         <outlet property="petView" destination="s3u-br-yi9" id="hjV-Qv-8KK"/>
                         <outlet property="progressGroup" destination="0PQ-En-Vso" id="Mjc-6v-Cdd"/>
                         <outlet property="recycleBtn" destination="iZZ-lD-1hs" id="N2W-4X-CQe"/>
+                        <outlet property="recycledRingInfoView" destination="cvR-A6-eH4" id="1K6-Ik-Dc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -333,13 +334,13 @@
     </scenes>
     <designables>
         <designable name="GT7-Mh-0N3">
-            <size key="intrinsicContentSize" width="223.33333333333334" height="47.666666666666664"/>
+            <size key="intrinsicContentSize" width="228.66666666666666" height="39.666666666666664"/>
         </designable>
         <designable name="iZZ-lD-1hs">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
         </designable>
         <designable name="rlC-Jl-2oQ">
-            <size key="intrinsicContentSize" width="136" height="24"/>
+            <size key="intrinsicContentSize" width="136" height="20"/>
         </designable>
     </designables>
     <resources>

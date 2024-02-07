@@ -92,22 +92,14 @@ class RingProgressSingleView: UIView {
         countLabel.font = UIFont(name: "jf-openhuninn-2.0", size: 25)
         countLabel.bottomAnchor.constraint(equalTo: slashLabel.bottomAnchor).isActive = true
         countLabel.trailingAnchor.constraint(equalTo: slashLabel.leadingAnchor, constant: -5).isActive = true
-//        congratulationsContent.centerXAnchor.constraint(equalTo: congratulationsTitle.centerXAnchor).isActive = true
-//        congratulationsContent.topAnchor.constraint(equalTo: congratulationsTitle.bottomAnchor, constant: 10).isActive = true
-//        congratulationsContent.widthAnchor.constraint(equalTo: congratulationsTitle.widthAnchor).isActive = true
-//        congratulationsContent.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//        if let attributedText = congratulationsContent.attributedText {
-//            let attrString = NSMutableAttributedString(attributedString: attributedText)
-//            attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Normal", size: 10)!, range: NSMakeRange(0, attrString.length))
-//            attrString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(3.0), range: NSRange(location: 0, length: attrString.length))
-//            congratulationsContent.attributedText = attrString
-//        }
     }
     
-    func setCount(_ count:Double, _ total:Double) {
+    func setCount(_ count:Double, _ total:Double, _ startColor:UIColor, _ endColor:UIColor) {
         countLabel.text = String(Int(count))
         totalLabel.text = String(Int(total))
         ring.progress = count / total
+        ringStartColor = startColor
+        ringEndColor = endColor
     }
 
 }

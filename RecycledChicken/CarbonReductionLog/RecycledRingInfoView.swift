@@ -11,6 +11,8 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var progressView:RingProgressSingleView!
     
+    private var info:RecyceledSortInfo?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -24,6 +26,10 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     private func customInit(){
         loadNibContent()
         progressView.accessibilityLabel = NSLocalizedString("Move", comment: "")
-        progressView.setCount(30, 50)
+    }
+    
+    func setRecycledRingInfo(_ info:RecyceledSortInfo, _ count:Double, _ total:Double) {
+        self.info = info
+        progressView.setCount(count, total, info.color, .white)
     }
 }

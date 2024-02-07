@@ -13,14 +13,18 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropDownView" customModule="RecycledChicken" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropDownView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="sortLabel" destination="uNM-xe-rrY" id="qkk-8h-8Qz"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNM-xe-rrY">
-                    <rect key="frame" x="165.66666666666666" y="64" width="31" height="20.333333333333329"/>
+                    <rect key="frame" x="165.66666666666666" y="430" width="31" height="17"/>
                     <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -30,24 +34,32 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kxK-Cr-Q38">
-                    <rect key="frame" x="201.66666666666666" y="66.333333333333329" width="10" height="15.666666666666671"/>
-                    <color key="tintColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1p-rD-2qU">
+                    <rect key="frame" x="196.66666666666663" y="59" width="196.33333333333337" height="759"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kxK-Cr-Q38">
+                            <rect key="frame" x="90.666666666666657" y="374.33333333333331" width="15" height="10.333333333333314"/>
+                            <color key="tintColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="W1h-rC-M0Y"/>
+                                <constraint firstAttribute="width" constant="15" id="l21-wu-QbF"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="10" id="W1h-rC-M0Y"/>
-                        <constraint firstAttribute="width" constant="10" id="l21-wu-QbF"/>
+                        <constraint firstItem="kxK-Cr-Q38" firstAttribute="centerX" secondItem="i1p-rD-2qU" secondAttribute="centerX" id="bWL-2g-GeE"/>
+                        <constraint firstItem="kxK-Cr-Q38" firstAttribute="centerY" secondItem="i1p-rD-2qU" secondAttribute="centerY" id="l8g-h8-9SE"/>
                     </constraints>
-                </imageView>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uNM-xe-rrY" secondAttribute="bottom" constant="5" id="7aM-Q4-m24"/>
-                <constraint firstItem="kxK-Cr-Q38" firstAttribute="leading" secondItem="uNM-xe-rrY" secondAttribute="trailing" constant="5" id="BOF-HN-3YA"/>
-                <constraint firstItem="uNM-xe-rrY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="O24-9m-zLb"/>
+                <constraint firstItem="i1p-rD-2qU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="326-SO-rVJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="i1p-rD-2qU" secondAttribute="bottom" id="B3Y-RH-5X7"/>
+                <constraint firstItem="i1p-rD-2qU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="RX3-K4-I10"/>
                 <constraint firstItem="uNM-xe-rrY" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="UaL-HH-rcN"/>
-                <constraint firstItem="kxK-Cr-Q38" firstAttribute="height" secondItem="uNM-xe-rrY" secondAttribute="height" id="W2q-P6-SAu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="centerX" secondItem="uNM-xe-rrY" secondAttribute="trailing" id="dY2-3g-F78"/>
-                <constraint firstItem="kxK-Cr-Q38" firstAttribute="centerY" secondItem="uNM-xe-rrY" secondAttribute="centerY" id="sok-EE-PfW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i1p-rD-2qU" secondAttribute="trailing" id="kLe-uC-CF7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-175" y="20"/>
