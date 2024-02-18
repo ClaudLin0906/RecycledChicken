@@ -231,8 +231,25 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALf-XL-HKc">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ALf-XL-HKc">
                                                                 <rect key="frame" x="0.0" y="40" width="273" height="50"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0r-5E-3kV" customClass="CarbonReductionItemCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="50"/>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2n-lJ-zdh" customClass="CarbonReductionItemCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="54.666666666666671" y="0.0" width="54.666666666666671" height="50"/>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dy-kc-shb" customClass="CarbonReductionItemCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="109.33333333333333" y="0.0" width="54.333333333333329" height="50"/>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAF-r6-42h" customClass="CarbonReductionItemCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="163.66666666666666" y="0.0" width="54.666666666666657" height="50"/>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoP-vl-iYo" customClass="CarbonReductionItemCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="218.33333333333331" y="0.0" width="54.666666666666686" height="50"/>
+                                                                    </view>
+                                                                </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="76O-Tj-UH7"/>
                                                                 </constraints>
@@ -340,11 +357,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="U1I-Rx-UHF"/>
                     <connections>
+                        <outlet property="aluminumCanItemCellView" destination="8dy-kc-shb" id="eyK-Xy-SrW"/>
                         <outlet property="battView" destination="j8l-cg-OIY" id="dry-22-15n"/>
+                        <outlet property="batteryItemCellView" destination="T2n-lJ-zdh" id="QyL-j3-Q3n"/>
+                        <outlet property="bottleItemCellView" destination="V0r-5E-3kV" id="5ab-Y1-eTN"/>
                         <outlet property="carbonReductionNumber" destination="GT7-Mh-0N3" id="dfQ-8h-e1m"/>
                         <outlet property="dropDownView" destination="KyE-ZL-0e7" id="Cl9-pi-qC8"/>
+                        <outlet property="papperCubItemCellView" destination="sAF-r6-42h" id="ls6-34-mCO"/>
                         <outlet property="petView" destination="s3u-br-yi9" id="hjV-Qv-8KK"/>
                         <outlet property="progressGroup" destination="0PQ-En-Vso" id="Mjc-6v-Cdd"/>
+                        <outlet property="publicTransportItemCellView" destination="YoP-vl-iYo" id="kzR-qW-CUw"/>
                         <outlet property="recycleBtn" destination="iZZ-lD-1hs" id="N2W-4X-CQe"/>
                         <outlet property="recycledRingInfoView" destination="cvR-A6-eH4" id="1K6-Ik-Dc4"/>
                     </connections>
@@ -509,7 +531,7 @@
             <size key="intrinsicContentSize" width="223.33333333333334" height="47.666666666666664"/>
         </designable>
         <designable name="iZZ-lD-1hs">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="izV-dL-Ize">
             <size key="intrinsicContentSize" width="52" height="20.333333333333332"/>

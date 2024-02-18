@@ -23,6 +23,16 @@ class CarbonReductionLogVC: CustomVC {
     @IBOutlet weak var battView:BattView!
     
     @IBOutlet weak var dropDownView:DropDownView!
+    
+    @IBOutlet weak var bottleItemCellView:CarbonReductionItemCellView!
+    
+    @IBOutlet weak var batteryItemCellView:CarbonReductionItemCellView!
+    
+    @IBOutlet weak var papperCubItemCellView:CarbonReductionItemCellView!
+    
+    @IBOutlet weak var aluminumCanItemCellView:CarbonReductionItemCellView!
+    
+    @IBOutlet weak var publicTransportItemCellView:CarbonReductionItemCellView!
         
     private var recyceledSortInfos:[RecyceledSortInfo] = {
         var arr:[RecyceledSortInfo] = []
@@ -56,6 +66,11 @@ class CarbonReductionLogVC: CustomVC {
         progressGroup.congratulationsTitle.text = "Congratulations!"
         progressGroup.congratulationsContent.text = "恭喜你電池回收量\n超額完成!"
         isHiddenCongratulations(true)
+        bottleItemCellView.setType(.bottle)
+        batteryItemCellView.setType(.battery)
+        papperCubItemCellView.setType(.papperCub)
+        aluminumCanItemCellView.setType(.aluminumCan)
+        publicTransportItemCellView.setType(.publicTransport)
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
     }

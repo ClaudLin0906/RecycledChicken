@@ -12,7 +12,7 @@ class CarbonReductionItemCellView: UIView, NibOwnerLoadable {
     @IBOutlet weak var imageView:UIImageView!
     
     @IBOutlet weak var countLabel:UILabel!
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -27,8 +27,11 @@ class CarbonReductionItemCellView: UIView, NibOwnerLoadable {
         loadNibContent()
     }
     
-    func setCell(_ type:RecyceledSort, _ count:Int) {
-        imageView.image = UIImage(named: type.getInfo().iconName) 
+    func setType(_ type:RecyceledSort) {
+        imageView.image = UIImage(named: type.getInfo().iconName)
+    }
+    
+    func setCount(_ count:Int) {
         countLabel.text = String(count)
     }
 
