@@ -131,6 +131,8 @@
 		5999F0612A132409002F08D8 /* AmountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0602A132409002F08D8 /* AmountView.xib */; };
 		5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999F0622A134BEF002F08D8 /* WelcomeView.swift */; };
 		5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999F0642A134C1A002F08D8 /* WelcomeView.xib */; };
+		599EA5AA2B81E1E0007AF30F /* CarbonReductionItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599EA5A92B81E1E0007AF30F /* CarbonReductionItemCellView.swift */; };
+		599EA5AC2B81E1E7007AF30F /* CarbonReductionItemCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599EA5AB2B81E1E7007AF30F /* CarbonReductionItemCellView.xib */; };
 		59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A113B22A3AA52E00C8295B /* CustomLabel.swift */; };
 		59A113BB2A3ADFCF00C8295B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A113BA2A3ADFCF00C8295B /* CustomButton.swift */; };
 		59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A795712A0F72990031710F /* ForgetPasswordVC.swift */; };
@@ -346,6 +348,8 @@
 		5999F0602A132409002F08D8 /* AmountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountView.xib; sourceTree = "<group>"; };
 		5999F0622A134BEF002F08D8 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5999F0642A134C1A002F08D8 /* WelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
+		599EA5A92B81E1E0007AF30F /* CarbonReductionItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonReductionItemCellView.swift; sourceTree = "<group>"; };
+		599EA5AB2B81E1E7007AF30F /* CarbonReductionItemCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarbonReductionItemCellView.xib; sourceTree = "<group>"; };
 		59A113B22A3AA52E00C8295B /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		59A113BA2A3ADFCF00C8295B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		59A795712A0F72990031710F /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
@@ -817,6 +821,8 @@
 				59997A4A2A0917F700E9FD7F /* CarbonReductionLog.storyboard */,
 				59980BEF2B734712002FDF41 /* RecycledRingInfoView.swift */,
 				59980BF12B734735002FDF41 /* RecycledRingInfoView.xib */,
+				599EA5A92B81E1E0007AF30F /* CarbonReductionItemCellView.swift */,
+				599EA5AB2B81E1E7007AF30F /* CarbonReductionItemCellView.xib */,
 				59997A4E2A09384300E9FD7F /* PetView.swift */,
 				59997A502A09385400E9FD7F /* PetView.xib */,
 				59997A522A09428000E9FD7F /* BattView.swift */,
@@ -1078,6 +1084,7 @@
 				599495792A0D02B1009F1B2E /* PointRule.storyboard in Resources */,
 				59C2D9A52A0D38490085724F /* Task.storyboard in Resources */,
 				598F39482A0E06C600DA9186 /* StoreList.storyboard in Resources */,
+				599EA5AC2B81E1E7007AF30F /* CarbonReductionItemCellView.xib in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
 				59B682F72A76A2CA008F5135 /* Scan.storyboard in Resources */,
 				59A7958A2A0F8F3A0031710F /* UpdateDateAlertView.xib in Resources */,
@@ -1205,6 +1212,7 @@
 				59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */,
 				59B682F32A76A0C7008F5135 /* ScanViewController.swift in Sources */,
 				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
+				599EA5AA2B81E1E0007AF30F /* CarbonReductionItemCellView.swift in Sources */,
 				59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,

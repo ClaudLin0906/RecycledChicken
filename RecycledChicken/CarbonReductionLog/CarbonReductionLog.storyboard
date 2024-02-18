@@ -12,6 +12,12 @@
         <array key="GenJyuuGothic-Normal.ttf">
             <string>GenJyuuGothic-Normal</string>
         </array>
+        <array key="GenJyuuGothic-Regular.ttf">
+            <string>GenJyuuGothic-Regular</string>
+        </array>
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Carbon Reduction LogVC-->
@@ -34,11 +40,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0D2-rT-qlc" userLabel="ScrollViewBackground">
                                 <rect key="frame" x="40" y="193" width="313" height="525"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJP-tr-1B5">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJP-tr-1B5">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="525"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-og-uPf" userLabel="content">
-                                                <rect key="frame" x="0.0" y="0.0" width="313" height="550"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-og-uPf" userLabel="content">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="680"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-Hg-eYs" userLabel="step1">
                                                         <rect key="frame" x="20" y="10" width="273" height="50"/>
@@ -51,6 +57,11 @@
                                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                        <real key="value" value="12"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="evq-gs-cRF">
                                                                 <rect key="frame" x="136" y="15.999999999999998" width="20" height="18.666666666666664"/>
@@ -80,14 +91,14 @@
                                                             <constraint firstItem="KyE-ZL-0e7" firstAttribute="centerY" secondItem="evq-gs-cRF" secondAttribute="centerY" id="urT-8D-83e"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXL-cK-kjS" userLabel="step2">
-                                                        <rect key="frame" x="20" y="70" width="273" height="200"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXL-cK-kjS" userLabel="step2">
+                                                        <rect key="frame" x="20" y="60" width="273" height="200"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvR-A6-eH4" customClass="RecycledRingInfoView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="27.333333333333314" y="25" width="218.33333333333337" height="150"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvR-A6-eH4" customClass="RecycledRingInfoView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <rect key="frame" x="13.666666666666671" y="25" width="245.66666666666663" height="150"/>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="※每月達成目標為前一個月全部使用者的平均投遞量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw0-zw-FUi" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="-118.33333333333333" y="175" width="391.33333333333331" height="25"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※每月達成目標為前一個月全部使用者的平均投遞量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw0-zw-FUi" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <rect key="frame" x="-20" y="175" width="313" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -110,16 +121,151 @@
                                                             <constraint firstItem="cvR-A6-eH4" firstAttribute="height" secondItem="UXL-cK-kjS" secondAttribute="height" constant="-50" id="tsM-1b-efb"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z66-iW-neP" userLabel="step3">
+                                                        <rect key="frame" x="20" y="270" width="273" height="300"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="泥滑島修復" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UQ-jW-c2f" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="xff-ow-bje"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                        <real key="value" value="12"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdm-7r-9wg">
+                                                                <rect key="frame" x="61.666666666666686" y="40" width="150" height="150"/>
+                                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="zdm-7r-9wg" secondAttribute="height" multiplier="1:1" id="Y2v-XK-gEh"/>
+                                                                    <constraint firstAttribute="height" constant="150" id="tCC-wt-XVc"/>
+                                                                </constraints>
+                                                                <wkWebViewConfiguration key="configuration">
+                                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                                    <wkPreferences key="preferences"/>
+                                                                </wkWebViewConfiguration>
+                                                            </wkWebView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mgQ-Gz-IKL">
+                                                                <rect key="frame" x="221.66666666666669" y="120" width="51.333333333333314" height="70"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="減碳量" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izV-dL-Ize" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="51.333333333333336" height="23.333333333333332"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                                <real key="value" value="9"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="wKX-T6-zmt">
+                                                                        <rect key="frame" x="0.0" y="23.333333333333371" width="51.333333333333336" height="23.333333333333329"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRQ-nn-bQE">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="17" height="23.333333333333332"/>
+                                                                                <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="/" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcG-TD-lP9" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                                <rect key="frame" x="17" y="3" width="17.333333333333329" height="20.333333333333332"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                                        <real key="value" value="10"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltp-Es-FTB">
+                                                                                <rect key="frame" x="34.333333333333314" y="13.333333333333258" width="17" height="10"/>
+                                                                                <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="10"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kgCO2e" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uQ-vd-ZBq">
+                                                                        <rect key="frame" x="0.0" y="46.666666666666629" width="51.333333333333336" height="23.333333333333329"/>
+                                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="10"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="70" id="lnG-ff-AA0"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="2UQ-jW-c2f" firstAttribute="top" secondItem="z66-iW-neP" secondAttribute="top" id="2j9-So-CMs"/>
+                                                            <constraint firstItem="mgQ-Gz-IKL" firstAttribute="leading" secondItem="zdm-7r-9wg" secondAttribute="trailing" constant="10" id="6rq-j0-aC1"/>
+                                                            <constraint firstAttribute="height" constant="300" id="Pid-w6-svJ"/>
+                                                            <constraint firstItem="mgQ-Gz-IKL" firstAttribute="bottom" secondItem="zdm-7r-9wg" secondAttribute="bottom" id="QY4-Sa-2Sc"/>
+                                                            <constraint firstItem="zdm-7r-9wg" firstAttribute="centerX" secondItem="z66-iW-neP" secondAttribute="centerX" id="n0I-99-GgJ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="mgQ-Gz-IKL" secondAttribute="trailing" id="o9o-zc-I4S"/>
+                                                            <constraint firstItem="zdm-7r-9wg" firstAttribute="top" secondItem="2UQ-jW-c2f" secondAttribute="bottom" constant="10" id="vPy-ly-cH4"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x79-I0-g1C" userLabel="step4">
+                                                        <rect key="frame" x="20" y="580" width="273" height="100"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修復資源" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21v-Px-0q5" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="xiz-IP-wKv"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                        <real key="value" value="12"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALf-XL-HKc">
+                                                                <rect key="frame" x="0.0" y="40" width="273" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="76O-Tj-UH7"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="ALf-XL-HKc" secondAttribute="trailing" id="H2H-FY-hPL"/>
+                                                            <constraint firstItem="21v-Px-0q5" firstAttribute="top" secondItem="x79-I0-g1C" secondAttribute="top" id="YED-Ng-tov"/>
+                                                            <constraint firstAttribute="height" constant="100" id="ano-Ca-Hoh"/>
+                                                            <constraint firstItem="ALf-XL-HKc" firstAttribute="top" secondItem="21v-Px-0q5" secondAttribute="bottom" constant="10" id="gFa-V3-VLx"/>
+                                                            <constraint firstItem="ALf-XL-HKc" firstAttribute="leading" secondItem="x79-I0-g1C" secondAttribute="leading" id="hyq-zz-QiP"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="x79-I0-g1C" secondAttribute="bottom" id="2Zj-EU-vwX"/>
                                                     <constraint firstAttribute="trailing" secondItem="qw0-zw-FUi" secondAttribute="trailing" symbolic="YES" id="5j8-6U-jTw"/>
                                                     <constraint firstItem="qw0-zw-FUi" firstAttribute="leading" secondItem="Oge-og-uPf" secondAttribute="leading" id="99z-jK-15F"/>
+                                                    <constraint firstItem="z66-iW-neP" firstAttribute="trailing" secondItem="UXL-cK-kjS" secondAttribute="trailing" id="IXa-oP-9dv"/>
+                                                    <constraint firstItem="x79-I0-g1C" firstAttribute="leading" secondItem="z66-iW-neP" secondAttribute="leading" id="JdH-WO-y8W"/>
+                                                    <constraint firstItem="UXL-cK-kjS" firstAttribute="trailing" secondItem="xAv-Hg-eYs" secondAttribute="trailing" id="MNX-3A-BF1"/>
+                                                    <constraint firstItem="x79-I0-g1C" firstAttribute="top" secondItem="z66-iW-neP" secondAttribute="bottom" constant="10" id="YJj-Rs-dTO"/>
+                                                    <constraint firstItem="21v-Px-0q5" firstAttribute="leading" secondItem="2UQ-jW-c2f" secondAttribute="leading" id="YVI-3h-8Kn"/>
                                                     <constraint firstItem="xAv-Hg-eYs" firstAttribute="top" secondItem="Oge-og-uPf" secondAttribute="top" constant="10" id="a9h-Dl-TG9"/>
-                                                    <constraint firstItem="UXL-cK-kjS" firstAttribute="top" secondItem="xAv-Hg-eYs" secondAttribute="bottom" constant="10" id="b8V-aI-0yA"/>
-                                                    <constraint firstItem="UXL-cK-kjS" firstAttribute="width" secondItem="xAv-Hg-eYs" secondAttribute="width" id="bxc-k7-NIj"/>
+                                                    <constraint firstItem="UXL-cK-kjS" firstAttribute="top" secondItem="xAv-Hg-eYs" secondAttribute="bottom" id="b8V-aI-0yA"/>
+                                                    <constraint firstItem="z66-iW-neP" firstAttribute="leading" secondItem="UXL-cK-kjS" secondAttribute="leading" id="l5a-VC-Sa8"/>
+                                                    <constraint firstItem="UXL-cK-kjS" firstAttribute="leading" secondItem="xAv-Hg-eYs" secondAttribute="leading" id="qtj-AN-dN8"/>
+                                                    <constraint firstItem="x79-I0-g1C" firstAttribute="trailing" secondItem="z66-iW-neP" secondAttribute="trailing" id="sNz-98-Dd9"/>
+                                                    <constraint firstItem="2UQ-jW-c2f" firstAttribute="leading" secondItem="rlC-Jl-2oQ" secondAttribute="leading" id="sfy-Bg-jLD"/>
                                                     <constraint firstItem="xAv-Hg-eYs" firstAttribute="leading" secondItem="Oge-og-uPf" secondAttribute="leading" constant="20" id="vm3-kq-CVc"/>
                                                     <constraint firstAttribute="trailing" secondItem="xAv-Hg-eYs" secondAttribute="trailing" constant="20" id="x1G-M6-SGz"/>
+                                                    <constraint firstItem="z66-iW-neP" firstAttribute="top" secondItem="UXL-cK-kjS" secondAttribute="bottom" constant="10" id="xse-6t-jnh"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -350,11 +496,26 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="21v-Px-0q5">
+            <size key="intrinsicContentSize" width="68" height="24"/>
+        </designable>
+        <designable name="2UQ-jW-c2f">
+            <size key="intrinsicContentSize" width="85" height="24"/>
+        </designable>
+        <designable name="FcG-TD-lP9">
+            <size key="intrinsicContentSize" width="5" height="20.333333333333332"/>
+        </designable>
         <designable name="GT7-Mh-0N3">
             <size key="intrinsicContentSize" width="223.33333333333334" height="47.666666666666664"/>
         </designable>
         <designable name="iZZ-lD-1hs">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
+        </designable>
+        <designable name="izV-dL-Ize">
+            <size key="intrinsicContentSize" width="52" height="20.333333333333332"/>
+        </designable>
+        <designable name="qw0-zw-FUi">
+            <size key="intrinsicContentSize" width="391.33333333333331" height="20.333333333333332"/>
         </designable>
         <designable name="rlC-Jl-2oQ">
             <size key="intrinsicContentSize" width="136" height="24"/>

@@ -92,6 +92,9 @@ class RingProgressSingleView: UIView {
         countLabel.font = UIFont(name: "jf-openhuninn-2.0", size: 25)
         countLabel.bottomAnchor.constraint(equalTo: slashLabel.bottomAnchor).isActive = true
         countLabel.trailingAnchor.constraint(equalTo: slashLabel.leadingAnchor, constant: -5).isActive = true
+        
+        ring.layer.shadowOffset = CGSize(width: 1, height: 1)
+        ring.layer.shadowOpacity = 0.2
     }
     
     func setCount(_ count:Double, _ total:Double, _ startColor:UIColor, _ endColor:UIColor) {
