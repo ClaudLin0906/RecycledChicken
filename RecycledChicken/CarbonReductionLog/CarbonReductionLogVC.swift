@@ -12,15 +12,7 @@ class CarbonReductionLogVC: CustomVC {
         
     @IBOutlet weak var recycleBtn:UIButton!
     
-    @IBOutlet weak var progressGroup:RingProgressGroupView!
-    
     @IBOutlet weak var recycledRingInfoView:RecycledRingInfoView!
-    
-    @IBOutlet weak var carbonReductionNumber:UILabel!
-    
-    @IBOutlet weak var petView:PetView!
-    
-    @IBOutlet weak var battView:BattView!
     
     @IBOutlet weak var dropDownView:DropDownView!
     
@@ -61,11 +53,6 @@ class CarbonReductionLogVC: CustomVC {
         dropDownView.sortLabel.text = recyceledSortInfos.first?.chineseName
         recycleBtn.layer.borderWidth = 1
         recycleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        progressGroup.ring1.accessibilityLabel = NSLocalizedString("Move", comment: "")
-        progressGroup.ring2.accessibilityLabel = NSLocalizedString("Exercise", comment: "")
-        progressGroup.congratulationsTitle.text = "Congratulations!"
-        progressGroup.congratulationsContent.text = "恭喜你電池回收量\n超額完成!"
-        isHiddenCongratulations(true)
         bottleItemCellView.setType(.bottle)
         batteryItemCellView.setType(.battery)
         papperCubItemCellView.setType(.papperCub)
@@ -77,12 +64,6 @@ class CarbonReductionLogVC: CustomVC {
     
     private func setValueOfDropDown(_ info:RecyceledSortInfo) {
         
-    }
-    
-    
-    private func isHiddenCongratulations(_ isHidden:Bool) {
-        progressGroup.congratulationsContent.isHidden = isHidden
-        progressGroup.congratulationsTitle.isHidden = isHidden
     }
     
     private func getRecycleLogData(){
@@ -108,16 +89,14 @@ class CarbonReductionLogVC: CustomVC {
                     }
                 }
                 DispatchQueue.main.async {
-                    self.battView.battAmount.text = String(batteryInt)
-                    self.petView.petAmount.text = String(bottleInt)
                     UIView.animate(withDuration: 0.5) { [self] in
-                        let batteryprogress = Double(batteryInt)/1200
-                        let bottleprogress = Double(bottleInt)/1200
-                        progressGroup.ring1.progress = batteryprogress
-                        progressGroup.ring2.progress = bottleprogress
-                        if batteryprogress >= 1 && bottleprogress >= 1{
-                            isHiddenCongratulations(false)
-                        }
+//                        let batteryprogress = Double(batteryInt)/1200
+//                        let bottleprogress = Double(bottleInt)/1200
+//                        progressGroup.ring1.progress = batteryprogress
+//                        progressGroup.ring2.progress = bottleprogress
+//                        if batteryprogress >= 1 && bottleprogress >= 1{
+//                            isHiddenCongratulations(false)
+//                        }
                     }
                 }
             }
