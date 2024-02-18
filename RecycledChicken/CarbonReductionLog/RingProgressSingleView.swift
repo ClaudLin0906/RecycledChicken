@@ -32,7 +32,7 @@ class RingProgressSingleView: UIView {
         }
     }
     
-    @IBInspectable var ringWidth: CGFloat = 20 {
+    @IBInspectable var ringWidth: CGFloat = 10 {
         didSet {
             ring.ringWidth = ringWidth
             setNeedsLayout()

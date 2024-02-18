@@ -41,7 +41,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="550"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-Hg-eYs" userLabel="step1">
-                                                        <rect key="frame" x="20" y="0.0" width="273" height="50"/>
+                                                        <rect key="frame" x="20" y="10" width="273" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="個人回收量與目標" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-Jl-2oQ" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="10" width="136" height="30"/>
@@ -81,24 +81,41 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXL-cK-kjS" userLabel="step2">
-                                                        <rect key="frame" x="20" y="60" width="273" height="200"/>
+                                                        <rect key="frame" x="20" y="70" width="273" height="200"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvR-A6-eH4" customClass="RecycledRingInfoView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="27.333333333333314" y="0.0" width="218.33333333333337" height="200"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <rect key="frame" x="27.333333333333314" y="25" width="218.33333333333337" height="150"/>
                                                             </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="※每月達成目標為前一個月全部使用者的平均投遞量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw0-zw-FUi" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <rect key="frame" x="-118.33333333333333" y="175" width="391.33333333333331" height="25"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="cvR-A6-eH4" firstAttribute="width" secondItem="UXL-cK-kjS" secondAttribute="width" multiplier="0.9" id="9iB-1c-t5w"/>
+                                                            <constraint firstItem="qw0-zw-FUi" firstAttribute="top" secondItem="cvR-A6-eH4" secondAttribute="bottom" id="HqB-f6-zHz"/>
                                                             <constraint firstItem="cvR-A6-eH4" firstAttribute="centerY" secondItem="UXL-cK-kjS" secondAttribute="centerY" id="aGY-ew-myd"/>
                                                             <constraint firstAttribute="height" constant="200" id="bB2-tP-J1V"/>
-                                                            <constraint firstItem="cvR-A6-eH4" firstAttribute="height" secondItem="UXL-cK-kjS" secondAttribute="height" id="g6u-md-HI2"/>
+                                                            <constraint firstAttribute="bottom" secondItem="qw0-zw-FUi" secondAttribute="bottom" id="cdl-7c-Xjn"/>
+                                                            <constraint firstItem="cvR-A6-eH4" firstAttribute="height" secondItem="UXL-cK-kjS" secondAttribute="height" constant="-50" id="tsM-1b-efb"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="xAv-Hg-eYs" firstAttribute="top" secondItem="Oge-og-uPf" secondAttribute="top" id="a9h-Dl-TG9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qw0-zw-FUi" secondAttribute="trailing" symbolic="YES" id="5j8-6U-jTw"/>
+                                                    <constraint firstItem="qw0-zw-FUi" firstAttribute="leading" secondItem="Oge-og-uPf" secondAttribute="leading" id="99z-jK-15F"/>
+                                                    <constraint firstItem="xAv-Hg-eYs" firstAttribute="top" secondItem="Oge-og-uPf" secondAttribute="top" constant="10" id="a9h-Dl-TG9"/>
                                                     <constraint firstItem="UXL-cK-kjS" firstAttribute="top" secondItem="xAv-Hg-eYs" secondAttribute="bottom" constant="10" id="b8V-aI-0yA"/>
                                                     <constraint firstItem="UXL-cK-kjS" firstAttribute="width" secondItem="xAv-Hg-eYs" secondAttribute="width" id="bxc-k7-NIj"/>
                                                     <constraint firstItem="xAv-Hg-eYs" firstAttribute="leading" secondItem="Oge-og-uPf" secondAttribute="leading" constant="20" id="vm3-kq-CVc"/>
@@ -334,13 +351,13 @@
     </scenes>
     <designables>
         <designable name="GT7-Mh-0N3">
-            <size key="intrinsicContentSize" width="228.66666666666666" height="39.666666666666664"/>
+            <size key="intrinsicContentSize" width="223.33333333333334" height="47.666666666666664"/>
         </designable>
         <designable name="iZZ-lD-1hs">
-            <size key="intrinsicContentSize" width="56" height="29"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="rlC-Jl-2oQ">
-            <size key="intrinsicContentSize" width="136" height="20"/>
+            <size key="intrinsicContentSize" width="136" height="24"/>
         </designable>
     </designables>
     <resources>
