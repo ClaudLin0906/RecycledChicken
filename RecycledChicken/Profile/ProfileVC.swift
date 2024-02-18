@@ -34,7 +34,7 @@ class ProfileVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "個人賬戶"
+        title = "個人帳戶"
         UIInit()
     }
     
