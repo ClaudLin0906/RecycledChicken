@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mQY-1G-3ds">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenJyuuGothic-Normal.ttf">
+            <string>GenJyuuGothic-Normal</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Language SettingVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LanguageSetting" id="Y6W-OH-hqX" customClass="LanguageSettingVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="PRY-HK-B3B" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8wQ-bR-tTU">
+                                <rect key="frame" x="10" y="113" width="373" height="705"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LanguageTableViewCell" id="aaU-qC-HcP" customClass="LanguageTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="333" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aaU-qC-HcP" id="4nP-ot-Jp3">
+                                            <rect key="frame" x="0.0" y="0.0" width="333" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF1-6W-BYi" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                    <rect key="frame" x="29.999999999999996" y="12.000000000000002" width="35.666666666666657" height="19.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VF1-6W-BYi" firstAttribute="centerY" secondItem="4nP-ot-Jp3" secondAttribute="centerY" id="i75-Zf-baf"/>
+                                                <constraint firstItem="VF1-6W-BYi" firstAttribute="leading" secondItem="4nP-ot-Jp3" secondAttribute="leadingMargin" constant="10" id="qn3-jc-oBD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="VF1-6W-BYi" id="fDl-8T-MVV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="beG-48-nNz"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="mbN-ek-C7g"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8wQ-bR-tTU" secondAttribute="trailing" constant="10" id="1SP-zt-Xxt"/>
+                            <constraint firstItem="8wQ-bR-tTU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="1eg-bt-SOB"/>
+                            <constraint firstItem="PRY-HK-B3B" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="BJ5-9U-cne"/>
+                            <constraint firstItem="PRY-HK-B3B" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Bu8-tO-TjP"/>
+                            <constraint firstItem="8wQ-bR-tTU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Fa5-az-7EL"/>
+                            <constraint firstItem="PRY-HK-B3B" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Yx0-Lh-GGm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="8wQ-bR-tTU" secondAttribute="bottom" id="m6Q-xT-k0o"/>
+                            <constraint firstAttribute="bottom" secondItem="PRY-HK-B3B" secondAttribute="bottom" id="tfz-w0-5UX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LFS-xX-fXD"/>
+                    <connections>
+                        <outlet property="tableView" destination="8wQ-bR-tTU" id="TjB-BS-0b8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.58015267175574" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nTC-ho-hRk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mQY-1G-3ds" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pHs-Zq-cbl">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="oFX-06-YHg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wG9-bR-4Wp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222.13740458015266" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="VF1-6W-BYi">
+            <size key="intrinsicContentSize" width="35.666666666666664" height="19.666666666666668"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="グループ 1089" width="1125" height="2436"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

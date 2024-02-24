@@ -31,7 +31,6 @@ class SettingMenuTableViewCell: UITableViewCell {
         if let icon = info.icon  {
             iconImageView.image = icon
         }
-        
         title.text = info.title
     }
 }

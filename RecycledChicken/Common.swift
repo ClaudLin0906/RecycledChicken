@@ -7,6 +7,17 @@
 
 import Foundation
 import UIKit
+
+class Setting {
+    static let shared = Setting()
+    var language:Language = .traditionalChinese
+}
+
+enum Language:String, CaseIterable {
+    case traditionalChinese = "繁體中文"
+    case english = "英文 English"
+}
+
 class CommonColor {
     
     static let shared = CommonColor()

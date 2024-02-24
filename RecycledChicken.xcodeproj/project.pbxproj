@@ -32,6 +32,10 @@
 		593CDE6C2A83D23E007E1D10 /* private.key in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE6B2A83D23E007E1D10 /* private.key */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
 		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
+		59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */; };
+		59632D3E2B89EC160093BE6E /* LanguageSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59632D3D2B89EC160093BE6E /* LanguageSetting.storyboard */; };
+		59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */; };
+		59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D412B89EF530093BE6E /* LanguageSettingModel.swift */; };
 		5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF52A1364570005686F /* TaskTableViewADCell.swift */; };
 		5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF92A1364EE0005686F /* TaskProgressView.swift */; };
 		5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964AAFB2A1364F70005686F /* TaskProgressView.xib */; };
@@ -254,6 +258,10 @@
 		593CDE6B2A83D23E007E1D10 /* private.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.key; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingVC.swift; sourceTree = "<group>"; };
+		59632D3D2B89EC160093BE6E /* LanguageSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguageSetting.storyboard; sourceTree = "<group>"; };
+		59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
+		59632D412B89EF530093BE6E /* LanguageSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingModel.swift; sourceTree = "<group>"; };
 		5964AAF52A1364570005686F /* TaskTableViewADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewADCell.swift; sourceTree = "<group>"; };
 		5964AAF92A1364EE0005686F /* TaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressView.swift; sourceTree = "<group>"; };
 		5964AAFB2A1364F70005686F /* TaskProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskProgressView.xib; sourceTree = "<group>"; };
@@ -529,6 +537,7 @@
 				5926C5832A04086400FAB49D /* Main.storyboard */,
 				599495692A0BFC12009F1B2E /* CommonUI */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				59632D3A2B89EBC50093BE6E /* LanguageSetting */,
 				5964AAFD2A14769C0005686F /* LAContextManager.swift */,
 				590251042B68DF250002E76C /* Pw_UserDefault.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
@@ -617,6 +626,17 @@
 				593CDE672A83D22F007E1D10 /* cert.cer */,
 			);
 			path = Certificate;
+			sourceTree = "<group>";
+		};
+		59632D3A2B89EBC50093BE6E /* LanguageSetting */ = {
+			isa = PBXGroup;
+			children = (
+				59632D412B89EF530093BE6E /* LanguageSettingModel.swift */,
+				59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */,
+				59632D3D2B89EC160093BE6E /* LanguageSetting.storyboard */,
+				59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */,
+			);
+			path = LanguageSetting;
 			sourceTree = "<group>";
 		};
 		597521602A0B49A600D0B67C /* SettingMenu */ = {
@@ -1120,6 +1140,7 @@
 				593CDE6C2A83D23E007E1D10 /* private.key in Resources */,
 				597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */,
 				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
+				59632D3E2B89EC160093BE6E /* LanguageSetting.storyboard in Resources */,
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
 				59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */,
 				5996ADF92B89D33500D6F6CF /* DeleteMessageAlertView.xib in Resources */,
@@ -1226,6 +1247,7 @@
 				59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */,
 				59B682F32A76A0C7008F5135 /* ScanViewController.swift in Sources */,
 				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
+				59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */,
 				599EA5AA2B81E1E0007AF30F /* CarbonReductionItemCellView.swift in Sources */,
 				59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
@@ -1238,6 +1260,7 @@
 				599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */,
 				59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */,
 				59DBA1372B71F521009E5BBD /* RingProgressSingleView.swift in Sources */,
+				59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */,
 				59CDA3522A42FC9600E3F74E /* ProfileModel.swift in Sources */,
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
@@ -1293,6 +1316,7 @@
 				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
+				59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */,
 				59E69A2D2A375B650062D4EB /* ScannerView.swift in Sources */,
 				5985D6BA2B6A1A2E00DE6EBA /* BannerCollectionVC.swift in Sources */,
 				59C73F462A700C6A0019E87D /* HomeModel.swift in Sources */,
