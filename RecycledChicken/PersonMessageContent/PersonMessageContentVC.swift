@@ -15,6 +15,8 @@ class PersonMessageContentVC: CustomVC {
     
     @IBOutlet weak var contentTextView:UITextView!
     
+    @IBOutlet weak var contentView:UIView!
+    
     var personMessageInfo:PersonMessageInfo?
     
     override func viewDidLoad() {
@@ -40,5 +42,25 @@ class PersonMessageContentVC: CustomVC {
         }
     }
 
+    @IBAction func deleteAction(_ sender:UIButton) {
+        let deleteAllMessageAlertView = DeleteAllMessageAlertView()
+        deleteAllMessageAlertView.delegate = self
+        deleteAllMessageAlertView.layer.cornerRadius = 5
+        contentView.addSubview(deleteAllMessageAlertView)
+        deleteAllMessageAlertView.translatesAutoresizingMaskIntoConstraints = false
+        deleteAllMessageAlertView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        deleteAllMessageAlertView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        deleteAllMessageAlertView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        deleteAllMessageAlertView.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+    }
 
 }
+
+extension PersonMessageContentVC: DeleteAllMessageAlertViewDelegate {
+    
+    func deleteAllMessage() {
+        
+    }
+    
+}
+

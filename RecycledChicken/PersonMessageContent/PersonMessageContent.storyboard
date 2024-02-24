@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,19 +59,35 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tgb-In-SOz">
-                                        <rect key="frame" x="20" y="100" width="323" height="290"/>
+                                        <rect key="frame" x="20" y="100" width="323" height="260"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJg-xq-nNa">
+                                        <rect key="frame" x="323" y="370" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="SJg-xq-nNa" secondAttribute="height" multiplier="1:1" id="Baq-r9-NKP"/>
+                                            <constraint firstAttribute="height" constant="20" id="VPc-mW-U8V"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.76078431372549016" green="0.76078431372549016" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="trash" catalog="system" symbolScale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9aJ-yx-cJm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Tgb-In-SOz" secondAttribute="bottom" constant="10" id="0AK-ee-ZMw"/>
+                                    <constraint firstItem="SJg-xq-nNa" firstAttribute="top" secondItem="Tgb-In-SOz" secondAttribute="bottom" constant="10" id="0AK-ee-ZMw"/>
                                     <constraint firstItem="BUV-vR-fCH" firstAttribute="top" secondItem="BeR-cM-VBV" secondAttribute="top" id="1Nq-iL-qtF"/>
                                     <constraint firstItem="oYj-Ye-dHI" firstAttribute="top" secondItem="BUV-vR-fCH" secondAttribute="bottom" id="4Ex-KZ-ktb"/>
+                                    <constraint firstItem="SJg-xq-nNa" firstAttribute="trailing" secondItem="Tgb-In-SOz" secondAttribute="trailing" id="9ZN-R6-gVD"/>
                                     <constraint firstItem="BeR-cM-VBV" firstAttribute="centerY" secondItem="BUV-vR-fCH" secondAttribute="bottom" id="BRm-di-bsr"/>
                                     <constraint firstItem="Tgb-In-SOz" firstAttribute="leading" secondItem="BeR-cM-VBV" secondAttribute="leading" id="FTf-Ge-526"/>
                                     <constraint firstItem="oYj-Ye-dHI" firstAttribute="trailing" secondItem="BUV-vR-fCH" secondAttribute="trailing" id="Flo-Rg-aKh"/>
@@ -79,6 +96,7 @@
                                     <constraint firstAttribute="height" constant="400" id="Y90-bb-DeY"/>
                                     <constraint firstItem="BeR-cM-VBV" firstAttribute="bottom" secondItem="oYj-Ye-dHI" secondAttribute="bottom" id="agP-ys-k19"/>
                                     <constraint firstItem="BeR-cM-VBV" firstAttribute="leading" secondItem="52b-Be-cXd" secondAttribute="leading" constant="20" id="gOG-Ot-R6h"/>
+                                    <constraint firstAttribute="bottom" secondItem="SJg-xq-nNa" secondAttribute="bottom" constant="10" id="gfo-Rx-hjv"/>
                                     <constraint firstItem="Tgb-In-SOz" firstAttribute="trailing" secondItem="BUV-vR-fCH" secondAttribute="trailing" id="mb4-Nh-hj3"/>
                                     <constraint firstAttribute="trailing" secondItem="BUV-vR-fCH" secondAttribute="trailing" constant="10" id="ng7-UT-Zkg"/>
                                     <constraint firstItem="oYj-Ye-dHI" firstAttribute="leading" secondItem="BUV-vR-fCH" secondAttribute="leading" id="oPo-8B-WYG"/>
@@ -112,6 +130,7 @@
                     <navigationItem key="navigationItem" id="smd-cw-DJF"/>
                     <connections>
                         <outlet property="contentTextView" destination="Tgb-In-SOz" id="SA4-ZN-yxw"/>
+                        <outlet property="contentView" destination="52b-Be-cXd" id="bQe-6k-ABN"/>
                         <outlet property="timeLabel" destination="oYj-Ye-dHI" id="uV3-f5-1U9"/>
                         <outlet property="titleLabel" destination="BUV-vR-fCH" id="aIb-Y8-qn9"/>
                     </connections>
@@ -148,6 +167,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <image name="グループ 1089" width="1125" height="2436"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

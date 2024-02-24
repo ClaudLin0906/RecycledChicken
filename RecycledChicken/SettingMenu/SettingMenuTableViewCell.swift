@@ -15,8 +15,6 @@ class SettingMenuTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title:UILabel!
     
-    @IBOutlet weak var rightImageView:UIImageView!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -35,10 +33,5 @@ class SettingMenuTableViewCell: UITableViewCell {
         }
         
         title.text = info.title
-        
-        if let rightImage = info.rightImage {
-            rightImageView.image = rightImage
-        }
-        
     }
 }

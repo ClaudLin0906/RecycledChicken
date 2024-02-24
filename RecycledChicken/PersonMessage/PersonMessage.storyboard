@@ -69,6 +69,7 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstItem="git-wV-GcD" firstAttribute="leading" secondItem="log-Bk-rKl" secondAttribute="trailing" constant="10" id="4go-0d-uUP"/>
                                                         <constraint firstAttribute="trailing" secondItem="git-wV-GcD" secondAttribute="trailing" constant="10" id="BVR-Kq-l8N"/>
@@ -112,6 +113,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="infoContentView" destination="cJr-ag-uRG" id="Yp2-6S-B0N"/>
                                             <outlet property="timeLabel" destination="iKQ-Ec-vQq" id="gVw-Lj-4ZB"/>
                                             <outlet property="titleLabel" destination="git-wV-GcD" id="iA7-4N-l5c"/>
                                         </connections>

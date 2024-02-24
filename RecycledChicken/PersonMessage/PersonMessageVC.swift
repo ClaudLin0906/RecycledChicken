@@ -36,9 +36,11 @@ class PersonMessageVC: CustomVC {
     }
     
     @objc private func showDeleteAllMessage(_ sender:UIBarButtonItem) {
-        
+        let deleteAllMessageAlertView = DeleteAllMessageAlertView(frame: UIScreen.main.bounds)
+        deleteAllMessageAlertView.delegate = self
+        keyWindow?.addSubview(deleteAllMessageAlertView)
     }
-    
+
     private func getData(){
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getNotification, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
@@ -57,8 +59,6 @@ class PersonMessageVC: CustomVC {
             }
         }
     }
-
-
 }
 
 extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
@@ -92,10 +92,26 @@ extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonMessageTableViewCell.identifier, for: indexPath) as! PersonMessageTableViewCell
+        cell.delegate = self
         let info = personMessageInfos[indexPath.row]
         cell.setCell(info)
         return cell
     }
     
+}
+
+extension PersonMessageVC:PersonMessageTableViewCellDelegate {
+    
+    func tapDeleteViewPress(_ indexPath: IndexPath) {
+        print(indexPath)
+    }
+    
+}
+
+extension PersonMessageVC:DeleteAllMessageAlertViewDelegate {
+    
+    func deleteAllMessage() {
+        
+    }
     
 }

@@ -11,5 +11,4 @@ import UIKit
 struct settingMenuInfo {
     var icon:UIImage?
     var title:String
-    var rightImage:UIImage?
 }
