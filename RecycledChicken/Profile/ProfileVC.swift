@@ -13,7 +13,9 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var chickenLeverLabel:CustomLabel!
     
-    let profileInfoArr:[String] = ["用戶名稱", "E-mail", "手機號碼", "生日"]
+    @IBOutlet weak var barCodeView:BarCodeView!
+    
+    let profileInfoArr:[String] = ["用戶名稱", "手機號碼", "我的邀請碼", "連動商城"]
     
     let datePicker:UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -51,6 +53,7 @@ class ProfileVC: CustomVC {
         if let chickenName = getLevelObject()?.chickenName as? String{
             chickenLeverLabel.text = "目前等級為\(chickenName)雞"
         }
+        barCodeView.setBarCodeValue("0932266860")
     }
     
     private func createDatePicker(_ textfield:UITextField) {
@@ -209,30 +212,36 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
                 cell.info.isEnabled = false
             }
         case 1:
-            cell.info.text = profileUserInfo?.userEmail
-            if CurrentUserInfo.shared.isGuest {
-                cell.info.isEnabled = false
-            }
-        case 2:
+//            cell.info.text = profileUserInfo?.userEmail
+//            if CurrentUserInfo.shared.isGuest {
+//                cell.info.isEnabled = false
+//            }
             cell.info.keyboardType = .numberPad
             cell.phoneNumberCheckBox.isHidden = false
             cell.phoneNumberCheckBox.checkState = .checked
             cell.info.isEnabled = false
             cell.info.text = profileUserInfo?.userPhoneNumber
+        case 2:
+            cell.info.isEnabled = false
+            cell.info.text = "fjije"
         case 3:
-            cell.info.placeholder = "2000/11/11"
             cell.phoneNumberCheckBox.isHidden = false
-            
-            if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
-                cell.phoneNumberCheckBox.checkState = .checked
-                cell.info.isEnabled = false
-                cell.info.text = profileUserInfo?.userBirth
-            }
-            
-            if CurrentUserInfo.shared.isGuest {
-                cell.info.isEnabled = false
-            }
-            createDatePicker(cell.info)
+            cell.phoneNumberCheckBox.checkState = .checked
+            cell.info.isEnabled = false
+            cell.info.text = "BUENO MART 連動"
+//            cell.info.placeholder = "2000/11/11"
+//            cell.phoneNumberCheckBox.isHidden = false
+//
+//            if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
+//                cell.phoneNumberCheckBox.checkState = .checked
+//                cell.info.isEnabled = false
+//                cell.info.text = profileUserInfo?.userBirth
+//            }
+//
+//            if CurrentUserInfo.shared.isGuest {
+//                cell.info.isEnabled = false
+//            }
+//            createDatePicker(cell.info)
         default:
             break
         }

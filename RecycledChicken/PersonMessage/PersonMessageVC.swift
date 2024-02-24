@@ -28,9 +28,15 @@ class PersonMessageVC: CustomVC {
     }
     
     private func UIInit(){
+        let backBtn = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(showDeleteAllMessage(_:)))
+        backBtn.tintColor = #colorLiteral(red: 0.2039215686, green: 0.2039215686, blue: 0.2039215686, alpha: 1)
+        navigationItem.rightBarButtonItem = backBtn
         personMessageTableView.setSeparatorLocation()
         personMessageTableView.showAnimatedSkeleton()
-
+    }
+    
+    @objc private func showDeleteAllMessage(_ sender:UIBarButtonItem) {
+        
     }
     
     private func getData(){

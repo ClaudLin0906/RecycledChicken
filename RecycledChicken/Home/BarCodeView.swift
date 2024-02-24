@@ -15,15 +15,7 @@ class BarCodeView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var titleLabel:UILabel!
 
-    var code = ""
-    {
-        willSet {
-            codeLabel.text = newValue
-            if let barCodeImage = generateBarCode(from: newValue) {
-                barcodeImageView.image = barCodeImage
-            }
-        }
-    }
+    private var code = ""
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,6 +36,13 @@ class BarCodeView: UIView, NibOwnerLoadable {
             titleLabel.text = "訪客模式"
         }else {
             titleLabel.text = "會員條碼"
+        }
+    }
+    
+    func setBarCodeValue(_ barCodeValue:String) {
+        codeLabel.text = barCodeValue
+        if let barCodeImage = generateBarCode(from: barCodeValue) {
+            barcodeImageView.image = barCodeImage
         }
     }
 
