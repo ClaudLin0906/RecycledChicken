@@ -743,7 +743,7 @@ func isDateWithinInterval(date: Date, start: Date, end: Date) -> Bool {
     return date >= start && date <= end
 }
 
-func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy-MM-dd","EEE")) -> (String, String, Date){
+func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy/MM/dd","EEE")) -> (String, String, Date){
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "en_US")
     var date = currentDate
