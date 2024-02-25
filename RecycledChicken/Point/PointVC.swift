@@ -23,8 +23,8 @@ class PointVC: CustomRootVC {
     
 
     private func UIInit(){
-        ponitRuleBtn.layer.borderWidth = 1
-        ponitRuleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
+        ponitRecordBtn.layer.borderWidth = 1
+        ponitRecordBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         myTicker.layer.borderWidth = 1
         myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
     }

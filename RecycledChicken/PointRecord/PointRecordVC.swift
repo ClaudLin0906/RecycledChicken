@@ -26,7 +26,7 @@ class PointRecordVC: CustomVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setDefaultNavigationBackBtn2()
+        setDefaultNavigationBackBtn()
     }
 }
 

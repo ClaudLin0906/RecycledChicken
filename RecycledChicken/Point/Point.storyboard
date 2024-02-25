@@ -212,7 +212,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="點數機制">
+                                                        <state key="normal" title="點數紀錄">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -326,7 +326,7 @@
     </scenes>
     <designables>
         <designable name="1cj-bx-TzZ">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="Hcv-dW-rKf">
             <size key="intrinsicContentSize" width="900" height="420.33333333333331"/>
@@ -341,7 +341,7 @@
             <size key="intrinsicContentSize" width="900" height="329.33333333333331"/>
         </designable>
         <designable name="yTT-JI-Qj2">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>
