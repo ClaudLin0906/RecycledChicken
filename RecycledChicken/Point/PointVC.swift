@@ -9,7 +9,7 @@ import UIKit
 
 class PointVC: CustomRootVC {
     
-    @IBOutlet weak var ponitRuleBtn:UIButton!
+    @IBOutlet weak var ponitRecordBtn:UIButton!
     
     @IBOutlet weak var myTicker:UIButton!
     
@@ -53,6 +53,10 @@ class PointVC: CustomRootVC {
         }
     }
     
+    @IBAction func goToProduct(_ sender:UIButton) {
+
+    }
+    
     @IBAction func goToLottery(_ sender:UIButton) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Lottery", bundle: Bundle.main).instantiateViewController(identifier: "Lottery") as? LotteryVC {
             pushVC(targetVC: VC, navigation: navigationController)
@@ -61,6 +65,12 @@ class PointVC: CustomRootVC {
     
     @IBAction func goToPointRule(_ sender:UIButton) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PointRule", bundle: Bundle.main).instantiateViewController(identifier: "PointRule") as? PointRuleVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
+    @IBAction func goToPointRecord(_ sener:CustomButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PointRecord", bundle: Bundle.main).instantiateViewController(identifier: "PointRecord") as? PointRecordVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }

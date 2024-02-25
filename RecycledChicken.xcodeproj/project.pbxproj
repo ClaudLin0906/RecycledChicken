@@ -117,6 +117,9 @@
 		5998DD422B8B31FF00C99A8C /* IllustratedGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5998DD412B8B31FF00C99A8C /* IllustratedGuide.storyboard */; };
 		5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD432B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift */; };
 		5998DD482B8B358C00C99A8C /* IllustratedGuideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD472B8B358C00C99A8C /* IllustratedGuideModel.swift */; };
+		5998DD4B2B8B3BFB00C99A8C /* PointRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD4A2B8B3BFB00C99A8C /* PointRecordVC.swift */; };
+		5998DD4D2B8B3C2A00C99A8C /* PointRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5998DD4C2B8B3C2A00C99A8C /* PointRecord.storyboard */; };
+		5998DD4F2B8B3D0C00C99A8C /* PointRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD4E2B8B3D0C00C99A8C /* PointRecordTableViewCell.swift */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -349,6 +352,9 @@
 		5998DD412B8B31FF00C99A8C /* IllustratedGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedGuide.storyboard; sourceTree = "<group>"; };
 		5998DD432B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideTableViewCell.swift; sourceTree = "<group>"; };
 		5998DD472B8B358C00C99A8C /* IllustratedGuideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideModel.swift; sourceTree = "<group>"; };
+		5998DD4A2B8B3BFB00C99A8C /* PointRecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordVC.swift; sourceTree = "<group>"; };
+		5998DD4C2B8B3C2A00C99A8C /* PointRecord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PointRecord.storyboard; sourceTree = "<group>"; };
+		5998DD4E2B8B3D0C00C99A8C /* PointRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordTableViewCell.swift; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -552,6 +558,7 @@
 				5998DD3E2B8B301E00C99A8C /* IllustratedGuide */,
 				599495692A0BFC12009F1B2E /* CommonUI */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				5998DD492B8B3BDF00C99A8C /* PointRecord */,
 				59632D3A2B89EBC50093BE6E /* LanguageSetting */,
 				5964AAFD2A14769C0005686F /* LAContextManager.swift */,
 				590251042B68DF250002E76C /* Pw_UserDefault.swift */,
@@ -871,6 +878,16 @@
 			path = IllustratedGuide;
 			sourceTree = "<group>";
 		};
+		5998DD492B8B3BDF00C99A8C /* PointRecord */ = {
+			isa = PBXGroup;
+			children = (
+				5998DD4A2B8B3BFB00C99A8C /* PointRecordVC.swift */,
+				5998DD4C2B8B3C2A00C99A8C /* PointRecord.storyboard */,
+				5998DD4E2B8B3D0C00C99A8C /* PointRecordTableViewCell.swift */,
+			);
+			path = PointRecord;
+			sourceTree = "<group>";
+		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
 			isa = PBXGroup;
 			children = (
@@ -1173,6 +1190,7 @@
 				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
 				59632D3E2B89EC160093BE6E /* LanguageSetting.storyboard in Resources */,
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
+				5998DD4D2B8B3C2A00C99A8C /* PointRecord.storyboard in Resources */,
 				59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */,
 				5996ADF92B89D33500D6F6CF /* DeleteMessageAlertView.xib in Resources */,
 				59BB68B42B69F62B0095E2A5 /* ReSendVerificationCodeView.xib in Resources */,
@@ -1300,6 +1318,7 @@
 				5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */,
 				5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */,
 				59DBA12F2B71EEA8009E5BBD /* DropDownView.swift in Sources */,
+				5998DD4F2B8B3D0C00C99A8C /* PointRecordTableViewCell.swift in Sources */,
 				59C73F482A702B400019E87D /* CarbonReductionLogModel.swift in Sources */,
 				5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */,
 				5996ADF72B89D32100D6F6CF /* DeleteMessageAlertView.swift in Sources */,
@@ -1337,6 +1356,7 @@
 				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
 				59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */,
 				59CC8DB12A6BD56D0094CE57 /* MyTickertModel.swift in Sources */,
+				5998DD4B2B8B3BFB00C99A8C /* PointRecordVC.swift in Sources */,
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */,
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,

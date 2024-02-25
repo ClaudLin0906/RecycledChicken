@@ -1,25 +1,27 @@
 //
-//  IllustratedGuideVC.swift
+//  PointRecordVC.swift
 //  RecycledChicken
 //
 //  Created by 林書郁 on 2024/2/25.
 //
 
 import UIKit
+import DropDown
+import SkeletonView
 
-class IllustratedGuideVC: CustomVC {
+class PointRecordVC: CustomVC {
     
     @IBOutlet weak var tableView:UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "碳竹雞圖鑑"
+        title = "點數紀錄"
         UIInit()
         // Do any additional setup after loading the view.
     }
-
-    private func UIInit(){
-        tableView.setSeparatorLocation()
+    
+    private func UIInit() {
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -28,18 +30,18 @@ class IllustratedGuideVC: CustomVC {
     }
 }
 
-extension IllustratedGuideVC: UITableViewDelegate {
+extension PointRecordVC: UITableViewDelegate {
     
 }
 
-extension IllustratedGuideVC: UITableViewDataSource {
+extension PointRecordVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IllustratedGuideTableViewCell", for: indexPath) as! IllustratedGuideTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PointRecordTableViewCell", for: indexPath) as! PointRecordTableViewCell
         return cell
     }
     

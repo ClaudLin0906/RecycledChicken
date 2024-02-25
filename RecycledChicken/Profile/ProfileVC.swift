@@ -107,7 +107,13 @@ class ProfileVC: CustomVC {
         }
     }
     
-    @IBAction func confirm(_ sender:UIButton) {
+    @IBAction func IllustratedGuideBtnPress(_ sender:CustomButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "IllustratedGuide", bundle: Bundle.main).instantiateViewController(identifier: "IllustratedGuide") as? IllustratedGuideVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
+    @IBAction func confirm(_ sender:CustomButton) {
         guard CurrentUserInfo.shared.isGuest == false else { return } 
         var newUserInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "", experiencePoint: 0)
         let cells = cellsForTableView(tableView: profileTableView)
@@ -129,16 +135,6 @@ class ProfileVC: CustomVC {
         }
         
         var errorStr = ""
-        
-//        if newUserInfo.userName == "" {
-//            errorStr += "用戶名稱不能為空"
-//        }
-        
-//        if newUserInfo.userEmail == "" {
-//            errorStr += "Email不能為空"
-//        } else if !validateEmail(text: newUserInfo.userEmail) {
-//            errorStr += "Email格式不正確"
-//        }
         
         if newUserInfo.userEmail != "" && !validateEmail(text: newUserInfo.userEmail){
             errorStr += "Email格式不正確"
