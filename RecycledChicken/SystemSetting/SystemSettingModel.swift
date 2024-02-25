@@ -15,5 +15,10 @@ struct switchTableViewInfo {
 
 struct accountTableViewInfo {
     var title:String
-    var isInvite:Bool?
+    var inviteInfo:InviteInfo?
+}
+
+struct InviteInfo {
+    var inviteCode:String
+    var isInvite:Bool
 }

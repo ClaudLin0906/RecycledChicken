@@ -113,6 +113,10 @@
 		5996ADF92B89D33500D6F6CF /* DeleteMessageAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5996ADF82B89D33500D6F6CF /* DeleteMessageAlertView.xib */; };
 		59980BF02B734713002FDF41 /* RecycledRingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59980BEF2B734712002FDF41 /* RecycledRingInfoView.swift */; };
 		59980BF22B734735002FDF41 /* RecycledRingInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59980BF12B734735002FDF41 /* RecycledRingInfoView.xib */; };
+		5998DD402B8B304300C99A8C /* IllustratedGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD3F2B8B304300C99A8C /* IllustratedGuideVC.swift */; };
+		5998DD422B8B31FF00C99A8C /* IllustratedGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5998DD412B8B31FF00C99A8C /* IllustratedGuide.storyboard */; };
+		5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD432B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift */; };
+		5998DD482B8B358C00C99A8C /* IllustratedGuideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD472B8B358C00C99A8C /* IllustratedGuideModel.swift */; };
 		59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */; };
 		59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59997A412A08E15400E9FD7F /* CustomCalenderView.xib */; };
 		59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */; };
@@ -341,6 +345,10 @@
 		5996ADF82B89D33500D6F6CF /* DeleteMessageAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteMessageAlertView.xib; sourceTree = "<group>"; };
 		59980BEF2B734712002FDF41 /* RecycledRingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledRingInfoView.swift; sourceTree = "<group>"; };
 		59980BF12B734735002FDF41 /* RecycledRingInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecycledRingInfoView.xib; sourceTree = "<group>"; };
+		5998DD3F2B8B304300C99A8C /* IllustratedGuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideVC.swift; sourceTree = "<group>"; };
+		5998DD412B8B31FF00C99A8C /* IllustratedGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedGuide.storyboard; sourceTree = "<group>"; };
+		5998DD432B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideTableViewCell.swift; sourceTree = "<group>"; };
+		5998DD472B8B358C00C99A8C /* IllustratedGuideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideModel.swift; sourceTree = "<group>"; };
 		59997A3F2A08E13E00E9FD7F /* CustomCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalenderView.swift; sourceTree = "<group>"; };
 		59997A412A08E15400E9FD7F /* CustomCalenderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCalenderView.xib; sourceTree = "<group>"; };
 		59997A432A08E2BF00E9FD7F /* CustomCalenderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderViewCell.swift; sourceTree = "<group>"; };
@@ -541,6 +549,7 @@
 				598F39442A0E066C00DA9186 /* StoreList */,
 				598F394F2A0E1F0A00DA9186 /* ProductDescription */,
 				5926C5832A04086400FAB49D /* Main.storyboard */,
+				5998DD3E2B8B301E00C99A8C /* IllustratedGuide */,
 				599495692A0BFC12009F1B2E /* CommonUI */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
 				59632D3A2B89EBC50093BE6E /* LanguageSetting */,
@@ -851,6 +860,17 @@
 			path = StoreMap;
 			sourceTree = "<group>";
 		};
+		5998DD3E2B8B301E00C99A8C /* IllustratedGuide */ = {
+			isa = PBXGroup;
+			children = (
+				5998DD3F2B8B304300C99A8C /* IllustratedGuideVC.swift */,
+				5998DD412B8B31FF00C99A8C /* IllustratedGuide.storyboard */,
+				5998DD432B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift */,
+				5998DD472B8B358C00C99A8C /* IllustratedGuideModel.swift */,
+			);
+			path = IllustratedGuide;
+			sourceTree = "<group>";
+		};
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
 			isa = PBXGroup;
 			children = (
@@ -1105,6 +1125,7 @@
 				59E69A262A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf in Resources */,
 				59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */,
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
+				5998DD422B8B31FF00C99A8C /* IllustratedGuide.storyboard in Resources */,
 				59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */,
 				59A7958E2A0F9E9E0031710F /* SpendPointAlertView.xib in Resources */,
 				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
@@ -1272,6 +1293,7 @@
 				59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */,
 				59DBA1372B71F521009E5BBD /* RingProgressSingleView.swift in Sources */,
 				59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */,
+				5998DD402B8B304300C99A8C /* IllustratedGuideVC.swift in Sources */,
 				59CDA3522A42FC9600E3F74E /* ProfileModel.swift in Sources */,
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
@@ -1301,6 +1323,7 @@
 				59997A4F2A09384300E9FD7F /* PetView.swift in Sources */,
 				59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */,
 				598751FE2A64EB6800775D4A /* ADView.swift in Sources */,
+				5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */,
 				5996ADF32B89CE4400D6F6CF /* DeleteAllMessageAlertView.swift in Sources */,
 				599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
@@ -1366,6 +1389,7 @@
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
 				59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */,
 				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
+				5998DD482B8B358C00C99A8C /* IllustratedGuideModel.swift in Sources */,
 				599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				59DA15D72B6CE57100B228D3 /* HomeCollectionViewCell.swift in Sources */,

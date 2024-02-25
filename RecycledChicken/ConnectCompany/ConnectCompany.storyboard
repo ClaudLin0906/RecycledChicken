@@ -35,7 +35,7 @@
                                 <rect key="frame" x="40" y="173" width="313" height="645"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NO8-Mg-pcf" userLabel="content">
-                                        <rect key="frame" x="0.0" y="0.0" width="313" height="610"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="580"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-cO-phv" userLabel="step1">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
@@ -146,10 +146,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eml-tA-e8E" userLabel="step5">
-                                                <rect key="frame" x="0.0" y="460" width="313" height="30"/>
+                                                <rect key="frame" x="0.0" y="460" width="313" height="10"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您使用的連絡信箱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpC-zY-24I" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="88.666666666666657" y="3" width="136" height="24"/>
+                                                        <rect key="frame" x="88.666666666666657" y="-7" width="136" height="24"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -157,50 +157,57 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="9PL-ls-fe9"/>
+                                                    <constraint firstAttribute="height" constant="10" id="9PL-ls-fe9"/>
                                                     <constraint firstItem="mpC-zY-24I" firstAttribute="centerY" secondItem="eml-tA-e8E" secondAttribute="centerY" id="ebQ-x0-gxy"/>
                                                     <constraint firstItem="mpC-zY-24I" firstAttribute="centerX" secondItem="eml-tA-e8E" secondAttribute="centerX" id="xdT-mY-NEL"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELw-2q-AhL" userLabel="step6">
-                                                <rect key="frame" x="0.0" y="510" width="313" height="50"/>
+                                                <rect key="frame" x="0.0" y="490" width="313" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-A1-zCu" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="15.333333333333373" width="41.333333333333336" height="19.666666666666671"/>
+                                                        <rect key="frame" x="5" y="1.6666666666666288" width="41.333333333333336" height="19.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fm1-WY-2vs">
-                                                        <rect key="frame" x="51.333333333333343" y="0.0" width="256.66666666666663" height="49"/>
+                                                        <rect key="frame" x="51.333333333333343" y="0.0" width="256.66666666666663" height="21.333333333333332"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-Rn-hqf">
-                                                        <rect key="frame" x="0.0" y="49" width="313" height="1"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-Rn-hqf" userLabel="line">
+                                                        <rect key="frame" x="0.0" y="21.333333333333371" width="313" height="1"/>
                                                         <color key="backgroundColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="lOU-E9-DSJ"/>
                                                         </constraints>
                                                     </view>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="輸入正確聯絡信箱格式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9r-lg-nnF" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <rect key="frame" x="86.666666666666686" y="27.333333333333371" width="140" height="20"/>
+                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                        <color key="textColor" red="0.92941176470588238" green="0.27450980392156865" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="m9r-lg-nnF" firstAttribute="top" secondItem="RfM-Rn-hqf" secondAttribute="bottom" constant="5" id="0pb-06-qiL"/>
                                                     <constraint firstItem="RfM-Rn-hqf" firstAttribute="leading" secondItem="ELw-2q-AhL" secondAttribute="leading" id="2CD-eC-DrP"/>
                                                     <constraint firstAttribute="trailing" secondItem="RfM-Rn-hqf" secondAttribute="trailing" id="5kG-Ef-3e7"/>
+                                                    <constraint firstItem="m9r-lg-nnF" firstAttribute="centerX" secondItem="RfM-Rn-hqf" secondAttribute="centerX" id="Cti-C8-NgZ"/>
                                                     <constraint firstItem="fm1-WY-2vs" firstAttribute="leading" secondItem="MoM-A1-zCu" secondAttribute="trailing" constant="5" id="Hdw-gh-GOY"/>
+                                                    <constraint firstItem="MoM-A1-zCu" firstAttribute="bottom" secondItem="fm1-WY-2vs" secondAttribute="bottom" id="K76-UR-kGz"/>
                                                     <constraint firstAttribute="trailing" secondItem="fm1-WY-2vs" secondAttribute="trailing" constant="5" id="Lpf-HQ-1I9"/>
-                                                    <constraint firstItem="MoM-A1-zCu" firstAttribute="centerY" secondItem="ELw-2q-AhL" secondAttribute="centerY" id="ZNr-zn-9MV"/>
-                                                    <constraint firstAttribute="height" constant="50" id="ex8-BP-XuR"/>
+                                                    <constraint firstAttribute="height" constant="40" id="ex8-BP-XuR"/>
                                                     <constraint firstItem="RfM-Rn-hqf" firstAttribute="top" secondItem="fm1-WY-2vs" secondAttribute="bottom" id="fAz-lZ-fWP"/>
                                                     <constraint firstItem="MoM-A1-zCu" firstAttribute="leading" secondItem="ELw-2q-AhL" secondAttribute="leading" constant="5" id="iWi-bX-Cc6"/>
                                                     <constraint firstItem="fm1-WY-2vs" firstAttribute="top" secondItem="ELw-2q-AhL" secondAttribute="top" id="mul-6H-Msc"/>
-                                                    <constraint firstAttribute="bottom" secondItem="RfM-Rn-hqf" secondAttribute="bottom" id="nbW-Dc-jHD"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkI-vZ-awe" userLabel="step7">
-                                                <rect key="frame" x="0.0" y="580" width="313" height="30"/>
+                                                <rect key="frame" x="0.0" y="550" width="313" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcT-WR-qFV" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="106.66666666666666" y="-5" width="100" height="40"/>
@@ -287,6 +294,7 @@
                     <connections>
                         <outlet property="contentView" destination="1QD-om-nin" id="Bag-g9-IAq"/>
                         <outlet property="emailTextfield" destination="fm1-WY-2vs" id="uSQ-95-5ej"/>
+                        <outlet property="errorMessageLabel" destination="m9r-lg-nnF" id="GfM-IX-WIV"/>
                         <outlet property="identityLabel" destination="xfb-tz-uIe" id="Szf-uy-g2x"/>
                         <outlet property="identityView" destination="Lqk-XC-KeB" id="207-83-gyl"/>
                     </connections>
@@ -328,6 +336,9 @@
         </designable>
         <designable name="YsI-6F-Gi0">
             <size key="intrinsicContentSize" width="153" height="24"/>
+        </designable>
+        <designable name="m9r-lg-nnF">
+            <size key="intrinsicContentSize" width="140" height="19.666666666666668"/>
         </designable>
         <designable name="mpC-zY-24I">
             <size key="intrinsicContentSize" width="136" height="24"/>

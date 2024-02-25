@@ -13,6 +13,8 @@ class SystemSettingVC: CustomVC {
     
     @IBOutlet weak var accountTableView:UITableView!
     
+    @IBOutlet weak var versionLabel:UILabel!
+    
     var switchTableViewInfos:[switchTableViewInfo] =
     [
         switchTableViewInfo(title: "APP活動通知", isTrue: false),
@@ -24,7 +26,7 @@ class SystemSettingVC: CustomVC {
     var accountTableViewInfos:[accountTableViewInfo] =
     [
 //        accountTableViewInfo(title: "連動與綁定帳號"),
-        accountTableViewInfo(title: "輸入好友邀情碼", isInvite: true),
+        accountTableViewInfo(title: "輸入好友邀情碼", inviteInfo: InviteInfo(inviteCode: "", isInvite: false)),
         accountTableViewInfo(title: "刪除帳號")
     ]
     
@@ -38,6 +40,8 @@ class SystemSettingVC: CustomVC {
     private func UIInit(){
         switchTableView.setSeparatorLocation()
         accountTableView.setSeparatorLocation()
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+        versionLabel.text = "版本資訊\(version)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +58,7 @@ extension SystemSettingVC:UITableViewDelegate, UITableViewDataSource {
         if tableView == accountTableView {
             switch row {
                 case 0:
-                if let isInvite = accountTableViewInfos[row].isInvite, !isInvite {
+                if let inviteInfo = accountTableViewInfos[row].inviteInfo, !inviteInfo.isInvite {
                     let invitationCodeView = InvitationCodeView(frame: view.window!.frame)
                     keyWindow?.addSubview(invitationCodeView)
                 }
@@ -92,7 +96,7 @@ extension SystemSettingVC:UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         if tableView == accountTableView {
-            if row == 0, let isInvite = accountTableViewInfos[row].isInvite, isInvite {
+            if row == 0, let inviteInfo = accountTableViewInfos[row].inviteInfo, inviteInfo.isInvite {
                 let cell = tableView.dequeueReusableCell(withIdentifier: InvitedTableViewCell.identifier, for: indexPath) as! InvitedTableViewCell
                 return cell
             }

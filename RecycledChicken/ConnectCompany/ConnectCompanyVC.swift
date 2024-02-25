@@ -17,6 +17,8 @@ class ConnectCompanyVC: CustomVC {
     
     @IBOutlet weak var emailTextfield:UITextField!
     
+    @IBOutlet weak var errorMessageLabel:UILabel!
+    
     let identityListDropDown = DropDown()
     
     private var keyMoveSize:CGFloat = 0
@@ -96,25 +98,45 @@ class ConnectCompanyVC: CustomVC {
         identityListDropDown.show()
     }
     
+    func showErrorMessage(_ errorContent:String) {
+        errorMessageLabel.isHidden = false
+        errorMessageLabel.text = errorContent
+    }
+    
     @IBAction func mailSendSuccess(_ sender:UIButton) {
         var alertMsg = ""
         let email = emailTextfield.text
         let content = contentView.text
         
         if content == "" {
-            alertMsg += "內容不能為空"
+            showErrorMessage("內容不能為空")
+            return
         }
         
         if email == "" {
-            alertMsg += "Email不能為空"
-        } else if !validateEmail(text: email!) {
-            alertMsg += "Email格式不正確"
-        }
-        alertMsg = removeWhitespace(from: alertMsg)
-        guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            showErrorMessage("Email不能為空")
             return
         }
+        
+        if !validateEmail(text: email!) {
+            showErrorMessage("輸入正確聯絡信箱格式")
+            return
+        }
+        
+//        if content == "" {
+//            alertMsg += "內容不能為空"
+//        }
+//
+//        if email == "" {
+//            alertMsg += "Email不能為空"
+//        } else if !validateEmail(text: email!) {
+//            alertMsg += "輸入正確聯絡信箱格式"
+//        }
+//        alertMsg = removeWhitespace(from: alertMsg)
+//        guard alertMsg == "" else {
+//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+//            return
+//        }
         sendEmailAction(content: content!, email: email!)
         
     }

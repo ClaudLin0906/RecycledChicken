@@ -164,15 +164,23 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="Li7-bp-oTc"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0L-4Y-vox" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="175.66666666666666" y="797" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="puZ-kq-5fp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="4HN-dN-yHi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="j0L-4Y-vox" secondAttribute="bottom" id="C2y-hq-ZpK"/>
                             <constraint firstItem="puZ-kq-5fp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="FG2-s1-cqJ"/>
                             <constraint firstItem="QRV-Uf-yyQ" firstAttribute="top" secondItem="puZ-kq-5fp" secondAttribute="bottom" id="Hw7-VT-poE"/>
                             <constraint firstItem="QRV-Uf-yyQ" firstAttribute="trailing" secondItem="puZ-kq-5fp" secondAttribute="trailing" id="NUN-hB-q9f"/>
                             <constraint firstItem="ayD-Wp-wvs" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="P5C-wN-NOA"/>
+                            <constraint firstItem="j0L-4Y-vox" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="d8U-Ar-O65"/>
                             <constraint firstItem="QRV-Uf-yyQ" firstAttribute="leading" secondItem="puZ-kq-5fp" secondAttribute="leading" id="fIG-dv-q3v"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="puZ-kq-5fp" secondAttribute="trailing" constant="20" id="i5g-D7-Bg3"/>
                             <constraint firstItem="ayD-Wp-wvs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="msf-pb-P3V"/>
@@ -185,6 +193,7 @@
                     <connections>
                         <outlet property="accountTableView" destination="QRV-Uf-yyQ" id="78f-5B-b7M"/>
                         <outlet property="switchTableView" destination="puZ-kq-5fp" id="ibc-Uv-xqZ"/>
+                        <outlet property="versionLabel" destination="j0L-4Y-vox" id="4Rn-KB-Pud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
