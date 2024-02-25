@@ -23,10 +23,13 @@
                     <rect key="frame" x="98.333333333333329" y="286.66666666666663" width="196.33333333333337" height="303.66666666666663"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level1" translatesAutoresizingMaskIntoConstraints="NO" id="9M6-1q-v7Q">
-                            <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="193.66666666666666"/>
+                            <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="153.66666666666666"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否刪除所有訊息 ？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAD-4n-kzI" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="203.66666666666663" width="196.33333333333334" height="0.0"/>
+                            <rect key="frame" x="0.0" y="163.66666666666663" width="196.33333333333334" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="akR-pg-kqZ"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>

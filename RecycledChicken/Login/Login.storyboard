@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="37.666666666666686" width="220" height="37.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-N1-95v">
-                                                <rect key="frame" x="0.0" y="8.6666666666666874" width="30" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="10.333333333333313" width="30" height="16.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="c9A-Ih-C1J"/>
                                                 </constraints>
@@ -90,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="75" width="220" height="37.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-p8-d8R">
-                                                <rect key="frame" x="0.0" y="9.0000000000000018" width="30" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="10.666666666666684" width="30" height="16.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="ZUf-bM-u7I"/>
                                                 </constraints>
@@ -139,7 +139,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保持登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-jY-0Jz">
-                                                <rect key="frame" x="59.999999999999986" y="8.6666666666666874" width="60" height="19.666666666666671"/>
+                                                <rect key="frame" x="59.999999999999986" y="10.333333333333313" width="60" height="16.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="dB0-cQ-hd2"/>
                                                 </constraints>
@@ -278,13 +278,13 @@
     </scenes>
     <designables>
         <designable name="Ha9-t1-1jj">
-            <size key="intrinsicContentSize" width="36" height="19.666666666666668"/>
+            <size key="intrinsicContentSize" width="35" height="16.333333333333332"/>
         </designable>
         <designable name="ZPq-0X-imi">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
         <designable name="g2r-G4-nOM">
-            <size key="intrinsicContentSize" width="42" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
     </designables>
     <resources>

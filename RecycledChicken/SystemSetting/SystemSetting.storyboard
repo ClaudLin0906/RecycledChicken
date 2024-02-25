@@ -26,10 +26,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="puZ-kq-5fp">
-                                <rect key="frame" x="20" y="103" width="353" height="100"/>
+                                <rect key="frame" x="20" y="103" width="353" height="220"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="x8f-kq-oKe"/>
+                                    <constraint firstAttribute="height" constant="220" id="x8f-kq-oKe"/>
                                 </constraints>
                                 <color key="separatorColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -71,7 +71,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QRV-Uf-yyQ">
-                                <rect key="frame" x="20" y="203" width="353" height="150"/>
+                                <rect key="frame" x="20" y="323" width="353" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="qSt-fh-nro"/>
@@ -108,6 +108,54 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="title" destination="UFK-7K-CxL" id="7ff-Gl-K1N"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InvitedTableViewCell" id="MgO-VV-83C" customClass="InvitedTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="99" width="313" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MgO-VV-83C" id="ahW-9z-luE">
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好友邀請碼已使用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcv-4Y-APJ" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="12.000000000000002" width="112" height="19.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeJ-Tr-oFA" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                    <rect key="frame" x="132" y="12" width="20" height="20"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Lhh-os-hzZ"/>
+                                                        <constraint firstAttribute="width" constant="20" id="Psw-pm-jiO"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abc123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbN-g0-p8F" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                    <rect key="frame" x="240" y="12" width="47" height="20"/>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                    <color key="textColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                            <real key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LbN-g0-p8F" firstAttribute="centerY" secondItem="yeJ-Tr-oFA" secondAttribute="centerY" id="SIu-M0-5BU"/>
+                                                <constraint firstItem="lcv-4Y-APJ" firstAttribute="centerY" secondItem="ahW-9z-luE" secondAttribute="centerY" id="ZEt-9t-erj"/>
+                                                <constraint firstItem="lcv-4Y-APJ" firstAttribute="leading" secondItem="ahW-9z-luE" secondAttribute="leading" constant="10" id="iKL-Vf-m9A"/>
+                                                <constraint firstItem="yeJ-Tr-oFA" firstAttribute="centerY" secondItem="lcv-4Y-APJ" secondAttribute="centerY" id="qff-Za-Rqx"/>
+                                                <constraint firstItem="yeJ-Tr-oFA" firstAttribute="leading" secondItem="lcv-4Y-APJ" secondAttribute="trailing" constant="10" id="wv3-qd-eeH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LbN-g0-p8F" secondAttribute="trailing" constant="10" id="yFa-RQ-fNN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="InviteCodeTitle" destination="LbN-g0-p8F" id="DqU-rT-FB1"/>
+                                            <outlet property="checkBox" destination="yeJ-Tr-oFA" id="ecg-2G-kzn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -166,8 +214,14 @@
         <designable name="FX4-bk-xzG">
             <size key="intrinsicContentSize" width="35.666666666666664" height="19.666666666666668"/>
         </designable>
+        <designable name="LbN-g0-p8F">
+            <size key="intrinsicContentSize" width="46.666666666666664" height="19.666666666666668"/>
+        </designable>
         <designable name="UFK-7K-CxL">
             <size key="intrinsicContentSize" width="35.666666666666664" height="19.666666666666668"/>
+        </designable>
+        <designable name="lcv-4Y-APJ">
+            <size key="intrinsicContentSize" width="112" height="19.666666666666668"/>
         </designable>
     </designables>
     <resources>

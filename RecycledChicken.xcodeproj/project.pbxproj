@@ -36,6 +36,9 @@
 		59632D3E2B89EC160093BE6E /* LanguageSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59632D3D2B89EC160093BE6E /* LanguageSetting.storyboard */; };
 		59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */; };
 		59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D412B89EF530093BE6E /* LanguageSettingModel.swift */; };
+		59632D442B8B15660093BE6E /* InvitationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D432B8B15660093BE6E /* InvitationCodeView.swift */; };
+		59632D462B8B15860093BE6E /* InvitationCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59632D452B8B15860093BE6E /* InvitationCodeView.xib */; };
+		59632D482B8B1F680093BE6E /* InvitedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D472B8B1F680093BE6E /* InvitedTableViewCell.swift */; };
 		5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF52A1364570005686F /* TaskTableViewADCell.swift */; };
 		5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964AAF92A1364EE0005686F /* TaskProgressView.swift */; };
 		5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5964AAFB2A1364F70005686F /* TaskProgressView.xib */; };
@@ -262,6 +265,9 @@
 		59632D3D2B89EC160093BE6E /* LanguageSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguageSetting.storyboard; sourceTree = "<group>"; };
 		59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		59632D412B89EF530093BE6E /* LanguageSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingModel.swift; sourceTree = "<group>"; };
+		59632D432B8B15660093BE6E /* InvitationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCodeView.swift; sourceTree = "<group>"; };
+		59632D452B8B15860093BE6E /* InvitationCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitationCodeView.xib; sourceTree = "<group>"; };
+		59632D472B8B1F680093BE6E /* InvitedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedTableViewCell.swift; sourceTree = "<group>"; };
 		5964AAF52A1364570005686F /* TaskTableViewADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewADCell.swift; sourceTree = "<group>"; };
 		5964AAF92A1364EE0005686F /* TaskProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressView.swift; sourceTree = "<group>"; };
 		5964AAFB2A1364F70005686F /* TaskProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskProgressView.xib; sourceTree = "<group>"; };
@@ -659,7 +665,10 @@
 				597521762A0B7E5300D0B67C /* SystemSetting.storyboard */,
 				5975217A2A0B86A700D0B67C /* SwitchTableViewCell.swift */,
 				5975217C2A0B86B700D0B67C /* AccountTableViewCell.swift */,
+				59632D472B8B1F680093BE6E /* InvitedTableViewCell.swift */,
 				597521782A0B84A200D0B67C /* SystemSettingModel.swift */,
+				59632D432B8B15660093BE6E /* InvitationCodeView.swift */,
+				59632D452B8B15860093BE6E /* InvitationCodeView.xib */,
 			);
 			path = SystemSetting;
 			sourceTree = "<group>";
@@ -1137,6 +1146,7 @@
 				597521642A0B4A0C00D0B67C /* SettingMenu.storyboard in Resources */,
 				5999F0652A134C1A002F08D8 /* WelcomeView.xib in Resources */,
 				598752002A64EB8600775D4A /* ADView.xib in Resources */,
+				59632D462B8B15860093BE6E /* InvitationCodeView.xib in Resources */,
 				593CDE6C2A83D23E007E1D10 /* private.key in Resources */,
 				597521962A0B948500D0B67C /* ConnectCompany.storyboard in Resources */,
 				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
@@ -1241,6 +1251,7 @@
 				598F394E2A0E0FA800DA9186 /* StoreListTableViewCell.swift in Sources */,
 				59DBA12D2B70EB9F009E5BBD /* MallCollectionViewCell.swift in Sources */,
 				59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */,
+				59632D482B8B1F680093BE6E /* InvitedTableViewCell.swift in Sources */,
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,
@@ -1273,6 +1284,7 @@
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
 				597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */,
 				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,
+				59632D442B8B15660093BE6E /* InvitationCodeView.swift in Sources */,
 				59A795882A0F8F2B0031710F /* UpdateDateAlertView.swift in Sources */,
 				5994957C2A0D2C1E009F1B2E /* StoreMapVC.swift in Sources */,
 				59A795902A0F9F6C0031710F /* SpendPointCompleteAlertView.swift in Sources */,
