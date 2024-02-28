@@ -16,9 +16,7 @@ class CommodityVoucherTableViewCell: UITableViewCell {
     @IBOutlet weak var itemName: CustomLabel!
         
     @IBOutlet weak var point: UILabel!
-    
-    @IBOutlet weak var duringTime: CustomLabel!
-    
+        
     @IBOutlet weak var drawTime: CustomLabel!
     
     @IBOutlet weak var drawPeople:CustomLabel!
@@ -35,22 +33,22 @@ class CommodityVoucherTableViewCell: UITableViewCell {
     }
     
     func setCell(commodityVoucherInfo:CommodityVoucherInfo) {
-        let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!)
-        let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
-        let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
-        let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
-        let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
-        DispatchQueue.main.async { [self] in
-            if let data = data, let image = UIImage(data: data) {
-                itemImageView.image = image
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!)
+            let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
+            let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
+            let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
+            let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
+            DispatchQueue.main.async { [self] in
+                if let data = data, let image = UIImage(data: data) {
+                    itemImageView.image = image
+                }
+                itemName.text = commodityVoucherInfo.itemName
+                drawTime.text = "使用時間:" + StartDate + "~" + EndDate
+                drawPeople.text = "剩餘數量:" + String(commodityVoucherInfo.purchaserCount)
+                drawTime.font = drawTime.font.withSize(11)
+                point.text = "\(commodityVoucherInfo.itemPrice)"
             }
-            itemName.text = commodityVoucherInfo.itemName
-            duringTime.text = "活動時間:" + StartDate + "~" + EndDate
-            drawTime.text = "開獎日期:" + EndDate
-            drawPeople.text = "參與人數:" + String(commodityVoucherInfo.purchaserCount)
-            duringTime.font = duringTime.font.withSize(11)
-            drawTime.font = duringTime.font.withSize(11)
-            point.text = "\(commodityVoucherInfo.itemPrice)"
         }
     }
 

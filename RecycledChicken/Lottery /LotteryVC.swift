@@ -158,7 +158,7 @@ class LotteryVC: CustomVC {
     }
 }
 
-extension LotteryVC: UITableViewDelegate, SkeletonTableViewDataSource {    
+extension LotteryVC: SkeletonTableViewDataSource {
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         LotteryTableViewCell.identifier
@@ -171,6 +171,10 @@ extension LotteryVC: UITableViewDelegate, SkeletonTableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
         nil
     }
+    
+}
+
+extension LotteryVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard CurrentUserInfo.shared.isGuest == false else { return }

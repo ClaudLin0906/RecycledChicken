@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class CommodityVoucherVC: CustomVC {
     
@@ -15,14 +16,21 @@ class CommodityVoucherVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "商品禮卷"
+        title = "禮卷專區"
         UIInit()
-        getData()
+        
         // Do any additional setup after loading the view.
     }
     
     private func UIInit(){
-        
+        tableView.setSeparatorLocation()
+        tableView.showAnimatedSkeleton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+        getData()
     }
     
     private func getData(){
@@ -35,16 +43,29 @@ class CommodityVoucherVC: CustomVC {
                 self.commodityVoucherInfos = try! JSONDecoder().decode([CommodityVoucherInfo].self, from: JSONSerialization.data(withJSONObject: dic))
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.tableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
+                    })
                 }
             }
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setDefaultNavigationBackBtn2()
-    }
+}
 
+extension CommodityVoucherVC: SkeletonTableViewDataSource {
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        CommodityVoucherTableViewCell.identifier
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        commodityVoucherInfos.count
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        nil
+    }
     
 }
 
@@ -55,10 +76,6 @@ extension CommodityVoucherVC: UITableViewDelegate, UITableViewDataSource {
             VC.commodityVoucherInfo = commodityVoucherInfos[indexPath.row]
             pushVC(targetVC: VC, navigation: navigationController)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        200
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
