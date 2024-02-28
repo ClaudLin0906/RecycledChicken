@@ -10,6 +10,12 @@ import UIKit
 class MyTickerVoucherTableViewCell: UITableViewCell {
     
     static let identifier = "MyTickerVoucherTableViewCell"
+    
+    @IBOutlet weak var itemImageView: UIImageView!
+    
+    @IBOutlet weak var itemName: CustomLabel!
+    
+    @IBOutlet weak var duringTime: CustomLabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

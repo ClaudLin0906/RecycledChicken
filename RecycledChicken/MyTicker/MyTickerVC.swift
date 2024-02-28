@@ -19,6 +19,8 @@ class MyTickerVC: CustomVC {
     
     private var voucherInfos:[MyTickertInfo] = []
     
+    private lazy var tableViews = [lotteryTableView, voucherTableView]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "我的票夾"
@@ -86,7 +88,8 @@ class MyTickerVC: CustomVC {
             return 3
         }
         if tableView == voucherTableView {
-            return voucherInfos.count
+//            return voucherInfos.count
+            return 3
         }
         return 0
     }
@@ -106,6 +109,12 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == lotteryTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerTableViewCell.identifier, for: indexPath) as! MyTickerTableViewCell
+    //        cell.setCell(myTickertInfos[indexPath.row])
+            return cell
+        }
+        
+        if tableView == voucherTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
     //        cell.setCell(myTickertInfos[indexPath.row])
             return cell
         }
@@ -140,15 +149,15 @@ extension MyTickerVC: SkeletonTableViewDataSource {
 extension MyTickerVC: CustomSegmentedControlDelegate {
     
     func change(to index: Int) {
-//        for tableView in tableViews {
-//            let tag = tableView?.tag
-//            if tag == index {
-//                tableView?.isHidden = false
-//            }
-//            if tag != index {
-//                tableView?.isHidden = true
-//            }
-//        }
+        for tableView in tableViews {
+            let tag = tableView?.tag
+            if tag == index {
+                tableView?.isHidden = false
+            }
+            if tag != index {
+                tableView?.isHidden = true
+            }
+        }
     }
     
 }
