@@ -18,3 +18,5 @@ struct LotteryInfo: Decodable {
     var pictureBig:String
     var itemName:String
 }
+
+var LotterySegmentedControlTitles = ["抽獎卷", "活動獎勵", "合作商家"]

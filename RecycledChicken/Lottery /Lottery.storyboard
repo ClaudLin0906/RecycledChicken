@@ -28,8 +28,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="Jla-s7-OY3" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9h-sa-jcd" customClass="CustomSegmentedControl" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="29.333333333333343" y="103" width="334.33333333333326" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="61y-A7-Vb6"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-Xb-UDn">
-                                <rect key="frame" x="10" y="103" width="373" height="715"/>
+                                <rect key="frame" x="10" y="153" width="373" height="665"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LotteryTableViewCell" rowHeight="128" id="6ya-wo-JM8" customClass="LotteryTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
@@ -208,14 +214,18 @@
                             <constraint firstAttribute="bottom" secondItem="Jla-s7-OY3" secondAttribute="bottom" id="6to-ap-yN6"/>
                             <constraint firstItem="Jla-s7-OY3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LPu-p2-q32"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vPC-Xb-UDn" secondAttribute="bottom" id="VkZ-Wj-J2Q"/>
-                            <constraint firstItem="vPC-Xb-UDn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ZKn-NC-ABD"/>
+                            <constraint firstItem="vPC-Xb-UDn" firstAttribute="top" secondItem="u9h-sa-jcd" secondAttribute="bottom" id="ZKn-NC-ABD"/>
                             <constraint firstItem="Jla-s7-OY3" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Zo8-SH-Haa"/>
+                            <constraint firstItem="u9h-sa-jcd" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.8" constant="20" id="ekA-2A-Upr"/>
+                            <constraint firstItem="u9h-sa-jcd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fbE-ec-HaZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vPC-Xb-UDn" secondAttribute="trailing" constant="10" id="kLF-n4-QnF"/>
                             <constraint firstItem="Jla-s7-OY3" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="skX-9U-coi"/>
+                            <constraint firstItem="u9h-sa-jcd" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="wLz-pU-YTU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h28-th-j9e"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="u9h-sa-jcd" id="R8a-7q-YS1"/>
                         <outlet property="tableView" destination="vPC-Xb-UDn" id="z2m-uc-vB5"/>
                     </connections>
                 </viewController>

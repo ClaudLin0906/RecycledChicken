@@ -88,6 +88,7 @@
 		598F394E2A0E0FA800DA9186 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F394D2A0E0FA800DA9186 /* StoreListTableViewCell.swift */; };
 		598F39512A0E1F2F00DA9186 /* ProductDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F39502A0E1F2F00DA9186 /* ProductDescriptionVC.swift */; };
 		598F39532A0E1F6600DA9186 /* ProductDescription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598F39522A0E1F6600DA9186 /* ProductDescription.storyboard */; };
+		599216C12B8EFAAC0056FFC1 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */; };
 		599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495502A0BE7A3009F1B2E /* LotteryVC.swift */; };
 		599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495522A0BE7E4009F1B2E /* Lottery.storyboard */; };
 		599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */; };
@@ -323,6 +324,7 @@
 		598F394D2A0E0FA800DA9186 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		598F39502A0E1F2F00DA9186 /* ProductDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionVC.swift; sourceTree = "<group>"; };
 		598F39522A0E1F6600DA9186 /* ProductDescription.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDescription.storyboard; sourceTree = "<group>"; };
+		599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		599495502A0BE7A3009F1B2E /* LotteryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryVC.swift; sourceTree = "<group>"; };
 		599495522A0BE7E4009F1B2E /* Lottery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lottery.storyboard; sourceTree = "<group>"; };
 		599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTableViewCell.swift; sourceTree = "<group>"; };
@@ -831,6 +833,7 @@
 				598751FF2A64EB8600775D4A /* ADView.xib */,
 				5985D6B92B6A1A2E00DE6EBA /* BannerCollectionVC.swift */,
 				59F6BE292A0762B100D7B3CB /* PasswordTextField.swift */,
+				599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -1384,6 +1387,7 @@
 				59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */,
 				59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */,
 				5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */,
+				599216C12B8EFAAC0056FFC1 /* CustomSegmentedControl.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
 				59CDA3582A45963E00E3F74E /* RecycleLogModel.swift in Sources */,
 				59CDA34C2A42DE8B00E3F74E /* VerificationCodeModel.swift in Sources */,

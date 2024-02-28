@@ -12,17 +12,20 @@ class LotteryVC: CustomVC {
     
     @IBOutlet weak var tableView:UITableView!
     
+    @IBOutlet weak var segmentedControl:CustomSegmentedControl!
+    
     private var lotteryInfos:[LotteryInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "活動/抽獎專區"
+        title = "活動抽獎專區"
         UIInit()
-        getData()
         // Do any additional setup after loading the view.
     }
     
     private func UIInit(){
+        segmentedControl.type = .singleType
+        segmentedControl.setButtonTitles(LotterySegmentedControlTitles)
         tableView.setSeparatorLocation()
         tableView.showAnimatedSkeleton()
     }
@@ -57,6 +60,7 @@ class LotteryVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+        getData()
     }
 
 }
