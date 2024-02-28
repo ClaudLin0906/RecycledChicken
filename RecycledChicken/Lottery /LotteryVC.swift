@@ -10,11 +10,21 @@ import SkeletonView
 
 class LotteryVC: CustomVC {
     
-    @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var lotteryTableView:UITableView!
+    
+    @IBOutlet weak var activityVoucherTableView:UITableView!
+        
+    @IBOutlet weak var partnerMerchantsTableView:UITableView!
     
     @IBOutlet weak var segmentedControl:CustomSegmentedControl!
     
     private var lotteryInfos:[LotteryInfo] = []
+    
+    private var activityVoucherInfos:[LotteryInfo] = []
+    
+    private var partnerMerchantsInfos:[LotteryInfo] = []
+    
+    private lazy var tableViews = [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +36,74 @@ class LotteryVC: CustomVC {
     private func UIInit(){
         segmentedControl.type = .singleType
         segmentedControl.setButtonTitles(LotterySegmentedControlTitles)
-        tableView.setSeparatorLocation()
-        tableView.showAnimatedSkeleton()
+        segmentedControl.delegate = self
+        lotteryTableView.setSeparatorLocation()
+        lotteryTableView.showAnimatedSkeleton()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
+        getLotteryData()
+        getActivityVoucherData()
+        getPartnerMerchantsData()
     }
     
-    private func getData(){
+    private func getActivityVoucherData() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+                if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
+                    self.activityVoucherInfos = data.filter({ lotteryInfo in
+                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
+                            let dateInterval = DateInterval(start: startDate, end: endDate)
+                            return dateInterval.contains(Date())
+                        }
+                        return false
+                    })
+                }
+                DispatchQueue.main.async {
+                    self.activityVoucherTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.activityVoucherTableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
+                    })
+                }
+            }
+        }
+    }
+    
+    private func getPartnerMerchantsData() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+                if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
+                    self.partnerMerchantsInfos = data.filter({ lotteryInfo in
+                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
+                            let dateInterval = DateInterval(start: startDate, end: endDate)
+                            return dateInterval.contains(Date())
+                        }
+                        return false
+                    })
+                }
+                DispatchQueue.main.async {
+                    self.partnerMerchantsTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.partnerMerchantsTableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
+                    })
+                }
+            }
+        }
+    }
+    
+    private func getLotteryData() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
@@ -47,9 +120,9 @@ class LotteryVC: CustomVC {
                     })
                 }
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.lotteryTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.tableView.stopSkeletonAnimation()
+                        self.lotteryTableView.stopSkeletonAnimation()
                         self.view.hideSkeleton()
                     })
                 }
@@ -57,12 +130,32 @@ class LotteryVC: CustomVC {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setDefaultNavigationBackBtn2()
-        getData()
+    private func getNumberOfRowsInSection(_ tableView:UITableView) -> Int {
+        if tableView == lotteryTableView {
+            return lotteryInfos.count
+        }
+        if tableView == activityVoucherTableView {
+            return activityVoucherInfos.count
+        }
+        if tableView == partnerMerchantsTableView {
+            return partnerMerchantsInfos.count
+        }
+        return 0
     }
-
+    
+    private func getLotteryInfo(_ tableView:UITableView, row:Int) -> LotteryInfo? {
+        
+        if tableView == lotteryTableView {
+            return lotteryInfos[row]
+        }
+        if tableView == activityVoucherTableView {
+            return activityVoucherInfos[row]
+        }
+        if tableView == partnerMerchantsTableView {
+            return partnerMerchantsInfos[row]
+        }
+        return nil
+    }
 }
 
 extension LotteryVC: UITableViewDelegate, SkeletonTableViewDataSource {    
@@ -72,7 +165,7 @@ extension LotteryVC: UITableViewDelegate, SkeletonTableViewDataSource {
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        lotteryInfos.count
+        getNumberOfRowsInSection(skeletonView)
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
@@ -88,14 +181,55 @@ extension LotteryVC: UITableViewDelegate, SkeletonTableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        lotteryInfos.count
+        getNumberOfRowsInSection(tableView)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LotteryTableViewCell.identifier, for: indexPath) as! LotteryTableViewCell
-        let row = indexPath.row
-        cell.setCell(lotteryInfo: lotteryInfos[row])
-        return cell
+        
+        if tableView == lotteryTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: LotteryTableViewCell.identifier, for: indexPath) as! LotteryTableViewCell
+            let row = indexPath.row
+            if let lotteryInfo = getLotteryInfo(tableView, row: row) {
+                cell.setCell(lotteryInfo)
+            }
+            return cell
+        }
+        
+        if tableView == activityVoucherTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
+            let row = indexPath.row
+            if let lotteryInfo = getLotteryInfo(tableView, row: row) {
+                cell.setCell(lotteryInfo)
+            }
+            return cell
+        }
+        
+        if tableView == partnerMerchantsTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PartnerMerchantsTableViewTableViewCell.identifier, for: indexPath) as! PartnerMerchantsTableViewTableViewCell
+            let row = indexPath.row
+            if let lotteryInfo = getLotteryInfo(tableView, row: row) {
+                cell.setCell(lotteryInfo)
+            }
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+}
+
+extension LotteryVC: CustomSegmentedControlDelegate {
+    
+    func change(to index: Int) {
+        for tableView in tableViews {
+            let tag = tableView?.tag
+            if tag == index {
+                tableView?.isHidden = false
+            }
+            if tag != index {
+                tableView?.isHidden = true
+            }
+        }
     }
     
 }

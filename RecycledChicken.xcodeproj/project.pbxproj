@@ -89,6 +89,8 @@
 		598F39512A0E1F2F00DA9186 /* ProductDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598F39502A0E1F2F00DA9186 /* ProductDescriptionVC.swift */; };
 		598F39532A0E1F6600DA9186 /* ProductDescription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598F39522A0E1F6600DA9186 /* ProductDescription.storyboard */; };
 		599216C12B8EFAAC0056FFC1 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */; };
+		599216C32B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C22B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift */; };
+		599216C52B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */; };
 		599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495502A0BE7A3009F1B2E /* LotteryVC.swift */; };
 		599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495522A0BE7E4009F1B2E /* Lottery.storyboard */; };
 		599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */; };
@@ -325,6 +327,8 @@
 		598F39502A0E1F2F00DA9186 /* ProductDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionVC.swift; sourceTree = "<group>"; };
 		598F39522A0E1F6600DA9186 /* ProductDescription.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDescription.storyboard; sourceTree = "<group>"; };
 		599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		599216C22B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoucherTableViewCell.swift; sourceTree = "<group>"; };
+		599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerMerchantsTableViewTableViewCell.swift; sourceTree = "<group>"; };
 		599495502A0BE7A3009F1B2E /* LotteryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryVC.swift; sourceTree = "<group>"; };
 		599495522A0BE7E4009F1B2E /* Lottery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lottery.storyboard; sourceTree = "<group>"; };
 		599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTableViewCell.swift; sourceTree = "<group>"; };
@@ -776,6 +780,8 @@
 				599495502A0BE7A3009F1B2E /* LotteryVC.swift */,
 				599495522A0BE7E4009F1B2E /* Lottery.storyboard */,
 				599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */,
+				599216C22B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift */,
+				599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */,
 				59835DF32A6406DA00678BAF /* LotteryModel.swift */,
 			);
 			path = "Lottery ";
@@ -1346,6 +1352,7 @@
 				59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */,
 				598751FE2A64EB6800775D4A /* ADView.swift in Sources */,
 				5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */,
+				599216C32B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift in Sources */,
 				5996ADF32B89CE4400D6F6CF /* DeleteAllMessageAlertView.swift in Sources */,
 				599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
@@ -1371,6 +1378,7 @@
 				5975216C2A0B648A00D0B67C /* SettingMenuModel.swift in Sources */,
 				590251052B68DF250002E76C /* Pw_UserDefault.swift in Sources */,
 				597521792A0B84A200D0B67C /* SystemSettingModel.swift in Sources */,
+				599216C52B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift in Sources */,
 				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,

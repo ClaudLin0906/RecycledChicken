@@ -1,16 +1,16 @@
 //
-//  LotteryTableViewCell.swift
+//  ActivityVoucherTableViewCell.swift
 //  RecycledChicken
 //
-//  Created by 林書郁 on 2023/5/10.
+//  Created by 林書郁 on 2024/2/28.
 //
 
 import UIKit
 
-class LotteryTableViewCell: UITableViewCell {
+class ActivityVoucherTableViewCell: UITableViewCell {
     
-    static let identifier = "LotteryTableViewCell"
-
+    static let identifier = "ActivityVoucherTableViewCell"
+    
     @IBOutlet weak var itemImageView: UIImageView!
     
     @IBOutlet weak var itemName: CustomLabel!
@@ -18,11 +18,9 @@ class LotteryTableViewCell: UITableViewCell {
     @IBOutlet weak var point: UILabel!
     
     @IBOutlet weak var duringTime: CustomLabel!
-    
-    @IBOutlet weak var drawTime: CustomLabel!
-    
+        
     @IBOutlet weak var drawPeople:CustomLabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -48,12 +46,11 @@ class LotteryTableViewCell: UITableViewCell {
                 }
                 itemName.text = lotteryInfo.itemName
                 duringTime.text = "活動時間:" + StartDate + "~" + EndDate
-                drawTime.text = "開獎日期:" + lotteryDrawDate
-                drawPeople.text = "參與次數:" + String(lotteryInfo.purchaserCount)
+                drawPeople.text = "參與人數:" + String(lotteryInfo.purchaserCount)
                 duringTime.font = duringTime.font.withSize(11)
-                drawTime.font = duringTime.font.withSize(11)
                 point.text = "\(lotteryInfo.itemPrice)"
             }
         }
     }
+
 }
