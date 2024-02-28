@@ -143,8 +143,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="aht-zh-mc3"/>
                     <connections>
+                        <outlet property="lotteryTableView" destination="PgC-Er-VYN" id="A1P-ma-XcO"/>
                         <outlet property="segmentedControl" destination="2JI-bY-BwN" id="h5A-kd-N6K"/>
-                        <outlet property="tableView" destination="PgC-Er-VYN" id="pU3-yf-RzO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

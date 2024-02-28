@@ -11,7 +11,7 @@ class MyTickerVC: CustomVC {
     
     @IBOutlet weak var segmentedControl:CustomSegmentedControl!
     
-    @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var lotteryTableView:UITableView!
 
     private var myTickertInfos:[MyTickertInfo] = []
     
@@ -22,14 +22,14 @@ class MyTickerVC: CustomVC {
         // Do any additional setup after loading the view.
     }
     
-    private func UIInit(){
+    private func UIInit() {
         segmentedControl.type = .singleType
         segmentedControl.setButtonTitles(MyTickertTitles)
         segmentedControl.delegate = self
-        tableView.setSeparatorLocation()
+        lotteryTableView.setSeparatorLocation()
     }
     
-    private func getData(){
+    private func getLotteryData() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryRecord, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
@@ -38,7 +38,7 @@ class MyTickerVC: CustomVC {
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 self.myTickertInfos = try! JSONDecoder().decode([MyTickertInfo].self, from: JSONSerialization.data(withJSONObject: dic))
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.lotteryTableView.reloadData()
                 }
             }
         }
@@ -47,7 +47,7 @@ class MyTickerVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        getData()
+        getLotteryData()
     }
 
 
@@ -60,12 +60,13 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        myTickertInfos.count
+//        myTickertInfos.count
+        4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerTableViewCell.identifier, for: indexPath) as! MyTickerTableViewCell
-        cell.setCell(myTickertInfos[indexPath.row])
+//        cell.setCell(myTickertInfos[indexPath.row])
         return cell
     }
     
