@@ -21,7 +21,7 @@ class BuyCommodityVC: CustomVC {
     }
     
     private func UIInit(){
-        spendPointView.setConfirmBtnTitle("確認兌換")
+        spendPointView.setConfirmBtnTitle("確認購買")
         spendPointView.delegate = self
     }
     

@@ -54,7 +54,9 @@ class PointVC: CustomRootVC {
     }
     
     @IBAction func goToProduct(_ sender:UIButton) {
-
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Product", bundle: Bundle.main).instantiateViewController(identifier: "Product") as? ProductVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
     }
     
     @IBAction func goToLottery(_ sender:UIButton) {

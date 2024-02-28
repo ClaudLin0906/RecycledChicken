@@ -9,6 +9,8 @@ import UIKit
 
 class MyTickerVC: CustomVC {
     
+    @IBOutlet weak var segmentedControl:CustomSegmentedControl!
+    
     @IBOutlet weak var tableView:UITableView!
 
     private var myTickertInfos:[MyTickertInfo] = []
@@ -21,7 +23,10 @@ class MyTickerVC: CustomVC {
     }
     
     private func UIInit(){
-        
+        segmentedControl.type = .singleType
+        segmentedControl.setButtonTitles(MyTickertTitles)
+        segmentedControl.delegate = self
+        tableView.setSeparatorLocation()
     }
     
     private func getData(){
@@ -62,6 +67,23 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerTableViewCell.identifier, for: indexPath) as! MyTickerTableViewCell
         cell.setCell(myTickertInfos[indexPath.row])
         return cell
+    }
+    
+}
+
+
+extension MyTickerVC: CustomSegmentedControlDelegate {
+    
+    func change(to index: Int) {
+//        for tableView in tableViews {
+//            let tag = tableView?.tag
+//            if tag == index {
+//                tableView?.isHidden = false
+//            }
+//            if tag != index {
+//                tableView?.isHidden = true
+//            }
+//        }
     }
     
 }

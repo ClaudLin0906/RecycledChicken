@@ -91,6 +91,8 @@
 		599216C12B8EFAAC0056FFC1 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */; };
 		599216C32B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C22B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift */; };
 		599216C52B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */; };
+		599216C82B8F1E0D0056FFC1 /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C72B8F1E0D0056FFC1 /* ProductVC.swift */; };
+		599216CA2B8F1E190056FFC1 /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599216C92B8F1E190056FFC1 /* Product.storyboard */; };
 		599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495502A0BE7A3009F1B2E /* LotteryVC.swift */; };
 		599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495522A0BE7E4009F1B2E /* Lottery.storyboard */; };
 		599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */; };
@@ -329,6 +331,8 @@
 		599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		599216C22B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoucherTableViewCell.swift; sourceTree = "<group>"; };
 		599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerMerchantsTableViewTableViewCell.swift; sourceTree = "<group>"; };
+		599216C72B8F1E0D0056FFC1 /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
+		599216C92B8F1E190056FFC1 /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
 		599495502A0BE7A3009F1B2E /* LotteryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryVC.swift; sourceTree = "<group>"; };
 		599495522A0BE7E4009F1B2E /* Lottery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lottery.storyboard; sourceTree = "<group>"; };
 		599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTableViewCell.swift; sourceTree = "<group>"; };
@@ -564,6 +568,7 @@
 				5998DD3E2B8B301E00C99A8C /* IllustratedGuide */,
 				599495692A0BFC12009F1B2E /* CommonUI */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				599216C62B8F1DF60056FFC1 /* Product */,
 				5998DD492B8B3BDF00C99A8C /* PointRecord */,
 				59632D3A2B89EBC50093BE6E /* LanguageSetting */,
 				5964AAFD2A14769C0005686F /* LAContextManager.swift */,
@@ -772,6 +777,15 @@
 				598F39522A0E1F6600DA9186 /* ProductDescription.storyboard */,
 			);
 			path = ProductDescription;
+			sourceTree = "<group>";
+		};
+		599216C62B8F1DF60056FFC1 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				599216C72B8F1E0D0056FFC1 /* ProductVC.swift */,
+				599216C92B8F1E190056FFC1 /* Product.storyboard */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		5994954F2A0BE77E009F1B2E /* Lottery  */ = {
@@ -1218,6 +1232,7 @@
 				5926C59B2A0632BC00FAB49D /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
 				593CDE6A2A83D236007E1D10 /* certificate.p12 in Resources */,
+				599216CA2B8F1E190056FFC1 /* Product.storyboard in Resources */,
 				59980BF22B734735002FDF41 /* RecycledRingInfoView.xib in Resources */,
 				59997A422A08E15400E9FD7F /* CustomCalenderView.xib in Resources */,
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
@@ -1385,6 +1400,7 @@
 				59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */,
 				59E69A2D2A375B650062D4EB /* ScannerView.swift in Sources */,
 				5985D6BA2B6A1A2E00DE6EBA /* BannerCollectionVC.swift in Sources */,
+				599216C82B8F1E0D0056FFC1 /* ProductVC.swift in Sources */,
 				59C73F462A700C6A0019E87D /* HomeModel.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
 				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,

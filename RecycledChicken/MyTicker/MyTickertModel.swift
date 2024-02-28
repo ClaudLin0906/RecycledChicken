@@ -15,3 +15,6 @@ struct MyTickertInfo:Decodable {
     var activityEndTime:String
     var lotteryDrawDate:String
 }
+
+
+var MyTickertTitles = ["抽獎卷", "商品卷"]

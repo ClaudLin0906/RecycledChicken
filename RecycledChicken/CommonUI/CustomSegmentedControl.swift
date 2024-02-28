@@ -99,7 +99,7 @@ class CustomSegmentedControl: UIView {
         singleBottomView.translatesAutoresizingMaskIntoConstraints = false
         singleBottomView.centerXAnchor.constraint(equalTo: buttons[selectedIndex].centerXAnchor).isActive = true
         singleBottomView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        singleBottomView.widthAnchor.constraint(equalTo: buttons[0].widthAnchor, multiplier: 1).isActive = true
+        singleBottomView.widthAnchor.constraint(equalToConstant: 80).isActive = true
         singleBottomView.heightAnchor.constraint(equalToConstant: 5).isActive = true
     }
     

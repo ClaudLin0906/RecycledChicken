@@ -20,8 +20,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-wP-wlz" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JI-bY-BwN" customClass="CustomSegmentedControl" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="10" y="103" width="373" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vfB-q9-dv7"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PgC-Er-VYN">
-                                <rect key="frame" x="10" y="103" width="373" height="715"/>
+                                <rect key="frame" x="10" y="153" width="373" height="665"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyTickerTableViewCell" id="3fj-c7-5MR" customClass="MyTickerTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
@@ -124,16 +130,20 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="vVO-wP-wlz" secondAttribute="bottom" id="045-DF-1Gr"/>
                             <constraint firstItem="vVO-wP-wlz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7Ms-iV-mAV"/>
-                            <constraint firstItem="PgC-Er-VYN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="86c-ch-0L1"/>
+                            <constraint firstItem="PgC-Er-VYN" firstAttribute="top" secondItem="2JI-bY-BwN" secondAttribute="bottom" id="86c-ch-0L1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="PgC-Er-VYN" secondAttribute="bottom" id="8Cy-vo-tjr"/>
+                            <constraint firstItem="2JI-bY-BwN" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="IgU-UO-mTZ"/>
+                            <constraint firstItem="2JI-bY-BwN" firstAttribute="width" secondItem="PgC-Er-VYN" secondAttribute="width" id="IuW-zp-5Uw"/>
                             <constraint firstItem="PgC-Er-VYN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="MOJ-Ec-wVc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PgC-Er-VYN" secondAttribute="trailing" constant="10" id="OGA-PX-7xW"/>
                             <constraint firstItem="vVO-wP-wlz" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Sr6-jP-xmu"/>
                             <constraint firstItem="vVO-wP-wlz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Z9Y-IT-vkR"/>
+                            <constraint firstItem="2JI-bY-BwN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="wGp-le-u8X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aht-zh-mc3"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="2JI-bY-BwN" id="h5A-kd-N6K"/>
                         <outlet property="tableView" destination="PgC-Er-VYN" id="pU3-yf-RzO"/>
                     </connections>
                 </viewController>
