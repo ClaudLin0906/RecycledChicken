@@ -38,6 +38,8 @@ class LotteryVC: CustomVC {
         segmentedControl.setButtonTitles(LotterySegmentedControlTitles)
         segmentedControl.delegate = self
         lotteryTableView.setSeparatorLocation()
+        activityVoucherTableView.setSeparatorLocation()
+        partnerMerchantsTableView.setSeparatorLocation()
         lotteryTableView.showAnimatedSkeleton()
     }
 

@@ -48,6 +48,9 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UUID" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZX-eh-BuE" userLabel="drawTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="79" width="315.66666666666669" height="20"/>
@@ -61,6 +64,7 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                                                     <real key="value" value="11"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UUID" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaX-i3-GcF" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
@@ -75,6 +79,7 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                                                     <real key="value" value="11"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
@@ -101,6 +106,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
                                                             <real key="value" value="0.40000000000000002"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -110,8 +116,14 @@
                                                 <constraint firstItem="3Oe-dh-f5k" firstAttribute="centerX" secondItem="JJn-UI-R96" secondAttribute="centerX" id="dVL-VQ-ZaJ"/>
                                                 <constraint firstItem="3Oe-dh-f5k" firstAttribute="centerY" secondItem="JJn-UI-R96" secondAttribute="centerY" id="m5V-MW-1db"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="UUID" destination="RaX-i3-GcF" id="4VO-a4-o0A"/>
                                             <outlet property="drawTime" destination="YZX-eh-BuE" id="pvp-gy-aAI"/>
@@ -119,9 +131,69 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="sDQ-4e-mV5"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="ZU9-Wh-tit"/>
+                                </connections>
+                            </tableView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l6I-2N-j4W">
+                                <rect key="frame" x="10" y="153" width="373" height="665"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyTickerVoucherTableViewCell" rowHeight="130" id="Uey-ok-igh" customClass="MyTickerVoucherTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="373" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uey-ok-igh" id="6lf-Rh-8WB">
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FO-Uf-UPZ" userLabel="contentView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="130"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1FO-Uf-UPZ" secondAttribute="height" multiplier="2.5:1" id="Ync-yy-7iV"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="1" height="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.40000000000000002"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1FO-Uf-UPZ" secondAttribute="trailing" id="2ao-7L-ViG"/>
+                                                <constraint firstAttribute="bottom" secondItem="1FO-Uf-UPZ" secondAttribute="bottom" id="Igt-nG-WeZ"/>
+                                                <constraint firstItem="1FO-Uf-UPZ" firstAttribute="width" secondItem="1FO-Uf-UPZ" secondAttribute="height" multiplier="2.5:1" id="pWv-AG-8Ns"/>
+                                                <constraint firstItem="1FO-Uf-UPZ" firstAttribute="leading" secondItem="6lf-Rh-8WB" secondAttribute="leading" id="rdd-1x-a6n"/>
+                                                <constraint firstItem="1FO-Uf-UPZ" firstAttribute="top" secondItem="6lf-Rh-8WB" secondAttribute="top" id="uZh-WJ-xcH"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="ezO-Ah-0Oc"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="oUS-OO-STD"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -129,15 +201,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="vVO-wP-wlz" secondAttribute="bottom" id="045-DF-1Gr"/>
+                            <constraint firstItem="l6I-2N-j4W" firstAttribute="trailing" secondItem="PgC-Er-VYN" secondAttribute="trailing" id="2Of-UC-5QO"/>
                             <constraint firstItem="vVO-wP-wlz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7Ms-iV-mAV"/>
                             <constraint firstItem="PgC-Er-VYN" firstAttribute="top" secondItem="2JI-bY-BwN" secondAttribute="bottom" id="86c-ch-0L1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="PgC-Er-VYN" secondAttribute="bottom" id="8Cy-vo-tjr"/>
                             <constraint firstItem="2JI-bY-BwN" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="IgU-UO-mTZ"/>
                             <constraint firstItem="2JI-bY-BwN" firstAttribute="width" secondItem="PgC-Er-VYN" secondAttribute="width" id="IuW-zp-5Uw"/>
+                            <constraint firstItem="l6I-2N-j4W" firstAttribute="bottom" secondItem="PgC-Er-VYN" secondAttribute="bottom" id="Jcy-kh-iKU"/>
                             <constraint firstItem="PgC-Er-VYN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="MOJ-Ec-wVc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PgC-Er-VYN" secondAttribute="trailing" constant="10" id="OGA-PX-7xW"/>
+                            <constraint firstItem="l6I-2N-j4W" firstAttribute="leading" secondItem="PgC-Er-VYN" secondAttribute="leading" id="Qhb-jC-yzb"/>
                             <constraint firstItem="vVO-wP-wlz" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Sr6-jP-xmu"/>
                             <constraint firstItem="vVO-wP-wlz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Z9Y-IT-vkR"/>
+                            <constraint firstItem="l6I-2N-j4W" firstAttribute="top" secondItem="PgC-Er-VYN" secondAttribute="top" id="lwa-EE-TR3"/>
                             <constraint firstItem="2JI-bY-BwN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="wGp-le-u8X"/>
                         </constraints>
                     </view>
@@ -145,6 +221,7 @@
                     <connections>
                         <outlet property="lotteryTableView" destination="PgC-Er-VYN" id="A1P-ma-XcO"/>
                         <outlet property="segmentedControl" destination="2JI-bY-BwN" id="h5A-kd-N6K"/>
+                        <outlet property="voucherTableView" destination="l6I-2N-j4W" id="EmR-sc-5D1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

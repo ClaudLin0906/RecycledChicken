@@ -93,6 +93,7 @@
 		599216C52B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */; };
 		599216C82B8F1E0D0056FFC1 /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216C72B8F1E0D0056FFC1 /* ProductVC.swift */; };
 		599216CA2B8F1E190056FFC1 /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599216C92B8F1E190056FFC1 /* Product.storyboard */; };
+		599216CC2B8F290C0056FFC1 /* MyTickerVoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599216CB2B8F290C0056FFC1 /* MyTickerVoucherTableViewCell.swift */; };
 		599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495502A0BE7A3009F1B2E /* LotteryVC.swift */; };
 		599495532A0BE7E4009F1B2E /* Lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599495522A0BE7E4009F1B2E /* Lottery.storyboard */; };
 		599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */; };
@@ -333,6 +334,7 @@
 		599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerMerchantsTableViewTableViewCell.swift; sourceTree = "<group>"; };
 		599216C72B8F1E0D0056FFC1 /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
 		599216C92B8F1E190056FFC1 /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
+		599216CB2B8F290C0056FFC1 /* MyTickerVoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTickerVoucherTableViewCell.swift; sourceTree = "<group>"; };
 		599495502A0BE7A3009F1B2E /* LotteryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryVC.swift; sourceTree = "<group>"; };
 		599495522A0BE7E4009F1B2E /* Lottery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lottery.storyboard; sourceTree = "<group>"; };
 		599495542A0BE920009F1B2E /* LotteryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTableViewCell.swift; sourceTree = "<group>"; };
@@ -818,6 +820,7 @@
 				5994955E2A0BF7B4009F1B2E /* MyTickerVC.swift */,
 				599495602A0BF812009F1B2E /* MyTicker.storyboard */,
 				599495622A0BF8D9009F1B2E /* MyTickerTableViewCell.swift */,
+				599216CB2B8F290C0056FFC1 /* MyTickerVoucherTableViewCell.swift */,
 				59CC8DB02A6BD56D0094CE57 /* MyTickertModel.swift */,
 			);
 			path = MyTicker;
@@ -1431,6 +1434,7 @@
 				597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */,
 				5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */,
 				5994956B2A0BFC48009F1B2E /* SpendPointView.swift in Sources */,
+				599216CC2B8F290C0056FFC1 /* MyTickerVoucherTableViewCell.swift in Sources */,
 				59CDA35A2A45A7B800E3F74E /* StoreMapModel.swift in Sources */,
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				599495772A0D0281009F1B2E /* PointRuleVC.swift in Sources */,

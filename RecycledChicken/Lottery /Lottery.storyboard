@@ -38,18 +38,18 @@
                                 <rect key="frame" x="10" y="153" width="373" height="665"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LotteryTableViewCell" rowHeight="128" id="6ya-wo-JM8" customClass="LotteryTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="128"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LotteryTableViewCell" rowHeight="130" id="6ya-wo-JM8" customClass="LotteryTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="373" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ya-wo-JM8" id="Xsh-kN-7Ky">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-00-Az8" userLabel="step1">
-                                                    <rect key="frame" x="18.666666666666657" y="12.666666666666664" width="335.66666666666674" height="102.66666666666669"/>
+                                                    <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HPR-JA-KXE">
-                                                            <rect key="frame" x="10" y="10.000000000000004" width="112" height="57.666666666666671"/>
+                                                            <rect key="frame" x="10" y="10" width="112" height="59"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="HPR-JA-KXE" secondAttribute="height" multiplier="1:1" id="wcI-SP-8ft"/>
                                                             </constraints>
@@ -58,7 +58,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="參與次數:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-xT-qBm" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="72.666666666666657" width="112" height="20"/>
+                                                            <rect key="frame" x="10" y="74" width="112" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="6eo-9O-Xho"/>
                                                             </constraints>
@@ -73,14 +73,14 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="ohu-bo-54Y">
-                                                            <rect key="frame" x="127" y="-1" width="30" height="30"/>
+                                                            <rect key="frame" x="127" y="-0.33333333333333393" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="4u6-O4-YgL"/>
                                                                 <constraint firstAttribute="width" secondItem="ohu-bo-54Y" secondAttribute="height" multiplier="1:1" id="zlq-Td-tH0"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmv-EX-kc9" userLabel="point">
-                                                            <rect key="frame" x="162" y="1.6666666666666679" width="163.66666666666663" height="24.666666666666668"/>
+                                                            <rect key="frame" x="162" y="2.3333333333333339" width="163.66666666666663" height="24.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKR-pS-7to" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="34" width="198.66666666666663" height="40"/>
+                                                            <rect key="frame" x="126.99999999999999" y="34.666666666666664" width="198.66666666666663" height="39.999999999999993"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="r8Z-B3-ACQ"/>
                                                             </constraints>
@@ -104,7 +104,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duringTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gte-w0-KtV" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="74" width="198.66666666666663" height="9.3333333333333286"/>
+                                                            <rect key="frame" x="126.99999999999999" y="74.666666666666671" width="198.66666666666663" height="9.6666666666666714"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="2"/>
                                                             <color key="textColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drawTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8E-lZ-LzW" userLabel="drawTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="83.333333333333329" width="198.66666666666663" height="9.3333333333333286"/>
+                                                            <rect key="frame" x="126.99999999999999" y="84.333333333333329" width="198.66666666666663" height="9.6666666666666714"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="7"/>
                                                             <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -210,18 +210,18 @@
                                 <rect key="frame" x="10" y="153" width="373" height="665"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityVoucherTableViewCell" rowHeight="128" id="XJJ-mi-zpa" customClass="ActivityVoucherTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="128"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityVoucherTableViewCell" rowHeight="130" id="XJJ-mi-zpa" customClass="ActivityVoucherTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="373" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XJJ-mi-zpa" id="bpu-eG-XCM">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isF-5K-ZWf" userLabel="step1">
-                                                    <rect key="frame" x="18.666666666666657" y="12.666666666666664" width="335.66666666666674" height="102.66666666666669"/>
+                                                    <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlM-Oc-8ru">
-                                                            <rect key="frame" x="10" y="10.000000000000004" width="112" height="57.666666666666671"/>
+                                                            <rect key="frame" x="10" y="10" width="112" height="59"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="YlM-Oc-8ru" secondAttribute="height" multiplier="1:1" id="ozY-ZY-vEN"/>
                                                             </constraints>
@@ -230,7 +230,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="參與次數:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-5i-Vyf" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="72.666666666666657" width="112" height="20"/>
+                                                            <rect key="frame" x="10" y="74" width="112" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="uHT-Nd-3g7"/>
                                                             </constraints>
@@ -245,14 +245,14 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="dC9-zR-i98">
-                                                            <rect key="frame" x="127" y="-1" width="30" height="30"/>
+                                                            <rect key="frame" x="127" y="-0.33333333333333393" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="dC9-zR-i98" secondAttribute="height" multiplier="1:1" id="06T-sQ-GZN"/>
                                                                 <constraint firstAttribute="width" constant="30" id="ho6-KT-cTz"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3U-Nd-p6P" userLabel="point">
-                                                            <rect key="frame" x="162" y="1.6666666666666679" width="163.66666666666663" height="24.666666666666668"/>
+                                                            <rect key="frame" x="162" y="2.3333333333333339" width="163.66666666666663" height="24.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cV-SI-zbG" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="34" width="198.66666666666663" height="40"/>
+                                                            <rect key="frame" x="126.99999999999999" y="34.666666666666664" width="198.66666666666663" height="39.999999999999993"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="IzU-tt-Kms"/>
                                                             </constraints>
@@ -276,7 +276,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drawTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxJ-LG-vh9" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="82.666666666666657" width="198.66666666666663" height="10"/>
+                                                            <rect key="frame" x="126.99999999999999" y="84" width="198.66666666666663" height="10"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="7"/>
                                                             <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -362,18 +362,18 @@
                                 <rect key="frame" x="10" y="153" width="373" height="665"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PartnerMerchantsTableViewTableViewCell" rowHeight="128" id="anQ-ov-nKk" customClass="PartnerMerchantsTableViewTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="128"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PartnerMerchantsTableViewTableViewCell" rowHeight="130" id="anQ-ov-nKk" customClass="PartnerMerchantsTableViewTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="373" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="anQ-ov-nKk" id="S5N-Ht-YqL">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFD-bf-hS3" userLabel="step1">
-                                                    <rect key="frame" x="18.666666666666657" y="12.666666666666664" width="335.66666666666674" height="102.66666666666669"/>
+                                                    <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1bB-h7-tT7">
-                                                            <rect key="frame" x="10" y="10.000000000000004" width="112" height="57.666666666666671"/>
+                                                            <rect key="frame" x="10" y="10" width="112" height="59"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="1bB-h7-tT7" secondAttribute="height" multiplier="1:1" id="Quk-HF-TWh"/>
                                                             </constraints>
@@ -382,7 +382,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="參與次數:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Le-SV-ZJu" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="72.666666666666657" width="112" height="20"/>
+                                                            <rect key="frame" x="10" y="74" width="112" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="9Rl-0T-dir"/>
                                                             </constraints>
@@ -397,14 +397,14 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="yTZ-fS-evI">
-                                                            <rect key="frame" x="127" y="-1" width="30" height="30"/>
+                                                            <rect key="frame" x="127" y="-0.33333333333333393" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="dVQ-P8-EjW"/>
                                                                 <constraint firstAttribute="width" secondItem="yTZ-fS-evI" secondAttribute="height" multiplier="1:1" id="riJ-Q4-bmJ"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxS-S4-ZKS" userLabel="point">
-                                                            <rect key="frame" x="162" y="1.6666666666666679" width="163.66666666666663" height="24.666666666666668"/>
+                                                            <rect key="frame" x="162" y="2.3333333333333339" width="163.66666666666663" height="24.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -413,7 +413,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZs-ol-m68" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="34" width="198.66666666666663" height="40"/>
+                                                            <rect key="frame" x="126.99999999999999" y="34.666666666666664" width="198.66666666666663" height="39.999999999999993"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="PaG-IR-vAK"/>
                                                             </constraints>
@@ -428,7 +428,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duringTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNL-5b-M5r" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="74" width="198.66666666666663" height="9.3333333333333286"/>
+                                                            <rect key="frame" x="126.99999999999999" y="74.666666666666671" width="198.66666666666663" height="9.6666666666666714"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="2"/>
                                                             <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -443,7 +443,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drawTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbK-ZD-VhC" userLabel="drawTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="126.99999999999999" y="83.333333333333329" width="198.66666666666663" height="9.3333333333333286"/>
+                                                            <rect key="frame" x="126.99999999999999" y="84.333333333333329" width="198.66666666666663" height="9.6666666666666714"/>
                                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="7"/>
                                                             <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
