@@ -12,6 +12,9 @@
         <array key="GenJyuuGothic-Normal.ttf">
             <string>GenJyuuGothic-Normal</string>
         </array>
+        <array key="GenJyuuGothic-Regular.ttf">
+            <string>GenJyuuGothic-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Product AlertVC-->
@@ -25,18 +28,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="AON-fe-lfc" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbd-OT-KDw" userLabel="scrollBackgroundView">
-                                <rect key="frame" x="30" y="113" width="333" height="565"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc8-Ch-fz8" userLabel="TextBackgroudView">
+                                <rect key="frame" x="30" y="113" width="333" height="555"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxy-tP-bSg">
-                                        <rect key="frame" x="0.0" y="10" width="333" height="545"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ik3-hF-bHZ" userLabel="contentView">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="600"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ge0-BY-Phc" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="10" width="313" height="580"/>
-                                                        <string key="text">帳號連結功能是指將「碳竹雞 APP會員」和「BUENO COOP 商城會員」的帳號進行連結，以便在兩個平台之間共享相關的資訊和優惠。碳竹雞會員連結 BUENO COOP 商城會員，即可享有消費回饋碳碳金的優惠。以下是帳號連結功能的一般說明：
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsj-gk-7WF">
+                                        <rect key="frame" x="5" y="5" width="323" height="545"/>
+                                        <string key="text">帳號連結功能是指將「碳竹雞 APP會員」和「BUENO COOP 商城會員」的帳號進行連結，以便在兩個平台之間共享相關的資訊和優惠。碳竹雞會員連結 BUENO COOP 商城會員，即可享有消費回饋碳碳金的優惠。以下是帳號連結功能的一般說明：
 
 1. 註冊帳號：
 在碳竹雞和 BUENO COOP 商城分別使用相同的手機號碼註冊帳號，確保在註冊過程中輸入的手機號碼是相同的。
@@ -48,47 +45,17 @@
 一旦連結成功，碳竹雞會員在BUENO COOP 商城購物時，每月可享有相應的消費回饋、折扣或其他優惠。
 
 確保在整個連結過程中注意到任何可能的提示或說明，以確保符合兩個平台的相關規則和條件。此外，帳號連結機能皆有設置安全措施，以確保帳戶資訊的保密性和安全性。</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                <real key="value" value="13"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="ge0-BY-Phc" secondAttribute="bottom" constant="10" id="3jx-hr-qKa"/>
-                                                    <constraint firstAttribute="height" constant="600" id="JAy-o2-nJT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ge0-BY-Phc" secondAttribute="trailing" constant="10" id="Kuw-B2-ZJD"/>
-                                                    <constraint firstItem="ge0-BY-Phc" firstAttribute="top" secondItem="Ik3-hF-bHZ" secondAttribute="top" constant="10" id="hUm-6s-N7J"/>
-                                                    <constraint firstItem="ge0-BY-Phc" firstAttribute="leading" secondItem="Ik3-hF-bHZ" secondAttribute="leading" constant="10" id="sKE-Pg-ead"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="30"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Ik3-hF-bHZ" firstAttribute="top" secondItem="wTK-Xm-Zrk" secondAttribute="top" id="Ngf-Ta-gPo"/>
-                                            <constraint firstItem="Ik3-hF-bHZ" firstAttribute="bottom" secondItem="wTK-Xm-Zrk" secondAttribute="bottom" id="Xax-oa-Ts3"/>
-                                            <constraint firstItem="Ik3-hF-bHZ" firstAttribute="trailing" secondItem="wTK-Xm-Zrk" secondAttribute="trailing" id="cuy-QB-G4m"/>
-                                            <constraint firstItem="Ik3-hF-bHZ" firstAttribute="width" secondItem="1JK-jD-e5d" secondAttribute="width" id="iAw-pK-2Vv"/>
-                                            <constraint firstItem="Ik3-hF-bHZ" firstAttribute="leading" secondItem="wTK-Xm-Zrk" secondAttribute="leading" id="kPf-c1-2at"/>
-                                        </constraints>
-                                        <viewLayoutGuide key="contentLayoutGuide" id="wTK-Xm-Zrk"/>
-                                        <viewLayoutGuide key="frameLayoutGuide" id="1JK-jD-e5d"/>
-                                    </scrollView>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Hxy-tP-bSg" secondAttribute="trailing" id="8jb-18-CKF"/>
-                                    <constraint firstItem="Hxy-tP-bSg" firstAttribute="top" secondItem="Nbd-OT-KDw" secondAttribute="top" constant="10" id="EO7-2l-Mjo"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hxy-tP-bSg" secondAttribute="bottom" constant="10" id="K0V-aJ-Nps"/>
-                                    <constraint firstItem="Hxy-tP-bSg" firstAttribute="leading" secondItem="Nbd-OT-KDw" secondAttribute="leading" id="bV7-hn-bO3"/>
+                                    <constraint firstAttribute="bottom" secondItem="xsj-gk-7WF" secondAttribute="bottom" constant="5" id="9nP-1h-jgi"/>
+                                    <constraint firstItem="xsj-gk-7WF" firstAttribute="top" secondItem="nc8-Ch-fz8" secondAttribute="top" constant="5" id="MUF-3t-5M0"/>
+                                    <constraint firstItem="xsj-gk-7WF" firstAttribute="leading" secondItem="nc8-Ch-fz8" secondAttribute="leading" constant="5" id="eEm-8s-GGc"/>
+                                    <constraint firstAttribute="trailing" secondItem="xsj-gk-7WF" secondAttribute="trailing" constant="5" id="xKt-NQ-BoX"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -96,33 +63,28 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="a3o-Id-m3Q">
-                                <rect key="frame" x="118.66666666666669" y="688" width="156" height="20"/>
-                                <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0v-W9-eZh" customClass="M13Checkbox" customModule="M13Checkbox">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="MXk-rH-gq7"/>
-                                            <constraint firstAttribute="height" constant="20" id="ds5-Fr-wNc"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀完畢並同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-Dn-Ldt" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hno-iU-7jY" customClass="M13Checkbox" customModule="M13Checkbox">
+                                <rect key="frame" x="88.666666666666671" y="678" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="9hh-aT-MIl"/>
+                                    <constraint firstAttribute="height" constant="20" id="nNO-zb-4VD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀完畢並同意" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-Dn-Ldt" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="118.66666666666669" y="678" width="156" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kar-jV-R9g" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="146.66666666666666" y="718" width="100" height="40"/>
+                                <rect key="frame" x="146.66666666666666" y="708" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1Qy-EG-1Tj"/>
@@ -141,11 +103,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HY-qw-LX5" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="146.66666666666666" y="768" width="100" height="40"/>
+                                <rect key="frame" x="146.66666666666666" y="758" width="100" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="取消"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="20"/>
@@ -156,27 +120,29 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Nbd-OT-KDw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="2Bj-Ob-sJs"/>
                             <constraint firstItem="3HY-qw-LX5" firstAttribute="centerX" secondItem="kar-jV-R9g" secondAttribute="centerX" id="9iQ-PU-ch3"/>
                             <constraint firstItem="3HY-qw-LX5" firstAttribute="width" secondItem="kar-jV-R9g" secondAttribute="width" id="KhY-I8-dRO"/>
                             <constraint firstItem="AON-fe-lfc" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="MGV-SD-Aj7"/>
-                            <constraint firstItem="a3o-Id-m3Q" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="P69-K4-VOf"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nbd-OT-KDw" secondAttribute="trailing" constant="30" id="Qj2-yS-aPt"/>
                             <constraint firstAttribute="bottom" secondItem="AON-fe-lfc" secondAttribute="bottom" id="QtO-Yj-RJm"/>
                             <constraint firstItem="kar-jV-R9g" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="T41-H9-Ebu"/>
-                            <constraint firstItem="Nbd-OT-KDw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="bBF-QS-09s"/>
+                            <constraint firstItem="nc8-Ch-fz8" firstAttribute="bottom" secondItem="hno-iU-7jY" secondAttribute="top" constant="-10" id="Vlm-Ve-A1p"/>
+                            <constraint firstItem="nc8-Ch-fz8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="YUw-Ri-oSt"/>
+                            <constraint firstItem="nc8-Ch-fz8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="eoR-eq-x9K"/>
                             <constraint firstItem="3HY-qw-LX5" firstAttribute="top" secondItem="kar-jV-R9g" secondAttribute="bottom" constant="10" id="epR-T4-yhq"/>
-                            <constraint firstItem="a3o-Id-m3Q" firstAttribute="top" secondItem="Nbd-OT-KDw" secondAttribute="bottom" constant="10" id="fAE-b2-aH4"/>
-                            <constraint firstItem="kar-jV-R9g" firstAttribute="top" secondItem="a3o-Id-m3Q" secondAttribute="bottom" constant="10" id="ijo-3d-TyF"/>
+                            <constraint firstItem="hno-iU-7jY" firstAttribute="trailing" secondItem="0jD-Dn-Ldt" secondAttribute="leading" constant="-10" id="fWm-um-3dB"/>
+                            <constraint firstItem="0jD-Dn-Ldt" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="h0H-ne-emr"/>
+                            <constraint firstItem="kar-jV-R9g" firstAttribute="top" secondItem="hno-iU-7jY" secondAttribute="bottom" constant="10" id="ijo-3d-TyF"/>
                             <constraint firstItem="3HY-qw-LX5" firstAttribute="height" secondItem="kar-jV-R9g" secondAttribute="height" id="qSf-rK-jLb"/>
+                            <constraint firstItem="0jD-Dn-Ldt" firstAttribute="centerY" secondItem="hno-iU-7jY" secondAttribute="centerY" id="tXG-Au-pqs"/>
                             <constraint firstItem="AON-fe-lfc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uUc-0P-fhV"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3HY-qw-LX5" secondAttribute="bottom" constant="10" id="vDO-p2-Hhg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3HY-qw-LX5" secondAttribute="bottom" constant="20" id="vDO-p2-Hhg"/>
                             <constraint firstItem="AON-fe-lfc" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="vVl-bw-8sC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nc8-Ch-fz8" secondAttribute="trailing" constant="30" id="xLF-bc-cfq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fJD-PT-8Yk"/>
                     <connections>
-                        <outlet property="checkBox" destination="y0v-W9-eZh" id="YUc-ej-6fC"/>
+                        <outlet property="checkBox" destination="hno-iU-7jY" id="LZQ-MM-3Rx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -209,15 +175,15 @@
         <designable name="3HY-qw-LX5">
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
-        <designable name="ge0-BY-Phc">
-            <size key="intrinsicContentSize" width="1878.6666666666667" height="243.66666666666666"/>
-        </designable>
         <designable name="kar-jV-R9g">
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>
         <image name="グループ 1089" width="1125" height="2436"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

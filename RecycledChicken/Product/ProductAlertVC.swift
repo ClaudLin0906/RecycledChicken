@@ -20,7 +20,8 @@ class ProductAlertVC: CustomVC {
     }
     
     private func UIInit() {
-        
+        checkBox.boxType = .square
+        checkBox.stateChangeAnimation = .fill
     }
     
     override func viewWillAppear(_ animated: Bool) {
