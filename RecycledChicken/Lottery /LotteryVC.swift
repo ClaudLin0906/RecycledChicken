@@ -187,7 +187,7 @@ extension LotteryVC: UITableViewDelegate {
             }
         }
 
-        if tableView == activityVoucherTableView, tableView == partnerMerchantsTableView  {
+        if tableView == activityVoucherTableView || tableView == partnerMerchantsTableView  {
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
 //                VC.commodityVoucherInfo = commodityVoucherInfos[indexPath.row]
                 pushVC(targetVC: VC, navigation: navigationController)
