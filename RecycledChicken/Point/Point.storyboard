@@ -50,7 +50,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-zf-126">
-                                <rect key="frame" x="186.66666666666666" y="168" width="15.333333333333343" height="40"/>
+                                <rect key="frame" x="186.66666666666666" y="168" width="14" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jQY-CT-ejj"/>
                                 </constraints>
@@ -326,13 +326,13 @@
     </scenes>
     <designables>
         <designable name="1cj-bx-TzZ">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
         </designable>
         <designable name="Hcv-dW-rKf">
             <size key="intrinsicContentSize" width="900" height="420.33333333333331"/>
         </designable>
         <designable name="Zyi-sb-l2P">
-            <size key="intrinsicContentSize" width="68" height="24"/>
+            <size key="intrinsicContentSize" width="68" height="20"/>
         </designable>
         <designable name="a6I-w8-y9C">
             <size key="intrinsicContentSize" width="900" height="329"/>
@@ -341,7 +341,7 @@
             <size key="intrinsicContentSize" width="900" height="329.33333333333331"/>
         </designable>
         <designable name="yTT-JI-Qj2">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
         </designable>
     </designables>
     <resources>

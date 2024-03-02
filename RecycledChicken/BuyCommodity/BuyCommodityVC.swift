@@ -15,7 +15,7 @@ class BuyCommodityVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "購買商品序號"
+        title = "兌換商品序號"
         UIInit()
         // Do any additional setup after loading the view.
     }
