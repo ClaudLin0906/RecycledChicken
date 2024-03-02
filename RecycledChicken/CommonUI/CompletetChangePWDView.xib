@@ -37,9 +37,7 @@
             <color key="backgroundColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ezR-Gb-75D" firstAttribute="top" secondItem="kIS-KL-OEu" secondAttribute="bottom" id="37G-nf-Lsf"/>
-                <constraint firstItem="kIS-KL-OEu" firstAttribute="width" secondItem="kIS-KL-OEu" secondAttribute="height" multiplier="1:1" id="72u-cx-vHn"/>
                 <constraint firstItem="kIS-KL-OEu" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-10" id="7NN-MT-UzS"/>
-                <constraint firstItem="kIS-KL-OEu" firstAttribute="width" secondItem="kIS-KL-OEu" secondAttribute="height" multiplier="1:1" id="RQO-54-xGG"/>
                 <constraint firstItem="ezR-Gb-75D" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="aDT-tM-yhg"/>
                 <constraint firstItem="kIS-KL-OEu" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="so4-9s-N6Q"/>
             </constraints>
@@ -47,6 +45,11 @@
             <point key="canvasLocation" x="43" y="21"/>
         </view>
     </objects>
+    <designables>
+        <designable name="ezR-Gb-75D">
+            <size key="intrinsicContentSize" width="121.33333333333333" height="40.666666666666664"/>
+        </designable>
+    </designables>
     <resources>
         <image name="组 1662" width="598.33331298828125" height="388.66665649414062"/>
     </resources>

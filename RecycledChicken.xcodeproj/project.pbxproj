@@ -173,6 +173,8 @@
 		59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */; };
 		59AA2EDF2B930607001E1352 /* CompletetChangePWDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA2EDE2B930607001E1352 /* CompletetChangePWDView.swift */; };
 		59AA2EE12B93061C001E1352 /* CompletetChangePWDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AA2EE02B93061C001E1352 /* CompletetChangePWDView.xib */; };
+		59AA2EE32B930902001E1352 /* CompeleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA2EE22B930902001E1352 /* CompeleteSignUpView.swift */; };
+		59AA2EE52B930917001E1352 /* CompeleteSignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AA2EE42B930917001E1352 /* CompeleteSignUpView.xib */; };
 		59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15A2A0FA82400490BD8 /* IconView.swift */; };
 		59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AFE15C2A0FA82E00490BD8 /* IconView.xib */; };
 		59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */; };
@@ -416,6 +418,8 @@
 		59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendPointCompleteAlertView.xib; sourceTree = "<group>"; };
 		59AA2EDE2B930607001E1352 /* CompletetChangePWDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletetChangePWDView.swift; sourceTree = "<group>"; };
 		59AA2EE02B93061C001E1352 /* CompletetChangePWDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletetChangePWDView.xib; sourceTree = "<group>"; };
+		59AA2EE22B930902001E1352 /* CompeleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompeleteSignUpView.swift; sourceTree = "<group>"; };
+		59AA2EE42B930917001E1352 /* CompeleteSignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompeleteSignUpView.xib; sourceTree = "<group>"; };
 		59AFE15A2A0FA82400490BD8 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		59AFE15C2A0FA82E00490BD8 /* IconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconView.xib; sourceTree = "<group>"; };
 		59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -856,6 +860,8 @@
 				59AA2EE02B93061C001E1352 /* CompletetChangePWDView.xib */,
 				59997A5D2A09EDE900E9FD7F /* CommonImageButton.swift */,
 				59A113BA2A3ADFCF00C8295B /* CustomButton.swift */,
+				59AA2EE22B930902001E1352 /* CompeleteSignUpView.swift */,
+				59AA2EE42B930917001E1352 /* CompeleteSignUpView.xib */,
 				59E1E83D2A6293B600396CF9 /* PersonMessageImageView.swift */,
 				59E1E83F2A6293C400396CF9 /* PersonMessageImageView.xib */,
 				598751FD2A64EB6800775D4A /* ADView.swift */,
@@ -1176,6 +1182,7 @@
 				59997A672A0A0CFD00E9FD7F /* Profile.storyboard in Resources */,
 				5998DD422B8B31FF00C99A8C /* IllustratedGuide.storyboard in Resources */,
 				59F6BE282A06693100D7B3CB /* Login.storyboard in Resources */,
+				59AA2EE52B930917001E1352 /* CompeleteSignUpView.xib in Resources */,
 				59A7958E2A0F9E9E0031710F /* SpendPointAlertView.xib in Resources */,
 				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
 				5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */,
@@ -1432,6 +1439,7 @@
 				599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */,
 				598F394A2A0E078400DA9186 /* SearchView.swift in Sources */,
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
+				59AA2EE32B930902001E1352 /* CompeleteSignUpView.swift in Sources */,
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,
 				59C2D99E2A0D37000085724F /* ARVC.swift in Sources */,
 				5985D6C32B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift in Sources */,
