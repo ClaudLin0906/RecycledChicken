@@ -9,17 +9,19 @@ import UIKit
 
 class ConfirmPasswordVC: CustomLoginVC {
     
-    var phone = ""
-    
-    private var newPassword = ""
-    
-    var info:forgetPasswordInfo?
-    
     @IBOutlet weak var newPasswordTextField: UITextField!
     
     @IBOutlet weak var confirmNewPasswordTextField: UITextField!
     
     @IBOutlet weak var goHomeBtn:CustomButton!
+    
+    @IBOutlet weak var erroMSGLabel:UILabel!
+        
+    var phone = ""
+    
+    private var newPassword = ""
+    
+    var info:forgetPasswordInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +66,8 @@ class ConfirmPasswordVC: CustomLoginVC {
         
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            erroMSGLabel.isHidden = false
+            erroMSGLabel.text = alertMsg
             return
         }
         newPassword = newPWD ?? ""

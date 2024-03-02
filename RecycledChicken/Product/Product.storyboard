@@ -20,7 +20,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="zTz-W1-2lT" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-XC-X0w">
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-XC-X0w">
                                 <rect key="frame" x="0.0" y="103" width="393" height="665"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -119,6 +119,11 @@
             <point key="canvasLocation" x="-135.1145038167939" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="3Ai-RW-nhz">
+            <size key="intrinsicContentSize" width="121.33333333333333" height="20.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <image name="globe" catalog="system" width="128" height="123"/>
         <image name="グループ 1089" width="1125" height="2436"/>

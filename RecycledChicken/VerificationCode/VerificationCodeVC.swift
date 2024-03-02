@@ -145,14 +145,16 @@ class VerificationCodeVC: CustomLoginVC {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
-            
             if let data = data {
-                let json = NetworkManager.shared.dataToDictionary(data: data)
-                print(json)
-                DispatchQueue.main.async { [self] in
-                    let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
-                    fadeInOutAni(showView: updatePasswordSuccessView) {
-                        self.goToLoginVC()
+                let completetChangePWDView = CompletetChangePWDView(frame: UIScreen.main.bounds)
+                fadeInOutAni(showView: completetChangePWDView) {
+                    let json = NetworkManager.shared.dataToDictionary(data: data)
+                    print(json)
+                    DispatchQueue.main.async { [self] in
+                        let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
+                        fadeInOutAni(showView: updatePasswordSuccessView) {
+                            self.goToLoginVC()
+                        }
                     }
                 }
             }

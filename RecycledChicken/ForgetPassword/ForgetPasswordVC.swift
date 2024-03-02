@@ -13,6 +13,10 @@ class ForgetPasswordVC: CustomLoginVC {
     
     @IBOutlet weak var goHomeBtn:CustomButton!
     
+    @IBOutlet weak var erroMSGLabel:UILabel!
+    
+    @IBOutlet weak var alertMSGLabel:UILabel!
+    
     private var phone:String?
     
     override func viewDidLoad() {
@@ -37,10 +41,17 @@ class ForgetPasswordVC: CustomLoginVC {
         }
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            showErrorMSG(alertMsg)
             return
         }
         goToVerificationCode()
+    }
+    
+    private func showErrorMSG(_ errorMSG:String) {
+        alertMSGLabel.isHidden = true
+        erroMSGLabel.isHidden = false
+        erroMSGLabel.text = errorMSG
     }
     
     @IBAction func goToConfirmForgetPassword(_ sender:UIButton){
@@ -55,7 +66,7 @@ class ForgetPasswordVC: CustomLoginVC {
         }
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            showErrorMSG(alertMsg)
             return
         }
         self.dismiss(animated: true) {

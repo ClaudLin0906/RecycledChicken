@@ -72,6 +72,11 @@
             <point key="canvasLocation" x="-187" y="20"/>
         </view>
     </objects>
+    <designables>
+        <designable name="KXc-Sb-MD5">
+            <size key="intrinsicContentSize" width="204" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <image name="组 1662" width="598.33331298828125" height="388.66665649414062"/>
         <image name="组 396" width="82" height="82"/>

@@ -262,13 +262,13 @@
             <size key="intrinsicContentSize" width="140" height="19.666666666666668"/>
         </designable>
         <designable name="BYp-X8-L1Y">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="98" height="32"/>
         </designable>
         <designable name="Ju8-Ir-Pwe">
             <size key="intrinsicContentSize" width="84" height="19.666666666666668"/>
         </designable>
         <designable name="VK4-eq-yoM">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="42" height="32"/>
         </designable>
     </designables>
     <resources>
