@@ -15,7 +15,7 @@ class BuyLotteryVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "購買抽獎序號"
+        title = "兌換抽獎/活動序號"
         UIInit()
         // Do any additional setup after loading the view.
     }

@@ -15,15 +15,11 @@ protocol SpendPointViewDelegate{
 class SpendPointView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var confirm:UIButton!
-    
-    @IBOutlet weak var tableView:UITableView!
-    
+        
     @IBOutlet weak var itemAmount:UILabel!
     
     @IBOutlet weak var needPoint:UILabel!
-    
-    @IBOutlet weak var bigPictureImageView:UIImageView!
-    
+        
     private var amount:Int = 0
     {
         willSet{
@@ -45,9 +41,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
     {
         willSet{
             type = .Lottery
-            tableView.reloadData()
             if let lotteryInfo = newValue, let data = try? Data(contentsOf: URL(string: lotteryInfo.pictureBig)!), let image = UIImage(data: data){
-                bigPictureImageView.image = image
             }
         }
     }
@@ -56,7 +50,6 @@ class SpendPointView: UIView, NibOwnerLoadable {
     {
         willSet{
             type = .CommodityVoucher
-            tableView.reloadData()
         }
     }
     
@@ -76,8 +69,8 @@ class SpendPointView: UIView, NibOwnerLoadable {
         loadNibContent()
         amount = 1
         itemAmount.text = String(amount)
-        tableView.setSeparatorLocation()
-        tableView.register(UINib(nibName: "LotteryItemTableViewCell", bundle: nil), forCellReuseIdentifier: "LotteryItemTableViewCell")
+//        tableView.setSeparatorLocation()
+//        tableView.register(UINib(nibName: "LotteryItemTableViewCell", bundle: nil), forCellReuseIdentifier: "LotteryItemTableViewCell")
     }
     
     @IBAction func plusBtn(_ sender:UIButton){
@@ -115,39 +108,4 @@ class SpendPointView: UIView, NibOwnerLoadable {
         delegate?.btnAction(_sender, info: spendPointInfo)
     }
 
-}
-
-extension SpendPointView:UITableViewDelegate {
-    
-}
-
-
-extension SpendPointView:UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        200
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LotteryItemTableViewCell", for: indexPath) as! LotteryItemTableViewCell
-        switch type {
-        case .Lottery:
-            if let lotteryInfo = lotteryInfo {
-                cell.setCell(lotteryInfo: lotteryInfo)
-            }
-        case .CommodityVoucher:
-            if let commodityVoucherInfo = commodityVoucherInfo {
-                cell.setCell(commodityVoucherInfo: commodityVoucherInfo)
-            }
-        }
-
-        return cell
-
-    }
-    
-    
 }
