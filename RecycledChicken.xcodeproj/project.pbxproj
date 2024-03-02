@@ -175,6 +175,8 @@
 		59AA2EE12B93061C001E1352 /* CompletetChangePWDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AA2EE02B93061C001E1352 /* CompletetChangePWDView.xib */; };
 		59AA2EE32B930902001E1352 /* CompeleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA2EE22B930902001E1352 /* CompeleteSignUpView.swift */; };
 		59AA2EE52B930917001E1352 /* CompeleteSignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AA2EE42B930917001E1352 /* CompeleteSignUpView.xib */; };
+		59AA2EE72B931558001E1352 /* ProductAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA2EE62B931558001E1352 /* ProductAlertVC.swift */; };
+		59AA2EE92B931562001E1352 /* ProductAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59AA2EE82B931562001E1352 /* ProductAlert.storyboard */; };
 		59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15A2A0FA82400490BD8 /* IconView.swift */; };
 		59AFE15D2A0FA82E00490BD8 /* IconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AFE15C2A0FA82E00490BD8 /* IconView.xib */; };
 		59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */; };
@@ -420,6 +422,8 @@
 		59AA2EE02B93061C001E1352 /* CompletetChangePWDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletetChangePWDView.xib; sourceTree = "<group>"; };
 		59AA2EE22B930902001E1352 /* CompeleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompeleteSignUpView.swift; sourceTree = "<group>"; };
 		59AA2EE42B930917001E1352 /* CompeleteSignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompeleteSignUpView.xib; sourceTree = "<group>"; };
+		59AA2EE62B931558001E1352 /* ProductAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAlertVC.swift; sourceTree = "<group>"; };
+		59AA2EE82B931562001E1352 /* ProductAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductAlert.storyboard; sourceTree = "<group>"; };
 		59AFE15A2A0FA82400490BD8 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		59AFE15C2A0FA82E00490BD8 /* IconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconView.xib; sourceTree = "<group>"; };
 		59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -794,6 +798,8 @@
 			children = (
 				599216C72B8F1E0D0056FFC1 /* ProductVC.swift */,
 				599216C92B8F1E190056FFC1 /* Product.storyboard */,
+				59AA2EE62B931558001E1352 /* ProductAlertVC.swift */,
+				59AA2EE82B931562001E1352 /* ProductAlert.storyboard */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -1169,6 +1175,7 @@
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
 				597E7F162B70D76C0018528A /* RecycledItemView.xib in Resources */,
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
+				59AA2EE92B931562001E1352 /* ProductAlert.storyboard in Resources */,
 				5985D6C02B6A1F8100DE6EBA /* ADBannerView.xib in Resources */,
 				59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
@@ -1422,6 +1429,7 @@
 				59C73F462A700C6A0019E87D /* HomeModel.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
 				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,
+				59AA2EE72B931558001E1352 /* ProductAlertVC.swift in Sources */,
 				59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */,
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
 				59CC8DB32A6D11980094CE57 /* CommodityVoucherModel.swift in Sources */,
