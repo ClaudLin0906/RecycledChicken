@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class CommodityVoucherTableViewCell: UITableViewCell {
     
     static let identifier = "CommodityVoucherTableViewCell"
@@ -34,14 +34,14 @@ class CommodityVoucherTableViewCell: UITableViewCell {
     
     func setCell(commodityVoucherInfo:CommodityVoucherInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-            let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!)
+//            let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!)
             let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
             let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
             let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
             let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
             DispatchQueue.main.async { [self] in
-                if let data = data, let image = UIImage(data: data) {
-                    itemImageView.image = image
+                if let url = URL(string: commodityVoucherInfo.picture) {
+                    itemImageView.kf.setImage(with: url)
                 }
                 itemName.text = commodityVoucherInfo.itemName
                 drawTime.text = "使用時間:" + StartDate + "~" + EndDate
