@@ -30,8 +30,18 @@ class ProductAlertVC: CustomVC {
     }
     
     @IBAction func confirm(_ sender:UIButton) {
+        guard checkBox.checkState == .checked else {
+            showAlert(VC: self, title: "需要同意")
+            return
+        }
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Product", bundle: Bundle.main).instantiateViewController(identifier: "Product") as? ProductVC {
             pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
+    @IBAction func cancel(_ sender:UIButton) {
+        if let navigationController = self.navigationController {
+            navigationController.popViewController(animated: true)
         }
     }
 

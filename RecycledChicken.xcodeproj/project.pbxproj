@@ -71,6 +71,7 @@
 		597521A12A0BD77E00D0B67C /* Point.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597521A02A0BD77E00D0B67C /* Point.storyboard */; };
 		597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597E7F132B70D7660018528A /* RecycledItemView.swift */; };
 		597E7F162B70D76C0018528A /* RecycledItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597E7F152B70D76C0018528A /* RecycledItemView.xib */; };
+		597FEDA02B932A3100D03B56 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 597FED9F2B932A3100D03B56 /* Kingfisher */; };
 		59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */; };
 		59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF12A63FA2200678BAF /* TaskModel.swift */; };
 		59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF32A6406DA00678BAF /* LotteryModel.swift */; };
@@ -503,6 +504,7 @@
 			files = (
 				5969117E2B09DECC00C7E335 /* SkeletonView in Frameworks */,
 				59C926DF2A84831A00EB6418 /* FirebaseMessaging in Frameworks */,
+				597FEDA02B932A3100D03B56 /* Kingfisher in Frameworks */,
 				59C926DD2A84831A00EB6418 /* FirebaseAnalytics in Frameworks */,
 				F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */,
 				590251082B68E3020002E76C /* CombineHelper in Frameworks */,
@@ -1122,6 +1124,7 @@
 				5969117D2B09DECC00C7E335 /* SkeletonView */,
 				590251072B68E3020002E76C /* CombineHelper */,
 				5902510A2B68E31F0002E76C /* CombineDataSources */,
+				597FED9F2B932A3100D03B56 /* Kingfisher */,
 			);
 			productName = RecycledChicken;
 			productReference = 5926C57A2A04086400FAB49D /* RecycledChicken.app */;
@@ -1156,6 +1159,7 @@
 				5969117C2B09DECC00C7E335 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				590251062B68E3020002E76C /* XCRemoteSwiftPackageReference "CombineHelper" */,
 				590251092B68E31F0002E76C /* XCRemoteSwiftPackageReference "CombineDataSources" */,
+				597FED9E2B932A3100D03B56 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 5926C57B2A04086400FAB49D /* Products */;
 			projectDirPath = "";
@@ -1763,6 +1767,14 @@
 				kind = branch;
 			};
 		};
+		597FED9E2B932A3100D03B56 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		59C926DB2A84831900EB6418 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1788,6 +1800,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5969117C2B09DECC00C7E335 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		597FED9F2B932A3100D03B56 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 597FED9E2B932A3100D03B56 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		59C926DC2A84831A00EB6418 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
