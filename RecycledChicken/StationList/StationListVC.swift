@@ -44,6 +44,7 @@ class StationListVC: CustomVC {
         keyWordTextfiekd.leftView = leftView
         keyWordTextfiekd.clearButtonMode = .always
         keyWordTextfiekd.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        tableView.showAnimatedSkeleton()
     }
     
     override func viewWillAppear(_ animated: Bool) {

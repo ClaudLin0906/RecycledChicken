@@ -105,10 +105,6 @@ extension StoreListVC:UITableViewDelegate, SkeletonTableViewDataSource {
         StoreListTableViewCell.identifier
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        40
-    }
-    
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
         getTableViewCount()
     }
