@@ -140,7 +140,7 @@ class StoreMapVC: CustomRootVC {
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {
-        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "StoreList", bundle: Bundle.main).instantiateViewController(identifier: "StoreList") as? StoreListVC {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "StationList", bundle: Bundle.main).instantiateViewController(identifier: "StationList") as? StationListVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }

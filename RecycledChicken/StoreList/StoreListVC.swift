@@ -59,7 +59,7 @@ class StoreListVC: CustomVC {
         setDefaultNavigationBackBtn2()
     }
     
-    private func filterText(_ query:String?){
+    private func filterText(_ query:String?) {
         guard let query = query else { return }
         filterMapInfos.removeAll()
         
@@ -83,13 +83,13 @@ class StoreListVC: CustomVC {
 
     }
     
-    @objc private func textFieldDidChange(_ textfield:UITextField){
+    @objc private func textFieldDidChange(_ textfield:UITextField) {
         if let text = textfield.text {
             filterText(text)
         }
     }
     
-    private func getTableViewCount() -> Int{
+    private func getTableViewCount() -> Int {
         if !filterMapInfos.isEmpty {
             return filterMapInfos.count
         }

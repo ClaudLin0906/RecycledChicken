@@ -120,6 +120,11 @@
 		5996ADF92B89D33500D6F6CF /* DeleteMessageAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5996ADF82B89D33500D6F6CF /* DeleteMessageAlertView.xib */; };
 		59980BF02B734713002FDF41 /* RecycledRingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59980BEF2B734712002FDF41 /* RecycledRingInfoView.swift */; };
 		59980BF22B734735002FDF41 /* RecycledRingInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59980BF12B734735002FDF41 /* RecycledRingInfoView.xib */; };
+		5998364D2B945F58003F3B48 /* StationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998364C2B945F58003F3B48 /* StationListVC.swift */; };
+		5998364F2B945F6B003F3B48 /* StationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5998364E2B945F6B003F3B48 /* StationList.storyboard */; };
+		599836512B946EC6003F3B48 /* StationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599836502B946EC6003F3B48 /* StationListTableViewCell.swift */; };
+		599836532B946FF3003F3B48 /* StationListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599836522B946FF3003F3B48 /* StationListHeaderView.swift */; };
+		599836552B947014003F3B48 /* StationListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599836542B947014003F3B48 /* StationListHeaderView.xib */; };
 		5998DD402B8B304300C99A8C /* IllustratedGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD3F2B8B304300C99A8C /* IllustratedGuideVC.swift */; };
 		5998DD422B8B31FF00C99A8C /* IllustratedGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5998DD412B8B31FF00C99A8C /* IllustratedGuide.storyboard */; };
 		5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5998DD432B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift */; };
@@ -367,6 +372,11 @@
 		5996ADF82B89D33500D6F6CF /* DeleteMessageAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteMessageAlertView.xib; sourceTree = "<group>"; };
 		59980BEF2B734712002FDF41 /* RecycledRingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledRingInfoView.swift; sourceTree = "<group>"; };
 		59980BF12B734735002FDF41 /* RecycledRingInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecycledRingInfoView.xib; sourceTree = "<group>"; };
+		5998364C2B945F58003F3B48 /* StationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListVC.swift; sourceTree = "<group>"; };
+		5998364E2B945F6B003F3B48 /* StationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationList.storyboard; sourceTree = "<group>"; };
+		599836502B946EC6003F3B48 /* StationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListTableViewCell.swift; sourceTree = "<group>"; };
+		599836522B946FF3003F3B48 /* StationListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListHeaderView.swift; sourceTree = "<group>"; };
+		599836542B947014003F3B48 /* StationListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationListHeaderView.xib; sourceTree = "<group>"; };
 		5998DD3F2B8B304300C99A8C /* IllustratedGuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideVC.swift; sourceTree = "<group>"; };
 		5998DD412B8B31FF00C99A8C /* IllustratedGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedGuide.storyboard; sourceTree = "<group>"; };
 		5998DD432B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideTableViewCell.swift; sourceTree = "<group>"; };
@@ -574,6 +584,7 @@
 				599495562A0BF17E009F1B2E /* CommodityVoucher */,
 				5994955D2A0BF77E009F1B2E /* MyTicker */,
 				5994956E2A0C8FD9009F1B2E /* BuyCommodity */,
+				5998364B2B945F41003F3B48 /* StationList */,
 				599495752A0D024D009F1B2E /* PointRule */,
 				5994957A2A0D2BFF009F1B2E /* StoreMap */,
 				59C2D99C2A0D36E30085724F /* AR */,
@@ -857,6 +868,8 @@
 				59CC8DAB2A6BC0420094CE57 /* SpendPointView */,
 				598F39492A0E078400DA9186 /* SearchView.swift */,
 				598F394B2A0E07A500DA9186 /* SearchView.xib */,
+				59DBA12E2B71EEA8009E5BBD /* DropDownView.swift */,
+				59DBA1302B71EEE6009E5BBD /* DropDownView.xib */,
 				59A7958F2A0F9F6C0031710F /* SpendPointCompleteAlertView.swift */,
 				59A795912A0F9F870031710F /* SpendPointCompleteAlertView.xib */,
 				59A7958B2A0F9E820031710F /* SpendPointAlertView.swift */,
@@ -913,6 +926,18 @@
 			path = StoreMap;
 			sourceTree = "<group>";
 		};
+		5998364B2B945F41003F3B48 /* StationList */ = {
+			isa = PBXGroup;
+			children = (
+				5998364C2B945F58003F3B48 /* StationListVC.swift */,
+				5998364E2B945F6B003F3B48 /* StationList.storyboard */,
+				599836502B946EC6003F3B48 /* StationListTableViewCell.swift */,
+				599836522B946FF3003F3B48 /* StationListHeaderView.swift */,
+				599836542B947014003F3B48 /* StationListHeaderView.xib */,
+			);
+			path = StationList;
+			sourceTree = "<group>";
+		};
 		5998DD3E2B8B301E00C99A8C /* IllustratedGuide */ = {
 			isa = PBXGroup;
 			children = (
@@ -950,8 +975,6 @@
 				59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */,
 				59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */,
 				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
-				59DBA12E2B71EEA8009E5BBD /* DropDownView.swift */,
-				59DBA1302B71EEE6009E5BBD /* DropDownView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1198,6 +1221,7 @@
 				59A795922A0F9F870031710F /* SpendPointCompleteAlertView.xib in Resources */,
 				5964AAFC2A1364F70005686F /* TaskProgressView.xib in Resources */,
 				59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */,
+				599836552B947014003F3B48 /* StationListHeaderView.xib in Resources */,
 				5975219A2A0BD11700D0B67C /* ConnectSuccessView.xib in Resources */,
 				59997A5C2A09E4F700E9FD7F /* RecycleLog.storyboard in Resources */,
 				593CDE662A83D229007E1D10 /* ca.pem in Resources */,
@@ -1242,6 +1266,7 @@
 				59632D3E2B89EC160093BE6E /* LanguageSetting.storyboard in Resources */,
 				5994955A2A0BF261009F1B2E /* CommodityVoucher.storyboard in Resources */,
 				5998DD4D2B8B3C2A00C99A8C /* PointRecord.storyboard in Resources */,
+				5998364F2B945F6B003F3B48 /* StationList.storyboard in Resources */,
 				59D20CEA2A1E4FB200EF87B1 /* CustomCalenderScrollView.xib in Resources */,
 				5996ADF92B89D33500D6F6CF /* DeleteMessageAlertView.xib in Resources */,
 				59BB68B42B69F62B0095E2A5 /* ReSendVerificationCodeView.xib in Resources */,
@@ -1393,6 +1418,7 @@
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
 				5975217D2A0B86B700D0B67C /* AccountTableViewCell.swift in Sources */,
 				59997A4F2A09384300E9FD7F /* PetView.swift in Sources */,
+				599836512B946EC6003F3B48 /* StationListTableViewCell.swift in Sources */,
 				59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */,
 				598751FE2A64EB6800775D4A /* ADView.swift in Sources */,
 				5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */,
@@ -1410,6 +1436,7 @@
 				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
 				59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */,
 				59CC8DB12A6BD56D0094CE57 /* MyTickertModel.swift in Sources */,
+				599836532B946FF3003F3B48 /* StationListHeaderView.swift in Sources */,
 				5998DD4B2B8B3BFB00C99A8C /* PointRecordVC.swift in Sources */,
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */,
@@ -1458,6 +1485,7 @@
 				598F39512A0E1F2F00DA9186 /* ProductDescriptionVC.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,
+				5998364D2B945F58003F3B48 /* StationListVC.swift in Sources */,
 				5964AAF62A1364570005686F /* TaskTableViewADCell.swift in Sources */,
 				597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */,
 				5964AAFA2A1364EE0005686F /* TaskProgressView.swift in Sources */,

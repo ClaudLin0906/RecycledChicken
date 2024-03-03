@@ -73,7 +73,6 @@
                                                             </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyE-ZL-0e7" customClass="DropDownView" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="178" y="10" width="90" height="30"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="90" id="afE-mq-zI3"/>
                                                                     <constraint firstAttribute="height" constant="30" id="t9D-WL-SXH"/>
