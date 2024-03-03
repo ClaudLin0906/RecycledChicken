@@ -44,8 +44,6 @@ class StationListVC: CustomVC {
         keyWordTextfiekd.leftView = leftView
         keyWordTextfiekd.clearButtonMode = .always
         keyWordTextfiekd.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        tableView.register(UINib(nibName: "StationListHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "StationListHeaderView")
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,6 +107,12 @@ class StationListVC: CustomVC {
             filterText(text)
         }
     }
+    
+    @IBAction func goToStoreList(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "StoreList", bundle: Bundle.main).instantiateViewController(identifier: "StoreList") as? StoreListVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
 
 }
 
@@ -119,11 +123,6 @@ extension StationListVC: UITableViewDelegate {
 
 extension StationListVC: SkeletonTableViewDataSource {
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "StationListHeaderView") as! StationListHeaderView
-//        return headerView
-//    }
-//
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         StationListTableViewCell.identifier
     }
