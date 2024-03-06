@@ -12,6 +12,8 @@ class IllustratedGuideSecondInfoView: UIView, NibOwnerLoadable {
     @IBOutlet weak var nameLabel:CustomLabel!
     
     @IBOutlet weak var typeLabel:CustomLabel!
+    
+    @IBOutlet weak var guideLabel:CustomLabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +27,12 @@ class IllustratedGuideSecondInfoView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    func setInfo( _ name:String, type:String, guide:String) {
+        nameLabel.text = name
+        typeLabel.text = type
+        guideLabel.text = guide
     }
     
 }

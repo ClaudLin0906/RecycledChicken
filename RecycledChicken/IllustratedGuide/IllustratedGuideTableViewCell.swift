@@ -40,13 +40,15 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.isScrollEnabled = false
+//        scrollView.isScrollEnabled = false
         content.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
         scrollView.centerYAnchor.constraint(equalTo: content.centerYAnchor).isActive = true
         scrollView.widthAnchor.constraint(equalTo: content.widthAnchor).isActive = true
         scrollView.heightAnchor.constraint(equalTo: content.heightAnchor).isActive = true
+        
+        var contentWith = content.frame.width
         
         let illustratedGuideFirstInfoView = IllustratedGuideFirstInfoView()
         illustratedGuideFirstInfoView.backgroundColor = .white
@@ -59,21 +61,30 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         illustratedGuideFirstInfoView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
         illustratedGuideFirstInfoView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -20).isActive = true
         illustratedGuideFirstInfoView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, constant: -15).isActive = true
-        illustratedGuideFirstInfoView.setInfo(illustratedGuide.iconImage, name: illustratedGuide.name, type: illustratedGuide.title, guide: illustratedGuide.guide)
         
-        let illustratedGuideSecondInfoView = IllustratedGuideSecondInfoView()
-        illustratedGuideSecondInfoView.backgroundColor = .white
-        illustratedGuideSecondInfoView.layer.cornerRadius = 10
-        illustratedGuideSecondInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        illustratedGuideSecondInfoView.layer.shadowOpacity = 0.4
-        scrollView.addSubview(illustratedGuideSecondInfoView)
-        illustratedGuideSecondInfoView.translatesAutoresizingMaskIntoConstraints = false
-        illustratedGuideSecondInfoView.leadingAnchor.constraint(equalTo: illustratedGuideFirstInfoView.trailingAnchor, constant: 20).isActive = true
-        illustratedGuideSecondInfoView.centerYAnchor.constraint(equalTo: illustratedGuideFirstInfoView.centerYAnchor).isActive = true
-        illustratedGuideSecondInfoView.widthAnchor.constraint(equalTo: illustratedGuideFirstInfoView.widthAnchor).isActive = true
-        illustratedGuideSecondInfoView.heightAnchor.constraint(equalTo: illustratedGuideFirstInfoView.heightAnchor).isActive = true
+        if illustratedGuide.guide.count <= 30 {
+            illustratedGuideFirstInfoView.setInfo(illustratedGuide.iconImage, name: illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.prefix(30)))
+        }
         
-        scrollView.contentSize = CGSize(width: content.frame.size.width * 2, height: content.frame.size.height)
+        if illustratedGuide.guide.count > 30 {
+            contentWith += content.frame.width
+            let illustratedGuideSecondInfoView = IllustratedGuideSecondInfoView()
+            illustratedGuideSecondInfoView.backgroundColor = .white
+            illustratedGuideSecondInfoView.layer.cornerRadius = 10
+            illustratedGuideSecondInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
+            illustratedGuideSecondInfoView.layer.shadowOpacity = 0.4
+            scrollView.addSubview(illustratedGuideSecondInfoView)
+            illustratedGuideSecondInfoView.translatesAutoresizingMaskIntoConstraints = false
+            illustratedGuideSecondInfoView.leadingAnchor.constraint(equalTo: illustratedGuideFirstInfoView.trailingAnchor, constant: 20).isActive = true
+            illustratedGuideSecondInfoView.centerYAnchor.constraint(equalTo: illustratedGuideFirstInfoView.centerYAnchor).isActive = true
+            illustratedGuideSecondInfoView.widthAnchor.constraint(equalTo: illustratedGuideFirstInfoView.widthAnchor).isActive = true
+            illustratedGuideSecondInfoView.heightAnchor.constraint(equalTo: illustratedGuideFirstInfoView.heightAnchor).isActive = true
+            let suffixIndex = illustratedGuide.guide.count - 30
+            illustratedGuideSecondInfoView.setInfo(illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.suffix(30)))
+        }
+        
+        scrollView.contentSize = CGSize(width: contentWith, height: content.frame.size.height)
+
         if checkLevel() {
             
         }
