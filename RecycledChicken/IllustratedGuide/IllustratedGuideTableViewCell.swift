@@ -11,9 +11,17 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     static let identifier = "IllustratedGuideTableViewCell"
     
-    private var illustratedGuide:IllustratedGuide?
-    
     @IBOutlet weak var content:UIView!
+    
+    private lazy var guideImageView:UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "chiw 3"))
+        imageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
+        imageView.addGestureRecognizer(tap)
+        return imageView
+    }()
+    
+    private var illustratedGuide:IllustratedGuide?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,12 +43,16 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         UIInit()
     }
     
+    @objc private func tapGesture(_ tap:UITapGestureRecognizer) {
+        guideImageView.removeFromSuperview()
+    }
+    
     private func UIInit() {
         guard let illustratedGuide = illustratedGuide else { return }
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
-//        scrollView.isScrollEnabled = false
+        scrollView.isScrollEnabled = false
         content.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
@@ -49,7 +61,6 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         scrollView.heightAnchor.constraint(equalTo: content.heightAnchor).isActive = true
         
         var contentWith = content.frame.width
-        
         let illustratedGuideFirstInfoView = IllustratedGuideFirstInfoView()
         illustratedGuideFirstInfoView.backgroundColor = .white
         illustratedGuideFirstInfoView.layer.cornerRadius = 10
@@ -62,9 +73,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         illustratedGuideFirstInfoView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -20).isActive = true
         illustratedGuideFirstInfoView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, constant: -15).isActive = true
         
-        if illustratedGuide.guide.count <= 30 {
-            illustratedGuideFirstInfoView.setInfo(illustratedGuide.iconImage, name: illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.prefix(30)))
-        }
+        illustratedGuideFirstInfoView.setInfo(illustratedGuide.iconImage, name: illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.prefix(30)))
         
         if illustratedGuide.guide.count > 30 {
             contentWith += content.frame.width
@@ -80,13 +89,19 @@ class IllustratedGuideTableViewCell: UITableViewCell {
             illustratedGuideSecondInfoView.widthAnchor.constraint(equalTo: illustratedGuideFirstInfoView.widthAnchor).isActive = true
             illustratedGuideSecondInfoView.heightAnchor.constraint(equalTo: illustratedGuideFirstInfoView.heightAnchor).isActive = true
             let suffixIndex = illustratedGuide.guide.count - 30
-            illustratedGuideSecondInfoView.setInfo(illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.suffix(30)))
+            illustratedGuideSecondInfoView.setInfo(illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.suffix(suffixIndex)))
         }
-        
         scrollView.contentSize = CGSize(width: contentWith, height: content.frame.size.height)
 
+        content.addSubview(guideImageView)
+        guideImageView.translatesAutoresizingMaskIntoConstraints = false
+        guideImageView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
+        guideImageView.centerYAnchor.constraint(equalTo: content.centerYAnchor).isActive = true
+        guideImageView.widthAnchor.constraint(equalTo: content.widthAnchor).isActive = true
+        guideImageView.heightAnchor.constraint(equalTo: content.heightAnchor).isActive = true
+        
         if checkLevel() {
-            
+            guideImageView.image = illustratedGuide.guideImage
         }
 
     }

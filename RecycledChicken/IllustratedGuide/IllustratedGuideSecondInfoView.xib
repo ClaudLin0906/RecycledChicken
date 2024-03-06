@@ -55,7 +55,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="碳固定是生物將無機碳（二氧化碳） 轉換為有機化合物的過程。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awL-nv-lEi" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="30.000000000000028" y="208.66666666666666" width="471.66666666666674" height="20.333333333333343"/>
+                    <rect key="frame" x="30.000000000000028" y="190.33333333333334" width="471.66666666666674" height="20.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -75,10 +75,10 @@
                 <constraint firstItem="sBF-Xt-z6D" firstAttribute="leading" secondItem="9Z9-zr-uY7" secondAttribute="leading" id="6Qv-4v-j8s"/>
                 <constraint firstItem="LDA-CQ-Gcg" firstAttribute="bottom" secondItem="9Z9-zr-uY7" secondAttribute="bottom" id="Bgw-HP-cLM"/>
                 <constraint firstItem="awL-nv-lEi" firstAttribute="leading" secondItem="9Z9-zr-uY7" secondAttribute="leading" id="DUx-H1-8sx"/>
-                <constraint firstItem="awL-nv-lEi" firstAttribute="bottom" secondItem="7Ow-Qv-BMA" secondAttribute="bottom" id="GJr-IH-VaW"/>
+                <constraint firstItem="awL-nv-lEi" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="7Ow-Qv-BMA" secondAttribute="bottom" id="GJr-IH-VaW"/>
                 <constraint firstItem="9Z9-zr-uY7" firstAttribute="top" secondItem="7Ow-Qv-BMA" secondAttribute="top" id="Nz9-oH-nII"/>
                 <constraint firstItem="LDA-CQ-Gcg" firstAttribute="leading" secondItem="9Z9-zr-uY7" secondAttribute="trailing" constant="10" id="Pbr-po-y3R"/>
-                <constraint firstItem="awL-nv-lEi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sBF-Xt-z6D" secondAttribute="bottom" constant="5" id="RAE-WV-IH0"/>
+                <constraint firstItem="awL-nv-lEi" firstAttribute="top" secondItem="sBF-Xt-z6D" secondAttribute="bottom" constant="5" id="RAE-WV-IH0"/>
                 <constraint firstItem="9Z9-zr-uY7" firstAttribute="leading" secondItem="7Ow-Qv-BMA" secondAttribute="trailing" id="US6-Yd-PQ5"/>
                 <constraint firstItem="7Ow-Qv-BMA" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="b12-U0-3Dm"/>
                 <constraint firstItem="7Ow-Qv-BMA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pq3-5y-flv"/>

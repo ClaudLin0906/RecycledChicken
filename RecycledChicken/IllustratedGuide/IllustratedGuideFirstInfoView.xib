@@ -86,9 +86,9 @@
                 <constraint firstItem="1hw-Lm-cEd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="OQZ-oD-yWK"/>
                 <constraint firstItem="L7D-q3-6cY" firstAttribute="leading" secondItem="1hw-Lm-cEd" secondAttribute="trailing" constant="10" id="PQT-6T-tHS"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RcD-bh-rGW" secondAttribute="bottom" id="V5e-8P-xgG"/>
-                <constraint firstItem="bCK-I0-izB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="S0v-DP-Qja" secondAttribute="bottom" constant="5" id="Y7r-sb-zct"/>
+                <constraint firstItem="bCK-I0-izB" firstAttribute="top" secondItem="S0v-DP-Qja" secondAttribute="bottom" constant="5" id="Y7r-sb-zct"/>
                 <constraint firstItem="S0v-DP-Qja" firstAttribute="leading" secondItem="L7D-q3-6cY" secondAttribute="leading" id="dPS-qa-GHx"/>
-                <constraint firstItem="bCK-I0-izB" firstAttribute="bottom" secondItem="1hw-Lm-cEd" secondAttribute="bottom" id="guH-4W-4sZ"/>
+                <constraint firstItem="bCK-I0-izB" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="1hw-Lm-cEd" secondAttribute="bottom" id="guH-4W-4sZ"/>
                 <constraint firstItem="FfH-Mx-BVf" firstAttribute="bottom" secondItem="L7D-q3-6cY" secondAttribute="bottom" id="hED-Ay-5Pi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RcD-bh-rGW" secondAttribute="trailing" id="kyd-UQ-wos"/>
                 <constraint firstItem="FfH-Mx-BVf" firstAttribute="leading" secondItem="L7D-q3-6cY" secondAttribute="trailing" constant="10" id="lnI-WZ-ufJ"/>
