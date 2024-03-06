@@ -18,6 +18,15 @@ enum Language:String, CaseIterable {
     case english = "英文 English"
 }
 
+struct IllustratedGuide {
+    var level:Int
+    var guideImage:UIImage
+    var name:String
+    var title:String
+    var iconImage:UIImage
+    var guide:String
+}
+
 class CommonColor {
     
     static let shared = CommonColor()

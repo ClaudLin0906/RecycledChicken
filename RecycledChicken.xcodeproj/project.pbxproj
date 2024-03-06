@@ -203,6 +203,8 @@
 		59C73F482A702B400019E87D /* CarbonReductionLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */; };
 		59C8A9FD2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8A9FC2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift */; };
 		59C8A9FF2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C8A9FE2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib */; };
+		59C8AA062B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8AA052B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift */; };
+		59C8AA082B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C8AA072B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib */; };
 		59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59C926D62A8481A800EB6418 /* GoogleService-Info.plist */; };
 		59C926DD2A84831A00EB6418 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 59C926DC2A84831A00EB6418 /* FirebaseAnalytics */; };
 		59C926DF2A84831A00EB6418 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 59C926DE2A84831A00EB6418 /* FirebaseMessaging */; };
@@ -455,6 +457,8 @@
 		59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonReductionLogModel.swift; sourceTree = "<group>"; };
 		59C8A9FC2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideFirstInfoView.swift; sourceTree = "<group>"; };
 		59C8A9FE2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IllustratedGuideFirstInfoView.xib; sourceTree = "<group>"; };
+		59C8AA052B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideSecondInfoView.swift; sourceTree = "<group>"; };
+		59C8AA072B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IllustratedGuideSecondInfoView.xib; sourceTree = "<group>"; };
 		59C926D62A8481A800EB6418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59CC8D9B2A67B3940094CE57 /* DeleteAccountAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertVC.swift; sourceTree = "<group>"; };
 		59CC8D9F2A67B3F10094CE57 /* DeleteAccountAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccountAlert.storyboard; sourceTree = "<group>"; };
@@ -945,6 +949,8 @@
 				5998DD472B8B358C00C99A8C /* IllustratedGuideModel.swift */,
 				59C8A9FC2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift */,
 				59C8A9FE2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib */,
+				59C8AA052B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift */,
+				59C8AA072B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib */,
 			);
 			path = IllustratedGuide;
 			sourceTree = "<group>";
@@ -1241,6 +1247,7 @@
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
 				59B682F72A76A2CA008F5135 /* Scan.storyboard in Resources */,
 				59A7958A2A0F8F3A0031710F /* UpdateDateAlertView.xib in Resources */,
+				59C8AA082B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib in Resources */,
 				59AA2EE12B93061C001E1352 /* CompletetChangePWDView.xib in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
@@ -1451,6 +1458,7 @@
 				597521792A0B84A200D0B67C /* SystemSettingModel.swift in Sources */,
 				599216C52B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift in Sources */,
 				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
+				59C8AA062B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
 				59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */,
@@ -1663,8 +1671,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 85QZ2RDHW3;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 85QZ2RDHW3;
+				DEVELOPMENT_TEAM = 884W23P95V;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
@@ -1710,8 +1717,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 85QZ2RDHW3;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 85QZ2RDHW3;
+				DEVELOPMENT_TEAM = 884W23P95V;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;

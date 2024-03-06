@@ -35,6 +35,7 @@ class IllustratedGuideFirstInfoView: UIView, NibOwnerLoadable {
         imageView.image = image
         nameLabel.text = name
         typeLabel.text = type
+        guideLabel.text = guide
     }
 
 }

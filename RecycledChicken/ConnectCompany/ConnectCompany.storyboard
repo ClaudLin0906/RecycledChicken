@@ -41,7 +41,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請問您是用戶還是合作廠商?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMt-iW-Jcr" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="49.666666666666671" y="5" width="213.66666666666663" height="20"/>
+                                                        <rect key="frame" x="50.666666666666686" y="3" width="212" height="24"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用戶" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-tz-uIe" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="5" width="283" height="20"/>
+                                                                <rect key="frame" x="5" y="3" width="283" height="24"/>
                                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -107,7 +107,7 @@
                                                 <rect key="frame" x="0.0" y="90" width="313" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入您的意見內容" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsI-6F-Gi0" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="80" y="5" width="153" height="20"/>
+                                                        <rect key="frame" x="80" y="3" width="153" height="24"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -149,7 +149,7 @@
                                                 <rect key="frame" x="0.0" y="460" width="313" height="10"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您使用的連絡信箱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpC-zY-24I" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="88.666666666666657" y="-5" width="136" height="20"/>
+                                                        <rect key="frame" x="88.666666666666657" y="-7" width="136" height="24"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -166,26 +166,26 @@
                                                 <rect key="frame" x="0.0" y="490" width="313" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-A1-zCu" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="1.6666666666666288" width="40" height="16.333333333333332"/>
+                                                        <rect key="frame" x="5" y="1.6666666666666288" width="41.333333333333336" height="19.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <color key="textColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fm1-WY-2vs">
-                                                        <rect key="frame" x="50" y="0.0" width="258" height="18"/>
+                                                        <rect key="frame" x="51.333333333333343" y="0.0" width="256.66666666666663" height="21.333333333333332"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-Rn-hqf" userLabel="line">
-                                                        <rect key="frame" x="0.0" y="18" width="313" height="1"/>
+                                                        <rect key="frame" x="0.0" y="21.333333333333371" width="313" height="1"/>
                                                         <color key="backgroundColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="lOU-E9-DSJ"/>
                                                         </constraints>
                                                     </view>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="輸入正確聯絡信箱格式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9r-lg-nnF" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="86.666666666666686" y="24" width="140" height="16.333333333333329"/>
+                                                        <rect key="frame" x="86.666666666666686" y="27.333333333333371" width="140" height="19.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <color key="textColor" red="0.92941176470588238" green="0.27450980392156865" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -329,25 +329,25 @@
     </scenes>
     <designables>
         <designable name="GMt-iW-Jcr">
-            <size key="intrinsicContentSize" width="213.66666666666666" height="20"/>
+            <size key="intrinsicContentSize" width="212" height="24"/>
         </designable>
         <designable name="MoM-A1-zCu">
-            <size key="intrinsicContentSize" width="40" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="19.666666666666668"/>
         </designable>
         <designable name="YsI-6F-Gi0">
-            <size key="intrinsicContentSize" width="153" height="20"/>
+            <size key="intrinsicContentSize" width="153" height="24"/>
         </designable>
         <designable name="m9r-lg-nnF">
-            <size key="intrinsicContentSize" width="140" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="140" height="19.666666666666668"/>
         </designable>
         <designable name="mpC-zY-24I">
-            <size key="intrinsicContentSize" width="136" height="20"/>
+            <size key="intrinsicContentSize" width="136" height="24"/>
         </designable>
         <designable name="xfb-tz-uIe">
-            <size key="intrinsicContentSize" width="34" height="20"/>
+            <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
         <designable name="zcT-WR-qFV">
-            <size key="intrinsicContentSize" width="30" height="29"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

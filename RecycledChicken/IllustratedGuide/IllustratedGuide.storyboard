@@ -36,7 +36,7 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sov-cG-xug" userLabel="content">
                                                             <rect key="frame" x="29.333333333333343" y="13" width="334.33333333333326" height="104"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                     <integer key="value" value="10"/>
@@ -62,7 +62,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="content" destination="sov-cG-xug" id="nWE-Yq-1zE"/>
+                                            <outlet property="content" destination="sov-cG-xug" id="gG9-PK-Pu6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
