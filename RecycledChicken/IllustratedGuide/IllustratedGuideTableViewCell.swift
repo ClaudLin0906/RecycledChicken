@@ -61,6 +61,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         scrollView.heightAnchor.constraint(equalTo: content.heightAnchor).isActive = true
         
         var contentWith = content.frame.width
+    
         let illustratedGuideFirstInfoView = IllustratedGuideFirstInfoView()
         illustratedGuideFirstInfoView.backgroundColor = .white
         illustratedGuideFirstInfoView.layer.cornerRadius = 10
@@ -76,6 +77,8 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         illustratedGuideFirstInfoView.setInfo(illustratedGuide.iconImage, name: illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.prefix(30)))
         
         if illustratedGuide.guide.count > 30 {
+            let leftGesture = UISwipeGestureRecognizer(target: self, action: <#T##Selector?#>)
+            leftGesture.direction = .left
             contentWith += content.frame.width
             let illustratedGuideSecondInfoView = IllustratedGuideSecondInfoView()
             illustratedGuideSecondInfoView.backgroundColor = .white
