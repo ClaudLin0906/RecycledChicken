@@ -10,6 +10,8 @@ import UIKit
 class IllustratedGuideVC: CustomVC {
     
     @IBOutlet weak var tableView:UITableView!
+    
+    private var tableViewDatas = illustratedGuideModelDatas
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +37,13 @@ extension IllustratedGuideVC: UITableViewDelegate {
 extension IllustratedGuideVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        tableViewDatas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IllustratedGuideTableViewCell", for: indexPath) as! IllustratedGuideTableViewCell
+        let row = indexPath.row
+        cell.setCell(tableViewDatas[row])
         return cell
     }
     

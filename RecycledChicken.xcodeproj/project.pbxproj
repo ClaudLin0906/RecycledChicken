@@ -201,6 +201,8 @@
 		59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C5AF6D2A290E6F002322BE /* jf-openhuninn-2.0.ttf */; };
 		59C73F462A700C6A0019E87D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C73F452A700C6A0019E87D /* HomeModel.swift */; };
 		59C73F482A702B400019E87D /* CarbonReductionLogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */; };
+		59C8A9FD2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8A9FC2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift */; };
+		59C8A9FF2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C8A9FE2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib */; };
 		59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59C926D62A8481A800EB6418 /* GoogleService-Info.plist */; };
 		59C926DD2A84831A00EB6418 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 59C926DC2A84831A00EB6418 /* FirebaseAnalytics */; };
 		59C926DF2A84831A00EB6418 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 59C926DE2A84831A00EB6418 /* FirebaseMessaging */; };
@@ -451,6 +453,8 @@
 		59C5AF6D2A290E6F002322BE /* jf-openhuninn-2.0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jf-openhuninn-2.0.ttf"; sourceTree = "<group>"; };
 		59C73F452A700C6A0019E87D /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonReductionLogModel.swift; sourceTree = "<group>"; };
+		59C8A9FC2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideFirstInfoView.swift; sourceTree = "<group>"; };
+		59C8A9FE2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IllustratedGuideFirstInfoView.xib; sourceTree = "<group>"; };
 		59C926D62A8481A800EB6418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59CC8D9B2A67B3940094CE57 /* DeleteAccountAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertVC.swift; sourceTree = "<group>"; };
 		59CC8D9F2A67B3F10094CE57 /* DeleteAccountAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccountAlert.storyboard; sourceTree = "<group>"; };
@@ -939,6 +943,8 @@
 				5998DD412B8B31FF00C99A8C /* IllustratedGuide.storyboard */,
 				5998DD432B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift */,
 				5998DD472B8B358C00C99A8C /* IllustratedGuideModel.swift */,
+				59C8A9FC2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift */,
+				59C8A9FE2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib */,
 			);
 			path = IllustratedGuide;
 			sourceTree = "<group>";
@@ -1195,6 +1201,7 @@
 				59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */,
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
 				597E7F162B70D76C0018528A /* RecycledItemView.xib in Resources */,
+				59C8A9FF2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib in Resources */,
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
 				59AA2EE92B931562001E1352 /* ProductAlert.storyboard in Resources */,
 				5985D6C02B6A1F8100DE6EBA /* ADBannerView.xib in Resources */,
@@ -1401,6 +1408,7 @@
 				5994957C2A0D2C1E009F1B2E /* StoreMapVC.swift in Sources */,
 				59A795902A0F9F6C0031710F /* SpendPointCompleteAlertView.swift in Sources */,
 				5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */,
+				59C8A9FD2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift in Sources */,
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
 				59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */,
