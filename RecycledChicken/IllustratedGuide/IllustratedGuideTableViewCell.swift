@@ -76,9 +76,10 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         
         illustratedGuideFirstInfoView.setInfo(illustratedGuide.iconImage, name: illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.prefix(30)))
         
+        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipeGesture(_:)))
+        leftGesture.direction = .left
+        illustratedGuideFirstInfoView.addGestureRecognizer(leftGesture)
         if illustratedGuide.guide.count > 30 {
-            let leftGesture = UISwipeGestureRecognizer(target: self, action: <#T##Selector?#>)
-            leftGesture.direction = .left
             contentWith += content.frame.width
             let illustratedGuideSecondInfoView = IllustratedGuideSecondInfoView()
             illustratedGuideSecondInfoView.backgroundColor = .white
@@ -107,6 +108,10 @@ class IllustratedGuideTableViewCell: UITableViewCell {
             guideImageView.image = illustratedGuide.guideImage
         }
 
+    }
+    
+    @objc private func leftSwipeGesture(_ swipe:UISwipeGestureRecognizer) {
+        print("1231")
     }
     
     private func checkLevel() -> Bool {
