@@ -13,11 +13,9 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     @IBOutlet weak var content:UIView!
     
-    private lazy var guideImageView:UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "chiw 3"))
+    private var guideImageView:UIImageView = {
+        let imageView = UIImageView( )
         imageView.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
-        imageView.addGestureRecognizer(tap)
         return imageView
     }()
     
@@ -36,6 +34,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        guideImageView.image = nil
     }
     
     func setCell(_ illustratedGuide:IllustratedGuide) {
@@ -44,7 +43,9 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     }
     
     @objc private func tapGesture(_ tap:UITapGestureRecognizer) {
-        guideImageView.removeFromSuperview()
+        if checkLevel() {
+            guideImageView.removeFromSuperview()
+        }
     }
     
     private func UIInit() {
@@ -96,7 +97,9 @@ class IllustratedGuideTableViewCell: UITableViewCell {
             illustratedGuideSecondInfoView.setInfo(illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.suffix(suffixIndex)))
         }
         scrollView.contentSize = CGSize(width: contentWith, height: content.frame.size.height)
-
+        guideImageView.image = UIImage(named: "chiw 3")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
+        guideImageView.addGestureRecognizer(tap)
         content.addSubview(guideImageView)
         guideImageView.translatesAutoresizingMaskIntoConstraints = false
         guideImageView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
