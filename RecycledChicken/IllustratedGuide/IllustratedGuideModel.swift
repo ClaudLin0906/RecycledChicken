@@ -16,9 +16,9 @@ var illustratedGuideModelDatas:[IllustratedGuide] =
         IllustratedGuide(level: 4, guideImage: UIImage(named: "Group 176")!, name: "技術雞", title: "技術研發", iconImage: UIImage(named: "")!, guide: "提升回收再製純化技術"),
         IllustratedGuide(level: 5, guideImage: UIImage(named: "Group 177")!, name: "挖土雞", title: "土壤", iconImage: UIImage(named: "")!, guide: "土壤若遭受污染，不僅土壤品質惡化、根著其上的作物，食用作物的生物亦受波及，甚至影響到地下水源的品質，而威脅到飲用水的安全。"),
         IllustratedGuide(level: 6, guideImage: UIImage(named: "Group 178")!, name: "紳士雞", title: "紡織纖維材料", iconImage: UIImage(named: "")!, guide: "紡織廠致力於寶特瓶回收紗線的開發，讓寶特瓶進入再生循環，用行動支持減塑愛地球。"),
-        IllustratedGuide(level: 7, guideImage: UIImage(named: "")!, name: "發電雞", title: "綠電", iconImage: UIImage(named: "")!, guide: "綠電即再生能源，是指某種發電過程中，產生的二氧化碳排放量為零，或近乎零，對生態、氣候造成的影響較小。"),
-        IllustratedGuide(level: 8, guideImage: UIImage(named: "")!, name: "冒險雞", title: "大眾運輸", iconImage: UIImage(named: "")!, guide: "完善綠色運輸規劃、減少私有運具是更低碳的交通方式。"),
-        IllustratedGuide(level: 9, guideImage: UIImage(named: "")!, name: "花雕雞", title: "親民代表", iconImage: UIImage(named: "")!, guide: "城市美化，循環經濟基礎建設"),
-        IllustratedGuide(level: 10, guideImage: UIImage(named: "")!, name: "碳長", title: "碳匯", iconImage: UIImage(named: "")!, guide: "碳匯（carbon sink）是儲存二氧化碳的天然或人工「倉庫」")
+        IllustratedGuide(level: 7, guideImage: UIImage(named: "Group 181")!, name: "發電雞", title: "綠電", iconImage: UIImage(named: "")!, guide: "綠電即再生能源，是指某種發電過程中，產生的二氧化碳排放量為零，或近乎零，對生態、氣候造成的影響較小。"),
+        IllustratedGuide(level: 8, guideImage: UIImage(named: "Group 182")!, name: "冒險雞", title: "大眾運輸", iconImage: UIImage(named: "")!, guide: "完善綠色運輸規劃、減少私有運具是更低碳的交通方式。"),
+        IllustratedGuide(level: 9, guideImage: UIImage(named: "Group 183")!, name: "花雕雞", title: "親民代表", iconImage: UIImage(named: "")!, guide: "城市美化，循環經濟基礎建設"),
+        IllustratedGuide(level: 10, guideImage: UIImage(named: "Group 184")!, name: "碳長", title: "碳匯", iconImage: UIImage(named: "")!, guide: "碳匯（carbon sink）是儲存二氧化碳的天然或人工「倉庫」")
         
     ]
