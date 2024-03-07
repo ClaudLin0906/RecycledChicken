@@ -13,6 +13,7 @@
                 <outlet property="guideLabel" destination="bCK-I0-izB" id="vZM-pt-yvr"/>
                 <outlet property="imageView" destination="1hw-Lm-cEd" id="zw5-zd-hR0"/>
                 <outlet property="nameLabel" destination="L7D-q3-6cY" id="yfG-Zk-Ayo"/>
+                <outlet property="rightBtn" destination="RcD-bh-rGW" id="EFl-07-HiK"/>
                 <outlet property="typeLabel" destination="FfH-Mx-BVf" id="h1F-ai-hSs"/>
             </connections>
         </placeholder>
@@ -66,7 +67,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-bh-rGW">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcD-bh-rGW">
                     <rect key="frame" x="363" y="59" width="30" height="62"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="XvL-Ow-a5v"/>

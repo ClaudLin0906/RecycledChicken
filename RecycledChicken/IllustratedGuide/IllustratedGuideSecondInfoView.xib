@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IllustratedGuideSecondInfoView" customModule="RecycledChicken" customModuleProvider="target">
             <connections>
                 <outlet property="guideLabel" destination="awL-nv-lEi" id="Sq9-SQ-LNx"/>
+                <outlet property="leftBtn" destination="7Ow-Qv-BMA" id="ntK-19-YeI"/>
                 <outlet property="nameLabel" destination="9Z9-zr-uY7" id="1jl-tb-hKV"/>
                 <outlet property="typeLabel" destination="LDA-CQ-Gcg" id="uwG-QJ-wqB"/>
             </connections>

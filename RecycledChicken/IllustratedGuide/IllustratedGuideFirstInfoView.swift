@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol IllustratedGuideFirstInfoViewDelegate {
+    func rightBtnPress(_ sender:UIButton)
+}
+
 class IllustratedGuideFirstInfoView: UIView, NibOwnerLoadable {
+    
+    var delegate:IllustratedGuideFirstInfoViewDelegate?
     
     @IBOutlet weak var imageView:UIImageView!
     
@@ -16,6 +22,8 @@ class IllustratedGuideFirstInfoView: UIView, NibOwnerLoadable {
     @IBOutlet weak var typeLabel:CustomLabel!
     
     @IBOutlet weak var guideLabel:CustomLabel!
+    
+    @IBOutlet weak var rightBtn:UIButton!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +37,7 @@ class IllustratedGuideFirstInfoView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+        rightBtn.addTarget(self, action: #selector(btnPress(_:)), for: .touchUpInside)
     }
     
     func setInfo(_ image:UIImage, name:String, type:String, guide:String) {
@@ -38,4 +47,8 @@ class IllustratedGuideFirstInfoView: UIView, NibOwnerLoadable {
         guideLabel.text = guide
     }
 
+    @objc private func btnPress(_ sender:UIButton) {
+        delegate?.rightBtnPress(sender)
+    }
+    
 }

@@ -20,6 +20,15 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     }()
     
     private var illustratedGuide:IllustratedGuide?
+    
+    private var scrollView:UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.isScrollEnabled = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,9 +59,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     private func UIInit() {
         guard let illustratedGuide = illustratedGuide else { return }
-        let scrollView = UIScrollView()
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
+
         content.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
@@ -63,6 +70,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         var contentWith = content.frame.width
     
         let illustratedGuideFirstInfoView = IllustratedGuideFirstInfoView()
+        illustratedGuideFirstInfoView.delegate = self
         illustratedGuideFirstInfoView.backgroundColor = .white
         illustratedGuideFirstInfoView.layer.cornerRadius = 10
         illustratedGuideFirstInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -78,7 +86,9 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         
         if illustratedGuide.guide.count > 30 {
             contentWith += content.frame.width
+            illustratedGuideFirstInfoView.rightBtn.isHidden = false
             let illustratedGuideSecondInfoView = IllustratedGuideSecondInfoView()
+            illustratedGuideSecondInfoView.delegate = self
             illustratedGuideSecondInfoView.backgroundColor = .white
             illustratedGuideSecondInfoView.layer.cornerRadius = 10
             illustratedGuideSecondInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -117,5 +127,20 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         return false
     }
     
+}
 
+extension IllustratedGuideTableViewCell: IllustratedGuideFirstInfoViewDelegate {
+    
+    func rightBtnPress(_ sender: UIButton) {
+        scrollView.setContentOffset(CGPoint(x: content.frame.width, y: 0), animated: true)
+    }
+    
+}
+
+extension IllustratedGuideTableViewCell: IllustratedGuideSecondInfoViewDelegate {
+    
+    func leftBtnOnCilck(_ sender: UIButton) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
 }
