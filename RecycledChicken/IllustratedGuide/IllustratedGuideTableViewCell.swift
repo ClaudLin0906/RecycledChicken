@@ -81,7 +81,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         illustratedGuideFirstInfoView.backgroundColor = .white
         illustratedGuideFirstInfoView.layer.cornerRadius = 10
         illustratedGuideFirstInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        illustratedGuideFirstInfoView.layer.shadowOpacity = 0.4
+        illustratedGuideFirstInfoView.layer.shadowOpacity = 0.2
         scrollView.addSubview(illustratedGuideFirstInfoView)
         illustratedGuideFirstInfoView.translatesAutoresizingMaskIntoConstraints = false
         illustratedGuideFirstInfoView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
@@ -99,7 +99,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
             illustratedGuideSecondInfoView.backgroundColor = .white
             illustratedGuideSecondInfoView.layer.cornerRadius = 10
             illustratedGuideSecondInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
-            illustratedGuideSecondInfoView.layer.shadowOpacity = 0.4
+            illustratedGuideSecondInfoView.layer.shadowOpacity = 0.2
             scrollView.addSubview(illustratedGuideSecondInfoView)
             illustratedGuideSecondInfoView.translatesAutoresizingMaskIntoConstraints = false
             illustratedGuideSecondInfoView.leadingAnchor.constraint(equalTo: illustratedGuideFirstInfoView.trailingAnchor, constant: 20).isActive = true

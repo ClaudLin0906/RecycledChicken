@@ -205,6 +205,7 @@
 		59C8A9FF2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C8A9FE2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib */; };
 		59C8AA062B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8AA052B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift */; };
 		59C8AA082B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C8AA072B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib */; };
+		59C8AA0A2B99B2E400DF9E9C /* TaskTableViewTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8AA092B99B2E400DF9E9C /* TaskTableViewTicketCell.swift */; };
 		59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59C926D62A8481A800EB6418 /* GoogleService-Info.plist */; };
 		59C926DD2A84831A00EB6418 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 59C926DC2A84831A00EB6418 /* FirebaseAnalytics */; };
 		59C926DF2A84831A00EB6418 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 59C926DE2A84831A00EB6418 /* FirebaseMessaging */; };
@@ -459,6 +460,7 @@
 		59C8A9FE2B9722D400DF9E9C /* IllustratedGuideFirstInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IllustratedGuideFirstInfoView.xib; sourceTree = "<group>"; };
 		59C8AA052B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedGuideSecondInfoView.swift; sourceTree = "<group>"; };
 		59C8AA072B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IllustratedGuideSecondInfoView.xib; sourceTree = "<group>"; };
+		59C8AA092B99B2E400DF9E9C /* TaskTableViewTicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewTicketCell.swift; sourceTree = "<group>"; };
 		59C926D62A8481A800EB6418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59CC8D9B2A67B3940094CE57 /* DeleteAccountAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountAlertVC.swift; sourceTree = "<group>"; };
 		59CC8D9F2A67B3F10094CE57 /* DeleteAccountAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteAccountAlert.storyboard; sourceTree = "<group>"; };
@@ -1079,6 +1081,7 @@
 				59C2D9A42A0D38490085724F /* Task.storyboard */,
 				59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */,
 				5964AAF52A1364570005686F /* TaskTableViewADCell.swift */,
+				59C8AA092B99B2E400DF9E9C /* TaskTableViewTicketCell.swift */,
 				5964AAF92A1364EE0005686F /* TaskProgressView.swift */,
 				5964AAFB2A1364F70005686F /* TaskProgressView.xib */,
 				59835DF12A63FA2200678BAF /* TaskModel.swift */,
@@ -1515,6 +1518,7 @@
 				59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */,
 				5964AAFE2A14769C0005686F /* LAContextManager.swift in Sources */,
 				599495662A0BFA1A009F1B2E /* BuyLotteryVC.swift in Sources */,
+				59C8AA0A2B99B2E400DF9E9C /* TaskTableViewTicketCell.swift in Sources */,
 				59980BF02B734713002FDF41 /* RecycledRingInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

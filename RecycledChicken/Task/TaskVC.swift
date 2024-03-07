@@ -133,47 +133,57 @@ class TaskVC: CustomRootVC {
 
 extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        taskInfos.count
+//        taskInfos.count
+        3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        var info = taskInfos[row]
-        info.isFinish = false
-        for taskStatus in taskStatuss {
-            if taskStatus.createTime == info.createTime && taskStatus.type == info.type {
-                info.isFinish = true
-                break
-            }
+        if row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            return cell
         }
-        let type = info.type
-        switch type {
-        case .AD:
+        if row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
-            cell.taskInfo = info
-            cell.setCell()
-            return cell
-        case .share:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.taskInfo = info
-            cell.setCell()
-            return cell
-        case .battery:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.taskInfo = info
-            cell.setCell(batteryInt: batteryInt)
-            return cell
-        case .bottle:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.taskInfo = info
-            cell.setCell(bottleInt: bottleInt)
             return cell
         }
+        if row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewTicketCell.identifier, for: indexPath) as! TaskTableViewTicketCell
+            return cell
+        }
+        return UITableViewCell()
+//        var info = taskInfos[row]
+//        info.isFinish = false
+//        for taskStatus in taskStatuss {
+//            if taskStatus.createTime == info.createTime && taskStatus.type == info.type {
+//                info.isFinish = true
+//                break
+//            }
+//        }
+//        let type = info.type
+//        switch type {
+//        case .AD:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
+//            cell.taskInfo = info
+//            cell.setCell()
+//            return cell
+//        case .share:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//            cell.taskInfo = info
+//            cell.setCell()
+//            return cell
+//        case .battery:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//            cell.taskInfo = info
+//            cell.setCell(batteryInt: batteryInt)
+//            return cell
+//        case .bottle:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//            cell.taskInfo = info
+//            cell.setCell(bottleInt: bottleInt)
+//            return cell
+//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
