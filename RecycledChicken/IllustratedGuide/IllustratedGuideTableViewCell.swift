@@ -53,13 +53,12 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.isScrollEnabled = false
         content.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
         scrollView.centerYAnchor.constraint(equalTo: content.centerYAnchor).isActive = true
         scrollView.widthAnchor.constraint(equalTo: content.widthAnchor).isActive = true
-        scrollView.heightAnchor.constraint(equalTo: content.heightAnchor).isActive = true
+        scrollView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         
         var contentWith = content.frame.width
     
@@ -77,9 +76,6 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         
         illustratedGuideFirstInfoView.setInfo(illustratedGuide.iconImage, name: illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.prefix(30)))
         
-        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipeGesture(_:)))
-        leftGesture.direction = .left
-        illustratedGuideFirstInfoView.addGestureRecognizer(leftGesture)
         if illustratedGuide.guide.count > 30 {
             contentWith += content.frame.width
             let illustratedGuideSecondInfoView = IllustratedGuideSecondInfoView()
@@ -104,17 +100,13 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         guideImageView.translatesAutoresizingMaskIntoConstraints = false
         guideImageView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
         guideImageView.centerYAnchor.constraint(equalTo: content.centerYAnchor).isActive = true
-        guideImageView.widthAnchor.constraint(equalTo: content.widthAnchor).isActive = true
-        guideImageView.heightAnchor.constraint(equalTo: content.heightAnchor).isActive = true
+        guideImageView.widthAnchor.constraint(equalTo: illustratedGuideFirstInfoView.widthAnchor).isActive = true
+        guideImageView.heightAnchor.constraint(equalTo: illustratedGuideFirstInfoView.heightAnchor).isActive = true
         
         if checkLevel() {
             guideImageView.image = illustratedGuide.guideImage
         }
 
-    }
-    
-    @objc private func leftSwipeGesture(_ swipe:UISwipeGestureRecognizer) {
-        print("1231")
     }
     
     private func checkLevel() -> Bool {
