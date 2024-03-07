@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol IllustratedGuideTableViewCellDelegate {
+    func tapGesture(_ illustratedGuideTableData:IllustratedGuideTableData)
+}
+
 class IllustratedGuideTableViewCell: UITableViewCell {
     
     static let identifier = "IllustratedGuideTableViewCell"
+    
+    var delegate:IllustratedGuideTableViewCellDelegate?
     
     @IBOutlet weak var content:UIView!
     
@@ -19,7 +25,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private var illustratedGuide:IllustratedGuide?
+    private var illustratedGuideTableData:IllustratedGuideTableData?
     
     private var scrollView:UIScrollView = {
         let scrollView = UIScrollView()
@@ -46,26 +52,27 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         guideImageView.image = nil
     }
     
-    func setCell(_ illustratedGuide:IllustratedGuide) {
-        self.illustratedGuide = illustratedGuide
+    func setCell(_ illustratedGuideTableData:IllustratedGuideTableData) {
+        self.illustratedGuideTableData = illustratedGuideTableData
         UIInit()
     }
     
     @objc private func tapGesture(_ tap:UITapGestureRecognizer) {
         if checkLevel() {
+            delegate?.tapGesture(illustratedGuideTableData!)
             guideImageView.removeFromSuperview()
         }
     }
     
     private func UIInit() {
-        guard let illustratedGuide = illustratedGuide else { return }
-
+        guard let illustratedGuideTableData = illustratedGuideTableData else { return }
+        let info = illustratedGuideTableData.illustratedGuideInfo.getInfo()
         content.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
         scrollView.centerYAnchor.constraint(equalTo: content.centerYAnchor).isActive = true
         scrollView.widthAnchor.constraint(equalTo: content.widthAnchor).isActive = true
-        scrollView.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        scrollView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
         var contentWith = content.frame.width
     
@@ -82,9 +89,9 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         illustratedGuideFirstInfoView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -20).isActive = true
         illustratedGuideFirstInfoView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, constant: -15).isActive = true
         
-        illustratedGuideFirstInfoView.setInfo(illustratedGuide.iconImage, name: illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.prefix(30)))
+        illustratedGuideFirstInfoView.setInfo(info.iconImage, name: info.name, type: info.title, guide: String(info.guide.prefix(30)))
         
-        if illustratedGuide.guide.count > 30 {
+        if info.guide.count > 30 {
             contentWith += content.frame.width
             illustratedGuideFirstInfoView.rightBtn.isHidden = false
             let illustratedGuideSecondInfoView = IllustratedGuideSecondInfoView()
@@ -99,29 +106,31 @@ class IllustratedGuideTableViewCell: UITableViewCell {
             illustratedGuideSecondInfoView.centerYAnchor.constraint(equalTo: illustratedGuideFirstInfoView.centerYAnchor).isActive = true
             illustratedGuideSecondInfoView.widthAnchor.constraint(equalTo: illustratedGuideFirstInfoView.widthAnchor).isActive = true
             illustratedGuideSecondInfoView.heightAnchor.constraint(equalTo: illustratedGuideFirstInfoView.heightAnchor).isActive = true
-            let suffixIndex = illustratedGuide.guide.count - 30
-            illustratedGuideSecondInfoView.setInfo(illustratedGuide.name, type: illustratedGuide.title, guide: String(illustratedGuide.guide.suffix(suffixIndex)))
+            let suffixIndex = info.guide.count - 30
+            illustratedGuideSecondInfoView.setInfo(info.name, type: info.title, guide: String(info.guide.suffix(suffixIndex)))
         }
         scrollView.contentSize = CGSize(width: contentWith, height: content.frame.size.height)
-        guideImageView.image = UIImage(named: "chiw 3")
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
-        guideImageView.addGestureRecognizer(tap)
-        content.addSubview(guideImageView)
-        guideImageView.translatesAutoresizingMaskIntoConstraints = false
-        guideImageView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
-        guideImageView.centerYAnchor.constraint(equalTo: content.centerYAnchor).isActive = true
-        guideImageView.widthAnchor.constraint(equalTo: illustratedGuideFirstInfoView.widthAnchor).isActive = true
-        guideImageView.heightAnchor.constraint(equalTo: illustratedGuideFirstInfoView.heightAnchor).isActive = true
         
-        if checkLevel() {
-            guideImageView.image = illustratedGuide.guideImage
+        if !illustratedGuideTableData.isRead {
+            guideImageView.image = UIImage(named: "chiw 3")
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
+            guideImageView.addGestureRecognizer(tap)
+            content.addSubview(guideImageView)
+            guideImageView.translatesAutoresizingMaskIntoConstraints = false
+            guideImageView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
+            guideImageView.centerYAnchor.constraint(equalTo: content.centerYAnchor).isActive = true
+            guideImageView.widthAnchor.constraint(equalTo: illustratedGuideFirstInfoView.widthAnchor).isActive = true
+            guideImageView.heightAnchor.constraint(equalTo: illustratedGuideFirstInfoView.heightAnchor).isActive = true
+            
+            if checkLevel() {
+                guideImageView.image = info.guideImage
+            }
         }
-
     }
     
     private func checkLevel() -> Bool {
-        guard let illustratedGuide = illustratedGuide else { return false }
-        if let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.level, level >= illustratedGuide.level {
+        guard let illustratedGuideTableData = illustratedGuideTableData else { return false }
+        if let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.level, level >= illustratedGuideTableData.illustratedGuideInfo.getInfo().level {
             return true
         }
         return false
