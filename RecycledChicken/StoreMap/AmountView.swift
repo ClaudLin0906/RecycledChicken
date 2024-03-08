@@ -11,22 +11,9 @@ class AmountView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var storeName:UILabel!
     
-    @IBOutlet weak var bottleCount:UILabel!
+    @IBOutlet weak var stackView:UIStackView!
     
-    @IBOutlet weak var batteryCount:UILabel!
-    
-    var mapInfo:MapInfo? {
-        willSet{
-            if let newValue = newValue {
-                self.isHidden = false
-                storeName.text = newValue.storeName
-                bottleCount.text = "還可以投:\(newValue.remainingProcessable.bottle ?? 0)瓶"
-                batteryCount.text = "還可以投:\(newValue.remainingProcessable.battery ?? 0)顆"
-            }else{
-                self.isHidden = true
-            }
-        }
-    }
+    var mapInfo:MapInfo?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,5 +27,27 @@ class AmountView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    func setAmount(_ info:MapInfo) {
+        self.isHidden = false
+        storeName.text = info.storeName
+        if let battery = info.remainingProcessable.battery, battery > 0 {
+            let label = labelInit("還可以投:\(battery)顆")
+            stackView.addArrangedSubview(label)
+        }
+        if let bottle = info.remainingProcessable.bottle, bottle > 0 {
+            let label = labelInit("還可以投:\(bottle)瓶")
+            stackView.addArrangedSubview(label)
+        }
+    }
+    
+    private func labelInit(_ textCount:String) -> UILabel {
+        let label = UILabel()
+        label.font = storeName.font
+        label.text = textCount
+        label.textColor = storeName.textColor
+        label.textAlignment = storeName.textAlignment
+        return label
     }
 }

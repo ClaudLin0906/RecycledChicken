@@ -52,7 +52,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-kB-cta" customClass="SpecialTaskView" customModule="RecycledChicken" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-kB-cta" customClass="SpecialTaskView" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="73" y="252.99999999999997" width="247" height="300.33333333333326"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPh-12-JyV" customClass="AmountView" customModule="RecycledChicken" customModuleProvider="target">
@@ -191,7 +191,7 @@
             <size key="intrinsicContentSize" width="88" height="15.666666666666666"/>
         </designable>
         <designable name="ZEl-gS-LnA">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
         <designable name="fyj-Mw-dme">
             <size key="intrinsicContentSize" width="220" height="15.666666666666666"/>

@@ -85,6 +85,7 @@ class StoreMapVC: CustomRootVC {
                         maker.position = coordinate
                         maker.map = mapView
                         maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
+                        maker.icon = getMakerIcon(mapInfo)
                         maker.title = mapInfo.storeName
                     }
                 }
@@ -205,7 +206,7 @@ extension StoreMapVC: GMSMapViewDelegate {
         }
         if !mapInfoArr.isEmpty {
             let mapInfo = mapInfoArr[0]
-            amountView.mapInfo = mapInfo
+            amountView.setAmount(mapInfo)
         }
         return true
     }
