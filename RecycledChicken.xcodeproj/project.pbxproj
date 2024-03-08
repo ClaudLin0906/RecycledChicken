@@ -10,6 +10,8 @@
 		590251052B68DF250002E76C /* Pw_UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590251042B68DF250002E76C /* Pw_UserDefault.swift */; };
 		590251082B68E3020002E76C /* CombineHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 590251072B68E3020002E76C /* CombineHelper */; };
 		5902510B2B68E31F0002E76C /* CombineDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 5902510A2B68E31F0002E76C /* CombineDataSources */; };
+		590485F12B9AF67E008B9AFD /* SpecialTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590485F02B9AF67E008B9AFD /* SpecialTaskView.swift */; };
+		590485F32B9AF685008B9AFD /* SpecialTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590485F22B9AF685008B9AFD /* SpecialTaskView.xib */; };
 		5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C57D2A04086400FAB49D /* AppDelegate.swift */; };
 		5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C57F2A04086400FAB49D /* SceneDelegate.swift */; };
 		5926C5822A04086400FAB49D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5812A04086400FAB49D /* ViewController.swift */; };
@@ -264,6 +266,8 @@
 		3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycledChicken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0DC3033FBF88A70BF0BC1 /* Pods-RecycledChicken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.release.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.release.xcconfig"; sourceTree = "<group>"; };
 		590251042B68DF250002E76C /* Pw_UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pw_UserDefault.swift; sourceTree = "<group>"; };
+		590485F02B9AF67E008B9AFD /* SpecialTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialTaskView.swift; sourceTree = "<group>"; };
+		590485F22B9AF685008B9AFD /* SpecialTaskView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialTaskView.xib; sourceTree = "<group>"; };
 		590649EB2A151D3F008C778A /* RecycledChicken.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycledChicken.entitlements; sourceTree = "<group>"; };
 		5926C57A2A04086400FAB49D /* RecycledChicken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycledChicken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5926C57D2A04086400FAB49D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -927,6 +931,8 @@
 				59AFE15C2A0FA82E00490BD8 /* IconView.xib */,
 				5999F05E2A1323EC002F08D8 /* AmountView.swift */,
 				5999F0602A132409002F08D8 /* AmountView.xib */,
+				590485F02B9AF67E008B9AFD /* SpecialTaskView.swift */,
+				590485F22B9AF685008B9AFD /* SpecialTaskView.xib */,
 				59CDA3592A45A7B800E3F74E /* StoreMapModel.swift */,
 			);
 			path = StoreMap;
@@ -1253,6 +1259,7 @@
 				59C8AA082B9852F400DF9E9C /* IllustratedGuideSecondInfoView.xib in Resources */,
 				59AA2EE12B93061C001E1352 /* CompletetChangePWDView.xib in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
+				590485F32B9AF685008B9AFD /* SpecialTaskView.xib in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
 				59E1E8402A6293C400396CF9 /* PersonMessageImageView.xib in Resources */,
 				59DB96AE2A08C33C00ACAC31 /* BarCodeView.xib in Resources */,
@@ -1510,6 +1517,7 @@
 				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
 				5998DD482B8B358C00C99A8C /* IllustratedGuideModel.swift in Sources */,
 				599495582A0BF234009F1B2E /* CommodityVoucherVC.swift in Sources */,
+				590485F12B9AF67E008B9AFD /* SpecialTaskView.swift in Sources */,
 				59997A442A08E2BF00E9FD7F /* CustomCalenderViewCell.swift in Sources */,
 				59DA15D72B6CE57100B228D3 /* HomeCollectionViewCell.swift in Sources */,
 				59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */,

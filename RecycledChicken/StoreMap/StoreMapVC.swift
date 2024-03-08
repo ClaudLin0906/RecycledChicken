@@ -28,6 +28,15 @@ class StoreMapVC: CustomRootVC {
       }
     }
     
+    private var fakeMapInfosData:[MapInfo] = 
+    [
+        MapInfo(isVisible: true, storeName: "店家1", storeID: "店家1ID", cellPath: "店家1cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家1storeAddress", coordinate: "24.8355593, 121.0090052"),
+        MapInfo(isVisible: true, storeName: "店家2", storeID: "店家2ID", cellPath: "店家2cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "滿", storeAddress: "店家2storeAddress", coordinate: "22.8355593, 121.0090052"),
+        MapInfo(isVisible: true, storeName: "店家3", storeID: "店家3ID", cellPath: "店家3cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 0, battery: 10), status: "可投遞", storeAddress: "店家3storeAddress", coordinate: "20.8355593, 121.0090052"),
+        MapInfo(isVisible: true, storeName: "店家4", storeID: "店家4ID", cellPath: "店家4cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 0), status: "可投遞", storeAddress: "店家4storeAddress", coordinate: "18.8355593, 121.0090052"),
+        MapInfo(isVisible: true, storeName: "店家5", storeID: "店家5ID", cellPath: "店家5cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家5storeAddress", coordinate: "16.8355593, 121.0090052")
+    ]
+    
     private var mapInfosData:[MapInfo] = []
     
     private var currentMapInfos:[MapInfo] = []
@@ -46,16 +55,17 @@ class StoreMapVC: CustomRootVC {
         } else {
            locationManager.requestWhenInUseAuthorization()
         }
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { [self] (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
             
             if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                self.mapInfosData = mapInfos
-                self.currentMapInfos = self.mapInfosData
-                self.addMarker(self.currentMapInfos)
+//                self.mapInfosData = mapInfos
+                mapInfosData = fakeMapInfosData
+                currentMapInfos = mapInfosData
+                addMarker(currentMapInfos)
             }
         }
     }
@@ -90,15 +100,15 @@ class StoreMapVC: CustomRootVC {
             let battery = info.remainingProcessable.battery ?? 0
             
             if battery > 0 && bottle > 0 {
-                image = UIImage(named: "")
+                image = UIImage(named: "Group 125")
             }
             
             if battery > 0 && bottle == 0 {
-                image = UIImage(named: "")
+                image = UIImage(named: "Group 128")
             }
             
             if battery == 0 && bottle > 0 {
-                image = UIImage(named: "")
+                image = UIImage(named: "Group 129")
             }
             
         case "滿":

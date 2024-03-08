@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GenJyuuGothic-Medium.ttf</string>
+		<string>GenJyuuGothic-Heavy.ttf</string>
+		<string>GenJyuuGothic-Normal.ttf</string>
+		<string>GenJyuuGothic-Regular.ttf</string>
+		<string>GenJyuuGothic-ExtraLight.ttf</string>
+		<string>GenJyuuGothic-Light.ttf</string>
+		<string>GenJyuuGothic-Bold.ttf</string>
+		<string>jf-openhuninn-2.0.ttf</string>
+	</array>
+</dict>
+</plist>
