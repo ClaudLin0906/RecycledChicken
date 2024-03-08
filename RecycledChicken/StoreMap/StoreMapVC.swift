@@ -13,12 +13,6 @@ class StoreMapVC: CustomRootVC {
 
     @IBOutlet weak var mapView:GMSMapView!
     
-    @IBOutlet weak var iconView1:IconView!
-    
-    @IBOutlet weak var iconView2:IconView!
-    
-    @IBOutlet weak var iconView3:IconView!
-    
     @IBOutlet weak var amountView:AmountView!
     
     @IBOutlet weak var searchTextField:UITextField!
@@ -88,6 +82,33 @@ class StoreMapVC: CustomRootVC {
         }
     }
     
+    private func getMakerIcon(_ info:MapInfo) -> UIImage {
+        var image = UIImage(named: "")
+        switch info.status {
+        case "可投遞":
+            let bottle = info.remainingProcessable.bottle ?? 0
+            let battery = info.remainingProcessable.battery ?? 0
+            
+            if battery > 0 && bottle > 0 {
+                image = UIImage(named: "")
+            }
+            
+            if battery > 0 && bottle == 0 {
+                image = UIImage(named: "")
+            }
+            
+            if battery == 0 && bottle > 0 {
+                image = UIImage(named: "")
+            }
+            
+        case "滿":
+            image = UIImage(named: "Group 160")
+        default:
+            break
+        }
+        return imageWithImage(image:image!, scaledToSize: CGSize(width: 50, height: 50))
+    }
+    
     private func isLocationServicesEnabled() -> Bool {
         let authorizationStatus: CLAuthorizationStatus
         if #available(iOS 14, *) {
@@ -117,14 +138,14 @@ class StoreMapVC: CustomRootVC {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self
         
-        iconView1.icon.backgroundColor = CommonColor.shared.color5
-        iconView1.title.text = "0~40%"
-        
-        iconView2.icon.backgroundColor = CommonColor.shared.color3
-        iconView2.title.text = "50%"
-        
-        iconView3.icon.backgroundColor = #colorLiteral(red: 0.9574549794, green: 0.5093209743, blue: 0.3308191895, alpha: 1)
-        iconView3.title.text = "滿位"
+//        iconView1.icon.backgroundColor = CommonColor.shared.color5
+//        iconView1.title.text = "0~40%"
+//        
+//        iconView2.icon.backgroundColor = CommonColor.shared.color3
+//        iconView2.title.text = "50%"
+//        
+//        iconView3.icon.backgroundColor = #colorLiteral(red: 0.9574549794, green: 0.5093209743, blue: 0.3308191895, alpha: 1)
+//        iconView3.title.text = "滿位"
         
         
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))

@@ -832,7 +832,7 @@ func getDateFromStr(dateformat:String = "yyyy-MM-dd HH:mm:ss Z", dateStr:String)
     }
 }
 
-func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage {
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
     image.draw(in: CGRectMake(0, 0, newSize.width, newSize.height))
     let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!

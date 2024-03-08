@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct MapInfo: Decodable {
+struct MapInfo: Codable {
     var isVisible:Bool?
     var storeName:String
     var storeID:String
     var cellPath:String
-    var remainingProcessable:remainingProcessableInfo
+    var remainingProcessable:RemainingProcessableInfo
     var status:String
     var storeAddress:String
     var coordinate:String
 }
 
-struct remainingProcessableInfo: Decodable {
+struct RemainingProcessableInfo: Codable {
     var bottle:Int?
     var battery:Int?
 }
