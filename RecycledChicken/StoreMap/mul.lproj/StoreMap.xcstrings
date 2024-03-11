@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "street/store search"
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "點擊地圖上的碳竹雞可顯示機台剩餘回收數量"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "特殊任務回收機台"
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "station list"
           }
         },
         "zh-Hant-TW" : {

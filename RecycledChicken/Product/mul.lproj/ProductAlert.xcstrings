@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "i have read and agree"
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "cancel"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "前往商城"
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "帳號連結功能是指將「碳竹雞 APP會員」和「BUENO COOP 商城會員」的帳號進行連結，以便在兩個平台之間共享相關的資訊和優惠。碳竹雞會員連結 BUENO COOP 商城會員，即可享有消費回饋碳碳金的優惠。以下是帳號連結功能的一般說明：\n\n1. 註冊帳號：\n在碳竹雞和 BUENO COOP 商城分別使用相同的手機號碼註冊帳號，確保在註冊過程中輸入的手機號碼是相同的。\n\n2. 連結成功：\n一旦手機確認通過，且於商城BUENO COOP商城購物，碳竹雞會員和 BUENO COOP 商城會員的帳號將彼此連結。\n\n3. 享受優惠：\n一旦連結成功，碳竹雞會員在BUENO COOP 商城購物時，每月可享有相應的消費回饋、折扣或其他優惠。\n\n確保在整個連結過程中注意到任何可能的提示或說明，以確保符合兩個平台的相關規則和條件。此外，帳號連結機能皆有設置安全措施，以確保帳戶資訊的保密性和安全性。"
           }
         },
         "zh-Hant-TW" : {

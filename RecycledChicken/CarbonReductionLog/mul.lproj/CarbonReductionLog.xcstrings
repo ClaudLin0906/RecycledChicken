@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "泥滑島修復"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "修復資源"
           }
         },
         "zh-Hant-TW" : {
@@ -98,7 +98,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "減碳量"
           }
         },
         "zh-Hant-TW" : {
@@ -152,7 +152,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "※每月達成目標為前一個月全部使用者的平均投遞量"
           }
         },
         "zh-Hant-TW" : {
@@ -170,7 +170,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "個人回收量與目標"
           }
         },
         "zh-Hant-TW" : {

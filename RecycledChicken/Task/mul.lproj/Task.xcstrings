@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "ticket has been claimed"
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "label"
+            "value" : "Label"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "label"
+            "value" : "Label"
           }
         },
         "zh-Hant-TW" : {
@@ -80,7 +80,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "weekly tasks"
           }
         },
         "zh-Hant-TW" : {
@@ -116,7 +116,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "claim ticket"
           }
         },
         "zh-Hant-TW" : {
@@ -134,7 +134,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文翻譯"
+            "value" : "ticket task"
           }
         },
         "zh-Hant-TW" : {
@@ -152,7 +152,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "label"
+            "value" : "Label"
           }
         },
         "zh-Hant-TW" : {
