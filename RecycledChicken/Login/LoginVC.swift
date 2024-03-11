@@ -19,6 +19,10 @@ class LoginVC: CustomLoginVC {
     @IBOutlet weak var passwordTextfield:UITextField!
     
     @IBOutlet weak var goHomeBtn:CustomButton!
+    
+    @IBOutlet weak var mobileLabelWidth:NSLayoutConstraint!
+    
+    @IBOutlet weak var passwordLabelWidth:NSLayoutConstraint!
         
     private var testLoginInfo:AccountInfo = AccountInfo(userPhoneNumber: "0912345678", userPassword: "test123")
             
@@ -36,6 +40,11 @@ class LoginVC: CustomLoginVC {
         keepLoginCheckBox.boxType = .square
         keepLoginCheckBox.stateChangeAnimation = .fill
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
+        
+        if getLanguage() == .english {
+            mobileLabelWidth.constant = 50
+            passwordLabelWidth.constant = 100
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

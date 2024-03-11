@@ -37,6 +37,12 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var mallCollectionView:UICollectionView!
     
     @IBOutlet weak var mallCollectionViewFlowLayout: UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var accountLabel:CustomLabel!
+    
+    @IBOutlet weak var messageLabel:CustomLabel!
+    
+    @IBOutlet weak var settingLabel:CustomLabel!
 
     private var currentIndexSubject = PassthroughSubject<Int, Never>()
     
@@ -51,6 +57,12 @@ class HomeVC: CustomRootVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
+        
+        if getLanguage() == .english {
+            accountLabel.font = accountLabel.font.withSize(12)
+            messageLabel.font = messageLabel.font.withSize(12)
+            settingLabel.font = settingLabel.font.withSize(12)
+        }
 //        NotificationCenter.default.addObserver(self, selector: #selector(receiveCalenderCell(_:)), name: .calenderCellOnCilck, object: nil)
     }
     

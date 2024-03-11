@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "go back to the homepage"
+            "value" : "homepage"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "keep login"
+            "value" : "keep"
           }
         },
         "zh-Hant-TW" : {

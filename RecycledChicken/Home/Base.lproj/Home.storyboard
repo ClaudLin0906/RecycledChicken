@@ -582,6 +582,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qsC-tK-K4C"/>
                     <connections>
+                        <outlet property="accountLabel" destination="gcO-Mb-bsb" id="R1n-mX-pgT"/>
                         <outlet property="aluminumCanItemView" destination="AJC-Uk-RPw" id="gqK-af-Y5B"/>
                         <outlet property="bannerCollectionView" destination="ngc-cf-F19" id="n5o-Ni-1Dd"/>
                         <outlet property="bannerCollectionViewFlowLayout" destination="5Fm-70-fJ5" id="gbU-bS-Xwp"/>
@@ -591,9 +592,11 @@
                         <outlet property="chickenLevelLabel" destination="0BO-rY-Eud" id="e11-Si-Sba"/>
                         <outlet property="mallCollectionView" destination="etd-Mn-iFm" id="XG1-JW-7cp"/>
                         <outlet property="mallCollectionViewFlowLayout" destination="xxT-3m-FQA" id="hcd-Q0-KXj"/>
+                        <outlet property="messageLabel" destination="uFO-hx-dt1" id="xee-MF-wbc"/>
                         <outlet property="pageControl" destination="EZ8-g4-AaR" id="IlV-6p-Y1K"/>
                         <outlet property="papperCubItemView" destination="vRo-HE-eBj" id="rlg-PJ-4lA"/>
                         <outlet property="petItemView" destination="TCY-M4-tmv" id="6iw-Li-qqJ"/>
+                        <outlet property="settingLabel" destination="7wA-1Y-6h3" id="4if-Iv-UGr"/>
                         <outlet property="trendChartImageView" destination="khi-Bw-h8S" id="jyA-JY-P2E"/>
                         <outlet property="welcomeLabel" destination="afR-qR-YjO" id="6Fq-gU-8dQ"/>
                     </connections>

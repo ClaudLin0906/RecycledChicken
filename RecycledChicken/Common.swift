@@ -10,14 +10,16 @@ import UIKit
 
 class Setting {
     static let shared = Setting()
-    var language:Language = {
-        let defaultLanguage:Language = .traditionalChinese
-        if let appleLanguagesArr = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String] {
-            let appleLanguages = appleLanguagesArr[0]
-            return Language(rawValue: appleLanguages) ?? defaultLanguage
-        }
-        return defaultLanguage
-    }()
+    var language:Language = getLanguage()
+}
+
+func getLanguage() -> Language {
+    let defaultLanguage:Language = .traditionalChinese
+    if let appleLanguagesArr = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String] {
+        let appleLanguages = appleLanguagesArr[0]
+        return Language(rawValue: appleLanguages) ?? defaultLanguage
+    }
+    return defaultLanguage
 }
 
 enum Language:String {
