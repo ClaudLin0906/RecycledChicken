@@ -268,6 +268,9 @@
 		590251042B68DF250002E76C /* Pw_UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pw_UserDefault.swift; sourceTree = "<group>"; };
 		590485F02B9AF67E008B9AFD /* SpecialTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialTaskView.swift; sourceTree = "<group>"; };
 		590485F22B9AF685008B9AFD /* SpecialTaskView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialTaskView.xib; sourceTree = "<group>"; };
+		590486042B9EB16A008B9AFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		590486092B9EB56B008B9AFD /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Main.strings"; sourceTree = "<group>"; };
+		5904860B2B9EB56F008B9AFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		590649EB2A151D3F008C778A /* RecycledChicken.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycledChicken.entitlements; sourceTree = "<group>"; };
 		5926C57A2A04086400FAB49D /* RecycledChicken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycledChicken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5926C57D2A04086400FAB49D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1185,11 +1188,12 @@
 			};
 			buildConfigurationList = 5926C5752A04086400FAB49D /* Build configuration list for PBXProject "RecycledChicken" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hant-TW";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant-TW",
 			);
 			mainGroup = 5926C5712A04086400FAB49D;
 			packageReferences = (
@@ -1538,6 +1542,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				5926C5842A04086400FAB49D /* Base */,
+				590486042B9EB16A008B9AFD /* en */,
+				590486092B9EB56B008B9AFD /* zh-Hant-TW */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1546,6 +1552,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5926C5892A04086600FAB49D /* Base */,
+				5904860B2B9EB56F008B9AFD /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1557,6 +1564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1620,6 +1628,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

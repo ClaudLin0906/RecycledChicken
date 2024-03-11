@@ -10,12 +10,19 @@ import UIKit
 
 class Setting {
     static let shared = Setting()
-    var language:Language = .traditionalChinese
+    var language:Language = {
+        let defaultLanguage:Language = .traditionalChinese
+        if let appleLanguagesArr = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String] {
+            let appleLanguages = appleLanguagesArr[0]
+            return Language(rawValue: appleLanguages) ?? defaultLanguage
+        }
+        return defaultLanguage
+    }()
 }
 
-enum Language:String, CaseIterable {
-    case traditionalChinese = "繁體中文"
-    case english = "英文 English"
+enum Language:String {
+    case traditionalChinese = "zh-Hant-TW"
+    case english = "en-TW"
 }
 
 struct IllustratedGuide {

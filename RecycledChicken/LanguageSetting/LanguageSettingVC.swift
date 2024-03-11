@@ -11,7 +11,10 @@ class LanguageSettingVC: CustomVC {
     
     @IBOutlet weak var tableView:UITableView!
     
-    private var tableViewDatas = Language.allCases
+    private var tableViewDatas:[LanguageSetting] = [
+        LanguageSetting(language: .traditionalChinese, displayText: "繁體中文"),
+        LanguageSetting(language: .english, displayText: "英文 English")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,16 @@ class LanguageSettingVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
     }
+    
+    private func changeLanguage(_ language:Language) {
+        Setting.shared.language = language
+//        switch language {
+//        case .traditionalChinese:
+//            
+//        case .english:
+//
+//        }
+    }
 
 }
 
@@ -35,7 +48,6 @@ extension LanguageSettingVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let type = tableViewDatas[indexPath.row]
-        Setting.shared.language = type
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

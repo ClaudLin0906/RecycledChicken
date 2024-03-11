@@ -13,7 +13,7 @@ class LanguageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel:UILabel!
     
-    private var languageType:Language?
+    private var languageSetting:LanguageSetting?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,10 +31,10 @@ class LanguageTableViewCell: UITableViewCell {
         backgroundColor = .white
     }
     
-    func setCell(_ type:Language) {
-        languageType = type
-        titleLabel.text = type.rawValue
-        if Setting.shared.language == languageType {
+    func setCell(_ info:LanguageSetting) {
+        languageSetting = info
+        titleLabel.text = info.displayText
+        if Setting.shared.language == languageSetting?.language {
             backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.8784313725, blue: 0.7960784314, alpha: 1)
         }
     }

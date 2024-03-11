@@ -7,4 +7,8 @@
 
 import Foundation
 
+struct LanguageSetting {
+    var language:Language
+    var displayText:String
+}
 
