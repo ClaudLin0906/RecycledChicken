@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "9Z9-zr-uY7.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"雞名\"; ObjectID = \"9Z9-zr-uY7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "雞名"
+          }
+        }
+      }
+    },
+    "awL-nv-lEi.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"碳固定是生物將無機碳（二氧化碳） 轉換為有機化合物的過程。\"; ObjectID = \"awL-nv-lEi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "碳固定是生物將無機碳（二氧化碳） 轉換為有機化合物的過程。"
+          }
+        }
+      }
+    },
+    "LDA-CQ-Gcg.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"type\"; ObjectID = \"LDA-CQ-Gcg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "type"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "type"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

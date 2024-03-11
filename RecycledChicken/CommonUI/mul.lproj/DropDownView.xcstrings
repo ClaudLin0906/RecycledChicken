@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "uNM-xe-rrY.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"uNM-xe-rrY\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

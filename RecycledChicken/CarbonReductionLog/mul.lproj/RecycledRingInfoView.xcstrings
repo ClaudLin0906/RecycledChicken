@@ -1,0 +1,114 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "0em-zW-9wv.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"0em-zW-9wv\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0"
+          }
+        }
+      }
+    },
+    "2jZ-Ay-JFS.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"單位\"; ObjectID = \"2jZ-Ay-JFS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unit"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "單位"
+          }
+        }
+      }
+    },
+    "b6S-Tx-Mqe.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"kgCO2e\"; ObjectID = \"b6S-Tx-Mqe\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kgCO2e"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "kgCO2e"
+          }
+        }
+      }
+    },
+    "CRN-qK-lTG.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"總減碳量\"; ObjectID = \"CRN-qK-lTG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "total carbon reduction"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "總減碳量"
+          }
+        }
+      }
+    },
+    "pT9-fY-NNO.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"總回收量\"; ObjectID = \"pT9-fY-NNO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "total recycling amount"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "總回收量"
+          }
+        }
+      }
+    },
+    "Wa5-hR-sHk.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"Wa5-hR-sHk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

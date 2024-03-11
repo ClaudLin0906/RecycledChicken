@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "DLe-Ua-H1e.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"刪除信息\"; ObjectID = \"DLe-Ua-H1e\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "delete messages?"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "刪除信息"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

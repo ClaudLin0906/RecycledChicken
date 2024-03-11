@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "3rl-mM-oRj.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"回收機目前有特殊任務\"; ObjectID = \"3rl-mM-oRj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "回收機目前有特殊任務"
+          }
+        }
+      }
+    },
+    "AZQ-zH-DPH.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"活動期間投遞10個寶特瓶\\n可享額外回饋！\"; ObjectID = \"AZQ-zH-DPH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "活動期間投遞10個寶特瓶\n可享額外回饋！"
+          }
+        }
+      }
+    },
+    "kWH-lE-g1m.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"地點\"; ObjectID = \"kWH-lE-g1m\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "地點"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

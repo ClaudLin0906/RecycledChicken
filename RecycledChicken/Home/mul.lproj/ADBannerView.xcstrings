@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "VKh-yJ-yM0.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"今日不顯示\"; ObjectID = \"VKh-yJ-yM0\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "do not display for today"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "今日不顯示"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

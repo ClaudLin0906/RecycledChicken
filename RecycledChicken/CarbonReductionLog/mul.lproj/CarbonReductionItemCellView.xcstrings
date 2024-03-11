@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "PJd-yS-Z36.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"PJd-yS-Z36\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,0 +1,120 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "6u4-S6-Kd9.text" : {
+      "comment" : "Class = \"UITextView\"; text = \"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.\"; ObjectID = \"6u4-S6-Kd9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+          }
+        }
+      }
+    },
+    "8iA-T2-LmB.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"所需點數:\"; ObjectID = \"8iA-T2-LmB\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "所需點數:"
+          }
+        }
+      }
+    },
+    "jGA-hq-HmR.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"jGA-hq-HmR\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ItemName"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
+          }
+        }
+      }
+    },
+    "jXL-v5-5gH.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"jXL-v5-5gH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "drawTime"
+          }
+        }
+      }
+    },
+    "rLY-4r-Iz8.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"2500\"; ObjectID = \"rLY-4r-Iz8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "2500"
+          }
+        }
+      }
+    },
+    "YJz-eA-DXJ.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確認抽獎\"; ObjectID = \"YJz-eA-DXJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確認抽獎"
+          }
+        }
+      }
+    },
+    "Z0f-Vo-nLX.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"1\"; ObjectID = \"Z0f-Vo-nLX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "1"
+          }
+        }
+      }
+    },
+    "ZNE-HK-Agt.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"ZNE-HK-Agt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

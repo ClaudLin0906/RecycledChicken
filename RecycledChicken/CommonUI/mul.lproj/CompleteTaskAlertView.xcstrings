@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "KXc-Sb-MD5.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"恭喜您完成任務並獲得點數\"; ObjectID = \"KXc-Sb-MD5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "congratulations! You have completed the task and earned points"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "恭喜您完成任務並獲得點數"
+          }
+        }
+      }
+    },
+    "tgr-SH-3u7.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"50\"; ObjectID = \"tgr-SH-3u7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "50"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "50"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

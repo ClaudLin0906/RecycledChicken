@@ -1,0 +1,150 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "2kh-S6-a6j.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"查看站點清單\"; ObjectID = \"2kh-S6-a6j\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "查看站點清單"
+          }
+        }
+      }
+    },
+    "dgX-ML-I4K.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"導航\"; ObjectID = \"dgX-ML-I4K\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "navigation"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "導航"
+          }
+        }
+      }
+    },
+    "dUC-iY-bPQ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"dUC-iY-bPQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "JU6-9n-VvA.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"JU6-9n-VvA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "qje-G3-6fI.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"滿位/維護\"; ObjectID = \"qje-G3-6fI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "滿位/維護"
+          }
+        }
+      }
+    },
+    "t04-TS-uf4.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0.0km\"; ObjectID = \"t04-TS-uf4\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0.0km"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0.0km"
+          }
+        }
+      }
+    },
+    "uQX-WP-atQ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"鄰近站點\"; ObjectID = \"uQX-WP-atQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "鄰近站點"
+          }
+        }
+      }
+    },
+    "V0h-FK-z63.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"關鍵字\"; ObjectID = \"V0h-FK-z63\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關鍵字"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "關鍵字"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

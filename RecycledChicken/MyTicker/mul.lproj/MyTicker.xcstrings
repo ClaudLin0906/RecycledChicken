@@ -1,0 +1,114 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "8VD-FP-4Iw.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊開啟票卷\"; ObjectID = \"8VD-FP-4Iw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "please click to open the ticket"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請點擊開啟票卷"
+          }
+        }
+      }
+    },
+    "qKJ-yo-O3i.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"qKJ-yo-O3i\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "RaX-i3-GcF.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"UUID\"; ObjectID = \"RaX-i3-GcF\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UUID"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UUID"
+          }
+        }
+      }
+    },
+    "ueR-i0-koe.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"使用期限至\"; ObjectID = \"ueR-i0-koe\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "expiration date"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "使用期限至"
+          }
+        }
+      }
+    },
+    "vjX-Sq-E9j.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"itemName\"; ObjectID = \"vjX-Sq-E9j\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "itemName"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "itemName"
+          }
+        }
+      }
+    },
+    "YZX-eh-BuE.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"UUID\"; ObjectID = \"YZX-eh-BuE\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UUID"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UUID"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

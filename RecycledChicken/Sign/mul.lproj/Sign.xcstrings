@@ -1,0 +1,114 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "2WF-qx-4wi.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"手機\"; ObjectID = \"2WF-qx-4wi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mobile"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "手機"
+          }
+        }
+      }
+    },
+    "eAT-vs-MVL.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"回首頁\"; ObjectID = \"eAT-vs-MVL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "go back to the homepage"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "回首頁"
+          }
+        }
+      }
+    },
+    "hU2-kE-ci9.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"密碼為8-12位英文數字\"; ObjectID = \"hU2-kE-ci9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must be 8-12 characters long, alphanumeric"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "密碼為8-12位英文數字"
+          }
+        }
+      }
+    },
+    "J5a-fu-Tik.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Sign up\"; ObjectID = \"J5a-fu-Tik\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign up"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sign up"
+          }
+        }
+      }
+    },
+    "ohB-Ws-xaS.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"密碼\"; ObjectID = \"ohB-Ws-xaS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "password"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "密碼"
+          }
+        }
+      }
+    },
+    "xWk-Ny-o8a.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"註冊並收取驗證碼\"; ObjectID = \"xWk-Ny-o8a\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "register and receive verification code"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "註冊並收取驗證碼"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

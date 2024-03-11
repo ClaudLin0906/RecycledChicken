@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "8po-G9-5dk.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"街道/門市查詢\"; ObjectID = \"8po-G9-5dk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "街道/門市查詢"
+          }
+        }
+      }
+    },
+    "fyj-Mw-dme.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"點擊地圖上的碳竹雞可顯示機台剩餘回收數量\"; ObjectID = \"fyj-Mw-dme\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "點擊地圖上的碳竹雞可顯示機台剩餘回收數量"
+          }
+        }
+      }
+    },
+    "HVJ-UW-N16.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"特殊任務回收機台\"; ObjectID = \"HVJ-UW-N16\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "特殊任務回收機台"
+          }
+        }
+      }
+    },
+    "ZEl-gS-LnA.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"站點列表\"; ObjectID = \"ZEl-gS-LnA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "站點列表"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

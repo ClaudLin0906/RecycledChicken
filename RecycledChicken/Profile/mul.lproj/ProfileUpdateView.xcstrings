@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "IYp-ze-Bes.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"資料已更新\"; ObjectID = \"IYp-ze-Bes\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "updated"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "資料已更新"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

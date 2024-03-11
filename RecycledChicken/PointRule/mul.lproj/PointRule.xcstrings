@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "5ns-ez-wb5.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"回收一個電池可獲得10點\"; ObjectID = \"5ns-ez-wb5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "回收一個電池可獲得10點"
+          }
+        }
+      }
+    },
+    "lNr-zd-aaI.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"【基本回饋 】\"; ObjectID = \"lNr-zd-aaI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "【基本回饋 】"
+          }
+        }
+      }
+    },
+    "Sjl-Sq-w0R.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"回收一個寶特瓶可獲得10點\"; ObjectID = \"Sjl-Sq-w0R\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "回收一個寶特瓶可獲得10點"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

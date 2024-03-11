@@ -1,0 +1,96 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "84C-bX-L6L.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"碳竹雞圖鑑\"; ObjectID = \"84C-bX-L6L\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "碳竹雞圖鑑"
+          }
+        }
+      }
+    },
+    "ASe-Di-wmd.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"未填寫\"; ObjectID = \"ASe-Di-wmd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "未填寫"
+          }
+        }
+      }
+    },
+    "EkI-dE-dcd.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"目前等級為OO雞\"; ObjectID = \"EkI-dE-dcd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "目前等級為OO雞"
+          }
+        }
+      }
+    },
+    "iBq-rz-Qe2.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"iBq-rz-Qe2\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "rJc-KV-3fg.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定變更\"; ObjectID = \"rJc-KV-3fg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirm"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定變更"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

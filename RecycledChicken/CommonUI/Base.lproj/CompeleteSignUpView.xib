@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +43,7 @@
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bds-Ke-rbV">
                             <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="16"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQ9-Y2-HNv" userLabel="line">
@@ -134,16 +134,13 @@
             <size key="intrinsicContentSize" width="69.333333333333329" height="20.333333333333332"/>
         </designable>
         <designable name="YFt-X4-3Dc">
-            <size key="intrinsicContentSize" width="56" height="32"/>
-        </designable>
-        <designable name="Z5x-io-OUa">
-            <size key="intrinsicContentSize" width="221.33333333333334" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="ZuM-aL-aJB">
             <size key="intrinsicContentSize" width="86.666666666666671" height="20.333333333333332"/>
         </designable>
         <designable name="hdA-nK-jlN">
-            <size key="intrinsicContentSize" width="84" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

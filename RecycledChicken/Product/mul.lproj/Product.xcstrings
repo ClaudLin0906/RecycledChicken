@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "3Ai-RW-nhz.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"使用瀏覽器開啟\"; ObjectID = \"3Ai-RW-nhz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文翻譯"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "使用瀏覽器開啟"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

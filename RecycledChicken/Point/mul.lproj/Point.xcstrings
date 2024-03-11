@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "1cj-bx-TzZ.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"點數紀錄\"; ObjectID = \"1cj-bx-TzZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "points history"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "點數紀錄"
+          }
+        }
+      }
+    },
+    "d1u-zf-126.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"d1u-zf-126\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0"
+          }
+        }
+      }
+    },
+    "yTT-JI-Qj2.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"我的票夾\"; ObjectID = \"yTT-JI-Qj2\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "my wallet"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "我的票夾"
+          }
+        }
+      }
+    },
+    "Zyi-sb-l2P.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"累積點數\"; ObjectID = \"Zyi-sb-l2P\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "accumulated points"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "累積點數"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

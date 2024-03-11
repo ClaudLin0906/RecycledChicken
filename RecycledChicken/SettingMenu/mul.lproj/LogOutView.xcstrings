@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "8TF-I7-cbo.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"是否確定登出本帳號?\"; ObjectID = \"8TF-I7-cbo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to log out of this account?"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "是否確定登出本帳號?"
+          }
+        }
+      }
+    },
+    "eqj-3C-8TK.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"取消\"; ObjectID = \"eqj-3C-8TK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cancel"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "Wcp-nB-01P.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定登出\"; ObjectID = \"Wcp-nB-01P\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirm"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定登出"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

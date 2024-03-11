@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "bWl-0S-m5d.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"bWl-0S-m5d\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ItemName"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
+          }
+        }
+      }
+    },
+    "klM-Ui-Cg9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"剩餘次數:0\"; ObjectID = \"klM-Ui-Cg9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "remaining count:0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "剩餘次數:0"
+          }
+        }
+      }
+    },
+    "nZs-CU-wRK.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"nZs-CU-wRK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "drawTime"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "drawTime"
+          }
+        }
+      }
+    },
+    "Sfn-W8-cvI.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"350\"; ObjectID = \"Sfn-W8-cvI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "350"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "350"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

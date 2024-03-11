@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "DNq-0F-Cfp.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"取消\"; ObjectID = \"DNq-0F-Cfp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cancel"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "RYA-8w-jJh.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"每位會員生日⎡僅能更改一次⎦\"; ObjectID = \"RYA-8w-jJh\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "can only be changed once"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "每位會員生日⎡僅能更改一次⎦"
+          }
+        }
+      }
+    },
+    "TqY-bb-yFT.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"確定是要更改為 2011/11/11嗎?\"; ObjectID = \"TqY-bb-yFT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to change it to 2011/11/11?"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定是要更改為 2011/11/11嗎?"
+          }
+        }
+      }
+    },
+    "yTb-5x-rAU.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定\"; ObjectID = \"yTb-5x-rAU\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirm"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

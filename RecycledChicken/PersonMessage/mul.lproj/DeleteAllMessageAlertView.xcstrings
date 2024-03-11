@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "dSG-SW-9wJ.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"取消\"; ObjectID = \"dSG-SW-9wJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cancel"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "l9l-V9-4Qt.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定\"; ObjectID = \"l9l-V9-4Qt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirm"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定"
+          }
+        }
+      }
+    },
+    "nAD-4n-kzI.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"是否刪除所有訊息 ？\"; ObjectID = \"nAD-4n-kzI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "delete all messages?"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "是否刪除所有訊息 ？"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
