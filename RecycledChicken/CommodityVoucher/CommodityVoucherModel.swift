@@ -16,4 +16,5 @@ struct CommodityVoucherInfo: Decodable {
     var picture:String
     var pictureBig:String
     var itemName:String
+    var lotteryDrawDate:String
 }

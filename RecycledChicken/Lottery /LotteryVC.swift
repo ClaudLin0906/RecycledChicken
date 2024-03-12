@@ -20,7 +20,7 @@ class LotteryVC: CustomVC {
     
     private var lotteryInfos:[LotteryInfo] = []
     
-    private var activityVoucherInfos:[LotteryInfo] = []
+    private var activityVoucherInfos:[CommodityVoucherInfo] = []
     
     private var partnerMerchantsInfos:[LotteryInfo] = []
     
@@ -58,9 +58,9 @@ class LotteryVC: CustomVC {
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
-                    self.activityVoucherInfos = data.filter({ lotteryInfo in
-                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
+                if let data = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
+                    self.activityVoucherInfos = data.filter({ commodityVoucherInfo in
+                        if let startDate = dateFromString(commodityVoucherInfo.activityStartTime), let endDate = dateFromString(commodityVoucherInfo.activityEndTime), endDate > startDate {
                             let dateInterval = DateInterval(start: startDate, end: endDate)
                             return dateInterval.contains(Date())
                         }
@@ -145,18 +145,19 @@ class LotteryVC: CustomVC {
         return 0
     }
     
-    private func getLotteryInfo(_ tableView:UITableView, row:Int) -> LotteryInfo? {
+    private func getLotteryInfo(_ tableView:UITableView, _ row:Int) -> LotteryInfo? {
         
         if tableView == lotteryTableView {
             return lotteryInfos[row]
-        }
-        if tableView == activityVoucherTableView {
-            return activityVoucherInfos[row]
         }
         if tableView == partnerMerchantsTableView {
             return partnerMerchantsInfos[row]
         }
         return nil
+    }
+    
+    private func getCommodityVoucherInfo(_ row:Int) -> CommodityVoucherInfo? {
+        return activityVoucherInfos[row]
     }
 }
 
@@ -189,7 +190,7 @@ extension LotteryVC: UITableViewDelegate {
 
         if tableView == activityVoucherTableView || tableView == partnerMerchantsTableView  {
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-//                VC.commodityVoucherInfo = commodityVoucherInfos[indexPath.row]
+                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         }
@@ -205,7 +206,7 @@ extension LotteryVC: UITableViewDelegate {
         if tableView == lotteryTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: LotteryTableViewCell.identifier, for: indexPath) as! LotteryTableViewCell
             let row = indexPath.row
-            if let lotteryInfo = getLotteryInfo(tableView, row: row) {
+            if let lotteryInfo = getLotteryInfo(tableView,row) {
                 cell.setCell(lotteryInfo)
             }
             return cell
@@ -214,8 +215,8 @@ extension LotteryVC: UITableViewDelegate {
         if tableView == activityVoucherTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
             let row = indexPath.row
-            if let lotteryInfo = getLotteryInfo(tableView, row: row) {
-                cell.setCell(lotteryInfo)
+            if let commodityVoucherInfo = getCommodityVoucherInfo(row) {
+                cell.setCell(commodityVoucherInfo)
             }
             return cell
         }
@@ -223,7 +224,7 @@ extension LotteryVC: UITableViewDelegate {
         if tableView == partnerMerchantsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: PartnerMerchantsTableViewTableViewCell.identifier, for: indexPath) as! PartnerMerchantsTableViewTableViewCell
             let row = indexPath.row
-            if let lotteryInfo = getLotteryInfo(tableView, row: row) {
+            if let lotteryInfo = getLotteryInfo(tableView,row) {
                 cell.setCell(lotteryInfo)
             }
             return cell

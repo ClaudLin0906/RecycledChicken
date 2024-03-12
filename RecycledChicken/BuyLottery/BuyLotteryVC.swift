@@ -27,7 +27,7 @@ class BuyLotteryVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        if let lotteryInfo = lotteryInfo{
+        if let lotteryInfo = lotteryInfo {
             spendPointView.lotteryInfo = lotteryInfo
         }
     }

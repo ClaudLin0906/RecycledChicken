@@ -32,23 +32,23 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ lotteryInfo:LotteryInfo) {
+    func setCell(_ commodityVoucherInfo:CommodityVoucherInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
 //            let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!)
-            let activityStartTimeDate = dateFromString(lotteryInfo.activityStartTime)
-            let activityEndTimeDate = dateFromString(lotteryInfo.activityEndTime)
+            let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
+            let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
             let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
             let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
-            let lotteryDrawDate = lotteryInfo.lotteryDrawDate
+            let lotteryDrawDate = commodityVoucherInfo.lotteryDrawDate
             DispatchQueue.main.async { [self] in
-                if let url = URL(string: lotteryInfo.picture) {
+                if let url = URL(string: commodityVoucherInfo.picture) {
                     itemImageView.kf.setImage(with: url)
                 }
-                itemName.text = lotteryInfo.itemName
+                itemName.text = commodityVoucherInfo.itemName
                 duringTime.text = "activityTime".localized + ":" + StartDate + "~" + EndDate
-                drawPeople.text = "remain".localized + ":" + String(lotteryInfo.purchaserCount)
+                drawPeople.text = "remain".localized + ":" + String(commodityVoucherInfo.purchaserCount)
                 duringTime.font = duringTime.font.withSize(11)
-                point.text = "\(lotteryInfo.itemPrice)"
+                point.text = "\(commodityVoucherInfo.itemPrice)"
             }
         }
     }

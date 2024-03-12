@@ -21,14 +21,14 @@ class BuyCommodityVC: CustomVC {
     }
     
     private func UIInit(){
-        spendPointView.setConfirmBtnTitle("確認購買")
+        spendPointView.setConfirmBtnTitle("confirmBuy".localized)
         spendPointView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        if let commodityVoucherInfo = commodityVoucherInfo{
+        if let commodityVoucherInfo = commodityVoucherInfo {
             spendPointView.commodityVoucherInfo = commodityVoucherInfo
         }
     }

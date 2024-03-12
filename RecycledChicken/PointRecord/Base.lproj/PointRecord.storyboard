@@ -59,7 +59,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwy-DE-8AS" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="15" width="34" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="13" width="34" height="24"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="內容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9B-6P-0Xs" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="96" y="15" width="34" height="20"/>
+                                                                    <rect key="frame" x="95.333333333333329" y="13" width="33.999999999999986" height="24"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -77,7 +77,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點數:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VY-21-b4K" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="192" y="15" width="60" height="20"/>
+                                                                    <rect key="frame" x="190.66666666666666" y="13" width="60" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="G0f-u2-UeB"/>
                                                                     </constraints>
@@ -89,7 +89,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMV-vT-mF6" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="314" y="15" width="19" height="20"/>
+                                                                    <rect key="frame" x="312" y="16.666666666666664" width="21" height="16.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -192,16 +192,16 @@
     </scenes>
     <designables>
         <designable name="4VY-21-b4K">
-            <size key="intrinsicContentSize" width="39" height="20"/>
+            <size key="intrinsicContentSize" width="38.666666666666664" height="24"/>
         </designable>
         <designable name="Uwy-DE-8AS">
-            <size key="intrinsicContentSize" width="34" height="20"/>
+            <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
         <designable name="Y9B-6P-0Xs">
-            <size key="intrinsicContentSize" width="34" height="20"/>
+            <size key="intrinsicContentSize" width="34" height="24"/>
         </designable>
         <designable name="eMV-vT-mF6">
-            <size key="intrinsicContentSize" width="19" height="20"/>
+            <size key="intrinsicContentSize" width="21" height="16.666666666666668"/>
         </designable>
     </designables>
 </document>

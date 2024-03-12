@@ -33,7 +33,13 @@ class SpendPointView: UIView, NibOwnerLoadable {
         willSet{
             DispatchQueue.main.async { [self] in
                 itemAmount.text = String(newValue)
-                let needPointInt = (lotteryInfo?.itemPrice ?? 0) * newValue
+                var needPointInt:Int = 0
+                switch type {
+                case .CommodityVoucher:
+                    needPointInt = (commodityVoucherInfo?.itemPrice ?? 0) * newValue
+                case .Lottery:
+                    needPointInt = (lotteryInfo?.itemPrice ?? 0) * newValue
+                }
                 needPoint.text = String(needPointInt)
             }
         }
@@ -49,7 +55,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
     {
         willSet{
             type = .Lottery
-            setValue()
+            setInfo()
         }
     }
     
@@ -57,6 +63,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
     {
         willSet{
             type = .CommodityVoucher
+            setInfo()
         }
     }
     
@@ -74,7 +81,31 @@ class SpendPointView: UIView, NibOwnerLoadable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setValue()
+        setInfo()
+    }
+    
+    private func setInfo() {
+        switch type {
+        case .CommodityVoucher:
+            if let commodityVoucherInfo = commodityVoucherInfo, let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!), let image = UIImage(data: data) {
+                let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
+                let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
+                let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
+                let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
+                itemImageView.image = image
+                itemNameLabel.text = commodityVoucherInfo.itemName
+                itemPriceLabel.text = String(commodityVoucherInfo.itemPrice)
+                drawTimeLabel.text = "validDate".localized + ":" + StartDate + "~" + EndDate
+            }
+        case .Lottery:
+            if let lotteryInfo = lotteryInfo, let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!), let image = UIImage(data: data){
+                itemImageView.image = image
+                itemNameLabel.text = lotteryInfo.itemName
+                itemPriceLabel.text = String(lotteryInfo.itemPrice)
+                drawTimeLabel.text = "duringDate".localized + ":" + lotteryInfo.lotteryDrawDate
+            }
+        }
+
     }
     
     private func customInit(){
@@ -82,15 +113,6 @@ class SpendPointView: UIView, NibOwnerLoadable {
         amount = 1
 //        tableView.setSeparatorLocation()
 //        tableView.register(UINib(nibName: "LotteryItemTableViewCell", bundle: nil), forCellReuseIdentifier: "LotteryItemTableViewCell")
-    }
-    
-    private func setValue() {
-        if let lotteryInfo = lotteryInfo, let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!), let image = UIImage(data: data), let activityStartTimeDate = dateFromString(lotteryInfo.activityStartTime), let activityEndTimeDate = dateFromString(lotteryInfo.activityEndTime){
-            itemImageView.image = image
-            itemNameLabel.text = lotteryInfo.itemName
-            itemPriceLabel.text = String(lotteryInfo.itemPrice)
-            drawTimeLabel.text = "duringDate".localized + ":" + lotteryInfo.lotteryDrawDate
-        }
     }
     
     @IBAction func plusBtn(_ sender:UIButton){
