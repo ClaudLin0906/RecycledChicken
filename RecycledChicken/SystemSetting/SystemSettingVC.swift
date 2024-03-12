@@ -17,10 +17,10 @@ class SystemSettingVC: CustomVC {
     
     var switchTableViewInfos:[switchTableViewInfo] =
     [
-        switchTableViewInfo(title: "APP活動通知", isTrue: false),
-        switchTableViewInfo(title: "信件通知", isTrue: true),
-        switchTableViewInfo(title: "回收機消息通知", isTrue: true),
-        switchTableViewInfo(title: "生物辨識", isTrue: UserDefaults().bool(forKey: UserDefaultKey.shared.biometrics))
+        switchTableViewInfo(title: "specialMissionNotifications".localized, isTrue: false),
+        switchTableViewInfo(title: "emailNotifications".localized, isTrue: true),
+        switchTableViewInfo(title: "recyclingMachineNotifications".localized, isTrue: true),
+        switchTableViewInfo(title: "biometricIdentification".localized, isTrue: UserDefaults().bool(forKey: UserDefaultKey.shared.biometrics))
     ]
     
     var accountTableViewInfos:[accountTableViewInfo] =
@@ -32,7 +32,7 @@ class SystemSettingVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "系統設定"
+        title = "systemSetting".localized
         UIInit()
         // Do any additional setup after loading the view.
     }

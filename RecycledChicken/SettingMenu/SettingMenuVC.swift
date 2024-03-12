@@ -15,22 +15,22 @@ class SettingMenuVC: CustomVC {
     
     private let defaultSettingMenuInfoArr:[settingMenuInfo] =
     [
-        settingMenuInfo(icon: UIImage(named: "组 431")!, title: "系統設定"),
-        settingMenuInfo(icon: UIImage(named: "globe")!, title: "語言設定"),
-        settingMenuInfo(icon: UIImage(named: "组 430")!, title: "常見問題說明"),
-        settingMenuInfo(icon: UIImage(named: "组 428")!, title: "聯絡客服與合作提案"),
-        settingMenuInfo(icon: UIImage(named: "组 618")!, title: "服務條款與隱私政策"),
-        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "登出")
+        settingMenuInfo(icon: UIImage(named: "组 431")!, title: "systemSetting".localized),
+        settingMenuInfo(icon: UIImage(named: "globe")!, title: "languageSetting".localized),
+        settingMenuInfo(icon: UIImage(named: "组 430")!, title: "commonProblem".localized),
+        settingMenuInfo(icon: UIImage(named: "组 428")!, title: "contactPartnership".localized),
+        settingMenuInfo(icon: UIImage(named: "组 618")!, title: "termsOfServicePrivacyPolicy".localized),
+        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "logout".localized)
     ]
     
     private let guestSettingMenuInfoArr:[settingMenuInfo] =
     [
-        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "登出")
+        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "logout".localized)
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "會員資料與系統設定"
+        title = "memberInformationSystemSettings".localized
         if CurrentUserInfo.shared.isGuest {
             settingMenuInfoArr.append(contentsOf: guestSettingMenuInfoArr)
         }else{

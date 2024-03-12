@@ -11,11 +11,11 @@ class MainTabBarController: UITabBarController {
     
     let tabbarTitle:[String] =
     [
-        "點數",
-        "門市",
-        "首頁",
+        "point".localized,
+        "store".localized,
+        "home".localized,
 //        "AR",
-        "任務"
+        "task".localized
     ]
     
     let noSelectImages:[UIImage?] =
