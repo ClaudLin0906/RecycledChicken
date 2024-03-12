@@ -100,6 +100,7 @@
 		59600F872B9EF004009AFA76 /* ProductAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F892B9EF004009AFA76 /* ProductAlert.storyboard */; };
 		59600F8B2B9EF01B009AFA76 /* PointRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F8D2B9EF01B009AFA76 /* PointRecord.storyboard */; };
 		59600F8F2B9EF030009AFA76 /* LanguageSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F912B9EF030009AFA76 /* LanguageSetting.storyboard */; };
+		5960E5B02B9FF61B007F4AEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5960E5B22B9FF61B007F4AEF /* Localizable.strings */; };
 		59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */; };
 		59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */; };
 		59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D412B89EF530093BE6E /* LanguageSettingModel.swift */; };
@@ -430,6 +431,8 @@
 		59600F8E2B9EF01B009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/PointRecord.xcstrings; sourceTree = "<group>"; };
 		59600F902B9EF030009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LanguageSetting.storyboard; sourceTree = "<group>"; };
 		59600F922B9EF030009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LanguageSetting.xcstrings; sourceTree = "<group>"; };
+		5960E5B12B9FF61B007F4AEF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5960E5B32B9FF61E007F4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingVC.swift; sourceTree = "<group>"; };
 		59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		59632D412B89EF530093BE6E /* LanguageSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingModel.swift; sourceTree = "<group>"; };
@@ -696,6 +699,7 @@
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
 				59F6BE2B2A07639900D7B3CB /* Extension.swift */,
+				5960E5B22B9FF61B007F4AEF /* Localizable.strings */,
 				59E69A222A3722510062D4EB /* GenJyuuGothic-Bold.ttf */,
 				59E69A212A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf */,
 				59E69A282A37225D0062D4EB /* GenJyuuGothic-Regular.ttf */,
@@ -1298,6 +1302,7 @@
 				59600EE72B9EE491009AFA76 /* UpdatePasswordSuccessView.xib in Resources */,
 				59600F132B9EEB0F009AFA76 /* BuyLottery.storyboard in Resources */,
 				59600EC32B9EE35B009AFA76 /* ProfileUpdateView.xib in Resources */,
+				5960E5B02B9FF61B007F4AEF /* Localizable.strings in Resources */,
 				59600E832B9EE02A009AFA76 /* SignLogin.storyboard in Resources */,
 				59E69A262A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf in Resources */,
 				59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */,
@@ -2235,6 +2240,15 @@
 				59600F922B9EF030009AFA76 /* mul */,
 			);
 			name = LanguageSetting.storyboard;
+			sourceTree = "<group>";
+		};
+		5960E5B22B9FF61B007F4AEF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5960E5B12B9FF61B007F4AEF /* zh-Hant-TW */,
+				5960E5B32B9FF61E007F4AEF /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

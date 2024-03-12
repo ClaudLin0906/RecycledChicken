@@ -15,17 +15,17 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var barCodeView:BarCodeView!
     
-    let profileInfoArr:[String] = ["用戶名稱", "手機號碼", "我的邀請碼", "連動商城"]
+    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
     
-    let datePicker:UIDatePicker = {
+    private let datePicker:UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.maximumDate = Date()
         return datePicker
     }()
         
-    let rightNow = Date()
+    private let rightNow = Date()
     
-    var profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
+    private var profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
     {
         didSet{
             DispatchQueue.main.async {
@@ -36,7 +36,7 @@ class ProfileVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "個人帳戶"
+        title = "個人帳戶".localized
         UIInit()
     }
     
@@ -54,6 +54,7 @@ class ProfileVC: CustomVC {
             chickenLeverLabel.text = "目前等級為\(chickenName)雞"
         }
         barCodeView.setBarCodeValue("0932266860")
+        
     }
     
     private func createDatePicker(_ textfield:UITextField) {
@@ -98,7 +99,7 @@ class ProfileVC: CustomVC {
         let userInfoDic = try? userInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: userInfoDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
                 return
             }
             if data != nil {
@@ -137,7 +138,7 @@ class ProfileVC: CustomVC {
         var errorStr = ""
         
         if newUserInfo.userEmail != "" && !validateEmail(text: newUserInfo.userEmail){
-            errorStr += "Email格式不正確"
+            errorStr += "incorrectEmailFormat".localized
         }
         
         errorStr = removeWhitespace(from: errorStr)
@@ -147,9 +148,9 @@ class ProfileVC: CustomVC {
         }
         
         if newUserInfo.userPhoneNumber == "" {
-            errorStr += "手機不能為空"
+            errorStr += "phoneCannotBeEmpty".localized
         }else if !validateCellPhone(text: newUserInfo.userPhoneNumber) {
-            errorStr += "手機格式不正確"
+            errorStr += "incorrectPhoneNumberFormat".localized
         }
         
         errorStr = removeWhitespace(from: errorStr)

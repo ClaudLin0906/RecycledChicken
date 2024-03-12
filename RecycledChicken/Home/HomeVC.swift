@@ -57,7 +57,6 @@ class HomeVC: CustomRootVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
-        
         if getLanguage() == .english {
             accountLabel.font = accountLabel.font.withSize(12)
             messageLabel.font = messageLabel.font.withSize(12)

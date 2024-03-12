@@ -186,6 +186,21 @@ extension NSLayoutConstraint {
     
 }
 
+extension String {
+
+  var localized: String {
+    return NSLocalizedString(self, comment: "\(self)_comment")
+  }
+  
+  func localized(_ args: [CVarArg]) -> String {
+    return localized(args)
+  }
+  
+  func localized(_ args: CVarArg...) -> String {
+    return String(format: localized, args)
+  }
+}
+
 extension Encodable {
     
     var jsonString: String {

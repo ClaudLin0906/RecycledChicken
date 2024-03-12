@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  RecycledChicken
+
+  Created by Claud on 2024/3/12.
+  
+*/
+"error" = "error";
+"profile" = "Profile";
+"userName" = "user name";
+"cellPhoneNumber" = "phone nmuber";
+"invitationCode" = "invitation code";
+"marketplace" = "連動商城";
+"incorrectEmailFormat" = "incorrect email format";
+"phoneCannotBeEmpty" = "phone cannot be empty";
+"incorrectPhoneNumberFormat" = "incorrect phone number format";
+"personalMessage" = "personal message";

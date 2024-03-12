@@ -16,7 +16,7 @@ class PersonMessageVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "個人訊息"
+        title = "personalMessage".localized
         UIInit()
         getData()
         // Do any additional setup after loading the view.
@@ -44,7 +44,7 @@ class PersonMessageVC: CustomVC {
     private func getData(){
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getNotification, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
                 return
             }
             if let data = data, let personMessageInfos = try? JSONDecoder().decode([PersonMessageInfo].self, from: data) {

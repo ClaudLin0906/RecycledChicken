@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  RecycledChicken
+
+  Created by Claud on 2024/3/12.
+  
+*/
+"error" = "發生錯誤";
+"profile" = "個人帳戶";
+"username" = "用戶名稱";
+"cellPhoneNumber" = "手機號碼";
+"invitationCode" = "我的邀請碼";
+"marketplace" = "連動商城";
+"incorrectEmailFormat" = "Email格式不正確";
+"phoneCannotBeEmpty" = "手機不能為空";
+"incorrectPhoneNumberFormat" = "手機格式不正確";
+"personalMessage" = "個人訊息";
