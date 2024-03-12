@@ -134,20 +134,39 @@ class SpendPointView: UIView, NibOwnerLoadable {
         confirm.setTitle(title, for: .normal)
     }
     
-    @IBAction func btnAction(_sender:UIButton) {
+    private func handleInfo(_ sender:UIButton, _ itemName:String, _ itemCreateTime:String, _ totalPoint:String) {
+        let spendPointInfo = SpendPointInfo(lotteryItemName: itemName, lotteryItemCreateTime: itemCreateTime, count: amount, totalPoint: totalPoint)
+        delegate?.btnAction(sender, info: spendPointInfo)
+    }
+    
+    @IBAction func btnAction(_ sender:UIButton) {
         
         guard amount > 0 else {
             delegate?.alertMessage("數量要大於0")
             return
         }
-        
-        guard let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let lotteryInfo = lotteryInfo, profileInfo.point >= (lotteryInfo.itemPrice * amount) else {
-            delegate?.alertMessage("點數不足")
-            return
+        guard let profileInfo = CurrentUserInfo.shared.currentProfileInfo else { return }
+        switch type {
+        case .CommodityVoucher:
+            if let commodityVoucherInfo = commodityVoucherInfo {
+                if profileInfo.point < (commodityVoucherInfo.itemPrice * amount) {
+                    delegate?.alertMessage("點數不足")
+                }
+                if profileInfo.point >= (commodityVoucherInfo.itemPrice * amount) {
+                    handleInfo(sender, commodityVoucherInfo.itemName, commodityVoucherInfo.createTime, String(commodityVoucherInfo.itemPrice * amount))
+                }
+            }
+        case .Lottery:
+            if let lotteryInfo = lotteryInfo {
+                if profileInfo.point < (lotteryInfo.itemPrice * amount) {
+                    delegate?.alertMessage("點數不足")
+                }
+                if profileInfo.point >= (lotteryInfo.itemPrice * amount) {
+                    handleInfo(sender, lotteryInfo.itemName, lotteryInfo.createTime, String(lotteryInfo.itemPrice * amount))
+                }
+            }
         }
         
-        let spendPointInfo = SpendPointInfo(lotteryItemName: lotteryInfo.itemName, lotteryItemCreateTime: lotteryInfo.createTime, count: amount, totalPoint: String(lotteryInfo.itemPrice * amount))
-        delegate?.btnAction(_sender, info: spendPointInfo)
     }
 
 }
