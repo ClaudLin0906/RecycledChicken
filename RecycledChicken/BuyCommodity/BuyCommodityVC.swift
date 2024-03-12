@@ -57,7 +57,7 @@ extension BuyCommodityVC: SpendPointAlertViewDelegate {
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
         spendPointAction(info) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
                 return
             }
             getUserInfo(VC: self) {

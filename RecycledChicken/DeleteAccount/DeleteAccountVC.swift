@@ -11,7 +11,7 @@ class DeleteAccountVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "刪除帳號"
+        title = "deleteAccount".localized
         UIInit()
         // Do any additional setup after loading the view.
     }

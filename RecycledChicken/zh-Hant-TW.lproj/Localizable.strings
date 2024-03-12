@@ -5,6 +5,10 @@
   Created by Claud on 2024/3/12.
   
 */
+"point" = "點數";
+"store" = "門市";
+"home" = "首頁";
+"task" = "任務";
 "error" = "發生錯誤";
 "profile" = "個人帳戶";
 "username" = "用戶名稱";
@@ -26,7 +30,6 @@
 "emailNotifications" = "信件通知";
 "recyclingMachineNotifications" = "回收機消息通知";
 "biometricIdentification" = "生物辨識";
-"point" = "點數";
-"store" = "門市";
-"home" = "首頁";
-"task" = "任務";
+"enterInvitationCode" = "輸入好友邀情碼";
+"deleteAccount" = "刪除帳號";
+"version" = "版本資訊";

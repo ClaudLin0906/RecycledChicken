@@ -95,10 +95,10 @@
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrd-Eb-IDM" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="131.66666666666666" y="749" width="129.99999999999997" height="40"/>
+                                <rect key="frame" x="106.66666666666669" y="749" width="180" height="40"/>
                                 <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="aBq-sv-04Y"/>
+                                    <constraint firstAttribute="width" constant="180" id="aBq-sv-04Y"/>
                                     <constraint firstAttribute="height" constant="40" id="qIC-g2-CnA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>

@@ -8,6 +8,8 @@
 import UIKit
 
 class InvitationCodeView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var invitationCodeLabelWidth:NSLayoutConstraint!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +23,7 @@ class InvitationCodeView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+        invitationCodeLabelWidth.constant = 100
     }
     
     @IBAction func cancel(_ sender:UIButton){

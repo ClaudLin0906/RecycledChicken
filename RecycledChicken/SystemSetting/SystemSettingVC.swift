@@ -26,8 +26,8 @@ class SystemSettingVC: CustomVC {
     var accountTableViewInfos:[accountTableViewInfo] =
     [
 //        accountTableViewInfo(title: "連動與綁定帳號"),
-        accountTableViewInfo(title: "輸入好友邀情碼", inviteInfo: InviteInfo(inviteCode: "", isInvite: false)),
-        accountTableViewInfo(title: "刪除帳號")
+        accountTableViewInfo(title: "enterInvitationCode".localized, inviteInfo: InviteInfo(inviteCode: "", isInvite: false)),
+        accountTableViewInfo(title: "deleteAccount".localized)
     ]
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class SystemSettingVC: CustomVC {
         switchTableView.setSeparatorLocation()
         accountTableView.setSeparatorLocation()
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
-        versionLabel.text = "版本資訊\(version)"
+        versionLabel.text = "\("version".localized)\(version)"
     }
     
     override func viewWillAppear(_ animated: Bool) {

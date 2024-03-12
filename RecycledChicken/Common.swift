@@ -279,7 +279,7 @@ func removeBiometricsAction(){
 func getUserInfo(VC:UIViewController, finishAction:(()->())?){
     NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
         guard statusCode == 200 else {
-            showAlert(VC: VC, title: "發生錯誤", message: errorMSG, alertAction: nil)
+            showAlert(VC: VC, title: "error".localized, message: errorMSG, alertAction: nil)
             return
         }
         if let data = data {

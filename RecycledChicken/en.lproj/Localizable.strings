@@ -5,6 +5,10 @@
   Created by Claud on 2024/3/12.
   
 */
+"point" = "Point";
+"store" = "Store";
+"home" = "Home";
+"task" = "Task";
 "error" = "error";
 "profile" = "Profile";
 "userName" = "user name";
@@ -24,9 +28,8 @@
 "logout" = "logout";
 "specialMissionNotifications" = "APP活動通知";
 "email notifications" = "信件通知";
-"recyclingMachineNotifications" = "recycling machine notifications";
+"recyclingMachineNotifications" = "回收機消息通知";
 "biometricIdentification" = "biometric identification";
-"point" = "Point";
-"store" = "Store";
-"home" = "Home";
-"task" = "Task";
+"enterInvitationCode" = "enter invitation code";
+"deleteAccount" = "delete account";
+"version" = "version";

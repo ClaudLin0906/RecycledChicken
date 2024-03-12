@@ -113,7 +113,7 @@ class VerificationCodeVC: CustomLoginVC {
         let signUpInfoDic = try? signUpInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.register, parameters: signUpInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             DispatchQueue.main.async {
@@ -142,7 +142,7 @@ class VerificationCodeVC: CustomLoginVC {
         let forgetPasswordInfoDic = try? forgetPasswordInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.forgotPassword, parameters: forgetPasswordInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
                 return
             }
             if let data = data {
