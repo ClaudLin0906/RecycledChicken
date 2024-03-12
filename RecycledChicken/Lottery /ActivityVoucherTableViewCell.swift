@@ -45,8 +45,8 @@ class ActivityVoucherTableViewCell: UITableViewCell {
                     itemImageView.kf.setImage(with: url)
                 }
                 itemName.text = lotteryInfo.itemName
-                duringTime.text = "活動時間:" + StartDate + "~" + EndDate
-                drawPeople.text = "剩餘數量:" + String(lotteryInfo.purchaserCount)
+                duringTime.text = "activityTime".localized + ":" + StartDate + "~" + EndDate
+                drawPeople.text = "remain".localized + ":" + String(lotteryInfo.purchaserCount)
                 duringTime.font = duringTime.font.withSize(11)
                 point.text = "\(lotteryInfo.itemPrice)"
             }

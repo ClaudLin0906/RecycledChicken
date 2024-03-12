@@ -47,9 +47,9 @@ class LotteryTableViewCell: UITableViewCell {
                     itemImageView.kf.setImage(with: url)
                 }
                 itemName.text = lotteryInfo.itemName
-                duringTime.text = "活動時間:" + StartDate + "~" + EndDate
-                drawTime.text = "開獎日期:" + lotteryDrawDate
-                drawPeople.text = "參與次數:" + String(lotteryInfo.purchaserCount)
+                duringTime.text = "activityTime".localized + ":" + StartDate + "~" + EndDate
+                drawTime.text = "duringDate".localized + ":" + lotteryDrawDate
+                drawPeople.text = "join".localized + ":" + String(lotteryInfo.purchaserCount)
                 duringTime.font = duringTime.font.withSize(11)
                 drawTime.font = duringTime.font.withSize(11)
                 point.text = "\(lotteryInfo.itemPrice)"

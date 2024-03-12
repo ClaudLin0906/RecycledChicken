@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "participation count:0"
+            "value" : "join count:0"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "participation count:0"
+            "value" : "join count:0"
           }
         },
         "zh-Hant-TW" : {

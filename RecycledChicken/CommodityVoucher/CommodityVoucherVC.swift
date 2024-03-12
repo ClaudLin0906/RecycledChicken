@@ -16,7 +16,7 @@ class CommodityVoucherVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "禮卷專區"
+        title = "coupon".localized
         UIInit()
         
         // Do any additional setup after loading the view.

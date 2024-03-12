@@ -47,9 +47,9 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
                     itemImageView.kf.setImage(with: url)
                 }
                 itemName.text = lotteryInfo.itemName
-                duringTime.text = "活動時間:" + StartDate + "~" + EndDate
-                drawTime.text = "使用日期:" + lotteryDrawDate
-                drawPeople.text = "剩餘數量:" + String(lotteryInfo.purchaserCount)
+                duringTime.text = "activityTime".localized + ":" + StartDate + "~" + EndDate
+                drawTime.text = "validDate".localized + ":" + lotteryDrawDate
+                drawPeople.text = "remain".localized + ":" + String(lotteryInfo.purchaserCount)
                 duringTime.font = duringTime.font.withSize(11)
                 drawTime.font = duringTime.font.withSize(11)
                 point.text = "\(lotteryInfo.itemPrice)"
@@ -57,3 +57,4 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
         }
     }
 }
+

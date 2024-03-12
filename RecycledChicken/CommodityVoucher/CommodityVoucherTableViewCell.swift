@@ -44,8 +44,8 @@ class CommodityVoucherTableViewCell: UITableViewCell {
                     itemImageView.kf.setImage(with: url)
                 }
                 itemName.text = commodityVoucherInfo.itemName
-                drawTime.text = "使用時間:" + StartDate + "~" + EndDate
-                drawPeople.text = "剩餘數量:" + String(commodityVoucherInfo.purchaserCount)
+                drawTime.text = "validDate".localized + ":" + StartDate + "~" + EndDate
+                drawPeople.text = "remain".localized + ":" + String(commodityVoucherInfo.purchaserCount)
                 drawTime.font = drawTime.font.withSize(11)
                 point.text = "\(commodityVoucherInfo.itemPrice)"
             }
