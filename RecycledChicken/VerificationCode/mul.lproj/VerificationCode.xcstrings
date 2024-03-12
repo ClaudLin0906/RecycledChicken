@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "resend verification code"
+            "value" : "resend"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "please enter the verification code"
+            "value" : "verification code"
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "go back to the homepage"
+            "value" : "homepage"
           }
         },
         "zh-Hant-TW" : {

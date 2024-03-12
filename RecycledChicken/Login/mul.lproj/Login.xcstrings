@@ -98,7 +98,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "forget password?"
+            "value" : "password?"
           }
         },
         "zh-Hant-TW" : {

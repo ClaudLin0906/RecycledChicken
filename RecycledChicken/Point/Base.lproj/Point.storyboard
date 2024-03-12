@@ -187,7 +187,7 @@
                                                 <rect key="frame" x="20" y="477.66666666666657" width="313" height="132.33333333333331"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTT-JI-Qj2" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="81.666666666666686" y="10" width="150" height="40"/>
+                                                        <rect key="frame" x="56.666666666666686" y="10" width="200" height="40"/>
                                                         <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -204,11 +204,11 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cj-bx-TzZ" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="81.666666666666686" y="70" width="150" height="40"/>
+                                                        <rect key="frame" x="56.666666666666686" y="70" width="200" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="MzW-qw-Wua"/>
-                                                            <constraint firstAttribute="width" constant="150" id="tn8-6F-wUs"/>
+                                                            <constraint firstAttribute="width" constant="200" id="tn8-6F-wUs"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>

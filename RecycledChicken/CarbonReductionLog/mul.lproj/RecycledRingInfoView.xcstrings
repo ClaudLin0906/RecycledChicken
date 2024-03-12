@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "total carbon reduction"
+            "value" : "CR"
           }
         },
         "zh-Hant-TW" : {
@@ -80,7 +80,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "total recycling amount"
+            "value" : "recycling"
           }
         },
         "zh-Hant-TW" : {

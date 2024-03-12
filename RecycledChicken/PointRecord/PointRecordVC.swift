@@ -16,10 +16,12 @@ class PointRecordVC: CustomVC {
     @IBOutlet weak var monthBtn:CommonImageButton!
     
     private let amountDropDown = DropDown()
+    
+    private var allMonth = "allMonth".localized
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "點數紀錄"
+        title = "pointRecord".localized
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -37,25 +39,25 @@ class PointRecordVC: CustomVC {
     }
     
     private func setupAmountDropDown() {
-        monthBtn.setTitle("所有月份")
+        monthBtn.setTitle(allMonth)
         amountDropDown.anchorView = monthBtn
         amountDropDown.bottomOffset = CGPoint(x: 0, y: monthBtn.bounds.height)
         
         amountDropDown.dataSource =
         [
-            "所有月份",
-            "1月",
-            "2月",
-            "3月",
-            "4月",
-            "5月",
-            "6月",
-            "7月",
-            "8月",
-            "9月",
-            "10月",
-            "11月",
-            "12月"
+            allMonth,
+            "jan".localized,
+            "feb".localized,
+            "mar".localized,
+            "apr".localized,
+            "may".localized,
+            "jun".localized,
+            "jul".localized,
+            "aug".localized,
+            "sep".localized,
+            "oct".localized,
+            "nov".localized,
+            "dec".localized,
         ]
         
         amountDropDown.selectionAction = { [self] (index, item) in

@@ -25,7 +25,7 @@ class ConnectCompanyVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "聯絡客服與合作提案"
+        title = "contactPartnership".localized
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -56,7 +56,7 @@ class ConnectCompanyVC: CustomVC {
         
         identityListDropDown.dataSource =
         [
-            "用戶",
+            "user".localized,
             "合作廠商"
         ]
         
@@ -109,17 +109,17 @@ class ConnectCompanyVC: CustomVC {
         let content = contentView.text
         
         if content == "" {
-            showErrorMessage("內容不能為空")
+            showErrorMessage("contentCannotBeEmpty".localized)
             return
         }
         
         if email == "" {
-            showErrorMessage("Email不能為空")
+            showErrorMessage("emailCannotBeEmpty".localized)
             return
         }
         
         if !validateEmail(text: email!) {
-            showErrorMessage("輸入正確聯絡信箱格式")
+            showErrorMessage("incorrectEmailFormat".localized)
             return
         }
         

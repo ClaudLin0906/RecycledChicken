@@ -24,7 +24,7 @@ class StationListVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "站點列表"
+        title = "stationList".localized
         UIInit()
         getStoreInfo()
         // Do any additional setup after loading the view.
@@ -32,7 +32,7 @@ class StationListVC: CustomVC {
     
     private func UIInit() {
         dropDownView.changeType(.darkColor)
-        dropDownView.setDefaultTitle("地區選擇")
+        dropDownView.setDefaultTitle("region".localized)
         dropDownView.setFontSize(14)
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))

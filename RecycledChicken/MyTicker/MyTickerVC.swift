@@ -23,7 +23,7 @@ class MyTickerVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "我的票夾"
+        title = "myWallet".localized
         UIInit()
         // Do any additional setup after loading the view.
     }

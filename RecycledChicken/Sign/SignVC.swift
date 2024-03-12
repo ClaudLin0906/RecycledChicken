@@ -15,6 +15,10 @@ class SignVC: CustomLoginVC {
     
     @IBOutlet weak var goHomeBtn:CustomButton!
     
+    @IBOutlet weak var mobileLabelWidth:NSLayoutConstraint!
+    
+    @IBOutlet weak var passwordLabelWidth:NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -23,6 +27,10 @@ class SignVC: CustomLoginVC {
     
     private func UIInit(){
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
+        if getLanguage() == .english {
+            mobileLabelWidth.constant = 50
+            passwordLabelWidth.constant = 100
+        }
     }
     
     private func goToVerificationCode(phone:String, password:String ){

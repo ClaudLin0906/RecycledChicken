@@ -202,6 +202,8 @@
                     </view>
                     <connections>
                         <outlet property="goHomeBtn" destination="eAT-vs-MVL" id="DCq-xw-YQ8"/>
+                        <outlet property="mobileLabelWidth" destination="JHI-IN-SYs" id="JjF-V3-r4J"/>
+                        <outlet property="passwordLabelWidth" destination="LCp-qn-srX" id="dWN-wc-QfZ"/>
                         <outlet property="passwordTextfield" destination="hU2-kE-ci9" id="eSR-Wk-iHI"/>
                         <outlet property="phoneTextfield" destination="Y3m-Cj-QiS" id="n3F-wj-KIz"/>
                     </connections>

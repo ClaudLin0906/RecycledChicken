@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "go back to the homepage"
+            "value" : "homepage"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Password must be 8-12 characters long, alphanumeric"
+            "value" : "8-12 characters long, alphanumeric"
           }
         },
         "zh-Hant-TW" : {

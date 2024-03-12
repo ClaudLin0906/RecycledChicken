@@ -11,6 +11,10 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var progressView:RingProgressSingleView!
     
+    @IBOutlet weak var carbonReductionLabel:CustomLabel!
+    
+    @IBOutlet weak var recyclingLabel:CustomLabel!
+    
     private var info:RecyceledSortInfo?
     
     override init(frame: CGRect) {
@@ -26,6 +30,11 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     private func customInit(){
         loadNibContent()
         progressView.accessibilityLabel = NSLocalizedString("Move", comment: "")
+        if getLanguage() == .english {
+            carbonReductionLabel.font = carbonReductionLabel.font.withSize(10)
+            recyclingLabel.font = recyclingLabel.font.withSize(10)
+        }
+        
     }
     
     func setRecycledRingInfo(_ info:RecyceledSortInfo, _ count:Double, _ total:Double) {
