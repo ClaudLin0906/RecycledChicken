@@ -23,6 +23,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpendPointView" customModule="RecycledChicken" customModuleProvider="target">
             <connections>
                 <outlet property="confirm" destination="YJz-eA-DXJ" id="Vez-zi-xcO"/>
+                <outlet property="drawTimeLabel" destination="jXL-v5-5gH" id="Fm1-fq-1fQ"/>
                 <outlet property="itemAmount" destination="Z0f-Vo-nLX" id="ond-dC-ZUm"/>
                 <outlet property="itemImageView" destination="q3P-1c-HL2" id="fRz-zk-3vh"/>
                 <outlet property="itemNameLabel" destination="jGA-hq-HmR" id="3tg-oI-Thu"/>

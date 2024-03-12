@@ -37,14 +37,14 @@ class CommodityVoucherTableViewCell: UITableViewCell {
 //            let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!)
             let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
             let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
-            let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
-            let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
+            let startDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
+            let endDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
             DispatchQueue.main.async { [self] in
                 if let url = URL(string: commodityVoucherInfo.picture) {
                     itemImageView.kf.setImage(with: url)
                 }
                 itemName.text = commodityVoucherInfo.itemName
-                drawTime.text = "validDate".localized + ":" + StartDate + "~" + EndDate
+                drawTime.text = "validDate".localized + ":" + startDate + "~" + endDate
                 drawPeople.text = "remain".localized + ":" + String(commodityVoucherInfo.purchaserCount)
                 drawTime.font = drawTime.font.withSize(11)
                 point.text = "\(commodityVoucherInfo.itemPrice)"

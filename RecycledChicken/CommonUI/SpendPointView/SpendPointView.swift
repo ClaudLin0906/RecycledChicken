@@ -25,6 +25,8 @@ class SpendPointView: UIView, NibOwnerLoadable {
     @IBOutlet weak var itemNameLabel:CustomLabel!
     
     @IBOutlet weak var itemPriceLabel:UILabel!
+    
+    @IBOutlet weak var drawTimeLabel:CustomLabel!
         
     private var amount:Int = 0
     {
@@ -83,10 +85,11 @@ class SpendPointView: UIView, NibOwnerLoadable {
     }
     
     private func setValue() {
-        if let lotteryInfo = lotteryInfo, let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!), let image = UIImage(data: data) {
+        if let lotteryInfo = lotteryInfo, let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!), let image = UIImage(data: data), let activityStartTimeDate = dateFromString(lotteryInfo.activityStartTime), let activityEndTimeDate = dateFromString(lotteryInfo.activityEndTime){
             itemImageView.image = image
             itemNameLabel.text = lotteryInfo.itemName
             itemPriceLabel.text = String(lotteryInfo.itemPrice)
+            drawTimeLabel.text = "duringDate".localized + ":" + lotteryInfo.lotteryDrawDate
         }
     }
     
