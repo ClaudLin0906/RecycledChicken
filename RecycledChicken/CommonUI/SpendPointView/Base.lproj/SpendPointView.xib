@@ -24,7 +24,10 @@
             <connections>
                 <outlet property="confirm" destination="YJz-eA-DXJ" id="Vez-zi-xcO"/>
                 <outlet property="itemAmount" destination="Z0f-Vo-nLX" id="ond-dC-ZUm"/>
-                <outlet property="needPoint" destination="rLY-4r-Iz8" id="mec-U4-rv0"/>
+                <outlet property="itemImageView" destination="q3P-1c-HL2" id="fRz-zk-3vh"/>
+                <outlet property="itemNameLabel" destination="jGA-hq-HmR" id="3tg-oI-Thu"/>
+                <outlet property="itemPriceLabel" destination="ZNE-HK-Agt" id="qVE-q8-aKP"/>
+                <outlet property="needPoint" destination="rLY-4r-Iz8" id="MUN-fT-ttz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

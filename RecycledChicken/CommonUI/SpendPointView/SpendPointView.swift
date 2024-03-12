@@ -19,6 +19,12 @@ class SpendPointView: UIView, NibOwnerLoadable {
     @IBOutlet weak var itemAmount:UILabel!
     
     @IBOutlet weak var needPoint:UILabel!
+    
+    @IBOutlet weak var itemImageView:UIImageView!
+    
+    @IBOutlet weak var itemNameLabel:CustomLabel!
+    
+    @IBOutlet weak var itemPriceLabel:UILabel!
         
     private var amount:Int = 0
     {
@@ -41,8 +47,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
     {
         willSet{
             type = .Lottery
-            if let lotteryInfo = newValue, let data = try? Data(contentsOf: URL(string: lotteryInfo.pictureBig)!), let image = UIImage(data: data){
-            }
+            setValue()
         }
     }
     
@@ -65,12 +70,24 @@ class SpendPointView: UIView, NibOwnerLoadable {
         customInit()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setValue()
+    }
+    
     private func customInit(){
         loadNibContent()
         amount = 1
-        itemAmount.text = String(amount)
 //        tableView.setSeparatorLocation()
 //        tableView.register(UINib(nibName: "LotteryItemTableViewCell", bundle: nil), forCellReuseIdentifier: "LotteryItemTableViewCell")
+    }
+    
+    private func setValue() {
+        if let lotteryInfo = lotteryInfo, let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!), let image = UIImage(data: data) {
+            itemImageView.image = image
+            itemNameLabel.text = lotteryInfo.itemName
+            itemPriceLabel.text = String(lotteryInfo.itemPrice)
+        }
     }
     
     @IBAction func plusBtn(_ sender:UIButton){
