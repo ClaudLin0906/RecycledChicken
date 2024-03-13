@@ -7,26 +7,45 @@
 
 import Foundation
 import UIKit
+import UserNotifications
 
 class Setting {
     static let shared = Setting()
-    var language:Language = getLanguage()
+    var language:Language? = getLanguage()
 }
 
-func getLanguage() -> Language {
-    let defaultLanguage:Language = .traditionalChinese
+func getLanguage() -> Language? {
     if let appleLanguagesArr = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String] {
         let appleLanguages = appleLanguagesArr[0]
-        return Language(rawValue: appleLanguages) ?? defaultLanguage
+        return Language(rawValue: appleLanguages)
     }
-    return defaultLanguage
+    return nil
 }
 
 func setLanguage(_ language:Language) {
-    UserDefaults.standard.set(language.rawValue, forKey: "AppleLanguages")
+    var languages = Language.allCases.filter({return language != $0 })
+    languages.insert(language, at: 0)
+    let languageStrs = languages.map({$0.rawValue})
+    UserDefaults.standard.set(languageStrs, forKey: "AppleLanguages")
 }
 
-enum Language:String {
+func localNotifications(_ title:String, _ body:String) {
+    let content = UNMutableNotificationContent()
+    content.title = title
+    content.body = body
+    content.sound = UNNotificationSound.default
+    let tigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+    let uuidString = UUID().uuidString
+    let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: tigger)
+    UNUserNotificationCenter.current().add(request) { error in
+        guard error == nil else {
+            print(error?.localizedDescription)
+            return
+        }
+    }
+}
+
+enum Language:String, CaseIterable {
     case traditionalChinese = "zh-Hant-TW"
     case english = "en-TW"
 }

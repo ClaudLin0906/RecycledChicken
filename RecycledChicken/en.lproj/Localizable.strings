@@ -67,4 +67,5 @@
 "reStartOfChangeLanuage" = "switching the language will take effect only after restarting the app. Please reopen the app after it has been closed";
 "confirm" = "confirm";
 "cancel" = "cancel";
-
+"appClose" = "the app has been closed";
+"tapOpenApp" = "tap to open the app";

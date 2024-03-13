@@ -49,6 +49,7 @@ extension LanguageSettingVC: UITableViewDelegate {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
+                localNotifications("appClose".localized, "tapOpenApp".localized)
                 exit(2)
             }
             let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
@@ -71,5 +72,3 @@ extension LanguageSettingVC: UITableViewDataSource {
     }
     
 }
-
-
