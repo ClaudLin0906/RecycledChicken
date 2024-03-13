@@ -67,5 +67,5 @@
 "reStartOfChangeLanuage" = "切換語言重開app才會生效，關閉後請重新打開app";
 "confirm" = "確認";
 "cancel" = "取消";
-"appClose" = "app已經關閉";
-"tapOpenApp" = "點擊打開app";
+"appClose" = "the app has been closed";
+"tapOpenApp" = "tap to open the app";

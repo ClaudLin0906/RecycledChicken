@@ -34,7 +34,7 @@ func localNotifications(_ title:String, _ body:String) {
     content.title = title
     content.body = body
     content.sound = UNNotificationSound.default
-    let tigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+    let tigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
     let uuidString = UUID().uuidString
     let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: tigger)
     UNUserNotificationCenter.current().add(request) { error in
