@@ -55,7 +55,7 @@ class StationListVC: CustomVC {
     private func getStoreInfo(){
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             

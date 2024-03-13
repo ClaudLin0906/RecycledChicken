@@ -73,7 +73,7 @@ class CarbonReductionLogVC: CustomVC {
         let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)&endTime=\(endTime)"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             var batteryInt = 0

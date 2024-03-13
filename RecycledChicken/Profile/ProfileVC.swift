@@ -99,7 +99,7 @@ class ProfileVC: CustomVC {
         let userInfoDic = try? userInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: userInfoDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             if data != nil {
@@ -143,7 +143,7 @@ class ProfileVC: CustomVC {
         
         errorStr = removeWhitespace(from: errorStr)
         guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
+            showAlert(VC: self, title: nil, message: errorStr)
             return
         }
         
@@ -155,7 +155,7 @@ class ProfileVC: CustomVC {
         
         errorStr = removeWhitespace(from: errorStr)
         guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
+            showAlert(VC: self, title: nil, message: errorStr)
             return
         }
         
@@ -164,7 +164,7 @@ class ProfileVC: CustomVC {
         }
         errorStr = removeWhitespace(from: errorStr)
         guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
+            showAlert(VC: self, title: nil, message: errorStr)
             return
         }
         

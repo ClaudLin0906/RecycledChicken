@@ -64,4 +64,6 @@
 "raffleTicket" = "抽獎卷";
 "coupon" = "禮卷專區";
 "confirmBuy" = "確認購買";
-
+"reStartOfChangeLanuage" = "切換語言重開app才會生效，關閉後請重新打開app";
+"confirm" = "確認";
+"cancel" = "取消";

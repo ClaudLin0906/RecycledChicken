@@ -48,8 +48,13 @@ extension LanguageSettingVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let type = tableViewDatas[indexPath.row]
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        if Setting.shared.language != type.language {
+            let action = UIAlertAction(title: "confirm".localized, style: <#T##UIAlertAction.Style#>, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
+            showAlert(VC: self, title: "reStartOfChangeLanuage".localized)
+//            changeLanguage(type.language)
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
         }
     }
     

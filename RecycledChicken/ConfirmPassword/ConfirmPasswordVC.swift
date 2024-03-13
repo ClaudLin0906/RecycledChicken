@@ -46,7 +46,7 @@ class ConfirmPasswordVC: CustomLoginVC {
         
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            showAlert(VC: self, title: nil, message: alertMsg)
             return
         }
         
@@ -56,7 +56,7 @@ class ConfirmPasswordVC: CustomLoginVC {
         
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            showAlert(VC: self, title: nil, message: alertMsg)
             return
         }
         

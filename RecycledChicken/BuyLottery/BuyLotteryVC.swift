@@ -38,7 +38,7 @@ class BuyLotteryVC: CustomVC {
 extension BuyLotteryVC: SpendPointViewDelegate {
     
     func alertMessage(_ message: String) {
-        showAlert(VC: self, title: message, message: nil, alertAction: nil)
+        showAlert(VC: self, title: message, message: nil)
     }
     
     func btnAction(_ sender: UIButton, info: SpendPointInfo) {
@@ -55,7 +55,7 @@ extension BuyLotteryVC: SpendPointAlertViewDelegate {
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
         spendPointAction(info) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             getUserInfo(VC: self) {

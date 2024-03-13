@@ -85,7 +85,7 @@ class ConnectCompanyVC: CustomVC {
         let sendEmailDic = try? sendEmailInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.sendEmail, parameters: sendEmailDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             if data != nil {

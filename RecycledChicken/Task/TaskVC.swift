@@ -64,7 +64,7 @@ class TaskVC: CustomRootVC {
     private func getTaskStatus() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
@@ -79,7 +79,7 @@ class TaskVC: CustomRootVC {
     private func getTaskInfo() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestList, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
@@ -125,7 +125,7 @@ class TaskVC: CustomRootVC {
             loginOutRemoveObject()
             goToSignVC()
         }
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
         showAlert(VC: self, title: "碳員招募中！一起探索泥滑島的秘密", message: nil, alertAction: alertAction, cancelAction: cancelAction)
     }
 
@@ -198,7 +198,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                 if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo {
                     sharedAction(taskInfo: taskInfo, completion: { result, errorMSG in
                         guard result else {
-                            showAlert(VC: self, title: errorMSG, message: nil, alertAction: nil)
+                            showAlert(VC: self, title: errorMSG, message: nil)
                             return
                         }
                         var newTaskInfo = taskInfo

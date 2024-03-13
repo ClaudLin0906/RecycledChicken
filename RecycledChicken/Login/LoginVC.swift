@@ -76,7 +76,7 @@ class LoginVC: CustomLoginVC {
         let loginInfoDic = try? loginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "帳號密碼有誤", message: nil, alertAction: nil)
+                showAlert(VC: self, title: "帳號密碼有誤", message: nil)
                 return
             }
 

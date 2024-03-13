@@ -101,6 +101,7 @@
 		59600F8B2B9EF01B009AFA76 /* PointRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F8D2B9EF01B009AFA76 /* PointRecord.storyboard */; };
 		59600F8F2B9EF030009AFA76 /* LanguageSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F912B9EF030009AFA76 /* LanguageSetting.storyboard */; };
 		5960E5B02B9FF61B007F4AEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5960E5B22B9FF61B007F4AEF /* Localizable.strings */; };
+		5960E5B62BA14F15007F4AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5960E5B82BA14F15007F4AEF /* InfoPlist.strings */; };
 		59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */; };
 		59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */; };
 		59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D412B89EF530093BE6E /* LanguageSettingModel.swift */; };
@@ -433,6 +434,8 @@
 		59600F922B9EF030009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LanguageSetting.xcstrings; sourceTree = "<group>"; };
 		5960E5B12B9FF61B007F4AEF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5960E5B32B9FF61E007F4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5960E5B72BA14F15007F4AEF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5960E5B92BA14F17007F4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingVC.swift; sourceTree = "<group>"; };
 		59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		59632D412B89EF530093BE6E /* LanguageSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingModel.swift; sourceTree = "<group>"; };
@@ -710,6 +713,7 @@
 				59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */,
 				59C5AF6D2A290E6F002322BE /* jf-openhuninn-2.0.ttf */,
 				5926C58B2A04086600FAB49D /* Info.plist */,
+				5960E5B82BA14F15007F4AEF /* InfoPlist.strings */,
 			);
 			path = RecycledChicken;
 			sourceTree = "<group>";
@@ -1313,6 +1317,7 @@
 				59600F6F2B9EEF9C009AFA76 /* SpendPointAlertView.xib in Resources */,
 				59600F6B2B9EEF84009AFA76 /* SpendPointCompleteAlertView.xib in Resources */,
 				59600F432B9EED83009AFA76 /* TaskProgressView.xib in Resources */,
+				5960E5B62BA14F15007F4AEF /* InfoPlist.strings in Resources */,
 				59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */,
 				59600E8B2B9EE137009AFA76 /* ConnectSuccessView.xib in Resources */,
 				59600ECB2B9EE3B4009AFA76 /* RecycleLog.storyboard in Resources */,
@@ -2249,6 +2254,15 @@
 				5960E5B32B9FF61E007F4AEF /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5960E5B82BA14F15007F4AEF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5960E5B72BA14F15007F4AEF /* zh-Hant-TW */,
+				5960E5B92BA14F17007F4AEF /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

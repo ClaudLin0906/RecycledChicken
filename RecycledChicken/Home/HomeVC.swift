@@ -212,7 +212,7 @@ class HomeVC: CustomRootVC {
             loginOutRemoveObject()
             goToSignVC()
         }
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
         showAlert(VC: self, title: title, message: nil, alertAction: alertAction, cancelAction: cancelAction)
     }
     

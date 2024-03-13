@@ -142,7 +142,7 @@ class VerificationCodeVC: CustomLoginVC {
         let forgetPasswordInfoDic = try? forgetPasswordInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.forgotPassword, parameters: forgetPasswordInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             if let data = data {
@@ -161,7 +161,7 @@ class VerificationCodeVC: CustomLoginVC {
         }
     }
     
-    func goToLoginVC(){
+    func goToLoginVC() {
         self.dismiss(animated: false) {
             if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
                 VC.modalPresentationStyle = .fullScreen

@@ -39,7 +39,7 @@ class BuyCommodityVC: CustomVC {
 extension BuyCommodityVC: SpendPointViewDelegate {
     
     func alertMessage(_ message: String) {
-        showAlert(VC: self, title: message, message: nil, alertAction: nil)
+        showAlert(VC: self, title: message, message: nil)
     }
     
     
@@ -57,7 +57,7 @@ extension BuyCommodityVC: SpendPointAlertViewDelegate {
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
         spendPointAction(info) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             getUserInfo(VC: self) {
