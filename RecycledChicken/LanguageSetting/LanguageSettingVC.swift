@@ -18,7 +18,7 @@ class LanguageSettingVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "語言設定"
+        title = "languageSetting".localized
         UIInit()
         // Do any additional setup after loading the view.
     }
