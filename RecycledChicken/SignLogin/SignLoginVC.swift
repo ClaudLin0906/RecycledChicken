@@ -13,6 +13,8 @@ class SignLoginVC: CustomLoginVC {
     
     @IBOutlet weak var loginBtn:UIButton!
     
+    @IBOutlet weak var guestLabelWidth:NSLayoutConstraint!
+    
     @IBOutlet weak var label:UILabel!
 
     override func viewDidLoad() {
@@ -30,6 +32,9 @@ class SignLoginVC: CustomLoginVC {
         let attributes = [NSAttributedString.Key.font:label.font,NSAttributedString.Key.paragraphStyle: paraph]
         label.attributedText = NSAttributedString(string: label.text ?? "", attributes: attributes as [NSAttributedString.Key : Any])
         label.textAlignment = .center
+        if getLanguage() == .english {
+            guestLabelWidth.constant = 60
+        }
     }
     
     @IBAction func LoginBtnAction(_ sender:UIButton) {

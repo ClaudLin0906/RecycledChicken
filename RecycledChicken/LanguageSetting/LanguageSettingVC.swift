@@ -34,12 +34,7 @@ class LanguageSettingVC: CustomVC {
     
     private func changeLanguage(_ language:Language) {
         Setting.shared.language = language
-//        switch language {
-//        case .traditionalChinese:
-//            
-//        case .english:
-//
-//        }
+        setLanguage(language)
     }
 
 }
@@ -49,12 +44,15 @@ extension LanguageSettingVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let type = tableViewDatas[indexPath.row]
         if Setting.shared.language != type.language {
-            let action = UIAlertAction(title: "confirm".localized, style: <#T##UIAlertAction.Style#>, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
-            showAlert(VC: self, title: "reStartOfChangeLanuage".localized)
-//            changeLanguage(type.language)
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
+            let action = UIAlertAction(title: "confirm".localized, style: .default) { _ in
+                self.changeLanguage(type.language)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                exit(2)
+            }
+            let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
+            showAlert(VC: self, title: "reStartOfChangeLanuage".localized, alertAction: action, cancelAction: cancelAction)
         }
     }
     

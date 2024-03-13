@@ -22,6 +22,10 @@ func getLanguage() -> Language {
     return defaultLanguage
 }
 
+func setLanguage(_ language:Language) {
+    UserDefaults.standard.set(language.rawValue, forKey: "AppleLanguages")
+}
+
 enum Language:String {
     case traditionalChinese = "zh-Hant-TW"
     case english = "en-TW"

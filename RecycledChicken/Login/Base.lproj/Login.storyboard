@@ -139,16 +139,16 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保持登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-jY-0Jz">
-                                                <rect key="frame" x="59.999999999999986" y="8.6666666666666874" width="40" height="19.666666666666671"/>
+                                                <rect key="frame" x="59.999999999999986" y="8.6666666666666874" width="60" height="19.666666666666671"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="dB0-cQ-hd2"/>
+                                                    <constraint firstAttribute="width" constant="60" id="dB0-cQ-hd2"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘記密碼?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEI-G7-B9N">
-                                                <rect key="frame" x="100" y="8.6666666666666856" width="70" height="20"/>
+                                                <rect key="frame" x="120" y="8.6666666666666856" width="70" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Lz7-IU-0V0"/>
                                                     <constraint firstAttribute="height" constant="20" id="kOc-Kx-O8n"/>
@@ -158,14 +158,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efz-7R-eVA" userLabel="underLine">
-                                                <rect key="frame" x="100" y="27.666666666666686" width="70" height="1"/>
+                                                <rect key="frame" x="120" y="27.666666666666686" width="70" height="1"/>
                                                 <color key="backgroundColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="U4s-7J-zqc"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeL-ce-U2f">
-                                                <rect key="frame" x="100" y="8.6666666666666856" width="70" height="20"/>
+                                                <rect key="frame" x="120" y="8.6666666666666856" width="70" height="20"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
@@ -266,6 +266,7 @@
                     <navigationItem key="navigationItem" id="3AU-F3-vtG"/>
                     <connections>
                         <outlet property="goHomeBtn" destination="g2r-G4-nOM" id="G8C-7m-fTL"/>
+                        <outlet property="keepLoginBtnWidth" destination="dB0-cQ-hd2" id="OuW-Q0-u6s"/>
                         <outlet property="keepLoginCheckBox" destination="HmG-Sv-had" id="pSa-po-ye2"/>
                         <outlet property="mobileLabelWidth" destination="c9A-Ih-C1J" id="8CF-ql-mB6"/>
                         <outlet property="passwordLabelWidth" destination="ZUf-bM-u7I" id="6cu-fG-Vou"/>
