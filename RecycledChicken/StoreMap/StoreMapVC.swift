@@ -16,6 +16,8 @@ class StoreMapVC: CustomRootVC {
     @IBOutlet weak var amountView:AmountView!
     
     @IBOutlet weak var searchTextField:UITextField!
+    
+    @IBOutlet weak var amountViewHeight:NSLayoutConstraint!
         
     private var observation: NSKeyValueObservation?
     
@@ -207,6 +209,9 @@ extension StoreMapVC: GMSMapViewDelegate {
         if !mapInfoArr.isEmpty {
             let mapInfo = mapInfoArr[0]
             amountView.setAmount(mapInfo)
+            if amountView.stackView.subviews.count > 3 {
+                amountViewHeight.constant = CGFloat(amountView.stackView.subviews.count * 30)
+            }
         }
         return true
     }

@@ -40,7 +40,7 @@
                         <constraint firstAttribute="height" constant="1" id="ySj-zE-b5B"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KR-8t-mn7">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KR-8t-mn7">
                     <rect key="frame" x="0.0" y="100" width="393" height="718"/>
                 </stackView>
             </subviews>

@@ -127,7 +127,6 @@ class SpendPointView: UIView, NibOwnerLoadable {
         if amount < 0 {
             amount = 0
         }
-        
     }
     
     func setConfirmBtnTitle(_ title:String){

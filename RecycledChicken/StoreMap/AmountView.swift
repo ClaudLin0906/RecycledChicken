@@ -32,6 +32,7 @@ class AmountView: UIView, NibOwnerLoadable {
     func setAmount(_ info:MapInfo) {
         self.isHidden = false
         storeName.text = info.storeName
+
         if let battery = info.remainingProcessable.battery, battery > 0 {
             let label = labelInit("還可以投:\(battery)顆")
             stackView.addArrangedSubview(label)

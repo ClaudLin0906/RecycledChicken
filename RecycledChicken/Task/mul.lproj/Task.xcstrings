@@ -116,7 +116,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "claim ticket"
+            "value" : "claim"
           }
         },
         "zh-Hant-TW" : {
@@ -134,7 +134,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ticket task"
+            "value" : "mission"
           }
         },
         "zh-Hant-TW" : {
