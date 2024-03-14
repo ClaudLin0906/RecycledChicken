@@ -103,6 +103,8 @@
 		5960E5B02B9FF61B007F4AEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5960E5B22B9FF61B007F4AEF /* Localizable.strings */; };
 		5960E5B62BA14F15007F4AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5960E5B82BA14F15007F4AEF /* InfoPlist.strings */; };
 		5960E5BB2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5960E5BA2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift */; };
+		5960E5BD2BA2D014007F4AEF /* DeleteMessageContentAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5960E5BC2BA2D014007F4AEF /* DeleteMessageContentAlertView.swift */; };
+		5960E5BF2BA2D01C007F4AEF /* DeleteMessageContentAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5960E5BE2BA2D01C007F4AEF /* DeleteMessageContentAlertView.xib */; };
 		59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */; };
 		59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */; };
 		59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D412B89EF530093BE6E /* LanguageSettingModel.swift */; };
@@ -438,6 +440,8 @@
 		5960E5B72BA14F15007F4AEF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5960E5B92BA14F17007F4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5960E5BA2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicketVoucherSerialNumberTableViewCell.swift; sourceTree = "<group>"; };
+		5960E5BC2BA2D014007F4AEF /* DeleteMessageContentAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMessageContentAlertView.swift; sourceTree = "<group>"; };
+		5960E5BE2BA2D01C007F4AEF /* DeleteMessageContentAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteMessageContentAlertView.xib; sourceTree = "<group>"; };
 		59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingVC.swift; sourceTree = "<group>"; };
 		59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		59632D412B89EF530093BE6E /* LanguageSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingModel.swift; sourceTree = "<group>"; };
@@ -1121,6 +1125,8 @@
 			children = (
 				59997A762A0A53A000E9FD7F /* PersonMessageContentVC.swift */,
 				59600EB12B9EE2FD009AFA76 /* PersonMessageContent.storyboard */,
+				5960E5BC2BA2D014007F4AEF /* DeleteMessageContentAlertView.swift */,
+				5960E5BE2BA2D01C007F4AEF /* DeleteMessageContentAlertView.xib */,
 			);
 			path = PersonMessageContent;
 			sourceTree = "<group>";
@@ -1334,6 +1340,7 @@
 				59600F232B9EEBC7009AFA76 /* BuyCommodity.storyboard in Resources */,
 				59600F0F2B9EE9E5009AFA76 /* Point.storyboard in Resources */,
 				5985D6C42B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib in Resources */,
+				5960E5BF2BA2D01C007F4AEF /* DeleteMessageContentAlertView.xib in Resources */,
 				59600F2B2B9EEC12009AFA76 /* PointRule.storyboard in Resources */,
 				59600F3F2B9EED51009AFA76 /* Task.storyboard in Resources */,
 				59600F472B9EED98009AFA76 /* StoreList.storyboard in Resources */,
@@ -1563,6 +1570,7 @@
 				59C73F462A700C6A0019E87D /* HomeModel.swift in Sources */,
 				59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */,
 				599495702A0C9015009F1B2E /* BuyCommodityVC.swift in Sources */,
+				5960E5BD2BA2D014007F4AEF /* DeleteMessageContentAlertView.swift in Sources */,
 				59AA2EE72B931558001E1352 /* ProductAlertVC.swift in Sources */,
 				59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */,
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,

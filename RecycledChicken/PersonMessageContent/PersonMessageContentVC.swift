@@ -43,15 +43,15 @@ class PersonMessageContentVC: CustomVC {
     }
 
     @IBAction func deleteAction(_ sender:UIButton) {
-        let deleteAllMessageAlertView = DeleteAllMessageAlertView()
-        deleteAllMessageAlertView.delegate = self
-        deleteAllMessageAlertView.layer.cornerRadius = 5
-        contentView.addSubview(deleteAllMessageAlertView)
-        deleteAllMessageAlertView.translatesAutoresizingMaskIntoConstraints = false
-        deleteAllMessageAlertView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        deleteAllMessageAlertView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        deleteAllMessageAlertView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-        deleteAllMessageAlertView.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+        let deleteMessageContentAlertView = DeleteMessageContentAlertView()
+//        deleteAllMessageAlertView.delegate = self
+        deleteMessageContentAlertView.layer.cornerRadius = 5
+        contentView.addSubview(deleteMessageContentAlertView)
+        deleteMessageContentAlertView.translatesAutoresizingMaskIntoConstraints = false
+        deleteMessageContentAlertView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        deleteMessageContentAlertView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        deleteMessageContentAlertView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        deleteMessageContentAlertView.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
     }
 
 }

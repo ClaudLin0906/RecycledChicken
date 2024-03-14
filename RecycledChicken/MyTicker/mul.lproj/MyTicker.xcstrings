@@ -20,19 +20,19 @@
       }
     },
     "22L-AI-Lz2.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"22L-AI-Lz2\";",
+      "comment" : "Class = \"UILabel\"; text = \"000000\"; ObjectID = \"22L-AI-Lz2\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Label"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Label"
+            "value" : "000000"
           }
         }
       }
