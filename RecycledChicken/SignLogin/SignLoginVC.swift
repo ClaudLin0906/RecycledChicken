@@ -23,6 +23,15 @@ class SignLoginVC: CustomLoginVC {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showUpdateAppAlertView()
+    }
+    
+    private func showUpdateAppAlertView() {
+        let updateAppAlertView = UpdateAppAlertView(frame: UIScreen.main.bounds)
+        keyWindow?.addSubview(updateAppAlertView)
+    }
 
     private func UIInit(){
         signUpBtn.layer.borderWidth = 1
