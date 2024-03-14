@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "Krd-LH-CnS.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定\"; ObjectID = \"Krd-LH-CnS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirm"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定"
+          }
+        }
+      }
+    },
+    "MF1-jq-4iR.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"是否刪除訊息 ？\"; ObjectID = \"MF1-jq-4iR\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "delete message?"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "是否刪除訊息 ？"
+          }
+        }
+      }
+    },
+    "rt1-gC-Faw.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"取消\"; ObjectID = \"rt1-gC-Faw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cancel"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "取消"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
