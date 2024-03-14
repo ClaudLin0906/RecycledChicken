@@ -44,7 +44,7 @@ class PersonMessageContentVC: CustomVC {
 
     @IBAction func deleteAction(_ sender:UIButton) {
         let deleteMessageContentAlertView = DeleteMessageContentAlertView()
-//        deleteAllMessageAlertView.delegate = self
+        deleteMessageContentAlertView.delegate = self
         deleteMessageContentAlertView.layer.cornerRadius = 5
         contentView.addSubview(deleteMessageContentAlertView)
         deleteMessageContentAlertView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,9 +56,9 @@ class PersonMessageContentVC: CustomVC {
 
 }
 
-extension PersonMessageContentVC: DeleteAllMessageAlertViewDelegate {
+extension PersonMessageContentVC: DeleteMessageContentAlertViewDelegate {
     
-    func deleteAllMessage() {
+    func deleteMessage() {
         
     }
     

@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol DeleteMessageContentAlertViewDelegate {
+    func deleteMessage()
+}
+
 class DeleteMessageContentAlertView: UIView, NibOwnerLoadable {
+    
+    var delegate:DeleteMessageContentAlertViewDelegate?
     
     @IBOutlet weak var confirmBtn:CustomButton!
     
@@ -28,7 +34,7 @@ class DeleteMessageContentAlertView: UIView, NibOwnerLoadable {
     }
     
     @IBAction func confirm(_ sender:CustomButton) {
-//        delegate?.deleteAllMessage()
+        delegate?.deleteMessage()
     }
     
     @IBAction func cancel(_ sender:CustomButton) {
