@@ -114,9 +114,18 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         if tableView == voucherTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
-    //        cell.setCell(myTickertInfos[indexPath.row])
-            return cell
+            if indexPath.row % 2 == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
+        //        cell.setCell(myTickertInfos[indexPath.row])
+                return cell
+            }
+            
+            if indexPath.row % 2 == 1 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
+        //        cell.setCell(myTickertInfos[indexPath.row])
+                return cell
+            }
+
         }
         return UITableViewCell()
     }

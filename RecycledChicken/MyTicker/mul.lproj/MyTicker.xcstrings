@@ -19,6 +19,78 @@
         }
       }
     },
+    "22L-AI-Lz2.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"22L-AI-Lz2\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "Bn5-kX-crv.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"使用序號\"; ObjectID = \"Bn5-kX-crv\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "serial number"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "使用序號"
+          }
+        }
+      }
+    },
+    "fNv-to-bHm.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"fNv-to-bHm\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "KRF-aU-rDg.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"使用期限至\"; ObjectID = \"KRF-aU-rDg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "expiration date"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "使用期限至"
+          }
+        }
+      }
+    },
     "qKJ-yo-O3i.text" : {
       "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"qKJ-yo-O3i\";",
       "extractionState" : "extracted_with_value",

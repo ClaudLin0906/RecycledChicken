@@ -102,6 +102,7 @@
 		59600F8F2B9EF030009AFA76 /* LanguageSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F912B9EF030009AFA76 /* LanguageSetting.storyboard */; };
 		5960E5B02B9FF61B007F4AEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5960E5B22B9FF61B007F4AEF /* Localizable.strings */; };
 		5960E5B62BA14F15007F4AEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5960E5B82BA14F15007F4AEF /* InfoPlist.strings */; };
+		5960E5BB2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5960E5BA2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift */; };
 		59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */; };
 		59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */; };
 		59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59632D412B89EF530093BE6E /* LanguageSettingModel.swift */; };
@@ -436,6 +437,7 @@
 		5960E5B32B9FF61E007F4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5960E5B72BA14F15007F4AEF /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5960E5B92BA14F17007F4AEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5960E5BA2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicketVoucherSerialNumberTableViewCell.swift; sourceTree = "<group>"; };
 		59632D3B2B89EC070093BE6E /* LanguageSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingVC.swift; sourceTree = "<group>"; };
 		59632D3F2B89EDD80093BE6E /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		59632D412B89EF530093BE6E /* LanguageSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingModel.swift; sourceTree = "<group>"; };
@@ -937,6 +939,7 @@
 				59600F212B9EEB81009AFA76 /* MyTicker.storyboard */,
 				599495622A0BF8D9009F1B2E /* MyTickerTableViewCell.swift */,
 				599216CB2B8F290C0056FFC1 /* MyTickerVoucherTableViewCell.swift */,
+				5960E5BA2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift */,
 				59CC8DB02A6BD56D0094CE57 /* MyTickertModel.swift */,
 			);
 			path = MyTicker;
@@ -1566,6 +1569,7 @@
 				59CC8DB32A6D11980094CE57 /* CommodityVoucherModel.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */,
+				5960E5BB2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift in Sources */,
 				59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */,
 				5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */,
 				599216C12B8EFAAC0056FFC1 /* CustomSegmentedControl.swift in Sources */,
@@ -2308,6 +2312,7 @@
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2372,6 +2377,7 @@
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2430,6 +2436,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2476,6 +2483,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
