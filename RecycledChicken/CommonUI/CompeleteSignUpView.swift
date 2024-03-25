@@ -13,7 +13,7 @@ class CompeleteSignUpView: UIView, NibOwnerLoadable {
     {
         didSet {
             let attrString = NSMutableAttributedString(attributedString: oldValue.attributedText!)
-            attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Normal", size: 14)!, range: NSMakeRange(0, attrString.length))
+            attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Medium", size: 14)!, range: NSMakeRange(0, attrString.length))
             let placeholderColor = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
             oldValue.attributedPlaceholder = NSAttributedString(string: "輸入註冊活動碼", attributes: [NSAttributedString.Key.foregroundColor : placeholderColor])
         }

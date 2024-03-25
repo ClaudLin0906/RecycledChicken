@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenJyuuGothic-Normal.ttf">
-            <string>GenJyuuGothic-Normal</string>
+        <array key="GenJyuuGothic-Medium.ttf">
+            <string>GenJyuuGothic-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -45,7 +45,7 @@
 3. 關聯資訊遺失：刪除帳號可能會導致您在碳竹雞APP上的所有相關資訊遺失，包括帳戶設定、個人資料、消費記錄、兌換紀錄等。請在刪除帳號之前確保您已保存或備份您重要的資料，以免後悔無法恢復。
 
 4. 無法回復帳號：一旦刪除帳號，您將無法以任何方式恢復或回復該帳號。如果您之後改變主意或需要重新使用該累積點數應用程式，您將需要重新註冊一個新的帳號，並且需要重新累積點數。</string>
-                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -101,7 +101,7 @@
                                     <constraint firstAttribute="width" constant="180" id="aBq-sv-04Y"/>
                                     <constraint firstAttribute="height" constant="40" id="qIC-g2-CnA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="刪除帳號">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,7 +161,7 @@
             <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
         <designable name="XiZ-fS-3Yz">
-            <size key="intrinsicContentSize" width="1545.3333333333333" height="213.66666666666666"/>
+            <size key="intrinsicContentSize" width="1547.3333333333333" height="213.66666666666666"/>
         </designable>
     </designables>
     <resources>

@@ -17,7 +17,7 @@ import UIKit
     
     @IBInspectable var fontSize: CGFloat = 14.0
 
-    @IBInspectable var fontFamily: String = "GenJyuuGothic-Normal"
+    @IBInspectable var fontFamily: String = "GenJyuuGothic-Medium"
     
     override func awakeFromNib() {
         if let title = titleLabel, let attributedText = title.attributedText {

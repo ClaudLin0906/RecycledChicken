@@ -267,13 +267,13 @@ struct WebViewUrl{
 }
 
 var attributes: [NSAttributedString.Key: Any] = [
-    NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
+    NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Medium", size: 17)!,
     NSAttributedString.Key.foregroundColor: UIColor.white,
     NSAttributedString.Key.kern: 5 // 設定字距
 ]
 
 let attributes2: [NSAttributedString.Key: Any] = [
-    NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
+    NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Medium", size: 17)!,
 //    NSAttributedString.Key.foregroundColor: UIColor.black,
     NSAttributedString.Key.kern: 5 // 設定字距
 ]

@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenJyuuGothic-Normal.ttf">
-            <string>GenJyuuGothic-Normal</string>
+        <array key="GenJyuuGothic-Medium.ttf">
+            <string>GenJyuuGothic-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -42,7 +42,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FX4-bk-xzG" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="12.666666666666666" width="244" height="19.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -86,8 +86,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFK-7K-CxL" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="12.666666666666666" width="35.666666666666664" height="19.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                    <rect key="frame" x="10" y="12.666666666666666" width="37" height="19.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -119,7 +119,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好友邀請碼已使用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcv-4Y-APJ" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="12.666666666666666" width="112" height="19.666666666666671"/>
-                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -133,8 +133,8 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abc123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbN-g0-p8F" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                    <rect key="frame" x="240" y="12.333333333333336" width="47" height="20"/>
-                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                    <rect key="frame" x="239" y="12.666666666666666" width="48" height="19.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                     <color key="textColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -221,13 +221,13 @@
     </scenes>
     <designables>
         <designable name="FX4-bk-xzG">
-            <size key="intrinsicContentSize" width="35.666666666666664" height="19.666666666666668"/>
+            <size key="intrinsicContentSize" width="37" height="19.666666666666668"/>
         </designable>
         <designable name="LbN-g0-p8F">
-            <size key="intrinsicContentSize" width="46.666666666666664" height="19.666666666666668"/>
+            <size key="intrinsicContentSize" width="48" height="19.666666666666668"/>
         </designable>
         <designable name="UFK-7K-CxL">
-            <size key="intrinsicContentSize" width="35.666666666666664" height="19.666666666666668"/>
+            <size key="intrinsicContentSize" width="37" height="19.666666666666668"/>
         </designable>
         <designable name="j0L-4Y-vox">
             <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>

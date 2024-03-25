@@ -80,12 +80,12 @@ class RingProgressSingleView: UIView {
         
         slashLabel.text = "/"
         slashLabel.textColor = totalColor
-        slashLabel.font = UIFont(name: "GenJyuuGothic-Normal", size: 10)
+        slashLabel.font = UIFont(name: "GenJyuuGothic-Medium", size: 10)
         slashLabel.centerXAnchor.constraint(equalTo: targetLabel.centerXAnchor).isActive = true
         slashLabel.centerYAnchor.constraint(equalTo: ring.centerYAnchor,constant: 20).isActive = true
         
         totalLabel.textColor = totalColor
-        totalLabel.font = UIFont(name: "GenJyuuGothic-Normal", size: 10)
+        totalLabel.font = UIFont(name: "GenJyuuGothic-Medium", size: 10)
         totalLabel.centerYAnchor.constraint(equalTo: slashLabel.centerYAnchor).isActive = true
         totalLabel.leadingAnchor.constraint(equalTo: slashLabel.trailingAnchor, constant: 5).isActive = true
         

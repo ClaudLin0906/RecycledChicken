@@ -67,7 +67,7 @@ class CustomSegmentedControl: UIView {
             let button = UIButton(type: .system)
             button.setTitle(buttonTitle, for: .normal)
 //            button.titleLabel?.font = .systemFont(ofSize: 16)
-            button.titleLabel?.font = UIFont(name: "GenJyuuGothic-Normal", size: 15)
+            button.titleLabel?.font = UIFont(name: "GenJyuuGothic-Medium", size: 15)
             button.addTarget(self, action:#selector(self.buttonAction(sender:)), for: .touchUpInside)
             button.setTitleColor(defaultColor, for: .normal)
             buttons.append(button)

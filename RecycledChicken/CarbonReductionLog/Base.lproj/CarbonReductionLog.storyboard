@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenJyuuGothic-Normal.ttf">
-            <string>GenJyuuGothic-Normal</string>
+        <array key="GenJyuuGothic-Medium.ttf">
+            <string>GenJyuuGothic-Medium</string>
         </array>
         <array key="GenJyuuGothic-Regular.ttf">
             <string>GenJyuuGothic-Regular</string>
@@ -54,7 +54,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="UMn-AN-H1E"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -128,7 +128,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="xff-ow-bje"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -324,7 +324,7 @@
                                     <constraint firstAttribute="height" constant="40" id="63M-1N-AnH"/>
                                     <constraint firstAttribute="width" constant="150" id="eyq-Sb-Rmj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="回收紀錄">
                                     <color key="titleColor" systemColor="labelColor"/>

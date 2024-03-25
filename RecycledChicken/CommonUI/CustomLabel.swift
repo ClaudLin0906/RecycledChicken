@@ -9,7 +9,7 @@ import UIKit
 
 @IBDesignable class CustomLabel: UILabel {
     
-    @IBInspectable var fontFamily: String = "GenJyuuGothic-Normal"
+    @IBInspectable var fontFamily: String = "GenJyuuGothic-Medium"
 
     @IBInspectable var fontSize: CGFloat = 14.0
     
