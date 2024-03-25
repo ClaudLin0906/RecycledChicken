@@ -12,9 +12,6 @@
         <array key="GenJyuuGothic-Medium.ttf">
             <string>GenJyuuGothic-Medium</string>
         </array>
-        <array key="GenJyuuGothic-Regular.ttf">
-            <string>GenJyuuGothic-Regular</string>
-        </array>
         <array key="jf-openhuninn-2.0.ttf">
             <string>jf-openhuninn-2.0</string>
         </array>
@@ -193,7 +190,7 @@
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kgCO2e" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uQ-vd-ZBq">
                                                                         <rect key="frame" x="0.0" y="46.666666666666629" width="51.333333333333336" height="23.333333333333329"/>
-                                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="10"/>
+                                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="10"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -221,7 +218,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="xiz-IP-wKv"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>

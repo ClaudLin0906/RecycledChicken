@@ -41,7 +41,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請問您是用戶還是合作廠商?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMt-iW-Jcr" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="50.666666666666686" y="3" width="212" height="24"/>
+                                                        <rect key="frame" x="49.666666666666671" y="3" width="213.66666666666663" height="24"/>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>

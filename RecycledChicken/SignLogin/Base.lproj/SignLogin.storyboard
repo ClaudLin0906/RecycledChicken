@@ -12,9 +12,6 @@
         <array key="GenJyuuGothic-Medium.ttf">
             <string>GenJyuuGothic-Medium</string>
         </array>
-        <array key="GenJyuuGothic-Regular.ttf">
-            <string>GenJyuuGothic-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Sign LoginVC-->
@@ -114,7 +111,7 @@
                                                             <constraint firstAttribute="width" constant="70" id="Jt3-ZH-Xns"/>
                                                             <constraint firstAttribute="height" constant="20" id="mHY-dc-ctT"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>

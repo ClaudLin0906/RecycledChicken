@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GenJyuuGothic-Normal.ttf">
-            <string>GenJyuuGothic-Normal</string>
+        <array key="GenJyuuGothic-Medium.ttf">
+            <string>GenJyuuGothic-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -24,6 +24,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="G8M-WY-PA6" secondAttribute="height" multiplier="1:1" id="C6e-6K-76X"/>
                         <constraint firstAttribute="width" constant="150" id="CGc-Kc-Rtr"/>
+                        <constraint firstAttribute="width" secondItem="G8M-WY-PA6" secondAttribute="height" multiplier="1:1" id="X8q-QF-ziK"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="購買完成" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29u-7z-C59" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
@@ -31,7 +32,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="L3c-uL-TtT"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -40,7 +41,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="o3e-uF-cyI"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -51,7 +52,6 @@
                 <constraint firstItem="Ht3-VY-Hay" firstAttribute="top" secondItem="29u-7z-C59" secondAttribute="bottom" constant="5" id="FZ7-la-zlW"/>
                 <constraint firstItem="G8M-WY-PA6" firstAttribute="bottom" secondItem="OBe-9N-2ed" secondAttribute="centerY" id="MVO-yb-Zta"/>
                 <constraint firstItem="29u-7z-C59" firstAttribute="leading" secondItem="OBe-9N-2ed" secondAttribute="leading" id="Owy-Dg-qmS"/>
-                <constraint firstItem="G8M-WY-PA6" firstAttribute="width" secondItem="G8M-WY-PA6" secondAttribute="height" multiplier="1:1" id="X8q-QF-ziK"/>
                 <constraint firstItem="Ht3-VY-Hay" firstAttribute="centerX" secondItem="OBe-9N-2ed" secondAttribute="centerX" id="dix-7u-ZAm"/>
                 <constraint firstItem="OBe-9N-2ed" firstAttribute="trailing" secondItem="29u-7z-C59" secondAttribute="trailing" id="llS-ul-y5A"/>
                 <constraint firstItem="G8M-WY-PA6" firstAttribute="centerX" secondItem="OBe-9N-2ed" secondAttribute="centerX" id="w6Z-Nm-Pdc"/>
