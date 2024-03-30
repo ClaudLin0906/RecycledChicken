@@ -17,4 +17,4 @@ struct MyTickertInfo:Decodable {
 }
 
 
-var MyTickertTitles = ["抽獎卷", "商品卷"]
+var MyTickertTitles = ["抽獎劵", "商品劵"]

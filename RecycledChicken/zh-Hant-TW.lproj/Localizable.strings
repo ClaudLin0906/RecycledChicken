@@ -61,11 +61,12 @@
 "remain" = "剩餘數量";
 "validDate" = "使用日期";
 "activityAward" = "活動獎勵";
-"raffleTicket" = "抽獎卷";
-"coupon" = "禮卷專區";
+"raffleTicket" = "抽獎劵";
+"coupon" = "禮劵專區";
 "confirmBuy" = "確認購買";
 "reStartOfChangeLanuage" = "切換語言重開app才會生效，關閉後請重新打開app";
 "confirm" = "確認";
 "cancel" = "取消";
 "appClose" = "the app has been closed";
 "tapOpenApp" = "tap to open the app";
+"sign" = "註冊";

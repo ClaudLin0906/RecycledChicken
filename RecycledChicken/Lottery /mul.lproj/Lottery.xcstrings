@@ -38,19 +38,19 @@
       }
     },
     "6Le-SV-ZJu.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"參與次數:0\"; ObjectID = \"6Le-SV-ZJu\";",
+      "comment" : "Class = \"UILabel\"; text = \"參與次數0\"; ObjectID = \"6Le-SV-ZJu\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "join count:0"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "參與次數:0"
+            "value" : "參與次數0"
           }
         }
       }

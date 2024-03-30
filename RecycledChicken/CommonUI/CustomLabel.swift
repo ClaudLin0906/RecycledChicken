@@ -13,7 +13,7 @@ import UIKit
 
     @IBInspectable var fontSize: CGFloat = 14.0
     
-    @IBInspectable var kernSize: CGFloat = 3
+    @IBInspectable var kernSize: CGFloat = 0
     
     @IBInspectable var lineSpaceSize: CGFloat = 0
     

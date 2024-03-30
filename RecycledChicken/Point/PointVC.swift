@@ -25,12 +25,12 @@ class PointVC: CustomRootVC {
     private func UIInit(){
         ponitRecordBtn.layer.borderWidth = 1
         ponitRecordBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        myTicker.layer.borderWidth = 1
-        myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
+//        myTicker.layer.borderWidth = 1
+//        myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
     }
     
     private func signAlert(){
-        let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
+        let alertAction = UIAlertAction(title: "sign".localized, style: .default) { _ in
             loginOutRemoveObject()
             goToSignVC()
         }

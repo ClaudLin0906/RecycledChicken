@@ -37,7 +37,7 @@ class PersonMessageTableViewCell: UITableViewCell {
     }
     
     func setCell(_ personMessageInfo:PersonMessageInfo) {
-        titleLabel.text = "\(personMessageInfo.title) \(personMessageInfo.message)"
+        titleLabel.text = "\(personMessageInfo.title)"
         if let date = dateFromString(personMessageInfo.createTime) {
             let dateStr = getDates(i: 0, currentDate: date).0
             timeLabel.text = dateStr

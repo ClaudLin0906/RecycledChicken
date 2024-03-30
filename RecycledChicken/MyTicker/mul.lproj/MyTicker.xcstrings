@@ -2,19 +2,19 @@
   "sourceLanguage" : "zh-Hant-TW",
   "strings" : {
     "8VD-FP-4Iw.normalTitle" : {
-      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊開啟票卷\"; ObjectID = \"8VD-FP-4Iw\";",
+      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊開啟票劵\"; ObjectID = \"8VD-FP-4Iw\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "click"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "請點擊開啟票卷"
+            "value" : "請點擊開啟票劵"
           }
         }
       }
@@ -25,8 +25,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Label"
+            "state" : "translated",
+            "value" : "000000"
           }
         },
         "zh-Hant-TW" : {

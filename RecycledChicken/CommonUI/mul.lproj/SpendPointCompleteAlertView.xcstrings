@@ -20,19 +20,19 @@
       }
     },
     "Ht3-VY-Hay.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"票卷已存入您的票夾\"; ObjectID = \"Ht3-VY-Hay\";",
+      "comment" : "Class = \"UILabel\"; text = \"票劵已存入您的票夾\"; ObjectID = \"Ht3-VY-Hay\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "the ticket has been stored in your wallet"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "票卷已存入您的票夾"
+            "value" : "票劵已存入您的票夾"
           }
         }
       }

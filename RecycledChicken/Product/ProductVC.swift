@@ -19,7 +19,7 @@ class ProductVC: CustomVC {
     }
     
     private func UIInit() {
-        let request = URLRequest(url: URL(string: "https://tw.yahoo.com/")!)
+        let request = URLRequest(url: URL(string: "https://www.buenocoop.com/")!)
         webView.load(request)
     }
     

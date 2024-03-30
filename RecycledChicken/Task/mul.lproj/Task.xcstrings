@@ -2,19 +2,19 @@
   "sourceLanguage" : "zh-Hant-TW",
   "strings" : {
     "cjV-9E-d6S.normalTitle" : {
-      "comment" : "Class = \"UIButton\"; normalTitle = \"票卷已領取\"; ObjectID = \"cjV-9E-d6S\";",
+      "comment" : "Class = \"UIButton\"; normalTitle = \"票劵已領取\"; ObjectID = \"cjV-9E-d6S\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "ticket has been claimed"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "票卷已領取"
+            "value" : "票劵已領取"
           }
         }
       }
@@ -110,19 +110,19 @@
       }
     },
     "p6M-X8-5hj.normalTitle" : {
-      "comment" : "Class = \"UIButton\"; normalTitle = \"領取票卷\"; ObjectID = \"p6M-X8-5hj\";",
+      "comment" : "Class = \"UIButton\"; normalTitle = \"領取票劵\"; ObjectID = \"p6M-X8-5hj\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "claim"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "領取票卷"
+            "value" : "領取票劵"
           }
         }
       }
