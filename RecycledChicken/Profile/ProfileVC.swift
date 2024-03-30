@@ -225,7 +225,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             cell.phoneNumberCheckBox.isHidden = false
             cell.phoneNumberCheckBox.checkState = .checked
             cell.info.isEnabled = false
-            cell.info.text = "BUENO MART 連動"
+            cell.info.text = "BUENO COOP 連動"
 //            cell.info.placeholder = "2000/11/11"
 //            cell.phoneNumberCheckBox.isHidden = false
 //

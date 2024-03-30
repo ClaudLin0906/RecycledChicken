@@ -199,10 +199,21 @@ class HomeVC: CustomRootVC {
         getChoseDateRecycleAmount()
     }
     
-    private func changeBanner() {
-        currentIndex += 1
+    @IBAction private func leftGesture(_ gesture:UISwipeGestureRecognizer) {
+        changeBanner(-1)
+    }
+    
+    @IBAction private func rightGesture(_ gesture:UISwipeGestureRecognizer) {
+        changeBanner()
+    }
+    
+    private func changeBanner(_ changeIndex:Int = 1) {
+        currentIndex += changeIndex
         if currentIndex > (bannerCount - 1) {
             currentIndex = 0
+        }
+        if currentIndex < 0 {
+            currentIndex = bannerCount - 1
         }
         currentIndexSubject.send(currentIndex)
     }

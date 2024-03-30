@@ -146,7 +146,7 @@ enum RecyceledSort: CaseIterable {
         case .battery:
             return RecyceledSortInfo(chineseName: "電池", englishName: "BATTERY", iconName: "battery", color: batteryColor)
         case .papperCub:
-            return RecyceledSortInfo(chineseName: "紙杯", englishName: "PAPPERCUB", iconName: "papperCub", color: papperCubColor)
+            return RecyceledSortInfo(chineseName: "紙杯", englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor)
         case .aluminumCan:
             return RecyceledSortInfo(chineseName: "鋁罐", englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor)
         case .publicTransport:

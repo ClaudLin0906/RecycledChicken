@@ -25,7 +25,8 @@ class UpdateAppAlertView: UIView, NibOwnerLoadable {
     
     @IBAction func openAppleStore(_ sender:UIButton) {
         if let url = URL(string: "itms-apps://itunes.apple.com/app/id6449214570") {
-            UIApplication.shared.open(url)
+            removeFromSuperview()
+//            UIApplication.shared.open(url)
         }
     }
 }

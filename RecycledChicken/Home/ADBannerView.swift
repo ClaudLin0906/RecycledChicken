@@ -65,15 +65,34 @@ class ADBannerView: UIView, NibOwnerLoadable {
                 self?.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
             }
             .store(in: &cancellables)
+        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(leftGesture(_:)))
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(rightGesture(_:)))
+        rightGesture.direction = .right
+        leftGesture.direction = .left
+        
+        collectionView.addGestureRecognizer(leftGesture)
+        collectionView.addGestureRecognizer(rightGesture)
     }
     
-    func changeBanner() {
-        currentIndex += 1
+    @objc private func leftGesture(_ gesture:UISwipeGestureRecognizer) {
+        changeBanner()
+    }
+    
+    @objc private func rightGesture(_ gesture:UISwipeGestureRecognizer) {
+        changeBanner(-1)
+    }
+    
+    func changeBanner(_ changeIndex:Int = 1) {
+        currentIndex += changeIndex
         if currentIndex > (bannerCount - 1) {
             currentIndex = 0
         }
+        if currentIndex < 0 {
+            currentIndex = bannerCount - 1
+        }
         currentIndexSubject.send(currentIndex)
     }
+    
 
 }
 

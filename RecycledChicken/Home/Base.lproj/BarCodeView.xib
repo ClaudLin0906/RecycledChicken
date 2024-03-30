@@ -27,19 +27,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qqa-GB-3O1">
-                    <rect key="frame" x="10" y="69" width="373" height="739"/>
+                    <rect key="frame" x="5" y="64" width="383" height="749"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="會員條碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bY-BU-8Ee" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="373" height="243"/>
+                            <rect key="frame" x="0.0" y="0.0" width="383" height="246.33333333333334"/>
                             <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQ7-dy-quO">
-                            <rect key="frame" x="0.0" y="248" width="373" height="243"/>
+                            <rect key="frame" x="0.0" y="251.33333333333331" width="383" height="246.33333333333331"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0200 2344 1256" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAc-4R-JNr">
-                            <rect key="frame" x="0.0" y="496" width="373" height="243"/>
+                            <rect key="frame" x="0.0" y="502.66666666666657" width="383" height="246.33333333333331"/>
                             <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -51,15 +51,15 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qqa-GB-3O1" secondAttribute="trailing" constant="10" id="GpW-5Z-IoI"/>
-                <constraint firstItem="Qqa-GB-3O1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="UXi-cm-wxs"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Qqa-GB-3O1" secondAttribute="bottom" constant="10" id="fOG-9o-40A"/>
-                <constraint firstItem="Qqa-GB-3O1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="fpi-LM-sCM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qqa-GB-3O1" secondAttribute="trailing" constant="5" id="GpW-5Z-IoI"/>
+                <constraint firstItem="Qqa-GB-3O1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="UXi-cm-wxs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Qqa-GB-3O1" secondAttribute="bottom" constant="5" id="fOG-9o-40A"/>
+                <constraint firstItem="Qqa-GB-3O1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="fpi-LM-sCM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                    <integer key="value" value="20"/>
+                    <integer key="value" value="10"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="-172" y="20"/>

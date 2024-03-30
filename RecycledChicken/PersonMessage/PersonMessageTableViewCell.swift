@@ -27,6 +27,7 @@ class PersonMessageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGes(_:)))
+        addGestureRecognizer(longPress)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
