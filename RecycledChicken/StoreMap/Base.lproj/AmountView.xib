@@ -41,7 +41,21 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KR-8t-mn7">
-                    <rect key="frame" x="0.0" y="100" width="393" height="718"/>
+                    <rect key="frame" x="0.0" y="100" width="393" height="708"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKU-kK-Xoa">
+                            <rect key="frame" x="176" y="0.0" width="41.333333333333343" height="284"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Z-ix-RDT">
+                            <rect key="frame" x="176" y="294" width="41.333333333333343" height="414"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -52,7 +66,7 @@
                 <constraint firstItem="npf-CX-5oO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Wiv-AO-XJm"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9KR-8t-mn7" secondAttribute="trailing" id="XKl-VM-std"/>
                 <constraint firstItem="npf-CX-5oO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="h2J-SG-HLm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9KR-8t-mn7" secondAttribute="bottom" id="jgT-sB-2Kr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9KR-8t-mn7" secondAttribute="bottom" constant="10" id="jgT-sB-2Kr"/>
                 <constraint firstItem="cgR-Jo-pgb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="lyY-WD-M8f"/>
                 <constraint firstItem="9KR-8t-mn7" firstAttribute="top" secondItem="cgR-Jo-pgb" secondAttribute="bottom" constant="10" id="tyL-B5-W5T"/>
                 <constraint firstItem="9KR-8t-mn7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vOD-XP-R1p"/>
@@ -61,7 +75,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                    <integer key="value" value="20"/>
+                    <integer key="value" value="10"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
                     <size key="value" width="1" height="1"/>

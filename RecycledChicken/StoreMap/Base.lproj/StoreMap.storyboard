@@ -25,7 +25,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="Fca-21-ftc" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="街道/門市查詢" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8po-G9-5dk">
+                            <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="站點名稱" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8po-G9-5dk">
                                 <rect key="frame" x="76.666666666666686" y="103" width="240" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -49,7 +49,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-kB-cta" customClass="SpecialTaskView" customModule="RecycledChicken" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-kB-cta" customClass="SpecialTaskView" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="73" y="252.99999999999997" width="247" height="300.33333333333326"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPh-12-JyV" customClass="AmountView" customModule="RecycledChicken" customModuleProvider="target">

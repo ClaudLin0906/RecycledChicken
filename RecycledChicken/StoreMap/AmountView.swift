@@ -30,6 +30,7 @@ class AmountView: UIView, NibOwnerLoadable {
     }
     
     func setAmount(_ info:MapInfo) {
+        stackView.removeFullyAllArrangedSubviews()
         self.isHidden = false
         storeName.text = info.storeName
 

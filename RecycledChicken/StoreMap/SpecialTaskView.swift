@@ -23,4 +23,8 @@ class SpecialTaskView: UIView, NibOwnerLoadable {
         loadNibContent()
     }
 
+    @IBAction func closeBtnHandle(_ sender:UIButton) {
+        isHidden.toggle()
+    }
+    
 }

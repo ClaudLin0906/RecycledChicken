@@ -2,19 +2,19 @@
   "sourceLanguage" : "zh-Hant-TW",
   "strings" : {
     "8po-G9-5dk.placeholder" : {
-      "comment" : "Class = \"UITextField\"; placeholder = \"街道/門市查詢\"; ObjectID = \"8po-G9-5dk\";",
+      "comment" : "Class = \"UITextField\"; placeholder = \"站點名稱\"; ObjectID = \"8po-G9-5dk\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "street/store search"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "街道/門市查詢"
+            "value" : "站點名稱"
           }
         }
       }

@@ -18,6 +18,30 @@
           }
         }
       }
+    },
+    "PKU-kK-Xoa.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"PKU-kK-Xoa\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "Q2Z-ix-RDT.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"Q2Z-ix-RDT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
