@@ -38,19 +38,19 @@
       }
     },
     "b6S-Tx-Mqe.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"kgCO2e\"; ObjectID = \"b6S-Tx-Mqe\";",
+      "comment" : "Class = \"UILabel\"; text = \"CO2e\"; ObjectID = \"b6S-Tx-Mqe\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "kgCO2e"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "kgCO2e"
+            "value" : "CO2e"
           }
         }
       }
@@ -93,7 +93,7 @@
     },
     "Wa5-hR-sHk.text" : {
       "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"Wa5-hR-sHk\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

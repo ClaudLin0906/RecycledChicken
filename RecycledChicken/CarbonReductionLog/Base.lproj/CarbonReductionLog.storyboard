@@ -96,7 +96,7 @@
                                                         <rect key="frame" x="20" y="60" width="273" height="150"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvR-A6-eH4" customClass="RecycledRingInfoView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="13.666666666666671" y="25" width="245.66666666666663" height="100"/>
+                                                                <rect key="frame" x="6.6666666666666572" y="25" width="259.66666666666674" height="100"/>
                                                             </view>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※每月達成目標為前一個月全部使用者的平均投遞量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw0-zw-FUi" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="-20" y="125" width="313" height="25"/>
@@ -114,7 +114,7 @@
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="cvR-A6-eH4" firstAttribute="width" secondItem="UXL-cK-kjS" secondAttribute="width" multiplier="0.9" id="9iB-1c-t5w"/>
+                                                            <constraint firstItem="cvR-A6-eH4" firstAttribute="width" secondItem="UXL-cK-kjS" secondAttribute="width" multiplier="0.95" id="9iB-1c-t5w"/>
                                                             <constraint firstItem="qw0-zw-FUi" firstAttribute="top" secondItem="cvR-A6-eH4" secondAttribute="bottom" id="HqB-f6-zHz"/>
                                                             <constraint firstItem="cvR-A6-eH4" firstAttribute="centerY" secondItem="UXL-cK-kjS" secondAttribute="centerY" id="aGY-ew-myd"/>
                                                             <constraint firstAttribute="height" constant="150" id="bB2-tP-J1V"/>
