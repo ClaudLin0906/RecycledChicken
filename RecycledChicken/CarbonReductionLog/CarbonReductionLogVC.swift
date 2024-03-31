@@ -33,9 +33,7 @@ class CarbonReductionLogVC: CustomVC {
         }
         return arr
     }()
-    
-    let parties = ["PET", "BATT"]
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "減碳歷程"
@@ -58,12 +56,20 @@ class CarbonReductionLogVC: CustomVC {
         papperCubItemCellView.setType(.papperCub)
         aluminumCanItemCellView.setType(.aluminumCan)
         publicTransportItemCellView.setType(.publicTransport)
+        recycledRingInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        recycledRingInfoView.layer.shadowOpacity = 0.2
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
     }
     
     private func setValueOfDropDown(_ info:RecyceledSortInfo) {
         
+    }
+    
+    @IBAction func goBuenopartners(_ sender:UIButton) {
+        if let url = URL(string: "https://www.buenopartners.com.tw/formula") {
+            UIApplication.shared.open(url)
+        }
     }
     
     private func getRecycleLogData(){

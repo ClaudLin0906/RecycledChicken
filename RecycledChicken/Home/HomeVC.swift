@@ -146,8 +146,8 @@ class HomeVC: CustomRootVC {
     }
     
     private func UIInit(){
-        carbonReductionLogBtn.layer.borderWidth = 1
-        carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
+//        carbonReductionLogBtn.layer.borderWidth = 1
+//        carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         currentIndexSubject
             .sink { [weak self] index in
                 self?.pageControl.currentPage = index

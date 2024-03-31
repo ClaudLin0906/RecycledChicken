@@ -11,6 +11,8 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var progressView:RingProgressSingleView!
     
+    @IBOutlet weak var ringProgressSingleBackgroundView:UIView!
+    
     @IBOutlet weak var carbonReductionLabel:CustomLabel!
     
     @IBOutlet weak var recyclingLabel:CustomLabel!
@@ -34,7 +36,14 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
             carbonReductionLabel.font = carbonReductionLabel.font.withSize(10)
             recyclingLabel.font = recyclingLabel.font.withSize(10)
         }
-        
+        ringProgressSingleBackgroundView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        ringProgressSingleBackgroundView.layer.shadowOpacity = 0.2
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+
     }
     
     func setRecycledRingInfo(_ info:RecyceledSortInfo, _ count:Double, _ total:Double) {
