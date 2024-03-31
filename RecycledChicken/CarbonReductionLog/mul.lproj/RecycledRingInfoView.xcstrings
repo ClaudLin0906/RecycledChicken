@@ -39,7 +39,7 @@
     },
     "b6S-Tx-Mqe.text" : {
       "comment" : "Class = \"UILabel\"; text = \"CO2e\"; ObjectID = \"b6S-Tx-Mqe\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -57,7 +57,7 @@
     },
     "CRN-qK-lTG.text" : {
       "comment" : "Class = \"UILabel\"; text = \"總減碳量\"; ObjectID = \"CRN-qK-lTG\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -69,6 +69,30 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "總減碳量"
+          }
+        }
+      }
+    },
+    "ddg-Sf-3V9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"CO2e\"; ObjectID = \"ddg-Sf-3V9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "CO2e"
+          }
+        }
+      }
+    },
+    "eRa-Eu-TKK.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"eRa-Eu-TKK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0"
           }
         }
       }
@@ -105,6 +129,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "0"
+          }
+        }
+      }
+    },
+    "ykx-V6-6J5.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"總減碳量\"; ObjectID = \"ykx-V6-6J5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "總減碳量"
           }
         }
       }
