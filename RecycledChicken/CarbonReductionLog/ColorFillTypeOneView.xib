@@ -114,6 +114,9 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-y8-sEO" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="116" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="fillRightChicken"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKD-I6-eyS" userLabel="line">
                                     <rect key="frame" x="126.66666666666667" y="0.0" width="1" height="99.666666666666671"/>
@@ -162,4 +165,7 @@
             <point key="canvasLocation" x="-31.297709923664122" y="290.14084507042253"/>
         </view>
     </objects>
+    <resources>
+        <image name="fillRightChicken" width="147" height="136.66667175292969"/>
+    </resources>
 </document>

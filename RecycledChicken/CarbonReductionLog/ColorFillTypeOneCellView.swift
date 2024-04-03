@@ -16,6 +16,8 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeOneCellViewDelegate?
     
+    @IBInspectable var image: UIImage?
+    
     @IBOutlet weak var imageView:UIImageView!
     
     override init(frame: CGRect) {
@@ -34,6 +36,13 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
         addGestureRecognizer(tapBackgroundGesture)
         let tapImageViewGesture = UITapGestureRecognizer(target: self, action: #selector(tapImageViewHandle(_:)))
         imageView.addGestureRecognizer(tapImageViewGesture)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let image = image {
+            imageView.image = image
+        }
     }
     
     @objc private func tapBackgroundHandle(_ sender:UITapGestureRecognizer) {
