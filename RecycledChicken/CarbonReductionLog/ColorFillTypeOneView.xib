@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorFillTypeOneView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="eightCellView" destination="yO4-cd-7qD" id="kIS-7Y-moN"/>
+                <outlet property="fiveCellView" destination="68s-Kt-NYI" id="QYb-2v-7pW"/>
+                <outlet property="fourCellView" destination="YKR-gI-6Fv" id="7lN-SE-kuo"/>
+                <outlet property="nineCellView" destination="NlJ-XY-D09" id="1wM-gf-Omy"/>
+                <outlet property="oneCellView" destination="s4Z-Kb-s3E" id="laC-v2-QAy"/>
+                <outlet property="sevenCellView" destination="Nvh-y8-sEO" id="fN3-J1-ihV"/>
+                <outlet property="sixCellView" destination="CjJ-HC-cc9" id="Y8F-lo-otl"/>
+                <outlet property="threeCellView" destination="u6B-uV-tvn" id="THH-o5-e0z"/>
+                <outlet property="twoCellView" destination="Igp-w6-KZU" id="v8p-Y4-RnA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="398"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Tjs-Od-r8A">
+                    <rect key="frame" x="0.0" y="59" width="393" height="305"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aia-CV-QMi">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="99.666666666666671"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4Z-Kb-s3E" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="116" height="99.666666666666671"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ria-7E-JdM" userLabel="line">
+                                    <rect key="frame" x="126.66666666666667" y="0.0" width="1" height="99.666666666666671"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="ZwJ-IY-VDE"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igp-w6-KZU" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="138.66666666666666" y="0.0" width="115.66666666666666" height="99.666666666666671"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laX-r8-Tnt" userLabel="line">
+                                    <rect key="frame" x="265.33333333333331" y="0.0" width="1" height="99.666666666666671"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="pyK-q2-u4r"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6B-uV-tvn" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="277" y="0.0" width="116" height="99.666666666666671"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="s4Z-Kb-s3E" firstAttribute="width" secondItem="aia-CV-QMi" secondAttribute="width" multiplier="0.3" constant="-2" id="Q7A-Ft-cgN"/>
+                                <constraint firstItem="Igp-w6-KZU" firstAttribute="width" secondItem="s4Z-Kb-s3E" secondAttribute="width" id="gfu-Yh-AjN"/>
+                                <constraint firstItem="u6B-uV-tvn" firstAttribute="width" secondItem="Igp-w6-KZU" secondAttribute="width" id="rpg-BB-wLW"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-Tc-Q6q" userLabel="line">
+                            <rect key="frame" x="0.0" y="100.66666666666666" width="393" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="UmL-8l-Cvr"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bw1-YW-2op">
+                            <rect key="frame" x="0.0" y="102.66666666666666" width="393" height="99.666666666666657"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-gI-6Fv" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="116" height="99.666666666666671"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3f-qj-Dq6" userLabel="line">
+                                    <rect key="frame" x="126.66666666666667" y="0.0" width="1" height="99.666666666666671"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="Aak-9f-e0p"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68s-Kt-NYI" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="138.66666666666666" y="0.0" width="115.66666666666666" height="99.666666666666671"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgU-Ax-Ry6" userLabel="line">
+                                    <rect key="frame" x="265.33333333333331" y="0.0" width="1" height="99.666666666666671"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="7aW-x3-n4e"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjJ-HC-cc9" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="277" y="0.0" width="116" height="99.666666666666671"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="CjJ-HC-cc9" firstAttribute="width" secondItem="68s-Kt-NYI" secondAttribute="width" id="0MR-9o-hhO"/>
+                                <constraint firstItem="68s-Kt-NYI" firstAttribute="width" secondItem="YKR-gI-6Fv" secondAttribute="width" id="OGN-qg-Hbb"/>
+                                <constraint firstItem="YKR-gI-6Fv" firstAttribute="width" secondItem="bw1-YW-2op" secondAttribute="width" multiplier="0.3" constant="-2" id="XWe-cG-rmk"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPT-kk-w50" userLabel="line">
+                            <rect key="frame" x="0.0" y="203.33333333333331" width="393" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="yR8-tI-Ab2"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="72s-Fa-qxK">
+                            <rect key="frame" x="0.0" y="205.33333333333331" width="393" height="99.666666666666686"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-y8-sEO" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="116" height="99.666666666666671"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKD-I6-eyS" userLabel="line">
+                                    <rect key="frame" x="126.66666666666667" y="0.0" width="1" height="99.666666666666671"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="i8L-FV-qjU"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yO4-cd-7qD" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="138.66666666666666" y="0.0" width="115.66666666666666" height="99.666666666666671"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMo-Zz-mgw" userLabel="line">
+                                    <rect key="frame" x="265.33333333333331" y="0.0" width="1" height="99.666666666666671"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="MpR-yH-zrg"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlJ-XY-D09" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="277" y="0.0" width="116" height="99.666666666666671"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="NlJ-XY-D09" firstAttribute="width" secondItem="yO4-cd-7qD" secondAttribute="width" id="4BO-V0-ebM"/>
+                                <constraint firstItem="Nvh-y8-sEO" firstAttribute="width" secondItem="72s-Fa-qxK" secondAttribute="width" multiplier="0.3" constant="-2" id="NVc-NG-7Iy"/>
+                                <constraint firstItem="yO4-cd-7qD" firstAttribute="width" secondItem="Nvh-y8-sEO" secondAttribute="width" id="jOc-mZ-AjZ"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="72s-Fa-qxK" firstAttribute="height" secondItem="bw1-YW-2op" secondAttribute="height" id="CmA-wb-SG8"/>
+                        <constraint firstItem="bw1-YW-2op" firstAttribute="height" secondItem="aia-CV-QMi" secondAttribute="height" id="QTq-3N-JMx"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="aia-CV-QMi" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.3333" constant="-2" id="0cq-fB-LqY"/>
+                <constraint firstItem="Tjs-Od-r8A" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="8Vk-U2-jKJ"/>
+                <constraint firstItem="Tjs-Od-r8A" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="eAn-ul-ZgT"/>
+                <constraint firstItem="Tjs-Od-r8A" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="eU6-yL-Vx2"/>
+                <constraint firstItem="Tjs-Od-r8A" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="hnI-Dc-p4L"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-31.297709923664122" y="290.14084507042253"/>
+        </view>
+    </objects>
+</document>

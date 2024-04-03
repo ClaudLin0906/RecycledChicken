@@ -136,6 +136,10 @@
 		5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975219E2A0BD74300D0B67C /* PointVC.swift */; };
 		597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597E7F132B70D7660018528A /* RecycledItemView.swift */; };
 		597FEDA02B932A3100D03B56 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 597FED9F2B932A3100D03B56 /* Kingfisher */; };
+		5982A9522BBD314B00CB2B08 /* ColorFillTypeOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */; };
+		5982A9542BBD315300CB2B08 /* ColorFillTypeOneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */; };
+		5982A9562BBD319600CB2B08 /* ColorFillTypeOneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */; };
+		5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */; };
 		59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */; };
 		59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF12A63FA2200678BAF /* TaskModel.swift */; };
 		59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF32A6406DA00678BAF /* LotteryModel.swift */; };
@@ -474,6 +478,10 @@
 		597521972A0BD10600D0B67C /* ConnectSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSuccessView.swift; sourceTree = "<group>"; };
 		5975219E2A0BD74300D0B67C /* PointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointVC.swift; sourceTree = "<group>"; };
 		597E7F132B70D7660018528A /* RecycledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledItemView.swift; sourceTree = "<group>"; };
+		5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeOneView.swift; sourceTree = "<group>"; };
+		5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeOneView.xib; sourceTree = "<group>"; };
+		5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeOneCellView.swift; sourceTree = "<group>"; };
+		5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeOneCellView.xib; sourceTree = "<group>"; };
 		59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyModel.swift; sourceTree = "<group>"; };
 		59835DF12A63FA2200678BAF /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		59835DF32A6406DA00678BAF /* LotteryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryModel.swift; sourceTree = "<group>"; };
@@ -1082,6 +1090,10 @@
 				59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */,
 				59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */,
 				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
+				5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */,
+				5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */,
+				5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */,
+				5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1318,6 +1330,7 @@
 				59600F072B9EE5EF009AFA76 /* ADBannerView.xib in Resources */,
 				59600F0B2B9EE9C9009AFA76 /* ForgetPassword.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
+				5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */,
 				59600F172B9EEB1B009AFA76 /* Lottery.storyboard in Resources */,
 				59600EE72B9EE491009AFA76 /* UpdatePasswordSuccessView.xib in Resources */,
 				59600F132B9EEB0F009AFA76 /* BuyLottery.storyboard in Resources */,
@@ -1383,6 +1396,7 @@
 				59600F1B2B9EEB5B009AFA76 /* CommodityVoucher.storyboard in Resources */,
 				59600F8B2B9EF01B009AFA76 /* PointRecord.storyboard in Resources */,
 				59600F272B9EEBD2009AFA76 /* StationList.storyboard in Resources */,
+				5982A9542BBD315300CB2B08 /* ColorFillTypeOneView.xib in Resources */,
 				59600EF72B9EE5B3009AFA76 /* CustomCalenderScrollView.xib in Resources */,
 				59600EBB2B9EE32F009AFA76 /* DeleteMessageAlertView.xib in Resources */,
 				5960E5E12BA2E19F007F4AEF /* UpdateAppAlertView.xib in Resources */,
@@ -1495,6 +1509,7 @@
 				59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */,
 				599EA5AA2B81E1E0007AF30F /* CarbonReductionItemCellView.swift in Sources */,
 				59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */,
+				5982A9562BBD319600CB2B08 /* ColorFillTypeOneCellView.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
 				5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */,
@@ -1616,6 +1631,7 @@
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				599495772A0D0281009F1B2E /* PointRuleVC.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
+				5982A9522BBD314B00CB2B08 /* ColorFillTypeOneView.swift in Sources */,
 				59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */,
 				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
 				5998DD482B8B358C00C99A8C /* IllustratedGuideModel.swift in Sources */,
