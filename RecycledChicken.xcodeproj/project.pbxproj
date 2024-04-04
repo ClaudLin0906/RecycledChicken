@@ -140,6 +140,8 @@
 		5982A9542BBD315300CB2B08 /* ColorFillTypeOneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */; };
 		5982A9562BBD319600CB2B08 /* ColorFillTypeOneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */; };
 		5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */; };
+		5982A95A2BBE749500CB2B08 /* ColorFillTypeTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9592BBE749500CB2B08 /* ColorFillTypeTwoView.swift */; };
+		5982A95C2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A95B2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib */; };
 		59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */; };
 		59835DF22A63FA2300678BAF /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF12A63FA2200678BAF /* TaskModel.swift */; };
 		59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DF32A6406DA00678BAF /* LotteryModel.swift */; };
@@ -482,6 +484,8 @@
 		5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeOneView.xib; sourceTree = "<group>"; };
 		5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeOneCellView.swift; sourceTree = "<group>"; };
 		5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeOneCellView.xib; sourceTree = "<group>"; };
+		5982A9592BBE749500CB2B08 /* ColorFillTypeTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeTwoView.swift; sourceTree = "<group>"; };
+		5982A95B2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeTwoView.xib; sourceTree = "<group>"; };
 		59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyModel.swift; sourceTree = "<group>"; };
 		59835DF12A63FA2200678BAF /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		59835DF32A6406DA00678BAF /* LotteryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryModel.swift; sourceTree = "<group>"; };
@@ -1090,6 +1094,8 @@
 				59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */,
 				59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */,
 				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
+				5982A9592BBE749500CB2B08 /* ColorFillTypeTwoView.swift */,
+				5982A95B2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib */,
 				5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */,
 				5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */,
 				5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */,
@@ -1399,6 +1405,7 @@
 				5982A9542BBD315300CB2B08 /* ColorFillTypeOneView.xib in Resources */,
 				59600EF72B9EE5B3009AFA76 /* CustomCalenderScrollView.xib in Resources */,
 				59600EBB2B9EE32F009AFA76 /* DeleteMessageAlertView.xib in Resources */,
+				5982A95C2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib in Resources */,
 				5960E5E12BA2E19F007F4AEF /* UpdateAppAlertView.xib in Resources */,
 				59600EDF2B9EE457009AFA76 /* ReSendVerificationCodeView.xib in Resources */,
 				59600F2F2B9EECF7009AFA76 /* StoreMap.storyboard in Resources */,
@@ -1517,6 +1524,7 @@
 				593CDE2A2A7F5E13007E1D10 /* DeleteModel.swift in Sources */,
 				59A7957B2A0F78F20031710F /* UpdatePasswordSuccessView.swift in Sources */,
 				59CDA34A2A42DBA100E3F74E /* KeyChainManager.swift in Sources */,
+				5982A95A2BBE749500CB2B08 /* ColorFillTypeTwoView.swift in Sources */,
 				599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */,
 				59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */,
 				59DBA1372B71F521009E5BBD /* RingProgressSingleView.swift in Sources */,
