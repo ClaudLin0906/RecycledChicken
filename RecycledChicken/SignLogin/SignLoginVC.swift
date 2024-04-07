@@ -29,9 +29,9 @@ class SignLoginVC: CustomLoginVC {
     }
     
     private func showUpdateAppAlertView() {
-        let colorFillTypeTwoView = ColorFillTypeTwoView(frame:  UIScreen.main.bounds)
-//        let updateAppAlertView = UpdateAppAlertView(frame: UIScreen.main.bounds)
-        keyWindow?.addSubview(colorFillTypeTwoView)
+//        let colorFillTypeTwoView = ColorFillTypeTwoView(frame:  UIScreen.main.bounds)
+        let updateAppAlertView = UpdateAppAlertView(frame: UIScreen.main.bounds)
+        keyWindow?.addSubview(updateAppAlertView)
     }
 
     private func UIInit(){
