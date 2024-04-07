@@ -29,17 +29,17 @@
                                 </imageView>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1Fm-VB-K2J">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Fm-VB-K2J">
                             <rect key="frame" x="0.0" y="379.66666666666674" width="393" height="379.33333333333326"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UqU-Yp-hDi">
-                                    <rect key="frame" x="0.0" y="0.0" width="131" height="379.33333333333331"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="379.33333333333331"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="m0v-EK-cKD">
-                                    <rect key="frame" x="131" y="0.0" width="131" height="379.33333333333331"/>
+                                    <rect key="frame" x="137.66666666666666" y="0.0" width="117.66666666666666" height="379.33333333333331"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UUu-9P-0EE">
-                                    <rect key="frame" x="262" y="0.0" width="131" height="379.33333333333331"/>
+                                    <rect key="frame" x="275.33333333333331" y="0.0" width="117.66666666666669" height="379.33333333333331"/>
                                 </imageView>
                             </subviews>
                         </stackView>

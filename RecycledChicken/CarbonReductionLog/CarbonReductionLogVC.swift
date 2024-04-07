@@ -85,9 +85,9 @@ class CarbonReductionLogVC: CustomVC {
             colorFillTypeThreeView.frame = frame
             colorFillTypeFourView.frame = frame
             colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
-            colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeOneView)
-            colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeThreeView)
-            colorFillScrollView.subviews.first?.subviews[3].addSubview(colorFillTypeFourView)
+            colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
+            colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
+            colorFillScrollView.subviews.first?.subviews[3].addSubview(colorFillTypeOneView)
         }
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
