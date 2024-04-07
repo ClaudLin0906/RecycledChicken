@@ -21,7 +21,7 @@
     },
     "5uQ-vd-ZBq.text" : {
       "comment" : "Class = \"UILabel\"; text = \"kgCO2e\"; ObjectID = \"5uQ-vd-ZBq\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -57,7 +57,7 @@
     },
     "BRQ-nn-bQE.text" : {
       "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"BRQ-nn-bQE\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -75,7 +75,7 @@
     },
     "FcG-TD-lP9.text" : {
       "comment" : "Class = \"UILabel\"; text = \"/\"; ObjectID = \"FcG-TD-lP9\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -93,7 +93,7 @@
     },
     "izV-dL-Ize.text" : {
       "comment" : "Class = \"UILabel\"; text = \"減碳量\"; ObjectID = \"izV-dL-Ize\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -129,7 +129,7 @@
     },
     "Ltp-Es-FTB.text" : {
       "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"Ltp-Es-FTB\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
