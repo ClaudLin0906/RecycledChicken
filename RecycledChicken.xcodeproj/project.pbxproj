@@ -32,6 +32,8 @@
 		593CDE6C2A83D23E007E1D10 /* private.key in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE6B2A83D23E007E1D10 /* private.key */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
 		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
+		595406B82BC2749B00D214BF /* ColorFillTypeThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */; };
+		595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */; };
 		59600E832B9EE02A009AFA76 /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600E852B9EE02A009AFA76 /* SignLogin.storyboard */; };
 		59600E872B9EE10E009AFA76 /* ConnectCompany.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600E892B9EE10E009AFA76 /* ConnectCompany.storyboard */; };
 		59600E8B2B9EE137009AFA76 /* ConnectSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59600E8D2B9EE137009AFA76 /* ConnectSuccessView.xib */; };
@@ -307,6 +309,8 @@
 		593CDE6B2A83D23E007E1D10 /* private.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.key; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeThreeView.swift; sourceTree = "<group>"; };
+		595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeThreeView.xib; sourceTree = "<group>"; };
 		59600E842B9EE02A009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignLogin.storyboard; sourceTree = "<group>"; };
 		59600E862B9EE02A009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/SignLogin.xcstrings; sourceTree = "<group>"; };
 		59600E882B9EE10E009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConnectCompany.storyboard; sourceTree = "<group>"; };
@@ -1100,6 +1104,8 @@
 				5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */,
 				5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */,
 				5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */,
+				595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */,
+				595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1413,6 +1419,7 @@
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
 				59600EB32B9EE313009AFA76 /* PersonMessage.storyboard in Resources */,
+				595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */,
 				59600E972B9EE22E009AFA76 /* DeleteAccount.storyboard in Resources */,
 				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
 				59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */,
@@ -1640,6 +1647,7 @@
 				599495772A0D0281009F1B2E /* PointRuleVC.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
 				5982A9522BBD314B00CB2B08 /* ColorFillTypeOneView.swift in Sources */,
+				595406B82BC2749B00D214BF /* ColorFillTypeThreeView.swift in Sources */,
 				59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */,
 				5994955C2A0BF455009F1B2E /* CommodityVoucherTableViewCell.swift in Sources */,
 				5998DD482B8B358C00C99A8C /* IllustratedGuideModel.swift in Sources */,
