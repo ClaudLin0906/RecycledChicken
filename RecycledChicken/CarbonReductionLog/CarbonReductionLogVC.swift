@@ -25,7 +25,28 @@ class CarbonReductionLogVC: CustomVC {
     @IBOutlet weak var aluminumCanItemCellView:CarbonReductionItemCellView!
     
     @IBOutlet weak var publicTransportItemCellView:CarbonReductionItemCellView!
+    
+    @IBOutlet weak var colorFillScrollView:UIScrollView!
+    
+    @IBOutlet weak var colorFillTitleLabel:CustomLabel!
+    
+    private var colorFillTypeOneView = ColorFillTypeOneView()
+    
+    private var colorFillTypeTwoView = ColorFillTypeTwoView()
+    
+    private var colorFillTypeThreeView = ColorFillTypeThreeView()
+    
+    private var colorFillTypeFourView = ColorFillTypeFourView()
+    
+    private lazy var colorFillTypeViews = [colorFillTypeTwoView, colorFillTypeOneView, colorFillTypeThreeView, colorFillTypeFourView]
         
+    private var colorFillScroViewIndex = 0
+    {
+        didSet {
+            handeleChangeColorFillScroView()
+        }
+    }
+            
     private var recyceledSortInfos:[RecyceledSortInfo] = {
         var arr:[RecyceledSortInfo] = []
         for i in RecyceledSort.allCases {
@@ -58,6 +79,16 @@ class CarbonReductionLogVC: CustomVC {
         publicTransportItemCellView.setType(.publicTransport)
         recycledRingInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
         recycledRingInfoView.layer.shadowOpacity = 0.2
+        if let frame = colorFillScrollView.subviews.first?.subviews[0].frame {
+            colorFillTypeTwoView.frame = frame
+            colorFillTypeOneView.frame = frame
+            colorFillTypeThreeView.frame = frame
+            colorFillTypeFourView.frame = frame
+            colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
+            colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeOneView)
+            colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeThreeView)
+            colorFillScrollView.subviews.first?.subviews[3].addSubview(colorFillTypeFourView)
+        }
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
     }
@@ -113,6 +144,22 @@ class CarbonReductionLogVC: CustomVC {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "RecycleLog", bundle: Bundle.main).instantiateViewController(identifier: "RecycleLog") as? RecycleLogVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
+    }
+    
+    private func handeleChangeColorFillScroView () {
+        colorFillScrollView.contentOffset = CGPoint(x: Int(colorFillScrollView.frame.width) * colorFillScroViewIndex, y: 0)
+        colorFillTitleLabel.text = "泥滑島修復\(colorFillScroViewIndex + 1)"
+    }
+    
+    @IBAction func scrollViewNext(_ sender:UIButton) {
+        guard let maxCount = colorFillScrollView.subviews.first?.subviews.count, maxCount > 0, colorFillScroViewIndex + 1 < maxCount else { return }
+        let max = maxCount - 1
+        colorFillScroViewIndex += 1
+    }
+    
+    @IBAction func scrollViewLast(_ sender:UIButton) {
+        guard colorFillScroViewIndex > 0 else { return }
+        colorFillScroViewIndex -= 1
     }
 }
 

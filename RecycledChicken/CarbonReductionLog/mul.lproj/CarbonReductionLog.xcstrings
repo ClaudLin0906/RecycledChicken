@@ -2,19 +2,19 @@
   "sourceLanguage" : "zh-Hant-TW",
   "strings" : {
     "2UQ-jW-c2f.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"泥滑島修復\"; ObjectID = \"2UQ-jW-c2f\";",
+      "comment" : "Class = \"UILabel\"; text = \"泥滑島修復1\"; ObjectID = \"2UQ-jW-c2f\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "泥滑島修復"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "泥滑島修復"
+            "value" : "泥滑島修復1"
           }
         }
       }

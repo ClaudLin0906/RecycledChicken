@@ -136,7 +136,7 @@
                                                         <rect key="frame" x="20" y="250" width="273" height="200"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Cv-0j-HoS">
-                                                                <rect key="frame" x="64" y="0.0" width="145" height="30"/>
+                                                                <rect key="frame" x="59" y="0.0" width="155" height="30"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nb5-xS-0Mg">
                                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -147,9 +147,12 @@
                                                                         <color key="tintColor" red="0.85098039215686272" green="0.6705882352941176" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" image="chevron.left" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="scrollViewLast:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TnP-cI-zAx"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="泥滑島修復" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UQ-jW-c2f" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                        <rect key="frame" x="30" y="3" width="85" height="24"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="泥滑島修復1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UQ-jW-c2f" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="30" y="3" width="95" height="24"/>
                                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -163,7 +166,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CK8-sG-K30">
-                                                                        <rect key="frame" x="115" y="0.0" width="30" height="30"/>
+                                                                        <rect key="frame" x="125" y="0.0" width="30" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="30" id="miM-TV-zTK"/>
                                                                             <constraint firstAttribute="height" constant="30" id="uwZ-uG-7aX"/>
@@ -171,13 +174,16 @@
                                                                         <color key="tintColor" red="0.85098039219999999" green="0.6705882353" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" image="chevron.right" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="scrollViewNext:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="X77-jd-kbW"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="HMf-h8-jZM"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlI-Nx-OoX">
+                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlI-Nx-OoX">
                                                                 <rect key="frame" x="10" y="40" width="253" height="150"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiF-58-bYb" userLabel="content">
@@ -196,7 +202,6 @@
                                                                                 <rect key="frame" x="759" y="0.0" width="253" height="150"/>
                                                                             </view>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <constraints>
                                                                             <constraint firstItem="TH7-57-nQP" firstAttribute="top" secondItem="Cga-zk-uSc" secondAttribute="top" id="0bs-Ww-BMF"/>
                                                                             <constraint firstItem="Cga-zk-uSc" firstAttribute="width" secondItem="jEQ-R4-4YO" secondAttribute="width" id="43H-eB-Nw6"/>
@@ -441,6 +446,8 @@
                         <outlet property="aluminumCanItemCellView" destination="8dy-kc-shb" id="eyK-Xy-SrW"/>
                         <outlet property="batteryItemCellView" destination="T2n-lJ-zdh" id="QyL-j3-Q3n"/>
                         <outlet property="bottleItemCellView" destination="V0r-5E-3kV" id="5ab-Y1-eTN"/>
+                        <outlet property="colorFillScrollView" destination="UlI-Nx-OoX" id="5aS-YE-XYs"/>
+                        <outlet property="colorFillTitleLabel" destination="2UQ-jW-c2f" id="0M5-XV-FBb"/>
                         <outlet property="dropDownView" destination="KyE-ZL-0e7" id="Cl9-pi-qC8"/>
                         <outlet property="papperCubItemCellView" destination="sAF-r6-42h" id="ls6-34-mCO"/>
                         <outlet property="publicTransportItemCellView" destination="YoP-vl-iYo" id="kzR-qW-CUw"/>
@@ -476,7 +483,7 @@
             <size key="intrinsicContentSize" width="68" height="24"/>
         </designable>
         <designable name="2UQ-jW-c2f">
-            <size key="intrinsicContentSize" width="85" height="24"/>
+            <size key="intrinsicContentSize" width="95" height="24"/>
         </designable>
         <designable name="FcG-TD-lP9">
             <size key="intrinsicContentSize" width="5" height="20.333333333333332"/>
