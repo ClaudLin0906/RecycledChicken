@@ -458,11 +458,11 @@
         <designable name="2UQ-jW-c2f">
             <size key="intrinsicContentSize" width="95" height="24"/>
         </designable>
+        <designable name="7bh-BB-ISm">
+            <size key="intrinsicContentSize" width="52" height="20.333333333333332"/>
+        </designable>
         <designable name="KwH-fx-ljc">
             <size key="intrinsicContentSize" width="62" height="20.333333333333332"/>
-        </designable>
-        <designable name="gx6-Be-wMx">
-            <size key="intrinsicContentSize" width="17.333333333333332" height="14"/>
         </designable>
         <designable name="iZZ-lD-1hs">
             <size key="intrinsicContentSize" width="30" height="32"/>

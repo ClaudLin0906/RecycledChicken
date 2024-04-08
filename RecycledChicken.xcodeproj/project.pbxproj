@@ -140,6 +140,8 @@
 		5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975219E2A0BD74300D0B67C /* PointVC.swift */; };
 		597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597E7F132B70D7660018528A /* RecycledItemView.swift */; };
 		597FEDA02B932A3100D03B56 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 597FED9F2B932A3100D03B56 /* Kingfisher */; };
+		59825E552BC3CC2900943D05 /* ColorFillTypeFourCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59825E542BC3CC2900943D05 /* ColorFillTypeFourCellView.swift */; };
+		59825E572BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59825E562BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib */; };
 		5982A9522BBD314B00CB2B08 /* ColorFillTypeOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */; };
 		5982A9542BBD315300CB2B08 /* ColorFillTypeOneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */; };
 		5982A9562BBD319600CB2B08 /* ColorFillTypeOneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */; };
@@ -488,6 +490,8 @@
 		597521972A0BD10600D0B67C /* ConnectSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSuccessView.swift; sourceTree = "<group>"; };
 		5975219E2A0BD74300D0B67C /* PointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointVC.swift; sourceTree = "<group>"; };
 		597E7F132B70D7660018528A /* RecycledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledItemView.swift; sourceTree = "<group>"; };
+		59825E542BC3CC2900943D05 /* ColorFillTypeFourCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeFourCellView.swift; sourceTree = "<group>"; };
+		59825E562BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeFourCellView.xib; sourceTree = "<group>"; };
 		5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeOneView.swift; sourceTree = "<group>"; };
 		5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeOneView.xib; sourceTree = "<group>"; };
 		5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeOneCellView.swift; sourceTree = "<group>"; };
@@ -1112,6 +1116,8 @@
 				595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */,
 				595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */,
 				595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */,
+				59825E542BC3CC2900943D05 /* ColorFillTypeFourCellView.swift */,
+				59825E562BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1429,6 +1435,7 @@
 				595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */,
 				59600E972B9EE22E009AFA76 /* DeleteAccount.storyboard in Resources */,
 				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
+				59825E572BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib in Resources */,
 				59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */,
 				59600EE32B9EE473009AFA76 /* ConfirmPassword.storyboard in Resources */,
 				59600F732B9EEFB8009AFA76 /* CompleteTaskAlertView.xib in Resources */,
@@ -1569,6 +1576,7 @@
 				59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */,
 				5985D6BE2B6A1F7A00DE6EBA /* ADBannerView.swift in Sources */,
 				5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */,
+				59825E552BC3CC2900943D05 /* ColorFillTypeFourCellView.swift in Sources */,
 				59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */,
 				59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */,
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,

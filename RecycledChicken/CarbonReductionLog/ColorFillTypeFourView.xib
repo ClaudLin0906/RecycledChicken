@@ -18,17 +18,9 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="res-vQ-RIG">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="1sH-J4-3kg">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHi-7m-1vZ" customClass="ColorFillTypeFourCellView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="379.66666666666669"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="8LH-fy-bbp">
-                                    <rect key="frame" x="0.0" y="0.0" width="147" height="379.66666666666669"/>
-                                </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillLeftChicken" translatesAutoresizingMaskIntoConstraints="NO" id="d6c-1c-HAU">
-                                    <rect key="frame" x="245" y="0.0" width="148" height="379.66666666666669"/>
-                                </imageView>
-                            </subviews>
-                        </stackView>
+                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Fm-VB-K2J">
                             <rect key="frame" x="0.0" y="379.66666666666674" width="393" height="379.33333333333326"/>
                             <subviews>
@@ -59,7 +51,6 @@
         </view>
     </objects>
     <resources>
-        <image name="fillLeftChicken" width="148" height="138"/>
         <image name="fillRightChicken" width="147" height="136.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
