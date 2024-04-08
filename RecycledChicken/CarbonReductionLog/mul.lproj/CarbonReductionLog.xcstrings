@@ -37,9 +37,21 @@
         }
       }
     },
+    "7bh-BB-ISm.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"減碳量\"; ObjectID = \"7bh-BB-ISm\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "減碳量"
+          }
+        }
+      }
+    },
     "21v-Px-0q5.text" : {
       "comment" : "Class = \"UILabel\"; text = \"修復資源\"; ObjectID = \"21v-Px-0q5\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -91,6 +103,18 @@
         }
       }
     },
+    "gx6-Be-wMx.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"00\"; ObjectID = \"gx6-Be-wMx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "00"
+          }
+        }
+      }
+    },
     "izV-dL-Ize.text" : {
       "comment" : "Class = \"UILabel\"; text = \"減碳量\"; ObjectID = \"izV-dL-Ize\";",
       "extractionState" : "stale",
@@ -123,6 +147,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "回收紀錄"
+          }
+        }
+      }
+    },
+    "KwH-fx-ljc.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"kgCO2e\"; ObjectID = \"KwH-fx-ljc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "kgCO2e"
           }
         }
       }
