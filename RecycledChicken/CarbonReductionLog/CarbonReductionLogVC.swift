@@ -46,6 +46,8 @@ class CarbonReductionLogVC: CustomVC {
             handeleChangeColorFillScroView()
         }
     }
+    
+    private var changeColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
             
     private var recyceledSortInfos:[RecyceledSortInfo] = {
         var arr:[RecyceledSortInfo] = []
@@ -84,6 +86,7 @@ class CarbonReductionLogVC: CustomVC {
             colorFillTypeOneView.frame = frame
             colorFillTypeThreeView.frame = frame
             colorFillTypeFourView.frame = frame
+            colorFillTypeOneView.delegate = self
             colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
             colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
             colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
@@ -153,7 +156,6 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBAction func scrollViewNext(_ sender:UIButton) {
         guard let maxCount = colorFillScrollView.subviews.first?.subviews.count, maxCount > 0, colorFillScroViewIndex + 1 < maxCount else { return }
-        let max = maxCount - 1
         colorFillScroViewIndex += 1
     }
     
@@ -163,3 +165,15 @@ class CarbonReductionLogVC: CustomVC {
     }
 }
 
+extension CarbonReductionLogVC:ColorFillTypeOneViewDelegate {
+    
+    func tapImageView(_ svgBackgroundView: UIView, _ imageSVGName: String) {
+        svgBackgroundView.subviews.forEach({$0.removeFromSuperview()})
+        addSVGImageView(svgBackgroundView, fillColor: changeColor, svgImageName: imageSVGName)
+    }
+
+    func tapView(_ v: UIView) {
+        v.backgroundColor = changeColor
+    }
+    
+}

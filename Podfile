@@ -14,4 +14,5 @@ target 'RecycledChicken' do
   pod 'MKRingProgressView'
   pod 'Alamofire'
   pod 'SwiftGifOrigin', '~> 1.7.0'
+  pod 'SwiftSVG', '~> 2.0'
 end

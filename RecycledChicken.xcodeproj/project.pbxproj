@@ -11,6 +11,7 @@
 		590251082B68E3020002E76C /* CombineHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 590251072B68E3020002E76C /* CombineHelper */; };
 		5902510B2B68E31F0002E76C /* CombineDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 5902510A2B68E31F0002E76C /* CombineDataSources */; };
 		590485F12B9AF67E008B9AFD /* SpecialTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590485F02B9AF67E008B9AFD /* SpecialTaskView.swift */; };
+		590CAFBD2BC3E55D00C15B6C /* fillRightChicken.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFBC2BC3E55D00C15B6C /* fillRightChicken.svg */; };
 		5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C57D2A04086400FAB49D /* AppDelegate.swift */; };
 		5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C57F2A04086400FAB49D /* SceneDelegate.swift */; };
 		5926C5822A04086400FAB49D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5812A04086400FAB49D /* ViewController.swift */; };
@@ -290,6 +291,7 @@
 		590486092B9EB56B008B9AFD /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Main.strings"; sourceTree = "<group>"; };
 		5904860B2B9EB56F008B9AFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		590649EB2A151D3F008C778A /* RecycledChicken.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycledChicken.entitlements; sourceTree = "<group>"; };
+		590CAFBC2BC3E55D00C15B6C /* fillRightChicken.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillRightChicken.svg; sourceTree = "<group>"; };
 		5926C57A2A04086400FAB49D /* RecycledChicken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycledChicken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5926C57D2A04086400FAB49D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5926C57F2A04086400FAB49D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -733,6 +735,7 @@
 				59997A4C2A09181D00E9FD7F /* CustomVC.swift */,
 				59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */,
 				5926C5812A04086400FAB49D /* ViewController.swift */,
+				590CAFBC2BC3E55D00C15B6C /* fillRightChicken.svg */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
@@ -1417,6 +1420,7 @@
 				593CDE6C2A83D23E007E1D10 /* private.key in Resources */,
 				59600E872B9EE10E009AFA76 /* ConnectCompany.storyboard in Resources */,
 				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
+				590CAFBD2BC3E55D00C15B6C /* fillRightChicken.svg in Resources */,
 				59600F8F2B9EF030009AFA76 /* LanguageSetting.storyboard in Resources */,
 				59600F1B2B9EEB5B009AFA76 /* CommodityVoucher.storyboard in Resources */,
 				59600F8B2B9EF01B009AFA76 /* PointRecord.storyboard in Resources */,

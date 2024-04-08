@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ColorFillTypeOneCellViewDelegate {
-    func tapImageViewHandle(_ imageView:UIImageView)
+    func tapImageViewHandle(_ svgBackgroundView:UIView, _ imageSVGName:String)
     func tapBackgroundHandle(_ backgroundView:UIView)
 }
 
@@ -16,9 +16,10 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeOneCellViewDelegate?
     
-    @IBInspectable var image: UIImage?
+    @IBInspectable var imageSVGName:String = ""
     
-    @IBOutlet weak var imageView:UIImageView!
+    @IBOutlet weak var svgBackgroundView:UIView!
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,13 +36,13 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
         let tapBackgroundGesture = UITapGestureRecognizer(target: self, action: #selector(tapBackgroundHandle(_:)))
         addGestureRecognizer(tapBackgroundGesture)
         let tapImageViewGesture = UITapGestureRecognizer(target: self, action: #selector(tapImageViewHandle(_:)))
-        imageView.addGestureRecognizer(tapImageViewGesture)
+        svgBackgroundView.addGestureRecognizer(tapImageViewGesture)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        if let image = image {
-            imageView.image = image
+        if imageSVGName != "" {
+            addSVGImageView(svgBackgroundView, svgImageName: imageSVGName)
         }
     }
     
@@ -50,7 +51,7 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     }
     
     @objc private func tapImageViewHandle(_ sender:UITapGestureRecognizer) {
-        delegate?.tapImageViewHandle(imageView)
+        delegate?.tapImageViewHandle(svgBackgroundView, imageSVGName)
     }
 
 }

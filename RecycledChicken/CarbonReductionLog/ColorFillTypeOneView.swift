@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol ColorFillTypeOneViewDelegate {
+    func tapImageView(_ svgBackgroundView:UIView, _ imageSVGName:String)
+    func tapView(_ v:UIView)
+}
+
 class ColorFillTypeOneView: UIView, NibOwnerLoadable {
+
+    
+    var delegate:ColorFillTypeOneViewDelegate?
     
     @IBOutlet weak var oneCellView:ColorFillTypeOneCellView!
     
@@ -39,5 +47,26 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+        oneCellView.delegate = self
+        twoCellView.delegate = self
+        threeCellView.delegate = self
+        fourCellView.delegate = self
+        fiveCellView.delegate = self
+        sixCellView.delegate = self
+        sevenCellView.delegate = self
+        eightCellView.delegate = self
+        nineCellView.delegate = self
     }
+}
+
+extension ColorFillTypeOneView:ColorFillTypeOneCellViewDelegate {
+    
+    func tapImageViewHandle(_ svgBackgroundView: UIView, _ imageSVGName: String) {
+        delegate?.tapImageView(svgBackgroundView, imageSVGName)
+    }
+    
+    func tapBackgroundHandle(_ backgroundView: UIView) {
+        delegate?.tapView(backgroundView)
+    }
+    
 }

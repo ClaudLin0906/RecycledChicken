@@ -8,6 +8,14 @@
 import UIKit
 
 class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var minChickenImageView:UIImageView!
+    
+    @IBOutlet weak var smallChickenImageView:UIImageView!
+    
+    @IBOutlet weak var medChickenImageView:UIImageView!
+    
+    @IBOutlet weak var maxChickenImageView:UIImageView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)

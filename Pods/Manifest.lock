@@ -10,6 +10,7 @@ PODS:
   - M13Checkbox (3.4.0)
   - MKRingProgressView (2.3.0)
   - SwiftGifOrigin (1.7.0)
+  - SwiftSVG (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - M13Checkbox
   - MKRingProgressView
   - SwiftGifOrigin (~> 1.7.0)
+  - SwiftSVG (~> 2.0)
 
 SPEC REPOS:
   trunk:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - M13Checkbox
     - MKRingProgressView
     - SwiftGifOrigin
+    - SwiftSVG
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
@@ -38,7 +41,8 @@ SPEC CHECKSUMS:
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   MKRingProgressView: f534209b9a1edc0beb2ea613e6b953ea2195b565
   SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+  SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
 
-PODFILE CHECKSUM: 178e1b591d8030a8b532469f9412e7fe08d343ff
+PODFILE CHECKSUM: 4b45fae0593338eca629b687de28f7bf468bccf9
 
 COCOAPODS: 1.15.2
