@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,80 +14,105 @@
             <rect key="frame" x="0.0" y="0.0" width="1037" height="425"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bX8-Zj-mIS" userLabel="fillBigRightChickenView">
-                    <rect key="frame" x="398" y="148" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DlU-Sy-twN" userLabel="bigFillRightChickenView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="150" y="246" width="867" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="JbU-JB-NDd"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillRightChicken"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QI3-ls-QIw" userLabel="fillMediumRightChickenView">
-                    <rect key="frame" x="398" y="148" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qay-Uo-g6N" userLabel="mediumFillRightChickenView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="80" y="281" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="cLi-1N-3dX"/>
+                        <constraint firstAttribute="width" constant="70" id="gIV-Jg-gmZ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillRightChicken"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mpr-q2-TKJ" userLabel="fillSmallRightChickenView">
-                    <rect key="frame" x="398" y="148" width="240" height="128"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1E-SZ-rWV" userLabel="smallFillRightChickenView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="40" y="331" width="40" height="40"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillRightChicken"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="BL8-cY-iQz">
                     <rect key="frame" x="0.0" y="311" width="1037" height="80"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qli-Kw-VyE" userLabel="bottomFillRightChickenView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qli-Kw-VyE" userLabel="bottomFillRightChickenView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="40" width="40" height="40"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="GKG-vK-1Ec"/>
                                 <constraint firstAttribute="height" constant="40" id="R3d-hH-UFH"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillRightChicken"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ij-gx-JoU" userLabel="fillColorBatteryView">
-                            <rect key="frame" x="186.66666666666666" y="50" width="30" height="30"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ij-gx-JoU" userLabel="fillColorBatteryView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="236.66666666666666" y="40" width="29.999999999999972" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="Ou5-IU-moh"/>
-                                <constraint firstAttribute="height" constant="30" id="pGk-oS-Zqc"/>
+                                <constraint firstAttribute="height" constant="40" id="pGk-oS-Zqc"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillColorBattery"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrb-A1-dMa" userLabel="fillColorPaperCupView">
-                            <rect key="frame" x="363.66666666666669" y="0.0" width="240.00000000000006" height="80"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrb-A1-dMa" userLabel="fillColorPaperCupView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="463.66666666666669" y="40" width="40" height="40"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillColorPaperCup"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-mC-A9u" userLabel="fillColoraluminumCanView">
-                            <rect key="frame" x="750.33333333333337" y="20" width="60" height="60"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-mC-A9u" userLabel="fillColoraluminumCanView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="700.33333333333337" y="30" width="60" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="K9A-9m-WUM"/>
+                                <constraint firstAttribute="height" constant="50" id="K9A-9m-WUM"/>
                                 <constraint firstAttribute="width" constant="60" id="M31-ef-ic4"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillColoraluminumCan"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0df-j1-Wo4" userLabel="fillColorBigPETView">
-                            <rect key="frame" x="957" y="0.0" width="80" height="80"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0df-j1-Wo4" userLabel="fillColorBigPETView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="957" y="20" width="80" height="60"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="80" id="fn2-hh-88U"/>
+                                <constraint firstAttribute="height" constant="60" id="fn2-hh-88U"/>
                                 <constraint firstAttribute="width" constant="80" id="vLY-1v-sl2"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillColorBigPET"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="vrb-A1-dMa" firstAttribute="width" secondItem="Qli-Kw-VyE" secondAttribute="width" id="4nT-l1-xHo"/>
                         <constraint firstAttribute="height" constant="80" id="FOG-7c-DHn"/>
+                        <constraint firstItem="vrb-A1-dMa" firstAttribute="height" secondItem="Qli-Kw-VyE" secondAttribute="height" id="Fzi-SJ-Tml"/>
                     </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="mpr-q2-TKJ" firstAttribute="height" secondItem="Qli-Kw-VyE" secondAttribute="height" id="Mci-FD-U8O"/>
-                <constraint firstItem="BL8-cY-iQz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="P8I-9n-GBF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DlU-Sy-twN" secondAttribute="trailing" constant="20" id="44f-cp-aLQ"/>
+                <constraint firstItem="Qay-Uo-g6N" firstAttribute="trailing" secondItem="DlU-Sy-twN" secondAttribute="leading" id="ALW-l1-n6q"/>
+                <constraint firstItem="Qay-Uo-g6N" firstAttribute="leading" secondItem="c1E-SZ-rWV" secondAttribute="trailing" id="AnZ-Zl-k8C"/>
+                <constraint firstItem="c1E-SZ-rWV" firstAttribute="leading" secondItem="Qli-Kw-VyE" secondAttribute="trailing" id="BsT-rN-Rc9"/>
+                <constraint firstItem="Qay-Uo-g6N" firstAttribute="bottom" secondItem="c1E-SZ-rWV" secondAttribute="centerY" id="P4r-MU-99y"/>
+                <constraint firstItem="BL8-cY-iQz" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Pjw-iM-iOp"/>
+                <constraint firstItem="c1E-SZ-rWV" firstAttribute="width" secondItem="Qli-Kw-VyE" secondAttribute="width" id="Qhw-Fg-8EA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="BL8-cY-iQz" secondAttribute="bottom" id="QxS-0w-Z0A"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BL8-cY-iQz" secondAttribute="trailing" id="ef3-OE-FLe"/>
-                <constraint firstItem="mpr-q2-TKJ" firstAttribute="width" secondItem="Qli-Kw-VyE" secondAttribute="width" id="sQc-KH-ebz"/>
+                <constraint firstItem="c1E-SZ-rWV" firstAttribute="height" secondItem="Qli-Kw-VyE" secondAttribute="height" id="kJc-Z6-1WI"/>
+                <constraint firstItem="c1E-SZ-rWV" firstAttribute="bottom" secondItem="vrb-A1-dMa" secondAttribute="centerY" id="mBY-QH-wlI"/>
+                <constraint firstItem="DlU-Sy-twN" firstAttribute="bottom" secondItem="Qay-Uo-g6N" secondAttribute="centerY" id="qAF-eo-24x"/>
+                <constraint firstItem="BL8-cY-iQz" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="uiv-x6-j2v"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="112.21374045801527" y="146.12676056338029"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

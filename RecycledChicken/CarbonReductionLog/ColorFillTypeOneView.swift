@@ -14,7 +14,6 @@ protocol ColorFillTypeOneViewDelegate {
 
 class ColorFillTypeOneView: UIView, NibOwnerLoadable {
 
-    
     var delegate:ColorFillTypeOneViewDelegate?
     
     @IBOutlet weak var oneCellView:UIView!

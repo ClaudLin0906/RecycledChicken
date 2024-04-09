@@ -14,6 +14,10 @@
 		590CAFBD2BC3E55D00C15B6C /* fillRightChicken.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFBC2BC3E55D00C15B6C /* fillRightChicken.svg */; };
 		590CAFBF2BC4DD3C00C15B6C /* SVGImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CAFBE2BC4DD3C00C15B6C /* SVGImageView.swift */; };
 		590CAFC12BC4DD5A00C15B6C /* SVGImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFC02BC4DD5A00C15B6C /* SVGImageView.xib */; };
+		590CAFCD2BC4FA0000C15B6C /* fillColorBattery.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFCC2BC4FA0000C15B6C /* fillColorBattery.svg */; };
+		590CAFD12BC4FA0900C15B6C /* fillColoraluminumCan.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFCE2BC4FA0900C15B6C /* fillColoraluminumCan.svg */; };
+		590CAFD22BC4FA0900C15B6C /* fillColorBigPET.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFCF2BC4FA0900C15B6C /* fillColorBigPET.svg */; };
+		590CAFD32BC4FA0900C15B6C /* fillColorPaperCup.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFD02BC4FA0900C15B6C /* fillColorPaperCup.svg */; };
 		5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C57D2A04086400FAB49D /* AppDelegate.swift */; };
 		5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C57F2A04086400FAB49D /* SceneDelegate.swift */; };
 		5926C5822A04086400FAB49D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5812A04086400FAB49D /* ViewController.swift */; };
@@ -294,6 +298,10 @@
 		590CAFBC2BC3E55D00C15B6C /* fillRightChicken.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillRightChicken.svg; sourceTree = "<group>"; };
 		590CAFBE2BC4DD3C00C15B6C /* SVGImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImageView.swift; sourceTree = "<group>"; };
 		590CAFC02BC4DD5A00C15B6C /* SVGImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SVGImageView.xib; sourceTree = "<group>"; };
+		590CAFCC2BC4FA0000C15B6C /* fillColorBattery.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillColorBattery.svg; sourceTree = "<group>"; };
+		590CAFCE2BC4FA0900C15B6C /* fillColoraluminumCan.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillColoraluminumCan.svg; sourceTree = "<group>"; };
+		590CAFCF2BC4FA0900C15B6C /* fillColorBigPET.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillColorBigPET.svg; sourceTree = "<group>"; };
+		590CAFD02BC4FA0900C15B6C /* fillColorPaperCup.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillColorPaperCup.svg; sourceTree = "<group>"; };
 		5926C57A2A04086400FAB49D /* RecycledChicken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycledChicken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5926C57D2A04086400FAB49D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5926C57F2A04086400FAB49D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -658,6 +666,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		590CAFCB2BC4F9DC00C15B6C /* SVG */ = {
+			isa = PBXGroup;
+			children = (
+				590CAFCE2BC4FA0900C15B6C /* fillColoraluminumCan.svg */,
+				590CAFCF2BC4FA0900C15B6C /* fillColorBigPET.svg */,
+				590CAFD02BC4FA0900C15B6C /* fillColorPaperCup.svg */,
+				590CAFCC2BC4FA0000C15B6C /* fillColorBattery.svg */,
+				590CAFBC2BC3E55D00C15B6C /* fillRightChicken.svg */,
+			);
+			path = SVG;
+			sourceTree = "<group>";
+		};
 		5926C5712A04086400FAB49D = {
 			isa = PBXGroup;
 			children = (
@@ -735,7 +755,7 @@
 				59997A4C2A09181D00E9FD7F /* CustomVC.swift */,
 				59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */,
 				5926C5812A04086400FAB49D /* ViewController.swift */,
-				590CAFBC2BC3E55D00C15B6C /* fillRightChicken.svg */,
+				590CAFCB2BC4F9DC00C15B6C /* SVG */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
@@ -1369,6 +1389,7 @@
 				59600EBF2B9EE34C009AFA76 /* Profile.storyboard in Resources */,
 				59600F4F2B9EEDF4009AFA76 /* IllustratedGuide.storyboard in Resources */,
 				59600E932B9EE1EE009AFA76 /* Login.storyboard in Resources */,
+				590CAFD22BC4FA0900C15B6C /* fillColorBigPET.svg in Resources */,
 				59600F7B2B9EEFD3009AFA76 /* CompeleteSignUpView.xib in Resources */,
 				59600F6F2B9EEF9C009AFA76 /* SpendPointAlertView.xib in Resources */,
 				59600F6B2B9EEF84009AFA76 /* SpendPointCompleteAlertView.xib in Resources */,
@@ -1386,6 +1407,7 @@
 				59600F332B9EED12009AFA76 /* IconView.xib in Resources */,
 				59600EFF2B9EE5D1009AFA76 /* CustomCalenderViewCell.xib in Resources */,
 				59600F232B9EEBC7009AFA76 /* BuyCommodity.storyboard in Resources */,
+				590CAFD32BC4FA0900C15B6C /* fillColorPaperCup.svg in Resources */,
 				59600F0F2B9EE9E5009AFA76 /* Point.storyboard in Resources */,
 				5985D6C42B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib in Resources */,
 				5960E5C02BA2D6BC007F4AEF /* DeleteMessageContentAlertView.xib in Resources */,
@@ -1410,6 +1432,7 @@
 				59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */,
 				59600EB72B9EE31F009AFA76 /* DeleteAllMessageAlertView.xib in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
+				590CAFD12BC4FA0900C15B6C /* fillColoraluminumCan.svg in Resources */,
 				59600EAB2B9EE2E8009AFA76 /* LogOutView.xib in Resources */,
 				59600F632B9EEED8009AFA76 /* SearchView.xib in Resources */,
 				59600F4B2B9EEDE4009AFA76 /* ProductDescription.storyboard in Resources */,
@@ -1435,6 +1458,7 @@
 				59600E9B2B9EE242009AFA76 /* DeleteAccountAlert.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
+				590CAFCD2BC4FA0000C15B6C /* fillColorBattery.svg in Resources */,
 				59600EB32B9EE313009AFA76 /* PersonMessage.storyboard in Resources */,
 				595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */,
 				59600E972B9EE22E009AFA76 /* DeleteAccount.storyboard in Resources */,
