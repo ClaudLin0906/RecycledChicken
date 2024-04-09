@@ -17,23 +17,25 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeOneViewDelegate?
     
-    @IBOutlet weak var oneCellView:SVGImageView!
+    @IBOutlet weak var oneCellView:UIView!
     
-    @IBOutlet weak var twoCellView:SVGImageView!
+    @IBOutlet weak var twoCellView:UIView!
     
-    @IBOutlet weak var threeCellView:SVGImageView!
+    @IBOutlet weak var threeCellView:UIView!
     
-    @IBOutlet weak var fourCellView:SVGImageView!
+    @IBOutlet weak var fourCellView:UIView!
     
-    @IBOutlet weak var fiveCellView:SVGImageView!
+    @IBOutlet weak var fiveCellView:UIView!
     
-    @IBOutlet weak var sixCellView:SVGImageView!
+    @IBOutlet weak var sixCellView:UIView!
     
     @IBOutlet weak var sevenCellView:SVGImageView!
     
-    @IBOutlet weak var eightCellView:SVGImageView!
+    @IBOutlet weak var eightCellView:UIView!
     
-    @IBOutlet weak var nineCellView:SVGImageView!
+    @IBOutlet weak var nineCellView:UIView!
+    
+    private lazy var cellViews:[UIView] = [oneCellView, twoCellView, threeCellView, fourCellView, fiveCellView, sixCellView, eightCellView, nineCellView]
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,21 +47,27 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
         customInit()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     private func customInit(){
         loadNibContent()
-        oneCellView.delegate = self
-        twoCellView.delegate = self
-        threeCellView.delegate = self
-        fourCellView.delegate = self
-        fiveCellView.delegate = self
-        sixCellView.delegate = self
         sevenCellView.delegate = self
-        eightCellView.delegate = self
-        nineCellView.delegate = self
+        cellViews.forEach({addBtn($0)})
+    }
+    
+    private func addBtn(_ targetView:UIView) {
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(btnOnClick(_:)), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        targetView.addSubview(btn)
+        btn.centerXAnchor.constraint(equalTo: targetView.centerXAnchor).isActive = true
+        btn.centerYAnchor.constraint(equalTo: targetView.centerYAnchor).isActive = true
+        btn.widthAnchor.constraint(equalTo: targetView.widthAnchor).isActive = true
+        btn.heightAnchor.constraint(equalTo: targetView.heightAnchor).isActive = true
+    }
+    
+    @objc private func btnOnClick(_ sender:UIButton) {
+        if let targetView = cellViews.first(where: {sender.superview == $0}) {
+            delegate?.tapView(targetView)
+        }
     }
 }
 

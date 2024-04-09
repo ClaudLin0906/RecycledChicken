@@ -56,8 +56,6 @@ class SVGImageView: UIView, NibOwnerLoadable {
     func addSVG() {
         if imageSVGName != "" {
             addSVGImageView(svgBackgroundView, svgImageName: imageSVGName)
-        }else{
-            
         }
     }
     
