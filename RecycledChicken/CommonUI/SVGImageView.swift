@@ -55,7 +55,9 @@ class SVGImageView: UIView, NibOwnerLoadable {
     
     func addSVG() {
         if imageSVGName != "" {
-            addSVGImageView(svgBackgroundView, svgImageName: imageSVGName)
+            print("svgBackgroundView \(svgBackgroundView.frame.size)")
+            let size = self.frame.size.width / 2
+            addSVGImageView(svgBackgroundView, size: size, svgImageName: imageSVGName)
         }
     }
     

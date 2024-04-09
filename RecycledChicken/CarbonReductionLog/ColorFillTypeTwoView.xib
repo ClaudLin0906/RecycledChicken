@@ -8,7 +8,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorFillTypeTwoView" customModule="RecycledChicken" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorFillTypeTwoView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="bigFillRightChickenView" destination="DlU-Sy-twN" id="Awn-ZT-gl8"/>
+                <outlet property="bottomFillRightChickenView" destination="Qli-Kw-VyE" id="I1D-uk-iai"/>
+                <outlet property="fillColorBatteryView" destination="1Ij-gx-JoU" id="tzd-rk-4Hd"/>
+                <outlet property="fillColorBigPETView" destination="0df-j1-Wo4" id="BGg-H7-CAC"/>
+                <outlet property="fillColorPaperCupView" destination="vrb-A1-dMa" id="mWs-oe-f9o"/>
+                <outlet property="fillColoraluminumCanView" destination="pLe-mC-A9u" id="oLp-qQ-Dha"/>
+                <outlet property="mediumFillRightChickenView" destination="Qay-Uo-g6N" id="Xhg-l8-wJi"/>
+                <outlet property="smallFillRightChickenView" destination="c1E-SZ-rWV" id="5kP-sM-00I"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="1037" height="425"/>

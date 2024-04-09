@@ -87,6 +87,7 @@ class CarbonReductionLogVC: CustomVC {
             colorFillTypeThreeView.frame = frame
             colorFillTypeFourView.frame = frame
             colorFillTypeOneView.delegate = self
+            colorFillTypeTwoView.delegate = self
             colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
             colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
             colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
@@ -165,12 +166,13 @@ class CarbonReductionLogVC: CustomVC {
     }
 }
 
-extension CarbonReductionLogVC:ColorFillTypeOneViewDelegate {
+extension CarbonReductionLogVC:ColorFillTypeOneViewDelegate, ColorFillTypeTwoViewDelegate {
     
     func tapImageView(_ svgBackgroundView: UIView, _ imageSVGName: String) {
         guard svgBackgroundView.subviews.count > 0 else { return }
         svgBackgroundView.subviews.forEach({$0.removeFromSuperview()})
-        addSVGImageView(svgBackgroundView, fillColor: changeColor, svgImageName: imageSVGName)
+        let size = svgBackgroundView.frame.size.width
+        addSVGImageView(svgBackgroundView, size: size, fillColor: changeColor, svgImageName: imageSVGName)
     }
 
     func tapView(_ v: UIView) {
