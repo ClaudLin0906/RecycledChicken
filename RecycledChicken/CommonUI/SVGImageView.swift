@@ -1,26 +1,35 @@
 //
-//  ColorFillTypeOneCellView.swift
+//  SVGImageView.swift
 //  RecycledChicken
 //
-//  Created by Claud on 2024/4/3.
+//  Created by Claud on 2024/4/9.
 //
 
 import UIKit
 
-protocol ColorFillTypeOneCellViewDelegate {
+protocol SVGImageViewDelegate {
     func tapImageViewHandle(_ svgBackgroundView:UIView, _ imageSVGName:String)
     func tapBackgroundHandle(_ backgroundView:UIView)
 }
 
-class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
+class SVGImageView: UIView, NibOwnerLoadable {
     
-    var delegate:ColorFillTypeOneCellViewDelegate?
+    var delegate:SVGImageViewDelegate?
     
     @IBInspectable var imageSVGName:String = ""
+    {
+        willSet {
+            if newValue != "" {
+                svgBackgroundView.isHidden = false
+            }
+            if newValue == "" {
+                svgBackgroundView.isHidden = true
+            }
+        }
+    }
     
     @IBOutlet weak var svgBackgroundView:UIView!
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -39,9 +48,16 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
         svgBackgroundView.addGestureRecognizer(tapImageViewGesture)
     }
     
-    func addSVG() { 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addSVG()
+    }
+    
+    func addSVG() {
         if imageSVGName != "" {
             addSVGImageView(svgBackgroundView, svgImageName: imageSVGName)
+        }else{
+            
         }
     }
     

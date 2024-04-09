@@ -17,23 +17,23 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeOneViewDelegate?
     
-    @IBOutlet weak var oneCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var oneCellView:SVGImageView!
     
-    @IBOutlet weak var twoCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var twoCellView:SVGImageView!
     
-    @IBOutlet weak var threeCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var threeCellView:SVGImageView!
     
-    @IBOutlet weak var fourCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var fourCellView:SVGImageView!
     
-    @IBOutlet weak var fiveCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var fiveCellView:SVGImageView!
     
-    @IBOutlet weak var sixCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var sixCellView:SVGImageView!
     
-    @IBOutlet weak var sevenCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var sevenCellView:SVGImageView!
     
-    @IBOutlet weak var eightCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var eightCellView:SVGImageView!
     
-    @IBOutlet weak var nineCellView:ColorFillTypeOneCellView!
+    @IBOutlet weak var nineCellView:SVGImageView!
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +47,6 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        sevenCellView.addSVG()
     }
     
     private func customInit(){
@@ -64,7 +63,7 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     }
 }
 
-extension ColorFillTypeOneView:ColorFillTypeOneCellViewDelegate {
+extension ColorFillTypeOneView:SVGImageViewDelegate {
     
     func tapImageViewHandle(_ svgBackgroundView: UIView, _ imageSVGName: String) {
         delegate?.tapImageView(svgBackgroundView, imageSVGName)
