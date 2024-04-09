@@ -45,6 +45,11 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
         customInit()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        sevenCellView.addSVG()
+    }
+    
     private func customInit(){
         loadNibContent()
         oneCellView.delegate = self

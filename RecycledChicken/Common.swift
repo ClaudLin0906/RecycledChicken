@@ -918,7 +918,7 @@ func fadeInOutAni(showView:UIView, finishAction:(()->())?){
     }
 }
 
-func addSVGImageView(_ backgroundView:UIView, fillColor:UIColor? = nil , svgImageName:String) {
+func addSVGImageView(_ backgroundView:UIView, fillColor:UIColor? = .white , svgImageName:String) {
     let svgImageView = UIView(SVGNamed: svgImageName, completion: { svgLayer in
         if let fillColor = fillColor {
             svgLayer.fillColor = fillColor.cgColor

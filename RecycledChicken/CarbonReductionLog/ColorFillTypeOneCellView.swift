@@ -39,8 +39,7 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
         svgBackgroundView.addGestureRecognizer(tapImageViewGesture)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    func addSVG() { 
         if imageSVGName != "" {
             addSVGImageView(svgBackgroundView, svgImageName: imageSVGName)
         }

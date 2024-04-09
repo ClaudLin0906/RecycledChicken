@@ -168,6 +168,7 @@ class CarbonReductionLogVC: CustomVC {
 extension CarbonReductionLogVC:ColorFillTypeOneViewDelegate {
     
     func tapImageView(_ svgBackgroundView: UIView, _ imageSVGName: String) {
+        guard svgBackgroundView.subviews.count > 0 else { return }
         svgBackgroundView.subviews.forEach({$0.removeFromSuperview()})
         addSVGImageView(svgBackgroundView, fillColor: changeColor, svgImageName: imageSVGName)
     }
