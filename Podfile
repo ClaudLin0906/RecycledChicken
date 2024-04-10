@@ -15,4 +15,5 @@ target 'RecycledChicken' do
   pod 'Alamofire'
   pod 'SwiftGifOrigin', '~> 1.7.0'
   pod 'SwiftSVG', '~> 2.0'
+  pod 'SVGKit'
 end
