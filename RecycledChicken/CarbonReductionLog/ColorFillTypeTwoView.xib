@@ -26,16 +26,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DlU-Sy-twN" userLabel="bigFillRightChickenView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="150" y="246" width="867" height="70"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="70" id="JbU-JB-NDd"/>
-                    </constraints>
+                    <rect key="frame" x="150" y="59" width="867" height="242"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillRightChicken"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qay-Uo-g6N" userLabel="mediumFillRightChickenView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="80" y="281" width="70" height="70"/>
+                    <rect key="frame" x="80" y="266" width="70" height="70"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="cLi-1N-3dX"/>
                         <constraint firstAttribute="width" constant="70" id="gIV-Jg-gmZ"/>
@@ -45,44 +42,44 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1E-SZ-rWV" userLabel="smallFillRightChickenView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="40" y="331" width="40" height="40"/>
+                    <rect key="frame" x="40" y="321" width="40" height="30"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillRightChicken"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="BL8-cY-iQz">
-                    <rect key="frame" x="0.0" y="311" width="1037" height="80"/>
+                    <rect key="frame" x="0.0" y="351" width="1037" height="40"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qli-Kw-VyE" userLabel="bottomFillRightChickenView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="40" width="40" height="40"/>
+                            <rect key="frame" x="0.0" y="10" width="40" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="GKG-vK-1Ec"/>
-                                <constraint firstAttribute="height" constant="40" id="R3d-hH-UFH"/>
+                                <constraint firstAttribute="height" constant="30" id="R3d-hH-UFH"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillRightChicken"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ij-gx-JoU" userLabel="fillColorBatteryView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="236.66666666666666" y="40" width="29.999999999999972" height="40"/>
+                            <rect key="frame" x="239.33333333333334" y="10" width="30.000000000000028" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="Ou5-IU-moh"/>
-                                <constraint firstAttribute="height" constant="40" id="pGk-oS-Zqc"/>
+                                <constraint firstAttribute="height" constant="30" id="pGk-oS-Zqc"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillColorBattery"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrb-A1-dMa" userLabel="fillColorPaperCupView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="463.66666666666669" y="40" width="40" height="40"/>
+                            <rect key="frame" x="468.66666666666669" y="10" width="40" height="30"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillColorPaperCup"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-mC-A9u" userLabel="fillColoraluminumCanView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="700.33333333333337" y="30" width="60" height="50"/>
+                            <rect key="frame" x="707.66666666666663" y="0.0" width="60" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="K9A-9m-WUM"/>
+                                <constraint firstAttribute="height" constant="40" id="K9A-9m-WUM"/>
                                 <constraint firstAttribute="width" constant="60" id="M31-ef-ic4"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
@@ -90,10 +87,10 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0df-j1-Wo4" userLabel="fillColorBigPETView" customClass="SVGImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="957" y="20" width="80" height="60"/>
+                            <rect key="frame" x="967" y="0.0" width="70" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="fn2-hh-88U"/>
-                                <constraint firstAttribute="width" constant="80" id="vLY-1v-sl2"/>
+                                <constraint firstAttribute="height" constant="40" id="fn2-hh-88U"/>
+                                <constraint firstAttribute="width" constant="70" id="vLY-1v-sl2"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="imageSVGName" value="fillColorBigPET"/>
@@ -102,7 +99,6 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="vrb-A1-dMa" firstAttribute="width" secondItem="Qli-Kw-VyE" secondAttribute="width" id="4nT-l1-xHo"/>
-                        <constraint firstAttribute="height" constant="80" id="FOG-7c-DHn"/>
                         <constraint firstItem="vrb-A1-dMa" firstAttribute="height" secondItem="Qli-Kw-VyE" secondAttribute="height" id="Fzi-SJ-Tml"/>
                     </constraints>
                 </stackView>
@@ -117,8 +113,9 @@
                 <constraint firstItem="BL8-cY-iQz" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Pjw-iM-iOp"/>
                 <constraint firstItem="c1E-SZ-rWV" firstAttribute="width" secondItem="Qli-Kw-VyE" secondAttribute="width" id="Qhw-Fg-8EA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="BL8-cY-iQz" secondAttribute="bottom" id="QxS-0w-Z0A"/>
+                <constraint firstItem="DlU-Sy-twN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="VAG-3T-djk"/>
                 <constraint firstItem="c1E-SZ-rWV" firstAttribute="height" secondItem="Qli-Kw-VyE" secondAttribute="height" id="kJc-Z6-1WI"/>
-                <constraint firstItem="c1E-SZ-rWV" firstAttribute="bottom" secondItem="vrb-A1-dMa" secondAttribute="centerY" id="mBY-QH-wlI"/>
+                <constraint firstItem="c1E-SZ-rWV" firstAttribute="bottom" secondItem="BL8-cY-iQz" secondAttribute="top" id="mBY-QH-wlI"/>
                 <constraint firstItem="DlU-Sy-twN" firstAttribute="bottom" secondItem="Qay-Uo-g6N" secondAttribute="centerY" id="qAF-eo-24x"/>
                 <constraint firstItem="BL8-cY-iQz" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" id="uiv-x6-j2v"/>
             </constraints>
