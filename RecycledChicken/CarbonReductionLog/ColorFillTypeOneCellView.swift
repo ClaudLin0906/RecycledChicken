@@ -50,7 +50,14 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     }
     
     @objc private func tapImageViewHandle(_ sender:UITapGestureRecognizer) {
-        delegate?.tapImageViewHandle(imageView)
+        if imageView.image != nil {
+            delegate?.tapImageViewHandle(imageView)
+        }
+        
+        if imageView.image == nil {
+            delegate?.tapBackgroundHandle(self)
+        }
+        
     }
 
 }

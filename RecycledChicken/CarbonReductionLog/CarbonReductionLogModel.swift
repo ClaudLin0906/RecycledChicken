@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import UIKit
+
+protocol ColorFillTypeDelegate {
+    func tapImage(_ imageView:UIImageView)
+    func tapBackground(_ backgroundView:UIView)
+}

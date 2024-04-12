@@ -7,14 +7,9 @@
 
 import UIKit
 
-protocol ColorFillTypeOneViewDelegate {
-    func tapOneViewImage(_ imageView:UIImageView)
-    func tapOneViewBackground(_ backgroundView:UIView)
-}
-
 class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     
-    var delegate:ColorFillTypeOneViewDelegate?
+    var delegate:ColorFillTypeDelegate?
     
     @IBOutlet weak var oneCellView:ColorFillTypeOneCellView!
     
@@ -48,18 +43,18 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
-        colorFillTypeOneCellViews
+        colorFillTypeOneCellViews.forEach({$0.delegate = self})
     }
 }
 
 extension ColorFillTypeOneView:ColorFillTypeOneCellViewDelegate {
     
     func tapImageViewHandle(_ imageView: UIImageView) {
-        delegate?.tapOneViewImage(imageView)
+        delegate?.tapImage(imageView)
     }
     
     func tapBackgroundHandle(_ backgroundView: UIView) {
-        delegate?.tapOneViewBackground(backgroundView)
+        delegate?.tapBackground(backgroundView)
     }
     
 }

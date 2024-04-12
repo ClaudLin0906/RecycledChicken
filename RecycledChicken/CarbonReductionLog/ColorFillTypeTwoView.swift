@@ -7,14 +7,9 @@
 
 import UIKit
 
-protocol ColorFillTypeTwoViewDelegate {
-    func tapTwoViewImage(_ imageView:UIImageView)
-    func tapTwoViewBackground(_ backgroundView:UIView)
-}
-
 class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
     
-    var delegate:ColorFillTypeTwoViewDelegate?
+    var delegate:ColorFillTypeDelegate?
     
     @IBOutlet weak var bigFillRightChicken:UIImageView!
     
@@ -56,12 +51,12 @@ class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
     
     @objc private func tapImageView(_ tapGesture:UITapGestureRecognizer) {
         if let imageView = tapGesture.view as? UIImageView {
-            delegate?.tapTwoViewImage(imageView)
+            delegate?.tapImage(imageView)
         }
     }
     
     @objc private func tapView(_ tapGesture:UITapGestureRecognizer) {
-        delegate?.tapTwoViewBackground(self)
+        delegate?.tapBackground(self)
     }
     
 }

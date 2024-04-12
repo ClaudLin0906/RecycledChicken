@@ -7,15 +7,9 @@
 
 import UIKit
 
-protocol ColorFillTypeThreeViewDelegate {
-    func tapThreeViewImage(_ imageView:UIImageView)
-    func tapThreeViewBackground(_ backgroundView:UIView)
-}
-
-
 class ColorFillTypeThreeView: UIView, NibOwnerLoadable {
     
-    var delegate:ColorFillTypeThreeViewDelegate?
+    var delegate:ColorFillTypeDelegate?
     
     @IBOutlet weak var bigFillRightChicken:UIImageView!
     
@@ -67,12 +61,12 @@ class ColorFillTypeThreeView: UIView, NibOwnerLoadable {
     
     @objc private func tapImageView(_ tapGesture:UITapGestureRecognizer) {
         if let imageView = tapGesture.view as? UIImageView {
-            delegate?.tapThreeViewImage(imageView)
+            delegate?.tapImage(imageView)
         }
     }
     
     @objc private func tapView(_ tapGesture:UITapGestureRecognizer) {
-        delegate?.tapThreeViewBackground(self)
+        delegate?.tapBackground(self)
     }
     
 }

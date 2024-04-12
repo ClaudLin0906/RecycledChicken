@@ -89,6 +89,7 @@ class CarbonReductionLogVC: CustomVC {
             colorFillTypeOneView.delegate = self
             colorFillTypeTwoView.delegate = self
             colorFillTypeThreeView.delegate = self
+            colorFillTypeFourView.delegate = self
             colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
             colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
             colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
@@ -167,38 +168,14 @@ class CarbonReductionLogVC: CustomVC {
     }
 }
 
-extension CarbonReductionLogVC: ColorFillTypeOneViewDelegate {
+extension CarbonReductionLogVC: ColorFillTypeDelegate {
     
-    func tapOneViewImage(_ imageView: UIImageView) {
+    func tapImage(_ imageView: UIImageView) {
         imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
     }
     
-    func tapOneViewBackground(_ backgroundView: UIView) {
+    func tapBackground(_ backgroundView: UIView) {
         backgroundView.backgroundColor = selectedColor
     }
     
-}
-
-extension CarbonReductionLogVC: ColorFillTypeTwoViewDelegate {
-    
-    func tapTwoViewImage(_ imageView: UIImageView) {
-        imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
-    }
-    
-    func tapTwoViewBackground(_ backgroundView: UIView) {
-        backgroundView.backgroundColor = selectedColor
-    }
-    
-}
-
-extension CarbonReductionLogVC: ColorFillTypeThreeViewDelegate {
-    
-    func tapThreeViewImage(_ imageView: UIImageView) {
-        imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
-    }
-    
-    func tapThreeViewBackground(_ backgroundView: UIView) {
-        backgroundView.backgroundColor = selectedColor
-    }
-
 }
