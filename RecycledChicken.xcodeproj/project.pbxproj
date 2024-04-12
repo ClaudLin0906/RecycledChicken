@@ -11,12 +11,6 @@
 		590251082B68E3020002E76C /* CombineHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 590251072B68E3020002E76C /* CombineHelper */; };
 		5902510B2B68E31F0002E76C /* CombineDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 5902510A2B68E31F0002E76C /* CombineDataSources */; };
 		590485F12B9AF67E008B9AFD /* SpecialTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590485F02B9AF67E008B9AFD /* SpecialTaskView.swift */; };
-		590CAFBF2BC4DD3C00C15B6C /* SVGImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CAFBE2BC4DD3C00C15B6C /* SVGImageView.swift */; };
-		590CAFC12BC4DD5A00C15B6C /* SVGImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFC02BC4DD5A00C15B6C /* SVGImageView.xib */; };
-		590CAFCD2BC4FA0000C15B6C /* fillColorBattery.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFCC2BC4FA0000C15B6C /* fillColorBattery.svg */; };
-		590CAFD12BC4FA0900C15B6C /* fillColoraluminumCan.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFCE2BC4FA0900C15B6C /* fillColoraluminumCan.svg */; };
-		590CAFD22BC4FA0900C15B6C /* fillColorBigPET.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFCF2BC4FA0900C15B6C /* fillColorBigPET.svg */; };
-		590CAFD32BC4FA0900C15B6C /* fillColorPaperCup.svg in Resources */ = {isa = PBXBuildFile; fileRef = 590CAFD02BC4FA0900C15B6C /* fillColorPaperCup.svg */; };
 		5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C57D2A04086400FAB49D /* AppDelegate.swift */; };
 		5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C57F2A04086400FAB49D /* SceneDelegate.swift */; };
 		5926C5822A04086400FAB49D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5812A04086400FAB49D /* ViewController.swift */; };
@@ -146,10 +140,10 @@
 		5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975219E2A0BD74300D0B67C /* PointVC.swift */; };
 		597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597E7F132B70D7660018528A /* RecycledItemView.swift */; };
 		597FEDA02B932A3100D03B56 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 597FED9F2B932A3100D03B56 /* Kingfisher */; };
-		59825E552BC3CC2900943D05 /* ColorFillTypeFourCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59825E542BC3CC2900943D05 /* ColorFillTypeFourCellView.swift */; };
-		59825E572BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59825E562BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib */; };
 		5982A9522BBD314B00CB2B08 /* ColorFillTypeOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */; };
 		5982A9542BBD315300CB2B08 /* ColorFillTypeOneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */; };
+		5982A9562BBD319600CB2B08 /* ColorFillTypeOneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */; };
+		5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */; };
 		5982A95A2BBE749500CB2B08 /* ColorFillTypeTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9592BBE749500CB2B08 /* ColorFillTypeTwoView.swift */; };
 		5982A95C2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5982A95B2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib */; };
 		59835DF02A63C69300678BAF /* ConnectCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */; };
@@ -221,9 +215,6 @@
 		59AA2EDF2B930607001E1352 /* CompletetChangePWDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA2EDE2B930607001E1352 /* CompletetChangePWDView.swift */; };
 		59AA2EE32B930902001E1352 /* CompeleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA2EE22B930902001E1352 /* CompeleteSignUpView.swift */; };
 		59AA2EE72B931558001E1352 /* ProductAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AA2EE62B931558001E1352 /* ProductAlertVC.swift */; };
-		59AFA9AD2BC6AFE500BC771C /* SVGTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFA9AC2BC6AFE500BC771C /* SVGTest.swift */; };
-		59AFA9AF2BC6B00300BC771C /* SVGTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AFA9AE2BC6B00300BC771C /* SVGTest.xib */; };
-		59AFA9B12BC6C96E00BC771C /* fillRightChicken.svg in Resources */ = {isa = PBXBuildFile; fileRef = 59AFA9B02BC6C96E00BC771C /* fillRightChicken.svg */; };
 		59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15A2A0FA82400490BD8 /* IconView.swift */; };
 		59AFE15F2A0FB7B500490BD8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */; };
 		59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */; };
@@ -297,12 +288,6 @@
 		590486092B9EB56B008B9AFD /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Main.strings"; sourceTree = "<group>"; };
 		5904860B2B9EB56F008B9AFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		590649EB2A151D3F008C778A /* RecycledChicken.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycledChicken.entitlements; sourceTree = "<group>"; };
-		590CAFBE2BC4DD3C00C15B6C /* SVGImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImageView.swift; sourceTree = "<group>"; };
-		590CAFC02BC4DD5A00C15B6C /* SVGImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SVGImageView.xib; sourceTree = "<group>"; };
-		590CAFCC2BC4FA0000C15B6C /* fillColorBattery.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillColorBattery.svg; sourceTree = "<group>"; };
-		590CAFCE2BC4FA0900C15B6C /* fillColoraluminumCan.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillColoraluminumCan.svg; sourceTree = "<group>"; };
-		590CAFCF2BC4FA0900C15B6C /* fillColorBigPET.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillColorBigPET.svg; sourceTree = "<group>"; };
-		590CAFD02BC4FA0900C15B6C /* fillColorPaperCup.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fillColorPaperCup.svg; sourceTree = "<group>"; };
 		5926C57A2A04086400FAB49D /* RecycledChicken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycledChicken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5926C57D2A04086400FAB49D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5926C57F2A04086400FAB49D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -503,10 +488,10 @@
 		597521972A0BD10600D0B67C /* ConnectSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSuccessView.swift; sourceTree = "<group>"; };
 		5975219E2A0BD74300D0B67C /* PointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointVC.swift; sourceTree = "<group>"; };
 		597E7F132B70D7660018528A /* RecycledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledItemView.swift; sourceTree = "<group>"; };
-		59825E542BC3CC2900943D05 /* ColorFillTypeFourCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeFourCellView.swift; sourceTree = "<group>"; };
-		59825E562BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeFourCellView.xib; sourceTree = "<group>"; };
 		5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeOneView.swift; sourceTree = "<group>"; };
 		5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeOneView.xib; sourceTree = "<group>"; };
+		5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeOneCellView.swift; sourceTree = "<group>"; };
+		5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeOneCellView.xib; sourceTree = "<group>"; };
 		5982A9592BBE749500CB2B08 /* ColorFillTypeTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeTwoView.swift; sourceTree = "<group>"; };
 		5982A95B2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeTwoView.xib; sourceTree = "<group>"; };
 		59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyModel.swift; sourceTree = "<group>"; };
@@ -578,9 +563,6 @@
 		59AA2EDE2B930607001E1352 /* CompletetChangePWDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletetChangePWDView.swift; sourceTree = "<group>"; };
 		59AA2EE22B930902001E1352 /* CompeleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompeleteSignUpView.swift; sourceTree = "<group>"; };
 		59AA2EE62B931558001E1352 /* ProductAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAlertVC.swift; sourceTree = "<group>"; };
-		59AFA9AC2BC6AFE500BC771C /* SVGTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGTest.swift; sourceTree = "<group>"; };
-		59AFA9AE2BC6B00300BC771C /* SVGTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SVGTest.xib; sourceTree = "<group>"; };
-		59AFA9B02BC6C96E00BC771C /* fillRightChicken.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fillRightChicken.svg; sourceTree = "<group>"; };
 		59AFE15A2A0FA82400490BD8 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		59AFE1602A10087300490BD8 /* CompleteTaskAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTaskAlertView.swift; sourceTree = "<group>"; };
@@ -670,18 +652,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		590CAFCB2BC4F9DC00C15B6C /* SVG */ = {
-			isa = PBXGroup;
-			children = (
-				590CAFCE2BC4FA0900C15B6C /* fillColoraluminumCan.svg */,
-				590CAFCF2BC4FA0900C15B6C /* fillColorBigPET.svg */,
-				590CAFD02BC4FA0900C15B6C /* fillColorPaperCup.svg */,
-				59AFA9B02BC6C96E00BC771C /* fillRightChicken.svg */,
-				590CAFCC2BC4FA0000C15B6C /* fillColorBattery.svg */,
-			);
-			path = SVG;
-			sourceTree = "<group>";
-		};
 		5926C5712A04086400FAB49D = {
 			isa = PBXGroup;
 			children = (
@@ -759,7 +729,6 @@
 				59997A4C2A09181D00E9FD7F /* CustomVC.swift */,
 				59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */,
 				5926C5812A04086400FAB49D /* ViewController.swift */,
-				590CAFCB2BC4F9DC00C15B6C /* SVG */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
@@ -1044,8 +1013,6 @@
 				599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */,
 				5960E5DE2BA2E198007F4AEF /* UpdateAppAlertView.swift */,
 				5960E5E02BA2E19F007F4AEF /* UpdateAppAlertView.xib */,
-				590CAFBE2BC4DD3C00C15B6C /* SVGImageView.swift */,
-				590CAFC02BC4DD5A00C15B6C /* SVGImageView.xib */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -1135,18 +1102,16 @@
 				59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */,
 				59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */,
 				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
-				59AFA9AC2BC6AFE500BC771C /* SVGTest.swift */,
-				59AFA9AE2BC6B00300BC771C /* SVGTest.xib */,
 				5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */,
 				5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */,
+				5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */,
+				5982A9572BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib */,
 				5982A9592BBE749500CB2B08 /* ColorFillTypeTwoView.swift */,
 				5982A95B2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib */,
 				595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */,
 				595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */,
 				595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */,
 				595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */,
-				59825E542BC3CC2900943D05 /* ColorFillTypeFourCellView.swift */,
-				59825E562BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1383,6 +1348,7 @@
 				59600F072B9EE5EF009AFA76 /* ADBannerView.xib in Resources */,
 				59600F0B2B9EE9C9009AFA76 /* ForgetPassword.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
+				5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */,
 				59600F172B9EEB1B009AFA76 /* Lottery.storyboard in Resources */,
 				59600EE72B9EE491009AFA76 /* UpdatePasswordSuccessView.xib in Resources */,
 				59600F132B9EEB0F009AFA76 /* BuyLottery.storyboard in Resources */,
@@ -1395,7 +1361,6 @@
 				59600EBF2B9EE34C009AFA76 /* Profile.storyboard in Resources */,
 				59600F4F2B9EEDF4009AFA76 /* IllustratedGuide.storyboard in Resources */,
 				59600E932B9EE1EE009AFA76 /* Login.storyboard in Resources */,
-				590CAFD22BC4FA0900C15B6C /* fillColorBigPET.svg in Resources */,
 				59600F7B2B9EEFD3009AFA76 /* CompeleteSignUpView.xib in Resources */,
 				59600F6F2B9EEF9C009AFA76 /* SpendPointAlertView.xib in Resources */,
 				59600F6B2B9EEF84009AFA76 /* SpendPointCompleteAlertView.xib in Resources */,
@@ -1406,14 +1371,12 @@
 				59600ECB2B9EE3B4009AFA76 /* RecycleLog.storyboard in Resources */,
 				593CDE662A83D229007E1D10 /* ca.pem in Resources */,
 				59600E9F2B9EE2A5009AFA76 /* SystemSetting.storyboard in Resources */,
-				590CAFC12BC4DD5A00C15B6C /* SVGImageView.xib in Resources */,
 				59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */,
 				59600F372B9EED25009AFA76 /* AmountView.xib in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
 				59600F332B9EED12009AFA76 /* IconView.xib in Resources */,
 				59600EFF2B9EE5D1009AFA76 /* CustomCalenderViewCell.xib in Resources */,
 				59600F232B9EEBC7009AFA76 /* BuyCommodity.storyboard in Resources */,
-				590CAFD32BC4FA0900C15B6C /* fillColorPaperCup.svg in Resources */,
 				59600F0F2B9EE9E5009AFA76 /* Point.storyboard in Resources */,
 				5985D6C42B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib in Resources */,
 				5960E5C02BA2D6BC007F4AEF /* DeleteMessageContentAlertView.xib in Resources */,
@@ -1438,7 +1401,6 @@
 				59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */,
 				59600EB72B9EE31F009AFA76 /* DeleteAllMessageAlertView.xib in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
-				590CAFD12BC4FA0900C15B6C /* fillColoraluminumCan.svg in Resources */,
 				59600EAB2B9EE2E8009AFA76 /* LogOutView.xib in Resources */,
 				59600F632B9EEED8009AFA76 /* SearchView.xib in Resources */,
 				59600F4B2B9EEDE4009AFA76 /* ProductDescription.storyboard in Resources */,
@@ -1450,7 +1412,6 @@
 				59600E872B9EE10E009AFA76 /* ConnectCompany.storyboard in Resources */,
 				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
 				59600F8F2B9EF030009AFA76 /* LanguageSetting.storyboard in Resources */,
-				59AFA9B12BC6C96E00BC771C /* fillRightChicken.svg in Resources */,
 				59600F1B2B9EEB5B009AFA76 /* CommodityVoucher.storyboard in Resources */,
 				59600F8B2B9EF01B009AFA76 /* PointRecord.storyboard in Resources */,
 				59600F272B9EEBD2009AFA76 /* StationList.storyboard in Resources */,
@@ -1464,12 +1425,10 @@
 				59600E9B2B9EE242009AFA76 /* DeleteAccountAlert.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
-				590CAFCD2BC4FA0000C15B6C /* fillColorBattery.svg in Resources */,
 				59600EB32B9EE313009AFA76 /* PersonMessage.storyboard in Resources */,
 				595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */,
 				59600E972B9EE22E009AFA76 /* DeleteAccount.storyboard in Resources */,
 				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
-				59825E572BC3CC3B00943D05 /* ColorFillTypeFourCellView.xib in Resources */,
 				59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */,
 				59600EE32B9EE473009AFA76 /* ConfirmPassword.storyboard in Resources */,
 				59600F732B9EEFB8009AFA76 /* CompleteTaskAlertView.xib in Resources */,
@@ -1484,7 +1443,6 @@
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
 				59600F5B2B9EEEA8009AFA76 /* SpendPointView.xib in Resources */,
 				59600E8F2B9EE192009AFA76 /* Sign.storyboard in Resources */,
-				59AFA9AF2BC6B00300BC771C /* SVGTest.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1573,6 +1531,7 @@
 				59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */,
 				599EA5AA2B81E1E0007AF30F /* CarbonReductionItemCellView.swift in Sources */,
 				59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */,
+				5982A9562BBD319600CB2B08 /* ColorFillTypeOneCellView.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
 				5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */,
@@ -1610,7 +1569,6 @@
 				59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */,
 				5985D6BE2B6A1F7A00DE6EBA /* ADBannerView.swift in Sources */,
 				5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */,
-				59825E552BC3CC2900943D05 /* ColorFillTypeFourCellView.swift in Sources */,
 				59E1E83E2A6293B600396CF9 /* PersonMessageImageView.swift in Sources */,
 				59AFE1612A10087300490BD8 /* CompleteTaskAlertView.swift in Sources */,
 				59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */,
@@ -1634,7 +1592,6 @@
 				59997A702A0A4A1500E9FD7F /* PersonMessageVC.swift in Sources */,
 				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
 				59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */,
-				590CAFBF2BC4DD3C00C15B6C /* SVGImageView.swift in Sources */,
 				59CC8DB12A6BD56D0094CE57 /* MyTickertModel.swift in Sources */,
 				5998DD4B2B8B3BFB00C99A8C /* PointRecordVC.swift in Sources */,
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
@@ -1679,7 +1636,6 @@
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
 				599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */,
 				598F394A2A0E078400DA9186 /* SearchView.swift in Sources */,
-				59AFA9AD2BC6AFE500BC771C /* SVGTest.swift in Sources */,
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
 				59AA2EE32B930902001E1352 /* CompeleteSignUpView.swift in Sources */,
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,

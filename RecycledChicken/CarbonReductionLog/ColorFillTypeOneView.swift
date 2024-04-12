@@ -8,33 +8,33 @@
 import UIKit
 
 protocol ColorFillTypeOneViewDelegate {
-    func tapImageView(_ svgBackgroundView:UIView, _ imageSVGName:String)
-    func tapView(_ v:UIView)
+    func tapOneViewImage(_ imageView:UIImageView)
+    func tapOneViewBackground(_ backgroundView:UIView)
 }
 
 class ColorFillTypeOneView: UIView, NibOwnerLoadable {
-
+    
     var delegate:ColorFillTypeOneViewDelegate?
     
-    @IBOutlet weak var oneCellView:UIView!
+    @IBOutlet weak var oneCellView:ColorFillTypeOneCellView!
     
-    @IBOutlet weak var twoCellView:UIView!
+    @IBOutlet weak var twoCellView:ColorFillTypeOneCellView!
     
-    @IBOutlet weak var threeCellView:UIView!
+    @IBOutlet weak var threeCellView:ColorFillTypeOneCellView!
     
-    @IBOutlet weak var fourCellView:UIView!
+    @IBOutlet weak var fourCellView:ColorFillTypeOneCellView!
     
-    @IBOutlet weak var fiveCellView:UIView!
+    @IBOutlet weak var fiveCellView:ColorFillTypeOneCellView!
     
-    @IBOutlet weak var sixCellView:UIView!
+    @IBOutlet weak var sixCellView:ColorFillTypeOneCellView!
     
-    @IBOutlet weak var sevenCellView:SVGImageView!
+    @IBOutlet weak var sevenCellView:ColorFillTypeOneCellView!
     
-    @IBOutlet weak var eightCellView:UIView!
+    @IBOutlet weak var eightCellView:ColorFillTypeOneCellView!
     
-    @IBOutlet weak var nineCellView:UIView!
+    @IBOutlet weak var nineCellView:ColorFillTypeOneCellView!
     
-    private lazy var cellViews:[UIView] = [oneCellView, twoCellView, threeCellView, fourCellView, fiveCellView, sixCellView, eightCellView, nineCellView]
+    private lazy var colorFillTypeOneCellViews:[ColorFillTypeOneCellView] = [oneCellView, twoCellView, threeCellView, fourCellView, fiveCellView, sixCellView, sevenCellView, eightCellView, nineCellView]
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,36 +48,18 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
-        sevenCellView.delegate = self
-        cellViews.forEach({addBtn($0)})
-    }
-    
-    private func addBtn(_ targetView:UIView) {
-        let btn = UIButton()
-        btn.addTarget(self, action: #selector(btnOnClick(_:)), for: .touchUpInside)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        targetView.addSubview(btn)
-        btn.centerXAnchor.constraint(equalTo: targetView.centerXAnchor).isActive = true
-        btn.centerYAnchor.constraint(equalTo: targetView.centerYAnchor).isActive = true
-        btn.widthAnchor.constraint(equalTo: targetView.widthAnchor).isActive = true
-        btn.heightAnchor.constraint(equalTo: targetView.heightAnchor).isActive = true
-    }
-    
-    @objc private func btnOnClick(_ sender:UIButton) {
-        if let targetView = cellViews.first(where: {sender.superview == $0}) {
-            delegate?.tapView(targetView)
-        }
+        colorFillTypeOneCellViews
     }
 }
 
-extension ColorFillTypeOneView:SVGImageViewDelegate {
+extension ColorFillTypeOneView:ColorFillTypeOneCellViewDelegate {
     
-    func tapImageViewHandle(_ svgBackgroundView: UIView, _ imageSVGName: String) {
-        delegate?.tapImageView(svgBackgroundView, imageSVGName)
+    func tapImageViewHandle(_ imageView: UIImageView) {
+        delegate?.tapOneViewImage(imageView)
     }
     
     func tapBackgroundHandle(_ backgroundView: UIView) {
-        delegate?.tapView(backgroundView)
+        delegate?.tapOneViewBackground(backgroundView)
     }
     
 }

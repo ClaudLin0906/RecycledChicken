@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import UserNotifications
-import SwiftSVG
+
 class Setting {
     static let shared = Setting()
     var language:Language? = getLanguage()
@@ -21,17 +21,6 @@ func getLanguage() -> Language? {
     }
     return nil
 }
-
-func hexStringFromColor(color: UIColor) -> String {
-    let components = color.cgColor.components
-    let r: CGFloat = components?[0] ?? 0.0
-    let g: CGFloat = components?[1] ?? 0.0
-    let b: CGFloat = components?[2] ?? 0.0
-
-    let hexString = String.init(format: "#%02lX%02lX%02lX", lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255)))
-    print(hexString)
-    return hexString
- }
 
 func setLanguage(_ language:Language) {
     var languages = Language.allCases.filter({return language != $0 })
@@ -929,15 +918,6 @@ func fadeInOutAni(showView:UIView, finishAction:(()->())?){
     }
 }
 
-func addSVGImageView(_ backgroundView:UIView, size:CGFloat, fillColor:UIColor? = .white , svgImageName:String) {
-    let svgImageView = UIView(SVGNamed: svgImageName, completion: { svgLayer in
-        if let fillColor = fillColor {
-            svgLayer.fillColor = fillColor.cgColor
-        }
-        svgLayer.resizeToFit(CGRect(x: 0, y: 0, width: size, height: size))
-    })
-    backgroundView.addSubview(svgImageView)
-}
 
 struct Certificates {
     

@@ -8,32 +8,32 @@
 import UIKit
 
 protocol ColorFillTypeTwoViewDelegate {
-    func tapImageView(_ svgBackgroundView:UIView, _ imageSVGName:String)
-    func tapView(_ v:UIView)
+    func tapTwoViewImage(_ imageView:UIImageView)
+    func tapTwoViewBackground(_ backgroundView:UIView)
 }
 
 class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeTwoViewDelegate?
     
-    @IBOutlet weak var bottomFillRightChickenView:SVGImageView!
+    @IBOutlet weak var bigFillRightChicken:UIImageView!
     
-    @IBOutlet weak var fillColorBatteryView:SVGImageView!
+    @IBOutlet weak var menFillRightChicken:UIImageView!
     
-    @IBOutlet weak var fillColorPaperCupView:SVGImageView!
+    @IBOutlet weak var smallFillRightChicken:UIImageView!
     
-    @IBOutlet weak var fillColoraluminumCanView:SVGImageView!
+    @IBOutlet weak var bottomFillRightChicken:UIImageView!
     
-    @IBOutlet weak var fillColorBigPETView:SVGImageView!
-            
-    @IBOutlet weak var smallFillRightChickenView:SVGImageView!
+    @IBOutlet weak var fillColorBattery:UIImageView!
     
-    @IBOutlet weak var mediumFillRightChickenView:SVGImageView!
+    @IBOutlet weak var fillColorPaperCup:UIImageView!
     
-    @IBOutlet weak var bigFillRightChickenView:SVGImageView!
+    @IBOutlet weak var fillColoraluminumCan:UIImageView!
     
-    private lazy var cellViews:[SVGImageView] = [bottomFillRightChickenView, fillColorBatteryView, fillColorPaperCupView, fillColoraluminumCanView, fillColorBigPETView, smallFillRightChickenView, mediumFillRightChickenView, bigFillRightChickenView]
-
+    @IBOutlet weak var fillColorBigPET:UIImageView!
+    
+    private lazy var imageViews:[UIImageView] = [bigFillRightChicken, menFillRightChicken, smallFillRightChicken, bottomFillRightChicken, fillColorBattery, fillColorPaperCup, fillColoraluminumCan, fillColorBigPET]
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -46,20 +46,22 @@ class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
-        cellViews.forEach({
-            $0.delegate = self
+        imageViews.forEach({
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView(_:)))
+            $0.addGestureRecognizer(tap)
         })
-    }
-}
-
-extension ColorFillTypeTwoView:SVGImageViewDelegate {
-    
-    func tapImageViewHandle(_ svgBackgroundView: UIView, _ imageSVGName: String) {
-        delegate?.tapImageView(svgBackgroundView, imageSVGName)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapView(_:)))
+        addGestureRecognizer(tap)
     }
     
-    func tapBackgroundHandle(_ backgroundView: UIView) {
-        delegate?.tapView(self)
+    @objc private func tapImageView(_ tapGesture:UITapGestureRecognizer) {
+        if let imageView = tapGesture.view as? UIImageView {
+            delegate?.tapTwoViewImage(imageView)
+        }
+    }
+    
+    @objc private func tapView(_ tapGesture:UITapGestureRecognizer) {
+        delegate?.tapTwoViewBackground(self)
     }
     
 }

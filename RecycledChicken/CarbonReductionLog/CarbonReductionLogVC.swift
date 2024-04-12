@@ -30,6 +30,8 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var colorFillTitleLabel:CustomLabel!
     
+    private var selectedColor:UIColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
+    
     private var colorFillTypeOneView = ColorFillTypeOneView()
     
     private var colorFillTypeTwoView = ColorFillTypeTwoView()
@@ -46,8 +48,6 @@ class CarbonReductionLogVC: CustomVC {
             handeleChangeColorFillScroView()
         }
     }
-    
-    private var changeColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
             
     private var recyceledSortInfos:[RecyceledSortInfo] = {
         var arr:[RecyceledSortInfo] = []
@@ -88,6 +88,7 @@ class CarbonReductionLogVC: CustomVC {
             colorFillTypeFourView.frame = frame
             colorFillTypeOneView.delegate = self
             colorFillTypeTwoView.delegate = self
+            colorFillTypeThreeView.delegate = self
             colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
             colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
             colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
@@ -166,17 +167,38 @@ class CarbonReductionLogVC: CustomVC {
     }
 }
 
-extension CarbonReductionLogVC:ColorFillTypeOneViewDelegate, ColorFillTypeTwoViewDelegate {
+extension CarbonReductionLogVC: ColorFillTypeOneViewDelegate {
     
-    func tapImageView(_ svgBackgroundView: UIView, _ imageSVGName: String) {
-        guard svgBackgroundView.subviews.count > 0 else { return }
-        svgBackgroundView.subviews.forEach({$0.removeFromSuperview()})
-        let size = svgBackgroundView.frame.size.width
-        addSVGImageView(svgBackgroundView, size: size, fillColor: changeColor, svgImageName: imageSVGName)
+    func tapOneViewImage(_ imageView: UIImageView) {
+        imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
+    }
+    
+    func tapOneViewBackground(_ backgroundView: UIView) {
+        backgroundView.backgroundColor = selectedColor
+    }
+    
+}
+
+extension CarbonReductionLogVC: ColorFillTypeTwoViewDelegate {
+    
+    func tapTwoViewImage(_ imageView: UIImageView) {
+        imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
+    }
+    
+    func tapTwoViewBackground(_ backgroundView: UIView) {
+        backgroundView.backgroundColor = selectedColor
+    }
+    
+}
+
+extension CarbonReductionLogVC: ColorFillTypeThreeViewDelegate {
+    
+    func tapThreeViewImage(_ imageView: UIImageView) {
+        imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
+    }
+    
+    func tapThreeViewBackground(_ backgroundView: UIView) {
+        backgroundView.backgroundColor = selectedColor
     }
 
-    func tapView(_ v: UIView) {
-        v.backgroundColor = changeColor
-    }
-    
 }

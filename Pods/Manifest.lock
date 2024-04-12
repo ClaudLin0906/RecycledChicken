@@ -1,8 +1,5 @@
 PODS:
   - Alamofire (5.7.1)
-  - CocoaLumberjack (3.8.5):
-    - CocoaLumberjack/Core (= 3.8.5)
-  - CocoaLumberjack/Core (3.8.5)
   - DropDown (2.3.13)
   - GoogleMaps (7.4.0):
     - GoogleMaps/Maps (= 7.4.0)
@@ -12,10 +9,7 @@ PODS:
   - GooglePlaces (7.4.0)
   - M13Checkbox (3.4.0)
   - MKRingProgressView (2.3.0)
-  - SVGKit (3.0.0):
-    - CocoaLumberjack (~> 3.0)
   - SwiftGifOrigin (1.7.0)
-  - SwiftSVG (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -24,35 +18,27 @@ DEPENDENCIES:
   - GooglePlaces
   - M13Checkbox
   - MKRingProgressView
-  - SVGKit
   - SwiftGifOrigin (~> 1.7.0)
-  - SwiftSVG (~> 2.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - CocoaLumberjack
     - DropDown
     - GoogleMaps
     - GooglePlaces
     - M13Checkbox
     - MKRingProgressView
-    - SVGKit
     - SwiftGifOrigin
-    - SwiftSVG
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
-  CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   GoogleMaps: 032f676450ba0779bd8ce16840690915f84e57ac
   GooglePlaces: 544e908d94860bf6f8fc1865b80d2c7eb6b5f937
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   MKRingProgressView: f534209b9a1edc0beb2ea613e6b953ea2195b565
-  SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
   SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
-  SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
 
-PODFILE CHECKSUM: b0d4ba68b3ad0c8c0aa562424e344c5eb5c0d65a
+PODFILE CHECKSUM: 178e1b591d8030a8b532469f9412e7fe08d343ff
 
 COCOAPODS: 1.15.2
