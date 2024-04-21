@@ -23,7 +23,7 @@
 "systemSetting" = "system setting";
 "languageSetting" = "language setting";
 "commonProblem" = "常見問題說明";
-"contactPartnership" = "聯絡客服與合作提案";
+"contactPartnership" = "Customer Support & Collaboration";
 "termsOfServicePrivacyPolicy" = "服務條款與隱私政策";
 "logout" = "logout";
 "specialMissionNotifications" = "APP活動通知";
@@ -34,6 +34,7 @@
 "deleteAccount" = "delete account";
 "version" = "version";
 "user" = "user";
+"collaboratingPartner" = "Collaborating Partner";
 "contentCannotBeEmpty" = "content cannot be empty";
 "emailCannotBeEmpty" = "email cannot be empty";
 "recycleLog" = "recycle log";

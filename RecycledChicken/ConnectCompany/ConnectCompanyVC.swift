@@ -57,7 +57,7 @@ class ConnectCompanyVC: CustomVC {
         identityListDropDown.dataSource =
         [
             "user".localized,
-            "合作廠商"
+            "collaboratingPartner".localized
         ]
         
         identityListDropDown.selectionAction = { [weak self] (index, item) in

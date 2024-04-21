@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "guest"
+            "value" : "GUEST LOGIN"
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "login"
+            "value" : "LOGIN"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "sign up"
+            "value" : "REGISTRATION"
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「 這裡就是和我們泥滑島時空糾纏的世界嗎？ 」\n碳竹雞所居住的泥滑島正面臨著環境的危機\n希望你們可以一起減少排碳量\n而我們將幫助你們把廢棄物轉換成珍貴的資源！\n不只是為了泥滑島\n也為了保護你們美麗的星球，一同努力吧！"
+            "value" : "Is this the world entangled in time and space with our Coopland ?\nCarbon Chicken's home island of Mudslide is facing an environmental crisis.\nWe hope you can work together to reduce carbon emissions, and we will help you convert waste into valuable resources!\nIt's not just forCoopland; it's also for protecting your beautiful planet.\nLet's work together!"
           }
         },
         "zh-Hant-TW" : {

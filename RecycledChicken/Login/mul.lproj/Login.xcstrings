@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "password"
+            "value" : "PASSWORD"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "keep"
+            "value" : "ENABLE BIOMETRICS"
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "login"
+            "value" : "LOGIN"
           }
         },
         "zh-Hant-TW" : {
@@ -80,7 +80,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mobile"
+            "value" : "PHONE"
           }
         },
         "zh-Hant-TW" : {
@@ -98,7 +98,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "password?"
+            "value" : "FORGOT PASSWORD"
           }
         },
         "zh-Hant-TW" : {
@@ -116,7 +116,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "login"
+            "value" : "LOGIN"
           }
         },
         "zh-Hant-TW" : {

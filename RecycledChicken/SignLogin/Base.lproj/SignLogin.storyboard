@@ -36,13 +36,13 @@
                                 <rect key="frame" x="0.0" y="192.33333333333331" width="393" height="625.66666666666674"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMU-Zv-cwG" userLabel="Content">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="332.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="309"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vg1-H0-BfC" userLabel="Step1">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="142.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="119"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJJ-2t-6qK" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="142.66666666666666"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="119"/>
                                                         <string key="text">「 這裡就是和我們泥滑島時空糾纏的世界嗎？ 」
 碳竹雞所居住的泥滑島正面臨著環境的危機
 希望你們可以一起減少排碳量
@@ -63,7 +63,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29D-Lw-PQb" userLabel="Step2">
-                                                <rect key="frame" x="0.0" y="172.66666666666666" width="393" height="159.99999999999997"/>
+                                                <rect key="frame" x="0.0" y="148.99999999999997" width="393" height="160.00000000000003"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84k-bG-uId" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="71.666666666666686" y="0.0" width="250" height="50"/>
@@ -210,16 +210,16 @@
     </scenes>
     <designables>
         <designable name="84k-bG-uId">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
         </designable>
         <designable name="9RS-Cg-qzw">
-            <size key="intrinsicContentSize" width="56" height="19.666666666666668"/>
+            <size key="intrinsicContentSize" width="56" height="16.333333333333332"/>
         </designable>
         <designable name="UJJ-2t-6qK">
-            <size key="intrinsicContentSize" width="364.66666666666669" height="142.66666666666666"/>
+            <size key="intrinsicContentSize" width="366.66666666666669" height="119"/>
         </designable>
         <designable name="hMQ-3Y-3fH">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
         </designable>
     </designables>
     <resources>

@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Are you a user or a partner?"
+            "value" : "Are you a user or a collaborating partner？"
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enter the correct email address format"
+            "value" : "Enter the correct contact email format."
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "your email"
+            "value" : "The contact email you use"
           }
         },
         "zh-Hant-TW" : {
@@ -116,7 +116,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "confirm"
+            "value" : "SEND OUT"
           }
         },
         "zh-Hant-TW" : {

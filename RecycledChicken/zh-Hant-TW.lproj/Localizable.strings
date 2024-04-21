@@ -34,6 +34,7 @@
 "deleteAccount" = "刪除帳號";
 "version" = "版本資訊";
 "user" = "用戶";
+"collaboratingPartner" = "合作廠商";
 "contentCannotBeEmpty" = "內容不能為空";
 "emailCannotBeEmpty" = "Email不能為空";
 "recycleLog" = "回收紀錄";
