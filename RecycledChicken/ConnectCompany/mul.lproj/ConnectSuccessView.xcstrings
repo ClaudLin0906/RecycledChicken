@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "We will respond to you within one week of sending the email. Thank you"
+            "value" : "We will reply to you within one week!\nThank you."
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The email has been sent"
+            "value" : "The message has been sent."
           }
         },
         "zh-Hant-TW" : {

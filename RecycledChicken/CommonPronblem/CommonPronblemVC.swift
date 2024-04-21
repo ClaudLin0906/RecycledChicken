@@ -13,7 +13,7 @@ class CommonPronblemVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "常見問題說明"
+        title = "FAQs".localized
         UIInit()
         // Do any additional setup after loading the view.
     }

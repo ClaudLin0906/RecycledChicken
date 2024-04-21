@@ -13,7 +13,7 @@ class PrivacyPolicyVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "服務條款與隱私政策"
+        title = "termsPrivacyPolicy".localized
         UIInit()
         // Do any additional setup after loading the view.
     }

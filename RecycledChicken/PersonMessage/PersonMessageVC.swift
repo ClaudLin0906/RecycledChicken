@@ -16,7 +16,7 @@ class PersonMessageVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "personalMessage".localized
+        title = "personalNotifications".localized
         UIInit()
         getData()
         // Do any additional setup after loading the view.

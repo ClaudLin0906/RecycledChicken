@@ -18,7 +18,6 @@
 "incorrectEmailFormat" = "Email格式不正確";
 "phoneCannotBeEmpty" = "手機不能為空";
 "incorrectPhoneNumberFormat" = "手機格式不正確";
-"personalMessage" = "個人訊息";
 "memberInformationSystemSettings" = "會員資料與系統設定";
 "systemSetting" = "系統設定";
 "languageSetting" = "語言設定";
@@ -37,6 +36,8 @@
 "collaboratingPartner" = "合作廠商";
 "contentCannotBeEmpty" = "內容不能為空";
 "emailCannotBeEmpty" = "Email不能為空";
+"FAQs" = "常見問題說明";
+"termsPrivacyPolicy" = "服務條款與隱私政策";
 "recycleLog" = "回收紀錄";
 "allMonth" = "所有月份";
 "jan" = "1月";
@@ -71,3 +72,5 @@
 "appClose" = "the app has been closed";
 "tapOpenApp" = "tap to open the app";
 "sign" = "註冊";
+"personalNotifications" = "個人訊息";
+
