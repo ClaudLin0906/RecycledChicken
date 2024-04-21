@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "points history"
+            "value" : "POINTS RECORDS"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "my wallet"
+            "value" : "MY TICKET HOLDER"
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "point"
+            "value" : "ACCUMULATED POINTS"
           }
         },
         "zh-Hant-TW" : {

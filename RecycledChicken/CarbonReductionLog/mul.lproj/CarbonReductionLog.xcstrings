@@ -41,6 +41,12 @@
       "comment" : "Class = \"UILabel\"; text = \"減碳量\"; ObjectID = \"7bh-BB-ISm\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carbon Reduction\nAmount"
+          }
+        },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
@@ -140,7 +146,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "history"
+            "value" : "RECYCLING RECORD"
           }
         },
         "zh-Hant-TW" : {
