@@ -36,7 +36,7 @@ class ProfileVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "個人帳戶".localized
+        title = "personalAccount".localized
         UIInit()
     }
     
@@ -51,7 +51,7 @@ class ProfileVC: CustomVC {
     private func UIInit(){
         profileTableView.setSeparatorLocation()
         if let chickenName = getLevelObject()?.chickenName as? String{
-            chickenLeverLabel.text = "目前等級為\(chickenName)雞"
+            chickenLeverLabel.text = "\("currentLevel".localized):\(chickenName)"
         }
         barCodeView.setBarCodeValue("0932266860")
         

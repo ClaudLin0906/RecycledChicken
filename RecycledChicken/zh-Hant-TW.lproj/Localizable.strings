@@ -64,6 +64,7 @@
 "validDate" = "使用日期";
 "activityAward" = "活動獎勵";
 "raffleTicket" = "抽獎劵";
+"merchants" = "合作商家";
 "coupon" = "禮劵專區";
 "confirmBuy" = "確認購買";
 "reStartOfChangeLanuage" = "切換語言重開app才會生效，關閉後請重新打開app";
@@ -73,4 +74,6 @@
 "tapOpenApp" = "tap to open the app";
 "sign" = "註冊";
 "personalNotifications" = "個人訊息";
+"personalAccount" = "個人帳戶";
+"currentLevel" = "目前等級";
 

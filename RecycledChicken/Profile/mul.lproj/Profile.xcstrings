@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "碳竹雞圖鑑"
+            "value" : "CHICKEN HANDBOOK"
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "未填寫"
+            "value" : "Not Filled"
           }
         },
         "zh-Hant-TW" : {
@@ -80,7 +80,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "confirm"
+            "value" : "CONFIRM CHANGES"
           }
         },
         "zh-Hant-TW" : {

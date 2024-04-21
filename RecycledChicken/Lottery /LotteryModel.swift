@@ -19,4 +19,4 @@ struct LotteryInfo: Decodable {
     var itemName:String
 }
 
-var LotterySegmentedControlTitles = ["raffleTicket".localized, "activityAward".localized, "合作商家"]
+var LotterySegmentedControlTitles = ["raffleTicket".localized, "activityAward".localized, "merchants".localized]
