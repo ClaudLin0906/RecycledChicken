@@ -18,13 +18,11 @@
 "incorrectEmailFormat" = "incorrect email format";
 "phoneCannotBeEmpty" = "phone cannot be empty";
 "incorrectPhoneNumberFormat" = "incorrect phone number format";
-"memberInformationSystemSettings" = "會員資料與系統設定";
+"memberInformationSystemSettings" = "Member Information and Settings";
 "systemSetting" = "System Settings";
-"languageSetting" = "language setting";
-"commonProblem" = "常見問題說明";
+"languageSetting" = "Language Settings";
 "contactPartnership" = "Customer Support & Collaboration";
-"termsOfServicePrivacyPolicy" = "服務條款與隱私政策";
-"logout" = "logout";
+"logout" = "Log Out";
 "specialMissionNotifications" = "APP activity notification";
 "emailNotifications" = "Letter notification";
 "recyclingMachineNotifications" = "Recycler message notification";
@@ -76,3 +74,5 @@
 "personalNotifications" = "Personal Notifications";
 "personalAccount" = "Personal Account";
 "currentLevel" = "Current Level";
+"carbonJourney" = "Carbon Journey";
+"restorationOfCoopland" = "Restoration of Coopland";

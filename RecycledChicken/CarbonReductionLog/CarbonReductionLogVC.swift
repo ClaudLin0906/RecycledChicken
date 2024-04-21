@@ -59,7 +59,7 @@ class CarbonReductionLogVC: CustomVC {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "減碳歷程"
+        title = "carbonJourney".localized
         UIInit()
     }
     
@@ -154,7 +154,7 @@ class CarbonReductionLogVC: CustomVC {
     
     private func handeleChangeColorFillScroView () {
         colorFillScrollView.contentOffset = CGPoint(x: Int(colorFillScrollView.frame.width) * colorFillScroViewIndex, y: 0)
-        colorFillTitleLabel.text = "泥滑島修復\(colorFillScroViewIndex + 1)"
+        colorFillTitleLabel.text = "\("restorationOfCoopland".localized)\(colorFillScroViewIndex + 1)"
     }
     
     @IBAction func scrollViewNext(_ sender:UIButton) {

@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "do not display for today"
+            "value" : "Hide today"
           }
         },
         "zh-Hant-TW" : {

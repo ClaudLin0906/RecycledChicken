@@ -33,8 +33,10 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
         loadNibContent()
         progressView.accessibilityLabel = NSLocalizedString("Move", comment: "")
         if getLanguage() == .english {
-            carbonReductionLabel.font = carbonReductionLabel.font.withSize(10)
-            recyclingLabel.font = recyclingLabel.font.withSize(10)
+            if carbonReductionLabel != nil && recyclingLabel != nil {
+                carbonReductionLabel.font = carbonReductionLabel.font.withSize(10)
+                recyclingLabel.font = recyclingLabel.font.withSize(10)
+            }
         }
         ringProgressSingleBackgroundView.layer.shadowOffset = CGSize(width: 1, height: 1)
         ringProgressSingleBackgroundView.layer.shadowOpacity = 0.2

@@ -7,8 +7,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "泥滑島修復"
+            "state" : "translated",
+            "value" : "Restoration of Coopland"
           }
         },
         "zh-Hant-TW" : {
@@ -188,7 +188,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "※每月達成目標為前一個月全部使用者的平均投遞量"
+            "value" : "※The monthly goal achievement is the average delivery volume of\nall users from the previous month."
           }
         },
         "zh-Hant-TW" : {
@@ -206,7 +206,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "個人回收量與目標"
+            "value" : "Personal Recycling\nVolume and Goals"
           }
         },
         "zh-Hant-TW" : {

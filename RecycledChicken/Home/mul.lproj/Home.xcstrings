@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每月回收量"
+            "value" : "Monthly Recycling Amount"
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "商城情報"
+            "value" : "Shopping Information"
           }
         },
         "zh-Hant-TW" : {
@@ -80,7 +80,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "setting"
+            "value" : "Settings"
           }
         },
         "zh-Hant-TW" : {
@@ -98,7 +98,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "account"
+            "value" : "Account"
           }
         },
         "zh-Hant-TW" : {
@@ -134,7 +134,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "message"
+            "value" : "Messages"
           }
         },
         "zh-Hant-TW" : {
@@ -170,7 +170,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "減碳歷程"
+            "value" : "Carbon Journey"
           }
         },
         "zh-Hant-TW" : {

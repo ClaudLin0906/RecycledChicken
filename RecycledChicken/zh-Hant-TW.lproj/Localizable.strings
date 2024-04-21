@@ -21,9 +21,7 @@
 "memberInformationSystemSettings" = "會員資料與系統設定";
 "systemSetting" = "系統設定";
 "languageSetting" = "語言設定";
-"commonProblem" = "常見問題說明";
 "contactPartnership" = "聯絡客服與合作提案";
-"termsOfServicePrivacyPolicy" = "服務條款與隱私政策";
 "logout" = "登出";
 "specialMissionNotifications" = "APP活動通知";
 "emailNotifications" = "信件通知";
@@ -76,4 +74,7 @@
 "personalNotifications" = "個人訊息";
 "personalAccount" = "個人帳戶";
 "currentLevel" = "目前等級";
+"carbonJourney" = "減碳歷程";
+"restorationOfCoopland" = "泥滑島修復"
+
 

@@ -61,14 +61,14 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "CR"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "總減碳量"
+            "state" : "translated",
+            "value" : "TOTAL CARBON REDUCTION"
           }
         }
       }
@@ -137,6 +137,12 @@
       "comment" : "Class = \"UILabel\"; text = \"總減碳量\"; ObjectID = \"ykx-V6-6J5\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOTAL CARBON REDUCTION"
+          }
+        },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",

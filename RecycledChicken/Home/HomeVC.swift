@@ -88,7 +88,7 @@ class HomeVC: CustomRootVC {
                     self.trendChartImageView.image = image
                 }
                 
-                self.chickenLevelLabel.text = "目前等級：潛水雞"
+                self.chickenLevelLabel.text = "\("currentLevel".localized)：潛水雞"
             }
 
             Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in

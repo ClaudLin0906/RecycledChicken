@@ -17,9 +17,9 @@ class SettingMenuVC: CustomVC {
     [
         settingMenuInfo(icon: UIImage(named: "组 431")!, title: "systemSetting".localized),
         settingMenuInfo(icon: UIImage(named: "globe")!, title: "languageSetting".localized),
-        settingMenuInfo(icon: UIImage(named: "组 430")!, title: "commonProblem".localized),
+        settingMenuInfo(icon: UIImage(named: "组 430")!, title: "FAQs".localized),
         settingMenuInfo(icon: UIImage(named: "组 428")!, title: "contactPartnership".localized),
-        settingMenuInfo(icon: UIImage(named: "组 618")!, title: "termsOfServicePrivacyPolicy".localized),
+        settingMenuInfo(icon: UIImage(named: "组 618")!, title: "termsPrivacyPolicy".localized),
         settingMenuInfo(icon: UIImage(named: "组 423")!, title: "logout".localized)
     ]
     
