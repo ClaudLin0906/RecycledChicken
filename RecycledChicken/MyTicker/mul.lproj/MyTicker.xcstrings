@@ -7,8 +7,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "click"
+            "state" : "translated",
+            "value" : "click to open"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "serial number"
+            "value" : "Usage Code"
           }
         },
         "zh-Hant-TW" : {
@@ -80,7 +80,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "expiration date"
+            "value" : "Expiration Date"
           }
         },
         "zh-Hant-TW" : {

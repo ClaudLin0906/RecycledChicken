@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "required point:"
+            "value" : "Points required："
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "drawTime"
+            "value" : "Usage Time"
           }
         },
         "zh-Hant-TW" : {
@@ -98,7 +98,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "confirm"
+            "value" : "CONFIRM"
           }
         },
         "zh-Hant-TW" : {

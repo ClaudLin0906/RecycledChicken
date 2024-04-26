@@ -51,7 +51,7 @@
 "nov" = "nov";
 "dec" = "dec";
 "pointRecord" = "Points Records";
-"myWallet" = "my wallet";
+"myWallet" = "My Ticket Holder";
 "region" = "region";
 "stationList" = "station list";
 "activitiesLuckyDraws" = "Activity Raffle Zone";
@@ -62,6 +62,7 @@
 "validDate" = "valid date";
 "activityAward" = "INCENTIVES";
 "raffleTicket" = "RAFFLE";
+"productvocher" = "PRODUCT VOUCHER";
 "merchants" = "MERCHANTS";
 "coupon" = "Voucher Zone";
 "confirmBuy" = "confirm";

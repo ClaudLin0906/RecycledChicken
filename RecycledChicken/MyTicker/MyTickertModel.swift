@@ -17,4 +17,4 @@ struct MyTickertInfo:Decodable {
 }
 
 
-var MyTickertTitles = ["抽獎劵", "商品劵"]
+var MyTickertTitles = ["raffleTicket".localized, "productvocher".localized]
