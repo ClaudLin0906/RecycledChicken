@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "verification code incorrect"
+            "value" : "Verification code incorrect.\nPlease enter again."
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "resend"
+            "value" : "Resend the code"
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "verification code"
+            "value" : "Enter the verification code"
           }
         },
         "zh-Hant-TW" : {

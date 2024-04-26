@@ -80,7 +80,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "weekly tasks"
+            "value" : "Weekly Tasks"
           }
         },
         "zh-Hant-TW" : {
@@ -115,8 +115,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "claim"
+            "state" : "translated",
+            "value" : "Get Tickets"
           }
         },
         "zh-Hant-TW" : {
