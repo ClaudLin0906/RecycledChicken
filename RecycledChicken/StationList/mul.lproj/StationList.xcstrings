@@ -8,7 +8,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "check station list"
+            "value" : "View Site List"
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "navigation"
+            "value" : "Navigation"
           }
         },
         "zh-Hant-TW" : {
@@ -80,7 +80,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "full/ongoing maintenance"
+            "value" : "Full Capacity / Maintenance"
           }
         },
         "zh-Hant-TW" : {
@@ -116,7 +116,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nearby stations"
+            "value" : "Nearby sites"
           }
         },
         "zh-Hant-TW" : {
@@ -134,7 +134,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "key word"
+            "value" : "Keywords"
           }
         },
         "zh-Hant-TW" : {

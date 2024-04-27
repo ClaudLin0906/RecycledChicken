@@ -160,7 +160,7 @@ class ProfileVC: CustomVC {
         }
         
         if newUserInfo.userBirth == "" {
-            errorStr += "生日不能為空"
+            errorStr += "birthdayCannotBeEmpty".localized
         }
         errorStr = removeWhitespace(from: errorStr)
         guard errorStr == "" else {

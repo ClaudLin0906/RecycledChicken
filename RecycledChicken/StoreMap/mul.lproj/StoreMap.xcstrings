@@ -7,8 +7,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "street/store search"
+            "state" : "translated",
+            "value" : "Street/Site query"
           }
         },
         "zh-Hant-TW" : {
@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "點擊地圖上的碳竹雞可顯示機台剩餘回收數量"
+            "value" : "Clicking on the Carbon Chicken on the map\nwill display the remaining recycling quantity of the machine."
           }
         },
         "zh-Hant-TW" : {
@@ -44,7 +44,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "特殊任務回收機台"
+            "value" : "Special Task Recycling Machine"
           }
         },
         "zh-Hant-TW" : {
@@ -62,7 +62,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "station list"
+            "value" : "SITE LIST"
           }
         },
         "zh-Hant-TW" : {

@@ -77,5 +77,35 @@
 "currentLevel" = "目前等級";
 "carbonJourney" = "減碳歷程";
 "restorationOfCoopland" = "泥滑島修復";
-
+"birthdayCannotBeEmpty" = "生日不能為空";
+"illustratedGuideOneOfName" = "碳員";
+"illustratedGuideOneOfTitle" = "新手碳教學";
+"illustratedGuideOneOfGuide" = "碳固定是生物將無機碳（二氧化碳） 轉換為有機化合物的過程。";
+"illustratedGuideTwoOfName" = "割草雞";
+"illustratedGuideTwoOfTitle" = "堆肥";
+"illustratedGuideTwoOfGuide" = "堆肥是被分解和回收的有機物質作為肥料和土壤調理劑。堆肥是有機農業的關鍵成分。";
+"illustratedGuideThreeOfName" = "潛水雞";
+"illustratedGuideThreeOfTitle" = "水資源";
+"illustratedGuideThreeOfGuide" = "全球的水資源只有少於2.5%是淡水，其餘的都是海水。";
+"illustratedGuideFourOfName" = "技術雞";
+"illustratedGuideFourOfTitle" = "技術研發";
+"illustratedGuideFourOfGuide" = "提升回收再製純化技術";
+"illustratedGuideFiveOfName" = "挖土雞";
+"illustratedGuideFiveOfTitle" = "土壤";
+"illustratedGuideFiveOfGuide" = "土壤若遭受污染，不僅土壤品質惡化、根著其上的作物，食用作物的生物亦受波及，甚至影響到地下水源的品質，而威脅到飲用水的安全。";
+"illustratedGuideSixOfName" = "紳士雞";
+"illustratedGuideSixOfTitle" = "紡織纖維材料";
+"illustratedGuideSixOfGuide" = "紡織廠致力於寶特瓶回收紗線的開發，讓寶特瓶進入再生循環，用行動支持減塑愛地球。";
+"illustratedGuideSevenOfName" = "發電雞";
+"illustratedGuideSevenOfTitle" = "綠電";
+"illustratedGuideSevenOfGuide" = "綠電即再生能源，是指某種發電過程中，產生的二氧化碳排放量為零，或近乎零，對生態、氣候造成的影響較小。";
+"illustratedGuideEightOfName" = "冒險雞";
+"illustratedGuideEightOfTitle" = "大眾運輸";
+"illustratedGuideEightOfGuide" = "完善綠色運輸規劃、減少私有運具是更低碳的交通方式。";
+"illustratedGuideNineOfName" = "花雕雞";
+"illustratedGuideNineOfTitle" = "親民代表";
+"illustratedGuideNineOfGuide" = "城市美化，循環經濟基礎建設";
+"illustratedGuideTenOfName" = "碳長";
+"illustratedGuideTenOfTitle" = "碳匯";
+"illustratedGuideTenOfGuide" = "碳匯（carbon sink）是儲存二氧化碳的天然或人工「倉庫」";
 

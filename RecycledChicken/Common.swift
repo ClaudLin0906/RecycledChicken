@@ -74,7 +74,7 @@ enum IllustratedGuideModelLevel: CaseIterable {
     func getInfo() -> IllustratedGuide {
         switch self {
         case .one:
-            return IllustratedGuide(level: 1, guideImage: UIImage(named: "level1-guide")!, name: "碳員", title: "新手碳教學", iconImage: UIImage(named:"level1-icon")!, guide: "碳固定是生物將無機碳（二氧化碳） 轉換為有機化合物的過程。")
+            return IllustratedGuide(level: 1, guideImage: UIImage(named: "level1-guide")!, name: "illustratedGuideOneOfName".localized, title: "illustratedGuideOneOfTitle".localized, iconImage: UIImage(named:"level1-icon")!, guide: "illustratedGuideOneOfGuide".localized)
         case .two:
             return IllustratedGuide(level: 2, guideImage: UIImage(named: "level2-guide")!, name: "割草雞", title: "堆肥", iconImage: UIImage(named: "level2-icon")!, guide: "堆肥是被分解和回收的有機物質作為肥料和土壤調理劑。堆肥是有機農業的關鍵成分。")
         case .three:
