@@ -25,6 +25,8 @@ class LoginVC: CustomLoginVC {
     @IBOutlet weak var passwordLabelWidth:NSLayoutConstraint!
     
     @IBOutlet weak var keepLoginBtnWidth:NSLayoutConstraint!
+    
+    @IBOutlet weak var forgetPasswordWidth:NSLayoutConstraint!
         
     private var testLoginInfo:AccountInfo = AccountInfo(userPhoneNumber: "0912345678", userPassword: "test123")
             
@@ -46,7 +48,8 @@ class LoginVC: CustomLoginVC {
         if getLanguage() == .english {
             mobileLabelWidth.constant = 50
             passwordLabelWidth.constant = 100
-            keepLoginBtnWidth.constant = 40
+            keepLoginBtnWidth.constant = 150
+            forgetPasswordWidth.constant = 150
         }
     }
     

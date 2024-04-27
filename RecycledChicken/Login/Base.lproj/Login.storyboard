@@ -129,8 +129,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZi-hH-kEY">
                                         <rect key="frame" x="0.0" y="90" width="220" height="30"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UM5-gw-UUX">
-                                                <rect key="frame" x="49.999999999999986" y="5" width="120.00000000000001" height="20"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UM5-gw-UUX">
+                                                <rect key="frame" x="47.333333333333329" y="5" width="124.99999999999999" height="20"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmG-Sv-had" customClass="M13Checkbox" customModule="M13Checkbox">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -142,7 +142,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開啟生物辨識" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-jY-0Jz">
-                                                        <rect key="frame" x="20" y="0.0" width="100" height="20"/>
+                                                        <rect key="frame" x="25" y="0.0" width="100" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="dB0-cQ-hd2"/>
                                                         </constraints>
@@ -275,6 +275,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3AU-F3-vtG"/>
                     <connections>
+                        <outlet property="forgetPasswordWidth" destination="Lz7-IU-0V0" id="gya-e6-2sJ"/>
                         <outlet property="goHomeBtn" destination="g2r-G4-nOM" id="G8C-7m-fTL"/>
                         <outlet property="keepLoginBtnWidth" destination="dB0-cQ-hd2" id="OuW-Q0-u6s"/>
                         <outlet property="keepLoginCheckBox" destination="HmG-Sv-had" id="pSa-po-ye2"/>
