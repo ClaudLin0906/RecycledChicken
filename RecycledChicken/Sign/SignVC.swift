@@ -19,6 +19,8 @@ class SignVC: CustomLoginVC {
     
     @IBOutlet weak var passwordLabelWidth:NSLayoutConstraint!
     
+    @IBOutlet weak var signUpBtnWidth:NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -30,6 +32,10 @@ class SignVC: CustomLoginVC {
         if getLanguage() == .english {
             mobileLabelWidth.constant = 50
             passwordLabelWidth.constant = 100
+            signUpBtnWidth.constant = 300
+            let attributes: [NSAttributedString.Key: Any] = [ .font: passwordTextfield.font?.withSize(12), .foregroundColor: UIColor.gray]
+            let attributedPlaceholder = NSAttributedString(string: passwordTextfield.placeholder ?? "", attributes: attributes)
+            passwordTextfield.attributedPlaceholder = attributedPlaceholder
         }
     }
     

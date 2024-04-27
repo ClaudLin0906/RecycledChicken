@@ -206,6 +206,7 @@
                         <outlet property="passwordLabelWidth" destination="LCp-qn-srX" id="dWN-wc-QfZ"/>
                         <outlet property="passwordTextfield" destination="hU2-kE-ci9" id="eSR-Wk-iHI"/>
                         <outlet property="phoneTextfield" destination="Y3m-Cj-QiS" id="n3F-wj-KIz"/>
+                        <outlet property="signUpBtnWidth" destination="f12-tC-IQG" id="VH5-Do-UOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -43,7 +43,7 @@ class SignLoginVC: CustomLoginVC {
         label.attributedText = NSAttributedString(string: label.text ?? "", attributes: attributes as [NSAttributedString.Key : Any])
         label.textAlignment = .center
         if getLanguage() == .english {
-            guestLabelWidth.constant = 60
+            guestLabelWidth.constant = 100
         }
     }
     
