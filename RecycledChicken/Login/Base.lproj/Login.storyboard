@@ -41,16 +41,16 @@
                                 <rect key="frame" x="86.666666666666686" y="272.33333333333331" width="220" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha9-t1-1jj" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="37.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-DI-dkM">
-                                        <rect key="frame" x="0.0" y="37.666666666666686" width="220" height="37.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="30" width="220" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-N1-95v">
-                                                <rect key="frame" x="0.0" y="8.6666666666666874" width="30" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="5.3333333333333712" width="30" height="19.666666666666668"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="c9A-Ih-C1J"/>
                                                 </constraints>
@@ -59,13 +59,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="705-is-zn3">
-                                                <rect key="frame" x="30" y="0.0" width="190" height="37.333333333333336"/>
+                                                <rect key="frame" x="30" y="0.0" width="190" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="977-a0-R91" userLabel="underLine">
-                                                <rect key="frame" x="0.0" y="36.333333333333314" width="220" height="1"/>
+                                                <rect key="frame" x="0.0" y="29" width="220" height="1"/>
                                                 <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="ebG-tN-zRA"/>
@@ -87,10 +87,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tdy-yu-EWP">
-                                        <rect key="frame" x="0.0" y="75" width="220" height="37.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="60" width="220" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-p8-d8R">
-                                                <rect key="frame" x="0.0" y="9.0000000000000018" width="30" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="5.3333333333333712" width="30" height="19.666666666666668"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="ZUf-bM-u7I"/>
                                                 </constraints>
@@ -99,13 +99,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iPJ-bY-weM" customClass="PasswordTextField" customModule="RecycledChicken" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="0.0" width="190" height="37.666666666666664"/>
+                                                <rect key="frame" x="30" y="0.0" width="190" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8F-fx-aK1" userLabel="underLine">
-                                                <rect key="frame" x="0.0" y="36.666666666666686" width="220" height="1"/>
+                                                <rect key="frame" x="0.0" y="29" width="220" height="1"/>
                                                 <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="DYl-mS-LcD"/>
@@ -127,28 +127,43 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZi-hH-kEY">
-                                        <rect key="frame" x="0.0" y="112.66666666666667" width="220" height="37.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="90" width="220" height="30"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmG-Sv-had" customClass="M13Checkbox" customModule="M13Checkbox">
-                                                <rect key="frame" x="30" y="8.6666666666666856" width="20" height="20"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="flp-jZ-kYz"/>
-                                                    <constraint firstAttribute="height" constant="20" id="tpe-ba-13F"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保持登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-jY-0Jz">
-                                                <rect key="frame" x="59.999999999999986" y="8.6666666666666874" width="60" height="19.666666666666671"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="dB0-cQ-hd2"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UM5-gw-UUX">
+                                                <rect key="frame" x="49.999999999999986" y="5" width="120.00000000000001" height="20"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmG-Sv-had" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="flp-jZ-kYz"/>
+                                                            <constraint firstAttribute="height" constant="20" id="tpe-ba-13F"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開啟生物辨識" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-jY-0Jz">
+                                                        <rect key="frame" x="20" y="0.0" width="100" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="dB0-cQ-hd2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="UM5-gw-UUX" firstAttribute="centerY" secondItem="MZi-hH-kEY" secondAttribute="centerY" id="BzA-wu-vWV"/>
+                                            <constraint firstItem="UM5-gw-UUX" firstAttribute="centerX" secondItem="MZi-hH-kEY" secondAttribute="centerX" id="mKO-no-lHp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYk-nX-tMw">
+                                        <rect key="frame" x="0.0" y="120" width="220" height="30"/>
+                                        <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘記密碼?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEI-G7-B9N">
-                                                <rect key="frame" x="120" y="8.6666666666666856" width="70" height="20"/>
+                                                <rect key="frame" x="74.999999999999986" y="5" width="70.000000000000014" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Lz7-IU-0V0"/>
                                                     <constraint firstAttribute="height" constant="20" id="kOc-Kx-O8n"/>
@@ -158,14 +173,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efz-7R-eVA" userLabel="underLine">
-                                                <rect key="frame" x="120" y="27.666666666666686" width="70" height="1"/>
+                                                <rect key="frame" x="74.999999999999986" y="24" width="70.000000000000014" height="1"/>
                                                 <color key="backgroundColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="U4s-7J-zqc"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeL-ce-U2f">
-                                                <rect key="frame" x="120" y="8.6666666666666856" width="70" height="20"/>
+                                                <rect key="frame" x="74.999999999999986" y="5" width="70.000000000000014" height="20"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
@@ -173,21 +188,16 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="yEI-G7-B9N" firstAttribute="leading" secondItem="h0L-jY-0Jz" secondAttribute="trailing" id="0xS-qw-uEo"/>
-                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="bottom" secondItem="yEI-G7-B9N" secondAttribute="bottom" id="7GG-c6-K9f"/>
-                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="top" secondItem="yEI-G7-B9N" secondAttribute="top" id="NMa-e4-KFi"/>
-                                            <constraint firstItem="h0L-jY-0Jz" firstAttribute="centerY" secondItem="HmG-Sv-had" secondAttribute="centerY" id="PjE-NZ-W0W"/>
-                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="leading" secondItem="yEI-G7-B9N" secondAttribute="leading" id="bu0-Mh-yQZ"/>
-                                            <constraint firstItem="HmG-Sv-had" firstAttribute="centerY" secondItem="MZi-hH-kEY" secondAttribute="centerY" id="dcI-cO-VjM"/>
-                                            <constraint firstItem="efz-7R-eVA" firstAttribute="leading" secondItem="yEI-G7-B9N" secondAttribute="leading" id="fUi-tF-AIc"/>
-                                            <constraint firstItem="efz-7R-eVA" firstAttribute="bottom" secondItem="yEI-G7-B9N" secondAttribute="bottom" id="kaW-J6-XZE"/>
-                                            <constraint firstItem="h0L-jY-0Jz" firstAttribute="leading" secondItem="HmG-Sv-had" secondAttribute="trailing" constant="10" id="mjB-0N-sPO"/>
-                                            <constraint firstAttribute="centerX" secondItem="HmG-Sv-had" secondAttribute="trailing" constant="60" id="oVD-lt-d9G"/>
-                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="trailing" secondItem="yEI-G7-B9N" secondAttribute="trailing" id="uzs-pR-eAS"/>
-                                            <constraint firstItem="efz-7R-eVA" firstAttribute="trailing" secondItem="yEI-G7-B9N" secondAttribute="trailing" id="wB5-Ym-TOQ"/>
-                                            <constraint firstItem="yEI-G7-B9N" firstAttribute="centerY" secondItem="h0L-jY-0Jz" secondAttribute="centerY" id="znL-A1-XQT"/>
+                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="width" secondItem="yEI-G7-B9N" secondAttribute="width" id="B6S-Gk-Mp1"/>
+                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="centerY" secondItem="yEI-G7-B9N" secondAttribute="centerY" id="I8c-gR-Vnl"/>
+                                            <constraint firstItem="efz-7R-eVA" firstAttribute="centerX" secondItem="yEI-G7-B9N" secondAttribute="centerX" id="Mea-44-n1E"/>
+                                            <constraint firstItem="yEI-G7-B9N" firstAttribute="centerX" secondItem="NYk-nX-tMw" secondAttribute="centerX" id="OLG-wy-dmW"/>
+                                            <constraint firstItem="efz-7R-eVA" firstAttribute="bottom" secondItem="yEI-G7-B9N" secondAttribute="bottom" id="YdX-zP-4cl"/>
+                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="height" secondItem="yEI-G7-B9N" secondAttribute="height" id="cF3-Nz-fXe"/>
+                                            <constraint firstItem="SeL-ce-U2f" firstAttribute="centerX" secondItem="yEI-G7-B9N" secondAttribute="centerX" id="fJy-rt-Ul6"/>
+                                            <constraint firstItem="yEI-G7-B9N" firstAttribute="centerY" secondItem="NYk-nX-tMw" secondAttribute="centerY" id="n41-XR-76p"/>
+                                            <constraint firstItem="efz-7R-eVA" firstAttribute="width" secondItem="yEI-G7-B9N" secondAttribute="width" id="uVK-D1-rgB"/>
                                         </constraints>
                                     </view>
                                 </subviews>

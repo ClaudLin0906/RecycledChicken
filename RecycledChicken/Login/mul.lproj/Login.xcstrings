@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "homepage"
+            "value" : "HOMEPAGE"
           }
         },
         "zh-Hant-TW" : {
@@ -38,19 +38,19 @@
       }
     },
     "h0L-jY-0Jz.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"保持登入\"; ObjectID = \"h0L-jY-0Jz\";",
+      "comment" : "Class = \"UILabel\"; text = \"開啟生物辨識\"; ObjectID = \"h0L-jY-0Jz\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "ENABLE BIOMETRICS"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "保持登入"
+            "value" : "開啟生物辨識"
           }
         }
       }
