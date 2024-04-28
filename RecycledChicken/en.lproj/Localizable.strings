@@ -5,8 +5,8 @@
   Created by Claud on 2024/3/12.
   
 */
-"point" = "POINTS";
-"store" = "STORE";
+"p" = "POINTS";
+"store" = "LOCATIONS";
 "home" = "HOME";
 "task" = "MISSIONS";
 "error" = "error";

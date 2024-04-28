@@ -11,7 +11,7 @@ class MainTabBarController: UITabBarController {
     
     let tabbarTitle:[String] =
     [
-        "point".localized,
+        "p".localized,
         "store".localized,
         "home".localized,
 //        "AR",

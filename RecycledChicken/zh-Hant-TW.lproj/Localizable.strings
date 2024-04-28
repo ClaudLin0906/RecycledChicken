@@ -5,7 +5,7 @@
   Created by Claud on 2024/3/12.
   
 */
-"point" = "點數";
+"p" = "點數";
 "store" = "門市";
 "home" = "首頁";
 "task" = "任務";
