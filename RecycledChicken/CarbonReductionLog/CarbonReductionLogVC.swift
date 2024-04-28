@@ -12,6 +12,8 @@ class CarbonReductionLogVC: CustomVC {
         
     @IBOutlet weak var recycleBtn:UIButton!
     
+    @IBOutlet weak var recycleBtnWidth:NSLayoutConstraint!
+    
     @IBOutlet weak var recycledRingInfoView:RecycledRingInfoView!
     
     @IBOutlet weak var dropDownView:DropDownView!
@@ -29,6 +31,8 @@ class CarbonReductionLogVC: CustomVC {
     @IBOutlet weak var colorFillScrollView:UIScrollView!
     
     @IBOutlet weak var colorFillTitleLabel:CustomLabel!
+    
+    @IBOutlet weak var bottomLineSpace:NSLayoutConstraint!
     
     private var selectedColor:UIColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
     
@@ -94,6 +98,11 @@ class CarbonReductionLogVC: CustomVC {
             colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
             colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
             colorFillScrollView.subviews.first?.subviews[3].addSubview(colorFillTypeOneView)
+        }
+        
+        if getLanguage() == .english {
+            recycleBtnWidth.constant = 200
+            bottomLineSpace.constant = -5
         }
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.

@@ -18,6 +18,8 @@ class RecycleLogVC: CustomVC {
     
     @IBOutlet weak var monthBtn:CommonImageButton!
     
+    @IBOutlet weak var monthBtnWidth:NSLayoutConstraint!
+    
     @IBOutlet weak var tableView:UITableView!
     
     private let amountDropDown = DropDown()
@@ -40,6 +42,9 @@ class RecycleLogVC: CustomVC {
         tableView.startSkeletonAnimation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
+        if getLanguage() == .english {
+            monthBtnWidth.constant = 130
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

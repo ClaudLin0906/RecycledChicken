@@ -35,7 +35,7 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
         if getLanguage() == .english {
             if carbonReductionLabel != nil && recyclingLabel != nil {
                 carbonReductionLabel.font = carbonReductionLabel.font.withSize(10)
-                recyclingLabel.font = recyclingLabel.font.withSize(10)
+                recyclingLabel.font = recyclingLabel.font.withSize(8)
             }
         }
         ringProgressSingleBackgroundView.layer.shadowOffset = CGSize(width: 1, height: 1)

@@ -15,6 +15,8 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var barCodeView:BarCodeView!
     
+    @IBOutlet weak var comfirmBtnWidth:NSLayoutConstraint!
+    
     private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
     
     private let datePicker:UIDatePicker = {
@@ -45,6 +47,10 @@ class ProfileVC: CustomVC {
         setDefaultNavigationBackBtn2()
         getUserInfo(VC: self) {
             self.profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
+        }
+        
+        if getLanguage() == .english {
+            comfirmBtnWidth.constant = 250
         }
     }
     

@@ -152,6 +152,7 @@
                     <navigationItem key="navigationItem" id="GKq-Ip-MsP"/>
                     <connections>
                         <outlet property="monthBtn" destination="6La-be-1nu" id="S1G-0I-SMS"/>
+                        <outlet property="monthBtnWidth" destination="Ht9-Cg-d3x" id="YXM-Li-DlY"/>
                         <outlet property="tableView" destination="d9r-cX-EYf" id="WoE-tm-aKD"/>
                     </connections>
                 </viewController>

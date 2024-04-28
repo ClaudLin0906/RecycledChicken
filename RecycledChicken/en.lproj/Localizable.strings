@@ -18,7 +18,7 @@
 "userName" = "Username";
 "cellPhoneNumber" = "Phone Number";
 "invitationCode" = "My Invitation Code";
-"marketplace" = "連動商城";
+"marketplace" = "Link to the Store";
 "incorrectEmailFormat" = "incorrect email format";
 "phoneCannotBeEmpty" = "phone cannot be empty";
 "incorrectPhoneNumberFormat" = "incorrect phone number format";

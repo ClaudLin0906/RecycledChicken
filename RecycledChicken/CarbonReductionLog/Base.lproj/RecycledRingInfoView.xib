@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="carbonReductionLabel" destination="pT9-fY-NNO" id="yf0-bJ-mXr"/>
                 <outlet property="progressView" destination="mKz-ma-K71" id="mFj-MS-Um7"/>
+                <outlet property="recyclingLabel" destination="ykx-V6-6J5" id="wUJ-KZ-CYl"/>
                 <outlet property="ringProgressSingleBackgroundView" destination="Vwn-7v-hyh" id="9TD-6e-HSZ"/>
             </connections>
         </placeholder>
