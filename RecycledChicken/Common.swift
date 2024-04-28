@@ -142,13 +142,13 @@ enum RecyceledSort: CaseIterable {
         let publicTransportColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
         switch self {
         case .bottle:
-            return RecyceledSortInfo(chineseName: "寶特瓶", englishName: "PET", iconName: "pet", color: bottleColor)
+            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "pet", color: bottleColor)
         case .battery:
-            return RecyceledSortInfo(chineseName: "電池", englishName: "BATTERY", iconName: "battery", color: batteryColor)
+            return RecyceledSortInfo(chineseName: "battery".localized, englishName: "BATTERY", iconName: "battery", color: batteryColor)
         case .papperCub:
-            return RecyceledSortInfo(chineseName: "紙杯", englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor)
+            return RecyceledSortInfo(chineseName: "papperCup".localized, englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor)
         case .aluminumCan:
-            return RecyceledSortInfo(chineseName: "鋁罐", englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor)
+            return RecyceledSortInfo(chineseName: "aluminumCan".localized, englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor)
         case .publicTransport:
             return RecyceledSortInfo(chineseName: "大眾運輸", englishName: "publicTransport", iconName: "bus", color: publicTransportColor)
         }

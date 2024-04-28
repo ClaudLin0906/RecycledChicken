@@ -9,6 +9,10 @@
 "store" = "LOCATIONS";
 "home" = "HOME";
 "task" = "MISSIONS";
+"bottle" = "BOTTLE";
+"battery" = "BATTERY";
+"papperCup" = "PAPPER CUP";
+"aluminumCan" = "ALUMINUM CAN";
 "error" = "error";
 "profile" = "Profile";
 "userName" = "Username";

@@ -9,6 +9,10 @@
 "store" = "門市";
 "home" = "首頁";
 "task" = "任務";
+"bottle" = "寶特瓶";
+"battery" = "電池";
+"papperCup" = "紙杯";
+"aluminumCan" = "鋁罐";
 "error" = "發生錯誤";
 "profile" = "個人帳戶";
 "userName" = "用戶名稱";

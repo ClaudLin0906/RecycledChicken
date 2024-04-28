@@ -17,6 +17,8 @@ class RecycledItemView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var countLabel:UILabel!
     
+    @IBOutlet weak var chineNameLabelHeight:NSLayoutConstraint!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -37,6 +39,11 @@ class RecycledItemView: UIView, NibOwnerLoadable {
         englishNameLabel.text = info.englishName
         iconImageView.image = UIImage(named: info.iconName)
         countLabel.text = String(count)
+        if getLanguage() == .english {
+            englishNameLabel.isHidden = true
+            chineNameLabelHeight.constant = 40
+            chineNameLabel.font = chineNameLabel.font.withSize(9)
+        }
     }
 
 }
