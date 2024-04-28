@@ -5,10 +5,10 @@
   Created by Claud on 2024/3/12.
   
 */
-"point" = "Point";
-"store" = "Store";
-"home" = "Home";
-"task" = "Task";
+"point" = "POINTS";
+"store" = "STORE";
+"home" = "HOME";
+"task" = "MISSIONS";
 "error" = "error";
 "profile" = "Profile";
 "userName" = "Username";

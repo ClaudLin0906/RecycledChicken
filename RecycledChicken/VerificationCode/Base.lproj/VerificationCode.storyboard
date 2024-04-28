@@ -248,6 +248,7 @@
                         <outlet property="fourthTextField" destination="tqW-fT-mbH" id="mH5-Cf-ePR"/>
                         <outlet property="goHomeBtn" destination="VK4-eq-yoM" id="K61-OA-CtV"/>
                         <outlet property="reSendBtn" destination="BYp-X8-L1Y" id="544-bq-QlM"/>
+                        <outlet property="reSendBtnWidth" destination="lP9-VD-jJ8" id="YdC-sD-2CU"/>
                         <outlet property="secondTextField" destination="7r9-lt-dYO" id="pkZ-3O-7LS"/>
                         <outlet property="thirdTextField" destination="Tsa-RW-JO3" id="SHC-VR-BnS"/>
                     </connections>

@@ -275,8 +275,8 @@
                                                         <rect key="frame" x="116.66666666666666" y="5" width="100" height="40"/>
                                                         <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="VlY-Wo-ZLy"/>
                                                             <constraint firstAttribute="height" constant="40" id="Xfh-yO-pI1"/>
+                                                            <constraint firstAttribute="width" constant="100" id="YfZ-s6-F39"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -585,6 +585,7 @@
                         <outlet property="bannerCollectionViewFlowLayout" destination="5Fm-70-fJ5" id="gbU-bS-Xwp"/>
                         <outlet property="batteryItemView" destination="3Ro-Ce-PZi" id="Xmd-3m-3e4"/>
                         <outlet property="carbonReductionLogBtn" destination="ybu-Dt-ZtI" id="pXO-R6-ZAh"/>
+                        <outlet property="carbonReductionLogBtnWidth" destination="YfZ-s6-F39" id="Og1-dz-jeW"/>
                         <outlet property="chickenLevelImageView" destination="Ktv-ZA-eLX" id="4kz-gn-FfF"/>
                         <outlet property="chickenLevelLabel" destination="0BO-rY-Eud" id="e11-Si-Sba"/>
                         <outlet property="mallCollectionView" destination="etd-Mn-iFm" id="XG1-JW-7cp"/>
@@ -678,7 +679,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

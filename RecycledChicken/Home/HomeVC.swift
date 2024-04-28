@@ -17,6 +17,8 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var pageControl:UIPageControl!
         
     @IBOutlet weak var carbonReductionLogBtn:UIButton!
+    
+    @IBOutlet weak var carbonReductionLogBtnWidth:NSLayoutConstraint!
         
     @IBOutlet weak var welcomeLabel:UILabel!
     
@@ -61,6 +63,7 @@ class HomeVC: CustomRootVC {
             accountLabel.font = accountLabel.font.withSize(12)
             messageLabel.font = messageLabel.font.withSize(12)
             settingLabel.font = settingLabel.font.withSize(12)
+            carbonReductionLogBtnWidth.constant = 160
         }
 //        NotificationCenter.default.addObserver(self, selector: #selector(receiveCalenderCell(_:)), name: .calenderCellOnCilck, object: nil)
     }

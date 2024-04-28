@@ -24,6 +24,15 @@ class VerificationCodeVC: CustomLoginVC {
     
     @IBOutlet weak var reSendBtn:CustomButton!
     
+    @IBOutlet weak var reSendBtnWidth:NSLayoutConstraint!
+    {
+        willSet {
+            if reSendBtnWidth != nil {
+                reSendVerificationCodeView.frame.size = CGSize(width:reSendBtnWidth.constant, height: reSendVerificationCodeView.frame.height)
+            }
+        }
+    }
+    
     var password:String = ""
     
     var phone:String = ""
@@ -35,6 +44,8 @@ class VerificationCodeVC: CustomLoginVC {
     private var cancellables: Set<AnyCancellable> = []
     
     private var reSendVerificationCodeView = ReSendVerificationCodeView()
+    
+    private var reSendVerificationCodeViewWidth = 200
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +56,10 @@ class VerificationCodeVC: CustomLoginVC {
     
     private func UIInit(){
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
+        if getLanguage() == .english {
+            reSendBtnWidth.constant = 250
+            reSendVerificationCodeViewWidth = 250
+        }
     }
     
     private func startCountdown() {
@@ -69,7 +84,7 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func addReSendVerificationCodeView() {
-        reSendVerificationCodeView = ReSendVerificationCodeView(frame: CGRect(x: 0, y: 0, width: reSendBtn.frame.width, height: reSendBtn.frame.height))
+        reSendVerificationCodeView = ReSendVerificationCodeView(frame: CGRect(x: 0, y: 0, width: reSendVerificationCodeViewWidth, height: Int(reSendBtn.frame.height)))
         reSendBtn.addSubview(reSendVerificationCodeView)
     }
     

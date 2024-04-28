@@ -17,6 +17,8 @@ class ForgetPasswordVC: CustomLoginVC {
     
     @IBOutlet weak var alertMSGLabel:UILabel!
     
+    @IBOutlet weak var phoneWidth:NSLayoutConstraint!
+    
     private var phone:String?
     
     override func viewDidLoad() {
@@ -27,6 +29,9 @@ class ForgetPasswordVC: CustomLoginVC {
     
     private func UIInit(){
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
+        if getLanguage() == .english {
+            phoneWidth.constant = 50
+        }
     }
     
     @IBAction func sendSMS(_ sender:UIButton){
@@ -35,9 +40,9 @@ class ForgetPasswordVC: CustomLoginVC {
         phone = phoneTextfield.text
         
         if phone == "" {
-            alertMsg += "電話不能為空"
+            alertMsg += "phoneCannotBeEmpty".localized
         } else if !validateCellPhone(text: phone!) {
-            alertMsg += "電話格式不對"
+            alertMsg += "incorrectPhoneNumberFormat".localized
         }
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
@@ -60,9 +65,9 @@ class ForgetPasswordVC: CustomLoginVC {
         phone = phoneTextfield.text
         
         if phone == "" {
-            alertMsg += "電話不能為空"
+            alertMsg += "phoneCannotBeEmpty".localized
         } else if !validateCellPhone(text: phone!) {
-            alertMsg += "電話格式不對"
+            alertMsg += "incorrectPhoneNumberFormat".localized
         }
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {

@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="30" width="220" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-N1-95v">
-                                                <rect key="frame" x="0.0" y="7" width="30" height="16.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="5.3333333333333712" width="30" height="19.666666666666668"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="c9A-Ih-C1J"/>
                                                 </constraints>
@@ -90,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="60" width="220" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-p8-d8R">
-                                                <rect key="frame" x="0.0" y="7" width="30" height="16.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="5.3333333333333712" width="30" height="19.666666666666668"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="ZUf-bM-u7I"/>
                                                 </constraints>
@@ -292,13 +292,13 @@
     </scenes>
     <designables>
         <designable name="Ha9-t1-1jj">
-            <size key="intrinsicContentSize" width="35" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="37.333333333333336" height="19.666666666666668"/>
         </designable>
         <designable name="ZPq-0X-imi">
-            <size key="intrinsicContentSize" width="30" height="29"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="g2r-G4-nOM">
-            <size key="intrinsicContentSize" width="42" height="29"/>
+            <size key="intrinsicContentSize" width="42" height="32"/>
         </designable>
     </designables>
     <resources>
