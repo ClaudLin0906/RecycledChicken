@@ -17,6 +17,8 @@ class TaskTableViewTicketCell: UITableViewCell {
     
     @IBOutlet weak var getTicketBtn:UIButton!
     
+    @IBOutlet weak var getticketBtnWidth:NSLayoutConstraint!
+    
     @IBOutlet weak var finishBtn:UIButton!
     
     @IBOutlet weak var titleLabel:UILabel!
