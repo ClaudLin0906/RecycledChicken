@@ -164,6 +164,7 @@
                     <navigationItem key="navigationItem" id="roA-yN-hVb"/>
                     <connections>
                         <outlet property="monthBtn" destination="9qg-dF-pjl" id="xrP-JQ-ltk"/>
+                        <outlet property="monthBtnWidth" destination="nkL-dZ-beg" id="jTm-2n-HEg"/>
                         <outlet property="tableView" destination="11z-m6-plE" id="lGh-jX-Be4"/>
                     </connections>
                 </viewController>

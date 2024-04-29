@@ -14,6 +14,14 @@ class PointVC: CustomRootVC {
     @IBOutlet weak var myTicker:UIButton!
     
     @IBOutlet weak var myPoint:UILabel!
+        
+    @IBOutlet weak var lotteryBtn:UIButton!
+    
+    @IBOutlet weak var giftVoucherBtn:UIButton!
+    
+    @IBOutlet weak var productBtn:UIButton!
+    
+    @IBOutlet weak var ponitRecordBtnWidth:NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +35,13 @@ class PointVC: CustomRootVC {
         ponitRecordBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
 //        myTicker.layer.borderWidth = 1
 //        myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
+        
+        if getLanguage() == .english {
+            lotteryBtn.setImage(UIImage(named: "lottery_english"), for: .normal)
+            giftVoucherBtn.setImage(UIImage(named: "giftVoucher_english"), for: .normal)
+            productBtn.setImage(UIImage(named: "Product_english"), for: .normal)
+            ponitRecordBtnWidth.constant = 200
+        }
     }
     
     private func signAlert(){

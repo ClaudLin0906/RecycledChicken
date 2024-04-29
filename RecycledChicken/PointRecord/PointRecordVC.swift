@@ -15,6 +15,8 @@ class PointRecordVC: CustomVC {
     
     @IBOutlet weak var monthBtn:CommonImageButton!
     
+    @IBOutlet weak var monthBtnWidth:NSLayoutConstraint!
+    
     private let amountDropDown = DropDown()
     
     private var allMonth = "allMonth".localized
@@ -31,6 +33,9 @@ class PointRecordVC: CustomVC {
         tableView.startSkeletonAnimation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
+        if getLanguage() == .english {
+            monthBtnWidth.constant = 150
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
