@@ -191,6 +191,10 @@ class UserDefaultKey {
     let biometrics = "biometrics"
     let keepLogin = "keepLogin"
     let displayToday = "displayToday"
+    let colorFillTypeOne = "colorFillTypeOne"
+    let colorFillTypeTwo = "colorFillTypeTwo"
+    let colorFillTypeThree = "colorFillTypeThree"
+    let colorFillTypeFour = "colorFillTypeFour"
 }
 
 struct LevelObject{

@@ -1089,6 +1089,7 @@
 		59997A472A0917B300E9FD7F /* CarbonReductionLog */ = {
 			isa = PBXGroup;
 			children = (
+				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
 				59997A482A0917D300E9FD7F /* CarbonReductionLogVC.swift */,
 				59600ED12B9EE3C8009AFA76 /* CarbonReductionLog.storyboard */,
 				59980BEF2B734712002FDF41 /* RecycledRingInfoView.swift */,
@@ -1101,7 +1102,6 @@
 				59997A542A09429700E9FD7F /* BattView.xib */,
 				59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */,
 				59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */,
-				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
 				5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */,
 				5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */,
 				5982A9552BBD319600CB2B08 /* ColorFillTypeOneCellView.swift */,

@@ -30,7 +30,7 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     @IBOutlet weak var nineCellView:ColorFillTypeOneCellView!
     
     private lazy var colorFillTypeOneCellViews:[ColorFillTypeOneCellView] = [oneCellView, twoCellView, threeCellView, fourCellView, fiveCellView, sixCellView, sevenCellView, eightCellView, nineCellView]
-        
+            
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -45,6 +45,7 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
         loadNibContent()
         colorFillTypeOneCellViews.forEach({$0.delegate = self})
     }
+    
 }
 
 extension ColorFillTypeOneView:ColorFillTypeOneCellViewDelegate {

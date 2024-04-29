@@ -8,6 +8,19 @@
 import Foundation
 import UIKit
 
+extension UIView {
+
+    func takeSnapshot() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
+
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
+
 extension UITextField {
     
     func addBottomBorader(BoraderColor:UIColor){

@@ -8,6 +8,7 @@
 import UIKit
 import DropDown
 import MKRingProgressView
+
 class CarbonReductionLogVC: CustomVC {
         
     @IBOutlet weak var recycleBtn:UIButton!
@@ -34,7 +35,7 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var bottomLineSpace:NSLayoutConstraint!
     
-    private var selectedColor:UIColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
+    private  var selectedColor:UIColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
     
     private var colorFillTypeOneView = ColorFillTypeOneView()
     
@@ -161,7 +162,7 @@ class CarbonReductionLogVC: CustomVC {
         }
     }
     
-    private func handeleChangeColorFillScroView () {
+    private func handeleChangeColorFillScroView() {
         colorFillScrollView.contentOffset = CGPoint(x: Int(colorFillScrollView.frame.width) * colorFillScroViewIndex, y: 0)
         colorFillTitleLabel.text = "\("restorationOfCoopland".localized)\(colorFillScroViewIndex + 1)"
     }
