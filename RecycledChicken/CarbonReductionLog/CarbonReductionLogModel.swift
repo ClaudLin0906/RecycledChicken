@@ -9,10 +9,9 @@ import Foundation
 import UIKit
 
 protocol ColorFillTypeDelegate {
-    func tapImage(_ imageView:UIImageView)
-    func tapBackground(_ backgroundView:UIView)
+    func tapImage(_ imageView:UIImageView, userdefultKey:String)
+    func tapBackground(_ backgroundView:UIView, userdefultKey:String)
 }
-
 
 
 

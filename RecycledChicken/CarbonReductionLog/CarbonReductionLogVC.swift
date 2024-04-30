@@ -39,11 +39,23 @@ class CarbonReductionLogVC: CustomVC {
     
     private var colorFillTypeOneView = ColorFillTypeOneView()
     
-    private var colorFillTypeTwoView = ColorFillTypeTwoView()
+    private var colorFillTypeTwoView:ColorFillTypeTwoView = {
+        let colorFillTypeTwoView = ColorFillTypeTwoView()
+        colorFillTypeTwoView.userdefultKeyOfBackground = UserDefaultKey.shared.backgroundOfColorFillTypeTwoView
+        return colorFillTypeTwoView
+    }()
     
-    private var colorFillTypeThreeView = ColorFillTypeThreeView()
+    private var colorFillTypeThreeView:ColorFillTypeThreeView = {
+        let colorFillTypeThreeView = ColorFillTypeThreeView()
+        colorFillTypeThreeView.userdefultKeyOfBackground = UserDefaultKey.shared.backgroundOfColorFillTypeThreeView
+        return colorFillTypeThreeView
+    }()
     
-    private var colorFillTypeFourView = ColorFillTypeFourView()
+    private var colorFillTypeFourView:ColorFillTypeFourView = {
+        let colorFillTypeFourView = ColorFillTypeFourView()
+        colorFillTypeFourView.userdefultKeyOfBackground = UserDefaultKey.shared.backgroundOfColorFillTypeFourView
+        return colorFillTypeFourView
+    }()
     
     private lazy var colorFillTypeViews = [colorFillTypeTwoView, colorFillTypeOneView, colorFillTypeThreeView, colorFillTypeFourView]
         
@@ -180,12 +192,14 @@ class CarbonReductionLogVC: CustomVC {
 
 extension CarbonReductionLogVC: ColorFillTypeDelegate {
     
-    func tapImage(_ imageView: UIImageView) {
+    func tapImage(_ imageView: UIImageView, userdefultKey: String) {
         imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
+        print("imageView \(userdefultKey)")
     }
     
-    func tapBackground(_ backgroundView: UIView) {
+    func tapBackground(_ backgroundView: UIView, userdefultKey: String) {
         backgroundView.backgroundColor = selectedColor
+        print("backgroundView \(userdefultKey)")
     }
     
 }

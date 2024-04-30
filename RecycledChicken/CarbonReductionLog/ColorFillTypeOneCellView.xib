@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
             <connections>
-                <outlet property="imageView" destination="54K-c5-i0h" id="8tO-7W-6tX"/>
+                <outlet property="imageView" destination="54K-c5-i0h" id="xDN-oy-scD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

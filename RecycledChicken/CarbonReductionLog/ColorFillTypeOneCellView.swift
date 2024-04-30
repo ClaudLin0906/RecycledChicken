@@ -7,17 +7,17 @@
 
 import UIKit
 protocol ColorFillTypeOneCellViewDelegate {
-    func tapImageViewHandle(_ imageView:UIImageView)
-    func tapBackgroundHandle(_ backgroundView:UIView)
+    func tapImageViewHandle(_ imageView:UIImageView, userdefultKey:String)
+    func tapBackgroundHandle(_ backgroundView:UIView, userdefultKey:String)
 }
 
 class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeOneCellViewDelegate?
     
-    @IBInspectable var userdefultKeyOfImage: String
+    @IBInspectable var userdefultKeyOfImage: String = ""
     
-    @IBInspectable var userdefultKeyOfBackground: String
+    @IBInspectable var userdefultKeyOfBackground: String = ""
         
     @IBInspectable var image: UIImage?
     
@@ -49,16 +49,16 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     }
     
     @objc private func tapBackgroundHandle(_ sender:UITapGestureRecognizer) {
-        delegate?.tapBackgroundHandle(self)
+        delegate?.tapBackgroundHandle(self, userdefultKey: userdefultKeyOfBackground)
     }
     
     @objc private func tapImageViewHandle(_ sender:UITapGestureRecognizer) {
         if imageView.image != nil {
-            delegate?.tapImageViewHandle(imageView)
+            delegate?.tapImageViewHandle(imageView, userdefultKey: userdefultKeyOfImage)
         }
         
         if imageView.image == nil {
-            delegate?.tapBackgroundHandle(self)
+            delegate?.tapBackgroundHandle(self, userdefultKey: userdefultKeyOfBackground)
         }
     }
     

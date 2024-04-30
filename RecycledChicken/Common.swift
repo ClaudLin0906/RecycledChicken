@@ -192,6 +192,8 @@ class UserDefaultKey {
     let keepLogin = "keepLogin"
     let displayToday = "displayToday"
     let colorFillTypeOne = "colorFillTypeOne"
+    let colorFillTypeThree = "colorFillTypeThree"
+    let colorFillTypeFour = "colorFillTypeFour"
     let oneCellViewImageViewOfColorFillTypeOneView = "oneCellViewImageViewOfColorFillTypeOneView"
     let oneCellViewBackgroundOfColorFillTypeOneView = "oneCellViewBackgroundOfColorFillTypeOneView"
     let twoCellViewImageViewOfColorFillTypeOneView = "twoCellViewImageViewOfColorFillTypeOneView"
@@ -229,7 +231,7 @@ class UserDefaultKey {
     let leftBottomTwoFillRightChickenOfColorFillTypeThreeView = "leftBottomTwoFillRightChickenOfColorFillTypeThreeView"
     let leftBottomThreeFillRightChickenOfColorFillTypeThreeView = "bigFillRightChickenOfColorFillTypeThreeView"
     let leftBottomFourFillRightChickenOfColorFillTypeThreeView = "leftBottomFourFillRightChickenOfColorFillTypeThreeView"
-    let rightBottomOneFillRightChickenOfColorFillTypeThreeView = "rightBottomOneFillRightChickenOfColorFillTypeThreeView"
+    let rightBottomOneFillLeftChickenOfColorFillTypeThreeView = "rightBottomOneFillLeftChickenOfColorFillTypeThreeView"
     let rightBottomTwoFillRightChickenOfColorFillTypeThreeView = "rightBottomTwoFillRightChickenOfColorFillTypeThreeView"
     let rightBottomThreeFillRightChickenOfColorFillTypeThreeView = "rightBottomThreeFillRightChickenOfColorFillTypeThreeView"
     let rightBottomFourFillRightChickenOfColorFillTypeThreeView = "rightBottomFourFillRightChickenOfColorFillTypeThreeView"
@@ -239,8 +241,6 @@ class UserDefaultKey {
     let oneFillRightChickenOfColorFillTypeFourView = "oneFillRightChickenOfColorFillTypeFourView"
     let twoFillRightChickenOfColorFillTypeFourView = "twoFillRightChickenOfColorFillTypeFourView"
     let threeFillRightChickenOfColorFillTypeFourView = "threeFillRightChickenOfColorFillTypeFourView"
-    let colorFillTypeThree = "colorFillTypeThree"
-    let colorFillTypeFour = "colorFillTypeFour"
 }
 
 struct LevelObject{

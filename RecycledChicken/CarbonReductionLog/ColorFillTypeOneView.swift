@@ -49,12 +49,12 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
 
 extension ColorFillTypeOneView:ColorFillTypeOneCellViewDelegate {
     
-    func tapImageViewHandle(_ imageView: UIImageView) {
-        delegate?.tapImage(imageView)
+    func tapImageViewHandle(_ imageView: UIImageView, userdefultKey: String) {
+        delegate?.tapImage(imageView, userdefultKey: userdefultKey)
     }
     
-    func tapBackgroundHandle(_ backgroundView: UIView) {
-        delegate?.tapBackground(backgroundView)
+    func tapBackgroundHandle(_ backgroundView: UIView, userdefultKey: String) {
+        delegate?.tapBackground(backgroundView, userdefultKey: userdefultKey)
     }
     
 }

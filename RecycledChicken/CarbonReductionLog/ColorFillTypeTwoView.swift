@@ -11,6 +11,8 @@ class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeDelegate?
     
+    @IBInspectable var userdefultKeyOfBackground: String = ""
+    
     @IBOutlet weak var bigFillRightChicken:ColorFillImageView!
     
     @IBOutlet weak var medFillRightChicken:ColorFillImageView!
@@ -49,40 +51,14 @@ class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
         addGestureRecognizer(tap)
     }
     
-//    private func getKeyName(_ imageViewTag:Int) -> String {
-//        var result = ""
-//        let target = imageViews.first(where: {$0.tag == imageViewTag})
-//        switch target?.tag {
-//        case 0:
-//            result = UserDefaultKey.shared.bottomFillRightChickenOfColorFillTypeTwoView
-//        case 1:
-//            result = UserDefaultKey.shared.fillColorBatteryOfColorFillTypeTwoView
-//        case 2:
-//            result = UserDefaultKey.shared.fillColorPaperCupOfColorFillTypeTwoView
-//        case 3:
-//            result = UserDefaultKey.shared.fillColoraluminumCanOfColorFillTypeTwoView
-//        case 4:
-//            result = UserDefaultKey.shared.fillColorBigPETOfColorFillTypeTwoView
-//        case 5:
-//            result = UserDefaultKey.shared.smallFillRightChickenOfFillTypeTwoView
-//        case 6:
-//            result = UserDefaultKey.shared.medFillRightChickenOfFillTypeTwoView
-//        case 7:
-//            result = UserDefaultKey.shared.bigFillRightChickenOfColorFillTypeTwoView
-//        default :
-//            break
-//        }
-//        return result
-//    }
-    
     @objc private func tapImageView(_ tapGesture:UITapGestureRecognizer) {
-        if let imageView = tapGesture.view as? UIImageView {
-            delegate?.tapImage(imageView)
+        if let imageView = tapGesture.view as? ColorFillImageView {
+            delegate?.tapImage(imageView, userdefultKey: imageView.userDefaultKey)
         }
     }
     
     @objc private func tapView(_ tapGesture:UITapGestureRecognizer) {
-        delegate?.tapBackground(self)
+        delegate?.tapBackground(self, userdefultKey: userdefultKeyOfBackground)
     }
     
 }
