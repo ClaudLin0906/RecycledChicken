@@ -28,7 +28,7 @@
                         <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="8LH-fy-bbp">
                             <rect key="frame" x="0.0" y="0.0" width="264" height="374.66666666666669"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillLeftChicken" translatesAutoresizingMaskIntoConstraints="NO" id="d6c-1c-HAU">
+                        <imageView clipsSubviews="YES" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillLeftChicken" translatesAutoresizingMaskIntoConstraints="NO" id="d6c-1c-HAU">
                             <rect key="frame" x="284" y="0.0" width="264" height="374.66666666666669"/>
                         </imageView>
                     </subviews>
@@ -36,13 +36,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Fm-VB-K2J">
                     <rect key="frame" x="0.0" y="438.66666666666674" width="588" height="379.33333333333326"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UqU-Yp-hDi">
+                        <imageView clipsSubviews="YES" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UqU-Yp-hDi">
                             <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="379.33333333333331"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="m0v-EK-cKD">
+                        <imageView clipsSubviews="YES" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="m0v-EK-cKD">
                             <rect key="frame" x="202.66666666666669" y="0.0" width="182.66666666666669" height="379.33333333333331"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UUu-9P-0EE">
+                        <imageView clipsSubviews="YES" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UUu-9P-0EE">
                             <rect key="frame" x="405.33333333333331" y="0.0" width="182.66666666666669" height="379.33333333333331"/>
                         </imageView>
                     </subviews>
