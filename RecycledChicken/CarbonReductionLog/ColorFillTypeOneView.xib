@@ -48,6 +48,10 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4Z-Kb-s3E" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="128.33333333333334" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="oneCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="oneCellViewBackgroundOfColorFillTypeOneView"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ria-7E-JdM" userLabel="line">
                                     <rect key="frame" x="129.33333333333334" y="0.0" width="1" height="99.666666666666671"/>
@@ -58,6 +62,10 @@
                                 </view>
                                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igp-w6-KZU" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="131.33333333333331" y="0.0" width="128.33333333333331" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="twoCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="twoCellViewBackgroundOfColorFillTypeOneView"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laX-r8-Tnt" userLabel="line">
                                     <rect key="frame" x="260.66666666666669" y="0.0" width="1" height="99.666666666666671"/>
@@ -68,6 +76,10 @@
                                 </view>
                                 <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6B-uV-tvn" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="262.66666666666669" y="0.0" width="128.33333333333331" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="threeCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="threeCellViewBackgroundOfColorFillTypeOneView"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
                             <constraints>
@@ -88,6 +100,10 @@
                             <subviews>
                                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-gI-6Fv" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="128.33333333333334" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="fourCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="fourCellViewBackgroundOfColorFillTypeOneView"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3f-qj-Dq6" userLabel="line">
                                     <rect key="frame" x="129.33333333333334" y="0.0" width="1" height="99.666666666666671"/>
@@ -98,6 +114,10 @@
                                 </view>
                                 <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68s-Kt-NYI" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="131.33333333333331" y="0.0" width="128.33333333333331" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="fiveCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="fiveCellViewBackgroundOfColorFillTypeOneView"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgU-Ax-Ry6" userLabel="line">
                                     <rect key="frame" x="260.66666666666669" y="0.0" width="1" height="99.666666666666671"/>
@@ -108,6 +128,10 @@
                                 </view>
                                 <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjJ-HC-cc9" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="262.66666666666669" y="0.0" width="128.33333333333331" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="sixCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="sixCellViewBackgroundOfColorFillTypeOneView"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
                             <constraints>
@@ -130,6 +154,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128.33333333333334" height="99.666666666666671"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="image" value="fillRightChicken"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="sevenCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="sevenCellViewBackgroundOfColorFillTypeOneView"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKD-I6-eyS" userLabel="line">
@@ -141,6 +167,10 @@
                                 </view>
                                 <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yO4-cd-7qD" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="131.33333333333331" y="0.0" width="128.33333333333331" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="eightCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="eightCellViewBackgroundOfColorFillTypeOneView"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMo-Zz-mgw" userLabel="line">
                                     <rect key="frame" x="260.66666666666669" y="0.0" width="1" height="99.666666666666671"/>
@@ -151,6 +181,10 @@
                                 </view>
                                 <view tag="8" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NlJ-XY-D09" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="262.66666666666669" y="0.0" width="128.33333333333331" height="99.666666666666671"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="nineCellViewImageViewOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="nineCellViewBackgroundOfColorFillTypeOneView"/>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
                             <constraints>

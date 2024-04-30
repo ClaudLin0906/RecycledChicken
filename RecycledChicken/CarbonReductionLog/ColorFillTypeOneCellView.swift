@@ -14,6 +14,10 @@ protocol ColorFillTypeOneCellViewDelegate {
 class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeOneCellViewDelegate?
+    
+    @IBInspectable var userdefultKeyOfImage: String
+    
+    @IBInspectable var userdefultKeyOfBackground: String
         
     @IBInspectable var image: UIImage?
     

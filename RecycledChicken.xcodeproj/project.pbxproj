@@ -138,6 +138,7 @@
 		597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521932A0B944300D0B67C /* ConnectCompanyVC.swift */; };
 		597521982A0BD10600D0B67C /* ConnectSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597521972A0BD10600D0B67C /* ConnectSuccessView.swift */; };
 		5975219F2A0BD74300D0B67C /* PointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975219E2A0BD74300D0B67C /* PointVC.swift */; };
+		59768A632BE0A3700004EA78 /* ColorFillImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59768A622BE0A3700004EA78 /* ColorFillImageView.swift */; };
 		597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597E7F132B70D7660018528A /* RecycledItemView.swift */; };
 		597FEDA02B932A3100D03B56 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 597FED9F2B932A3100D03B56 /* Kingfisher */; };
 		5982A9522BBD314B00CB2B08 /* ColorFillTypeOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */; };
@@ -487,6 +488,7 @@
 		597521932A0B944300D0B67C /* ConnectCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyVC.swift; sourceTree = "<group>"; };
 		597521972A0BD10600D0B67C /* ConnectSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSuccessView.swift; sourceTree = "<group>"; };
 		5975219E2A0BD74300D0B67C /* PointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointVC.swift; sourceTree = "<group>"; };
+		59768A622BE0A3700004EA78 /* ColorFillImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillImageView.swift; sourceTree = "<group>"; };
 		597E7F132B70D7660018528A /* RecycledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycledItemView.swift; sourceTree = "<group>"; };
 		5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeOneView.swift; sourceTree = "<group>"; };
 		5982A9532BBD315300CB2B08 /* ColorFillTypeOneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeOneView.xib; sourceTree = "<group>"; };
@@ -1100,6 +1102,7 @@
 				59997A502A09385400E9FD7F /* PetView.xib */,
 				59997A522A09428000E9FD7F /* BattView.swift */,
 				59997A542A09429700E9FD7F /* BattView.xib */,
+				59768A622BE0A3700004EA78 /* ColorFillImageView.swift */,
 				59DBA1342B71F4CD009E5BBD /* RingProgressGroupView.swift */,
 				59DBA1362B71F521009E5BBD /* RingProgressSingleView.swift */,
 				5982A9512BBD314B00CB2B08 /* ColorFillTypeOneView.swift */,
@@ -1599,6 +1602,7 @@
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
 				59CC8DA92A6BB3C30094CE57 /* LotteryItemTableViewCell.swift in Sources */,
 				5926C5A22A06364800FAB49D /* Common.swift in Sources */,
+				59768A632BE0A3700004EA78 /* ColorFillImageView.swift in Sources */,
 				59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */,
 				59D20CE82A1E4FA600EF87B1 /* CustomCalenderScrollView.swift in Sources */,
 				598F39462A0E068C00DA9186 /* StoreListVC.swift in Sources */,

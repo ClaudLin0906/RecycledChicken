@@ -11,31 +11,31 @@ class ColorFillTypeThreeView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeDelegate?
     
-    @IBOutlet weak var bigFillRightChicken:UIImageView!
+    @IBOutlet weak var bigFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var leftTopOneFillRightChicken:UIImageView!
+    @IBOutlet weak var leftTopOneFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var leftTopTwoFillRightChicken:UIImageView!
+    @IBOutlet weak var leftTopTwoFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var leftTopThreeFillRightChicken:UIImageView!
+    @IBOutlet weak var leftTopThreeFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var leftTopFourFillRightChicken:UIImageView!
+    @IBOutlet weak var leftTopFourFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var leftBottomOneFillRightChicken:UIImageView!
+    @IBOutlet weak var leftBottomOneFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var leftBottomTwoFillRightChicken:UIImageView!
+    @IBOutlet weak var leftBottomTwoFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var leftBottomThreeFillRightChicken:UIImageView!
+    @IBOutlet weak var leftBottomThreeFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var leftBottomFourFillRightChicken:UIImageView!
+    @IBOutlet weak var leftBottomFourFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var rightBottomOneFillRightChicken:UIImageView!
+    @IBOutlet weak var rightBottomOneFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var rightBottomTwoFillRightChicken:UIImageView!
+    @IBOutlet weak var rightBottomTwoFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var rightBottomThreeFillRightChicken:UIImageView!
+    @IBOutlet weak var rightBottomThreeFillRightChicken:ColorFillImageView!
     
-    @IBOutlet weak var rightBottomFourFillRightChicken:UIImageView!
+    @IBOutlet weak var rightBottomFourFillRightChicken:ColorFillImageView!
     
     private lazy var imageViews:[UIImageView] = [bigFillRightChicken, leftTopOneFillRightChicken, leftTopTwoFillRightChicken, leftTopThreeFillRightChicken, leftTopFourFillRightChicken, leftBottomOneFillRightChicken, leftBottomTwoFillRightChicken, leftBottomThreeFillRightChicken, leftBottomFourFillRightChicken, rightBottomOneFillRightChicken, rightBottomTwoFillRightChicken, rightBottomThreeFillRightChicken, rightBottomFourFillRightChicken]
 

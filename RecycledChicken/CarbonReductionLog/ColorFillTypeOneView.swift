@@ -45,7 +45,6 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
         loadNibContent()
         colorFillTypeOneCellViews.forEach({$0.delegate = self})
     }
-    
 }
 
 extension ColorFillTypeOneView:ColorFillTypeOneCellViewDelegate {
