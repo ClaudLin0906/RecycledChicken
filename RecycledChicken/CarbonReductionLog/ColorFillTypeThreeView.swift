@@ -63,7 +63,7 @@ class ColorFillTypeThreeView: UIView, NibOwnerLoadable {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        if let color = UserDefaults().object(forKey: userdefultKeyOfBackground) as? UIColor {
+        if let color = UserDefaults().colorForKey(userdefultKeyOfBackground) {
             self.backgroundColor = color
         }
     }

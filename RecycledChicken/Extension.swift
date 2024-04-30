@@ -320,3 +320,19 @@ extension UITableViewCell {
         return self.tableView?.indexPath(for: self)
     }
 }
+
+extension UserDefaults {
+    func setColor(_ color: UIColor?, forKey key: String) {
+        guard let color = color else {
+            removeObject(forKey: key)
+            return
+        }
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: false)
+        set(data, forKey: key)
+    }
+
+    func colorForKey(_ key: String) -> UIColor? {
+        guard let data = data(forKey: key) else { return nil }
+        return try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data)
+    }
+}

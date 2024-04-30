@@ -193,13 +193,13 @@ class CarbonReductionLogVC: CustomVC {
 extension CarbonReductionLogVC: ColorFillTypeDelegate {
     
     func tapImage(_ imageView: UIImageView, userdefultKey: String) {
+        UserDefaults().setColor(selectedColor, forKey: userdefultKey)
         imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
-        UserDefaults().set(selectedColor, forKey: userdefultKey)
     }
     
     func tapBackground(_ backgroundView: UIView, userdefultKey: String) {
+        UserDefaults().setColor(selectedColor, forKey: userdefultKey)
         backgroundView.backgroundColor = selectedColor
-        UserDefaults().set(selectedColor, forKey: userdefultKey)
     }
     
 }

@@ -35,10 +35,10 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        if let color = UserDefaults().object(forKey: userdefultKeyOfImage) as? UIColor {
+        if let color = UserDefaults().colorForKey(userdefultKeyOfImage) {
             imageView.image = imageView.image?.withTintColor(color, renderingMode: .alwaysTemplate)
         }
-        if let color = UserDefaults().object(forKey: userdefultKeyOfBackground) as? UIColor {
+        if let color = UserDefaults().colorForKey(userdefultKeyOfBackground) {
             self.backgroundColor = color
         }
     }

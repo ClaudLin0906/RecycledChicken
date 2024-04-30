@@ -86,7 +86,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C13FAFBE-712E-4491-A620-5F08FB2875AA"
+            uuid = "3C8166D2-2187-491F-81F1-43086F04FC99"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -96,22 +96,6 @@
             startingLineNumber = "197"
             endingLineNumber = "197"
             landmarkName = "tapImage(_:userdefultKey:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "53934C08-F6DA-4B6C-8852-8844C521D529"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/CarbonReductionLog/CarbonReductionLogVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "tapBackground(_:userdefultKey:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
