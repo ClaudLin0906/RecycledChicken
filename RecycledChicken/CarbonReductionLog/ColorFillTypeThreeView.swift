@@ -59,6 +59,42 @@ class ColorFillTypeThreeView: UIView, NibOwnerLoadable {
         addGestureRecognizer(tap)
     }
     
+    private func getKeyName(_ imageViewTag:Int) -> String {
+        var result = ""
+        let target = imageViews.first(where: {$0.tag == imageViewTag})
+        switch target?.tag {
+        case 0:
+            result = UserDefaultKey.shared.bigFillRightChickenOfColorFillTypeThreeView
+        case 1:
+            result = UserDefaultKey.shared.leftTopOneFillRightChickenOfColorFillTypeThreeView
+        case 2:
+            result = UserDefaultKey.shared.leftTopTwoFillRightChickenOfColorFillTypeThreeView
+        case 3:
+            result = UserDefaultKey.shared.leftTopThreeFillRightChickenOfColorFillTypeThreeView
+        case 4:
+            result = UserDefaultKey.shared.leftTopFourFillRightChickenOfColorFillTypeThreeView
+        case 5:
+            result = UserDefaultKey.shared.leftBottomOneFillRightChickenOfColorFillTypeThreeView
+        case 6:
+            result = UserDefaultKey.shared.leftBottomThreeFillRightChickenOfColorFillTypeThreeView
+        case 7:
+            result = UserDefaultKey.shared.leftBottomTwoFillRightChickenOfColorFillTypeThreeView
+        case 8:
+            result = UserDefaultKey.shared.leftBottomFourFillRightChickenOfColorFillTypeThreeView
+        case 9:
+            result = UserDefaultKey.shared.rightBottomOneFillRightChickenOfColorFillTypeThreeView
+        case 10:
+            result = UserDefaultKey.shared.rightBottomTwoFillRightChickenOfColorFillTypeThreeView
+        case 11:
+            result = UserDefaultKey.shared.rightBottomThreeFillRightChickenOfColorFillTypeThreeView
+        case 12:
+            result = UserDefaultKey.shared.rightBottomFourFillRightChickenOfColorFillTypeThreeView
+        default :
+            break
+        }
+        return result
+    }
+    
     @objc private func tapImageView(_ tapGesture:UITapGestureRecognizer) {
         if let imageView = tapGesture.view as? UIImageView {
             delegate?.tapImage(imageView)

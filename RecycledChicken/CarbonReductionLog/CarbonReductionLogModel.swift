@@ -13,3 +13,6 @@ protocol ColorFillTypeDelegate {
     func tapBackground(_ backgroundView:UIView)
 }
 
+
+
+
