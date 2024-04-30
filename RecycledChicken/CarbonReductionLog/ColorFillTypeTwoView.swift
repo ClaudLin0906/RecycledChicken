@@ -41,6 +41,13 @@ class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
         customInit()
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        if let color = UserDefaults().object(forKey: userdefultKeyOfBackground) as? UIColor {
+            self.backgroundColor = color
+        }
+    }
+    
     private func customInit(){
         loadNibContent()
         imageViews.forEach({

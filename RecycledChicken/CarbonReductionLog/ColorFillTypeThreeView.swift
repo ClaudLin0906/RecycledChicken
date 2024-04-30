@@ -61,6 +61,13 @@ class ColorFillTypeThreeView: UIView, NibOwnerLoadable {
         addGestureRecognizer(tap)
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        if let color = UserDefaults().object(forKey: userdefultKeyOfBackground) as? UIColor {
+            self.backgroundColor = color
+        }
+    }
+    
     @objc private func tapImageView(_ tapGesture:UITapGestureRecognizer) {
         if let imageView = tapGesture.view as? ColorFillImageView {
             delegate?.tapImage(imageView, userdefultKey: imageView.userDefaultKey)

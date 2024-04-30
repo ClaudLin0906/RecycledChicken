@@ -22,7 +22,7 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     @IBInspectable var image: UIImage?
     
     @IBOutlet weak var imageView:UIImageView!
-            
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -31,6 +31,16 @@ class ColorFillTypeOneCellView: UIView, NibOwnerLoadable {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         customInit()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        if let color = UserDefaults().object(forKey: userdefultKeyOfImage) as? UIColor {
+            imageView.image = imageView.image?.withTintColor(color, renderingMode: .alwaysTemplate)
+        }
+        if let color = UserDefaults().object(forKey: userdefultKeyOfBackground) as? UIColor {
+            self.backgroundColor = color
+        }
     }
     
     private func customInit(){
