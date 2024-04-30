@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "點數專區-商品.png",
+      "filename" : "Group 201.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "點數專區-商品 (1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "點數專區-商品 (2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
