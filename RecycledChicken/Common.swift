@@ -50,50 +50,89 @@ enum Language:String, CaseIterable {
     case english = "en-TW"
 }
 
+func getChickenLevel() -> IllustratedGuideModelLevel {
+    return CurrentUserInfo.shared.currentProfileInfo?.levelInfo?.chickenLevel ?? .one
+}
+
+//struct LevelObject{
+//    var icon:UIImage?
+//    var chicken:UIImage?
+//    var chickenName:String
+//}
+//
+//func getLevelObject()-> LevelObject? {
+//    let chickenLevel = CurrentUserInfo.shared.currentProfileInfo?.levelInfo?.chickenLevel
+//    switch chickenLevel {
+//    case.one:
+//        return LevelObject(icon: UIImage(named: "level1-icon"), chicken: UIImage(named: "level1"), chickenName: "碳員")
+//    case.two:
+//        return LevelObject(icon: UIImage(named: "level2-icon"), chicken: UIImage(named: "level2"), chickenName: "割草雞")
+//    case.three:
+//        return LevelObject(icon: UIImage(named: "level3-icon"), chicken: UIImage(named: "level3"), chickenName: "潛水雞")
+//    case.four:
+//        return LevelObject(icon: UIImage(named: "level4-icon"), chicken: UIImage(named: "level4"), chickenName: "技術雞")
+//    case.five:
+//        return LevelObject(icon: UIImage(named: "level5-icon"), chicken: UIImage(named: "level5"), chickenName: "挖土雞")
+//    case.six:
+//        return LevelObject(icon: UIImage(named: "level6-icon"), chicken: UIImage(named: "level6"), chickenName: "紳士雞")
+//    case.seven:
+//        return LevelObject(icon: UIImage(named: "level7-icon"), chicken: UIImage(named: "level7"), chickenName: "發電雞")
+//    case.eight:
+//        return LevelObject(icon: UIImage(named: "level8-icon"), chicken: UIImage(named: "level8"), chickenName: "冒險雞")
+//    case.nine:
+//        return LevelObject(icon: UIImage(named: "level9-icon"), chicken: UIImage(named: "level9"), chickenName: "花雕雞")
+//    case.ten:
+//        return LevelObject(icon: UIImage(named: "level10-icon"), chicken: UIImage(named: "level10"), chickenName: "碳長")
+//    case .none:
+//        return nil
+//    }
+//}
+
 struct IllustratedGuide {
     var level:Int
+    var levelImage:UIImage
+    var iconImage:UIImage
     var guideImage:UIImage
     var name:String
     var title:String
-    var iconImage:UIImage
     var guide:String
 }
 
-enum IllustratedGuideModelLevel: CaseIterable {
-    case one
-    case two
-    case three
-    case four
-    case five
-    case six
-    case seven
-    case eight
-    case nine
-    case ten
-    
-    func getInfo() -> IllustratedGuide {
-        switch self {
-        case .one:
-            return IllustratedGuide(level: 1, guideImage: UIImage(named: "level1-guide")!, name: "illustratedGuideOneOfName".localized, title: "illustratedGuideOneOfTitle".localized, iconImage: UIImage(named:"level1-icon")!, guide: "illustratedGuideOneOfGuide".localized)
-        case .two:
-            return IllustratedGuide(level: 2, guideImage: UIImage(named: "level2-guide")!, name: "割草雞", title: "堆肥", iconImage: UIImage(named: "level2-icon")!, guide: "堆肥是被分解和回收的有機物質作為肥料和土壤調理劑。堆肥是有機農業的關鍵成分。")
-        case .three:
-            return IllustratedGuide(level: 3, guideImage: UIImage(named: "level3-guide")!, name: "潛水雞", title: "水資源", iconImage: UIImage(named: "level3-icon")!, guide: "全球的水資源只有少於2.5%是淡水，其餘的都是海水。")
-        case .four:
-            return IllustratedGuide(level: 4, guideImage: UIImage(named: "level4-guide")!, name: "技術雞", title: "技術研發", iconImage: UIImage(named: "level4-icon")!, guide: "提升回收再製純化技術")
-        case .five:
-            return IllustratedGuide(level: 5, guideImage: UIImage(named: "level5-guide")!, name: "挖土雞", title: "土壤", iconImage: UIImage(named: "level5-icon")!, guide: "土壤若遭受污染，不僅土壤品質惡化、根著其上的作物，食用作物的生物亦受波及，甚至影響到地下水源的品質，而威脅到飲用水的安全。")
-        case .six:
-            return IllustratedGuide(level: 6, guideImage: UIImage(named: "level6-guide")!, name: "紳士雞", title: "紡織纖維材料", iconImage: UIImage(named: "level6-icon")!, guide: "紡織廠致力於寶特瓶回收紗線的開發，讓寶特瓶進入再生循環，用行動支持減塑愛地球。")
-        case .seven:
-            return IllustratedGuide(level: 7, guideImage: UIImage(named: "level7-guide")!, name: "發電雞", title: "綠電", iconImage: UIImage(named: "level7-icon")!, guide: "綠電即再生能源，是指某種發電過程中，產生的二氧化碳排放量為零，或近乎零，對生態、氣候造成的影響較小。")
-        case .eight:
-            return IllustratedGuide(level: 8, guideImage: UIImage(named: "level8-guide")!, name: "冒險雞", title: "大眾運輸", iconImage: UIImage(named: "level8-icon")!, guide: "完善綠色運輸規劃、減少私有運具是更低碳的交通方式。")
-        case .nine:
-            return IllustratedGuide(level: 9, guideImage: UIImage(named: "level9-guide")!, name: "花雕雞", title: "親民代表", iconImage: UIImage(named: "level9-icon")!, guide: "城市美化，循環經濟基礎建設")
-        case .ten:
-            return IllustratedGuide(level: 10, guideImage: UIImage(named: "level10-guide")!, name: "碳長", title: "碳匯", iconImage: UIImage(named: "level10-icon")!, guide: "碳匯（carbon sink）是儲存二氧化碳的天然或人工「倉庫」")
-        }
+enum IllustratedGuideModelLevel:Int, CaseIterable, Codable {
+    case one = 1
+    case two = 2
+    case three = 3
+    case four = 4
+    case five = 5
+    case six = 6
+    case seven = 7
+    case eight = 8
+    case nine = 9
+    case ten = 10
+}
+
+func getIllustratedGuide(_ illustratedGuideModelLevel: IllustratedGuideModelLevel) -> IllustratedGuide {
+    switch illustratedGuideModelLevel {
+    case .one:
+        return IllustratedGuide(level: 1, levelImage: UIImage(named:"level1")!, iconImage: UIImage(named:"level1-icon")!, guideImage: UIImage(named: "level1-guide")!, name: "illustratedGuideOneOfName".localized, title: "illustratedGuideOneOfTitle".localized, guide: "illustratedGuideOneOfGuide".localized)
+    case .two:
+        return IllustratedGuide(level: 2, levelImage: UIImage(named:"level2")!, iconImage: UIImage(named: "level2-icon")!, guideImage: UIImage(named: "level2-guide")!, name: "割草雞", title: "堆肥", guide: "堆肥是被分解和回收的有機物質作為肥料和土壤調理劑。堆肥是有機農業的關鍵成分。")
+    case .three:
+        return IllustratedGuide(level: 3, levelImage: UIImage(named:"level3")!, iconImage: UIImage(named: "level3-icon")!, guideImage: UIImage(named: "level3-guide")!, name: "潛水雞", title: "水資源", guide: "全球的水資源只有少於2.5%是淡水，其餘的都是海水。")
+    case .four:
+        return IllustratedGuide(level: 4, levelImage: UIImage(named:"level4")!, iconImage: UIImage(named: "level4-icon")!, guideImage: UIImage(named: "level4-guide")!, name: "技術雞", title: "技術研發", guide: "提升回收再製純化技術")
+    case .five:
+        return IllustratedGuide(level: 5, levelImage: UIImage(named:"level5")!, iconImage: UIImage(named: "level5-icon")!, guideImage: UIImage(named: "level5-guide")!, name: "挖土雞", title: "土壤", guide: "土壤若遭受污染，不僅土壤品質惡化、根著其上的作物，食用作物的生物亦受波及，甚至影響到地下水源的品質，而威脅到飲用水的安全。")
+    case .six:
+        return IllustratedGuide(level: 6, levelImage: UIImage(named:"level6")!, iconImage: UIImage(named: "level6-icon")!, guideImage: UIImage(named: "level6-guide")!, name: "紳士雞", title: "紡織纖維材料", guide: "紡織廠致力於寶特瓶回收紗線的開發，讓寶特瓶進入再生循環，用行動支持減塑愛地球。")
+    case .seven:
+        return IllustratedGuide(level: 7, levelImage: UIImage(named:"level7")!, iconImage: UIImage(named: "level7-icon")!, guideImage: UIImage(named: "level7-guide")!, name: "發電雞", title: "綠電", guide: "綠電即再生能源，是指某種發電過程中，產生的二氧化碳排放量為零，或近乎零，對生態、氣候造成的影響較小。")
+    case .eight:
+        return IllustratedGuide(level: 8, levelImage: UIImage(named:"level8")!, iconImage: UIImage(named: "level8-icon")!, guideImage: UIImage(named: "level8-guide")!, name: "冒險雞", title: "大眾運輸", guide: "完善綠色運輸規劃、減少私有運具是更低碳的交通方式。")
+    case .nine:
+        return IllustratedGuide(level: 9, levelImage: UIImage(named:"level9")!, iconImage: UIImage(named: "level9-icon")!, guideImage: UIImage(named: "level9-guide")!, name: "花雕雞", title: "親民代表", guide: "城市美化，循環經濟基礎建設")
+    case .ten:
+        return IllustratedGuide(level: 10, levelImage: UIImage(named:"level10")!, iconImage: UIImage(named: "level10-icon")!, guideImage: UIImage(named: "level10-guide")!, name: "碳長", title: "碳匯", guide: "碳匯（carbon sink）是儲存二氧化碳的天然或人工「倉庫」")
     }
 }
 
@@ -243,12 +282,6 @@ class UserDefaultKey {
     let threeFillRightChickenOfColorFillTypeFourView = "threeFillRightChickenOfColorFillTypeFourView"
 }
 
-struct LevelObject{
-    var icon:UIImage?
-    var chicken:UIImage?
-    var chickenName:String
-}
-
 class CurrentUserInfo {
     
     static let shared = CurrentUserInfo()
@@ -311,6 +344,7 @@ struct APIUrl {
     static let delete = "/delete"
     static let siteList = "https://www.buenopartners.com.tw/list"
     static let siteListEnglish = "https://www.buenopartners.com.tw/en/list"
+    static let mall = "https://tw.yahoo.com/"
 }
 
 struct WebViewUrl{
@@ -392,7 +426,7 @@ func getUserInfo(VC:UIViewController, finishAction:(()->())?){
 private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     var newUserInfo = userinfo
     let experiencePoint = userinfo.experiencePoint
-    var levelInfo:LevelInfo = LevelInfo(level: 1, chickenLevel: .one)
+    var levelInfo:LevelInfo = LevelInfo(progress: 1, chickenLevel: .one)
     if experiencePoint >= 0 && experiencePoint <= 10000{
         levelInfo.chickenLevel = .one
     }else if experiencePoint > 10000 && experiencePoint <= 20000{
@@ -416,336 +450,308 @@ private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     }
     
     if experiencePoint >= 0 && experiencePoint <= 100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 100 && experiencePoint <= 400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 400 && experiencePoint <= 900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 900 && experiencePoint <= 1600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 1600 && experiencePoint <= 2500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 2500 && experiencePoint <= 3600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 3600 && experiencePoint <= 4900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 4900 && experiencePoint <= 6400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 6400 && experiencePoint <= 8100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 8100 && experiencePoint <= 10000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 10000 && experiencePoint <= 10100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 10100 && experiencePoint <= 10400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 10400 && experiencePoint <= 10900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 10900 && experiencePoint <= 11600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 11600 && experiencePoint <= 12500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 12500 && experiencePoint <= 13600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 13600 && experiencePoint <= 14900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 14900 && experiencePoint <= 16400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 16400 && experiencePoint <= 18100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 18100 && experiencePoint <= 20000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 20000 && experiencePoint <= 20100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 20100 && experiencePoint <= 20400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 20400 && experiencePoint <= 20900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 20900 && experiencePoint <= 21600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 21600 && experiencePoint <= 22500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 22500 && experiencePoint <= 23600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 23600 && experiencePoint <= 24900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 24900 && experiencePoint <= 26400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 26400 && experiencePoint <= 28100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 28100 && experiencePoint <= 30000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 30000 && experiencePoint <= 30100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 30100 && experiencePoint <= 30400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 30400 && experiencePoint <= 30900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 30900 && experiencePoint <= 31600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 31600 && experiencePoint <= 32500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 32500 && experiencePoint <= 33600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 33600 && experiencePoint <= 34900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 34900 && experiencePoint <= 36400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 36400 && experiencePoint <= 38100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 38100 && experiencePoint <= 40000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 40000 && experiencePoint <= 40100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 40100 && experiencePoint <= 40400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 40400 && experiencePoint <= 40900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 40900 && experiencePoint <= 41600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 41600 && experiencePoint <= 42500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 42500 && experiencePoint <= 43600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 43600 && experiencePoint <= 44900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 44900 && experiencePoint <= 46400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 46400 && experiencePoint <= 48100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 48100 && experiencePoint <= 50000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 50000 && experiencePoint <= 50100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 50100 && experiencePoint <= 50400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 50400 && experiencePoint <= 50900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 50900 && experiencePoint <= 51600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 51600 && experiencePoint <= 52500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 52500 && experiencePoint <= 53600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 53600 && experiencePoint <= 54900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 54900 && experiencePoint <= 56400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 56400 && experiencePoint <= 58100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 58100 && experiencePoint <= 60000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 60000 && experiencePoint <= 60100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 60100 && experiencePoint <= 60400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 60400 && experiencePoint <= 60900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 60900 && experiencePoint <= 61600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 61600 && experiencePoint <= 62500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 62500 && experiencePoint <= 63600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 63600 && experiencePoint <= 64900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 64900 && experiencePoint <= 66400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 66400 && experiencePoint <= 68100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 68100 && experiencePoint <= 70000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 70000 && experiencePoint <= 70100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 70100 && experiencePoint <= 70400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 70400 && experiencePoint <= 70900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 70900 && experiencePoint <= 71600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 71600 && experiencePoint <= 72500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 72500 && experiencePoint <= 73600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 73600 && experiencePoint <= 74900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 74900 && experiencePoint <= 76400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 76400 && experiencePoint <= 78100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 78100 && experiencePoint <= 80000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 80000 && experiencePoint <= 80100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 80100 && experiencePoint <= 80400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 80400 && experiencePoint <= 80900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 80900 && experiencePoint <= 81600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 81600 && experiencePoint <= 82500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 82500 && experiencePoint <= 83600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 83600 && experiencePoint <= 84900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 84900 && experiencePoint <= 86400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 86400 && experiencePoint <= 88100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 88100 && experiencePoint <= 90000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 90000 && experiencePoint <= 90100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 90100 && experiencePoint <= 90400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 90400 && experiencePoint <= 90900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 90900 && experiencePoint <= 91600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 91600 && experiencePoint <= 92500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 92500 && experiencePoint <= 93600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 93600 && experiencePoint <= 94900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 94900 && experiencePoint <= 96400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 96400 && experiencePoint <= 98100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 98100 && experiencePoint <= 100000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     newUserInfo.levelInfo = levelInfo
     return newUserInfo
 
-}
-
-func getLevelObject()-> LevelObject?{
-    let chickenLevel = CurrentUserInfo.shared.currentProfileInfo?.levelInfo?.chickenLevel
-    switch chickenLevel {
-    case.one:
-        return LevelObject(icon: UIImage(named: "level1-icon"), chicken: UIImage(named: "level1"), chickenName: "碳員")
-    case.two:
-        return LevelObject(icon: UIImage(named: "level2-icon"), chicken: UIImage(named: "level2"), chickenName: "割草雞")
-    case.three:
-        return LevelObject(icon: UIImage(named: "level3-icon"), chicken: UIImage(named: "level3"), chickenName: "潛水雞")
-    case.four:
-        return LevelObject(icon: UIImage(named: "level4-icon"), chicken: UIImage(named: "level4"), chickenName: "技術雞")
-    case.five:
-        return LevelObject(icon: UIImage(named: "level5-icon"), chicken: UIImage(named: "level5"), chickenName: "挖土雞")
-    case.six:
-        return LevelObject(icon: UIImage(named: "level6-icon"), chicken: UIImage(named: "level6"), chickenName: "紳士雞")
-    case.seven:
-        return LevelObject(icon: UIImage(named: "level7-icon"), chicken: UIImage(named: "level7"), chickenName: "發電雞")
-    case.eight:
-        return LevelObject(icon: UIImage(named: "level8-icon"), chicken: UIImage(named: "level8"), chickenName: "冒險雞")
-    case.nine:
-        return LevelObject(icon: UIImage(named: "level9-icon"), chicken: UIImage(named: "level9"), chickenName: "花雕雞")
-    case.ten:
-        return LevelObject(icon: UIImage(named: "level10-icon"), chicken: UIImage(named: "level10"), chickenName: "碳長")
-    case .none:
-        return nil
-    }
 }
 
 func generateBarCode(from string: String) -> UIImage? {

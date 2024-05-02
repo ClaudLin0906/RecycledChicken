@@ -56,11 +56,9 @@ class ProfileVC: CustomVC {
     
     private func UIInit(){
         profileTableView.setSeparatorLocation()
-        if let chickenName = getLevelObject()?.chickenName as? String{
-            chickenLeverLabel.text = "\("currentLevel".localized):\(chickenName)"
-        }
+        let illustratedGuide = getIllustratedGuide(getChickenLevel())
+        chickenLeverLabel.text = "\("currentLevel".localized):\(illustratedGuide.name)"
         barCodeView.setBarCodeValue("0932266860")
-        
     }
     
     private func createDatePicker(_ textfield:UITextField) {

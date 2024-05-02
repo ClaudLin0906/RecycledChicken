@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct IllustratedGuideTableData {
-    var illustratedGuideInfo:IllustratedGuideModelLevel
+    var illustratedGuideModelLevel:IllustratedGuideModelLevel
     var isRead:Bool = false
 }
 

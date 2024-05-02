@@ -14,7 +14,7 @@ class IllustratedGuideVC: CustomVC {
     private var tableViewDatas:[IllustratedGuideTableData] = {
         var illustratedGuideTableDatas:[IllustratedGuideTableData] = []
         IllustratedGuideModelLevel.allCases.forEach({
-            illustratedGuideTableDatas.append(IllustratedGuideTableData(illustratedGuideInfo: $0))
+            illustratedGuideTableDatas.append(IllustratedGuideTableData(illustratedGuideModelLevel: $0))
         })
         return illustratedGuideTableDatas
     }()
@@ -59,7 +59,7 @@ extension IllustratedGuideVC: UITableViewDataSource {
 extension IllustratedGuideVC: IllustratedGuideTableViewCellDelegate {
     
     func tapGesture(_ illustratedGuideTableData: IllustratedGuideTableData) {
-        if let index = tableViewDatas.firstIndex(where: { $0.illustratedGuideInfo == illustratedGuideTableData.illustratedGuideInfo}) {
+        if let index = tableViewDatas.firstIndex(where: { $0.illustratedGuideModelLevel == illustratedGuideTableData.illustratedGuideModelLevel}) {
             tableViewDatas[index].isRead = true
         }
     }

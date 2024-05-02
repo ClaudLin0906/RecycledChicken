@@ -38,6 +38,8 @@
 		595406C22BC27B9500D214BF /* ColorFillTypeFourView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */; };
 		595D3CEE2BE325FE00FE9D85 /* SiteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D3CED2BE325FE00FE9D85 /* SiteListVC.swift */; };
 		595D3CF02BE3260600FE9D85 /* SiteList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 595D3CEF2BE3260600FE9D85 /* SiteList.storyboard */; };
+		595D3CF22BE32E1900FE9D85 /* DiscoverChickenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D3CF12BE32E1900FE9D85 /* DiscoverChickenView.swift */; };
+		595D3CF42BE32E2000FE9D85 /* DiscoverChickenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 595D3CF32BE32E2000FE9D85 /* DiscoverChickenView.xib */; };
 		59600E832B9EE02A009AFA76 /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600E852B9EE02A009AFA76 /* SignLogin.storyboard */; };
 		59600E872B9EE10E009AFA76 /* ConnectCompany.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600E892B9EE10E009AFA76 /* ConnectCompany.storyboard */; };
 		59600E8B2B9EE137009AFA76 /* ConnectSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59600E8D2B9EE137009AFA76 /* ConnectSuccessView.xib */; };
@@ -320,6 +322,8 @@
 		595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeFourView.xib; sourceTree = "<group>"; };
 		595D3CED2BE325FE00FE9D85 /* SiteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteListVC.swift; sourceTree = "<group>"; };
 		595D3CEF2BE3260600FE9D85 /* SiteList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SiteList.storyboard; sourceTree = "<group>"; };
+		595D3CF12BE32E1900FE9D85 /* DiscoverChickenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverChickenView.swift; sourceTree = "<group>"; };
+		595D3CF32BE32E2000FE9D85 /* DiscoverChickenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverChickenView.xib; sourceTree = "<group>"; };
 		59600E842B9EE02A009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignLogin.storyboard; sourceTree = "<group>"; };
 		59600E862B9EE02A009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/SignLogin.xcstrings; sourceTree = "<group>"; };
 		59600E882B9EE10E009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConnectCompany.storyboard; sourceTree = "<group>"; };
@@ -1029,6 +1033,8 @@
 				599216C02B8EFAAC0056FFC1 /* CustomSegmentedControl.swift */,
 				5960E5DE2BA2E198007F4AEF /* UpdateAppAlertView.swift */,
 				5960E5E02BA2E19F007F4AEF /* UpdateAppAlertView.xib */,
+				595D3CF12BE32E1900FE9D85 /* DiscoverChickenView.swift */,
+				595D3CF32BE32E2000FE9D85 /* DiscoverChickenView.xib */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -1365,6 +1371,7 @@
 				59600F072B9EE5EF009AFA76 /* ADBannerView.xib in Resources */,
 				59600F0B2B9EE9C9009AFA76 /* ForgetPassword.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
+				595D3CF42BE32E2000FE9D85 /* DiscoverChickenView.xib in Resources */,
 				5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */,
 				59600F172B9EEB1B009AFA76 /* Lottery.storyboard in Resources */,
 				59600EE72B9EE491009AFA76 /* UpdatePasswordSuccessView.xib in Resources */,
@@ -1595,6 +1602,7 @@
 				599836512B946EC6003F3B48 /* StationListTableViewCell.swift in Sources */,
 				5960E5DF2BA2E198007F4AEF /* UpdateAppAlertView.swift in Sources */,
 				59AFE15B2A0FA82400490BD8 /* IconView.swift in Sources */,
+				595D3CF22BE32E1900FE9D85 /* DiscoverChickenView.swift in Sources */,
 				598751FE2A64EB6800775D4A /* ADView.swift in Sources */,
 				5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */,
 				599216C32B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift in Sources */,

@@ -18,19 +18,6 @@ struct ProfileInfo:Codable {
 }
 
 struct LevelInfo:Codable {
-    var level:Int?
-    var chickenLevel:chickenLevel?
-}
-
-enum chickenLevel:Codable {
-    case one
-    case two
-    case three
-    case four
-    case five
-    case six
-    case seven
-    case eight
-    case nine
-    case ten
+    var progress:Int?
+    var chickenLevel:IllustratedGuideModelLevel?
 }

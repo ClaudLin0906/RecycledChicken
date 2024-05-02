@@ -63,6 +63,7 @@ class HomeVC: CustomRootVC {
             accountLabel.font = accountLabel.font.withSize(12)
             messageLabel.font = messageLabel.font.withSize(12)
             settingLabel.font = settingLabel.font.withSize(12)
+            chickenLevelLabel.font = chickenLevelLabel.font.withSize(10)
             carbonReductionLogBtnWidth.constant = 180
         }
 //        NotificationCenter.default.addObserver(self, selector: #selector(receiveCalenderCell(_:)), name: .calenderCellOnCilck, object: nil)
@@ -84,14 +85,12 @@ class HomeVC: CustomRootVC {
         pageControl.numberOfPages = bannerCount
         getUserInfo(VC: self, finishAction: {
             DispatchQueue.main.async {
-                if let levelObject = getLevelObject(), let image = levelObject.chicken {
-                    self.chickenLevelImageView.image = image
-                }
+                let illustratedGuide = getIllustratedGuide(getChickenLevel())
+                self.chickenLevelImageView.image = illustratedGuide.levelImage
                 if let image = self.getTrendChart() {
                     self.trendChartImageView.image = image
                 }
-                
-                self.chickenLevelLabel.text = "\("currentLevel".localized)：潛水雞"
+                self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
             }
 
             Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
@@ -103,7 +102,7 @@ class HomeVC: CustomRootVC {
     private func getTrendChart() -> UIImage?{
         if let levelInfo = CurrentUserInfo.shared.currentProfileInfo?.levelInfo {
             var image:UIImage?
-            switch levelInfo.level {
+            switch levelInfo.progress {
             case 1:
                 image = UIImage(named: "RecycledLevel1")
             case 2:
@@ -267,7 +266,7 @@ class HomeVC: CustomRootVC {
     }
     
     @IBAction func openURLForMall(_ sender:UIButton) {
-        guard let url = URL(string: "https://tw.yahoo.com/") else { return }
+        guard let url = URL(string: APIUrl.mall) else { return }
         UIApplication.shared.open(url)
     }
 }

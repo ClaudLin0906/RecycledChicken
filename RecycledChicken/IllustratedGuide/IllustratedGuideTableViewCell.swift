@@ -66,7 +66,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     private func UIInit() {
         guard let illustratedGuideTableData = illustratedGuideTableData else { return }
-        let info = illustratedGuideTableData.illustratedGuideInfo.getInfo()
+        let info = getIllustratedGuide(illustratedGuideTableData.illustratedGuideModelLevel)
         content.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.centerXAnchor.constraint(equalTo: content.centerXAnchor).isActive = true
@@ -130,7 +130,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     private func checkLevel() -> Bool {
         guard let illustratedGuideTableData = illustratedGuideTableData else { return false }
-        if let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.level, level >= illustratedGuideTableData.illustratedGuideInfo.getInfo().level {
+        if let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.progress, level >= getIllustratedGuide(illustratedGuideTableData.illustratedGuideModelLevel).level {
             return true
         }
         return false
