@@ -35,7 +35,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sov-cG-xug" userLabel="content">
-                                                            <rect key="frame" x="29.333333333333343" y="14" width="334.33333333333326" height="112"/>
+                                                            <rect key="frame" x="29.333333333333343" y="7" width="334.33333333333326" height="126"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -47,7 +47,7 @@
                                                     <constraints>
                                                         <constraint firstItem="sov-cG-xug" firstAttribute="centerY" secondItem="Xs5-T4-lKY" secondAttribute="centerY" id="H1r-ee-iEl"/>
                                                         <constraint firstItem="sov-cG-xug" firstAttribute="centerX" secondItem="Xs5-T4-lKY" secondAttribute="centerX" id="Pbv-hB-OSb"/>
-                                                        <constraint firstItem="sov-cG-xug" firstAttribute="height" secondItem="Xs5-T4-lKY" secondAttribute="height" multiplier="0.8" id="h2Y-hl-ejs"/>
+                                                        <constraint firstItem="sov-cG-xug" firstAttribute="height" secondItem="Xs5-T4-lKY" secondAttribute="height" multiplier="0.9" id="h2Y-hl-ejs"/>
                                                         <constraint firstAttribute="height" constant="140" id="xx8-Yn-Flx"/>
                                                         <constraint firstItem="sov-cG-xug" firstAttribute="width" secondItem="Xs5-T4-lKY" secondAttribute="width" multiplier="0.85" id="yVd-rA-gfb"/>
                                                     </constraints>
