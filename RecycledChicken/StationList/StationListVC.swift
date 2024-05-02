@@ -8,6 +8,8 @@
 import UIKit
 import DropDown
 import SkeletonView
+import GooglePlaces
+
 class StationListVC: CustomVC {
     
     @IBOutlet weak var dropDownView:DropDownView!
@@ -15,12 +17,32 @@ class StationListVC: CustomVC {
     @IBOutlet weak var keyWordTextfiekd:UITextField!
     
     @IBOutlet weak var tableView:UITableView!
-    
+        
     private var mapInfos:[MapInfo] = []
     
     private var filterMapInfos:[MapInfo] = []
     
+    private var fakeMapInfosData:[MapInfo] =
+    [
+        MapInfo(isVisible: true, storeName: "店家1", storeID: "店家1ID", cellPath: "店家1cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家1storeAddress", coordinate: "24.8355593, 121.0090052"),
+        MapInfo(isVisible: true, storeName: "店家2", storeID: "店家2ID", cellPath: "店家2cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "滿", storeAddress: "店家2storeAddress", coordinate: "22.8355593, 121.0090052"),
+        MapInfo(isVisible: true, storeName: "店家3", storeID: "店家3ID", cellPath: "店家3cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 0, battery: 10), status: "可投遞", storeAddress: "店家3storeAddress", coordinate: "20.8355593, 121.0090052"),
+        MapInfo(isVisible: true, storeName: "店家4", storeID: "店家4ID", cellPath: "店家4cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 0), status: "可投遞", storeAddress: "店家4storeAddress", coordinate: "18.8355593, 121.0090052"),
+        MapInfo(isVisible: true, storeName: "店家5", storeID: "店家5ID", cellPath: "店家5cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家5storeAddress", coordinate: "16.8355593, 121.0090052")
+    ]
+    
     private var filtered = false
+    
+    private var locationManager = CLLocationManager()
+    
+    private var currentLocation: CLLocation?
+    {
+        willSet {
+            if newValue != nil {
+                sortDisance()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +67,62 @@ class StationListVC: CustomVC {
         keyWordTextfiekd.clearButtonMode = .always
         keyWordTextfiekd.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tableView.showAnimatedSkeleton()
+        locationManager.delegate = self
+        mapInfos = fakeMapInfosData
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+        if isLocationServicesEnabled() {
+           locationManager.startUpdatingLocation()
+        } else {
+           locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        locationManager.stopUpdatingLocation()
+    }
+    
+    private func getLocation(_ locationStr:String) -> CLLocation? {
+        if let coordinateArr = try? locationStr.components(separatedBy: ", "), coordinateArr.count == 2 {
+            if let latitude = Double(coordinateArr[0]), let longitude = Double(coordinateArr[1]) {
+                return CLLocation(latitude: latitude, longitude: longitude)
+            }
+        }
+        return nil
+    }
+    
+    private func sortDisance() {
+        guard let currentLocation = currentLocation else { return }
+        var newMapInfos:[MapInfo] = []
+        newMapInfos = mapInfos.sorted { mapInfo1, mapInfo2 in
+            guard let coordinate1 = getLocation(mapInfo1.coordinate), let coordinate2 = getLocation(mapInfo2.coordinate) else { return false }
+            let distance1 = coordinate1.distance(from: currentLocation)
+            let distance2 = coordinate2.distance(from: currentLocation)
+            return distance1 > distance2
+        }
+        mapInfos.append(contentsOf: newMapInfos)
+        print(" end \(mapInfos)")
+    }
+    
+    private func isLocationServicesEnabled() -> Bool {
+        let authorizationStatus: CLAuthorizationStatus
+        if #available(iOS 14, *) {
+            authorizationStatus = locationManager.authorizationStatus
+        } else {
+            authorizationStatus = CLLocationManager.authorizationStatus()
+        }
+        switch authorizationStatus {
+        case .notDetermined, .restricted, .denied:
+            return false
+        case .authorizedAlways, .authorizedWhenInUse:
+            return true
+        @unknown default:
+            return false
+        }
     }
     
     private func getStoreInfo(){
@@ -110,9 +183,6 @@ class StationListVC: CustomVC {
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {
-//        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "StoreList", bundle: Bundle.main).instantiateViewController(identifier: "StoreList") as? StoreListVC {
-//            pushVC(targetVC: VC, navigation: navigationController)
-//        }
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "SiteList", bundle: Bundle.main).instantiateViewController(identifier: "SiteList") as? SiteListVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
@@ -149,4 +219,16 @@ extension StationListVC: SkeletonTableViewDataSource {
         return cell
     }
     
+}
+
+extension StationListVC:CLLocationManagerDelegate {
+    
+    //Location Manager delegates
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            currentLocation = location
+            locationManager.stopUpdatingLocation()
+        }
+    }
+
 }

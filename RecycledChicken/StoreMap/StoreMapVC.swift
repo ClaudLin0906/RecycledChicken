@@ -23,13 +23,6 @@ class StoreMapVC: CustomRootVC {
     
     private var locationManager = CLLocationManager()
     
-    private var location: CLLocation? {
-      didSet {
-        guard oldValue == nil, let firstLocation = location else { return }
-        mapView.camera = GMSCameraPosition(target: firstLocation.coordinate, zoom: 14)
-      }
-    }
-    
     private var fakeMapInfosData:[MapInfo] = 
     [
         MapInfo(isVisible: true, storeName: "店家1", storeID: "店家1ID", cellPath: "店家1cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家1storeAddress", coordinate: "24.8355593, 121.0090052"),

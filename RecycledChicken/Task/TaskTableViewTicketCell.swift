@@ -38,6 +38,9 @@ class TaskTableViewTicketCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         finishBtn.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        if getLanguage() == .english {
+            getticketBtnWidth.constant = 150
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

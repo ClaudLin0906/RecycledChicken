@@ -16,6 +16,7 @@ struct MapInfo: Codable {
     var status:String
     var storeAddress:String
     var coordinate:String
+    var disance:Double = 0
 }
 
 struct RemainingProcessableInfo: Codable {
