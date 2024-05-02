@@ -63,7 +63,7 @@ class HomeVC: CustomRootVC {
             accountLabel.font = accountLabel.font.withSize(12)
             messageLabel.font = messageLabel.font.withSize(12)
             settingLabel.font = settingLabel.font.withSize(12)
-            chickenLevelLabel.font = chickenLevelLabel.font.withSize(10)
+            chickenLevelLabel.font = chickenLevelLabel.font.withSize(11)
             carbonReductionLogBtnWidth.constant = 180
         }
 //        NotificationCenter.default.addObserver(self, selector: #selector(receiveCalenderCell(_:)), name: .calenderCellOnCilck, object: nil)

@@ -15,7 +15,14 @@ class DiscoverChickenView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var chickenGuideLabel:CustomLabel!
     
-    private var chichenLevel:Int?
+    private var chichenLevel:IllustratedGuideModelLevel?
+    {
+        willSet {
+            if let newValue = newValue {
+                setChichenLevel(newValue)
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +36,14 @@ class DiscoverChickenView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    private func setChichenLevel(_ level:IllustratedGuideModelLevel) {
+        self.chichenLevel = level
+        let illustratedGuide = getIllustratedGuide(level)
+        chickenImageView.image = illustratedGuide.levelImage
+        chickenTitleLabel.text = illustratedGuide.name
+        chickenGuideLabel.text = illustratedGuide.guide
     }
 
 }
