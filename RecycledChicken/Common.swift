@@ -116,23 +116,24 @@ func getIllustratedGuide(_ illustratedGuideModelLevel: IllustratedGuideModelLeve
     case .one:
         return IllustratedGuide(level: 1, levelImage: UIImage(named:"level1")!, iconImage: UIImage(named:"level1-icon")!, guideImage: UIImage(named: "level1-guide")!, name: "illustratedGuideOneOfName".localized, title: "illustratedGuideOneOfTitle".localized, guide: "illustratedGuideOneOfGuide".localized)
     case .two:
-        return IllustratedGuide(level: 2, levelImage: UIImage(named:"level2")!, iconImage: UIImage(named: "level2-icon")!, guideImage: UIImage(named: "level2-guide")!, name: "割草雞", title: "堆肥", guide: "堆肥是被分解和回收的有機物質作為肥料和土壤調理劑。堆肥是有機農業的關鍵成分。")
+        return IllustratedGuide(level: 2, levelImage: UIImage(named:"level2")!, iconImage: UIImage(named: "level2-icon")!, guideImage: UIImage(named: "level2-guide")!, name: "illustratedGuideTwoOfName".localized, title: "illustratedGuideTwoOfTitle".localized, guide: "illustratedGuideTwoOfGuide".localized)
     case .three:
-        return IllustratedGuide(level: 3, levelImage: UIImage(named:"level3")!, iconImage: UIImage(named: "level3-icon")!, guideImage: UIImage(named: "level3-guide")!, name: "潛水雞", title: "水資源", guide: "全球的水資源只有少於2.5%是淡水，其餘的都是海水。")
+        return IllustratedGuide(level: 3, levelImage: UIImage(named:"level3")!, iconImage: UIImage(named: "level3-icon")!, guideImage: UIImage(named: "level3-guide")!, name: "illustratedGuideThreeOfName".localized, title: "illustratedGuideThreeOfTitle".localized, guide: "illustratedGuideThreeOfGuide".localized)
     case .four:
-        return IllustratedGuide(level: 4, levelImage: UIImage(named:"level4")!, iconImage: UIImage(named: "level4-icon")!, guideImage: UIImage(named: "level4-guide")!, name: "技術雞", title: "技術研發", guide: "提升回收再製純化技術")
+        return IllustratedGuide(level: 4, levelImage: UIImage(named:"level4")!, iconImage: UIImage(named: "level4-icon")!, guideImage: UIImage(named: "level4-guide")!, name: "illustratedGuideFourOfName".localized, title: "illustratedGuideFourOfTitle".localized, guide: "illustratedGuideFourOfGuide".localized)
     case .five:
-        return IllustratedGuide(level: 5, levelImage: UIImage(named:"level5")!, iconImage: UIImage(named: "level5-icon")!, guideImage: UIImage(named: "level5-guide")!, name: "挖土雞", title: "土壤", guide: "土壤若遭受污染，不僅土壤品質惡化、根著其上的作物，食用作物的生物亦受波及，甚至影響到地下水源的品質，而威脅到飲用水的安全。")
+        return IllustratedGuide(level: 5, levelImage: UIImage(named:"level5")!, iconImage: UIImage(named: "level5-icon")!, guideImage: UIImage(named: "level5-guide")!, name: "illustratedGuideFiveOfName".localized, title: "illustratedGuideFiveOfTitle".localized, guide: "illustratedGuideFiveOfGuide".localized)
     case .six:
-        return IllustratedGuide(level: 6, levelImage: UIImage(named:"level6")!, iconImage: UIImage(named: "level6-icon")!, guideImage: UIImage(named: "level6-guide")!, name: "紳士雞", title: "紡織纖維材料", guide: "紡織廠致力於寶特瓶回收紗線的開發，讓寶特瓶進入再生循環，用行動支持減塑愛地球。")
+        return IllustratedGuide(level: 6, levelImage: UIImage(named:"level6")!, iconImage: UIImage(named: "level6-icon")!, guideImage: UIImage(named: "level6-guide")!, name: "illustratedGuideSixOfName".localized, title: "illustratedGuideSixOfTitle".localized
+                                , guide: "illustratedGuideSixOfGuide".localized)
     case .seven:
-        return IllustratedGuide(level: 7, levelImage: UIImage(named:"level7")!, iconImage: UIImage(named: "level7-icon")!, guideImage: UIImage(named: "level7-guide")!, name: "發電雞", title: "綠電", guide: "綠電即再生能源，是指某種發電過程中，產生的二氧化碳排放量為零，或近乎零，對生態、氣候造成的影響較小。")
+        return IllustratedGuide(level: 7, levelImage: UIImage(named:"level7")!, iconImage: UIImage(named: "level7-icon")!, guideImage: UIImage(named: "level7-guide")!, name: "illustratedGuideSevenOfName".localized, title: "illustratedGuideSevenOfTitle".localized, guide: "illustratedGuideSevenOfGuide".localized)
     case .eight:
-        return IllustratedGuide(level: 8, levelImage: UIImage(named:"level8")!, iconImage: UIImage(named: "level8-icon")!, guideImage: UIImage(named: "level8-guide")!, name: "冒險雞", title: "大眾運輸", guide: "完善綠色運輸規劃、減少私有運具是更低碳的交通方式。")
+        return IllustratedGuide(level: 8, levelImage: UIImage(named:"level8")!, iconImage: UIImage(named: "level8-icon")!, guideImage: UIImage(named: "level8-guide")!, name: "illustratedGuideEightOfName".localized, title: "illustratedGuideEightOfTitle".localized, guide: "illustratedGuideEightOfGuide".localized)
     case .nine:
-        return IllustratedGuide(level: 9, levelImage: UIImage(named:"level9")!, iconImage: UIImage(named: "level9-icon")!, guideImage: UIImage(named: "level9-guide")!, name: "花雕雞", title: "親民代表", guide: "城市美化，循環經濟基礎建設")
+        return IllustratedGuide(level: 9, levelImage: UIImage(named:"level9")!, iconImage: UIImage(named: "level9-icon")!, guideImage: UIImage(named: "level9-guide")!, name: "illustratedGuideNineOfName".localized, title: "illustratedGuideNineOfTitle".localized, guide: "illustratedGuideNineOfGuide".localized)
     case .ten:
-        return IllustratedGuide(level: 10, levelImage: UIImage(named:"level10")!, iconImage: UIImage(named: "level10-icon")!, guideImage: UIImage(named: "level10-guide")!, name: "碳長", title: "碳匯", guide: "碳匯（carbon sink）是儲存二氧化碳的天然或人工「倉庫」")
+        return IllustratedGuide(level: 10, levelImage: UIImage(named:"level10")!, iconImage: UIImage(named: "level10-icon")!, guideImage: UIImage(named: "level10-guide")!, name: "illustratedGuideTenOfName".localized, title: "illustratedGuideTenOfTitle".localized, guide: "illustratedGuideTenOfGuide".localized)
     }
 }
 
