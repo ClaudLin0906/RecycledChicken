@@ -309,6 +309,8 @@ struct APIUrl {
     static let getQuestStatus = "/getQuestStatus"
     static let taskAD = "https://www.buenopartners.com.tw/recyclepunk"
     static let delete = "/delete"
+    static let siteList = "https://www.buenopartners.com.tw/list"
+    static let siteListEnglish = "https://www.buenopartners.com.tw/en/list"
 }
 
 struct WebViewUrl{

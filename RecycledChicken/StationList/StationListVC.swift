@@ -110,7 +110,10 @@ class StationListVC: CustomVC {
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {
-        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "StoreList", bundle: Bundle.main).instantiateViewController(identifier: "StoreList") as? StoreListVC {
+//        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "StoreList", bundle: Bundle.main).instantiateViewController(identifier: "StoreList") as? StoreListVC {
+//            pushVC(targetVC: VC, navigation: navigationController)
+//        }
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "SiteList", bundle: Bundle.main).instantiateViewController(identifier: "SiteList") as? SiteListVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }

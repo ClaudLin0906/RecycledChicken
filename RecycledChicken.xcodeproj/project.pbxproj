@@ -36,6 +36,8 @@
 		595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */; };
 		595406C02BC27B8400D214BF /* ColorFillTypeFourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */; };
 		595406C22BC27B9500D214BF /* ColorFillTypeFourView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */; };
+		595D3CEE2BE325FE00FE9D85 /* SiteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D3CED2BE325FE00FE9D85 /* SiteListVC.swift */; };
+		595D3CF02BE3260600FE9D85 /* SiteList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 595D3CEF2BE3260600FE9D85 /* SiteList.storyboard */; };
 		59600E832B9EE02A009AFA76 /* SignLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600E852B9EE02A009AFA76 /* SignLogin.storyboard */; };
 		59600E872B9EE10E009AFA76 /* ConnectCompany.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600E892B9EE10E009AFA76 /* ConnectCompany.storyboard */; };
 		59600E8B2B9EE137009AFA76 /* ConnectSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59600E8D2B9EE137009AFA76 /* ConnectSuccessView.xib */; };
@@ -316,6 +318,8 @@
 		595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeThreeView.xib; sourceTree = "<group>"; };
 		595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeFourView.swift; sourceTree = "<group>"; };
 		595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeFourView.xib; sourceTree = "<group>"; };
+		595D3CED2BE325FE00FE9D85 /* SiteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteListVC.swift; sourceTree = "<group>"; };
+		595D3CEF2BE3260600FE9D85 /* SiteList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SiteList.storyboard; sourceTree = "<group>"; };
 		59600E842B9EE02A009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignLogin.storyboard; sourceTree = "<group>"; };
 		59600E862B9EE02A009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/SignLogin.xcstrings; sourceTree = "<group>"; };
 		59600E882B9EE10E009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConnectCompany.storyboard; sourceTree = "<group>"; };
@@ -705,6 +709,7 @@
 				5994955D2A0BF77E009F1B2E /* MyTicker */,
 				5994956E2A0C8FD9009F1B2E /* BuyCommodity */,
 				5998364B2B945F41003F3B48 /* StationList */,
+				595D3CEC2BE325D200FE9D85 /* SiteList */,
 				599495752A0D024D009F1B2E /* PointRule */,
 				5994957A2A0D2BFF009F1B2E /* StoreMap */,
 				59C2D99C2A0D36E30085724F /* AR */,
@@ -808,6 +813,15 @@
 				593CDE672A83D22F007E1D10 /* cert.cer */,
 			);
 			path = Certificate;
+			sourceTree = "<group>";
+		};
+		595D3CEC2BE325D200FE9D85 /* SiteList */ = {
+			isa = PBXGroup;
+			children = (
+				595D3CED2BE325FE00FE9D85 /* SiteListVC.swift */,
+				595D3CEF2BE3260600FE9D85 /* SiteList.storyboard */,
+			);
+			path = SiteList;
 			sourceTree = "<group>";
 		};
 		59632D3A2B89EBC50093BE6E /* LanguageSetting */ = {
@@ -1400,6 +1414,7 @@
 				59E69A272A3722510062D4EB /* GenJyuuGothic-Bold.ttf in Resources */,
 				59600ECF2B9EE3C8009AFA76 /* CarbonReductionLog.storyboard in Resources */,
 				59600EAF2B9EE2FD009AFA76 /* PersonMessageContent.storyboard in Resources */,
+				595D3CF02BE3260600FE9D85 /* SiteList.storyboard in Resources */,
 				593CDE682A83D22F007E1D10 /* cert.cer in Resources */,
 				59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */,
 				59600EB72B9EE31F009AFA76 /* DeleteAllMessageAlertView.xib in Resources */,
@@ -1627,6 +1642,7 @@
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
 				59CC8DB32A6D11980094CE57 /* CommodityVoucherModel.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
+				595D3CEE2BE325FE00FE9D85 /* SiteListVC.swift in Sources */,
 				59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */,
 				5960E5BB2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift in Sources */,
 				59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */,
