@@ -45,12 +45,16 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var messageLabel:CustomLabel!
     
     @IBOutlet weak var settingLabel:CustomLabel!
+    
+    @IBOutlet weak var mallHeight:NSLayoutConstraint!
 
     private var currentIndexSubject = PassthroughSubject<Int, Never>()
     
     private var currentIndex:Int = 0
+        
+    private var adBannerInfos:[ADBannerInfo] = []
     
-    private var bannerCount:Int = 4
+    private var itemInfos:[ItemInfo] = []
     
     private var cancellables: Set<AnyCancellable> = []
 
@@ -71,32 +75,74 @@ class HomeVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        bannerCollectionViewFlowLayout.itemSize = bannerCollectionView.frame.size
-        bannerCollectionViewFlowLayout.estimatedItemSize = .zero
-        bannerCollectionViewFlowLayout.minimumInteritemSpacing = 0
-        bannerCollectionViewFlowLayout.minimumLineSpacing = 0
-        bannerCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: mallCollectionView.frame.height)
-        mallCollectionViewFlowLayout.estimatedItemSize = .zero
-        mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
-        mallCollectionViewFlowLayout.minimumLineSpacing = 0
-        mallCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        pageControl.currentPage = currentIndex
-        pageControl.numberOfPages = bannerCount
-        getUserInfo(VC: self, finishAction: {
-            DispatchQueue.main.async {
-                let illustratedGuide = getIllustratedGuide(getChickenLevel())
-                self.chickenLevelImageView.image = illustratedGuide.levelImage
-                if let image = self.getTrendChart() {
-                    self.trendChartImageView.image = image
+        if FirstTime && LoginSuccess {
+            FirstTime = false
+            showADBannerView()
+            getUserNewInfo(VC: self) {
+                DispatchQueue.main.async { [self] in
+                    let illustratedGuide = getIllustratedGuide(getChickenLevel())
+                    chickenLevelImageView.image = illustratedGuide.levelImage
+                    if let image = getTrendChart() {
+                        trendChartImageView.image = image
+                    }
+                    self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
+                    Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
+                    }
+                    self.updateCurrentDateInfo()
                 }
-                self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
             }
-
-            Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
+            getItems()
+//            getUserInfo(VC: self, finishAction: {
+//                DispatchQueue.main.async {
+//                    let illustratedGuide = getIllustratedGuide(getChickenLevel())
+//                    self.chickenLevelImageView.image = illustratedGuide.levelImage
+//                    if let image = self.getTrendChart() {
+//                        self.trendChartImageView.image = image
+//                    }
+//                    self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
+//                }
+//                Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
+//                }
+//            })
+            NotificationCenter.default.post(name: .removeBackground, object: nil)
+        }
+    }
+    
+    private func getItems() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.items, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
             }
-            
-        })
+            if let itemInfos = try? JSONDecoder().decode([ItemInfo].self, from: data) {
+                self.itemInfos.append(contentsOf: itemInfos)
+                DispatchQueue.main.async {
+                    self.mallHeight.constant = CGFloat(itemInfos.count / 3 * 120) + 70
+                    self.mallCollectionView.reloadData()
+                }
+            }
+        }
+    }
+    
+    private func showADBannerView() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAdBanner, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                print(errorMSG?.localized ?? "something error")
+                return
+            }
+            if let adBannerInfos = try? JSONDecoder().decode([ADBannerInfo].self, from: data) {
+                let adbannerView = ADBannerView(frame: UIScreen.main.bounds)
+                adbannerView.adBannerInfos.append(contentsOf: adBannerInfos)
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+                    adbannerView.changeBanner()
+                }
+                keyWindow?.addSubview(adbannerView)
+                self.adBannerInfos.append(contentsOf: adBannerInfos)
+                DispatchQueue.main.async {
+                    self.bannerCollectionView.reloadData()
+                }
+            }
+        }
     }
     
     private func getTrendChart() -> UIImage?{
@@ -131,31 +177,32 @@ class HomeVC: CustomRootVC {
         return nil
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if FirstTime && LoginSuccess {
-            if displayToday != getDates(i: 0, currentDate: Date()).0 {
-                FirstTime = false
-                let  adbannerView = ADBannerView(frame: UIScreen.main.bounds)
-                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
-                    adbannerView.changeBanner()
-                }
-                keyWindow?.addSubview(adbannerView)
-            }
-            NotificationCenter.default.post(name: .removeBackground, object: nil)
-        }
-        updateCurrentDateInfo()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        if FirstTime && LoginSuccess {
+//            if displayToday != getDates(i: 0, currentDate: Date()).0 {
+//                FirstTime = false
+//                let  adbannerView = ADBannerView(frame: UIScreen.main.bounds)
+//                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+//                    adbannerView.changeBanner()
+//                }
+//                keyWindow?.addSubview(adbannerView)
+//            }
+//            NotificationCenter.default.post(name: .removeBackground, object: nil)
+//        }
+//        updateCurrentDateInfo()
+//    }
     
     private func UIInit(){
 //        carbonReductionLogBtn.layer.borderWidth = 1
 //        carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        currentIndexSubject
-            .sink { [weak self] index in
-                self?.pageControl.currentPage = index
-                self?.bannerCollectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        self.currentIndexSubject
+            .sink { [self] index in
+                guard adBannerInfos.count > 0 else { return }
+                pageControl.currentPage = index
+                bannerCollectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
             }
-            .store(in: &cancellables)
+            .store(in: &self.cancellables)
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
             self.changeBanner()
         }
@@ -163,6 +210,16 @@ class HomeVC: CustomRootVC {
         batteryItemView.setInfo(.battery)
         papperCubItemView.setInfo(.papperCub)
         aluminumCanItemView.setInfo(.aluminumCan)
+        bannerCollectionViewFlowLayout.itemSize = bannerCollectionView.frame.size
+        bannerCollectionViewFlowLayout.estimatedItemSize = .zero
+        bannerCollectionViewFlowLayout.minimumInteritemSpacing = 0
+        bannerCollectionViewFlowLayout.minimumLineSpacing = 0
+        bannerCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: 100)
+        mallCollectionViewFlowLayout.estimatedItemSize = .zero
+        mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
+        mallCollectionViewFlowLayout.minimumLineSpacing = 0
+        mallCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     private func getChoseDateRecycleAmount(){
@@ -198,7 +255,7 @@ class HomeVC: CustomRootVC {
         if let username = CurrentUserInfo.shared.currentProfileInfo?.userName , username != "" {
             welcomeLabel.text = "Good morning, \(username)"
         }
-        getChoseDateRecycleAmount()
+//        getChoseDateRecycleAmount()
     }
     
     @IBAction private func leftGesture(_ gesture:UISwipeGestureRecognizer) {
@@ -210,12 +267,13 @@ class HomeVC: CustomRootVC {
     }
     
     private func changeBanner(_ changeIndex:Int = 1) {
+        guard adBannerInfos.count > 0 else { return }
         currentIndex += changeIndex
-        if currentIndex > (bannerCount - 1) {
+        if currentIndex > (adBannerInfos.count - 1) {
             currentIndex = 0
         }
         if currentIndex < 0 {
-            currentIndex = bannerCount - 1
+            currentIndex = adBannerInfos.count - 1
         }
         currentIndexSubject.send(currentIndex)
     }
@@ -277,11 +335,11 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == bannerCollectionView {
-            return bannerCount
+            return adBannerInfos.count
         }
         
         if collectionView == mallCollectionView {
-            return 3
+            return itemInfos.count
         }
         return 0
     }
@@ -289,11 +347,13 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == bannerCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+            cell.setCell(adBannerInfos[indexPath.row])
             return cell
         }
         
         if collectionView == mallCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MallCollectionViewCell", for: indexPath) as! MallCollectionViewCell
+            cell.setCell(itemInfos[indexPath.row])
             return cell
         }
         

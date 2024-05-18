@@ -88,7 +88,7 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func HomeAction(){        
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAd) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAd) { data, statusCode, errorMSG in
             guard let data = data, let urlStr = String(data: data, encoding: .utf8), let url = URL(string: urlStr) else {
                 return
             }

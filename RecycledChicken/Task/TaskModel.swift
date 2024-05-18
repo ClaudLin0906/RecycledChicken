@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TaskInfo: Decodable, CustomStringConvertible, Hashable{
+struct TaskInfo: Decodable, CustomStringConvertible, Hashable {
     var startTime:String
     var count:Int
     var endTime:String

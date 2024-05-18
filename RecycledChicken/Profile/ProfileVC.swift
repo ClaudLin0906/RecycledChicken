@@ -27,7 +27,7 @@ class ProfileVC: CustomVC {
         
     private let rightNow = Date()
     
-    private var profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
+    private var profileUserInfo = CurrentUserInfo.shared.currentProfileNewInfo
     {
         didSet{
             DispatchQueue.main.async {
@@ -45,10 +45,9 @@ class ProfileVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        getUserInfo(VC: self) {
-            self.profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
+        getUserNewInfo(VC: self) {
+            self.profileUserInfo = CurrentUserInfo.shared.currentProfileNewInfo
         }
-        
         if getLanguage() == .english {
             comfirmBtnWidth.constant = 250
         }
@@ -224,10 +223,13 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             cell.info.text = profileUserInfo?.userPhoneNumber
         case 2:
             cell.info.isEnabled = false
-            cell.info.text = "fjije"
+            cell.info.text = profileUserInfo?.invitCode
         case 3:
             cell.phoneNumberCheckBox.isHidden = false
-            cell.phoneNumberCheckBox.checkState = .checked
+            cell.phoneNumberCheckBox.checkState = .unchecked
+            if let linkedToBuenoMart = profileUserInfo?.linkedToBuenoMart, linkedToBuenoMart {
+                cell.phoneNumberCheckBox.checkState = .checked
+            }
             cell.info.isEnabled = false
             cell.info.text = "BUENO COOP 連動"
 //            cell.info.placeholder = "2000/11/11"

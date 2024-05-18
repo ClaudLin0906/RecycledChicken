@@ -272,6 +272,17 @@ class CurrentUserInfo {
         }
     }
     
+    var currentProfileNewInfo:ProfileNewInfo?
+    {
+        willSet{
+            if let newValue = newValue, newValue.userPhoneNumber == "0000000000" {
+                isGuest = true
+            }else{
+                isGuest = false
+            }
+        }
+    }
+    
     var isGuest = false
 }
 
@@ -290,7 +301,7 @@ struct APIUrl {
     static let register = "/auth/register"
     static let login = "/auth/login"
     static let changePWD = "/reset"
-    static let smsCode = "/smsCode"
+    static let smsCode = "/auth/generateSmsCode"
     static let useRecord = "/useRecord"
     static let tradeRecord = "/tradeRecord"
     static let machineStatus = "/machineStatus"
@@ -301,7 +312,7 @@ struct APIUrl {
     static let updateProfile = "/updateProfile"
     static let sendEmail = "/sendEmail"
     static let getQuestList = "/getQuestList"
-    static let forgotPassword = "/forgotPassword"
+    static let forgotPassword = "/auth/forgotPassword"
     static let smsCertificate = "/smsCertificate"
     static let getAd = "/getAd"
     static let getNotification = "/getNotification"
@@ -312,6 +323,9 @@ struct APIUrl {
     static let siteList = "https://www.buenopartners.com.tw/list"
     static let siteListEnglish = "https://www.buenopartners.com.tw/en/list"
     static let mall = "https://tw.yahoo.com/"
+    static let getAdBanner = "/ad/banner"
+    static let profile = "/user/profile"
+    static let items = "/shop/items"
 }
 
 struct WebViewUrl{
@@ -352,6 +366,25 @@ func removeBiometricsAction(){
     let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
 }
 
+func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
+    NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.profile, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+        guard let data = data, statusCode == 200 else {
+            showAlert(VC: VC, title: "error".localized, message: errorMSG)
+            return
+        }
+        if let profileNewInfo = try? JSONDecoder().decode(ProfileNewInfo.self, from: data) {
+            var userInfo = profileNewInfo
+            if let xp = profileNewInfo.xp {
+                userInfo.levelInfo = getLevelInfo(xp)
+            }
+            CurrentUserInfo.shared.currentProfileNewInfo = profileNewInfo
+            if let finishAction = finishAction {
+                finishAction()
+            }
+        }
+    }
+}
+
 func getUserInfo(VC:UIViewController, finishAction:(()->())?){
     NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
         guard statusCode == 200 else {
@@ -379,20 +412,19 @@ func getUserInfo(VC:UIViewController, finishAction:(()->())?){
             if let experiencePoint = json["experiencePoint"] as? Int {
                 userInfo.experiencePoint = experiencePoint
             }
-            
-            CurrentUserInfo.shared.currentProfileInfo = computeGrade(userinfo: userInfo)
+            userInfo.levelInfo = getLevelInfo(userInfo.experiencePoint)
+            CurrentUserInfo.shared.currentProfileInfo = userInfo
             
             if let finishAction = finishAction {
                 finishAction()
             }
-
         }
     }
 }
 
-private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
-    var newUserInfo = userinfo
-    let experiencePoint = userinfo.experiencePoint
+private func getLevelInfo(_ experiencePoint:Int) -> LevelInfo {
+//    var newUserInfo = userinfo
+//    let experiencePoint = userinfo.experiencePoint
     var levelInfo:LevelInfo = LevelInfo(progress: 1, chickenLevel: .one)
     if experiencePoint >= 0 && experiencePoint <= 10000{
         levelInfo.chickenLevel = .one
@@ -716,9 +748,7 @@ private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     else if experiencePoint > 98100 && experiencePoint <= 100000 {
         levelInfo.progress = 10
     }
-    newUserInfo.levelInfo = levelInfo
-    return newUserInfo
-
+    return levelInfo
 }
 
 func generateBarCode(from string: String) -> UIImage? {

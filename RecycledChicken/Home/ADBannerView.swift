@@ -22,7 +22,9 @@ class ADBannerView: UIView, NibOwnerLoadable {
 
     private var currentIndex:Int = 0
     
-    private var bannerCount:Int = 4
+//    private var bannerCount:Int = 4
+    
+    var adBannerInfos:[ADBannerInfo] = []
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -58,7 +60,7 @@ class ADBannerView: UIView, NibOwnerLoadable {
         collectionViewFlowLayout.minimumLineSpacing = 0
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         pageControl.currentPage = currentIndex
-        pageControl.numberOfPages = bannerCount
+        pageControl.numberOfPages = adBannerInfos.count
         currentIndexSubject
             .sink { [weak self] index in
                 self?.pageControl.currentPage = index
@@ -69,7 +71,6 @@ class ADBannerView: UIView, NibOwnerLoadable {
         let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(rightGesture(_:)))
         rightGesture.direction = .right
         leftGesture.direction = .left
-        
         collectionView.addGestureRecognizer(leftGesture)
         collectionView.addGestureRecognizer(rightGesture)
     }
@@ -83,12 +84,13 @@ class ADBannerView: UIView, NibOwnerLoadable {
     }
     
     func changeBanner(_ changeIndex:Int = 1) {
+        guard adBannerInfos.count > 0 else { return }
         currentIndex += changeIndex
-        if currentIndex > (bannerCount - 1) {
+        if currentIndex > (adBannerInfos.count - 1) {
             currentIndex = 0
         }
         if currentIndex < 0 {
-            currentIndex = bannerCount - 1
+            currentIndex = adBannerInfos.count - 1
         }
         currentIndexSubject.send(currentIndex)
     }
@@ -99,13 +101,13 @@ class ADBannerView: UIView, NibOwnerLoadable {
 extension ADBannerView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        bannerCount
+        adBannerInfos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADBannerCollectionViewCell", for: indexPath) as! ADBannerCollectionViewCell
+        cell.setCell(adBannerInfos[indexPath.row])
         return cell
-
     }
     
 }
