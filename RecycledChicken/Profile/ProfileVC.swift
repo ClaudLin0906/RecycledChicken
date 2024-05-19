@@ -216,14 +216,19 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
 //            if CurrentUserInfo.shared.isGuest {
 //                cell.info.isEnabled = false
 //            }
-            cell.info.keyboardType = .numberPad
-            cell.phoneNumberCheckBox.isHidden = false
-            cell.phoneNumberCheckBox.checkState = .checked
-            cell.info.isEnabled = false
-            cell.info.text = profileUserInfo?.userPhoneNumber
+            if let profileUserInfo = profileUserInfo, let userPhoneNumber = profileUserInfo.userPhoneNumber, userPhoneNumber != "" {
+                cell.info.keyboardType = .numberPad
+                cell.phoneNumberCheckBox.isHidden = false
+                cell.phoneNumberCheckBox.checkState = .checked
+                cell.info.isEnabled = false
+                cell.info.text = profileUserInfo.userPhoneNumber
+            }
+
         case 2:
-            cell.info.isEnabled = false
-            cell.info.text = profileUserInfo?.invitCode
+            if let profileUserInfo = profileUserInfo, let invitCode = profileUserInfo.invitCode, invitCode != "" {
+                cell.info.isEnabled = false
+                cell.info.text = invitCode
+            }
         case 3:
             cell.phoneNumberCheckBox.isHidden = false
             cell.phoneNumberCheckBox.checkState = .unchecked

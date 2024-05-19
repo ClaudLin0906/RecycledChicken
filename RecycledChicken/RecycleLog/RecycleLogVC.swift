@@ -53,7 +53,7 @@ class RecycleLogVC: CustomVC {
         getRecycleLogData()        
     }
     
-    private func getRecycleLogData(){
+    private func getRecycleLogData() {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
@@ -82,14 +82,14 @@ class RecycleLogVC: CustomVC {
         var integratedDict: [Date: (battery: Int, bottle: Int)] = [:]
         
         for datum in data {
-            if let date = dateFromString(datum.time){
+            if let datmTime = datum.time, let date = dateFromString(datmTime){
                 let dayComponent = Calendar.current.startOfDay(for: date)
                 if var existingValues = integratedDict[dayComponent] {
-                    existingValues.battery += datum.battery ?? 0
-                    existingValues.bottle += datum.bottle ?? 0
+                    existingValues.battery += datum.recycleDetails?.battery ?? 0
+                    existingValues.bottle += datum.recycleDetails?.bottle ?? 0
                     integratedDict[dayComponent] = existingValues
                 } else {
-                    integratedDict[dayComponent] = (battery: datum.battery ?? 0, bottle: datum.bottle ?? 0)
+                    integratedDict[dayComponent] = (battery: datum.recycleDetails?.battery ?? 0, bottle: datum.recycleDetails?.bottle ?? 0)
                 }
             }
         }

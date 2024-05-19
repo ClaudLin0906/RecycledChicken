@@ -35,6 +35,15 @@ class PointRecordTableViewCell: UITableViewCell {
         setPointLabelTextColor()
     }
     
+    func setCell(_ info:PointRecord) {
+        if let dateString = info.time,  let date = dateFromString(dateString) {
+            calendarLabel.text = getDates(i: 0, currentDate: date).0
+        }
+        contentLabel.text = info.reason
+        pointLabel.text = String(info.point ?? 0)
+        setPointLabelTextColor()
+    }
+    
     func setPointLabelTextColor() {
         let count = Int(pointLabel.text ?? "0") ?? 0
         if count < 0 {

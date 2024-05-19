@@ -326,6 +326,8 @@ struct APIUrl {
     static let getAdBanner = "/ad/banner"
     static let profile = "/user/profile"
     static let items = "/shop/items"
+    static let records = "/recycle/records"
+    static let pointRecords = "/point/records"
 }
 
 struct WebViewUrl{
@@ -927,6 +929,31 @@ func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage {
     return newImage
 }
 
+func getStartAndEndDateOfMonth() -> (start: String, end: String)? {
+    let calendar = Calendar.current
+    let now = Date()
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    let components = calendar.dateComponents([.year, .month], from: now)
+    
+    // Get the start date of the month
+    guard let startOfMonth = calendar.date(from: components) else {
+        return nil
+    }
+    let startString = dateFormatter.string(from: startOfMonth)
+    
+    // Get the end date of the month
+    guard let plusOneMonth = calendar.date(byAdding: .month, value: 1, to: startOfMonth) else {
+        return nil
+    }
+    let endOfMonth = calendar.date(byAdding: .day, value: -1, to: plusOneMonth)!
+    let endString = dateFormatter.string(from: endOfMonth)
+    
+    return (startString, endString)
+}
+
+
 func getSevenDaysArray(targetDate:Date) -> [(String, String, Date)] {
     let weekDay = getDayOfTheWeek()
     var selectedDatesIndex = 0
@@ -986,9 +1013,41 @@ struct Certificates {
     }
 }
 
-struct UseRecordInfo:Decodable {
-    var storeName:String
-    var time:String
+struct UseRecordInfo:Codable {
+    var userPhoneNumber:String?
+    var storeName:String?
+    var time:String?
+    var type:RecycleType?
+    var recycleDetails:RecycleDetails?
+    
+    enum CodingKeys:String, CodingKey {
+        case userPhoneNumber = "userPhoneNumber"
+        case storeName = "storeName"
+        case time = "time"
+        case type = "type"
+        case recycleDetails = "recycleDetails"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        userPhoneNumber = try? container.decodeIfPresent(String.self, forKey: .userPhoneNumber)
+        storeName = try? container.decodeIfPresent(String.self, forKey: .storeName)
+        time = try? container.decodeIfPresent(String.self, forKey: .time)
+        type = try? container.decodeIfPresent(RecycleType.self, forKey: .type)
+        recycleDetails = try? container.decodeIfPresent(RecycleDetails.self, forKey: .recycleDetails)
+    }
+}
+
+enum RecycleType: String, Codable {
+    case battery = "battery"
+    case bottle = "bottle"
+    case colorlessBottle = "colorlessBottle"
+    case can = "can"
+}
+
+struct RecycleDetails:Codable {
     var battery:Int?
     var bottle:Int?
+    var colorlessBottle:Int?
+    var can:Int?
 }

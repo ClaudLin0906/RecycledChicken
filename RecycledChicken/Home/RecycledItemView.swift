@@ -33,17 +33,20 @@ class RecycledItemView: UIView, NibOwnerLoadable {
         loadNibContent()
     }
     
-    func setInfo(_ sort:RecyceledSort, count:Int = 0) {
+    func setInfo(_ sort:RecyceledSort) {
         let info = sort.getInfo()
         chineNameLabel.text = info.chineseName
         englishNameLabel.text = info.englishName
         iconImageView.image = UIImage(named: info.iconName)
-        countLabel.text = String(count)
         if getLanguage() == .english {
             englishNameLabel.isHidden = true
             chineNameLabelHeight.constant = 40
             chineNameLabel.font = chineNameLabel.font.withSize(9)
         }
+    }
+    
+    func setAmount(_ count:Int) {
+        countLabel.text = String(count)
     }
 
 }

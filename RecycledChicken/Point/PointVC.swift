@@ -55,11 +55,11 @@ class PointVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getUserInfo(VC: self) {
-            if let point = CurrentUserInfo.shared.currentProfileInfo?.point {
-                self.myPoint.text = String(point)
-            }
-        }
+//        getUserInfo(VC: self) {
+//            if let point = CurrentUserInfo.shared.currentProfileInfo?.point {
+//                self.myPoint.text = String(point)
+//            }
+//        }
     }
     
     @IBAction func goToCommodityVoucher(_ sender:UIButton) {

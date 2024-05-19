@@ -106,10 +106,10 @@ class TaskVC: CustomRootVC {
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
                 for useRecordInfo in useRecordInfos {
-                    if let battery = useRecordInfo.battery {
+                    if let battery = useRecordInfo.recycleDetails?.battery {
                         self.batteryInt += battery
                     }
-                    if let bottle = useRecordInfo.bottle {
+                    if let bottle = useRecordInfo.recycleDetails?.bottle {
                         self.bottleInt += bottle
                     }
                 }

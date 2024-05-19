@@ -92,6 +92,17 @@ class HomeVC: CustomRootVC {
                 }
             }
             getItems()
+            if let (startTime, endTime) = getStartAndEndDateOfMonth() {
+                computeDate(startTime, endTime: endTime) { battery, bottle, colorlessBottle, can in
+                    DispatchQueue.main.async { [self] in
+                        petItemView.setAmount(bottle)
+                        batteryItemView.setAmount(battery + colorlessBottle)
+                        papperCubItemView.setAmount(0)
+                        aluminumCanItemView.setAmount(can)
+                    }
+                }
+            }
+
 //            getUserInfo(VC: self, finishAction: {
 //                DispatchQueue.main.async {
 //                    let illustratedGuide = getIllustratedGuide(getChickenLevel())
@@ -139,6 +150,7 @@ class HomeVC: CustomRootVC {
                 keyWindow?.addSubview(adbannerView)
                 self.adBannerInfos.append(contentsOf: adBannerInfos)
                 DispatchQueue.main.async {
+                    self.pageControl.numberOfPages = adBannerInfos.count
                     self.bannerCollectionView.reloadData()
                 }
             }
@@ -224,35 +236,48 @@ class HomeVC: CustomRootVC {
     
     private func getChoseDateRecycleAmount(){
         guard CommonKey.shared.authToken != "", CurrentUserInfo.shared.isGuest == false else { return }
-        computeDate(CustomCalenderModel.shared.selectedDate, endTime: CustomCalenderModel.shared.selectedDate, completion: { batteryStr, bottleStr in
+        computeDate(CustomCalenderModel.shared.selectedDate, endTime: CustomCalenderModel.shared.selectedDate, completion: { batteryStr, bottleStr, colorlessBottleStr, canStr in
             DispatchQueue.main.async {
                 
             }
         })
     }
     
-    private func computeDate(_ startTime:String, endTime:String, completion: @escaping (String, String) -> Void){
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
+    private func computeDate(_ startTime:String, endTime:String, completion: @escaping (_ battery:Int, _ bottle:Int, _ colorlessBottle:Int, _ can:Int) -> Void){
+        let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
             var batteryInt = 0
             var bottleInt = 0
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                for useRecordInfo in useRecordInfos {
-                    if let battery = useRecordInfo.battery {
-                        batteryInt += battery
-                    }
-                    if let bottle = useRecordInfo.bottle {
-                        bottleInt += bottle
+            var colorlessBottleInt = 0
+            var canInt = 0
+            if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
+                useRecordInfos.forEach { useRecordInfo in
+                    if let recycleDetails = useRecordInfo.recycleDetails {
+                        if let battery = recycleDetails.battery {
+                            batteryInt += battery
+                        }
+                        if let bottle = recycleDetails.bottle {
+                            bottleInt += bottle
+                        }
+                        if let colorlessBottle = recycleDetails.colorlessBottle {
+                            colorlessBottleInt += colorlessBottle
+                        }
+                        if let can = recycleDetails.can {
+                            canInt += can
+                        }
                     }
                 }
             }
-            completion(String(batteryInt), String(bottleInt))
+            completion(batteryInt, bottleInt, colorlessBottleInt, canInt)
         }
     }
     
     func updateCurrentDateInfo(){
-        if let username = CurrentUserInfo.shared.currentProfileInfo?.userName , username != "" {
+        if let username = CurrentUserInfo.shared.currentProfileNewInfo?.userName , username != "" {
             welcomeLabel.text = "Good morning, \(username)"
         }
 //        getChoseDateRecycleAmount()

@@ -20,6 +20,10 @@ class PointRecordVC: CustomVC {
     private let amountDropDown = DropDown()
     
     private var allMonth = "allMonth".localized
+    
+    private var pointRecords:[PointRecord] = []
+    
+    private var filterPointRecords:[PointRecord] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,23 @@ class PointRecordVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
+        getPointRecord()
+    }
+    
+    private func getPointRecord() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.pointRecords + "?startTime=2023-01-01", authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+            if let pointRecords = try? JSONDecoder().decode([PointRecord].self, from: data) {
+                self.pointRecords.removeAll()
+                self.filterPointRecords.removeAll()
+                self.pointRecords.append(contentsOf: pointRecords)
+                self.filterPointRecords.append(contentsOf: pointRecords)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     private func setupAmountDropDown() {
@@ -67,6 +88,17 @@ class PointRecordVC: CustomVC {
         
         amountDropDown.selectionAction = { [self] (index, item) in
             monthBtn.setTitle(item)
+            filterPointRecords.removeAll()
+            filterPointRecords = pointRecords.filter({ pointRecord in
+                if index == 0 {
+                    return true
+                }
+                if let dateString = pointRecord.time,  let date = dateFromString(dateString) {
+                    let month =  Calendar.current.component(.month, from: date)
+                    return month == index
+                }
+                return false
+            })
             tableView.reloadData()
         }
     }
@@ -84,12 +116,13 @@ extension PointRecordVC: UITableViewDelegate {
 extension PointRecordVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        filterPointRecords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PointRecordTableViewCell", for: indexPath) as! PointRecordTableViewCell
-        cell.setCell(Date(), content: "寶特瓶5瓶", point: -10)
+        let row = indexPath.row
+        cell.setCell(filterPointRecords[row])
         return cell
     }
     
