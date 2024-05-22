@@ -13,5 +13,60 @@ protocol ColorFillTypeDelegate {
     func tapBackground(_ backgroundView:UIView, userdefultKey:String)
 }
 
+struct CarbonReductionLogInfo: Codable {
+    var personalRecyleAmountAndTarget:[PersonalRecyleAmountAndTargetInfo]?
+    var fix:FixInfo?
+    
+    enum CodingKeys:String, CodingKey {
+        case personalRecyleAmountAndTarget = "personalRecyleAmountAndTarget"
+        case fix = "fix"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        personalRecyleAmountAndTarget = try? container.decodeIfPresent([PersonalRecyleAmountAndTargetInfo].self, forKey: .personalRecyleAmountAndTarget)
+        fix = try? container.decodeIfPresent(FixInfo.self, forKey: .fix)
+    }
+}
 
+struct PersonalRecyleAmountAndTargetInfo: Codable  {
+    
+    var itemName:String?
+    var target:Int?
+    var totalRecycled:Int?
+    var conversionRate:Double?
+    var infoLink:String?
+    
+    enum CodingKeys:String, CodingKey {
+        case itemName = "itemName"
+        case target = "target"
+        case totalRecycled = "totalRecycled"
+        case conversionRate = "conversionRate"
+        case infoLink = "infoLink"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        itemName = try? container.decodeIfPresent(String.self, forKey: .itemName)
+        target = try? container.decodeIfPresent(Int.self, forKey: .target)
+        totalRecycled = try? container.decodeIfPresent(Int.self, forKey: .totalRecycled)
+        conversionRate = try? container.decodeIfPresent(Double.self, forKey: .conversionRate)
+        infoLink = try? container.decodeIfPresent(String.self, forKey: .infoLink)
+    }
+}
 
+struct FixInfo: Codable  {
+    
+    var images:[String]?
+    var convetValue:Int?
+    
+    enum CodingKeys:String, CodingKey {
+        case images = "images"
+        case convetValue = "convetValue"
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        images = try? container.decodeIfPresent([String].self, forKey: .images)
+        convetValue = try? container.decodeIfPresent(Int.self, forKey: .convetValue)
+    }
+}

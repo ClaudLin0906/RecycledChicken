@@ -24,7 +24,8 @@ struct ProfileNewInfo: Codable {
     var userBirth:String?
     var invitCode:String?
     var linkedToBuenoMart:Bool?
-    var xp:Int?
+    var point:Int?
+    var experiencePoint:Int?
     var levelInfo:LevelInfo?
     
     enum CodingKeys:String, CodingKey {
@@ -34,7 +35,8 @@ struct ProfileNewInfo: Codable {
         case userBirth = "userBirth"
         case invitCode = "invitCode"
         case linkedToBuenoMart = "linkedToBuenoMart"
-        case xp = "xp"
+        case point = "point"
+        case experiencePoint = "experiencePoint"
     }
     
     init(from decoder: Decoder) throws {
@@ -45,7 +47,8 @@ struct ProfileNewInfo: Codable {
         userBirth = try? container.decodeIfPresent(String.self, forKey: .userBirth)
         invitCode = try? container.decodeIfPresent(String.self, forKey: .invitCode)
         linkedToBuenoMart = try? container.decodeIfPresent(Bool.self, forKey: .linkedToBuenoMart)
-        xp = try? container.decodeIfPresent(Int.self, forKey: .xp)
+        point = try? container.decodeIfPresent(Int.self, forKey: .point)
+        experiencePoint = try? container.decodeIfPresent(Int.self, forKey: .experiencePoint)
     }
 }
 

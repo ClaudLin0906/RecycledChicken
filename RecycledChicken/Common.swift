@@ -148,7 +148,7 @@ enum RecyceledSort: CaseIterable {
         let publicTransportColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
         switch self {
         case .bottle:
-            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "pet", color: bottleColor)
+            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "Pet", color: bottleColor)
         case .battery:
             return RecyceledSortInfo(chineseName: "battery".localized, englishName: "BATTERY", iconName: "battery", color: batteryColor)
         case .papperCub:
@@ -328,6 +328,8 @@ struct APIUrl {
     static let items = "/shop/items"
     static let records = "/recycle/records"
     static let pointRecords = "/point/records"
+    static let enterInviteCode = "/user/enterInviteCode"
+    static let carbonReductionRecords = "/recycle/carbonReductionRecords"
 }
 
 struct WebViewUrl{
@@ -376,10 +378,10 @@ func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
         }
         if let profileNewInfo = try? JSONDecoder().decode(ProfileNewInfo.self, from: data) {
             var userInfo = profileNewInfo
-            if let xp = profileNewInfo.xp {
-                userInfo.levelInfo = getLevelInfo(xp)
+            if let experiencePoint = profileNewInfo.experiencePoint {
+                userInfo.levelInfo = getLevelInfo(experiencePoint)
             }
-            CurrentUserInfo.shared.currentProfileNewInfo = profileNewInfo
+            CurrentUserInfo.shared.currentProfileNewInfo = userInfo
             if let finishAction = finishAction {
                 finishAction()
             }

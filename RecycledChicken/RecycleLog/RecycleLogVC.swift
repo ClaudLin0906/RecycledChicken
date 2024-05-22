@@ -14,6 +14,8 @@ class RecycleLogVC: CustomVC {
         var time:Date
         var battery:Int = 0
         var bottle:Int = 0
+        var colorlessBottle:Int = 0
+        var can:Int = 0
     }
     
     @IBOutlet weak var monthBtn:CommonImageButton!
@@ -57,7 +59,7 @@ class RecycleLogVC: CustomVC {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)&endTime=\(endTime)"
+        let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)&endTime=\(endTime)"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
@@ -79,7 +81,7 @@ class RecycleLogVC: CustomVC {
     
     private func useRecordInfoHandle(_ data:[UseRecordInfo]) {
         
-        var integratedDict: [Date: (battery: Int, bottle: Int)] = [:]
+        var integratedDict: [Date: (battery: Int, bottle: Int, colorlessBottle:Int, can:Int)] = [:]
         
         for datum in data {
             if let datmTime = datum.time, let date = dateFromString(datmTime){
@@ -89,7 +91,7 @@ class RecycleLogVC: CustomVC {
                     existingValues.bottle += datum.recycleDetails?.bottle ?? 0
                     integratedDict[dayComponent] = existingValues
                 } else {
-                    integratedDict[dayComponent] = (battery: datum.recycleDetails?.battery ?? 0, bottle: datum.recycleDetails?.bottle ?? 0)
+                    integratedDict[dayComponent] = (battery: datum.recycleDetails?.battery ?? 0, bottle: datum.recycleDetails?.bottle ?? 0, colorlessBottle: datum.recycleDetails?.colorlessBottle ?? 0, datum.recycleDetails?.can ?? 0)
                 }
             }
         }
@@ -103,6 +105,16 @@ class RecycleLogVC: CustomVC {
                 }
                 if info.bottle > 0 {
                     recycleLogInfo.bottle = info.bottle
+                    recycleLogInfos.append(recycleLogInfo)
+                }
+                
+                if info.colorlessBottle > 0 {
+                    recycleLogInfo.colorlessBottle = info.colorlessBottle
+                    recycleLogInfos.append(recycleLogInfo)
+                }
+                
+                if info.can > 0 {
+                    recycleLogInfo.can = info.can
                     recycleLogInfos.append(recycleLogInfo)
                 }
             }

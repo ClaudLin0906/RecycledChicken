@@ -73,6 +73,16 @@ class CarbonReductionLogVC: CustomVC {
         }
         return arr
     }()
+    
+    private var carbonReductionLogInfo:CarbonReductionLogInfo?
+    
+    private var currentPersonalRecyleAmountAndTargetInfo:PersonalRecyleAmountAndTargetInfo?
+    
+    private lazy var itemDropDown:DropDown = {
+        let dropDown = DropDown()
+        dropDown.textFont = dropDownView.sortLabel.font
+        return dropDown
+    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +94,15 @@ class CarbonReductionLogVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
         getRecycleLogData()
+        getCarbonReductionRecords(completion: { [self] in
+            guard let carbonReductionLogInfo = self.carbonReductionLogInfo else { return }
+            var itemNames:[String] = []
+            carbonReductionLogInfo.personalRecyleAmountAndTarget?.forEach({ if let itemName = $0.itemName {
+                itemNames.append(itemName)
+            }})
+            itemDropDown.dataSource.append(contentsOf: itemNames)
+            dropDownView.sortLabel.text = itemNames[0]
+        })
     }
 
     private func UIInit() {
@@ -112,6 +131,19 @@ class CarbonReductionLogVC: CustomVC {
             colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
             colorFillScrollView.subviews.first?.subviews[3].addSubview(colorFillTypeOneView)
         }
+        itemDropDown.anchorView = dropDownView
+        itemDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
+        itemDropDown.selectionAction = { [self] (index, item) in
+            guard let carbonReductionLogInfo = carbonReductionLogInfo else { return }
+            currentPersonalRecyleAmountAndTargetInfo = nil
+            currentPersonalRecyleAmountAndTargetInfo = carbonReductionLogInfo.personalRecyleAmountAndTarget?.first(where: { personalRecyleAmountAndTargetInfo in
+                if let itemName = personalRecyleAmountAndTargetInfo.itemName {
+                    return itemName == item
+                }
+                return false
+            })
+            setValueOfDropDown()
+        }
         
         if getLanguage() == .english {
             recycleBtnWidth.constant = 200
@@ -121,8 +153,23 @@ class CarbonReductionLogVC: CustomVC {
         // Do any additional setup after loading the view.
     }
     
-    private func setValueOfDropDown(_ info:RecyceledSortInfo) {
-        
+    private func getCarbonReductionRecords(completion: @escaping () -> Void) {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.carbonReductionRecords, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+            if let data = data, let carbonReductionLogInfo = try? JSONDecoder().decode(CarbonReductionLogInfo.self, from: data) {
+                self.carbonReductionLogInfo = nil
+                self.carbonReductionLogInfo = carbonReductionLogInfo
+                completion()
+            }
+        }
+    }
+    
+    private func setValueOfDropDown() {
+        guard let currentPersonalRecyleAmountAndTargetInfo = currentPersonalRecyleAmountAndTargetInfo else { return }
+        dropDownView.sortLabel.text = currentPersonalRecyleAmountAndTargetInfo.itemName ?? ""
     }
     
     @IBAction func goBuenopartners(_ sender:UIButton) {
@@ -135,7 +182,7 @@ class CarbonReductionLogVC: CustomVC {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)&endTime=\(endTime)"
+        let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)&endTime=\(endTime)"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
@@ -143,14 +190,24 @@ class CarbonReductionLogVC: CustomVC {
             }
             var batteryInt = 0
             var bottleInt = 0
+            var colorlessBottleInt = 0
+            var canInt = 0
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                for useRecordInfo in useRecordInfos {
-                    if let battery = useRecordInfo.recycleDetails?.battery {
-                        batteryInt += battery
-                    }
-                    if let bottle = useRecordInfo.recycleDetails?.bottle {
-                        bottleInt += bottle
+                useRecordInfos.forEach { useRecordInfo in
+                    if let recycleDetails = useRecordInfo.recycleDetails {
+                        if let battery = recycleDetails.battery {
+                            batteryInt += battery
+                        }
+                        if let bottle = recycleDetails.bottle {
+                            bottleInt += bottle
+                        }
+                        if let colorlessBottle = recycleDetails.colorlessBottle {
+                            colorlessBottleInt += colorlessBottle
+                        }
+                        if let can = recycleDetails.can {
+                            canInt += can
+                        }
                     }
                 }
                 DispatchQueue.main.async {
@@ -187,6 +244,10 @@ class CarbonReductionLogVC: CustomVC {
     @IBAction func scrollViewLast(_ sender:UIButton) {
         guard colorFillScroViewIndex > 0 else { return }
         colorFillScroViewIndex -= 1
+    }
+    
+    @IBAction func changeItem(_ tap: UITapGestureRecognizer) {
+        itemDropDown.show()
     }
 }
 

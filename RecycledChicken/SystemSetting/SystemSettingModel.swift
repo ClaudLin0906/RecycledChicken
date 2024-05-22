@@ -22,3 +22,8 @@ struct InviteInfo {
     var inviteCode:String
     var isInvite:Bool
 }
+
+
+struct InviteRequestInfo:Codable {
+    var inviteCode:String
+}
