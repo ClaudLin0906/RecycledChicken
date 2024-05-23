@@ -35,6 +35,8 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var bottomLineSpace:NSLayoutConstraint!
     
+    @IBOutlet weak var convertVauleLabel:UILabel!
+    
     private  var selectedColor:UIColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
     
     private var colorFillTypeOneView = ColorFillTypeOneView()
@@ -83,6 +85,18 @@ class CarbonReductionLogVC: CustomVC {
         dropDown.textFont = dropDownView.sortLabel.font
         return dropDown
     }()
+    
+    private var batteryCount = 0
+    
+    private var bottleCount = 0
+    
+//    private var colorlessBottleCount = 0
+    
+    private var papperCubCount = 0
+    
+    private var canCount = 0
+    
+    private var publicTransportCount = 0
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,14 +113,52 @@ class CarbonReductionLogVC: CustomVC {
             var itemNames:[String] = []
             carbonReductionLogInfo.personalRecyleAmountAndTarget?.forEach({ if let itemName = $0.itemName {
                 itemNames.append(itemName)
+                currentPersonalRecyleAmountAndTargetInfo = $0
             }})
             itemDropDown.dataSource.append(contentsOf: itemNames)
             dropDownView.sortLabel.text = itemNames[0]
+            changeType()
         })
+    }
+    
+    private func getRecyceledSortInfo(_ itemName:String) -> RecyceledSort? {
+        var result:RecyceledSort?
+        switch itemName {
+        case "寶特瓶":
+            result = .bottle
+        case "電池":
+            result = .battery
+        case "鋁罐":
+            result = .aluminumCan
+        case "紙杯":
+            result = .papperCub
+        case "大眾運輸":
+            result = .publicTransport
+        default :
+            break
+        }
+        return result
+    }
+    
+    private func changeType() {
+        guard let personalRecyleAmountAndTargetInfo = currentPersonalRecyleAmountAndTargetInfo, let itemName = personalRecyleAmountAndTargetInfo.itemName, let recyceledSort = getRecyceledSortInfo(itemName) else { return }
+        var count = 0
+        switch recyceledSort {
+        case .bottle:
+            count = bottleCount
+        case .battery:
+            count = batteryCount
+        case .papperCub:
+            count = papperCubCount
+        case .aluminumCan:
+            count = canCount
+        case .publicTransport:
+            count = publicTransportCount
+        }
+        recycledRingInfoView.setRecycledRingInfo(recyceledSort, personalRecyleAmountAndTargetInfo: personalRecyleAmountAndTargetInfo, count)
     }
 
     private func UIInit() {
-        recycledRingInfoView.setRecycledRingInfo(recyceledSortInfos.first!, 10, 20)
         dropDownView.sortLabel.text = recyceledSortInfos.first?.chineseName
         recycleBtn.layer.borderWidth = 1
         recycleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
@@ -143,6 +195,7 @@ class CarbonReductionLogVC: CustomVC {
                 return false
             })
             setValueOfDropDown()
+            changeType()
         }
         
         if getLanguage() == .english {
@@ -183,35 +236,40 @@ class CarbonReductionLogVC: CustomVC {
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
         let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)&endTime=\(endTime)"
-        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { [self] (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            var batteryInt = 0
-            var bottleInt = 0
-            var colorlessBottleInt = 0
-            var canInt = 0
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+            batteryCount = 0
+            bottleCount = 0
+//            colorlessBottleCount = 0
+            canCount = 0
+            if let data = data, let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
                 useRecordInfos.forEach { useRecordInfo in
                     if let recycleDetails = useRecordInfo.recycleDetails {
                         if let battery = recycleDetails.battery {
-                            batteryInt += battery
+                            batteryCount += battery
                         }
                         if let bottle = recycleDetails.bottle {
-                            bottleInt += bottle
+                            bottleCount += bottle
                         }
                         if let colorlessBottle = recycleDetails.colorlessBottle {
-                            colorlessBottleInt += colorlessBottle
+                            bottleCount += colorlessBottle
                         }
                         if let can = recycleDetails.can {
-                            canInt += can
+                            canCount += can
                         }
                     }
                 }
-                DispatchQueue.main.async {
-                    UIView.animate(withDuration: 0.5) { [self] in
+                DispatchQueue.main.async { [self] in
+                    bottleItemCellView.setCount(bottleCount)
+                    batteryItemCellView.setCount(batteryCount)
+                    papperCubItemCellView.setCount(papperCubCount)
+                    aluminumCanItemCellView.setCount(canCount)
+                    publicTransportItemCellView.setCount(publicTransportCount)
+//                    UIView.animate(withDuration: 0.5) { [self] in
+
 //                        let batteryprogress = Double(batteryInt)/1200
 //                        let bottleprogress = Double(bottleInt)/1200
 //                        progressGroup.ring1.progress = batteryprogress
@@ -219,7 +277,7 @@ class CarbonReductionLogVC: CustomVC {
 //                        if batteryprogress >= 1 && bottleprogress >= 1{
 //                            isHiddenCongratulations(false)
 //                        }
-                    }
+//                    }
                 }
             }
         }

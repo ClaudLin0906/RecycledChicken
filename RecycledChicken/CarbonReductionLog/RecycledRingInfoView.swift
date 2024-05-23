@@ -17,7 +17,13 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var recyclingLabel:CustomLabel!
     
-    private var info:RecyceledSortInfo?
+    @IBOutlet weak var totalRecycledLabel:UILabel!
+    
+    @IBOutlet weak var convetValueLabel:UILabel!
+    
+    private var info:RecyceledSort?
+    
+    private var personalRecyleAmountAndTargetInfo:PersonalRecyleAmountAndTargetInfo?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,14 +48,16 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
         ringProgressSingleBackgroundView.layer.shadowOpacity = 0.2
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-
-    }
     
-    func setRecycledRingInfo(_ info:RecyceledSortInfo, _ count:Double, _ total:Double) {
+    
+    func setRecycledRingInfo(_ info:RecyceledSort, personalRecyleAmountAndTargetInfo:PersonalRecyleAmountAndTargetInfo, _ count:Int) {
         self.info = info
-        progressView.setCount(count, total, info.color, .white)
+        self.personalRecyleAmountAndTargetInfo = personalRecyleAmountAndTargetInfo
+        if let totalRecycled = self.personalRecyleAmountAndTargetInfo?.totalRecycled, let target = personalRecyleAmountAndTargetInfo.target, let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate {
+            totalRecycledLabel.text = String(totalRecycled)
+            let convetValue = Int(Double(count) * conversionRate)
+            convetValueLabel.text = String(convetValue)
+            progressView.setCount(Double(count), Double(target), info.getInfo().color, .white)
+        }
     }
 }

@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -273,7 +273,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vtw-Ce-HBf" userLabel="line">
-                                                                        <rect key="frame" x="0.0" y="9" width="273" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="29" width="273" height="1"/>
                                                                         <color key="backgroundColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="Ns6-7T-BLb"/>
@@ -287,7 +287,7 @@
                                                                     <constraint firstItem="Vtw-Ce-HBf" firstAttribute="leading" secondItem="QGy-vW-Y45" secondAttribute="leading" id="FmO-Nn-HEg"/>
                                                                     <constraint firstAttribute="trailing" secondItem="KwH-fx-ljc" secondAttribute="trailing" id="GcH-r8-bqk"/>
                                                                     <constraint firstItem="gx6-Be-wMx" firstAttribute="centerY" secondItem="QGy-vW-Y45" secondAttribute="centerY" id="T2O-zn-6Zp"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="Vtw-Ce-HBf" secondAttribute="bottom" constant="20" symbolic="YES" id="e4Y-3T-hH1"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Vtw-Ce-HBf" secondAttribute="bottom" id="e4Y-3T-hH1"/>
                                                                     <constraint firstItem="gx6-Be-wMx" firstAttribute="leading" secondItem="7bh-BB-ISm" secondAttribute="trailing" id="mov-zS-B9Q"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Vtw-Ce-HBf" secondAttribute="trailing" id="ndB-5w-lP9"/>
                                                                     <constraint firstItem="gx6-Be-wMx" firstAttribute="trailing" secondItem="KwH-fx-ljc" secondAttribute="leading" id="v1m-ze-FJd"/>
@@ -428,6 +428,7 @@
                         <outlet property="bottomLineSpace" destination="e4Y-3T-hH1" id="93D-HX-cxa"/>
                         <outlet property="colorFillScrollView" destination="UlI-Nx-OoX" id="5aS-YE-XYs"/>
                         <outlet property="colorFillTitleLabel" destination="2UQ-jW-c2f" id="0M5-XV-FBb"/>
+                        <outlet property="convertVauleLabel" destination="gx6-Be-wMx" id="clb-DG-JKP"/>
                         <outlet property="dropDownView" destination="KyE-ZL-0e7" id="Cl9-pi-qC8"/>
                         <outlet property="papperCubItemCellView" destination="sAF-r6-42h" id="ls6-34-mCO"/>
                         <outlet property="publicTransportItemCellView" destination="YoP-vl-iYo" id="kzR-qW-CUw"/>
