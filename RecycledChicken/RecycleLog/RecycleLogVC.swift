@@ -89,6 +89,8 @@ class RecycleLogVC: CustomVC {
                 if var existingValues = integratedDict[dayComponent] {
                     existingValues.battery += datum.recycleDetails?.battery ?? 0
                     existingValues.bottle += datum.recycleDetails?.bottle ?? 0
+                    existingValues.colorlessBottle += datum.recycleDetails?.colorlessBottle ?? 0
+                    existingValues.can += datum.recycleDetails?.can ?? 0
                     integratedDict[dayComponent] = existingValues
                 } else {
                     integratedDict[dayComponent] = (battery: datum.recycleDetails?.battery ?? 0, bottle: datum.recycleDetails?.bottle ?? 0, colorlessBottle: datum.recycleDetails?.colorlessBottle ?? 0, datum.recycleDetails?.can ?? 0)
@@ -185,12 +187,17 @@ extension RecycleLogVC: UITableViewDelegate, SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
         let info = filterUseRecordInfos[indexPath.row]
-        if info.bottle > 0 {
-            cell.setCell(info.time, bottle: info.bottle, battery: nil)
+        if info.bottle > 0 || info.colorlessBottle > 0 {
+            let count = info.bottle + info.colorlessBottle
+            cell.setCell(info.time, bottle: count, battery: nil, can: nil)
             return cell
         }
         if info.battery > 0 {
-            cell.setCell(info.time, bottle: nil, battery: info.battery)
+            cell.setCell(info.time, bottle: nil, battery: info.battery, can: nil)
+            return cell
+        }
+        if info.can > 0 {
+            cell.setCell(info.time, bottle: nil, battery: nil, can: info.can)
             return cell
         }
         return cell
