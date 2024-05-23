@@ -37,7 +37,11 @@ class IllustratedGuideVC: CustomVC {
 }
 
 extension IllustratedGuideVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "IllustratedContent", bundle: Bundle.main).instantiateViewController(identifier: "IllustratedContent") as? IllustratedContentVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
 }
 
 extension IllustratedGuideVC: UITableViewDataSource {

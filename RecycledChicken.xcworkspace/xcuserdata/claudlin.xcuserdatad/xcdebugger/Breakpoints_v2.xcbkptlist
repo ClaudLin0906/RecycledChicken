@@ -3,4 +3,52 @@
    uuid = "81720F95-5119-4F53-8BF8-0B51E39B2D6D"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D23BD47-12F0-4609-B03E-B4B0E16B9EAA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/IllustratedGuide/IllustratedGuideVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4D23BD47-12F0-4609-B03E-B4B0E16B9EAA - c4a000cb955c4ba3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.IllustratedGuideVC.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/IllustratedGuide/IllustratedGuideVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41">
+               </Location>
+               <Location
+                  uuid = "4D23BD47-12F0-4609-B03E-B4B0E16B9EAA - c4a000cb955c4ba3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.IllustratedGuideVC.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/IllustratedGuide/IllustratedGuideVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
