@@ -21,9 +21,7 @@ class StationListVC: CustomVC {
     private var mapInfos:[MapInfo] = []
     
     private var filterMapInfos:[MapInfo] = []
-    
-    private var filtered = false
-    
+        
     private var locationManager = CLLocationManager()
     
     private var currentLocation: CLLocation?
@@ -137,13 +135,6 @@ class StationListVC: CustomVC {
         }
     }
     
-    private func getTableViewCount() -> Int {
-        if !filterMapInfos.isEmpty {
-            return filterMapInfos.count
-        }
-        return  filtered ? 0 : mapInfos.count
-    }
-    
     private func filterText(_ query:String?) {
         guard let query = query else { return }
         filterMapInfos.removeAll()
@@ -159,19 +150,16 @@ class StationListVC: CustomVC {
         })
         
         filterMapInfos.append(contentsOf: newData)
-        
-        if !filterMapInfos.isEmpty || keyWordTextfiekd.text != ""{
-            filtered = true
-        }else{
-            filtered = false
-        }
 
     }
     
-    @objc private func textFieldDidChange(_ textfield:UITextField){
-        if let text = textfield.text {
+    @objc private func textFieldDidChange(_ textfield:UITextField) {
+        if let text = textfield.text, text != "" {
             filterText(text)
+        } else {
+            filterMapInfos.append(contentsOf: mapInfos)
         }
+        tableView.reloadData()
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {

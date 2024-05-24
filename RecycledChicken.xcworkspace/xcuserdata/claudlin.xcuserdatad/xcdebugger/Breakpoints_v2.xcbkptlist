@@ -182,13 +182,13 @@
             filePath = "RecycledChicken/StationList/StationListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "sortDisance()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6024C177-8A7A-42C6-BF17-B10E10F2EF70 - 13a90732d0a22b44"
+                  uuid = "6024C177-8A7A-42C6-BF17-B10E10F2EF70 - 13a90732d0a22b06"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -198,11 +198,11 @@
                   urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/StationList/StationListVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83">
+                  startingLineNumber = "81"
+                  endingLineNumber = "81">
                </Location>
                <Location
-                  uuid = "6024C177-8A7A-42C6-BF17-B10E10F2EF70 - 50ad1509d41db721"
+                  uuid = "6024C177-8A7A-42C6-BF17-B10E10F2EF70 - 50ad1509d41db4e7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -212,8 +212,8 @@
                   urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/StationList/StationListVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84">
+                  startingLineNumber = "82"
+                  endingLineNumber = "82">
                </Location>
             </Locations>
          </BreakpointContent>
