@@ -38,7 +38,8 @@ class SpendPointView: UIView, NibOwnerLoadable {
                 case .CommodityVoucher:
                     needPointInt = (commodityVoucherInfo?.itemPrice ?? 0) * newValue
                 case .Lottery:
-                    needPointInt = (lotteryInfo?.itemPrice ?? 0) * newValue
+                    break
+//                    needPointInt = (lotteryInfo?.itemPrice ?? 0) * newValue
                 }
                 needPoint.text = String(needPointInt)
             }
@@ -98,12 +99,13 @@ class SpendPointView: UIView, NibOwnerLoadable {
                 drawTimeLabel.text = "validDate".localized + ":" + StartDate + "~" + EndDate
             }
         case .Lottery:
-            if let lotteryInfo = lotteryInfo, let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!), let image = UIImage(data: data){
-                itemImageView.image = image
-                itemNameLabel.text = lotteryInfo.itemName
-                itemPriceLabel.text = String(lotteryInfo.itemPrice)
-                drawTimeLabel.text = "duringDate".localized + ":" + lotteryInfo.lotteryDrawDate
-            }
+            break
+//            if let lotteryInfo = lotteryInfo, let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!), let image = UIImage(data: data){
+//                itemImageView.image = image
+//                itemNameLabel.text = lotteryInfo.itemName
+//                itemPriceLabel.text = String(lotteryInfo.itemPrice)
+//                drawTimeLabel.text = "duringDate".localized + ":" + lotteryInfo.lotteryDrawDate
+//            }
         }
 
     }
@@ -157,12 +159,12 @@ class SpendPointView: UIView, NibOwnerLoadable {
             }
         case .Lottery:
             if let lotteryInfo = lotteryInfo {
-                if profileInfo.point < (lotteryInfo.itemPrice * amount) {
-                    delegate?.alertMessage("點數不足")
-                }
-                if profileInfo.point >= (lotteryInfo.itemPrice * amount) {
-                    handleInfo(sender, lotteryInfo.itemName, lotteryInfo.createTime, String(lotteryInfo.itemPrice * amount))
-                }
+//                if profileInfo.point < (lotteryInfo.itemPrice * amount) {
+//                    delegate?.alertMessage("點數不足")
+//                }
+//                if profileInfo.point >= (lotteryInfo.itemPrice * amount) {
+//                    handleInfo(sender, lotteryInfo.itemName, lotteryInfo.createTime, String(lotteryInfo.itemPrice * amount))
+//                }
             }
         }
         

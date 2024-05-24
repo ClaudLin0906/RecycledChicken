@@ -306,7 +306,7 @@ struct APIUrl {
     static let tradeRecord = "/tradeRecord"
     static let machineStatus = "/machine/status"
     static let buyLottery = "/buyLottery"
-    static let checkLotteryItem = "/checkLotteryItem"
+    static let checkLotteryItem = "/lottery/items"
     static let checkLotteryRecord = "/checkLotteryRecord"
     static let searchUserData = "/searchUserData"
     static let updateProfile = "/updateProfile"

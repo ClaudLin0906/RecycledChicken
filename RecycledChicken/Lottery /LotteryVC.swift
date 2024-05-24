@@ -47,8 +47,8 @@ class LotteryVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         getLotteryData()
-        getActivityVoucherData()
-        getPartnerMerchantsData()
+//        getActivityVoucherData()
+//        getPartnerMerchantsData()
     }
     
     private func getActivityVoucherData() {
@@ -86,13 +86,13 @@ class LotteryVC: CustomVC {
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
-                    self.partnerMerchantsInfos = data.filter({ lotteryInfo in
-                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
-                            let dateInterval = DateInterval(start: startDate, end: endDate)
-                            return dateInterval.contains(Date())
-                        }
-                        return false
-                    })
+//                    self.partnerMerchantsInfos = data.filter({ lotteryInfo in
+//                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
+//                            let dateInterval = DateInterval(start: startDate, end: endDate)
+//                            return dateInterval.contains(Date())
+//                        }
+//                        return false
+//                    })
                 }
                 DispatchQueue.main.async {
                     self.partnerMerchantsTableView.reloadData()
@@ -107,20 +107,20 @@ class LotteryVC: CustomVC {
     
     private func getLotteryData() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
-                    self.lotteryInfos = data.filter({ lotteryInfo in
-                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
-                            let dateInterval = DateInterval(start: startDate, end: endDate)
-                            return dateInterval.contains(Date())
-                        }
-                        return false
-                    })
-                }
+            if let lotteryInfos = try? JSONDecoder().decode([LotteryInfo].self, from: data) {
+                print(lotteryInfos)
+//                    self.lotteryInfos = data.filter({ lotteryInfo in
+//                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
+//                            let dateInterval = DateInterval(start: startDate, end: endDate)
+//                            return dateInterval.contains(Date())
+//                        }
+//                        return false
+//                    })
+                
                 DispatchQueue.main.async {
                     self.lotteryTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {

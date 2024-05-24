@@ -47,4 +47,18 @@ class StationListTableViewCell: UITableViewCell {
         distanceLabel.text = "\(String(format: "%.2f", distance))km"
     }
     
+    @IBAction func navigationAction(_ sender:UIButton) {
+        guard let info = info, let machineLocation = info.machineLocation , let latitudeStr = machineLocation.latitude, let longitudeStr = machineLocation.longitude else { return }
+        
+        if let url = URL(string: "comgooglemaps://?saddr=&daddr=\(latitudeStr),\(longitudeStr)&directionsmode=driving") {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                if let googleMapURL = URL(string: "itms-apps://itunes.apple.com/app/id585027354"), UIApplication.shared.canOpenURL(googleMapURL) {
+                    UIApplication.shared.open(googleMapURL)
+                }
+            }
+        }
+    }
+    
 }

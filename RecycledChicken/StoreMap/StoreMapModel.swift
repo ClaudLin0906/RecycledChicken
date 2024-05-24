@@ -8,15 +8,6 @@
 import Foundation
 
 struct MapInfo: Codable {
-//    var isVisible:Bool?
-//    var storeName:String
-//    var storeID:String
-//    var cellPath:String
-//    var remainingProcessable:RemainingProcessableInfo
-//    var status:String
-//    var storeAddress:String
-//    var coordinate:String
-//    var disance:Double = 0
     var name:String?
     var machineRemaining:MachineRemaining?
     var machineStatus:MachineStatus?

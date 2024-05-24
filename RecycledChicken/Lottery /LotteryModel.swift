@@ -8,15 +8,51 @@
 import Foundation
 
 struct LotteryInfo: Decodable {
-    var itemPrice:Int
-    var purchaserCount:Int
-    var activityEndTime:String
-    var activityStartTime:String
-    var lotteryDrawDate:String
-    var createTime:String
-    var picture:String
-    var pictureBig:String
-    var itemName:String
+    var category:LotteryCategory?
+    var itemName:String?
+    var point:Int?
+    var productImage:String?
+    var eventStartTime:String?
+    var eventEndTime:String?
+    var drawDate:String?
+    var description:String?
+    var notes:String?
+    var purchaserCount:Int?
+    
+    enum CodingKeys:String, CodingKey {
+        case category = "category"
+        case itemName = "itemName"
+        case point = "point"
+        case productImage = "productImage"
+        case eventStartTime = "eventStartTime"
+        case eventEndTime = "eventEndTime"
+        case drawDate = "drawDate"
+        case description = "description"
+        case notes = "notes"
+        case purchaserCount = "purchaserCount"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        category = try? container.decodeIfPresent(LotteryCategory.self, forKey: .category)
+        itemName = try? container.decodeIfPresent(String.self, forKey: .itemName)
+        point = try? container.decodeIfPresent(Int.self, forKey: .point)
+        productImage = try? container.decodeIfPresent(String.self, forKey: .productImage)
+        eventStartTime = try? container.decodeIfPresent(String.self, forKey: .eventStartTime)
+        eventEndTime = try? container.decodeIfPresent(String.self, forKey: .eventEndTime)
+        drawDate = try? container.decodeIfPresent(String.self, forKey: .drawDate)
+        description = try? container.decodeIfPresent(String.self, forKey: .description)
+        notes = try? container.decodeIfPresent(String.self, forKey: .notes)
+        purchaserCount = try? container.decodeIfPresent(Int.self, forKey: .purchaserCount)
+    }
+}
+
+enum LotteryCategory: String, Codable {
+    case ticket = "ticket"
+    case event = "event"
+    case partner = "partner"
 }
 
 var LotterySegmentedControlTitles = ["raffleTicket".localized, "activityAward".localized, "merchants".localized]
+
+
