@@ -32,16 +32,16 @@ class AmountView: UIView, NibOwnerLoadable {
     func setAmount(_ info:MapInfo) {
         stackView.removeFullyAllArrangedSubviews()
         self.isHidden = false
-        storeName.text = info.storeName
-
-        if let battery = info.remainingProcessable.battery, battery > 0 {
-            let label = labelInit("還可以投:\(battery)顆")
-            stackView.addArrangedSubview(label)
-        }
-        if let bottle = info.remainingProcessable.bottle, bottle > 0 {
-            let label = labelInit("還可以投:\(bottle)瓶")
-            stackView.addArrangedSubview(label)
-        }
+//        storeName.text = info.storeName
+//
+//        if let battery = info.remainingProcessable.battery, battery > 0 {
+//            let label = labelInit("還可以投:\(battery)顆")
+//            stackView.addArrangedSubview(label)
+//        }
+//        if let bottle = info.remainingProcessable.bottle, bottle > 0 {
+//            let label = labelInit("還可以投:\(bottle)瓶")
+//            stackView.addArrangedSubview(label)
+//        }
     }
     
     private func labelInit(_ textCount:String) -> UILabel {

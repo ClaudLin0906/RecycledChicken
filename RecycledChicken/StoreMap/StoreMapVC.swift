@@ -23,14 +23,14 @@ class StoreMapVC: CustomRootVC {
     
     private var locationManager = CLLocationManager()
     
-    private var fakeMapInfosData:[MapInfo] = 
-    [
-        MapInfo(isVisible: true, storeName: "店家1", storeID: "店家1ID", cellPath: "店家1cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家1storeAddress", coordinate: "24.8355593, 121.0090052"),
-        MapInfo(isVisible: true, storeName: "店家2", storeID: "店家2ID", cellPath: "店家2cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "滿", storeAddress: "店家2storeAddress", coordinate: "22.8355593, 121.0090052"),
-        MapInfo(isVisible: true, storeName: "店家3", storeID: "店家3ID", cellPath: "店家3cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 0, battery: 10), status: "可投遞", storeAddress: "店家3storeAddress", coordinate: "20.8355593, 121.0090052"),
-        MapInfo(isVisible: true, storeName: "店家4", storeID: "店家4ID", cellPath: "店家4cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 0), status: "可投遞", storeAddress: "店家4storeAddress", coordinate: "18.8355593, 121.0090052"),
-        MapInfo(isVisible: true, storeName: "店家5", storeID: "店家5ID", cellPath: "店家5cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家5storeAddress", coordinate: "16.8355593, 121.0090052")
-    ]
+//    private var fakeMapInfosData:[MapInfo] = 
+//    [
+//        MapInfo(isVisible: true, storeName: "店家1", storeID: "店家1ID", cellPath: "店家1cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家1storeAddress", coordinate: "24.8355593, 121.0090052"),
+//        MapInfo(isVisible: true, storeName: "店家2", storeID: "店家2ID", cellPath: "店家2cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "滿", storeAddress: "店家2storeAddress", coordinate: "22.8355593, 121.0090052"),
+//        MapInfo(isVisible: true, storeName: "店家3", storeID: "店家3ID", cellPath: "店家3cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 0, battery: 10), status: "可投遞", storeAddress: "店家3storeAddress", coordinate: "20.8355593, 121.0090052"),
+//        MapInfo(isVisible: true, storeName: "店家4", storeID: "店家4ID", cellPath: "店家4cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 0), status: "可投遞", storeAddress: "店家4storeAddress", coordinate: "18.8355593, 121.0090052"),
+//        MapInfo(isVisible: true, storeName: "店家5", storeID: "店家5ID", cellPath: "店家5cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家5storeAddress", coordinate: "16.8355593, 121.0090052")
+//    ]
     
     private var mapInfosData:[MapInfo] = []
     
@@ -57,8 +57,8 @@ class StoreMapVC: CustomRootVC {
             }
             
             if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
-//                self.mapInfosData = mapInfos
-                mapInfosData = fakeMapInfosData
+                self.mapInfosData = mapInfos
+//                mapInfosData = fakeMapInfosData
                 currentMapInfos = mapInfosData
                 addMarker(currentMapInfos)
             }
@@ -72,47 +72,75 @@ class StoreMapVC: CustomRootVC {
     private func addMarker(_ infos:[MapInfo]) {
         DispatchQueue.main.async { [self] in
             mapView?.clear()
-            for mapInfo in infos {
+            infos.forEach { info in
+                guard let latitudeString = info.machineLocation?.latitude, let latitude = Double(latitudeString), let longitudeString = info.machineLocation?.longitude, let longitude = Double(longitudeString) else { return }
+                let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 let maker = GMSMarker()
-                if let coordinateArr = try? mapInfo.coordinate.components(separatedBy: ", "), coordinateArr.count == 2 {
-                    if let latitude = Double(coordinateArr[0]), let longitude = Double(coordinateArr[1]) {
-                        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                        maker.position = coordinate
-                        maker.map = mapView
-                        maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
-                        maker.icon = getMakerIcon(mapInfo)
-                        maker.title = mapInfo.storeName
-                    }
-                }
+                maker.position = coordinate
+                maker.map = mapView
+                maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
+                maker.icon = getMakerIcon(info)
+                maker.title = info.name
             }
+//            for mapInfo in infos {
+//                let maker = GMSMarker()
+//                if let coordinateArr = try? mapInfo.coordinate.components(separatedBy: ", "), coordinateArr.count == 2 {
+//                    if let latitude = Double(coordinateArr[0]), let longitude = Double(coordinateArr[1]) {
+//                        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//                        maker.position = coordinate
+//                        maker.map = mapView
+//                        maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
+//                        maker.icon = getMakerIcon(mapInfo)
+//                        maker.title = mapInfo.storeName
+//                    }
+//                }
+//            }
         }
     }
     
-    private func getMakerIcon(_ info:MapInfo) -> UIImage {
-        var image = UIImage(named: "")
-        switch info.status {
-        case "可投遞":
-            let bottle = info.remainingProcessable.bottle ?? 0
-            let battery = info.remainingProcessable.battery ?? 0
-            
-            if battery > 0 && bottle > 0 {
-                image = UIImage(named: "Group 125")
-            }
-            
-            if battery > 0 && bottle == 0 {
+    private func getMakerIcon(_ info:MapInfo) -> UIImage? {
+        var image:UIImage?
+        switch info.machineStatus {
+        case .full:
+            image = UIImage(named: "Group 124")
+        case .submit:
+            if info.taskDescription != nil {
                 image = UIImage(named: "Group 128")
+            } else {
+                if let machineRemaining = info.machineRemaining {
+                    var remainBottle = false
+                    var remainBattery = false
+                    var remainCan = false
+                    var remainCup = false
+                    if machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorBottle ?? 0 > 0{
+                        remainBottle = true
+                    }
+                    if machineRemaining.battery ?? 0 > 0 {
+                        remainBattery = true
+                    }
+                    if machineRemaining.can ?? 0 > 0 {
+                        remainCan = true
+                    }
+                    if machineRemaining.cup ?? 0 > 0 {
+                        remainCup = true
+                    }
+                    if remainCan && remainBattery && remainBottle {
+                        image = UIImage(named: "Group 128")
+                    }
+                    if remainBattery && remainBottle && remainCup {
+                        image = UIImage(named: "Group 129")
+                    }
+                    if remainBottle && remainCup {
+                        image = UIImage(named: "Group 125")
+                    }
+                }
             }
-            
-            if battery == 0 && bottle > 0 {
-                image = UIImage(named: "Group 129")
-            }
-            
-        case "滿":
+        case .underMaintenance:
             image = UIImage(named: "Group 160")
-        default:
+        case .none:
             break
         }
-        return imageWithImage(image:image!, scaledToSize: CGSize(width: 50, height: 50))
+        return imageWithImage(image:image, scaledToSize: CGSize(width: 50, height: 50))
     }
     
     private func isLocationServicesEnabled() -> Bool {
@@ -176,7 +204,15 @@ class StoreMapVC: CustomRootVC {
         if let text = textField.text {
             if text.trimmingCharacters(in: .whitespaces) != "" {
                 currentMapInfos.removeAll()
-                currentMapInfos = mapInfosData.filter({$0.storeName.contains(text) || $0.storeAddress.contains(text)})
+                currentMapInfos = mapInfosData.filter({ mapInfo in
+                    if let name = mapInfo.name {
+                        return text.contains(text)
+                    }
+                    if let address = mapInfo.address {
+                        return text.contains(address)
+                    }
+                    return false
+                })
                 addMarker(currentMapInfos)
             }else{
                 currentMapInfos = mapInfosData
@@ -193,7 +229,7 @@ extension StoreMapVC: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         let mapInfoArr = currentMapInfos.filter { mapInfo in
             if let title = marker.title {
-                if title == mapInfo.storeName {
+                if title == mapInfo.name {
                     return true
                 }
             }

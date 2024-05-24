@@ -27,8 +27,8 @@ class StoreListTableViewCell: UITableViewCell {
     }
     
     func setCell(mapInfo:MapInfo){
-        storeName.text = mapInfo.storeName
-        storeAddress.text = mapInfo.storeAddress
+        storeName.text = mapInfo.name
+        storeAddress.text = mapInfo.address
     }
 
 }

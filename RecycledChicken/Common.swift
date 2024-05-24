@@ -304,7 +304,7 @@ struct APIUrl {
     static let smsCode = "/auth/generateSmsCode"
     static let useRecord = "/useRecord"
     static let tradeRecord = "/tradeRecord"
-    static let machineStatus = "/machineStatus"
+    static let machineStatus = "/machine/status"
     static let buyLottery = "/buyLottery"
     static let checkLotteryItem = "/checkLotteryItem"
     static let checkLotteryRecord = "/checkLotteryRecord"
@@ -923,7 +923,8 @@ func getDateFromStr(dateformat:String = "yyyy-MM-dd HH:mm:ss Z", dateStr:String)
     }
 }
 
-func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage {
+func imageWithImage(image:UIImage?, scaledToSize newSize:CGSize) -> UIImage? {
+    guard let image = image else { return nil }
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
     image.draw(in: CGRectMake(0, 0, newSize.width, newSize.height))
     let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!

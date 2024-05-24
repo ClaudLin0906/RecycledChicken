@@ -64,8 +64,8 @@ class StoreListVC: CustomVC {
         filterMapInfos.removeAll()
         
         let newData = mapInfos.filter({
-            let storeNameResult =  $0.storeName.range(of: query, options: .caseInsensitive)
-            let storeAddressResult = $0.storeAddress.range(of: query, options: .caseInsensitive)
+            let storeNameResult =  $0.name?.range(of: query, options: .caseInsensitive)
+            let storeAddressResult = $0.address?.range(of: query, options: .caseInsensitive)
             if storeNameResult != nil || storeAddressResult != nil {
                 return true
             }else{

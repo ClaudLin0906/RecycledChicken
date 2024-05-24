@@ -22,15 +22,6 @@ class StationListVC: CustomVC {
     
     private var filterMapInfos:[MapInfo] = []
     
-    private var fakeMapInfosData:[MapInfo] =
-    [
-        MapInfo(isVisible: true, storeName: "店家1", storeID: "店家1ID", cellPath: "店家1cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家1storeAddress", coordinate: "24.8355593, 121.0090052"),
-        MapInfo(isVisible: true, storeName: "店家2", storeID: "店家2ID", cellPath: "店家2cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "滿", storeAddress: "店家2storeAddress", coordinate: "22.8355593, 121.0090052"),
-        MapInfo(isVisible: true, storeName: "店家3", storeID: "店家3ID", cellPath: "店家3cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 0, battery: 10), status: "可投遞", storeAddress: "店家3storeAddress", coordinate: "20.8355593, 121.0090052"),
-        MapInfo(isVisible: true, storeName: "店家4", storeID: "店家4ID", cellPath: "店家4cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 0), status: "可投遞", storeAddress: "店家4storeAddress", coordinate: "18.8355593, 121.0090052"),
-        MapInfo(isVisible: true, storeName: "店家5", storeID: "店家5ID", cellPath: "店家5cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家5storeAddress", coordinate: "16.8355593, 121.0090052")
-    ]
-    
     private var filtered = false
     
     private var locationManager = CLLocationManager()
@@ -40,6 +31,7 @@ class StationListVC: CustomVC {
         willSet {
             if newValue != nil {
                 sortDisance()
+                tableView.reloadData()
             }
         }
     }
@@ -48,7 +40,6 @@ class StationListVC: CustomVC {
         super.viewDidLoad()
         title = "stationList".localized
         UIInit()
-        getStoreInfo()
         // Do any additional setup after loading the view.
     }
     
@@ -68,7 +59,6 @@ class StationListVC: CustomVC {
         keyWordTextfiekd.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tableView.showAnimatedSkeleton()
         locationManager.delegate = self
-        mapInfos = fakeMapInfosData
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +69,7 @@ class StationListVC: CustomVC {
         } else {
            locationManager.requestWhenInUseAuthorization()
         }
+        getStoreInfo()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -86,26 +77,27 @@ class StationListVC: CustomVC {
         locationManager.stopUpdatingLocation()
     }
     
-    private func getLocation(_ locationStr:String) -> CLLocation? {
-        if let coordinateArr = try? locationStr.components(separatedBy: ", "), coordinateArr.count == 2 {
-            if let latitude = Double(coordinateArr[0]), let longitude = Double(coordinateArr[1]) {
-                return CLLocation(latitude: latitude, longitude: longitude)
-            }
-        }
-        return nil
-    }
-    
     private func sortDisance() {
         guard let currentLocation = currentLocation else { return }
         var newMapInfos:[MapInfo] = []
-        newMapInfos = mapInfos.sorted { mapInfo1, mapInfo2 in
-            guard let coordinate1 = getLocation(mapInfo1.coordinate), let coordinate2 = getLocation(mapInfo2.coordinate) else { return false }
+        newMapInfos = mapInfos.sorted(by: { mapInfo1, mapInfo2 in
+            guard let coordinate1 = getLocation(mapInfo1), let coordinate2 = getLocation(mapInfo2) else { return false }
             let distance1 = coordinate1.distance(from: currentLocation)
             let distance2 = coordinate2.distance(from: currentLocation)
             return distance1 > distance2
+        })
+        if newMapInfos.count > 5 {
+            mapInfos.append(contentsOf: newMapInfos.prefix(5))
         }
-        mapInfos.append(contentsOf: newMapInfos)
+        if newMapInfos.count <= 5 {
+            mapInfos.append(contentsOf: newMapInfos)
+        }
         print(" end \(mapInfos)")
+    }
+    
+    private func getLocation(_ mapInfo:MapInfo) -> CLLocation? {
+        guard let machineLocation = mapInfo.machineLocation , let latitudeStr = machineLocation.latitude, let longitudeStr = machineLocation.longitude, let latitude = Double(latitudeStr), let longitude = Double(longitudeStr) else { return nil }
+         return CLLocation(latitude: latitude, longitude: longitude)
     }
     
     private func isLocationServicesEnabled() -> Bool {
@@ -127,13 +119,13 @@ class StationListVC: CustomVC {
     
     private func getStoreInfo(){
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            
-            if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
+            if let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
                 self.mapInfos = mapInfos
+                self.filterMapInfos.append(contentsOf: mapInfos)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -157,8 +149,8 @@ class StationListVC: CustomVC {
         filterMapInfos.removeAll()
         
         let newData = mapInfos.filter({
-            let storeNameResult =  $0.storeName.range(of: query, options: .caseInsensitive)
-            let storeAddressResult = $0.storeAddress.range(of: query, options: .caseInsensitive)
+            let storeNameResult =  $0.name?.range(of: query, options: .caseInsensitive)
+            let storeAddressResult = $0.address?.range(of: query, options: .caseInsensitive)
             if storeNameResult != nil || storeAddressResult != nil {
                 return true
             }else{
@@ -187,6 +179,13 @@ class StationListVC: CustomVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
+    
+    private func getNumberOfRowsInSection() -> Int {
+        if filterMapInfos.count > 5 {
+            return 5
+        }
+        return filterMapInfos.count
+    }
 
 }
 
@@ -202,8 +201,7 @@ extension StationListVC: SkeletonTableViewDataSource {
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        getTableViewCount()
-        3
+        5
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
@@ -211,11 +209,13 @@ extension StationListVC: SkeletonTableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        getNumberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StationListTableViewCell.identifier, for: indexPath) as! StationListTableViewCell
+        let mapInfo = filterMapInfos[indexPath.row]
+        cell.setCell(mapInfo, currentLocation)
         return cell
     }
     
