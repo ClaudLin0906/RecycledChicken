@@ -20,6 +20,8 @@ class StationListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var distanceLabel:UILabel!
     
+    @IBOutlet weak var stationStatusStackView:UIStackView!
+    
     private var info:MapInfo?
 
     override func awakeFromNib() {
@@ -36,7 +38,18 @@ class StationListTableViewCell: UITableViewCell {
     func setCell(_ info:MapInfo, _ currentLocation:CLLocation?) {
         self.info = info
         nameLabel.text = info.name
-        statusLabel.text = info.machineStatus?.rawValue
+        if let machineStatus = info.machineStatus {
+            switch machineStatus {
+            case .full:
+                stationStatusStackView.isHidden = false
+                statusLabel.text = info.machineStatus?.rawValue
+            case .submit:
+                stationStatusStackView.isHidden = true
+            case .underMaintenance:
+                stationStatusStackView.isHidden = false
+                statusLabel.text = info.machineStatus?.rawValue
+            }
+        }
         addressLabel.text = info.address
         getDisance(currentLocation)
     }

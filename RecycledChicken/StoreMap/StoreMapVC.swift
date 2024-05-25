@@ -18,6 +18,8 @@ class StoreMapVC: CustomRootVC {
     @IBOutlet weak var searchTextField:UITextField!
     
     @IBOutlet weak var amountViewHeight:NSLayoutConstraint!
+    
+    @IBOutlet weak var specialTaskView:SpecialTaskView!
         
     private var observation: NSKeyValueObservation?
     
@@ -171,16 +173,6 @@ class StoreMapVC: CustomRootVC {
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self
-        
-//        iconView1.icon.backgroundColor = CommonColor.shared.color5
-//        iconView1.title.text = "0~40%"
-//        
-//        iconView2.icon.backgroundColor = CommonColor.shared.color3
-//        iconView2.title.text = "50%"
-//        
-//        iconView3.icon.backgroundColor = #colorLiteral(red: 0.9574549794, green: 0.5093209743, blue: 0.3308191895, alpha: 1)
-//        iconView3.title.text = "滿位"
-        
         
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))

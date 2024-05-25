@@ -47,63 +47,7 @@ class LotteryVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         getLotteryData()
-//        getActivityVoucherData()
-//        getPartnerMerchantsData()
     }
-    
-//    private func getActivityVoucherData() {
-//        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-//            guard statusCode == 200 else {
-//                showAlert(VC: self, title: "error".localized, message: errorMSG)
-//                return
-//            }
-//            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-//                if let data = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
-//                    self.activityVoucherInfos = data.filter({ commodityVoucherInfo in
-//                        if let startDate = dateFromString(commodityVoucherInfo.activityStartTime), let endDate = dateFromString(commodityVoucherInfo.activityEndTime), endDate > startDate {
-//                            let dateInterval = DateInterval(start: startDate, end: endDate)
-//                            return dateInterval.contains(Date())
-//                        }
-//                        return false
-//                    })
-//                }
-//                DispatchQueue.main.async {
-//                    self.activityVoucherTableView.reloadData()
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                        self.activityVoucherTableView.stopSkeletonAnimation()
-//                        self.view.hideSkeleton()
-//                    })
-//                }
-//            }
-//        }
-//    }
-//    
-//    private func getPartnerMerchantsData() {
-//        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-//            guard statusCode == 200 else {
-//                showAlert(VC: self, title: "error".localized, message: errorMSG)
-//                return
-//            }
-//            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-//                if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
-////                    self.partnerMerchantsInfos = data.filter({ lotteryInfo in
-////                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
-////                            let dateInterval = DateInterval(start: startDate, end: endDate)
-////                            return dateInterval.contains(Date())
-////                        }
-////                        return false
-////                    })
-//                }
-//                DispatchQueue.main.async {
-//                    self.partnerMerchantsTableView.reloadData()
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                        self.partnerMerchantsTableView.stopSkeletonAnimation()
-//                        self.view.hideSkeleton()
-//                    })
-//                }
-//            }
-//        }
-//    }
     
     private func getLotteryData() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
@@ -126,14 +70,6 @@ class LotteryVC: CustomVC {
                         self.partnerMerchantsInfos.append(lotteryInfo)
                     }
                 }
-//                    self.lotteryInfos = data.filter({ lotteryInfo in
-//                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
-//                            let dateInterval = DateInterval(start: startDate, end: endDate)
-//                            return dateInterval.contains(Date())
-//                        }
-//                        return false
-//                    })
-                
                 DispatchQueue.main.async {
                     self.lotteryTableView.reloadData()
                     self.activityVoucherTableView.reloadData()
@@ -201,20 +137,19 @@ extension LotteryVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard CurrentUserInfo.shared.isGuest == false else { return }
-//        if tableView == lotteryTableView {
-//            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
-//                VC.lotteryInfo = lotteryInfos[indexPath.row]
-//                pushVC(targetVC: VC, navigation: navigationController)
-//            }
-//        }
-//
+        if tableView == lotteryTableView {
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
+                VC.lotteryInfo = lotteryInfos[indexPath.row]
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
+        }
+
 //        if tableView == activityVoucherTableView || tableView == partnerMerchantsTableView  {
 //            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
 //                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
 //                pushVC(targetVC: VC, navigation: navigationController)
 //            }
 //        }
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

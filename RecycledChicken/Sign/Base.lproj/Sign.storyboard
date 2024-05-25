@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="37.666666666666686" width="220" height="37.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-qx-4wi">
-                                                <rect key="frame" x="0.0" y="10.333333333333313" width="30" height="16.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="8.6666666666666874" width="30" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="JHI-IN-SYs"/>
                                                 </constraints>
@@ -90,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="75" width="220" height="37.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohB-Ws-xaS">
-                                                <rect key="frame" x="0.0" y="10.666666666666684" width="30" height="16.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="9.0000000000000018" width="30" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="LCp-qn-srX"/>
                                                 </constraints>
@@ -216,13 +216,13 @@
     </scenes>
     <designables>
         <designable name="J5a-fu-Tik">
-            <size key="intrinsicContentSize" width="48" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="50" height="19.666666666666668"/>
         </designable>
         <designable name="eAT-vs-MVL">
-            <size key="intrinsicContentSize" width="42" height="29"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="xWk-Ny-o8a">
-            <size key="intrinsicContentSize" width="112" height="29"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

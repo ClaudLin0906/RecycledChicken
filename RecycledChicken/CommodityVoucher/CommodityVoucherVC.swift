@@ -33,14 +33,15 @@ class CommodityVoucherVC: CustomVC {
         getData()
     }
     
-    private func getData(){
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+    private func getData() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.coupons, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard statusCode == 200, let data = data else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.commodityVoucherInfos = try! JSONDecoder().decode([CommodityVoucherInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+            if let commodityVoucherInfos = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: data) {
+                self.commodityVoucherInfos.removeAll()
+                self.commodityVoucherInfos.append(contentsOf: commodityVoucherInfos)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -49,6 +50,16 @@ class CommodityVoucherVC: CustomVC {
                     })
                 }
             }
+//            if , let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+//                self.commodityVoucherInfos =
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                        self.tableView.stopSkeletonAnimation()
+//                        self.view.hideSkeleton()
+//                    })
+//                }
+//            }
         }
     }
 }

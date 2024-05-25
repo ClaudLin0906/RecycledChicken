@@ -82,7 +82,7 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us9-8H-hy1">
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us9-8H-hy1">
                                                     <rect key="frame" x="66.333333333333343" y="24" width="93.333333333333343" height="15"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Ps-FM-XFQ">
@@ -227,6 +227,7 @@
                                             <outlet property="addressLabel" destination="dUC-iY-bPQ" id="Xdd-Q1-b3v"/>
                                             <outlet property="distanceLabel" destination="t04-TS-uf4" id="yWI-EP-ZQb"/>
                                             <outlet property="nameLabel" destination="JU6-9n-VvA" id="ecX-w1-I31"/>
+                                            <outlet property="stationStatusStackView" destination="Us9-8H-hy1" id="CdR-2J-tsU"/>
                                             <outlet property="statusLabel" destination="qje-G3-6fI" id="Pz7-aQ-bfl"/>
                                         </connections>
                                     </tableViewCell>

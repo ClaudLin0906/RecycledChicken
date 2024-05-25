@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 protocol SpendPointViewDelegate{
     func btnAction(_ sender:UIButton, info:SpendPointInfo)
     func alertMessage(_ message:String)
@@ -27,6 +27,8 @@ class SpendPointView: UIView, NibOwnerLoadable {
     @IBOutlet weak var itemPriceLabel:UILabel!
     
     @IBOutlet weak var drawTimeLabel:CustomLabel!
+    
+    @IBOutlet weak var itemDescriptionTextView:UITextView!
         
     private var amount:Int = 0
     {
@@ -36,7 +38,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
                 var needPointInt:Int = 0
                 switch type {
                 case .CommodityVoucher:
-                    needPointInt = (commodityVoucherInfo?.itemPrice ?? 0) * newValue
+                    needPointInt = (commodityVoucherInfo?.points ?? 0) * newValue
                 case .Lottery:
                     break
 //                    needPointInt = (lotteryInfo?.itemPrice ?? 0) * newValue
@@ -88,24 +90,39 @@ class SpendPointView: UIView, NibOwnerLoadable {
     private func setInfo() {
         switch type {
         case .CommodityVoucher:
-            if let commodityVoucherInfo = commodityVoucherInfo, let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!), let image = UIImage(data: data) {
-                let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
-                let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
-                let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
-                let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
-                itemImageView.image = image
-                itemNameLabel.text = commodityVoucherInfo.itemName
-                itemPriceLabel.text = String(commodityVoucherInfo.itemPrice)
-                drawTimeLabel.text = "validDate".localized + ":" + StartDate + "~" + EndDate
-            }
-        case .Lottery:
             break
-//            if let lotteryInfo = lotteryInfo, let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!), let image = UIImage(data: data){
+//            if let commodityVoucherInfo = commodityVoucherInfo, let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!), let image = UIImage(data: data) {
+//                let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
+//                let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
+//                let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
+//                let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
 //                itemImageView.image = image
-//                itemNameLabel.text = lotteryInfo.itemName
-//                itemPriceLabel.text = String(lotteryInfo.itemPrice)
-//                drawTimeLabel.text = "duringDate".localized + ":" + lotteryInfo.lotteryDrawDate
+//                itemNameLabel.text = commodityVoucherInfo.itemName
+//                itemPriceLabel.text = String(commodityVoucherInfo.itemPrice)
+//                drawTimeLabel.text = "validDate".localized + ":" + StartDate + "~" + EndDate
 //            }
+        case .Lottery:
+            guard let lotteryInfo = lotteryInfo else { return }
+            
+            if let productImage = lotteryInfo.productImage, let imageURL = URL(string: productImage) {
+                itemImageView.kf.setImage(with: imageURL)
+            }
+            
+            if let itemName = lotteryInfo.itemName {
+                itemNameLabel.text = itemName
+            }
+            
+            if let point = lotteryInfo.point {
+                itemPriceLabel.text = String(point)
+            }
+            
+            if let drawDate = lotteryInfo.drawDate {
+                drawTimeLabel.text = "duringDate".localized + ":" + drawDate
+            }
+            
+            if let description = lotteryInfo.description {
+                itemDescriptionTextView.text = description
+            }
         }
 
     }
@@ -149,23 +166,24 @@ class SpendPointView: UIView, NibOwnerLoadable {
         guard let profileInfo = CurrentUserInfo.shared.currentProfileInfo else { return }
         switch type {
         case .CommodityVoucher:
-            if let commodityVoucherInfo = commodityVoucherInfo {
-                if profileInfo.point < (commodityVoucherInfo.itemPrice * amount) {
-                    delegate?.alertMessage("點數不足")
-                }
-                if profileInfo.point >= (commodityVoucherInfo.itemPrice * amount) {
-                    handleInfo(sender, commodityVoucherInfo.itemName, commodityVoucherInfo.createTime, String(commodityVoucherInfo.itemPrice * amount))
-                }
-            }
-        case .Lottery:
-            if let lotteryInfo = lotteryInfo {
-//                if profileInfo.point < (lotteryInfo.itemPrice * amount) {
+            break
+//            if let commodityVoucherInfo = commodityVoucherInfo {
+//                if profileInfo.point < (commodityVoucherInfo.itemPrice * amount) {
 //                    delegate?.alertMessage("點數不足")
 //                }
-//                if profileInfo.point >= (lotteryInfo.itemPrice * amount) {
-//                    handleInfo(sender, lotteryInfo.itemName, lotteryInfo.createTime, String(lotteryInfo.itemPrice * amount))
+//                if profileInfo.point >= (commodityVoucherInfo.itemPrice * amount) {
+//                    handleInfo(sender, commodityVoucherInfo.itemName, commodityVoucherInfo.createTime, String(commodityVoucherInfo.itemPrice * amount))
 //                }
+//            }
+        case .Lottery:
+            guard let lotteryInfo = lotteryInfo, let point = lotteryInfo.point else { return }
+            if profileInfo.point < (point * amount) {
+                delegate?.alertMessage("點數不足")
             }
+//            if profileInfo.point >= (point * amount) {
+//                handleInfo(sender, lotteryInfo.itemName, lotteryInfo.createTime, String(lotteryInfo.itemPrice * amount))
+//            }
+
         }
         
     }
