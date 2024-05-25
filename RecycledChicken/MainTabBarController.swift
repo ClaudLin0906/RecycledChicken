@@ -20,11 +20,10 @@ class MainTabBarController: UITabBarController {
     
     let noSelectImages:[UIImage?] =
     [
-        UIImage(named: "グループ 76"),
-        UIImage(named: "グループ 77"),
+        UIImage(named: "start 1"),
+        UIImage(named: "location"),
         UIImage(named: "组 226"),
-//        UIImage(named: "グループ 82"),
-        UIImage(named: "グループ 86")
+        UIImage(named: "task")
     ]
     
     let selectImages:[UIImage?] =
@@ -58,7 +57,7 @@ class MainTabBarController: UITabBarController {
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.configureWithOpaqueBackground()
         tabBarAppearance.backgroundColor = CommonColor.shared.color5
-        tabBarAppearance.backgroundImage = UIImage(named: "グループ 974")
+        tabBarAppearance.backgroundImage = UIImage(named: "bottom")
         if #available(iOS 15.0, *) {
             tabBarAppearance.stackedLayoutAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
             tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)

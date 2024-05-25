@@ -21,17 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="f4U-g7-Q2n" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBackground" translatesAutoresizingMaskIntoConstraints="NO" id="f4U-g7-Q2n" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 971" translatesAutoresizingMaskIntoConstraints="NO" id="6M6-V4-6D3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HotAirBalloon" translatesAutoresizingMaskIntoConstraints="NO" id="6M6-V4-6D3">
                                 <rect key="frame" x="293" y="58.999999999999993" width="100" height="83.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6M6-V4-6D3" secondAttribute="height" multiplier="1.2:1" id="St7-2h-r9j"/>
                                     <constraint firstAttribute="width" constant="100" id="siR-29-bwf"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1090" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-Ho-EVo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle1093" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-Ho-EVo">
                                 <rect key="frame" x="0.0" y="172.33333333333337" width="393" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="2sI-bB-nV2"/>
@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="37.666666666666686" width="220" height="37.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-qx-4wi">
-                                                <rect key="frame" x="0.0" y="8.6666666666666874" width="30" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="10.333333333333313" width="30" height="16.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="JHI-IN-SYs"/>
                                                 </constraints>
@@ -90,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="75" width="220" height="37.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohB-Ws-xaS">
-                                                <rect key="frame" x="0.0" y="9.0000000000000018" width="30" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="10.666666666666684" width="30" height="16.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="LCp-qn-srX"/>
                                                 </constraints>
@@ -216,19 +216,19 @@
     </scenes>
     <designables>
         <designable name="J5a-fu-Tik">
-            <size key="intrinsicContentSize" width="50" height="19.666666666666668"/>
+            <size key="intrinsicContentSize" width="48" height="16.333333333333332"/>
         </designable>
         <designable name="eAT-vs-MVL">
-            <size key="intrinsicContentSize" width="42" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
         <designable name="xWk-Ny-o8a">
-            <size key="intrinsicContentSize" width="112" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
     </designables>
     <resources>
+        <image name="HotAirBalloon" width="445.33334350585938" height="453"/>
+        <image name="circle1093" width="1012" height="1012"/>
+        <image name="defaultBackground" width="1125" height="2436"/>
         <image name="footer" width="1127.6666259765625" height="501"/>
-        <image name="グループ 1089" width="1125" height="2436"/>
-        <image name="グループ 1090" width="1012" height="1012"/>
-        <image name="グループ 971" width="445.33334350585938" height="453"/>
     </resources>
 </document>

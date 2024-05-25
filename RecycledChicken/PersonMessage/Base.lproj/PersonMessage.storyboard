@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="ewC-JU-nHV" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ewC-JU-nHV" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-Lm-9Uz">
@@ -35,7 +35,7 @@
                                                     <rect key="frame" x="30" y="10" width="333" height="0.0"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="log-Bk-rKl" customClass="PersonMessageImageView" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="-25" width="50" height="50"/>
+                                                            <rect key="frame" x="10" y="-20" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="9aH-p8-HoP"/>
                                                                 <constraint firstAttribute="width" secondItem="log-Bk-rKl" secondAttribute="height" multiplier="1:1" id="pw8-75-Z0F"/>
@@ -48,7 +48,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="git-wV-GcD" userLabel="title" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="70" y="-25" width="253" height="25"/>
+                                                            <rect key="frame" x="60" y="-20" width="263" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="LSQ-vp-nXH"/>
                                                             </constraints>
@@ -60,7 +60,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKQ-Ec-vQq" userLabel="time" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="70" y="0.0" width="253" height="25"/>
+                                                            <rect key="frame" x="60" y="0.0" width="263" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -181,7 +181,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="グループ 1089" width="1125" height="2436"/>
+        <image name="defaultBackground" width="1125" height="2436"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

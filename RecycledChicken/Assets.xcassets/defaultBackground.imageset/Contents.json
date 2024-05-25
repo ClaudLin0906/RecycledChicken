@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "グループ 55.png",
+      "filename" : "defaultBackground.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "グループ 56.png",
+      "filename" : "defaultBackground1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "グループ 57.png",
+      "filename" : "defaultBackground2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

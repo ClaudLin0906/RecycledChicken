@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "グループ 78.png",
+      "filename" : "HotAirBalloon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "HotAirBalloon1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "HotAirBalloon2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "グループ 87.png",
+      "filename" : "bottom.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "bottom1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "bottom2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -47,7 +47,8 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
-                  endingLineNumber = "92">
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "0">
                </Location>
                <Location
                   uuid = "11676DED-4C50-40CD-BCA2-BF5223454361 - ca2cedd38e88a4e4"
@@ -61,7 +62,8 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
-                  endingLineNumber = "92">
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "0">
                </Location>
                <Location
                   uuid = "11676DED-4C50-40CD-BCA2-BF5223454361 - ca2cedd38e88a4e4"
@@ -75,7 +77,53 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
-                  endingLineNumber = "92">
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "11676DED-4C50-40CD-BCA2-BF5223454361 - d613f1a70c5b01cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.ADView.HomeAction() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/CommonUI/ADView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "497">
+               </Location>
+               <Location
+                  uuid = "11676DED-4C50-40CD-BCA2-BF5223454361 - d613f1a70c5b01cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.ADView.HomeAction() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/CommonUI/ADView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "615">
+               </Location>
+               <Location
+                  uuid = "11676DED-4C50-40CD-BCA2-BF5223454361 - d613f1a70c5b01cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.ADView.HomeAction() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/CommonUI/ADView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "756">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -107,7 +155,8 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
-                  endingLineNumber = "91">
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "0">
                </Location>
                <Location
                   uuid = "7D34BDB8-CD42-4B8C-A43E-F40F593D6AE6 - ca2cedd38e88a4e4"
@@ -121,7 +170,38 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "92"
-                  endingLineNumber = "92">
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "7D34BDB8-CD42-4B8C-A43E-F40F593D6AE6 - bac596c05ef822f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.ADView.HomeAction() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/CommonUI/ADView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "7D34BDB8-CD42-4B8C-A43E-F40F593D6AE6 - d613f1a70c5b01cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.ADView.HomeAction() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/CommonUI/ADView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "497">
                </Location>
             </Locations>
          </BreakpointContent>

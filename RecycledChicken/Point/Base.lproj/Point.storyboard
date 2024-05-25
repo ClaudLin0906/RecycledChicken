@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="Ijh-z5-Mcy" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ijh-z5-Mcy" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cE-lW-dYa">
@@ -325,7 +325,7 @@
     </scenes>
     <designables>
         <designable name="1cj-bx-TzZ">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
         <designable name="Hcv-dW-rKf">
             <size key="intrinsicContentSize" width="900" height="420.33333333333331"/>
@@ -340,14 +340,14 @@
             <size key="intrinsicContentSize" width="900" height="329.33333333333331"/>
         </designable>
         <designable name="yTT-JI-Qj2">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
     </designables>
     <resources>
         <image name="Product" width="900" height="329.33334350585938"/>
+        <image name="defaultBackground" width="1125" height="2436"/>
         <image name="giftVoucher" width="900" height="329"/>
         <image name="lottery" width="900" height="420.33334350585938"/>
-        <image name="グループ 1089" width="1125" height="2436"/>
         <image name="组 396" width="82" height="82"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

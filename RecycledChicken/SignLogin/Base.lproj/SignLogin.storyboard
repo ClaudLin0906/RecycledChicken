@@ -22,10 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="uVt-c4-QmW" userLabel="background">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBackground" translatesAutoresizingMaskIntoConstraints="NO" id="uVt-c4-QmW" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 971" translatesAutoresizingMaskIntoConstraints="NO" id="Lg8-fD-3dr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HotAirBalloon" translatesAutoresizingMaskIntoConstraints="NO" id="Lg8-fD-3dr">
                                 <rect key="frame" x="293" y="58.999999999999993" width="100" height="83.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lg8-fD-3dr" secondAttribute="height" multiplier="1.2:1" id="pSb-Rc-xBT"/>
@@ -223,9 +223,9 @@
         </designable>
     </designables>
     <resources>
+        <image name="HotAirBalloon" width="445.33334350585938" height="453"/>
+        <image name="defaultBackground" width="1125" height="2436"/>
         <image name="footer" width="1127.6666259765625" height="501"/>
-        <image name="グループ 1089" width="1125" height="2436"/>
-        <image name="グループ 971" width="445.33334350585938" height="453"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

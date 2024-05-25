@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "グループ 77.png",
+      "filename" : "chicken1008.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "chicken1009.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "chicken1010.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
