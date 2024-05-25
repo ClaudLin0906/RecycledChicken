@@ -8,6 +8,12 @@
 import UIKit
 
 class SpecialTaskView: UIView, NibOwnerLoadable {
+    
+    var info:MapInfo?
+    
+    @IBOutlet weak var addressLabel:UILabel!
+    
+    @IBOutlet weak var taskDescriptionLabel:UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +27,13 @@ class SpecialTaskView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let info = info else { return }
+        addressLabel.text = info.address
+        taskDescriptionLabel.text = info.taskDescription
     }
 
     @IBAction func closeBtnHandle(_ sender:UIButton) {

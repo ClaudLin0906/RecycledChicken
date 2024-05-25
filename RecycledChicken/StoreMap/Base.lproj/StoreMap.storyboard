@@ -159,7 +159,7 @@
                         <outlet property="amountViewHeight" destination="hef-l4-jRW" id="OvX-hG-qmx"/>
                         <outlet property="mapView" destination="ypg-LA-9xT" id="2Je-eF-OtI"/>
                         <outlet property="searchTextField" destination="8po-G9-5dk" id="Js6-PK-tUw"/>
-                        <outlet property="specialTaskView" destination="ta9-kB-cta" id="cgK-Al-JBL"/>
+                        <outlet property="specialTaskBackgroundView" destination="ta9-kB-cta" id="DrN-Br-K1U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -190,7 +190,7 @@
             <size key="intrinsicContentSize" width="88" height="15.666666666666666"/>
         </designable>
         <designable name="ZEl-gS-LnA">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
         <designable name="fyj-Mw-dme">
             <size key="intrinsicContentSize" width="220" height="15.666666666666666"/>

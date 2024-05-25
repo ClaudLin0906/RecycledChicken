@@ -19,7 +19,7 @@ class StoreMapVC: CustomRootVC {
     
     @IBOutlet weak var amountViewHeight:NSLayoutConstraint!
     
-    @IBOutlet weak var specialTaskView:SpecialTaskView!
+    @IBOutlet weak var specialTaskBackgroundView:UIView!
         
     private var observation: NSKeyValueObservation?
     
@@ -37,6 +37,8 @@ class StoreMapVC: CustomRootVC {
     private var mapInfosData:[MapInfo] = []
     
     private var currentMapInfos:[MapInfo] = []
+    
+    private var specialTaskMapInfos:[MapInfo] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,16 +61,39 @@ class StoreMapVC: CustomRootVC {
             }
             
             if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                self.mapInfosData = mapInfos
+                mapInfosData.removeAll()
+                specialTaskMapInfos.removeAll()
+                currentMapInfos.removeAll()
+                mapInfosData = mapInfos
 //                mapInfosData = fakeMapInfosData
+                mapInfosData.forEach({
+                    if $0.taskDescription != nil {
+                        specialTaskMapInfos.append($0)
+                    }
+                })
                 currentMapInfos = mapInfosData
                 addMarker(currentMapInfos)
+                
             }
         }
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         locationManager.stopUpdatingLocation()
+    }
+    
+    private func showSpecialTask() {
+        guard specialTaskMapInfos.count > 0 else {
+            specialTaskBackgroundView.isHidden = true
+            return
+        }
+        specialTaskBackgroundView.isHidden = false
+        specialTaskMapInfos.forEach { mapInfo in
+            let specialTaskView = SpecialTaskView()
+            specialTaskView.info = mapInfo
+            specialTaskBackgroundView.addSubview(specialTaskView)
+        }
     }
     
     private func addMarker(_ infos:[MapInfo]) {
