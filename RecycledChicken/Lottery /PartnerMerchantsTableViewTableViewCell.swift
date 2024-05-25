@@ -13,15 +13,70 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var itemImageView: UIImageView!
     
-    @IBOutlet weak var itemName: CustomLabel!
+    @IBOutlet weak var itemNameLabel: CustomLabel!
         
-    @IBOutlet weak var point: UILabel!
+    @IBOutlet weak var pointLabel: UILabel!
     
-    @IBOutlet weak var duringTime: CustomLabel!
+    @IBOutlet weak var duringTimeLabel: CustomLabel!
     
-    @IBOutlet weak var drawTime: CustomLabel!
+    @IBOutlet weak var drawTimeLabel: CustomLabel!
     
-    @IBOutlet weak var drawPeople:CustomLabel!
+    @IBOutlet weak var drawPeopleLabel:CustomLabel!
+    
+    private var imageURL:URL?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    itemImageView.kf.setImage(with: newValue)
+                }
+            }
+        }
+    }
+    
+    private var itemName:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    itemNameLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var duringTime:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    duringTimeLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var lotteryDrawDate:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    drawTimeLabel.text = "duringDate".localized + ":" + newValue
+                }
+            }
+        }
+    }
+    
+    private var point:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    pointLabel.text = newValue
+                }
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,26 +90,38 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     }
     
     func setCell(_ lotteryInfo:LotteryInfo) {
-//        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-////            let data = try? Data(contentsOf: URL(string: lotteryInfo.picture)!)
-//            let activityStartTimeDate = dateFromString(lotteryInfo.activityStartTime)
-//            let activityEndTimeDate = dateFromString(lotteryInfo.activityEndTime)
-//            let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
-//            let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
-//            let lotteryDrawDate = lotteryInfo.lotteryDrawDate
-//            DispatchQueue.main.async { [self] in
-//                if let url = URL(string: lotteryInfo.picture) {
-//                    itemImageView.kf.setImage(with: url)
-//                }
-//                itemName.text = lotteryInfo.itemName
-//                duringTime.text = "activityTime".localized + ":" + StartDate + "~" + EndDate
-//                drawTime.text = "validDate".localized + ":" + lotteryDrawDate
-//                drawPeople.text = "remain".localized + ":" + String(lotteryInfo.purchaserCount)
-//                duringTime.font = duringTime.font.withSize(11)
-//                drawTime.font = duringTime.font.withSize(11)
-//                point.text = "\(lotteryInfo.itemPrice)"
-//            }
-//        }
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            
+            if let productImageURLStr = lotteryInfo.productImage, let productImageURL = URL(string: productImageURLStr) {
+                self.imageURL = productImageURL
+            }
+            
+            if let itemName = lotteryInfo.itemName {
+                self.itemName = itemName
+            }
+            
+            var startTime:String?
+            var endTime:String?
+            if let eventStartTime = lotteryInfo.eventStartTime {
+                let activityStartTimeDate = dateFromString(eventStartTime)
+                startTime = getDates(i: 0, currentDate: activityStartTimeDate!).0
+            }
+            if let eventEndTime = lotteryInfo.eventEndTime {
+                let activityEndTimeDate = dateFromString(eventEndTime)
+                endTime = getDates(i: 0, currentDate: activityEndTimeDate!).0
+            }
+            
+            if let startTime = startTime, let endTime = endTime {
+                self.duringTime = "activityTime".localized + ":" + startTime + "~" + endTime
+            }
+            
+            if let drawDate = lotteryInfo.drawDate {
+                self.lotteryDrawDate = drawDate
+            }
+            if let infoPoint = lotteryInfo.point {
+                self.point = String(infoPoint)
+            }
+        }
     }
 }
 

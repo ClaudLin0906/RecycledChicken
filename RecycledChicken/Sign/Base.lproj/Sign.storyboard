@@ -219,10 +219,10 @@
             <size key="intrinsicContentSize" width="48" height="16.333333333333332"/>
         </designable>
         <designable name="eAT-vs-MVL">
-            <size key="intrinsicContentSize" width="30" height="29"/>
+            <size key="intrinsicContentSize" width="42" height="29"/>
         </designable>
         <designable name="xWk-Ny-o8a">
-            <size key="intrinsicContentSize" width="30" height="29"/>
+            <size key="intrinsicContentSize" width="112" height="29"/>
         </designable>
     </designables>
     <resources>

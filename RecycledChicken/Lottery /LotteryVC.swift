@@ -20,7 +20,7 @@ class LotteryVC: CustomVC {
     
     private var lotteryInfos:[LotteryInfo] = []
     
-    private var activityVoucherInfos:[CommodityVoucherInfo] = []
+    private var activityVoucherInfos:[LotteryInfo] = []
     
     private var partnerMerchantsInfos:[LotteryInfo] = []
     
@@ -51,59 +51,59 @@ class LotteryVC: CustomVC {
 //        getPartnerMerchantsData()
     }
     
-    private func getActivityVoucherData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                if let data = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
-                    self.activityVoucherInfos = data.filter({ commodityVoucherInfo in
-                        if let startDate = dateFromString(commodityVoucherInfo.activityStartTime), let endDate = dateFromString(commodityVoucherInfo.activityEndTime), endDate > startDate {
-                            let dateInterval = DateInterval(start: startDate, end: endDate)
-                            return dateInterval.contains(Date())
-                        }
-                        return false
-                    })
-                }
-                DispatchQueue.main.async {
-                    self.activityVoucherTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.activityVoucherTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
-                    })
-                }
-            }
-        }
-    }
-    
-    private func getPartnerMerchantsData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
-//                    self.partnerMerchantsInfos = data.filter({ lotteryInfo in
-//                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
+//    private func getActivityVoucherData() {
+//        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+//            guard statusCode == 200 else {
+//                showAlert(VC: self, title: "error".localized, message: errorMSG)
+//                return
+//            }
+//            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+//                if let data = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
+//                    self.activityVoucherInfos = data.filter({ commodityVoucherInfo in
+//                        if let startDate = dateFromString(commodityVoucherInfo.activityStartTime), let endDate = dateFromString(commodityVoucherInfo.activityEndTime), endDate > startDate {
 //                            let dateInterval = DateInterval(start: startDate, end: endDate)
 //                            return dateInterval.contains(Date())
 //                        }
 //                        return false
 //                    })
-                }
-                DispatchQueue.main.async {
-                    self.partnerMerchantsTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.partnerMerchantsTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
-                    })
-                }
-            }
-        }
-    }
+//                }
+//                DispatchQueue.main.async {
+//                    self.activityVoucherTableView.reloadData()
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                        self.activityVoucherTableView.stopSkeletonAnimation()
+//                        self.view.hideSkeleton()
+//                    })
+//                }
+//            }
+//        }
+//    }
+//    
+//    private func getPartnerMerchantsData() {
+//        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+//            guard statusCode == 200 else {
+//                showAlert(VC: self, title: "error".localized, message: errorMSG)
+//                return
+//            }
+//            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+//                if let data = try? JSONDecoder().decode([LotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic)) {
+////                    self.partnerMerchantsInfos = data.filter({ lotteryInfo in
+////                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
+////                            let dateInterval = DateInterval(start: startDate, end: endDate)
+////                            return dateInterval.contains(Date())
+////                        }
+////                        return false
+////                    })
+//                }
+//                DispatchQueue.main.async {
+//                    self.partnerMerchantsTableView.reloadData()
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                        self.partnerMerchantsTableView.stopSkeletonAnimation()
+//                        self.view.hideSkeleton()
+//                    })
+//                }
+//            }
+//        }
+//    }
     
     private func getLotteryData() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
@@ -112,7 +112,20 @@ class LotteryVC: CustomVC {
                 return
             }
             if let lotteryInfos = try? JSONDecoder().decode([LotteryInfo].self, from: data) {
-                print(lotteryInfos)
+                self.lotteryInfos.removeAll()
+                self.activityVoucherInfos.removeAll()
+                self.partnerMerchantsInfos.removeAll()
+                lotteryInfos.forEach { lotteryInfo in
+                    guard let category = lotteryInfo.category else { return }
+                    switch category {
+                    case .ticket:
+                        self.lotteryInfos.append(lotteryInfo)
+                    case .event:
+                        self.activityVoucherInfos.append(lotteryInfo)
+                    case .partner:
+                        self.partnerMerchantsInfos.append(lotteryInfo)
+                    }
+                }
 //                    self.lotteryInfos = data.filter({ lotteryInfo in
 //                        if let startDate = dateFromString(lotteryInfo.activityStartTime), let endDate = dateFromString(lotteryInfo.activityEndTime), endDate > startDate {
 //                            let dateInterval = DateInterval(start: startDate, end: endDate)
@@ -123,8 +136,12 @@ class LotteryVC: CustomVC {
                 
                 DispatchQueue.main.async {
                     self.lotteryTableView.reloadData()
+                    self.activityVoucherTableView.reloadData()
+                    self.partnerMerchantsTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.lotteryTableView.stopSkeletonAnimation()
+                        self.activityVoucherTableView.stopSkeletonAnimation()
+                        self.partnerMerchantsTableView.stopSkeletonAnimation()
                         self.view.hideSkeleton()
                     })
                 }
@@ -150,15 +167,18 @@ class LotteryVC: CustomVC {
         if tableView == lotteryTableView {
             return lotteryInfos[row]
         }
+        if tableView == activityVoucherTableView {
+            return activityVoucherInfos[row]
+        }
         if tableView == partnerMerchantsTableView {
             return partnerMerchantsInfos[row]
         }
         return nil
     }
     
-    private func getCommodityVoucherInfo(_ row:Int) -> CommodityVoucherInfo? {
-        return activityVoucherInfos[row]
-    }
+//    private func getCommodityVoucherInfo(_ row:Int) -> CommodityVoucherInfo? {
+//        return activityVoucherInfos[row]
+//    }
 }
 
 extension LotteryVC: SkeletonTableViewDataSource {
@@ -181,19 +201,19 @@ extension LotteryVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard CurrentUserInfo.shared.isGuest == false else { return }
-        if tableView == lotteryTableView {
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
-                VC.lotteryInfo = lotteryInfos[indexPath.row]
-                pushVC(targetVC: VC, navigation: navigationController)
-            }
-        }
-
-        if tableView == activityVoucherTableView || tableView == partnerMerchantsTableView  {
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
-                pushVC(targetVC: VC, navigation: navigationController)
-            }
-        }
+//        if tableView == lotteryTableView {
+//            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
+//                VC.lotteryInfo = lotteryInfos[indexPath.row]
+//                pushVC(targetVC: VC, navigation: navigationController)
+//            }
+//        }
+//
+//        if tableView == activityVoucherTableView || tableView == partnerMerchantsTableView  {
+//            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+//                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
+//                pushVC(targetVC: VC, navigation: navigationController)
+//            }
+//        }
 
     }
 
@@ -215,8 +235,8 @@ extension LotteryVC: UITableViewDelegate {
         if tableView == activityVoucherTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
             let row = indexPath.row
-            if let commodityVoucherInfo = getCommodityVoucherInfo(row) {
-                cell.setCell(commodityVoucherInfo)
+            if let lotteryInfo = getLotteryInfo(tableView,row) {
+                cell.setCell(lotteryInfo)
             }
             return cell
         }

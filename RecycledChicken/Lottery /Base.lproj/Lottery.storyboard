@@ -189,12 +189,12 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="drawPeople" destination="4hB-xT-qBm" id="RCt-vN-s5K"/>
-                                            <outlet property="drawTime" destination="e8E-lZ-LzW" id="GMP-rH-uSc"/>
-                                            <outlet property="duringTime" destination="Gte-w0-KtV" id="bCy-t6-lWh"/>
+                                            <outlet property="drawPeopleLabel" destination="4hB-xT-qBm" id="wJp-M8-w6B"/>
+                                            <outlet property="drawTimeLabel" destination="e8E-lZ-LzW" id="Ijt-D7-Si7"/>
+                                            <outlet property="duringTimeLabel" destination="Gte-w0-KtV" id="j4C-xY-9Vl"/>
                                             <outlet property="itemImageView" destination="HPR-JA-KXE" id="Caa-Pp-Dgd"/>
-                                            <outlet property="itemName" destination="SKR-pS-7to" id="tD7-kt-FXD"/>
-                                            <outlet property="point" destination="xmv-EX-kc9" id="50s-NE-REc"/>
+                                            <outlet property="itemNameLabel" destination="SKR-pS-7to" id="Kq9-gv-zQj"/>
+                                            <outlet property="pointLabel" destination="xmv-EX-kc9" id="Let-VY-hw9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -342,11 +342,11 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="drawPeople" destination="TuB-5i-Vyf" id="zZw-Qc-gD9"/>
-                                            <outlet property="duringTime" destination="PxJ-LG-vh9" id="VDX-fc-gV6"/>
-                                            <outlet property="itemImageView" destination="YlM-Oc-8ru" id="37o-Xs-rdv"/>
-                                            <outlet property="itemName" destination="4cV-SI-zbG" id="EVi-Ny-JSQ"/>
-                                            <outlet property="point" destination="f3U-Nd-p6P" id="MHb-fh-YQ4"/>
+                                            <outlet property="drawPeopleLabel" destination="TuB-5i-Vyf" id="mq9-Lg-T0x"/>
+                                            <outlet property="duringTimeLabel" destination="PxJ-LG-vh9" id="hLl-6z-6Td"/>
+                                            <outlet property="itemImageView" destination="YlM-Oc-8ru" id="KQb-Tv-cIL"/>
+                                            <outlet property="itemNameLabel" destination="4cV-SI-zbG" id="fVf-fo-ldm"/>
+                                            <outlet property="pointLabel" destination="f3U-Nd-p6P" id="8vH-HW-QeE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -513,12 +513,12 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="drawPeople" destination="6Le-SV-ZJu" id="jPk-u8-sPN"/>
-                                            <outlet property="drawTime" destination="IbK-ZD-VhC" id="vV4-mW-HYa"/>
-                                            <outlet property="duringTime" destination="bNL-5b-M5r" id="hdF-gg-gGs"/>
-                                            <outlet property="itemImageView" destination="1bB-h7-tT7" id="rwn-n2-KO2"/>
-                                            <outlet property="itemName" destination="tZs-ol-m68" id="oqy-VP-pLe"/>
-                                            <outlet property="point" destination="gxS-S4-ZKS" id="hrk-9L-XAc"/>
+                                            <outlet property="drawPeopleLabel" destination="6Le-SV-ZJu" id="hVg-n5-UE9"/>
+                                            <outlet property="drawTimeLabel" destination="IbK-ZD-VhC" id="Kz2-qa-gYP"/>
+                                            <outlet property="duringTimeLabel" destination="bNL-5b-M5r" id="uwX-Kk-Kp0"/>
+                                            <outlet property="itemImageView" destination="1bB-h7-tT7" id="baY-ba-Y1k"/>
+                                            <outlet property="itemNameLabel" destination="tZs-ol-m68" id="J6W-5j-JDm"/>
+                                            <outlet property="pointLabel" destination="gxS-S4-ZKS" id="kzK-zM-csU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
