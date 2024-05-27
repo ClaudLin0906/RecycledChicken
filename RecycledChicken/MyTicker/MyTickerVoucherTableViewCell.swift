@@ -13,9 +13,9 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
     
     @IBOutlet weak var itemImageView: UIImageView!
     
-    @IBOutlet weak var itemName: CustomLabel!
+    @IBOutlet weak var itemNameLabel: CustomLabel!
     
-    @IBOutlet weak var duringTime: CustomLabel!
+    @IBOutlet weak var duringTimeLabel: CustomLabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +26,10 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setCell(_ info:MyTickertCouponsInfo) {
+        
     }
 
 }

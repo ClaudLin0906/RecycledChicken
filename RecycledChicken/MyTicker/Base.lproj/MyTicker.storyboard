@@ -245,9 +245,9 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="duringTime" destination="ueR-i0-koe" id="XcL-KR-8nL"/>
-                                            <outlet property="itemImageView" destination="uYn-2O-fqr" id="rdj-R1-3Es"/>
-                                            <outlet property="itemName" destination="qKJ-yo-O3i" id="ElE-TJ-M2j"/>
+                                            <outlet property="duringTimeLabel" destination="ueR-i0-koe" id="4aU-yC-MkC"/>
+                                            <outlet property="itemImageView" destination="uYn-2O-fqr" id="r3H-HF-3qR"/>
+                                            <outlet property="itemNameLabel" destination="qKJ-yo-O3i" id="FLX-8I-IU5"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyTicketVoucherSerialNumberTableViewCell" rowHeight="130" id="pZd-yH-McM" customClass="MyTicketVoucherSerialNumberTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
@@ -376,10 +376,10 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="duringTime" destination="KRF-aU-rDg" id="94Q-jZ-ygt"/>
-                                            <outlet property="itemImageView" destination="MYe-Fe-SFR" id="3K5-5p-dWL"/>
-                                            <outlet property="itemName" destination="fNv-to-bHm" id="0Y9-1C-VVC"/>
-                                            <outlet property="serialNumberLabel" destination="22L-AI-Lz2" id="guE-AZ-VhV"/>
+                                            <outlet property="duringTimeLabel" destination="KRF-aU-rDg" id="y2E-91-Jan"/>
+                                            <outlet property="itemImageView" destination="MYe-Fe-SFR" id="YOl-pQ-FBb"/>
+                                            <outlet property="itemNameLabel" destination="fNv-to-bHm" id="vqV-1W-xOI"/>
+                                            <outlet property="serialNumberLabel" destination="22L-AI-Lz2" id="6fS-Tj-1Qo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
