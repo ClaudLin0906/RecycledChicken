@@ -35,7 +35,7 @@ class PersonMessageContentVC: CustomVC {
         if let personMessageInfo = personMessageInfo {
             contentTextView?.text = personMessageInfo.message
             titleLabel.text = personMessageInfo.title
-            if let date = dateFromString(personMessageInfo.createTime) {
+            if let createTime = personMessageInfo.createTime, let date = dateFromString(createTime) {
                 let createTime = getDates(i: 0, currentDate: date).0
                 timeLabel.text = createTime
             }
@@ -59,7 +59,17 @@ class PersonMessageContentVC: CustomVC {
 extension PersonMessageContentVC: DeleteMessageContentAlertViewDelegate {
     
     func deleteMessage() {
-        
+        guard let personMessageInfo = personMessageInfo else { return }
+        let personMessageInfoDic = try? personMessageInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete) { data, statusCode, errorMSG in
+            guard statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+            if let data = data, let personMessageInfos = try? JSONDecoder().decode([PersonMessageInfo].self, from: data) {
+                
+            }
+        }
     }
     
 }

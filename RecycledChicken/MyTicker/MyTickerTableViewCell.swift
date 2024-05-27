@@ -28,9 +28,9 @@ class MyTickerTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ info:MyTickertInfo){
+    func setCell(_ info:MyTickertLotteryInfo){
         itemName.text = info.itemName
-        drawTime.text = "開獎時間:\(info.lotteryDrawDate)"
+        drawTime.text = "開獎時間:\(info.lotteryDrawDate ?? "")"
         UUID.text = info.UUID
     }
 

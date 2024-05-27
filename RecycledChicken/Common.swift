@@ -335,6 +335,8 @@ struct APIUrl {
     static let questComplete = "/quest/complete"
     static let message = "/message"
     static let lotteryBuy = "/lottery/buy"
+    static let messageDelete = "/message/delete"
+    static let havingLottery = "/lottery/bought"
 }
 
 struct WebViewUrl{

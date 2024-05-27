@@ -15,9 +15,9 @@ class MyTickerVC: CustomVC {
     
     @IBOutlet weak var voucherTableView:UITableView!
 
-    private var myTickertInfos:[MyTickertInfo] = []
+    private var myTickertInfos:[MyTickertLotteryInfo] = []
     
-    private var voucherInfos:[MyTickertInfo] = []
+    private var voucherInfos:[MyTickertLotteryInfo] = []
     
     private lazy var tableViews = [lotteryTableView, voucherTableView]
     
@@ -44,7 +44,7 @@ class MyTickerVC: CustomVC {
                 return
             }
             if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.voucherInfos = try! JSONDecoder().decode([MyTickertInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+                self.voucherInfos = try! JSONDecoder().decode([MyTickertLotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic))
                 DispatchQueue.main.async {
                     self.voucherTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -57,13 +57,14 @@ class MyTickerVC: CustomVC {
     }
     
     private func getLotteryData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryRecord, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingLottery, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.myTickertInfos = try! JSONDecoder().decode([MyTickertInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+            if let data = data, let myTickertLotteryInfo = try? JSONDecoder().decode([MyTickertLotteryInfo].self, from: data) {
+                self.myTickertInfos.removeAll()
+                self.myTickertInfos.append(contentsOf: myTickertLotteryInfo)
                 DispatchQueue.main.async {
                     self.lotteryTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -79,13 +80,13 @@ class MyTickerVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         getLotteryData()
-        getVoucherData()
+//        getVoucherData()
     }
     
     private func getNumberOfRowsInSection(_ tableView:UITableView) -> Int {
         if tableView == lotteryTableView {
-//            return myTickertInfos.count
-            return 3
+            return myTickertInfos.count
+//            return 3
         }
         if tableView == voucherTableView {
 //            return voucherInfos.count
@@ -109,7 +110,7 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == lotteryTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerTableViewCell.identifier, for: indexPath) as! MyTickerTableViewCell
-    //        cell.setCell(myTickertInfos[indexPath.row])
+            cell.setCell(myTickertInfos[indexPath.row])
             return cell
         }
         
