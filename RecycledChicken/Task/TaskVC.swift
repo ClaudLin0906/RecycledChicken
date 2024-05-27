@@ -18,11 +18,15 @@ class TaskVC: CustomRootVC {
         }
     }
     
-    private var taskStatuss:[TaskStatus] = []
+//    private var taskStatus:[TaskStatus] = []
     
     private var batteryInt = 0
     
     private var bottleInt = 0
+    
+    private var colorlessBottleInt = 0
+    
+    private var canInt = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,91 +34,110 @@ class TaskVC: CustomRootVC {
         // Do any additional setup after loading the view.
     }
     
-    private func UIInit(){
+    private func UIInit() {
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getTaskInfo()
+        getRecycleCount()
+        getTaskInfo(completion: { [self] in
+            updateInfo()
+        })
     }
     
     private func updateInfo(){
-        getTaskStatus()
-        getRecycleCount()
+//        getTaskStatus()
     }
     
-    private func sharedAction(taskInfo:TaskInfo, completion: @escaping (Bool, String?) -> Void){
+//    private func sharedAction(taskInfo:TaskInfo, completion: @escaping (Bool, String?) -> Void){
 //        let url = "https://apps.apple.com/app/id6449214570"
-        let url = taskInfo.url
-        let activityVC = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
-        activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
-
-            if error != nil {
-                completion(false, error?.localizedDescription)
-                return
-            }
-            if completed {
-                completion(true, nil)
-            }
-        }
-        self.present(activityVC, animated: true, completion: nil)
-    }
+//        let url = taskInfo.url
+//        let activityVC = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+//        activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+//
+//            if error != nil {
+//                completion(false, error?.localizedDescription)
+//                return
+//            }
+//            if completed {
+//                completion(true, nil)
+//            }
+//        }
+//        self.present(activityVC, animated: true, completion: nil)
+//    }
     
-    private func getTaskStatus() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+    private func getTaskStatus(_ createTime:String, completion: @escaping () -> Void) {
+        let taskStatusRequest = TaskStatusRequest(createTime: createTime)
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.questComplete, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.taskStatuss = try! JSONDecoder().decode([TaskStatus].self, from: JSONSerialization.data(withJSONObject: dic))
-                DispatchQueue.main.async {
-                    self.taskTableView.reloadData()
-                }
-            }
+//            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+//                self.taskStatuss = try! JSONDecoder().decode([TaskStatus].self, from: JSONSerialization.data(withJSONObject: dic))
+//                DispatchQueue.main.async {
+//                    self.taskTableView.reloadData()
+//                }
+//            }
+            completion()
         }
     }
     
-    private func getTaskInfo() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getQuestList, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+    private func getTaskInfo(completion: @escaping () -> Void) {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.taskInfos = try! JSONDecoder().decode([TaskInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+            if let data = data,  let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
+                self.taskInfos.removeAll()
+                self.taskInfos.append(contentsOf: taskInfos)
                 self.taskInfos = self.taskInfos.filter {
-                    if let startDate = dateFromString($0.startTime), let endDate = dateFromString($0.endTime) {
+                    if let startTime = $0.startTime, let startDate = dateFromString(startTime), let endTime = $0.endTime, let endDate = dateFromString(endTime) {
                         return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
                     }
                     return false
                 }
-                self.updateInfo()
+                completion()
             }
         }
     }
     
-    private func getRecycleCount(){
+    private func getRecycleCount() {
         bottleInt = 0
         batteryInt = 0
+        colorlessBottleInt = 0
+        canInt = 0
         let sevenDays = getSevenDaysArray(targetDate: Date())
         let startTime = sevenDays[0].0
         let endTime = sevenDays[6].0
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
-        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                for useRecordInfo in useRecordInfos {
-                    if let battery = useRecordInfo.recycleDetails?.battery {
-                        self.batteryInt += battery
+        let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
+        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+            batteryInt = 0
+            bottleInt = 0
+            colorlessBottleInt = 0
+            canInt = 0
+            if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
+                useRecordInfos.forEach { useRecordInfo in
+                    if let recycleDetails = useRecordInfo.recycleDetails {
+                        if let battery = recycleDetails.battery {
+                            batteryInt += battery
+                        }
+                        if let bottle = recycleDetails.bottle {
+                            bottleInt += bottle
+                        }
+                        if let colorlessBottle = recycleDetails.colorlessBottle {
+                            colorlessBottleInt += colorlessBottle
+                        }
+                        if let can = recycleDetails.can {
+                            canInt += can
+                        }
                     }
-                    if let bottle = useRecordInfo.recycleDetails?.bottle {
-                        self.bottleInt += bottle
-                    }
-                }
-                DispatchQueue.main.async {
-                    self.taskTableView.reloadData()
                 }
             }
         }
@@ -195,30 +218,31 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             let type = cell.taskInfo?.type
             switch type {
             case .share:
-                if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo {
-                    sharedAction(taskInfo: taskInfo, completion: { result, errorMSG in
-                        guard result else {
-                            showAlert(VC: self, title: errorMSG, message: nil)
-                            return
-                        }
-                        var newTaskInfo = taskInfo
-                        newTaskInfo.isFinish = result
-                        cell.taskInfo? = newTaskInfo
-                        cell.finishAction()
-                    })
-                }
+                break
+//                if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo {
+//                    sharedAction(taskInfo: taskInfo, completion: { result, errorMSG in
+//                        guard result else {
+//                            showAlert(VC: self, title: errorMSG, message: nil)
+//                            return
+//                        }
+//                        var newTaskInfo = taskInfo
+//                        newTaskInfo.isFinish = result
+//                        cell.taskInfo? = newTaskInfo
+//                        cell.finishAction()
+//                    })
+//                }
             default:
                 break
             }
         }
 
         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
-            if let isFinish = cell.taskInfo?.isFinish, !isFinish {
-                let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
-                adView.cell = cell
-                adView.taskInfo = cell.taskInfo
-                keyWindow?.addSubview(adView)
-            }
+//            if let isFinish = cell.taskInfo?.isFinish, !isFinish {
+//                let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
+//                adView.cell = cell
+//                adView.taskInfo = cell.taskInfo
+//                keyWindow?.addSubview(adView)
+//            }
         }
     }
     

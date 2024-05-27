@@ -19,6 +19,8 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     @IBOutlet weak var content:UIView!
     
+    @IBOutlet weak var illustratedGuideImageView:UIImageView!
+    
     private var guideImageView:UIImageView = {
         let imageView = UIImageView( )
         imageView.isUserInteractionEnabled = true
@@ -54,7 +56,8 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     func setCell(_ illustratedGuideTableData:IllustratedGuideTableData) {
         self.illustratedGuideTableData = illustratedGuideTableData
-        UIInit()
+        illustratedGuideImageView.image = getIllustratedGuide(illustratedGuideTableData.illustratedGuideModelLevel).guideImage
+//        UIInit()
     }
     
     @objc private func tapGesture(_ tap:UITapGestureRecognizer) {

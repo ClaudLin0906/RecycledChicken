@@ -19,19 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aaq-iQ-pcv">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="383.33333333333331"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="340.66666666666669"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xk-bQ-cdL">
-                                <rect key="frame" x="0.0" y="333.33333333333326" width="393" height="484.66666666666674"/>
+                                <rect key="frame" x="0.0" y="290.66666666666669" width="393" height="527.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-hu-luU" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="176" y="30" width="41.333333333333343" height="20.333333333333329"/>
+                                        <rect key="frame" x="176" y="30" width="41.333333333333343" height="83"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="czJ-Qi-Nrm">
-                                        <rect key="frame" x="59" y="80.333333333333371" width="275" height="30"/>
+                                        <rect key="frame" x="59" y="143" width="275" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ola-n9-yN5">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
@@ -81,14 +81,14 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pK-xk-o5f" userLabel="line">
-                                        <rect key="frame" x="59" y="140.33333333333337" width="275" height="1"/>
+                                        <rect key="frame" x="59" y="183" width="275" height="1"/>
                                         <color key="backgroundColor" red="0.58039215686274503" green="0.6588235294117647" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="fVa-vW-LnM"/>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="icD-lw-tcc">
-                                        <rect key="frame" x="59" y="171.33333333333337" width="275" height="150"/>
+                                        <rect key="frame" x="59" y="214" width="275" height="150"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="Rqe-me-oe8"/>
@@ -98,7 +98,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZR5-9z-JRV">
-                                        <rect key="frame" x="59" y="351.33333333333331" width="275" height="133.33333333333331"/>
+                                        <rect key="frame" x="59" y="393.99999999999994" width="275" height="133.33333333333331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJw-OG-3EQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="88.333333333333329" height="133.33333333333334"/>
@@ -236,7 +236,7 @@
                                     <constraint firstItem="ZR5-9z-JRV" firstAttribute="top" secondItem="icD-lw-tcc" secondAttribute="bottom" constant="30" id="U31-bu-9nl"/>
                                     <constraint firstItem="1pK-xk-o5f" firstAttribute="trailing" secondItem="czJ-Qi-Nrm" secondAttribute="trailing" id="Zrf-yI-m69"/>
                                     <constraint firstItem="icD-lw-tcc" firstAttribute="leading" secondItem="1pK-xk-o5f" secondAttribute="leading" id="ZxJ-PA-Yym"/>
-                                    <constraint firstItem="1pK-xk-o5f" firstAttribute="top" secondItem="czJ-Qi-Nrm" secondAttribute="bottom" constant="30" id="aWj-7o-pPI"/>
+                                    <constraint firstItem="1pK-xk-o5f" firstAttribute="top" secondItem="czJ-Qi-Nrm" secondAttribute="bottom" constant="10" id="aWj-7o-pPI"/>
                                     <constraint firstItem="1pK-xk-o5f" firstAttribute="leading" secondItem="czJ-Qi-Nrm" secondAttribute="leading" id="oh9-Oq-eck"/>
                                     <constraint firstItem="icD-lw-tcc" firstAttribute="trailing" secondItem="1pK-xk-o5f" secondAttribute="trailing" id="yYF-Co-ObA"/>
                                 </constraints>
@@ -254,7 +254,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5xk-bQ-cdL" secondAttribute="trailing" id="JPB-FL-x6m"/>
                             <constraint firstItem="Aaq-iQ-pcv" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Mvx-LL-ABz"/>
                             <constraint firstItem="5xk-bQ-cdL" firstAttribute="top" secondItem="Aaq-iQ-pcv" secondAttribute="bottom" constant="-50" id="Vja-vy-WtH"/>
-                            <constraint firstItem="Aaq-iQ-pcv" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.45" id="btJ-gK-12o"/>
+                            <constraint firstItem="Aaq-iQ-pcv" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.4" id="btJ-gK-12o"/>
                             <constraint firstItem="Aaq-iQ-pcv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lF0-t6-Bco"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Aaq-iQ-pcv" secondAttribute="trailing" id="vH1-i7-m4E"/>
                             <constraint firstItem="czJ-Qi-Nrm" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.7" id="wnl-yp-t5r"/>
@@ -298,6 +298,9 @@
         </designable>
         <designable name="jjq-Lg-kzY">
             <size key="intrinsicContentSize" width="86.666666666666671" height="20.333333333333332"/>
+        </designable>
+        <designable name="mnX-Da-lsZ">
+            <size key="intrinsicContentSize" width="39.666666666666664" height="20.333333333333332"/>
         </designable>
         <designable name="tlV-7r-cvg">
             <size key="intrinsicContentSize" width="69.333333333333329" height="20.333333333333332"/>

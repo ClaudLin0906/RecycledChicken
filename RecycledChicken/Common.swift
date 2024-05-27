@@ -331,6 +331,7 @@ struct APIUrl {
     static let enterInviteCode = "/user/enterInviteCode"
     static let carbonReductionRecords = "/recycle/carbonReductionRecords"
     static let coupons = "/coupons"
+    static let questComplete = "/quest/complete"
 }
 
 struct WebViewUrl{

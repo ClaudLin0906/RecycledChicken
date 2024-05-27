@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uki-uP-Lbi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uki-uP-Lbi">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,18 +25,34 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IllustratedGuideTableViewCell" id="bNL-8v-OA7" customClass="IllustratedGuideTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="140"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bNL-8v-OA7" id="Voj-PG-4k6">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs5-T4-lKY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sov-cG-xug" userLabel="content">
-                                                            <rect key="frame" x="29.333333333333343" y="7" width="334.33333333333326" height="126"/>
+                                                            <rect key="frame" x="29.333333333333343" y="5.6666666666666643" width="334.33333333333326" height="99"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tR1-nj-Eou">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="334.33333333333331" height="99"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </imageView>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="tR1-nj-Eou" firstAttribute="leading" secondItem="sov-cG-xug" secondAttribute="leading" id="2Zx-Wy-RBn"/>
+                                                                <constraint firstAttribute="bottom" secondItem="tR1-nj-Eou" secondAttribute="bottom" id="6Gz-Xo-Crm"/>
+                                                                <constraint firstAttribute="trailing" secondItem="tR1-nj-Eou" secondAttribute="trailing" id="Xzh-M0-lPh"/>
+                                                                <constraint firstItem="tR1-nj-Eou" firstAttribute="top" secondItem="sov-cG-xug" secondAttribute="top" id="dVy-b7-bmr"/>
+                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                     <integer key="value" value="10"/>
@@ -48,7 +64,7 @@
                                                         <constraint firstItem="sov-cG-xug" firstAttribute="centerY" secondItem="Xs5-T4-lKY" secondAttribute="centerY" id="H1r-ee-iEl"/>
                                                         <constraint firstItem="sov-cG-xug" firstAttribute="centerX" secondItem="Xs5-T4-lKY" secondAttribute="centerX" id="Pbv-hB-OSb"/>
                                                         <constraint firstItem="sov-cG-xug" firstAttribute="height" secondItem="Xs5-T4-lKY" secondAttribute="height" multiplier="0.9" id="h2Y-hl-ejs"/>
-                                                        <constraint firstAttribute="height" constant="140" id="xx8-Yn-Flx"/>
+                                                        <constraint firstAttribute="height" constant="110" id="xx8-Yn-Flx"/>
                                                         <constraint firstItem="sov-cG-xug" firstAttribute="width" secondItem="Xs5-T4-lKY" secondAttribute="width" multiplier="0.85" id="yVd-rA-gfb"/>
                                                     </constraints>
                                                 </view>
@@ -63,6 +79,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="content" destination="sov-cG-xug" id="gG9-PK-Pu6"/>
+                                            <outlet property="illustratedGuideImageView" destination="tR1-nj-Eou" id="HMa-OZ-x4s"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
