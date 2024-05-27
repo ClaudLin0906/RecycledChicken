@@ -18,6 +18,36 @@
             endingLineNumber = "81"
             landmarkName = "sortDisance()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6024C177-8A7A-42C6-BF17-B10E10F2EF70 - 13a90732d0a22b06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.StationListVC.sortDisance() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/StationList/StationListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81">
+               </Location>
+               <Location
+                  uuid = "6024C177-8A7A-42C6-BF17-B10E10F2EF70 - 50ad1509d41db4e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RecycledChicken.MapInfo, RecycledChicken.MapInfo) -&gt; Swift.Bool in RecycledChicken.StationListVC.sortDisance() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/StationList/StationListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -98,22 +128,36 @@
             endingLineNumber = "57"
             landmarkName = "confirm(_:info:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C4DF54B6-04AC-42F2-9DE1-91C07821429F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/CommonUI/SpendPointView/SpendPointView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "btnAction(_:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BB5F38A4-A868-425C-BBB3-550A6B77665B - 2d9c1bd8679d0a18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.BuyLotteryVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/BuyLottery/BuyLotteryVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57">
+               </Location>
+               <Location
+                  uuid = "BB5F38A4-A868-425C-BBB3-550A6B77665B - 4bd612383629606"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.BuyLotteryVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/BuyLottery/BuyLotteryVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -135,16 +179,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "388D2497-D52D-4E93-86A3-AE1E12E7BAA5"
+            uuid = "E10538DE-41CE-42BA-A8EF-514F4EBB755B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Home/HomeVC.swift"
+            filePath = "RecycledChicken/CommonUI/SpendPointView/SpendPointView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "btnAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

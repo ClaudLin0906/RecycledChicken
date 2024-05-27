@@ -162,7 +162,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
             delegate?.alertMessage("數量要大於0")
             return
         }
-        guard let profileInfo = CurrentUserInfo.shared.currentProfileInfo else { return }
+        guard let profileInfo = CurrentUserInfo.shared.currentProfileNewInfo else { return }
         switch type {
         case .CommodityVoucher:
             break
@@ -175,13 +175,13 @@ class SpendPointView: UIView, NibOwnerLoadable {
 //                }
 //            }
         case .Lottery:
-            guard let lotteryInfo = lotteryInfo, let point = lotteryInfo.point else { return }
-            if profileInfo.point < (point * amount) {
+            guard let lotteryInfo = lotteryInfo, let profileInfoPoint = profileInfo.point, let point = lotteryInfo.point else { return }
+            if profileInfoPoint < (point * amount) {
                 delegate?.alertMessage("點數不足")
             }
-//            if profileInfo.point >= (point * amount) {
-//                handleInfo(sender, lotteryInfo.itemName, lotteryInfo.createTime, String(lotteryInfo.itemPrice * amount))
-//            }
+            if profileInfoPoint >= (point * amount) {
+                handleInfo(sender, lotteryInfo.itemName, lotteryInfo.eventStartTime, String(point * amount))
+            }
 
         }
         
