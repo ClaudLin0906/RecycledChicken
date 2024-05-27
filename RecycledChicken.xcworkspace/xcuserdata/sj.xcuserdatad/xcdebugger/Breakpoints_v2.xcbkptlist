@@ -302,95 +302,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C50C9EAD-E65F-4F1A-95C4-5046509A0A4C"
+            uuid = "D9D5E95D-CFEB-41B4-A9E3-20CB078CD090"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/BuyCommodity/BuyCommodityVC.swift"
+            filePath = "RecycledChicken/MyTicker/MyTickerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "confirm(_:info:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getVoucherData()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C50C9EAD-E65F-4F1A-95C4-5046509A0A4C - bcecdc7cec7e6454"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.BuyCommodityVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/BuyCommodity/BuyCommodityVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "201">
-               </Location>
-               <Location
-                  uuid = "C50C9EAD-E65F-4F1A-95C4-5046509A0A4C - eaf2ecbd65b0e2cb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.BuyCommodityVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/BuyCommodity/BuyCommodityVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "210">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "63E4EAD5-8329-4981-A949-243D980467FD"
+            uuid = "328A7092-D528-4579-9882-4DFD2D96D456"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/BuyCommodity/BuyCommodityVC.swift"
+            filePath = "RecycledChicken/MyTicker/MyTickerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "confirm(_:info:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getVoucherData()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "63E4EAD5-8329-4981-A949-243D980467FD - eaf2ecbd65b0e2cb"
+                  uuid = "328A7092-D528-4579-9882-4DFD2D96D456 - 3459ebddef5e454c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.BuyCommodityVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.MyTickerVC.getVoucherData() -&gt; ()"
                   moduleName = "RecycledChicken"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/BuyCommodity/BuyCommodityVC.swift"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/MyTicker/MyTickerVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "210">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "527">
                </Location>
                <Location
-                  uuid = "63E4EAD5-8329-4981-A949-243D980467FD - eaf2ecbd65b0e2cb"
+                  uuid = "328A7092-D528-4579-9882-4DFD2D96D456 - 3459ebddef5e454c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.BuyCommodityVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.MyTickerVC.getVoucherData() -&gt; ()"
                   moduleName = "RecycledChicken"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/BuyCommodity/BuyCommodityVC.swift"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/MyTicker/MyTickerVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "334">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "663">
                </Location>
             </Locations>
          </BreakpointContent>

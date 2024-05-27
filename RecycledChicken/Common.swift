@@ -338,6 +338,7 @@ struct APIUrl {
     static let couponsBuy = "/coupons/buy"
     static let messageDelete = "/message/delete"
     static let havingLottery = "/lottery/bought"
+    static let havingCoupons = "/coupons/bought"
 }
 
 struct WebViewUrl{

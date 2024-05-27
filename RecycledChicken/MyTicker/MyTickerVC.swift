@@ -17,7 +17,7 @@ class MyTickerVC: CustomVC {
 
     private var myTickertInfos:[MyTickertLotteryInfo] = []
     
-    private var voucherInfos:[MyTickertLotteryInfo] = []
+    private var myVoucherInfos:[MyTickertCouponsInfo] = []
     
     private lazy var tableViews = [lotteryTableView, voucherTableView]
     
@@ -38,13 +38,14 @@ class MyTickerVC: CustomVC {
     }
     
     private func getVoucherData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryRecord, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingCoupons, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                self.voucherInfos = try! JSONDecoder().decode([MyTickertLotteryInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+            if let data = data, let myTickertCouponsInfo = try? JSONDecoder().decode([MyTickertCouponsInfo].self, from: data) {
+                self.myVoucherInfos.removeAll()
+                self.myVoucherInfos.append(contentsOf: myTickertCouponsInfo)
                 DispatchQueue.main.async {
                     self.voucherTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -80,17 +81,15 @@ class MyTickerVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         getLotteryData()
-//        getVoucherData()
+        getVoucherData()
     }
     
     private func getNumberOfRowsInSection(_ tableView:UITableView) -> Int {
         if tableView == lotteryTableView {
             return myTickertInfos.count
-//            return 3
         }
         if tableView == voucherTableView {
-//            return voucherInfos.count
-            return 3
+            return myVoucherInfos.count
         }
         return 0
     }
