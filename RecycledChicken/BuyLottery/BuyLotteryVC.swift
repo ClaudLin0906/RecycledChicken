@@ -71,22 +71,6 @@ extension BuyLotteryVC: SpendPointAlertViewDelegate {
                 }
             }
         }
-
-//        spendPointAction(info) { (data, statusCode, errorMSG) in
-//            guard statusCode == 200 else {
-//                showAlert(VC: self, title: "error".localized, message: errorMSG)
-//                return
-//            }
-//            getUserInfo(VC: self) {
-//                DispatchQueue.main.async { [self] in
-//                    let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
-//                    fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
-//                    if let navigationController = navigationController {
-//                        navigationController.popToRootViewController(animated: true)
-//                    }
-//                }
-//            }
-//        }
     }
     
 }

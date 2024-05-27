@@ -164,11 +164,11 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="drawPeople" destination="klM-Ui-Cg9" id="t3f-yh-Wnx"/>
-                                            <outlet property="drawTime" destination="nZs-CU-wRK" id="SMk-m9-DYA"/>
-                                            <outlet property="itemImageView" destination="hog-ao-0BI" id="ujL-EN-X7m"/>
-                                            <outlet property="itemName" destination="bWl-0S-m5d" id="0ps-wI-9yK"/>
-                                            <outlet property="point" destination="Sfn-W8-cvI" id="Vw2-wv-iWW"/>
+                                            <outlet property="drawPeopleLabel" destination="klM-Ui-Cg9" id="Uxo-ji-RP3"/>
+                                            <outlet property="drawTimeLabel" destination="nZs-CU-wRK" id="i7B-JH-l0O"/>
+                                            <outlet property="itemImageView" destination="hog-ao-0BI" id="Hus-bJ-L8V"/>
+                                            <outlet property="itemNameLabel" destination="bWl-0S-m5d" id="L4k-Iy-Sfu"/>
+                                            <outlet property="pointLabel" destination="Sfn-W8-cvI" id="IGf-3h-nUn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

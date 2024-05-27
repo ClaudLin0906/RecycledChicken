@@ -50,16 +50,6 @@ class CommodityVoucherVC: CustomVC {
                     })
                 }
             }
-//            if , let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-//                self.commodityVoucherInfos =
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                        self.tableView.stopSkeletonAnimation()
-//                        self.view.hideSkeleton()
-//                    })
-//                }
-//            }
         }
     }
 }
@@ -95,7 +85,7 @@ extension CommodityVoucherVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CommodityVoucherTableViewCell.identifier, for: indexPath) as! CommodityVoucherTableViewCell
-        cell.setCell(commodityVoucherInfo: commodityVoucherInfos[indexPath.row])
+        cell.setCell(commodityVoucherInfos[indexPath.row])
         return cell
     }
     

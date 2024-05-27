@@ -89,17 +89,27 @@ class SpendPointView: UIView, NibOwnerLoadable {
     private func setInfo() {
         switch type {
         case .CommodityVoucher:
-            break
-//            if let commodityVoucherInfo = commodityVoucherInfo, let data = try? Data(contentsOf: URL(string: commodityVoucherInfo.picture)!), let image = UIImage(data: data) {
-//                let activityStartTimeDate = dateFromString(commodityVoucherInfo.activityStartTime)
-//                let activityEndTimeDate = dateFromString(commodityVoucherInfo.activityEndTime)
-//                let StartDate = getDates(i: 0, currentDate: activityStartTimeDate!).0
-//                let EndDate = getDates(i: 0, currentDate: activityEndTimeDate!).0
-//                itemImageView.image = image
-//                itemNameLabel.text = commodityVoucherInfo.itemName
-//                itemPriceLabel.text = String(commodityVoucherInfo.itemPrice)
-//                drawTimeLabel.text = "validDate".localized + ":" + StartDate + "~" + EndDate
-//            }
+            guard let commodityVoucherInfo = commodityVoucherInfo else { return }
+            
+            if let picture = commodityVoucherInfo.picture, let imageURL = URL(string: picture) {
+                itemImageView.kf.setImage(with: imageURL)
+            }
+            
+            if let name = commodityVoucherInfo.name {
+                itemNameLabel.text = name
+            }
+            
+            if let points = commodityVoucherInfo.points {
+                itemPriceLabel.text = String(points)
+            }
+            
+            if let start = commodityVoucherInfo.start, let end = commodityVoucherInfo.end {
+                drawTimeLabel.text = "validDate".localized + ":" + start + "~" + end
+            }
+            
+            if let description = commodityVoucherInfo.description {
+                itemDescriptionTextView.text = description
+            }
         case .Lottery:
             guard let lotteryInfo = lotteryInfo else { return }
             
@@ -165,15 +175,13 @@ class SpendPointView: UIView, NibOwnerLoadable {
         guard let profileInfo = CurrentUserInfo.shared.currentProfileNewInfo else { return }
         switch type {
         case .CommodityVoucher:
-            break
-//            if let commodityVoucherInfo = commodityVoucherInfo {
-//                if profileInfo.point < (commodityVoucherInfo.itemPrice * amount) {
-//                    delegate?.alertMessage("點數不足")
-//                }
-//                if profileInfo.point >= (commodityVoucherInfo.itemPrice * amount) {
-//                    handleInfo(sender, commodityVoucherInfo.itemName, commodityVoucherInfo.createTime, String(commodityVoucherInfo.itemPrice * amount))
-//                }
-//            }
+            guard let commodityVoucherInfo = commodityVoucherInfo, let profileInfoPoint = profileInfo.point, let point = commodityVoucherInfo.points else { return }
+            if profileInfoPoint < (point * amount) {
+                delegate?.alertMessage("點數不足")
+            }
+            if profileInfoPoint >= (point * amount), let createTime = commodityVoucherInfo.createTime  {
+                handleInfo(sender, commodityVoucherInfo.name ?? "", createTime, String(point * amount))
+            }
         case .Lottery:
             guard let lotteryInfo = lotteryInfo, let profileInfoPoint = profileInfo.point, let point = lotteryInfo.point else { return }
             if profileInfoPoint < (point * amount) {
