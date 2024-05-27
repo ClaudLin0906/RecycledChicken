@@ -79,7 +79,7 @@ class ConnectCompanyVC: CustomVC {
     }
     
     private func sendEmailAction(content:String, email:String){
-        let username = CurrentUserInfo.shared.currentProfileInfo?.userName ?? ""
+        let username = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
         let identity = identityLabel.text ?? ""
         let sendEmailInfo = SendEmailInfo(recipient: identity, content: content, email: email, userName: username)
         let sendEmailDic = try? sendEmailInfo.asDictionary()

@@ -51,7 +51,7 @@ enum Language:String, CaseIterable {
 }
 
 func getChickenLevel() -> IllustratedGuideModelLevel {
-    return CurrentUserInfo.shared.currentProfileInfo?.levelInfo?.chickenLevel ?? .one
+    return CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel ?? .one
 }
 
 struct IllustratedGuide {
@@ -363,7 +363,7 @@ protocol NibOwnerLoadable: AnyObject {
 }
 
 func loginOutRemoveObject(){
-    CurrentUserInfo.shared.currentProfileInfo = nil
+    CurrentUserInfo.shared.currentProfileNewInfo = nil
     CommonKey.shared.authToken = ""
     LoginSuccess = false
     FirstTime = true

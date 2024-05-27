@@ -133,7 +133,7 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     private func checkLevel() -> Bool {
         guard let illustratedGuideTableData = illustratedGuideTableData else { return false }
-        if let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.progress, level >= getIllustratedGuide(illustratedGuideTableData.illustratedGuideModelLevel).level {
+        if let profileInfo = CurrentUserInfo.shared.currentProfileNewInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.progress, level >= getIllustratedGuide(illustratedGuideTableData.illustratedGuideModelLevel).level {
             return true
         }
         return false

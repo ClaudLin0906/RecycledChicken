@@ -158,7 +158,7 @@ class HomeVC: CustomRootVC {
     }
     
     private func getTrendChart() -> UIImage?{
-        if let levelInfo = CurrentUserInfo.shared.currentProfileInfo?.levelInfo {
+        if let levelInfo = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo {
             var image:UIImage?
             switch levelInfo.progress {
             case 1:

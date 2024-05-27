@@ -37,9 +37,9 @@ class SpendPointAlertView: UIView, NibOwnerLoadable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        if let spendPointInfo = spendPointInfo, let profile = CurrentUserInfo.shared.currentProfileInfo {
+        if let spendPointInfo = spendPointInfo, let profile = CurrentUserInfo.shared.currentProfileNewInfo, let point = profile.point {
             spendPointLabel.text = "本次將使用點數\(spendPointInfo.totalPoint)點"
-            let remainderInt = profile.point - (Int(spendPointInfo.totalPoint) ?? 0)
+            let remainderInt = point - (Int(spendPointInfo.totalPoint) ?? 0)
             remainder.text = String(remainderInt)
         }
     }

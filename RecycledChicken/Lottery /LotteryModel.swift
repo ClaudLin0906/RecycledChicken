@@ -18,6 +18,7 @@ struct LotteryInfo: Decodable {
     var description:String?
     var notes:String?
     var purchaserCount:Int?
+    var createTime:String?
     
     enum CodingKeys:String, CodingKey {
         case category = "category"
@@ -30,6 +31,7 @@ struct LotteryInfo: Decodable {
         case description = "description"
         case notes = "notes"
         case purchaserCount = "purchaserCount"
+        case createTime = "createTime"
     }
     
     init(from decoder: Decoder) throws {
@@ -44,6 +46,7 @@ struct LotteryInfo: Decodable {
         description = try? container.decodeIfPresent(String.self, forKey: .description)
         notes = try? container.decodeIfPresent(String.self, forKey: .notes)
         purchaserCount = try? container.decodeIfPresent(Int.self, forKey: .purchaserCount)
+        createTime = try? container.decodeIfPresent(String.self, forKey: .createTime)
     }
 }
 

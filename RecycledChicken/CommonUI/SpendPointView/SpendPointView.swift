@@ -179,8 +179,8 @@ class SpendPointView: UIView, NibOwnerLoadable {
             if profileInfoPoint < (point * amount) {
                 delegate?.alertMessage("點數不足")
             }
-            if profileInfoPoint >= (point * amount) {
-                handleInfo(sender, lotteryInfo.itemName, lotteryInfo.eventStartTime, String(point * amount))
+            if profileInfoPoint >= (point * amount), let createTime = lotteryInfo.createTime {
+                handleInfo(sender, lotteryInfo.itemName ?? "", createTime, String(point * amount))
             }
 
         }

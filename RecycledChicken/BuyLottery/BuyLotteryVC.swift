@@ -60,7 +60,7 @@ extension BuyLotteryVC: SpendPointAlertViewDelegate {
                 return
             }
             if let spendPointResponse = try? JSONDecoder().decode(SpendPointResponse.self, from: data) {
-                getUserInfo(VC: self) {
+                getUserNewInfo(VC: self) {
                     DispatchQueue.main.async { [self] in
                         let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
                         fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
