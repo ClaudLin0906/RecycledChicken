@@ -8,8 +8,8 @@
 import Foundation
 
 struct SpendPointInfo:Codable {
-    var lotteryItemName:String
-    var lotteryItemCreateTime:String
+    var name:String
+    var createTime:String
     var count:Int
     var totalPoint:String
 }
@@ -17,6 +17,25 @@ struct SpendPointInfo:Codable {
 enum SpendPointType {
     case CommodityVoucher
     case Lottery
+}
+
+struct SpendPointResponse:Codable {
+    var reuslt:String?
+    var message:String?
+    var callTime:String?
+    
+    enum CodingKeys:String, CodingKey {
+        case reuslt = "reuslt"
+        case message = "message"
+        case callTime = "callTime"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        reuslt = try? container.decodeIfPresent(String.self, forKey: .reuslt)
+        message = try? container.decodeIfPresent(String.self, forKey: .message)
+        callTime = try? container.decodeIfPresent(String.self, forKey: .callTime)
+    }
 }
 
 

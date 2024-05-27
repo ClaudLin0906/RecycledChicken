@@ -40,8 +40,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
                 case .CommodityVoucher:
                     needPointInt = (commodityVoucherInfo?.points ?? 0) * newValue
                 case .Lottery:
-                    break
-//                    needPointInt = (lotteryInfo?.itemPrice ?? 0) * newValue
+                    needPointInt = (lotteryInfo?.point ?? 0) * newValue
                 }
                 needPoint.text = String(needPointInt)
             }
@@ -153,7 +152,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
     }
     
     private func handleInfo(_ sender:UIButton, _ itemName:String, _ itemCreateTime:String, _ totalPoint:String) {
-        let spendPointInfo = SpendPointInfo(lotteryItemName: itemName, lotteryItemCreateTime: itemCreateTime, count: amount, totalPoint: totalPoint)
+        let spendPointInfo = SpendPointInfo(name: itemName, createTime: itemCreateTime, count: amount, totalPoint: totalPoint)
         delegate?.btnAction(sender, info: spendPointInfo)
     }
     

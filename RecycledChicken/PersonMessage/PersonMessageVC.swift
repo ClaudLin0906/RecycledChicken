@@ -42,7 +42,7 @@ class PersonMessageVC: CustomVC {
     }
 
     private func getData(){
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getNotification, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.message, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return

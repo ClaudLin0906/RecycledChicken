@@ -85,7 +85,6 @@ class LoginVC: CustomLoginVC {
                 showAlert(VC: self, title: "帳號密碼有誤", message: nil)
                 return
             }
-
             if let data = data {
                 let json = NetworkManager.shared.dataToDictionary(data: data)
                 if let token = json["token"] as? String {

@@ -333,6 +333,8 @@ struct APIUrl {
     static let carbonReductionRecords = "/recycle/carbonReductionRecords"
     static let coupons = "/coupons"
     static let questComplete = "/quest/complete"
+    static let message = "/message"
+    static let lotteryBuy = "/lottery/buy"
 }
 
 struct WebViewUrl{

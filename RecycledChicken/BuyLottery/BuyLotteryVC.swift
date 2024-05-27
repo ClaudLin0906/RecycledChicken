@@ -53,21 +53,40 @@ extension BuyLotteryVC: SpendPointViewDelegate {
 extension BuyLotteryVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
-        spendPointAction(info) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+        let spendPointInfoDic = try? info.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.lotteryBuy, parameters: spendPointInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            getUserInfo(VC: self) {
-                DispatchQueue.main.async { [self] in
-                    let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
-                    fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
-                    if let navigationController = navigationController {
-                        navigationController.popToRootViewController(animated: true)
+            if let spendPointResponse = try? JSONDecoder().decode(SpendPointResponse.self, from: data) {
+                getUserInfo(VC: self) {
+                    DispatchQueue.main.async { [self] in
+                        let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
+                        fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+                        if let navigationController = navigationController {
+                            navigationController.popToRootViewController(animated: true)
+                        }
                     }
                 }
             }
         }
+
+//        spendPointAction(info) { (data, statusCode, errorMSG) in
+//            guard statusCode == 200 else {
+//                showAlert(VC: self, title: "error".localized, message: errorMSG)
+//                return
+//            }
+//            getUserInfo(VC: self) {
+//                DispatchQueue.main.async { [self] in
+//                    let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
+//                    fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+//                    if let navigationController = navigationController {
+//                        navigationController.popToRootViewController(animated: true)
+//                    }
+//                }
+//            }
+//        }
     }
     
 }
