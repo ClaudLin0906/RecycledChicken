@@ -146,6 +146,10 @@
 		59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B682F42A76A0D3008F5135 /* ARViewController.swift */; };
 		59B682F72A76A2CA008F5135 /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B682F62A76A2CA008F5135 /* Scan.storyboard */; };
 		59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B682F92A76A5EB008F5135 /* ARViewController.storyboard */; };
+		59BB1E292C062C0300C959B8 /* CommodityAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BB1E282C062C0300C959B8 /* CommodityAlertVC.swift */; };
+		59BB1E2B2C062C0E00C959B8 /* CommodityAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BB1E2A2C062C0E00C959B8 /* CommodityAlert.storyboard */; };
+		59BB1E2D2C062C5C00C959B8 /* CommodityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BB1E2C2C062C5C00C959B8 /* CommodityVC.swift */; };
+		59BB1E2F2C062C6700C959B8 /* Commodity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BB1E2E2C062C6700C959B8 /* Commodity.storyboard */; };
 		59BF293E2A21EC1B00F24286 /* CustomLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */; };
 		59BF29402A21EE8200F24286 /* CustomCalenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */; };
 		59C2D99E2A0D37000085724F /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2D99D2A0D37000085724F /* ARVC.swift */; };
@@ -345,6 +349,10 @@
 		59B682F42A76A0D3008F5135 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		59B682F62A76A2CA008F5135 /* Scan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scan.storyboard; sourceTree = "<group>"; };
 		59B682F92A76A5EB008F5135 /* ARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ARViewController.storyboard; sourceTree = "<group>"; };
+		59BB1E282C062C0300C959B8 /* CommodityAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityAlertVC.swift; sourceTree = "<group>"; };
+		59BB1E2A2C062C0E00C959B8 /* CommodityAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommodityAlert.storyboard; sourceTree = "<group>"; };
+		59BB1E2C2C062C5C00C959B8 /* CommodityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityVC.swift; sourceTree = "<group>"; };
+		59BB1E2E2C062C6700C959B8 /* Commodity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Commodity.storyboard; sourceTree = "<group>"; };
 		59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginVC.swift; sourceTree = "<group>"; };
 		59BF293F2A21EE8200F24286 /* CustomCalenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderModel.swift; sourceTree = "<group>"; };
 		59C2D99D2A0D37000085724F /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
@@ -485,6 +493,7 @@
 				5926C5832A04086400FAB49D /* Main.storyboard */,
 				599495692A0BFC12009F1B2E /* CommonUI */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
+				59BB1E262C062AE700C959B8 /* Commodity */,
 				5964AAFD2A14769C0005686F /* LAContextManager.swift */,
 				590251042B68DF250002E76C /* Pw_UserDefault.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
@@ -852,6 +861,17 @@
 			path = ConfirmPassword;
 			sourceTree = "<group>";
 		};
+		59BB1E262C062AE700C959B8 /* Commodity */ = {
+			isa = PBXGroup;
+			children = (
+				59BB1E282C062C0300C959B8 /* CommodityAlertVC.swift */,
+				59BB1E2A2C062C0E00C959B8 /* CommodityAlert.storyboard */,
+				59BB1E2C2C062C5C00C959B8 /* CommodityVC.swift */,
+				59BB1E2E2C062C6700C959B8 /* Commodity.storyboard */,
+			);
+			path = Commodity;
+			sourceTree = "<group>";
+		};
 		59C2D99C2A0D36E30085724F /* AR */ = {
 			isa = PBXGroup;
 			children = (
@@ -997,6 +1017,7 @@
 			files = (
 				59CC8DAA2A6BB3C30094CE57 /* LotteryItemTableViewCell.xib in Resources */,
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
+				59BB1E2B2C062C0E00C959B8 /* CommodityAlert.storyboard in Resources */,
 				59F6BE402A07B83700D7B3CB /* VerificationCode.storyboard in Resources */,
 				59A795742A0F72AF0031710F /* ForgetPassword.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
@@ -1038,6 +1059,7 @@
 				59997A4B2A0917F700E9FD7F /* CarbonReductionLog.storyboard in Resources */,
 				59997A792A0A53AF00E9FD7F /* PersonMessageContent.storyboard in Resources */,
 				593CDE682A83D22F007E1D10 /* cert.cer in Resources */,
+				59BB1E2F2C062C6700C959B8 /* Commodity.storyboard in Resources */,
 				59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
 				597521722A0B6C8500D0B67C /* LogOutView.xib in Resources */,
@@ -1191,6 +1213,7 @@
 				59A113BB2A3ADFCF00C8295B /* CustomButton.swift in Sources */,
 				59CDA3542A4589C600E3F74E /* ForgetPasswordModel.swift in Sources */,
 				597521752A0B7E2800D0B67C /* SystemSettingVC.swift in Sources */,
+				59BB1E292C062C0300C959B8 /* CommodityAlertVC.swift in Sources */,
 				59BF29402A21EE8200F24286 /* CustomCalenderModel.swift in Sources */,
 				59997A702A0A4A1500E9FD7F /* PersonMessageVC.swift in Sources */,
 				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
@@ -1199,6 +1222,7 @@
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */,
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
+				59BB1E2D2C062C5C00C959B8 /* CommodityVC.swift in Sources */,
 				59CC8DA92A6BB3C30094CE57 /* LotteryItemTableViewCell.swift in Sources */,
 				5926C5A22A06364800FAB49D /* Common.swift in Sources */,
 				59835DF42A6406DA00678BAF /* LotteryModel.swift in Sources */,

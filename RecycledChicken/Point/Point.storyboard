@@ -84,7 +84,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="Hcv-dW-rKf" secondAttribute="bottom" id="W87-SP-EAX"/>
                                                     <constraint firstAttribute="trailing" secondItem="Hcv-dW-rKf" secondAttribute="trailing" id="gUl-dG-twY"/>
@@ -104,23 +103,26 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-Yo-Xqt" userLabel="step2">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-Yo-Xqt" userLabel="step2">
                                                 <rect key="frame" x="20" y="190" width="313" height="150"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6I-w8-y9C" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6I-w8-y9C" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="150"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="17"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="點數購買商品禮卷">
+                                                        <state key="normal" image="Product">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="goToCommodityVoucher:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jhs-cX-c62"/>
+                                                            <action selector="goToProduct:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Fuu-zl-ckM"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="a6I-w8-y9C" secondAttribute="bottom" id="C1y-Zk-jN3"/>
                                                     <constraint firstItem="a6I-w8-y9C" firstAttribute="leading" secondItem="Bxt-Yo-Xqt" secondAttribute="leading" id="IdR-Wt-wns"/>
@@ -277,7 +279,7 @@
     </scenes>
     <designables>
         <designable name="1cj-bx-TzZ">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="Hcv-dW-rKf">
             <size key="intrinsicContentSize" width="900" height="420.33333333333331"/>
@@ -286,13 +288,14 @@
             <size key="intrinsicContentSize" width="68" height="24"/>
         </designable>
         <designable name="a6I-w8-y9C">
-            <size key="intrinsicContentSize" width="136" height="36"/>
+            <size key="intrinsicContentSize" width="900" height="329.33333333333331"/>
         </designable>
         <designable name="yTT-JI-Qj2">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>
+        <image name="Product" width="900" height="329.33334350585938"/>
         <image name="lottery" width="900" height="420.33334350585938"/>
         <image name="グループ 1089" width="1125" height="2436"/>
         <image name="组 396" width="82" height="82"/>

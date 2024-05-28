@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oXe-Ob-Tld">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenJyuuGothic-Normal.ttf">
+            <string>GenJyuuGothic-Normal</string>
+        </array>
+        <array key="GenJyuuGothic-Regular.ttf">
+            <string>GenJyuuGothic-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Commodity AlertVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CommodityAlert" id="Y6W-OH-hqX" customClass="CommodityAlertVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="グループ 1089" translatesAutoresizingMaskIntoConstraints="NO" id="R4x-cx-CbY" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnN-2b-FXz" userLabel="TextBackgroudView">
+                                <rect key="frame" x="30" y="113" width="333" height="555"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufL-zp-1DM">
+                                        <rect key="frame" x="5" y="5" width="323" height="545"/>
+                                        <string key="text">帳號連結功能是指將「碳竹雞 APP會員」和「BUENO COOP 商城會員」的帳號進行連結，以便在兩個平台之間共享相關的資訊和優惠。碳竹雞會員連結 BUENO COOP 商城會員，即可享有消費回饋碳碳金的優惠。以下是帳號連結功能的一般說明：
+
+1. 註冊帳號：
+在碳竹雞和 BUENO COOP 商城分別使用相同的手機號碼註冊帳號，確保在註冊過程中輸入的手機號碼是相同的。
+
+2. 連結成功：
+一旦手機確認通過，且於商城BUENO COOP商城購物，碳竹雞會員和 BUENO COOP 商城會員的帳號將彼此連結。
+
+3. 享受優惠：
+一旦連結成功，碳竹雞會員在BUENO COOP 商城購物時，每月可享有相應的消費回饋、折扣或其他優惠。
+
+確保在整個連結過程中注意到任何可能的提示或說明，以確保符合兩個平台的相關規則和條件。此外，帳號連結機能皆有設置安全措施，以確保帳戶資訊的保密性和安全性。</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ufL-zp-1DM" secondAttribute="bottom" constant="5" id="OEn-nG-aDr"/>
+                                    <constraint firstAttribute="trailing" secondItem="ufL-zp-1DM" secondAttribute="trailing" constant="5" id="UZF-sc-VeD"/>
+                                    <constraint firstItem="ufL-zp-1DM" firstAttribute="leading" secondItem="vnN-2b-FXz" secondAttribute="leading" constant="5" id="wBc-vC-4sn"/>
+                                    <constraint firstItem="ufL-zp-1DM" firstAttribute="top" secondItem="vnN-2b-FXz" secondAttribute="top" constant="5" id="xdj-om-pR4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cop-ES-ycL" customClass="M13Checkbox" customModule="M13Checkbox">
+                                <rect key="frame" x="88.666666666666671" y="678" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Gkm-oc-VbQ"/>
+                                    <constraint firstAttribute="width" constant="20" id="Mac-1B-zb9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀完畢並同意" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ws-0T-98n" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="118.66666666666669" y="678" width="156" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78g-RY-Dvp" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="146.66666666666666" y="708" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="U5K-qT-JE0"/>
+                                    <constraint firstAttribute="height" constant="40" id="av6-7O-g0A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="前往商城"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirm:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="w7u-R1-aRg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cp-c8-tjJ" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="146.66666666666666" y="758" width="100" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="GenJyuuGothic-Normal" family="Gen Jyuu Gothic" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancel:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="m5L-pd-FAr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vnN-2b-FXz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="2XR-5m-coT"/>
+                            <constraint firstItem="7Cp-c8-tjJ" firstAttribute="width" secondItem="78g-RY-Dvp" secondAttribute="width" id="3i6-Cv-ZxE"/>
+                            <constraint firstItem="7Cp-c8-tjJ" firstAttribute="top" secondItem="78g-RY-Dvp" secondAttribute="bottom" constant="10" id="CwV-2x-fAs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vnN-2b-FXz" secondAttribute="trailing" constant="30" id="JYX-Ql-kIw"/>
+                            <constraint firstAttribute="bottom" secondItem="R4x-cx-CbY" secondAttribute="bottom" id="LKd-IW-o3Y"/>
+                            <constraint firstItem="78g-RY-Dvp" firstAttribute="top" secondItem="cop-ES-ycL" secondAttribute="bottom" constant="10" id="NaG-bE-WMe"/>
+                            <constraint firstItem="7Cp-c8-tjJ" firstAttribute="centerX" secondItem="78g-RY-Dvp" secondAttribute="centerX" id="R8X-Vf-H7M"/>
+                            <constraint firstItem="vnN-2b-FXz" firstAttribute="bottom" secondItem="cop-ES-ycL" secondAttribute="top" constant="-10" id="Rkv-h2-PI0"/>
+                            <constraint firstItem="R4x-cx-CbY" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="VB8-Zp-Fgp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7Cp-c8-tjJ" secondAttribute="bottom" constant="20" id="bJj-Qy-JRv"/>
+                            <constraint firstItem="78g-RY-Dvp" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="c0L-FX-4DU"/>
+                            <constraint firstItem="cop-ES-ycL" firstAttribute="trailing" secondItem="7ws-0T-98n" secondAttribute="leading" constant="-10" id="chj-eH-WI6"/>
+                            <constraint firstItem="R4x-cx-CbY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="dgo-cN-QsR"/>
+                            <constraint firstItem="7ws-0T-98n" firstAttribute="centerY" secondItem="cop-ES-ycL" secondAttribute="centerY" id="e20-pT-aUt"/>
+                            <constraint firstItem="7Cp-c8-tjJ" firstAttribute="height" secondItem="78g-RY-Dvp" secondAttribute="height" id="kzj-Ow-8lX"/>
+                            <constraint firstItem="vnN-2b-FXz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="ozm-VP-tob"/>
+                            <constraint firstItem="R4x-cx-CbY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qdg-jK-V3S"/>
+                            <constraint firstItem="7ws-0T-98n" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="yDX-g1-dYi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MwB-UP-TUN"/>
+                    <connections>
+                        <outlet property="checkBox" destination="cop-ES-ycL" id="RCG-4e-FoQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4U0-Dg-RlI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oXe-Ob-Tld" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aLq-Nu-ZdO">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="FpT-JF-ttQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKG-c9-z4j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="78g-RY-Dvp">
+            <size key="intrinsicContentSize" width="56" height="32"/>
+        </designable>
+        <designable name="7Cp-c8-tjJ">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="7ws-0T-98n">
+            <size key="intrinsicContentSize" width="156" height="20.333333333333332"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="グループ 1089" width="1125" height="2436"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

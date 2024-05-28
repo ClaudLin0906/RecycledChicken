@@ -59,6 +59,12 @@ class PointVC: CustomRootVC {
         }
     }
     
+    @IBAction func goToProduct(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CommodityAlert", bundle: Bundle.main).instantiateViewController(identifier: "CommodityAlert") as? CommodityAlertVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
     @IBAction func goToPointRule(_ sender:UIButton) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PointRule", bundle: Bundle.main).instantiateViewController(identifier: "PointRule") as? PointRuleVC {
             pushVC(targetVC: VC, navigation: navigationController)
