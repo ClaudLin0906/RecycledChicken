@@ -60,8 +60,14 @@ extension PersonMessageContentVC: DeleteMessageContentAlertViewDelegate {
     
     func deleteMessage() {
         guard let personMessageInfo = personMessageInfo else { return }
-        let personMessageInfoDic = try? personMessageInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete) { data, statusCode, errorMSG in
+        let personMessageInfos = [personMessageInfo]
+        var personMessageInfosDic:[[String:Any]] = []
+        personMessageInfos.forEach { info in
+            if let infoDic = try? info.asDictionary() {
+                personMessageInfosDic.append(infoDic)
+            }
+        }
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete, parametersArray: personMessageInfosDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return

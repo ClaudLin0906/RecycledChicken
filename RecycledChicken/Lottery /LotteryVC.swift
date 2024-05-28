@@ -57,27 +57,26 @@ class LotteryVC: CustomVC {
             }
             if let lotteryInfos = try? JSONDecoder().decode([LotteryInfo].self, from: data) {
                 self.lotteryInfos.removeAll()
-                self.activityVoucherInfos.removeAll()
-                self.partnerMerchantsInfos.removeAll()
-                lotteryInfos.forEach { lotteryInfo in
-                    guard let category = lotteryInfo.category else { return }
-                    switch category {
-                    case .ticket:
-                        self.lotteryInfos.append(lotteryInfo)
-                    case .event:
-                        self.activityVoucherInfos.append(lotteryInfo)
-                    case .partner:
-                        self.partnerMerchantsInfos.append(lotteryInfo)
-                    }
-                }
+                self.lotteryInfos.append(contentsOf: lotteryInfos)
+//                lotteryInfos.forEach { lotteryInfo in
+//                    guard let category = lotteryInfo.category else { return }
+//                    switch category {
+//                    case .ticket:
+//                        self.lotteryInfos.append(lotteryInfo)
+//                    case .event:
+//                        self.activityVoucherInfos.append(lotteryInfo)
+//                    case .partner:
+//                        self.partnerMerchantsInfos.append(lotteryInfo)
+//                    }
+//                }
                 DispatchQueue.main.async {
                     self.lotteryTableView.reloadData()
-                    self.activityVoucherTableView.reloadData()
-                    self.partnerMerchantsTableView.reloadData()
+//                    self.activityVoucherTableView.reloadData()
+//                    self.partnerMerchantsTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                         self.lotteryTableView.stopSkeletonAnimation()
-                        self.activityVoucherTableView.stopSkeletonAnimation()
-                        self.partnerMerchantsTableView.stopSkeletonAnimation()
+//                        self.activityVoucherTableView.stopSkeletonAnimation()
+//                        self.partnerMerchantsTableView.stopSkeletonAnimation()
                         self.view.hideSkeleton()
                     })
                 }

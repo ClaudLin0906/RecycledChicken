@@ -8,7 +8,6 @@
 import Foundation
 
 struct LotteryInfo: Decodable {
-    var category:LotteryCategory?
     var itemName:String?
     var point:Int?
     var productImage:String?
@@ -21,7 +20,6 @@ struct LotteryInfo: Decodable {
     var createTime:String?
     
     enum CodingKeys:String, CodingKey {
-        case category = "category"
         case itemName = "itemName"
         case point = "point"
         case productImage = "productImage"
@@ -36,7 +34,6 @@ struct LotteryInfo: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        category = try? container.decodeIfPresent(LotteryCategory.self, forKey: .category)
         itemName = try? container.decodeIfPresent(String.self, forKey: .itemName)
         point = try? container.decodeIfPresent(Int.self, forKey: .point)
         productImage = try? container.decodeIfPresent(String.self, forKey: .productImage)
