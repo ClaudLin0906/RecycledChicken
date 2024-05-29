@@ -68,8 +68,25 @@ class PointVC: CustomRootVC {
         }
     }
     
-    @IBAction func goToProduct(_ sender:UIButton) {
+    @IBAction func productProcess(_ sender:UIButton) {
+        let isEmpty = UserDefaults().object(forKey: UserDefaultKey.shared.isFirstProduct)
+        if isEmpty == nil {
+            UserDefaults().setValue(true, forKey: UserDefaultKey.shared.isFirstProduct)
+            goToProductAlert()
+        }
+        if isEmpty != nil {
+            goToProduct()
+        }
+    }
+    
+    func goToProductAlert() {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ProductAlert", bundle: Bundle.main).instantiateViewController(identifier: "ProductAlert") as? ProductAlertVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
+    func goToProduct() {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Product", bundle: Bundle.main).instantiateViewController(identifier: "Product") as? ProductVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }

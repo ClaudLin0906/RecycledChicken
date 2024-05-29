@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xQU-9J-jJj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xQU-9J-jJj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hea-9d-Wyj">
-                                <rect key="frame" x="171.33333333333334" y="173" width="50.333333333333343" height="30"/>
+                                <rect key="frame" x="172" y="173" width="49" height="30"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="cKg-fX-gni">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -52,7 +52,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1u-zf-126">
-                                        <rect key="frame" x="35" y="0.0" width="15.333333333333336" height="30"/>
+                                        <rect key="frame" x="35" y="0.0" width="14" height="30"/>
                                         <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -158,7 +158,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="goToProduct:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9ny-ar-O7b"/>
+                                                            <action selector="productProcess:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4TY-zn-kMH"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -325,13 +325,13 @@
     </scenes>
     <designables>
         <designable name="1cj-bx-TzZ">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
         </designable>
         <designable name="Hcv-dW-rKf">
             <size key="intrinsicContentSize" width="900" height="420.33333333333331"/>
         </designable>
         <designable name="Zyi-sb-l2P">
-            <size key="intrinsicContentSize" width="68" height="24"/>
+            <size key="intrinsicContentSize" width="68" height="20"/>
         </designable>
         <designable name="a6I-w8-y9C">
             <size key="intrinsicContentSize" width="900" height="329"/>
@@ -340,7 +340,7 @@
             <size key="intrinsicContentSize" width="900" height="329.33333333333331"/>
         </designable>
         <designable name="yTT-JI-Qj2">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
         </designable>
     </designables>
     <resources>

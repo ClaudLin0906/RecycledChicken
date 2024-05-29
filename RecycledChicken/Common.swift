@@ -248,6 +248,7 @@ class UserDefaultKey {
     let oneFillRightChickenOfColorFillTypeFourView = "oneFillRightChickenOfColorFillTypeFourView"
     let twoFillRightChickenOfColorFillTypeFourView = "twoFillRightChickenOfColorFillTypeFourView"
     let threeFillRightChickenOfColorFillTypeFourView = "threeFillRightChickenOfColorFillTypeFourView"
+    let isFirstProduct = "isFirstProduct"
 }
 
 class CurrentUserInfo {
