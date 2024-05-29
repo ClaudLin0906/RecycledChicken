@@ -1,13 +1,14 @@
 //
-//  CommodityAlertVC.swift
+//  ProductAlertVC.swift
 //  RecycledChicken
 //
-//  Created by 林書郁 on 2024/5/28.
+//  Created by ClaudLin on 2024/5/28.
 //
 
 import UIKit
 import M13Checkbox
-class CommodityAlertVC: CustomVC {
+
+class ProductAlertVC: CustomVC {
     
     @IBOutlet weak var checkBox:M13Checkbox!
 
@@ -33,7 +34,7 @@ class CommodityAlertVC: CustomVC {
             showAlert(VC: self, title: "需要同意")
             return
         }
-        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Commodity", bundle: Bundle.main).instantiateViewController(identifier: "Commodity") as? CommodityVC {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Product", bundle: Bundle.main).instantiateViewController(identifier: "Product") as? ProductVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }

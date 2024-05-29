@@ -63,6 +63,7 @@ class LoginVC: CustomLoginVC {
     
     private func loginAction(phone:String, password:String){
         let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
+//        let loginInfo = testLoginInfo
         let loginInfoDic = try? loginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {

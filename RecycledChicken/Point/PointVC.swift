@@ -53,14 +53,14 @@ class PointVC: CustomRootVC {
         }
     }
     
-    @IBAction func goToLottery(_ sender:UIButton) {
-        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Lottery", bundle: Bundle.main).instantiateViewController(identifier: "Lottery") as? LotteryVC {
+    @IBAction func goToProductAlert(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ProductAlert", bundle: Bundle.main).instantiateViewController(identifier: "ProductAlert") as? ProductAlertVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
     
-    @IBAction func goToProduct(_ sender:UIButton) {
-        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CommodityAlert", bundle: Bundle.main).instantiateViewController(identifier: "CommodityAlert") as? CommodityAlertVC {
+    @IBAction func goToLottery(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Lottery", bundle: Bundle.main).instantiateViewController(identifier: "Lottery") as? LotteryVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }

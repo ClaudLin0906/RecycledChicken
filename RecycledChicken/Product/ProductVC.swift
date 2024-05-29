@@ -1,17 +1,17 @@
 //
-//  CommodityVC.swift
+//  ProductVC.swift
 //  RecycledChicken
 //
-//  Created by 林書郁 on 2024/5/28.
+//  Created by ClaudLin on 2024/5/28.
 //
 
 import UIKit
 import WebKit
-class CommodityVC: CustomVC {
+class ProductVC: CustomVC {
     
     @IBOutlet weak var webView:WKWebView!
     
-    private var buenocoopURL = URL(string: "https://www.buenocoop.com/")
+    private var buenocoopURL = URL(string: "https://www.buenocoop.com/")!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class CommodityVC: CustomVC {
     }
     
     private func UIInit() {
-        let request = URLRequest(url: buenocoopURL!)
+        let request = URLRequest(url: buenocoopURL)
         webView.load(request)
     }
     
@@ -30,9 +30,9 @@ class CommodityVC: CustomVC {
         setDefaultNavigationBackBtn2()
     }
     
-    @IBAction func openByBrowser(_ sender:UIButton) {
-        if UIApplication.shared.canOpenURL(buenocoopURL!) {
-            UIApplication.shared.open(buenocoopURL!)
+    @IBAction func openBorwser(_ sender:UIButton) {
+        if UIApplication.shared.canOpenURL(buenocoopURL) {
+            UIApplication.shared.open(buenocoopURL)
         }
     }
 
