@@ -331,7 +331,7 @@ struct APIUrl {
     static let pointRecords = "/point/records"
     static let enterInviteCode = "/user/enterInviteCode"
     static let carbonReductionRecords = "/recycle/carbonReductionRecords"
-    static let coupons = "/coupons"
+    static let coupons = "/coupons?category=ticket"
     static let questComplete = "/quest/complete"
     static let message = "/message"
     static let lotteryBuy = "/lottery/buy"

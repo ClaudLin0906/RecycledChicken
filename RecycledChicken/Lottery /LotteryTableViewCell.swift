@@ -102,7 +102,7 @@ class LotteryTableViewCell: UITableViewCell {
             
             var startTime:String?
             var endTime:String?
-            if let eventStartTime = lotteryInfo.eventStartTime {
+            if let eventStartTime = lotteryInfo.evnetStartTime {
                 let activityStartTimeDate = dateFromString(eventStartTime)
                 startTime = getDates(i: 0, currentDate: activityStartTimeDate!).0
             }

@@ -20,9 +20,9 @@ class LotteryVC: CustomVC {
     
     private var lotteryInfos:[LotteryInfo] = []
     
-    private var activityVoucherInfos:[LotteryInfo] = []
+    private var activityVoucherInfos:[CommodityVoucherInfo] = []
     
-    private var partnerMerchantsInfos:[LotteryInfo] = []
+    private var partnerMerchantsInfos:[CommodityVoucherInfo] = []
     
     private lazy var tableViews = [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView]
 
@@ -47,10 +47,44 @@ class LotteryVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         getLotteryData()
+        getCouponsData()
+    }
+    
+    private func getCouponsData() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.coupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+            activityVoucherInfos.removeAll()
+            partnerMerchantsInfos.removeAll()
+            if let commodityVoucherInfos = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: data) {
+                commodityVoucherInfos.forEach { commodityVoucherInfo in
+                    guard let category = commodityVoucherInfo.category else { return }
+                    switch category {
+                    case .ticket:
+                        break
+                    case .event:
+                        activityVoucherInfos.append(commodityVoucherInfo)
+                    case .partner:
+                        partnerMerchantsInfos.append(commodityVoucherInfo)
+                    }
+                }
+                DispatchQueue.main.async { [self] in
+                    activityVoucherTableView.reloadData()
+                    partnerMerchantsTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
+                        activityVoucherTableView.stopSkeletonAnimation()
+                        partnerMerchantsTableView.stopSkeletonAnimation()
+                        view.hideSkeleton()
+                    })
+                }
+            }
+        }
     }
     
     private func getLotteryData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
@@ -58,26 +92,11 @@ class LotteryVC: CustomVC {
             if let lotteryInfos = try? JSONDecoder().decode([LotteryInfo].self, from: data) {
                 self.lotteryInfos.removeAll()
                 self.lotteryInfos.append(contentsOf: lotteryInfos)
-//                lotteryInfos.forEach { lotteryInfo in
-//                    guard let category = lotteryInfo.category else { return }
-//                    switch category {
-//                    case .ticket:
-//                        self.lotteryInfos.append(lotteryInfo)
-//                    case .event:
-//                        self.activityVoucherInfos.append(lotteryInfo)
-//                    case .partner:
-//                        self.partnerMerchantsInfos.append(lotteryInfo)
-//                    }
-//                }
-                DispatchQueue.main.async {
-                    self.lotteryTableView.reloadData()
-//                    self.activityVoucherTableView.reloadData()
-//                    self.partnerMerchantsTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.lotteryTableView.stopSkeletonAnimation()
-//                        self.activityVoucherTableView.stopSkeletonAnimation()
-//                        self.partnerMerchantsTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
+                DispatchQueue.main.async { [self] in
+                    lotteryTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
+                        lotteryTableView.stopSkeletonAnimation()
+                        view.hideSkeleton()
                     })
                 }
             }
@@ -97,11 +116,7 @@ class LotteryVC: CustomVC {
         return 0
     }
     
-    private func getLotteryInfo(_ tableView:UITableView, _ row:Int) -> LotteryInfo? {
-        
-        if tableView == lotteryTableView {
-            return lotteryInfos[row]
-        }
+    private func getCommodityVoucherInfo(_ tableView:UITableView, _ row:Int) -> CommodityVoucherInfo? {
         if tableView == activityVoucherTableView {
             return activityVoucherInfos[row]
         }
@@ -110,10 +125,6 @@ class LotteryVC: CustomVC {
         }
         return nil
     }
-    
-//    private func getCommodityVoucherInfo(_ row:Int) -> CommodityVoucherInfo? {
-//        return activityVoucherInfos[row]
-//    }
 }
 
 extension LotteryVC: SkeletonTableViewDataSource {
@@ -143,12 +154,12 @@ extension LotteryVC: UITableViewDelegate {
             }
         }
 
-//        if tableView == activityVoucherTableView || tableView == partnerMerchantsTableView  {
-//            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-//                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
-//                pushVC(targetVC: VC, navigation: navigationController)
-//            }
-//        }
+        if tableView == activityVoucherTableView || tableView == partnerMerchantsTableView  {
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -160,17 +171,15 @@ extension LotteryVC: UITableViewDelegate {
         if tableView == lotteryTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: LotteryTableViewCell.identifier, for: indexPath) as! LotteryTableViewCell
             let row = indexPath.row
-            if let lotteryInfo = getLotteryInfo(tableView,row) {
-                cell.setCell(lotteryInfo)
-            }
+            cell.setCell(lotteryInfos[row])
             return cell
         }
         
         if tableView == activityVoucherTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
             let row = indexPath.row
-            if let lotteryInfo = getLotteryInfo(tableView,row) {
-                cell.setCell(lotteryInfo)
+            if let CommodityVoucherInfo = getCommodityVoucherInfo(tableView,row) {
+                cell.setCell(CommodityVoucherInfo)
             }
             return cell
         }
@@ -178,8 +187,8 @@ extension LotteryVC: UITableViewDelegate {
         if tableView == partnerMerchantsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: PartnerMerchantsTableViewTableViewCell.identifier, for: indexPath) as! PartnerMerchantsTableViewTableViewCell
             let row = indexPath.row
-            if let lotteryInfo = getLotteryInfo(tableView,row) {
-                cell.setCell(lotteryInfo)
+            if let CommodityVoucherInfo = getCommodityVoucherInfo(tableView,row) {
+                cell.setCell(CommodityVoucherInfo)
             }
             return cell
         }

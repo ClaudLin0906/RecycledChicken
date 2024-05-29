@@ -89,24 +89,24 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ lotteryInfo:LotteryInfo) {
+    func setCell(_ commodityVoucherInfo:CommodityVoucherInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             
-            if let productImageURLStr = lotteryInfo.productImage, let productImageURL = URL(string: productImageURLStr) {
+            if let productImageURLStr = commodityVoucherInfo.picture, let productImageURL = URL(string: productImageURLStr) {
                 self.imageURL = productImageURL
             }
             
-            if let itemName = lotteryInfo.itemName {
+            if let itemName = commodityVoucherInfo.name {
                 self.itemName = itemName
             }
             
             var startTime:String?
             var endTime:String?
-            if let eventStartTime = lotteryInfo.eventStartTime {
+            if let eventStartTime = commodityVoucherInfo.start {
                 let activityStartTimeDate = dateFromString(eventStartTime)
                 startTime = getDates(i: 0, currentDate: activityStartTimeDate!).0
             }
-            if let eventEndTime = lotteryInfo.eventEndTime {
+            if let eventEndTime = commodityVoucherInfo.end {
                 let activityEndTimeDate = dateFromString(eventEndTime)
                 endTime = getDates(i: 0, currentDate: activityEndTimeDate!).0
             }
@@ -115,10 +115,10 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
                 self.duringTime = "activityTime".localized + ":" + startTime + "~" + endTime
             }
             
-            if let drawDate = lotteryInfo.drawDate {
+            if let drawDate = commodityVoucherInfo.expire {
                 self.lotteryDrawDate = drawDate
             }
-            if let infoPoint = lotteryInfo.point {
+            if let infoPoint = commodityVoucherInfo.points {
                 self.point = String(infoPoint)
             }
         }
