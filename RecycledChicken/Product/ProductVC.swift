@@ -11,7 +11,19 @@ class ProductVC: CustomVC {
     
     @IBOutlet weak var webView:WKWebView!
     
-    private var buenocoopURL = URL(string: "https://www.buenocoop.com/")!
+//    private var buenocoopURL = URL(string: "https://www.buenocoop.com/")!
+    
+    private var buenocoopURL:URL = {
+        var isFirstProduct = UserDefaults().bool(forKey: UserDefaultKey.shared.isFirstProduct) 
+        var urlStr = ""
+        if isFirstProduct {
+            urlStr = "https://www.buenocoop.com/login"
+        }
+        if !isFirstProduct {
+            urlStr = "https://www.buenocoop.com/"
+        }
+        return URL(string: urlStr)!
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +33,8 @@ class ProductVC: CustomVC {
     }
     
     private func UIInit() {
+        webView.navigationDelegate = self
+        webView.uiDelegate = self
         let request = URLRequest(url: buenocoopURL)
         webView.load(request)
     }
@@ -36,4 +50,14 @@ class ProductVC: CustomVC {
         }
     }
 
+}
+
+extension ProductVC:WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        UserDefaults().set(false, forKey: UserDefaultKey.shared.isFirstProduct)
+    }
+}
+
+extension ProductVC:WKUIDelegate {
+    
 }

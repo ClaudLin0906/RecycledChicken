@@ -84,7 +84,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="Hcv-dW-rKf" secondAttribute="bottom" id="W87-SP-EAX"/>
                                                     <constraint firstAttribute="trailing" secondItem="Hcv-dW-rKf" secondAttribute="trailing" id="gUl-dG-twY"/>
@@ -115,11 +114,10 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="goToProductAlert:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="v2g-i3-qVW"/>
+                                                            <action selector="productProcess:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TVh-hr-cfs"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="a6I-w8-y9C" secondAttribute="bottom" id="C1y-Zk-jN3"/>
                                                     <constraint firstItem="a6I-w8-y9C" firstAttribute="leading" secondItem="Bxt-Yo-Xqt" secondAttribute="leading" id="IdR-Wt-wns"/>

@@ -61,6 +61,7 @@ class UserDefaultKey {
     static let shared = UserDefaultKey()
     let biometrics = "biometrics"
     let keepLogin = "keepLogin"
+    let isFirstProduct = "isFirstProduct"
 }
 
 struct LevelObject{
