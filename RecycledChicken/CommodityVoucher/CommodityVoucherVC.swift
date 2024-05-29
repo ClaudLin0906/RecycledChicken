@@ -30,23 +30,31 @@ class CommodityVoucherVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        getData()
+        getCouponsData()
     }
     
-    private func getData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.coupons, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200, let data = data else {
+    private func getCouponsData() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.coupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let commodityVoucherInfos = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: data) {
-                self.commodityVoucherInfos.removeAll()
-                self.commodityVoucherInfos.append(contentsOf: commodityVoucherInfos)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.tableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
+            commodityVoucherInfos.removeAll()
+            if let commodityVoucherResponse = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: data) {
+                commodityVoucherResponse.forEach { commodityVoucherInfo in
+                    guard let category = commodityVoucherInfo.category else { return }
+                    switch category {
+                    case .ticket:
+                        commodityVoucherInfos.append(commodityVoucherInfo)
+                    default:
+                        break
+                    }
+                }
+                DispatchQueue.main.async { [self] in
+                    tableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
+                        tableView.stopSkeletonAnimation()
+                        view.hideSkeleton()
                     })
                 }
             }
