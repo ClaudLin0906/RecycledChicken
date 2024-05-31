@@ -16,9 +16,7 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
     @IBOutlet weak var activityCodeTextField:UITextField!
     
     @IBOutlet weak var errorMSGLabel:CustomLabel!
-    
-    @IBOutlet weak var alertLabel:CustomLabel!
-    
+        
     var delegate:SignActivityCodeViewDelegate?
 
     override init(frame: CGRect) {
@@ -75,6 +73,8 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
     }
 
     @IBAction func cancel(_ sender:CustomButton) {
-        self.removeFromSuperview()
+        self.delegate?.comfirmInvitationCode(finishAction: {
+            self.removeFromSuperview()
+        })
     }
 }
