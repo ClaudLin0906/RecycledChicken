@@ -63,6 +63,7 @@ struct IllustratedGuide {
     var name:String
     var title:String
     var guide:String
+    var discover:String
 }
 
 enum IllustratedGuideModelLevel:Int, CaseIterable, Codable {
@@ -81,26 +82,26 @@ enum IllustratedGuideModelLevel:Int, CaseIterable, Codable {
 func getIllustratedGuide(_ illustratedGuideModelLevel: IllustratedGuideModelLevel) -> IllustratedGuide {
     switch illustratedGuideModelLevel {
     case .one:
-        return IllustratedGuide(level: 1, levelImage: UIImage(named:"level1")!, iconImage: UIImage(named:"level1-icon")!, guideImage: UIImage(named: "level1-guide")!, guideBackgroundImage: UIImage(named: "level1-guideBackground")!, name: "illustratedGuideOneOfName".localized, title: "illustratedGuideOneOfTitle".localized, guide: "illustratedGuideOneOfGuide".localized)
+        return IllustratedGuide(level: 1, levelImage: UIImage(named:"level1")!, iconImage: UIImage(named:"level1-icon")!, guideImage: UIImage(named: "level1-guide")!, guideBackgroundImage: UIImage(named: "level1-guideBackground")!, name: "illustratedGuideOneOfName".localized, title: "illustratedGuideOneOfTitle".localized, guide: "illustratedGuideOneOfGuide".localized, discover: "")
     case .two:
-        return IllustratedGuide(level: 2, levelImage: UIImage(named:"level2")!, iconImage: UIImage(named: "level2-icon")!, guideImage: UIImage(named: "level2-guide")!, guideBackgroundImage: UIImage(named: "level2-guideBackground")!, name: "illustratedGuideTwoOfName".localized, title: "illustratedGuideTwoOfTitle".localized, guide: "illustratedGuideTwoOfGuide".localized)
+        return IllustratedGuide(level: 2, levelImage: UIImage(named:"level2")!, iconImage: UIImage(named: "level2-icon")!, guideImage: UIImage(named: "level2-guide")!, guideBackgroundImage: UIImage(named: "level2-guideBackground")!, name: "illustratedGuideTwoOfName".localized, title: "illustratedGuideTwoOfTitle".localized, guide: "illustratedGuideTwoOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....")
     case .three:
-        return IllustratedGuide(level: 3, levelImage: UIImage(named:"level3")!, iconImage: UIImage(named: "level3-icon")!, guideImage: UIImage(named: "level3-guide")!, guideBackgroundImage: UIImage(named: "level3-guideBackground")!, name: "illustratedGuideThreeOfName".localized, title: "illustratedGuideThreeOfTitle".localized, guide: "illustratedGuideThreeOfGuide".localized)
+        return IllustratedGuide(level: 3, levelImage: UIImage(named:"level3")!, iconImage: UIImage(named: "level3-icon")!, guideImage: UIImage(named: "level3-guide")!, guideBackgroundImage: UIImage(named: "level3-guideBackground")!, name: "illustratedGuideThreeOfName".localized, title: "illustratedGuideThreeOfTitle".localized, guide: "illustratedGuideThreeOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....")
     case .four:
-        return IllustratedGuide(level: 4, levelImage: UIImage(named:"level4")!, iconImage: UIImage(named: "level4-icon")!, guideImage: UIImage(named: "level4-guide")!, guideBackgroundImage: UIImage(named: "level4-guideBackground")!, name: "illustratedGuideFourOfName".localized, title: "illustratedGuideFourOfTitle".localized, guide: "illustratedGuideFourOfGuide".localized)
+        return IllustratedGuide(level: 4, levelImage: UIImage(named:"level4")!, iconImage: UIImage(named: "level4-icon")!, guideImage: UIImage(named: "level4-guide")!, guideBackgroundImage: UIImage(named: "level4-guideBackground")!, name: "illustratedGuideFourOfName".localized, title: "illustratedGuideFourOfTitle".localized, guide: "illustratedGuideFourOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....")
     case .five:
-        return IllustratedGuide(level: 5, levelImage: UIImage(named:"level5")!, iconImage: UIImage(named: "level5-icon")!, guideImage: UIImage(named: "level5-guide")!, guideBackgroundImage: UIImage(named: "level5-guideBackground")!, name: "illustratedGuideFiveOfName".localized, title: "illustratedGuideFiveOfTitle".localized, guide: "illustratedGuideFiveOfGuide".localized)
+        return IllustratedGuide(level: 5, levelImage: UIImage(named:"level5")!, iconImage: UIImage(named: "level5-icon")!, guideImage: UIImage(named: "level5-guide")!, guideBackgroundImage: UIImage(named: "level5-guideBackground")!, name: "illustratedGuideFiveOfName".localized, title: "illustratedGuideFiveOfTitle".localized, guide: "illustratedGuideFiveOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....")
     case .six:
         return IllustratedGuide(level: 6, levelImage: UIImage(named:"level6")!, iconImage: UIImage(named: "level6-icon")!, guideImage: UIImage(named: "level6-guide")!, guideBackgroundImage: UIImage(named: "level6-guideBackground")!, name: "illustratedGuideSixOfName".localized, title: "illustratedGuideSixOfTitle".localized
-                                , guide: "illustratedGuideSixOfGuide".localized)
+                                , guide: "illustratedGuideSixOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....")
     case .seven:
-        return IllustratedGuide(level: 7, levelImage: UIImage(named:"level7")!, iconImage: UIImage(named: "level7-icon")!, guideImage: UIImage(named: "level7-guide")!, guideBackgroundImage: UIImage(named: "level7-guideBackground")!, name: "illustratedGuideSevenOfName".localized, title: "illustratedGuideSevenOfTitle".localized, guide: "illustratedGuideSevenOfGuide".localized)
+        return IllustratedGuide(level: 7, levelImage: UIImage(named:"level7")!, iconImage: UIImage(named: "level7-icon")!, guideImage: UIImage(named: "level7-guide")!, guideBackgroundImage: UIImage(named: "level7-guideBackground")!, name: "illustratedGuideSevenOfName".localized, title: "illustratedGuideSevenOfTitle".localized, guide: "illustratedGuideSevenOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....")
     case .eight:
-        return IllustratedGuide(level: 8, levelImage: UIImage(named:"level8")!, iconImage: UIImage(named: "level8-icon")!, guideImage: UIImage(named: "level8-guide")!, guideBackgroundImage: UIImage(named: "level8-guideBackground")!, name: "illustratedGuideEightOfName".localized, title: "illustratedGuideEightOfTitle".localized, guide: "illustratedGuideEightOfGuide".localized)
+        return IllustratedGuide(level: 8, levelImage: UIImage(named:"level8")!, iconImage: UIImage(named: "level8-icon")!, guideImage: UIImage(named: "level8-guide")!, guideBackgroundImage: UIImage(named: "level8-guideBackground")!, name: "illustratedGuideEightOfName".localized, title: "illustratedGuideEightOfTitle".localized, guide: "illustratedGuideEightOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....")
     case .nine:
-        return IllustratedGuide(level: 9, levelImage: UIImage(named:"level9")!, iconImage: UIImage(named: "level9-icon")!, guideImage: UIImage(named: "level9-guide")!, guideBackgroundImage: UIImage(named: "level9-guideBackground")!, name: "illustratedGuideNineOfName".localized, title: "illustratedGuideNineOfTitle".localized, guide: "illustratedGuideNineOfGuide".localized)
+        return IllustratedGuide(level: 9, levelImage: UIImage(named:"level9")!, iconImage: UIImage(named: "level9-icon")!, guideImage: UIImage(named: "level9-guide")!, guideBackgroundImage: UIImage(named: "level9-guideBackground")!, name: "illustratedGuideNineOfName".localized, title: "illustratedGuideNineOfTitle".localized, guide: "illustratedGuideNineOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....")
     case .ten:
-        return IllustratedGuide(level: 10, levelImage: UIImage(named:"level10")!, iconImage: UIImage(named: "level10-icon")!, guideImage: UIImage(named: "level10-guide")!, guideBackgroundImage: UIImage(named: "level10-guideBackground")!, name: "illustratedGuideTenOfName".localized, title: "illustratedGuideTenOfTitle".localized, guide: "illustratedGuideTenOfGuide".localized)
+        return IllustratedGuide(level: 10, levelImage: UIImage(named:"level10")!, iconImage: UIImage(named: "level10-icon")!, guideImage: UIImage(named: "level10-guide")!, guideBackgroundImage: UIImage(named: "level10-guideBackground")!, name: "illustratedGuideTenOfName".localized, title: "illustratedGuideTenOfTitle".localized, guide: "illustratedGuideTenOfGuide".localized, discover: "各位地球的智慧生命呀 感謝你們一同努力減少排碳量！ 接下來有碳長的帶領 相信我們的世界一定會越來越好")
     }
 }
 
@@ -249,6 +250,7 @@ class UserDefaultKey {
     let twoFillRightChickenOfColorFillTypeFourView = "twoFillRightChickenOfColorFillTypeFourView"
     let threeFillRightChickenOfColorFillTypeFourView = "threeFillRightChickenOfColorFillTypeFourView"
     let isFirstProduct = "isFirstProduct"
+    let oldProfileInfo = "oldProfileInfo"
 }
 
 class CurrentUserInfo {
@@ -391,6 +393,7 @@ func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
             if let experiencePoint = profileNewInfo.experiencePoint {
                 userInfo.levelInfo = getLevelInfo(experiencePoint)
             }
+            CurrentUserInfo.shared.currentProfileNewInfo = nil
             CurrentUserInfo.shared.currentProfileNewInfo = userInfo
             if let finishAction = finishAction {
                 finishAction()

@@ -102,21 +102,23 @@ class HomeVC: CustomRootVC {
                     }
                 }
             }
-
-//            getUserInfo(VC: self, finishAction: {
-//                DispatchQueue.main.async {
-//                    let illustratedGuide = getIllustratedGuide(getChickenLevel())
-//                    self.chickenLevelImageView.image = illustratedGuide.levelImage
-//                    if let image = self.getTrendChart() {
-//                        self.trendChartImageView.image = image
-//                    }
-//                    self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
-//                }
-//                Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
-//                }
-//            })
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
+    }
+    
+    private func checkChickenLevel() {
+        var showChicken = true
+        if let oldProfileInfo = UserDefaults().object(forKey: UserDefaultKey.shared.oldProfileInfo) as? ProfileNewInfo, let oldChickenLevel = oldProfileInfo.levelInfo?.chickenLevel?.rawValue {
+            if let currentChickenLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel?.rawValue, currentChickenLevel <= oldChickenLevel, currentChickenLevel  <= 1 {
+                showChicken = false
+            }
+        }
+        UserDefaults().set(CurrentUserInfo.shared.currentProfileNewInfo, forKey: UserDefaultKey.shared.oldProfileInfo)
+        if !showChicken {
+            let chickeIntroduceView = ChickeIntroduceView(frame: UIScreen.main.bounds)
+            fadeInOutAni(showView: chickeIntroduceView, finishAction: nil)
+        }
+        
     }
     
     private func getItems() {
