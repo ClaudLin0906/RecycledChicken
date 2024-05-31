@@ -250,7 +250,7 @@ class UserDefaultKey {
     let twoFillRightChickenOfColorFillTypeFourView = "twoFillRightChickenOfColorFillTypeFourView"
     let threeFillRightChickenOfColorFillTypeFourView = "threeFillRightChickenOfColorFillTypeFourView"
     let isFirstProduct = "isFirstProduct"
-    let oldProfileInfo = "oldProfileInfo"
+    let oldChickenLevel = "oldChickenLevel"
 }
 
 class CurrentUserInfo {
@@ -313,7 +313,7 @@ struct APIUrl {
     static let checkLotteryItem = "/lottery/items"
     static let checkLotteryRecord = "/checkLotteryRecord"
     static let searchUserData = "/searchUserData"
-    static let updateProfile = "/updateProfile"
+    static let updateProfile = "/user/profile"
     static let sendEmail = "/sendEmail"
     static let getQuestList = "/getQuestList"
     static let forgotPassword = "/auth/forgotPassword"

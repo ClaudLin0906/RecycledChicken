@@ -101,9 +101,9 @@ class ProfileVC: CustomVC {
         view.endEditing(true)
     }
     
-    func updateUserInfo( userInfo:ProfileInfo){
-        let userInfoDic = try? userInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: userInfoDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
+    func updateUserInfo(_ profilePostInfo:ProfilePostInfo){
+        let profilePostInfoDic = try? profilePostInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: profilePostInfoDic, AuthorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
@@ -122,66 +122,11 @@ class ProfileVC: CustomVC {
     
     @IBAction func confirm(_ sender:CustomButton) {
         guard CurrentUserInfo.shared.isGuest == false else { return } 
-        var newUserInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "", experiencePoint: 0)
-        let cells = cellsForTableView(tableView: profileTableView)
-        for cell in cells {
-            if let profileTableViewCell = cell as? ProfileTableViewCell {
-                if profileTableViewCell.tag == 0 {
-                    newUserInfo.userName = profileTableViewCell.info.text ?? ""
-                }
-                if profileTableViewCell.tag == 1 {
-                    newUserInfo.userEmail = profileTableViewCell.info.text ?? ""
-                }
-                if profileTableViewCell.tag == 2 {
-                    newUserInfo.userPhoneNumber = profileTableViewCell.info.text ?? ""
-                }
-                if profileTableViewCell.tag == 3 {
-                    newUserInfo.userBirth = profileTableViewCell.info.text ?? ""
-                }
-            }
-        }
-        
-        var errorStr = ""
-        
-        if newUserInfo.userEmail != "" && !validateEmail(text: newUserInfo.userEmail){
-            errorStr += "incorrectEmailFormat".localized
-        }
-        
-        errorStr = removeWhitespace(from: errorStr)
-        guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr)
-            return
-        }
-        
-        if newUserInfo.userPhoneNumber == "" {
-            errorStr += "phoneCannotBeEmpty".localized
-        }else if !validateCellPhone(text: newUserInfo.userPhoneNumber) {
-            errorStr += "incorrectPhoneNumberFormat".localized
-        }
-        
-        errorStr = removeWhitespace(from: errorStr)
-        guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr)
-            return
-        }
-        
-        if newUserInfo.userBirth == "" {
-            errorStr += "birthdayCannotBeEmpty".localized
-        }
-        errorStr = removeWhitespace(from: errorStr)
-        guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr)
-            return
-        }
-        
-        if profileUserInfo?.userBirth != newUserInfo.userBirth && newUserInfo.userBirth != "" {
-            let updateDateAlertView = UpdateDateAlertView(frame: view.frame)
-            updateDateAlertView.VC = self
-            updateDateAlertView.userInfo = newUserInfo
-            keyWindow?.addSubview(updateDateAlertView)
-        }else{
-            updateUserInfo(userInfo: newUserInfo)
-        }
+        let userName = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
+        let userEmail = CurrentUserInfo.shared.currentProfileNewInfo?.userEmail ?? ""
+        let userBirth = CurrentUserInfo.shared.currentProfileNewInfo?.userBirth ?? ""
+        let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth)
+        updateUserInfo(profilePostInfo)
     }
     
     private func showProfileUpdateView() {

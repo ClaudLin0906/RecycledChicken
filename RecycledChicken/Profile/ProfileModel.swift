@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
-struct ProfileInfo: Codable {
-    var userEmail:String
+struct ProfilePostInfo:Codable {
     var userName:String
+    var userEmail:String
     var userBirth:String
-    var point:Int
-    var userPhoneNumber:String
-    var experiencePoint:Int
-    var levelInfo:LevelInfo?
+    var systemType = "iOS"
+    var systemVersion = UIDevice.current.systemVersion
+    var appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 }
 
 struct ProfileNewInfo: Codable {

@@ -73,52 +73,60 @@ class HomeVC: CustomRootVC {
 //        NotificationCenter.default.addObserver(self, selector: #selector(receiveCalenderCell(_:)), name: .calenderCellOnCilck, object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getUserNewInfo(VC: self) {
+            DispatchQueue.main.async { [self] in
+                let illustratedGuide = getIllustratedGuide(getChickenLevel())
+                chickenLevelImageView.image = illustratedGuide.levelImage
+                if let image = getTrendChart() {
+                    trendChartImageView.image = image
+                }
+                self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
+                Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
+                }
+                self.updateCurrentDateInfo()
+                self.checkChickenLevel()
+            }
+        }
+        getItems()
+        if let (startTime, endTime) = getStartAndEndDateOfMonth() {
+            computeDate(startTime, endTime: endTime) { battery, bottle, colorlessBottle, can in
+                DispatchQueue.main.async { [self] in
+                    petItemView.setAmount(bottle)
+                    batteryItemView.setAmount(battery + colorlessBottle)
+                    papperCubItemView.setAmount(0)
+                    aluminumCanItemView.setAmount(can)
+                }
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if FirstTime && LoginSuccess {
             FirstTime = false
             showADBannerView()
-            getUserNewInfo(VC: self) {
-                DispatchQueue.main.async { [self] in
-                    let illustratedGuide = getIllustratedGuide(getChickenLevel())
-                    chickenLevelImageView.image = illustratedGuide.levelImage
-                    if let image = getTrendChart() {
-                        trendChartImageView.image = image
-                    }
-                    self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
-                    Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
-                    }
-                    self.updateCurrentDateInfo()
-                }
-            }
-            getItems()
-            if let (startTime, endTime) = getStartAndEndDateOfMonth() {
-                computeDate(startTime, endTime: endTime) { battery, bottle, colorlessBottle, can in
-                    DispatchQueue.main.async { [self] in
-                        petItemView.setAmount(bottle)
-                        batteryItemView.setAmount(battery + colorlessBottle)
-                        papperCubItemView.setAmount(0)
-                        aluminumCanItemView.setAmount(can)
-                    }
-                }
-            }
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
     }
     
     private func checkChickenLevel() {
         var showChicken = true
-        if let oldProfileInfo = UserDefaults().object(forKey: UserDefaultKey.shared.oldProfileInfo) as? ProfileNewInfo, let oldChickenLevel = oldProfileInfo.levelInfo?.chickenLevel?.rawValue {
-            if let currentChickenLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel?.rawValue, currentChickenLevel <= oldChickenLevel, currentChickenLevel  <= 1 {
+        guard let currentChickenLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel?.rawValue else { return }
+        if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) != nil {
+            let oldChickenLevel = UserDefaults().integer(forKey: UserDefaultKey.shared.oldChickenLevel)
+            if currentChickenLevel <= oldChickenLevel  {
                 showChicken = false
             }
         }
-        UserDefaults().set(CurrentUserInfo.shared.currentProfileNewInfo, forKey: UserDefaultKey.shared.oldProfileInfo)
-        if !showChicken {
+        if currentChickenLevel <= 1 {
+            showChicken = false
+        }
+        if showChicken {
             let chickeIntroduceView = ChickeIntroduceView(frame: UIScreen.main.bounds)
             fadeInOutAni(showView: chickeIntroduceView, finishAction: nil)
         }
-        
     }
     
     private func getItems() {

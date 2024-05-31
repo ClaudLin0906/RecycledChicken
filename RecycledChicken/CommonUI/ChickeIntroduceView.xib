@@ -40,7 +40,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zj-0s-03C" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="176" y="443.66666666666669" width="41.333333333333343" height="20.333333333333314"/>
+                    <rect key="frame" x="50" y="443.66666666666669" width="293" height="20.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -50,6 +50,8 @@
             <color key="backgroundColor" red="0.32156862745098036" green="0.48627450980392156" blue="0.41960784313725491" alpha="0.94715289680325254" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="7Zj-0s-03C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="5" id="1PW-bG-658"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7Zj-0s-03C" secondAttribute="trailing" constant="50" id="2bo-Eu-sBB"/>
+                <constraint firstItem="7Zj-0s-03C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="4Zc-I8-ggO"/>
                 <constraint firstItem="7Zj-0s-03C" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="P4e-15-Nw2"/>
                 <constraint firstItem="uF4-LA-5Ws" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-5" id="Zqc-hK-8Oa"/>
                 <constraint firstItem="uF4-LA-5Ws" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="gsd-if-HZt"/>

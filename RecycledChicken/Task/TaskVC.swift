@@ -94,7 +94,7 @@ class TaskVC: CustomRootVC {
                 self.taskInfos.removeAll()
                 self.taskInfos.append(contentsOf: taskInfos)
                 self.taskInfos = self.taskInfos.filter {
-                    if let startTime = $0.startTime, let startDate = dateFromString(startTime), let endTime = $0.endTime, let endDate = dateFromString(endTime) {
+                    if let startTime = $0.activeTime?.startTime, let startDate = dateFromString(startTime), let endTime = $0.activeTime?.endTime, let endDate = dateFromString(endTime) {
                         return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
                     }
                     return false
