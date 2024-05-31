@@ -56,28 +56,28 @@ class SignVC: CustomLoginVC {
         var alertMsg = ""
         let password = passwordTextfield.text
         let phone = phoneTextfield.text
-//        if phone == "" {
-//            alertMsg += "電話不能為空"
-//        } else if !validateCellPhone(text: phone!) {
-//            alertMsg += "電話格式不對"
-//        }
-//
-//        alertMsg = removeWhitespace(from: alertMsg)
-//        guard alertMsg == "" else {
-//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
-//            return
-//        }
-//
-//        if password == "" {
-//            alertMsg += "密碼不能為空"
-//        }else if !validatePassword(text: password!) {
-//            alertMsg += "密碼格式不對"
-//        }
-//        alertMsg = removeWhitespace(from: alertMsg)
-//        guard alertMsg == "" else {
-//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
-//            return
-//        }
+        if phone == "" {
+            alertMsg += "電話不能為空"
+        } else if !validateCellPhone(text: phone!) {
+            alertMsg += "電話格式不對"
+        }
+
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
+
+        if password == "" {
+            alertMsg += "密碼不能為空"
+        }else if !validatePassword(text: password!) {
+            alertMsg += "密碼格式不對"
+        }
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
         goToVerificationCode(phone: phone!, password: password!)
     }
 

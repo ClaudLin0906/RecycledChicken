@@ -93,29 +93,30 @@ class VerificationCodeVC: CustomLoginVC {
         self.startCountdown()
         self.addReSendVerificationCodeView()
         
-//        switch currentType {
-//        case .forgetPassword:
-//            phone = info?.userPhoneNumber ?? ""
-//        default:
-//            break
-//        }
-//        
-//        let smsInfo = SMSInfo(userPhoneNumber: phone)
-//        let smsInfoDic = try? smsInfo.asDictionary()
-//        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in
-//            
-//            guard statusCode == 200 else {
-//                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
-//                return
-//            }
-//            
-//            if let data = data {
-//                let json = NetworkManager.shared.dataToDictionary(data: data)
-//                self.startCountdown()
-//                self.addReSendVerificationCodeView()
-//            }
-//            
-//        }
+        switch currentType {
+        case .forgetPassword:
+            phone = info?.userPhoneNumber ?? ""
+        default:
+            break
+        }
+        let smsInfo = SMSInfo(userPhoneNumber: phone)
+        let smsInfoDic = try? smsInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                return
+            }
+            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
+            if let status = apiResult?.status {
+                switch status {
+                case .success:
+                    self.startCountdown()
+                    self.addReSendVerificationCodeView()
+                case .failure:
+                    break
+                }
+            }
+        }
     }
     
     @IBAction func reSendSMS(_ sender:UIButton) {
@@ -132,10 +133,13 @@ class VerificationCodeVC: CustomLoginVC {
                 return
             }
             DispatchQueue.main.async {
-                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
-                    self.goToLoginVC()
-                }
-                showAlert(VC: self, title: "註冊成功, 請重新登入", alertAction: alertAction)
+                let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
+                signActivityCodeView.delegate = self
+                keyWindow?.addSubview(signActivityCodeView)
+//                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
+//                    self.goToLoginVC()
+//                }
+//                showAlert(VC: self, title: "註冊成功, 請重新登入", alertAction: alertAction)
             }
         }
     }
@@ -222,6 +226,16 @@ extension VerificationCodeVC:UITextFieldDelegate{
                 nextResponder?.becomeFirstResponder()
             }
             return false
+        }
+    }
+}
+
+
+extension VerificationCodeVC:SignActivityCodeViewDelegate {
+    func comfirmInvitationCode(finishAction: (() -> ())?) {
+        DispatchQueue.main.async {
+            finishAction?()
+            self.goToLoginVC()
         }
     }
 }
