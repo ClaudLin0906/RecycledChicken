@@ -21,6 +21,8 @@ class StationListVC: CustomVC {
     private var mapInfos:[MapInfo] = []
     
     private var filterMapInfos:[MapInfo] = []
+    
+    private var areas:[String] = []
         
     private var locationManager = CLLocationManager()
     
@@ -33,6 +35,8 @@ class StationListVC: CustomVC {
             }
         }
     }
+    
+    private let areasDropDown = DropDown()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +61,7 @@ class StationListVC: CustomVC {
         keyWordTextfiekd.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         tableView.showAnimatedSkeleton()
         locationManager.delegate = self
+        setupAreaDropDown()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +78,14 @@ class StationListVC: CustomVC {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         locationManager.stopUpdatingLocation()
+    }
+    
+    private func setupAreaDropDown() {
+        areasDropDown.anchorView = dropDownView
+        areasDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
+        areasDropDown.selectionAction = { [self] (index, item) in
+            
+        }
     }
     
     private func sortDisance() {
@@ -122,8 +135,18 @@ class StationListVC: CustomVC {
                 return
             }
             if let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
+                self.mapInfos.removeAll()
+                self.filterMapInfos.removeAll()
+                self.areas.removeAll()
+                self.areasDropDown.dataSource.removeAll()
                 self.mapInfos = mapInfos
                 self.filterMapInfos.append(contentsOf: mapInfos)
+                self.filterMapInfos.forEach({
+                    if let address = $0.address, let area = self.getAreas(address) {
+                        self.areas.append(area)
+                    }
+                })
+                self.areasDropDown.dataSource.append(contentsOf: self.areas)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -148,9 +171,15 @@ class StationListVC: CustomVC {
                 return false
             }
         })
-        
         filterMapInfos.append(contentsOf: newData)
 
+    }
+    
+    private func getAreas(_ address:String) -> String? {
+        guard address.count > 6 else { return nil }
+        let startIndex = address.index(address.startIndex, offsetBy: 2)
+        let endIndex = address.index(address.startIndex, offsetBy: 6)
+        return String(address[startIndex..<endIndex])
     }
     
     @objc private func textFieldDidChange(_ textfield:UITextField) {

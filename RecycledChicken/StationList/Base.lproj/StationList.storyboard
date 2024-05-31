@@ -44,7 +44,17 @@
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3j-v0-c0K" customClass="DropDownView" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="253" y="103" width="120" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmo-fr-wcm">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    </button>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="kmo-fr-wcm" firstAttribute="top" secondItem="f3j-v0-c0K" secondAttribute="top" id="1zl-bF-xul"/>
+                                    <constraint firstAttribute="bottom" secondItem="kmo-fr-wcm" secondAttribute="bottom" id="7hm-k8-t24"/>
+                                    <constraint firstItem="kmo-fr-wcm" firstAttribute="leading" secondItem="f3j-v0-c0K" secondAttribute="leading" id="RcN-Zn-jjj"/>
+                                    <constraint firstAttribute="trailing" secondItem="kmo-fr-wcm" secondAttribute="trailing" id="wXT-34-Fgx"/>
                                     <constraint firstAttribute="width" constant="120" id="xvn-QF-9kn"/>
                                 </constraints>
                             </view>
@@ -285,7 +295,7 @@
                             <constraint firstItem="f3j-v0-c0K" firstAttribute="height" secondItem="V0h-FK-z63" secondAttribute="height" id="J5d-X1-Pv7"/>
                             <constraint firstItem="2kh-S6-a6j" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="-20" id="KPZ-27-ab1"/>
                             <constraint firstItem="UwC-yN-bIV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="L4L-Cs-kEl"/>
-                            <constraint firstItem="f3j-v0-c0K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V0h-FK-z63" secondAttribute="trailing" symbolic="YES" id="MaM-nC-wGg"/>
+                            <constraint firstItem="f3j-v0-c0K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V0h-FK-z63" secondAttribute="trailing" constant="8" symbolic="YES" id="MaM-nC-wGg"/>
                             <constraint firstItem="SWQ-mF-Kuq" firstAttribute="bottom" secondItem="uQX-WP-atQ" secondAttribute="bottom" constant="10" id="NFd-go-EnF"/>
                             <constraint firstItem="V0h-FK-z63" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.5" id="Um1-BE-qod"/>
                             <constraint firstItem="uQX-WP-atQ" firstAttribute="leading" secondItem="V0h-FK-z63" secondAttribute="leading" id="aJd-al-QlZ"/>
