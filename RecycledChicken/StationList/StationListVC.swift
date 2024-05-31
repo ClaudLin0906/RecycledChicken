@@ -31,6 +31,7 @@ class StationListVC: CustomVC {
         willSet {
             if newValue != nil {
                 sortDisance()
+                addDropDownData()
                 tableView.reloadData()
             }
         }
@@ -84,7 +85,15 @@ class StationListVC: CustomVC {
         areasDropDown.anchorView = dropDownView
         areasDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
         areasDropDown.selectionAction = { [self] (index, item) in
-            
+            dropDownView.setDefaultTitle(areas[index])
+            filterMapInfos.removeAll()
+            filterMapInfos = mapInfos.filter({ mapInfo in
+                if let address = mapInfo.address, address.contains(areas[index]) {
+                    return true
+                }
+                return false
+            })
+            tableView.reloadData()
         }
     }
     
@@ -104,6 +113,22 @@ class StationListVC: CustomVC {
             mapInfos.append(contentsOf: newMapInfos)
         }
         print(" end \(mapInfos)")
+    }
+    
+    private func addDropDownData() {
+        self.areasDropDown.dataSource.removeAll()
+        var newAreaMapInfo:[MapInfo] = []
+        if self.filterMapInfos.count > 5 {
+            newAreaMapInfo.append(contentsOf: self.filterMapInfos.prefix(5))
+        }else{
+            newAreaMapInfo.append(contentsOf: self.filterMapInfos)
+        }
+        newAreaMapInfo.forEach({
+            if let address = $0.address, let area = self.getAreas(address) {
+                self.areas.append(area)
+            }
+        })
+        self.areasDropDown.dataSource.append(contentsOf: self.areas)
     }
     
     private func getLocation(_ mapInfo:MapInfo) -> CLLocation? {
@@ -137,16 +162,10 @@ class StationListVC: CustomVC {
             if let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
                 self.mapInfos.removeAll()
                 self.filterMapInfos.removeAll()
-                self.areas.removeAll()
                 self.areasDropDown.dataSource.removeAll()
                 self.mapInfos = mapInfos
                 self.filterMapInfos.append(contentsOf: mapInfos)
-                self.filterMapInfos.forEach({
-                    if let address = $0.address, let area = self.getAreas(address) {
-                        self.areas.append(area)
-                    }
-                })
-                self.areasDropDown.dataSource.append(contentsOf: self.areas)
+                self.addDropDownData()
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -177,7 +196,7 @@ class StationListVC: CustomVC {
     
     private func getAreas(_ address:String) -> String? {
         guard address.count > 6 else { return nil }
-        let startIndex = address.index(address.startIndex, offsetBy: 2)
+        let startIndex = address.index(address.startIndex, offsetBy: 3)
         let endIndex = address.index(address.startIndex, offsetBy: 6)
         return String(address[startIndex..<endIndex])
     }
@@ -191,17 +210,21 @@ class StationListVC: CustomVC {
         tableView.reloadData()
     }
     
+    private func getNumberOfRowsInSection() -> Int {
+        if filterMapInfos.count > 5 {
+            return 5
+        }
+        return filterMapInfos.count
+    }
+    
     @IBAction func goToStoreList(_ sender:UIButton) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "SiteList", bundle: Bundle.main).instantiateViewController(identifier: "SiteList") as? SiteListVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
     
-    private func getNumberOfRowsInSection() -> Int {
-        if filterMapInfos.count > 5 {
-            return 5
-        }
-        return filterMapInfos.count
+    @IBAction func choseArea(_ tap:UITapGestureRecognizer) {
+        areasDropDown.show()
     }
 
 }

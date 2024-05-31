@@ -44,19 +44,12 @@
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3j-v0-c0K" customClass="DropDownView" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="253" y="103" width="120" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmo-fr-wcm">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    </button>
-                                </subviews>
                                 <constraints>
-                                    <constraint firstItem="kmo-fr-wcm" firstAttribute="top" secondItem="f3j-v0-c0K" secondAttribute="top" id="1zl-bF-xul"/>
-                                    <constraint firstAttribute="bottom" secondItem="kmo-fr-wcm" secondAttribute="bottom" id="7hm-k8-t24"/>
-                                    <constraint firstItem="kmo-fr-wcm" firstAttribute="leading" secondItem="f3j-v0-c0K" secondAttribute="leading" id="RcN-Zn-jjj"/>
-                                    <constraint firstAttribute="trailing" secondItem="kmo-fr-wcm" secondAttribute="trailing" id="wXT-34-Fgx"/>
                                     <constraint firstAttribute="width" constant="120" id="xvn-QF-9kn"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bFg-It-qJb" appends="YES" id="fPY-8l-Cmi"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鄰近站點" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-WP-atQ" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="20" y="153" width="69.333333333333329" height="20.333333333333343"/>
@@ -321,6 +314,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bFg-It-qJb">
+                    <connections>
+                        <action selector="choseArea:" destination="Y6W-OH-hqX" id="DlS-oC-Z90"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="892.36641221374043" y="3.5211267605633805"/>
         </scene>
