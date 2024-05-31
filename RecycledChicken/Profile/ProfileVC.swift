@@ -17,6 +17,8 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var comfirmBtnWidth:NSLayoutConstraint!
     
+    @IBOutlet weak var profileImageView:UIImageView!
+    
     private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
     
     private let datePicker:UIDatePicker = {
@@ -57,6 +59,7 @@ class ProfileVC: CustomVC {
         profileTableView.setSeparatorLocation()
         let illustratedGuide = getIllustratedGuide(getChickenLevel())
         chickenLeverLabel.text = "\("currentLevel".localized):\(illustratedGuide.name)"
+        profileImageView.image = illustratedGuide.iconImage
         barCodeView.setBarCodeValue("0932266860")
     }
     

@@ -342,7 +342,7 @@ struct APIUrl {
     static let havingCoupons = "/coupons/bought"
 }
 
-struct WebViewUrl{
+struct WebViewUrl {
     static let PrivacyPolicyURL = "https://www.buenopartners.com.tw/privacy"
     static let CommonPronblemURL = "https://www.buenopartners.com.tw/faq"
 }

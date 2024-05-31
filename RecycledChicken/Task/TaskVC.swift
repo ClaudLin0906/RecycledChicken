@@ -85,12 +85,12 @@ class TaskVC: CustomRootVC {
     }
     
     private func getTaskInfo(completion: @escaping () -> Void) {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data,  let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
+            if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
                 self.taskInfos.removeAll()
                 self.taskInfos.append(contentsOf: taskInfos)
                 self.taskInfos = self.taskInfos.filter {
