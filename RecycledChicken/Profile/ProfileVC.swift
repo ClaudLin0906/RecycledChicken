@@ -101,15 +101,21 @@ class ProfileVC: CustomVC {
         view.endEditing(true)
     }
     
-    func updateUserInfo(_ profilePostInfo:ProfilePostInfo){
+    func updateUserInfo(_ profilePostInfo:ProfilePostInfo) {
         let profilePostInfoDic = try? profilePostInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: profilePostInfoDic, AuthorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
-            guard statusCode == 200 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if data != nil {
-                self.showProfileUpdateView()
+            let ApiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
+            if let status = ApiResult?.status {
+                switch status {
+                case .success:
+                    self.showProfileUpdateView()
+                case .failure:
+                    break
+                }
             }
         }
     }
@@ -122,9 +128,22 @@ class ProfileVC: CustomVC {
     
     @IBAction func confirm(_ sender:CustomButton) {
         guard CurrentUserInfo.shared.isGuest == false else { return } 
-        let userName = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
-        let userEmail = CurrentUserInfo.shared.currentProfileNewInfo?.userEmail ?? ""
+        let cells = cellsForTableView(tableView: profileTableView)
+        var userName = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
+        var userEmail = CurrentUserInfo.shared.currentProfileNewInfo?.userEmail ?? ""
+        var userPhoneNumber = CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber ?? ""
         let userBirth = CurrentUserInfo.shared.currentProfileNewInfo?.userBirth ?? ""
+        var invitCode = CurrentUserInfo.shared.currentProfileNewInfo?.invitCode ?? ""
+        for cell in cells {
+            if let profileTableViewCell = cell as? ProfileTableViewCell {
+                if profileTableViewCell.tag == 0 {
+                    userName = profileTableViewCell.info.text ?? ""
+                }
+                if profileTableViewCell.tag == 2 {
+                    invitCode = profileTableViewCell.info.text ?? ""
+                }
+            }
+        }
         let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth)
         updateUserInfo(profilePostInfo)
     }

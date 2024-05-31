@@ -60,6 +60,7 @@ extension SystemSettingVC:UITableViewDelegate, UITableViewDataSource {
                 case 0:
                 if let inviteInfo = accountTableViewInfos[row].inviteInfo, !inviteInfo.isInvite {
                     let invitationCodeView = InvitationCodeView(frame: view.window!.frame)
+                    invitationCodeView.delegate = self
                     keyWindow?.addSubview(invitationCodeView)
                 }
                 case 1:
@@ -129,4 +130,35 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
             break
         }
     }
+}
+
+extension SystemSettingVC:InvitationCodeViewDelegate {
+    func comfirmInvitationCode(_ invitationCode: String, finishAction: (() -> ())?) {
+        var alertMsg = ""
+        if invitationCode == "" {
+            alertMsg += "邀請碼不能為空"
+        }
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
+        let inviteRequestInfo = InviteRequestInfo(inviteCode: invitationCode)
+        let inviteRequestInfoDic = try? inviteRequestInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.enterInviteCode, parameters: inviteRequestInfoDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                return
+            }
+            let ApiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
+            if let status = ApiResult?.status {
+                switch status {
+                case .success:
+                    finishAction?()
+                case .failure:
+                    break
+                }
+            }
+        }
+    }
+    
 }

@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol InvitationCodeViewDelegate {
+    func comfirmInvitationCode(_ invitationCode:String, finishAction:(()->())?)
+}
+
 class InvitationCodeView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var invitationCodeLabelWidth:NSLayoutConstraint!
     
     @IBOutlet weak var invitationCodeTextField:UITextField!
+    
+    var delegate:InvitationCodeViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,17 +38,9 @@ class InvitationCodeView: UIView, NibOwnerLoadable {
         self.removeFromSuperview()
     }
     
-    @IBAction func comfirm(_ sender:UIButton) {
-        guard let invitationCode = invitationCodeTextField.text else {
-            return
-        }
-        let inviteRequestInfo = InviteRequestInfo(inviteCode: invitationCode)
-        let inviteRequestInfoDic = try? inviteRequestInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.enterInviteCode, parameters: inviteRequestInfoDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                return
-            }
-            print("data \( String(data: data, encoding: .utf8) )")
-        }
+    @IBAction func comfirm(_ sender:UIButton ) {
+        delegate?.comfirmInvitationCode(invitationCodeTextField.text ?? "", finishAction: {
+            self.removeFromSuperview()
+        })
     }
 }

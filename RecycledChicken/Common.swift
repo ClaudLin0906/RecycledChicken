@@ -265,7 +265,7 @@ class CurrentUserInfo {
         }
     }()
     
-    var currentProfileInfo:ProfileInfo?
+    var currentProfileInfo:ProfileNewInfo?
     {
         willSet{
             if let newValue = newValue, newValue.userPhoneNumber == "0000000000" {
@@ -395,43 +395,6 @@ func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
             }
             CurrentUserInfo.shared.currentProfileNewInfo = nil
             CurrentUserInfo.shared.currentProfileNewInfo = userInfo
-            if let finishAction = finishAction {
-                finishAction()
-            }
-        }
-    }
-}
-
-func getUserInfo(VC:UIViewController, finishAction:(()->())?){
-    NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-        guard statusCode == 200 else {
-            showAlert(VC: VC, title: "error".localized, message: errorMSG)
-            return
-        }
-        if let data = data {
-            let json = NetworkManager.shared.dataToDictionary(data: data)
-            var userInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "", experiencePoint: 0)
-            if let userPhoneNumber = json["userPhoneNumber"] as? String {
-                userInfo.userPhoneNumber = userPhoneNumber
-            }
-            if let userEmail = json["userEmail"] as? String {
-                userInfo.userEmail = userEmail
-            }
-            if let userName = json["userName"] as? String {
-                userInfo.userName = userName
-            }
-            if let point = json["point"] as? Int {
-                userInfo.point = point
-            }
-            if let userBirth = json["userBirth"] as? String {
-                userInfo.userBirth = userBirth
-            }
-            if let experiencePoint = json["experiencePoint"] as? Int {
-                userInfo.experiencePoint = experiencePoint
-            }
-            userInfo.levelInfo = getLevelInfo(userInfo.experiencePoint)
-            CurrentUserInfo.shared.currentProfileInfo = userInfo
-            
             if let finishAction = finishAction {
                 finishAction()
             }
@@ -1066,4 +1029,25 @@ struct RecycleDetails:Codable {
     var bottle:Int?
     var colorlessBottle:Int?
     var can:Int?
+}
+
+struct ApiResult:Codable {
+    var message:String?
+    var status:ApiStatus?
+    
+    enum CodingKeys:String, CodingKey {
+        case status = "status"
+        case message = "message"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        message = try? container.decodeIfPresent(String.self, forKey: .message)
+        status = try? container.decodeIfPresent(ApiStatus.self, forKey: .status)
+    }
+}
+
+enum ApiStatus:String, Codable {
+    case success = "success"
+    case failure = "failure"
 }
