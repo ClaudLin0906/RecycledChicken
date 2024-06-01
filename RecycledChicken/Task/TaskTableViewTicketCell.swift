@@ -24,15 +24,15 @@ class TaskTableViewTicketCell: UITableViewCell {
     @IBOutlet weak var titleLabel:UILabel!
     
     var taskInfo:TaskInfo?
-//    {
-//        willSet{
-//            if let newValue = newValue, let isFinish = newValue.isFinish, isFinish {
-//                finishUIInit()
-//            }else{
-//                noFinishUIInit()
-//            }
-//        }
-//    }
+    {
+        willSet{
+            if let newValue = newValue, let isFinish = newValue.isFinish, isFinish {
+                finishUIInit()
+            }else{
+                noFinishUIInit()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

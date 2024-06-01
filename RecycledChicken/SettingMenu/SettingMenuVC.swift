@@ -16,7 +16,7 @@ class SettingMenuVC: CustomVC {
     private let defaultSettingMenuInfoArr:[settingMenuInfo] =
     [
         settingMenuInfo(icon: UIImage(named: "组 431")!, title: "systemSetting".localized),
-        settingMenuInfo(icon: UIImage(named: "globe")!, title: "languageSetting".localized),
+//        settingMenuInfo(icon: UIImage(named: "globe")!, title: "languageSetting".localized),
         settingMenuInfo(icon: UIImage(named: "组 430")!, title: "FAQs".localized),
         settingMenuInfo(icon: UIImage(named: "组 428")!, title: "contactPartnership".localized),
         settingMenuInfo(icon: UIImage(named: "组 618")!, title: "termsPrivacyPolicy".localized),
@@ -72,19 +72,19 @@ extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
                     pushVC(targetVC: VC, navigation: navigationController)
                 }
             }
+//        case 1:
+//            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "LanguageSetting", bundle: Bundle.main).instantiateViewController(identifier: "LanguageSetting") as? LanguageSettingVC {
+//                pushVC(targetVC: VC, navigation: navigationController)
+//            }
         case 1:
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "LanguageSetting", bundle: Bundle.main).instantiateViewController(identifier: "LanguageSetting") as? LanguageSettingVC {
-                pushVC(targetVC: VC, navigation: navigationController)
-            }
-        case 2:
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CommonPronblem", bundle: Bundle.main).instantiateViewController(identifier: "CommonPronblem") as? CommonPronblemVC {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
-        case 3:
+        case 2:
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ConnectCompany", bundle: Bundle.main).instantiateViewController(identifier: "ConnectCompany") as? ConnectCompanyVC {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
-        case 4:
+        case 3:
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PrivacyPolicy", bundle: Bundle.main).instantiateViewController(identifier: "PrivacyPolicy") as? PrivacyPolicyVC {
                 pushVC(targetVC: VC, navigation: navigationController)
             }

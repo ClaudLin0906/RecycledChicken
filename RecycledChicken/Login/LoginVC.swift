@@ -77,51 +77,49 @@ class LoginVC: CustomLoginVC {
     }
     
     private func loginAction(phone:String, password:String){
-//        let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
-        let loginInfo = testLoginInfo
+        let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
+//        let loginInfo = testLoginInfo
         let loginInfoDic = try? loginInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "帳號密碼有誤", message: nil)
                 return
             }
-            if let data = data {
-                let json = NetworkManager.shared.dataToDictionary(data: data)
-                if let token = json["token"] as? String {
-                    CommonKey.shared.authToken = ""
-                    CommonKey.shared.authToken = token
-                    CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber = phone
-                    CurrentUserInfo.shared.currentAccountInfo.userPassword = password
-                    self.loginSuccess()
-                }
+            let json = NetworkManager.shared.dataToDictionary(data: data)
+            if let token = json["token"] as? String {
+                CommonKey.shared.authToken = ""
+                CommonKey.shared.authToken = token
+                CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber = phone
+                CurrentUserInfo.shared.currentAccountInfo.userPassword = password
+                self.loginSuccess()
             }
         }
     }
     
     @IBAction func login(_ sender:UIButton){
-//        var alertMsg = ""
+        var alertMsg = ""
         let phone = phoneTextfield.text
         let password = passwordTextfield.text
-//
-//        if phone == "" {
-//            alertMsg += "電話不能為空"
-//        } else if !validateCellPhone(text: phone!) {
-//            alertMsg += "電話格式不對"
-//        }
-//        alertMsg = removeWhitespace(from: alertMsg)
-//        guard alertMsg == "" else {
-//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
-//            return
-//        }
-//
-//        if password == "" {
-//            alertMsg += "密碼不能為空"
-//        }
-//        alertMsg = removeWhitespace(from: alertMsg)
-//        guard alertMsg == "" else {
-//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
-//            return
-//        }
+
+        if phone == "" {
+            alertMsg += "電話不能為空"
+        } else if !validateCellPhone(text: phone!) {
+            alertMsg += "電話格式不對"
+        }
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
+
+        if password == "" {
+            alertMsg += "密碼不能為空"
+        }
+        alertMsg = removeWhitespace(from: alertMsg)
+        guard alertMsg == "" else {
+            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            return
+        }
 
         loginAction(phone: phone!, password: password!)
         

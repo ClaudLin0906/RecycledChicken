@@ -66,20 +66,19 @@ class ADView: UIView, NibOwnerLoadable {
         self.removeFromSuperview()
     }
     
-//    private func isFinishAction() {
-//        var newTaskInfo = cell?.taskInfo
-//        newTaskInfo?.isFinish = true
-//        cell?.taskInfo = newTaskInfo
-//        cell?.finishAction()
-//    }
-//    
-//    private func taskAction(){
-//        if let urlStr = taskInfo?.url, let url = URL(string: urlStr) {
-//            let request = URLRequest(url: url)
-//            webviewLoadAction(request)
-//            countdownLabel.isHidden = false
-//        }
-//    }
+    private func isFinishAction() {
+        var newTaskInfo = cell?.taskInfo
+        cell?.taskInfo = newTaskInfo
+        cell?.finishAction()
+    }
+    
+    private func taskAction(){
+        if let urlStr = taskInfo?.url, let url = URL(string: urlStr) {
+            let request = URLRequest(url: url)
+            webviewLoadAction(request)
+            countdownLabel.isHidden = false
+        }
+    }
     
     private func webviewLoadAction(_ request:URLRequest) {
         
@@ -136,7 +135,7 @@ extension ADView: WKNavigationDelegate {
                     closeBtn.isHidden = false
                     countdownTimer?.invalidate()
                     countdownTimer = nil
-//                    isFinishAction()
+                    isFinishAction()
                 }
             })
             RunLoop.main.add(countdownTimer!, forMode: .common)

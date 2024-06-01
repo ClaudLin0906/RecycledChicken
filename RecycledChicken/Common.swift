@@ -251,6 +251,7 @@ class UserDefaultKey {
     let threeFillRightChickenOfColorFillTypeFourView = "threeFillRightChickenOfColorFillTypeFourView"
     let isFirstProduct = "isFirstProduct"
     let oldChickenLevel = "oldChickenLevel"
+    let finishTasks = "finishTasks"
 }
 
 class CurrentUserInfo {
@@ -320,7 +321,7 @@ struct APIUrl {
     static let smsCertificate = "/smsCertificate"
     static let getAd = "/getAd"
     static let getNotification = "/getNotification"
-    static let quest = "/quest"
+    static let quest = "/quest/complete"
     static let getQuestStatus = "/getQuestStatus"
     static let taskAD = "https://www.buenopartners.com.tw/recyclepunk"
     static let delete = "/delete"
@@ -1030,6 +1031,7 @@ struct RecycleDetails:Codable {
     var bottle:Int?
     var colorlessBottle:Int?
     var can:Int?
+    var cup:Int?
 }
 
 struct ApiResult:Codable {
