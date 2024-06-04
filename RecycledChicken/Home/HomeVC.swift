@@ -106,7 +106,22 @@ class HomeVC: CustomRootVC {
         super.viewWillAppear(animated)
         if FirstTime && LoginSuccess {
             FirstTime = false
-            showADBannerView()
+            getPopUpData { imageURLs in
+                DispatchQueue.main.async {
+                    let adbannerView = ADBannerView(frame: UIScreen.main.bounds)
+                    adbannerView.imageURLs.append(contentsOf: imageURLs)
+                    Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+                        adbannerView.changeBanner()
+                    }
+                    keyWindow?.addSubview(adbannerView)
+                }
+            }
+            getADBannerInfos {
+                DispatchQueue.main.async { [self] in
+                    pageControl.numberOfPages = adBannerInfos.count
+                    bannerCollectionView.reloadData()
+                }
+            }
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
     }
@@ -145,24 +160,27 @@ class HomeVC: CustomRootVC {
         }
     }
     
-    private func showADBannerView() {
+    private func getPopUpData(completion: @escaping ([String]) -> Void) {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getPopBanner, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                print(errorMSG?.localized ?? "something error")
+                return
+            }
+            if let imageURLs = try? JSONDecoder().decode([String].self, from: data) {
+                completion(imageURLs)
+            }
+        }
+    }
+    
+    private func getADBannerInfos(completion: @escaping () -> Void) {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAdBanner, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 print(errorMSG?.localized ?? "something error")
                 return
             }
             if let adBannerInfos = try? JSONDecoder().decode([ADBannerInfo].self, from: data) {
-                let adbannerView = ADBannerView(frame: UIScreen.main.bounds)
-                adbannerView.adBannerInfos.append(contentsOf: adBannerInfos)
-                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
-                    adbannerView.changeBanner()
-                }
-                keyWindow?.addSubview(adbannerView)
                 self.adBannerInfos.append(contentsOf: adBannerInfos)
-                DispatchQueue.main.async {
-                    self.pageControl.numberOfPages = adBannerInfos.count
-                    self.bannerCollectionView.reloadData()
-                }
+                completion()
             }
         }
     }

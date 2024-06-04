@@ -344,6 +344,7 @@ struct APIUrl {
     static let havingLottery = "/lottery/bought"
     static let havingCoupons = "/coupons/bought"
     static let enterActivityCode = "/user/enterActivityCode"
+    static let getPopBanner = "/ad/popup"
 }
 
 struct WebViewUrl {

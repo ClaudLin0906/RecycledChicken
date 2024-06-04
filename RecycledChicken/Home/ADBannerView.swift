@@ -24,7 +24,14 @@ class ADBannerView: UIView, NibOwnerLoadable {
     
 //    private var bannerCount:Int = 4
     
-    var adBannerInfos:[ADBannerInfo] = []
+//    var adBannerInfos:[ADBannerInfo] = []
+    
+    var imageURLs:[String] = []
+    {
+        willSet {
+            pageControl.numberOfPages = newValue.count
+        }
+    }
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -60,7 +67,6 @@ class ADBannerView: UIView, NibOwnerLoadable {
         collectionViewFlowLayout.minimumLineSpacing = 0
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         pageControl.currentPage = currentIndex
-        pageControl.numberOfPages = adBannerInfos.count
         currentIndexSubject
             .sink { [weak self] index in
                 self?.pageControl.currentPage = index
@@ -84,13 +90,13 @@ class ADBannerView: UIView, NibOwnerLoadable {
     }
     
     func changeBanner(_ changeIndex:Int = 1) {
-        guard adBannerInfos.count > 0 else { return }
+        guard imageURLs.count > 0 else { return }
         currentIndex += changeIndex
-        if currentIndex > (adBannerInfos.count - 1) {
+        if currentIndex > (imageURLs.count - 1) {
             currentIndex = 0
         }
         if currentIndex < 0 {
-            currentIndex = adBannerInfos.count - 1
+            currentIndex = imageURLs.count - 1
         }
         currentIndexSubject.send(currentIndex)
     }
@@ -101,12 +107,13 @@ class ADBannerView: UIView, NibOwnerLoadable {
 extension ADBannerView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        adBannerInfos.count
+        imageURLs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADBannerCollectionViewCell", for: indexPath) as! ADBannerCollectionViewCell
-        cell.setCell(adBannerInfos[indexPath.row])
+//        cell.setCell(adBannerInfos[indexPath.row])
+        cell.setCell(imageURLs[indexPath.row])
         return cell
     }
     

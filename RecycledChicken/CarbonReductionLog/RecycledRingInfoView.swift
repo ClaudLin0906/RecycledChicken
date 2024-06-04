@@ -23,7 +23,7 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     
     private var info:RecyceledSort?
     
-    private var personalRecyleAmountAndTargetInfo:PersonalRecyleAmountAndTargetInfo?
+    private var personalRecyleAmountAndTargetInfo:PersonalRecycleAmountAndTargetInfo?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,7 +50,7 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     
     
     
-    func setRecycledRingInfo(_ info:RecyceledSort, personalRecyleAmountAndTargetInfo:PersonalRecyleAmountAndTargetInfo, _ count:Int) {
+    func setRecycledRingInfo(_ info:RecyceledSort, personalRecyleAmountAndTargetInfo:PersonalRecycleAmountAndTargetInfo, _ count:Int) {
         self.info = info
         self.personalRecyleAmountAndTargetInfo = personalRecyleAmountAndTargetInfo
         if let totalRecycled = self.personalRecyleAmountAndTargetInfo?.totalRecycled, let target = personalRecyleAmountAndTargetInfo.target, let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate {

@@ -78,7 +78,7 @@ class CarbonReductionLogVC: CustomVC {
     
     private var carbonReductionLogInfo:CarbonReductionLogInfo?
     
-    private var currentPersonalRecyleAmountAndTargetInfo:PersonalRecyleAmountAndTargetInfo?
+    private var currentPersonalRecyleAmountAndTargetInfo:PersonalRecycleAmountAndTargetInfo?
     
     private lazy var itemDropDown:DropDown = {
         let dropDown = DropDown()
@@ -111,7 +111,7 @@ class CarbonReductionLogVC: CustomVC {
         getCarbonReductionRecords(completion: { [self] in
             guard let carbonReductionLogInfo = self.carbonReductionLogInfo else { return }
             var itemNames:[String] = []
-            carbonReductionLogInfo.personalRecyleAmountAndTarget?.forEach({ if let itemName = $0.itemName {
+            carbonReductionLogInfo.personalRecycleAmountAndTarget?.forEach({ if let itemName = $0.itemName {
                 itemNames.append(itemName)
                 currentPersonalRecyleAmountAndTargetInfo = $0
             }})
@@ -188,7 +188,7 @@ class CarbonReductionLogVC: CustomVC {
         itemDropDown.selectionAction = { [self] (index, item) in
             guard let carbonReductionLogInfo = carbonReductionLogInfo else { return }
             currentPersonalRecyleAmountAndTargetInfo = nil
-            currentPersonalRecyleAmountAndTargetInfo = carbonReductionLogInfo.personalRecyleAmountAndTarget?.first(where: { personalRecyleAmountAndTargetInfo in
+            currentPersonalRecyleAmountAndTargetInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first(where: { personalRecyleAmountAndTargetInfo in
                 if let itemName = personalRecyleAmountAndTargetInfo.itemName {
                     return itemName == item
                 }
@@ -208,11 +208,11 @@ class CarbonReductionLogVC: CustomVC {
     
     private func getCarbonReductionRecords(completion: @escaping () -> Void) {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.carbonReductionRecords, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard statusCode == 200 else {
+            guard let data = data,statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let carbonReductionLogInfo = try? JSONDecoder().decode(CarbonReductionLogInfo.self, from: data) {
+            if let carbonReductionLogInfo = try? JSONDecoder().decode(CarbonReductionLogInfo.self, from: data) {
                 self.carbonReductionLogInfo = nil
                 self.carbonReductionLogInfo = carbonReductionLogInfo
                 completion()

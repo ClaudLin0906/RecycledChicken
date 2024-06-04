@@ -14,22 +14,22 @@ protocol ColorFillTypeDelegate {
 }
 
 struct CarbonReductionLogInfo: Codable {
-    var personalRecyleAmountAndTarget:[PersonalRecyleAmountAndTargetInfo]?
+    var personalRecycleAmountAndTarget:[PersonalRecycleAmountAndTargetInfo]?
     var fix:FixInfo?
     
     enum CodingKeys:String, CodingKey {
-        case personalRecyleAmountAndTarget = "personalRecyleAmountAndTarget"
+        case personalRecycleAmountAndTarget = "personalRecycleAmountAndTarget"
         case fix = "fix"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        personalRecyleAmountAndTarget = try? container.decodeIfPresent([PersonalRecyleAmountAndTargetInfo].self, forKey: .personalRecyleAmountAndTarget)
+        personalRecycleAmountAndTarget = try? container.decodeIfPresent([PersonalRecycleAmountAndTargetInfo].self, forKey: .personalRecycleAmountAndTarget)
         fix = try? container.decodeIfPresent(FixInfo.self, forKey: .fix)
     }
 }
 
-struct PersonalRecyleAmountAndTargetInfo: Codable  {
+struct PersonalRecycleAmountAndTargetInfo: Codable  {
     
     var itemName:String?
     var target:Int?

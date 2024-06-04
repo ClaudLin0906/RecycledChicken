@@ -45,3 +45,4 @@ struct ItemInfo: Codable {
         productLink = try? container.decodeIfPresent(String.self, forKey: .productLink)
     }
 }
+

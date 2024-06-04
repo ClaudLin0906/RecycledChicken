@@ -21,5 +21,11 @@ class ADBannerCollectionViewCell: UICollectionViewCell {
             imageView.kf.setImage(with: url)
         }
     }
+    
+    func setCell(_ imageURL:String) {
+        if let url = URL(string: imageURL) {
+            imageView.kf.setImage(with: url)
+        }
+    }
 
 }
