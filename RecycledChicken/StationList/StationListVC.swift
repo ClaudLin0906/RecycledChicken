@@ -218,16 +218,10 @@ class StationListVC: CustomVC {
         if let text = textfield.text, text != "" {
             filterText(text)
         } else {
+            filterMapInfos.removeAll()
             filterMapInfos.append(contentsOf: mapInfos)
         }
         tableView.reloadData()
-    }
-    
-    private func getNumberOfRowsInSection() -> Int {
-        if filterMapInfos.count > 5 {
-            return 5
-        }
-        return filterMapInfos.count
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {
@@ -262,7 +256,7 @@ extension StationListVC: SkeletonTableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        getNumberOfRowsInSection()
+        filterMapInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
