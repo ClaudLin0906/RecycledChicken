@@ -30,7 +30,6 @@ class StationListVC: CustomVC {
     {
         willSet {
             if newValue != nil {
-                sortDisance()
                 addDropDownData()
                 tableView.reloadData()
             }
@@ -65,6 +64,11 @@ class StationListVC: CustomVC {
         setupAreaDropDown()
     }
     
+    private func sortDisanceAction() {
+        sortDisance()
+        filterMapInfos.append(contentsOf: mapInfos)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
@@ -87,25 +91,31 @@ class StationListVC: CustomVC {
         areasDropDown.selectionAction = { [self] (index, item) in
             dropDownView.setDefaultTitle(areas[index])
             filterMapInfos.removeAll()
-            filterMapInfos = mapInfos.filter({ mapInfo in
-                if let address = mapInfo.address, address.contains(areas[index]) {
-                    return true
-                }
-                return false
-            })
+            if index == 0 {
+                filterMapInfos = mapInfos
+            }
+            if index != 0 {
+                filterMapInfos = mapInfos.filter({ mapInfo in
+                    if let address = mapInfo.address, address.contains(areas[index]) {
+                        return true
+                    }
+                    return false
+                })
+            }
             tableView.reloadData()
         }
     }
     
     private func sortDisance() {
-        guard let currentLocation = currentLocation else { return }
+        guard let currentLocation = currentLocation, mapInfos.count > 0 else { return }
         var newMapInfos:[MapInfo] = []
         newMapInfos = mapInfos.sorted(by: { mapInfo1, mapInfo2 in
             guard let coordinate1 = getLocation(mapInfo1), let coordinate2 = getLocation(mapInfo2) else { return false }
             let distance1 = coordinate1.distance(from: currentLocation)
             let distance2 = coordinate2.distance(from: currentLocation)
-            return distance1 > distance2
+            return distance1 < distance2
         })
+        self.mapInfos.removeAll()
         if newMapInfos.count > 5 {
             mapInfos.append(contentsOf: newMapInfos.prefix(5))
         }
@@ -117,6 +127,7 @@ class StationListVC: CustomVC {
     
     private func addDropDownData() {
         self.areasDropDown.dataSource.removeAll()
+        self.areas.removeAll()
         var newAreaMapInfo:[MapInfo] = []
         if self.filterMapInfos.count > 5 {
             newAreaMapInfo.append(contentsOf: self.filterMapInfos.prefix(5))
@@ -128,6 +139,8 @@ class StationListVC: CustomVC {
                 self.areas.append(area)
             }
         })
+        self.areas = Array(Set(self.areas))
+        self.areas.insert("地區選擇", at: 0)
         self.areasDropDown.dataSource.append(contentsOf: self.areas)
     }
     
@@ -164,7 +177,7 @@ class StationListVC: CustomVC {
                 self.filterMapInfos.removeAll()
                 self.areasDropDown.dataSource.removeAll()
                 self.mapInfos = mapInfos
-                self.filterMapInfos.append(contentsOf: mapInfos)
+                self.sortDisanceAction()
                 self.addDropDownData()
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -268,6 +281,7 @@ extension StationListVC:CLLocationManagerDelegate {
         if let location = locations.last {
             currentLocation = location
             locationManager.stopUpdatingLocation()
+            sortDisanceAction()
         }
     }
 
