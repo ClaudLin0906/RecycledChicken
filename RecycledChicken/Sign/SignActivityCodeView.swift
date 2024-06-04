@@ -35,6 +35,12 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         let attributes: [NSAttributedString.Key: Any] = [ .font: activityCodeTextField.font?.withSize(15), .foregroundColor:placeHolderColor]
         let attributedPlaceholder = NSAttributedString(string: activityCodeTextField.placeholder ?? "", attributes: attributes)
         activityCodeTextField.attributedPlaceholder = attributedPlaceholder
+        let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
+        self.addGestureRecognizer(closeTap)
+    }
+    
+    @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
+        self.endEditing(true)
     }
     
     private func showErrorMSG(_ error:String) {
