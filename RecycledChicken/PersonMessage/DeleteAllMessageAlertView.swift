@@ -35,6 +35,7 @@ class DeleteAllMessageAlertView: UIView, NibOwnerLoadable {
 
     @IBAction func confirm(_ sender:CustomButton) {
         delegate?.deleteAllMessage()
+        removeFromSuperview()
     }
     
     @IBAction func cancel(_ sender:CustomButton) {

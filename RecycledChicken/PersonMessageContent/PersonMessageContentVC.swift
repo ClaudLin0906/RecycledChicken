@@ -68,12 +68,19 @@ extension PersonMessageContentVC: DeleteMessageContentAlertViewDelegate {
             }
         }
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete, parametersArray: personMessageInfosDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard statusCode == 200 else {
+            guard statusCode == 200, let data = data else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let personMessageInfos = try? JSONDecoder().decode([PersonMessageInfo].self, from: data) {
-                
+            if let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data), let status = apiResult.status {
+                switch status {
+                case .success:
+                    if let navigationController = self.navigationController {
+                        navigationController.popViewController(animated: true)
+                    }
+                case .failure:
+                    showAlert(VC: self, title: apiResult.message ?? "")
+                }
             }
         }
     }
