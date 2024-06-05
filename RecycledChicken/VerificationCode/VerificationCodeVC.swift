@@ -133,13 +133,13 @@ class VerificationCodeVC: CustomLoginVC {
                 return
             }
             DispatchQueue.main.async {
-                let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
-                signActivityCodeView.delegate = self
-                keyWindow?.addSubview(signActivityCodeView)
-//                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
-//                    self.goToLoginVC()
-//                }
-//                showAlert(VC: self, title: "註冊成功, 請重新登入", alertAction: alertAction)
+//                let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
+//                signActivityCodeView.delegate = self
+//                keyWindow?.addSubview(signActivityCodeView)
+                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
+                    self.goToLoginVC()
+                }
+                showAlert(VC: self, title: "註冊成功, 請重新登入", alertAction: alertAction)
             }
         }
     }

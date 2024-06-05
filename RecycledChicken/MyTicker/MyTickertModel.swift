@@ -43,40 +43,42 @@ struct MyTickertLotteryInfo:Codable {
 }
 
 struct MyTickertCouponsInfo:Codable {
+    var name:String?
     var code:String?
     var reward:Int?
-    var userID:String?
     var data:String?
+    var instruction:String?
     var buyTime:String?
     var point:Int?
     var picture:String?
-    var name:String?
     var expire:String?
-    
+    var link:String?
 
     enum CodingKeys:String, CodingKey {
         case code = "code"
         case reward = "reward"
-        case userID = "userID"
+        case instruction = "instruction"
         case data = "data"
         case buyTime = "buyTime"
         case point = "point"
         case picture = "picture"
         case name = "name"
         case expire = "expire"
+        case link = "link"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         code = try? container.decodeIfPresent(String.self, forKey: .code)
         reward = try? container.decodeIfPresent(Int.self, forKey: .reward)
-        userID = try? container.decodeIfPresent(String.self, forKey: .userID)
+        instruction = try? container.decodeIfPresent(String.self, forKey: .instruction)
         data = try? container.decodeIfPresent(String.self, forKey: .data)
         buyTime = try? container.decodeIfPresent(String.self, forKey: .buyTime)
         point = try? container.decodeIfPresent(Int.self, forKey: .point)
         picture = try? container.decodeIfPresent(String.self, forKey: .picture)
         name = try? container.decodeIfPresent(String.self, forKey: .name)
         expire = try? container.decodeIfPresent(String.self, forKey: .expire)
+        link = try? container.decodeIfPresent(String.self, forKey: .link)
     }
 }
 

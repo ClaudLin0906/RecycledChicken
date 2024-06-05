@@ -38,14 +38,14 @@ class MyTickerVC: CustomVC {
     }
     
     private func getVoucherData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingCoupons, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingCoupons, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard statusCode == 200, let data = data else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let myTickertCouponsInfo = try? JSONDecoder().decode([MyTickertCouponsInfo].self, from: data) {
+            if let myTickertCouponsInfos = try? JSONDecoder().decode([MyTickertCouponsInfo].self, from: data) {
                 self.myVoucherInfos.removeAll()
-                self.myVoucherInfos.append(contentsOf: myTickertCouponsInfo)
+                self.myVoucherInfos.append(contentsOf: myTickertCouponsInfos)
                 DispatchQueue.main.async {
                     self.voucherTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -116,27 +116,25 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == voucherTableView {
             let row = indexPath.row
             let myVoucherInfo = myVoucherInfos[row]
-            if let code = myVoucherInfo.code, code != "" {
-                let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
-                cell.setCell(myVoucherInfo)
-                return cell
-            }else {
+            if let link = myVoucherInfo.link {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
                 cell.setCell(myVoucherInfo)
                 return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
+                cell.setCell(myVoucherInfo)
+                return cell
             }
-//            if indexPath.row % 2 == 0 {
-//                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
-//        //        cell.setCell(myTickertInfos[indexPath.row])
-//                return cell
-//            }
-//            
-//            if indexPath.row % 2 == 1 {
+            
+//            if let code = myVoucherInfo.code, code != "" {
 //                let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
-//        //        cell.setCell(myTickertInfos[indexPath.row])
+//                cell.setCell(myVoucherInfo)
+//                return cell
+//            }else {
+//                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
+//                cell.setCell(myVoucherInfo)
 //                return cell
 //            }
-
         }
         return UITableViewCell()
     }

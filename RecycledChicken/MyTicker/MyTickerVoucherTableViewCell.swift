@@ -17,6 +17,10 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
     
     @IBOutlet weak var duringTimeLabel: CustomLabel!
     
+    @IBOutlet weak var instructionLabel: CustomLabel!
+    
+    private var info:MyTickertCouponsInfo?
+    
     private var imageURL:URL?
     {
         willSet {
@@ -49,6 +53,17 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    private var instruction:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    instructionLabel.text = newValue
+                }
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,8 +76,16 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func btnOnClick(_ sender:UIButton) {
+        guard let info = info, let link = info.link, let url = URL(string: link) else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     func setCell(_ info:MyTickertCouponsInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            self.info = info
             if let pictureStr = info.picture, let pictureURL = URL(string: pictureStr) {
                 self.imageURL = pictureURL
             }
@@ -71,6 +94,9 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
             }
             if let expire = info.expire {
                 self.duringTime = "使用期限至 \(expire)"
+            }
+            if let instruction = info.instruction {
+                self.instruction = instruction
             }
         }
     }

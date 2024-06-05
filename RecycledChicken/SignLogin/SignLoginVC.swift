@@ -25,13 +25,18 @@ class SignLoginVC: CustomLoginVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        showUpdateAppAlertView()
+//        showUpdateAppAlertView()
+        checkVersion()
     }
     
     private func showUpdateAppAlertView() {
 //        let colorFillTypeTwoView = ColorFillTypeTwoView(frame:  UIScreen.main.bounds)
         let updateAppAlertView = UpdateAppAlertView(frame: UIScreen.main.bounds)
         keyWindow?.addSubview(updateAppAlertView)
+    }
+    
+    private func checkVersion() {
+        
     }
 
     private func UIInit(){
