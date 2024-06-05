@@ -13,9 +13,13 @@ class IllustratedGuideVC: CustomVC {
     
     private var tableViewDatas:[IllustratedGuideTableData] = {
         var illustratedGuideTableDatas:[IllustratedGuideTableData] = []
-        IllustratedGuideModelLevel.allCases.forEach({
-            illustratedGuideTableDatas.append(IllustratedGuideTableData(illustratedGuideModelLevel: $0))
-        })
+        IllustratedGuideModelLevel.allCases.forEach { illustratedGuideModelLevel in
+            var isRead = false
+            if let profileInfo = CurrentUserInfo.shared.currentProfileNewInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.progress, level >= getIllustratedGuide(illustratedGuideModelLevel).level {
+                isRead = true
+            }
+            illustratedGuideTableDatas.append( IllustratedGuideTableData(illustratedGuideModelLevel: illustratedGuideModelLevel, isRead: isRead))
+        }
         return illustratedGuideTableDatas
     }()
 
@@ -38,6 +42,7 @@ class IllustratedGuideVC: CustomVC {
 
 extension IllustratedGuideVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard tableViewDatas[indexPath.row].isRead else { return }
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "IllustratedContent", bundle: Bundle.main).instantiateViewController(identifier: "IllustratedContent") as? IllustratedContentVC {
             VC.illustratedGuideModelLevel = tableViewDatas[indexPath.row].illustratedGuideModelLevel
             pushVC(targetVC: VC, navigation: navigationController)

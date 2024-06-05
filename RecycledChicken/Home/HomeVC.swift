@@ -154,6 +154,7 @@ class HomeVC: CustomRootVC {
                 return
             }
             if let itemInfos = try? JSONDecoder().decode([ItemInfo].self, from: data) {
+                self.itemInfos.removeAll()
                 self.itemInfos.append(contentsOf: itemInfos)
                 DispatchQueue.main.async {
                     self.mallHeight.constant = CGFloat(itemInfos.count / 3 * 150) + 70
@@ -391,6 +392,13 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mallCollectionView {
             let row = indexPath.row
+            let itemInfo = itemInfos[row]
+            if let productLink = itemInfo.productLink, let productUrl = URL(string: productLink) {
+                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "MallProduct", bundle: Bundle.main).instantiateViewController(identifier: "MallProduct") as? MallProductVC {
+                    VC.setProductURL(productUrl)
+                    pushVC(targetVC: VC, navigation: navigationController)
+                }
+            }
         }
     }
     

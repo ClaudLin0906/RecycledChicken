@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2537419B2C103F8500FA0933 /* MallProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537419A2C103F8500FA0933 /* MallProductVC.swift */; };
+		2537419D2C103FB900FA0933 /* MallProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2537419C2C103FB900FA0933 /* MallProduct.storyboard */; };
 		331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */; };
 		331E77B52BFCC383002F6B0D /* IllustratedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */; };
 		331E77B72BFCC38F002F6B0D /* IllustratedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */; };
@@ -292,6 +294,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2537419A2C103F8500FA0933 /* MallProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallProductVC.swift; sourceTree = "<group>"; };
+		2537419C2C103FB900FA0933 /* MallProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MallProduct.storyboard; sourceTree = "<group>"; };
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
 		331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedContentVC.swift; sourceTree = "<group>"; };
 		331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedContent.storyboard; sourceTree = "<group>"; };
@@ -810,6 +814,8 @@
 				59600F092B9EE5EF009AFA76 /* ADBannerView.xib */,
 				5985D6C12B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift */,
 				5985D6C22B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib */,
+				2537419A2C103F8500FA0933 /* MallProductVC.swift */,
+				2537419C2C103FB900FA0933 /* MallProduct.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1414,6 +1420,7 @@
 				59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */,
 				59600EBF2B9EE34C009AFA76 /* Profile.storyboard in Resources */,
 				59600F4F2B9EEDF4009AFA76 /* IllustratedGuide.storyboard in Resources */,
+				2537419D2C103FB900FA0933 /* MallProduct.storyboard in Resources */,
 				59600E932B9EE1EE009AFA76 /* Login.storyboard in Resources */,
 				59600F7B2B9EEFD3009AFA76 /* CompeleteSignUpView.xib in Resources */,
 				59600F6F2B9EEF9C009AFA76 /* SpendPointAlertView.xib in Resources */,
@@ -1615,6 +1622,7 @@
 				5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */,
 				5996ADF72B89D32100D6F6CF /* DeleteMessageAlertView.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
+				2537419B2C103F8500FA0933 /* MallProductVC.swift in Sources */,
 				597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */,
 				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,
 				59632D442B8B15660093BE6E /* InvitationCodeView.swift in Sources */,
