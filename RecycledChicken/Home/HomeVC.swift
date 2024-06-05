@@ -385,6 +385,12 @@ class HomeVC: CustomRootVC {
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == mallCollectionView {
+            let row = indexPath.row
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == bannerCollectionView {
