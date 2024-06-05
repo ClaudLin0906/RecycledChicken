@@ -103,12 +103,20 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
             var startTime:String?
             var endTime:String?
             if let eventStartTime = commodityVoucherInfo.start {
-                let activityStartTimeDate = dateFromString(eventStartTime)
-                startTime = getDates(i: 0, currentDate: activityStartTimeDate!).0
+                if let activityStartTimeDate = dateFromString(eventStartTime) {
+                    startTime = getDates(i: 0, currentDate: activityStartTimeDate).0
+                }else{
+                    startTime = eventStartTime
+                }
+                
             }
             if let eventEndTime = commodityVoucherInfo.end {
-                let activityEndTimeDate = dateFromString(eventEndTime)
-                endTime = getDates(i: 0, currentDate: activityEndTimeDate!).0
+                if let activityEndTimeDate = dateFromString(eventEndTime) {
+                    endTime = getDates(i: 0, currentDate: activityEndTimeDate).0
+                }else{
+                    endTime = eventEndTime
+                }
+                
             }
             
             if let startTime = startTime, let endTime = endTime {

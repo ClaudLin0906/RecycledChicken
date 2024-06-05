@@ -93,7 +93,7 @@ class PointRecordVC: CustomVC {
                 if index == 0 {
                     return true
                 }
-                if let dateString = pointRecord.time,  let date = dateFromString(dateString) {
+                if let dateString = pointRecord.time, let date = dateFromString(dateString) {
                     let month =  Calendar.current.component(.month, from: date)
                     return month == index
                 }
