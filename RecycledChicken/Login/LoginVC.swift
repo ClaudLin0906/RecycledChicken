@@ -62,7 +62,7 @@ class LoginVC: CustomLoginVC {
                     self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
                 }
             }
-        }else if keepLogin {
+        } else if keepLogin {
             let accountInfo = CurrentUserInfo.shared.currentAccountInfo
             self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
         }
@@ -71,6 +71,15 @@ class LoginVC: CustomLoginVC {
     
     private func loginSuccess(){
         DispatchQueue.main.async { [self] in
+            if keepLoginCheckBox.checkState == .checked {
+                UserDefaults().set(true, forKey: UserDefaultKey.shared.biometrics)
+                if let accountInfo = try? CurrentUserInfo.shared.currentAccountInfo.jsonString {
+                    let _ = KeychainService.shared.saveJsonToKeychain(jsonString: accountInfo, account: KeyChainKey.shared.accountInfo)
+                }
+            }else{
+                removeBiometricsAction()
+            }
+
             LoginSuccess = true
             dismiss(animated: true)
         }
