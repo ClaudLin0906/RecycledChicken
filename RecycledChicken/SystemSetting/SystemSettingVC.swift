@@ -17,10 +17,10 @@ class SystemSettingVC: CustomVC {
     
     var switchTableViewInfos:[switchTableViewInfo] =
     [
-        switchTableViewInfo(title: "specialMissionNotifications".localized, isTrue: false),
-        switchTableViewInfo(title: "emailNotifications".localized, isTrue: true),
-        switchTableViewInfo(title: "recyclingMachineNotifications".localized, isTrue: true),
-        switchTableViewInfo(title: "biometricIdentification".localized, isTrue: UserDefaults().bool(forKey: UserDefaultKey.shared.biometrics))
+        switchTableViewInfo(title: "specialMissionNotifications".localized, isTrue: UserDefaults.standard.bool(forKey: UserDefaultKey.shared.isSubscribed))
+//        switchTableViewInfo(title: "emailNotifications".localized, isTrue: true),
+//        switchTableViewInfo(title: "recyclingMachineNotifications".localized, isTrue: true),
+//        switchTableViewInfo(title: "biometricIdentification".localized, isTrue: UserDefaults().bool(forKey: UserDefaultKey.shared.biometrics))
     ]
     
     var accountTableViewInfos:[accountTableViewInfo] =
@@ -115,16 +115,12 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
     func changeStatus(_ sender: UISwitch, tag: Int) {
         print(tag)
         switch tag {
-        case 3:
+        case 0:
             if sender.isOn {
-                evaluatePolicyAction { scanResult, scanMessage in
-                    UserDefaults().set(true, forKey: UserDefaultKey.shared.biometrics)
-                    if let accountInfo = try? CurrentUserInfo.shared.currentAccountInfo.jsonString {
-                        let _ = KeychainService.shared.saveJsonToKeychain(jsonString: accountInfo, account: KeyChainKey.shared.accountInfo)
-                    }
-                }
-            }else{
-                removeBiometricsAction()
+                messagingSubscribe()
+            }
+            if !sender.isOn {
+                messagingUnSubscribe()
             }
         default:
             break

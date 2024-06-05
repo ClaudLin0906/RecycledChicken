@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseMessaging
 import Combine
 class HomeVC: CustomRootVC {
         
@@ -83,8 +82,7 @@ class HomeVC: CustomRootVC {
                     trendChartImageView.image = image
                 }
                 self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
-                Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
-                }
+                messagingSubscribe()
                 self.updateCurrentDateInfo()
                 self.checkChickenLevel()
             }

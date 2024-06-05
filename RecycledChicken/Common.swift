@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import UserNotifications
+import FirebaseMessaging
 
 class Setting {
     static let shared = Setting()
@@ -251,6 +252,7 @@ class UserDefaultKey {
     let isFirstProduct = "isFirstProduct"
     let oldChickenLevel = "oldChickenLevel"
     let finishTasks = "finishTasks"
+    let isSubscribed = "isSubscribed"
 }
 
 class CurrentUserInfo {
@@ -983,6 +985,25 @@ func fadeInOutAni(showView:UIView, finishAction:(()->())?){
     }
 }
 
+func messagingSubscribe() {
+    Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
+        guard error == nil else {
+            print(error?.localizedDescription ?? "")
+            return
+        }
+        UserDefaults.standard.setValue(true, forKey: UserDefaultKey.shared.isSubscribed)
+    }
+}
+
+func messagingUnSubscribe() {
+    Messaging.messaging().unsubscribe(fromTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber){ error in
+        guard error == nil else {
+            print(error?.localizedDescription ?? "")
+            return
+        }
+        UserDefaults.standard.setValue(false, forKey: UserDefaultKey.shared.isSubscribed)
+    }
+}
 
 struct Certificates {
     
