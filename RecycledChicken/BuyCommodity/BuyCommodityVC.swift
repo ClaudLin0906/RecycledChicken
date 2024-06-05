@@ -55,7 +55,7 @@ extension BuyCommodityVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointInfoDic = try? info.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.couponsBuy, parameters: spendPointInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.couponsBuy, parameters: spendPointInfoDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
