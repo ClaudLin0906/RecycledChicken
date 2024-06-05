@@ -327,7 +327,7 @@ struct APIUrl {
     static let delete = "/delete"
     static let siteList = "https://www.buenopartners.com.tw/list"
     static let siteListEnglish = "https://www.buenopartners.com.tw/en/list"
-    static let mall = "https://tw.yahoo.com/"
+    static let mall = "https://www.buenocoop.com/"
     static let getAdBanner = "/ad/banner"
     static let profile = "/user/profile"
     static let items = "/shop/items"

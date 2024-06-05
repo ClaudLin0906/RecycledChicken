@@ -73,7 +73,6 @@ class StoreMapVC: CustomRootVC {
                 })
                 currentMapInfos = mapInfosData
                 addMarker(currentMapInfos)
-                
             }
         }
     }

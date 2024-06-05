@@ -14,7 +14,7 @@ struct ProfilePostInfo:Codable {
     var userBirth:String
     var systemType = "iOS"
     var systemVersion = UIDevice.current.systemVersion
-    var appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    var appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
 }
 
 struct ProfileNewInfo: Codable {
