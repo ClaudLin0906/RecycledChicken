@@ -160,20 +160,18 @@ class VerificationCodeVC: CustomLoginVC {
         let forgetPasswordInfo = info
         let forgetPasswordInfoDic = try? forgetPasswordInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.forgotPassword, parameters: forgetPasswordInfoDic) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data {
-                let completetChangePWDView = CompletetChangePWDView(frame: UIScreen.main.bounds)
-                fadeInOutAni(showView: completetChangePWDView) {
-                    let json = NetworkManager.shared.dataToDictionary(data: data)
-                    print(json)
-                    DispatchQueue.main.async { [self] in
-                        let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
-                        fadeInOutAni(showView: updatePasswordSuccessView) {
-                            self.goToLoginVC()
-                        }
+            let completetChangePWDView = CompletetChangePWDView(frame: UIScreen.main.bounds)
+            fadeInOutAni(showView: completetChangePWDView) {
+                let json = NetworkManager.shared.dataToDictionary(data: data)
+                print(json)
+                DispatchQueue.main.async { [self] in
+                    let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
+                    fadeInOutAni(showView: updatePasswordSuccessView) {
+                        self.goToLoginVC()
                     }
                 }
             }

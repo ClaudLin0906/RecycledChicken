@@ -61,11 +61,11 @@ class RecycleLogVC: CustomVC {
         let endTime = dateFromStringISO8601(date: Date())
         let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)&endTime=\(endTime)"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
+            if let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
                 let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
                 self.useRecordInfoHandle(useRecordInfos)
                 DispatchQueue.main.async {

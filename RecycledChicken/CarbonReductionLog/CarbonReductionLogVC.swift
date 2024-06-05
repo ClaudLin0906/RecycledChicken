@@ -238,7 +238,7 @@ class CarbonReductionLogVC: CustomVC {
         let endTime = dateFromStringISO8601(date: Date())
         let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)&endTime=\(endTime)"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { [self] (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
@@ -246,7 +246,7 @@ class CarbonReductionLogVC: CustomVC {
             bottleCount = 0
 //            colorlessBottleCount = 0
             canCount = 0
-            if let data = data, let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
+            if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
                 useRecordInfos.forEach { useRecordInfo in
                     if let recycleDetails = useRecordInfo.recycleDetails {
                         if let battery = recycleDetails.battery {

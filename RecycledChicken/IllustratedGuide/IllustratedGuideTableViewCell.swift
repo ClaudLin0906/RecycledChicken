@@ -47,7 +47,6 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        guideImageView.image = nil
     }
     
     func setCell(_ illustratedGuideTableData:IllustratedGuideTableData) {

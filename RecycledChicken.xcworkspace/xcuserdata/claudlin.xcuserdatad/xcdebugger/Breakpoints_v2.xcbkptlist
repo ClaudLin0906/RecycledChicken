@@ -14,10 +14,40 @@
             filePath = "RecycledChicken/IllustratedGuide/IllustratedGuideTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "leftBtnOnCilck(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9A855E6-BE91-436A-9E15-6EA35FEDBDCF - 2cbc183b04eae17f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.IllustratedGuideTableViewCell.leftBtnOnCilck(__C.UIButton) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/IllustratedGuide/IllustratedGuideTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83">
+               </Location>
+               <Location
+                  uuid = "C9A855E6-BE91-436A-9E15-6EA35FEDBDCF - 2cbc183b04eae19c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.IllustratedGuideTableViewCell.leftBtnOnCilck(__C.UIButton) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claudlin/Desktop/work/RecycledChicken/git/RecycledChicken/IllustratedGuide/IllustratedGuideTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
