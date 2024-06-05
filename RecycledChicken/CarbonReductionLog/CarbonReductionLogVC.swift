@@ -115,6 +115,7 @@ class CarbonReductionLogVC: CustomVC {
                 itemNames.append(itemName)
                 currentPersonalRecyleAmountAndTargetInfo = $0
             }})
+            itemDropDown.dataSource.removeAll()
             itemDropDown.dataSource.append(contentsOf: itemNames)
             dropDownView.sortLabel.text = itemNames[0]
             changeType()

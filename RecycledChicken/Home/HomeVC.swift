@@ -131,12 +131,9 @@ class HomeVC: CustomRootVC {
         guard let currentChickenLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel?.rawValue else { return }
         if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) != nil {
             let oldChickenLevel = UserDefaults().integer(forKey: UserDefaultKey.shared.oldChickenLevel)
-            if currentChickenLevel <= oldChickenLevel  {
+            if currentChickenLevel <= oldChickenLevel {
                 showChicken = false
             }
-        }
-        if currentChickenLevel <= 1 {
-            showChicken = false
         }
         if showChicken {
             let chickeIntroduceView = ChickeIntroduceView(frame: UIScreen.main.bounds)

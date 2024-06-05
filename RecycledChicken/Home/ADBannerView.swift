@@ -64,7 +64,7 @@ class ADBannerView: UIView, NibOwnerLoadable {
         collectionViewFlowLayout.itemSize = collectionView.frame.size
         collectionViewFlowLayout.estimatedItemSize = .zero
         collectionViewFlowLayout.minimumInteritemSpacing = 0
-        collectionViewFlowLayout.minimumLineSpacing = 0
+        collectionViewFlowLayout.minimumLineSpacing = 50
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         pageControl.currentPage = currentIndex
         currentIndexSubject
