@@ -47,35 +47,59 @@ class LotteryVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         getLotteryData()
-        getCouponsData()
+        getEventCouponsData()
+        getPartnerCouponsData()
     }
     
-    private func getCouponsData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.coupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
+    private func getPartnerCouponsData() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.partnerCoupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            activityVoucherInfos.removeAll()
             partnerMerchantsInfos.removeAll()
             if let commodityVoucherInfos = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: data) {
                 commodityVoucherInfos.forEach { commodityVoucherInfo in
                     guard let category = commodityVoucherInfo.category else { return }
                     switch category {
-                    case .ticket:
-                        break
-                    case .event:
-                        activityVoucherInfos.append(commodityVoucherInfo)
                     case .partner:
                         partnerMerchantsInfos.append(commodityVoucherInfo)
+                    default:
+                        break
+                    }
+                }
+                DispatchQueue.main.async { [self] in
+                    partnerMerchantsTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
+                        partnerMerchantsTableView.stopSkeletonAnimation()
+                        view.hideSkeleton()
+                    })
+                }
+            }
+        }
+    }
+    
+    private func getEventCouponsData() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.eventCoupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+            activityVoucherInfos.removeAll()
+            if let commodityVoucherInfos = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: data) {
+                commodityVoucherInfos.forEach { commodityVoucherInfo in
+                    guard let category = commodityVoucherInfo.category else { return }
+                    switch category {
+                    case .event:
+                        activityVoucherInfos.append(commodityVoucherInfo)
+                    default:
+                        break
                     }
                 }
                 DispatchQueue.main.async { [self] in
                     activityVoucherTableView.reloadData()
-                    partnerMerchantsTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
                         activityVoucherTableView.stopSkeletonAnimation()
-                        partnerMerchantsTableView.stopSkeletonAnimation()
                         view.hideSkeleton()
                     })
                 }
@@ -154,9 +178,16 @@ extension LotteryVC: UITableViewDelegate {
             }
         }
 
-        if tableView == activityVoucherTableView || tableView == partnerMerchantsTableView  {
+        if tableView == activityVoucherTableView {
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
                 VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
+        }
+        
+        if tableView == partnerMerchantsTableView  {
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+                VC.commodityVoucherInfo = partnerMerchantsInfos[indexPath.row]
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         }

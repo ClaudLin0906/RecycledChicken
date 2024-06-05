@@ -34,7 +34,7 @@ class CommodityVoucherVC: CustomVC {
     }
     
     private func getCouponsData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.coupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.ticketCoupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
