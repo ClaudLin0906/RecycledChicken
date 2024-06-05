@@ -31,9 +31,7 @@ class LoginVC: CustomLoginVC {
     private var testLoginInfo:AccountInfo = AccountInfo(userPhoneNumber: "0912345678", userPassword: "test123")
             
     @UserDefault(UserDefaultKey.shared.biometrics, defaultValue: false) var biometrics:Bool
-    
-    @UserDefault(UserDefaultKey.shared.keepLogin, defaultValue: false) var keepLogin:Bool
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -56,17 +54,18 @@ class LoginVC: CustomLoginVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if biometrics {
+            keepLoginCheckBox.checkState = .checked
             evaluatePolicyAction { result, message in
                 if result {
-                    let accountInfo = CurrentUserInfo.shared.currentAccountInfo
-                    self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
+                    DispatchQueue.main.async {
+                        let accountInfo = CurrentUserInfo.shared.currentAccountInfo
+                        self.phoneTextfield.text = accountInfo.userPhoneNumber
+                        self.passwordTextfield.text = accountInfo.userPassword
+                        self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
+                    }
                 }
             }
-        } else if keepLogin {
-            let accountInfo = CurrentUserInfo.shared.currentAccountInfo
-            self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
         }
-        
     }
     
     private func loginSuccess(){

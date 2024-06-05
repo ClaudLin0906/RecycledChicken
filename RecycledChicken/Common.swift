@@ -197,7 +197,6 @@ class KeyChainKey {
 class UserDefaultKey {
     static let shared = UserDefaultKey()
     let biometrics = "biometrics"
-    let keepLogin = "keepLogin"
     let displayToday = "displayToday"
     let colorFillTypeOne = "colorFillTypeOne"
     let colorFillTypeThree = "colorFillTypeThree"
