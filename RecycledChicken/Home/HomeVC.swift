@@ -129,12 +129,18 @@ class HomeVC: CustomRootVC {
     private func checkChickenLevel() {
         var showChicken = true
         guard let currentChickenLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel?.rawValue else { return }
+        
         if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) != nil {
             let oldChickenLevel = UserDefaults().integer(forKey: UserDefaultKey.shared.oldChickenLevel)
             if currentChickenLevel <= oldChickenLevel {
                 showChicken = false
             }
         }
+        
+        if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) == nil {
+            UserDefaults().set(currentChickenLevel, forKey: UserDefaultKey.shared.oldChickenLevel)
+        }
+        
         if showChicken {
             let chickeIntroduceView = ChickeIntroduceView(frame: UIScreen.main.bounds)
             fadeInOutAni(showView: chickeIntroduceView, finishAction: nil)
@@ -150,7 +156,7 @@ class HomeVC: CustomRootVC {
             if let itemInfos = try? JSONDecoder().decode([ItemInfo].self, from: data) {
                 self.itemInfos.append(contentsOf: itemInfos)
                 DispatchQueue.main.async {
-                    self.mallHeight.constant = CGFloat(itemInfos.count / 3 * 120) + 70
+                    self.mallHeight.constant = CGFloat(itemInfos.count / 3 * 150) + 70
                     self.mallCollectionView.reloadData()
                 }
             }
