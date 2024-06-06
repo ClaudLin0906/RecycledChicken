@@ -322,7 +322,7 @@ struct APIUrl {
     static let smsCertificate = "/smsCertificate"
     static let getAd = "/getAd"
     static let getNotification = "/getNotification"
-    static let quest = "/quest/complete"
+    static let quest = "/quest"
     static let getQuestStatus = "/getQuestStatus"
     static let taskAD = "https://www.buenopartners.com.tw/recyclepunk"
     static let delete = "/delete"

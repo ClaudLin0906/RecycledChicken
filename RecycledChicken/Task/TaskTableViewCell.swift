@@ -21,6 +21,39 @@ class TaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var pointLabel:UILabel!
     
+    private var title:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    titleLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var taskDescription:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    descriptionLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var point:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    pointLabel.text = newValue
+                }
+            }
+        }
+    }
+    
     var taskInfo:TaskInfo?
     {
         willSet{
@@ -46,44 +79,49 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     
-    func setCell(_ taskInfo:TaskInfo, battery:Int, bottle:Int, colorlessBottle:Int, can:Int, cup:Int) {
-        guard let taskType = taskInfo.type, let title = taskInfo.title, let description = taskInfo.description, let reward = taskInfo.reward, let rewardPoint = reward.amount, let requiredAmount = taskInfo.requiredAmount else { return }
-        self.taskInfo = taskInfo
-        var molecular:Int = 0
-        switch taskType {
-        case .battery:
-            molecular = battery
-        case .bottle:
-            molecular = bottle + colorlessBottle
-        case .can:
-            molecular = can
-        case .cup:
-            molecular = cup
-        default:
-            break
-        }
-        titleLabel.text = title
-        descriptionLabel.text = description
-        pointLabel.text = String(rewardPoint)
-        taskProgressView.setPercent(molecular, denominator: requiredAmount)
-        if molecular >= requiredAmount {
-            finishAction()
-            self.taskInfo?.isFinish = true
-        }
-    }
-    
+//    func setCell(_ taskInfo:TaskInfo, battery:Int, bottle:Int, colorlessBottle:Int, can:Int, cup:Int) {
+//        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+//            guard let taskType = taskInfo.type, let title = taskInfo.title, let description = taskInfo.description, let reward = taskInfo.reward, let rewardPoint = reward.amount, let requiredAmount = taskInfo.requiredAmount else { return }
+//            self.taskInfo = taskInfo
+//            self.title = title
+//            self.taskDescription = description
+//            self.point = String(rewardPoint)
+////            taskProgressView.setPercent(0, denominator: requiredAmount)
+////            if molecular >= requiredAmount {
+////                finishAction()
+////                self.taskInfo?.isFinish = true
+////            }
+//        }
+//    }
+//    
     func setCell(_ taskInfo:TaskInfo, _ finishTimes:[String]) {
-        guard let taskType = taskInfo.type, let title = taskInfo.title, let description = taskInfo.description, let reward = taskInfo.reward, let rewardPoint = reward.amount, let requiredAmount = taskInfo.requiredAmount, let createTime = taskInfo.createTime else { return }
-        self.taskInfo = taskInfo
-        titleLabel.text = title
-        descriptionLabel.text = description
-        pointLabel.text = String(rewardPoint)
-        for finishTime in finishTimes {
-            if createTime == finishTime {
-                self.taskInfo?.isFinish = true
-                break
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            guard let createTime = taskInfo.createTime else { return }
+            self.taskInfo = taskInfo
+            if let title = taskInfo.title {
+                self.title = title
+            }
+            
+            if let taskDescription = taskInfo.description {
+                self.taskDescription = taskDescription
+            }
+            
+            if let reward = taskInfo.reward, let amount = reward.amount {
+                self.point = String(amount)
+            }
+//            taskProgressView.setPercent(0, denominator: requiredAmount)
+//            if molecular >= requiredAmount {
+//                finishAction()
+//                self.taskInfo?.isFinish = true
+//            }
+            for finishTime in finishTimes {
+                if createTime == finishTime {
+                    self.taskInfo?.isFinish = true
+                    break
+                }
             }
         }
+
     }
     
     private func shareFinishAction() {

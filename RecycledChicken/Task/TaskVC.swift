@@ -12,11 +12,6 @@ class TaskVC: CustomRootVC {
     @IBOutlet weak var taskTableView:UITableView!
     
     private var taskInfos:[TaskInfo] = []
-    {
-        willSet{
-            print(newValue.count)
-        }
-    }
     
 //    private var taskStatus:[TaskStatus] = []
     
@@ -42,9 +37,11 @@ class TaskVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getRecycleCount()
+//        getRecycleCount()
         getTaskInfo(completion: { [self] in
-            updateInfo()
+            DispatchQueue.main.async {
+                self.taskTableView.reloadData()
+            }
         })
     }
     
@@ -78,7 +75,7 @@ class TaskVC: CustomRootVC {
                 self.taskInfos.removeAll()
                 self.taskInfos.append(contentsOf: taskInfos)
                 self.taskInfos = self.taskInfos.filter {
-                    if let startTime = $0.activeTime?.startTime, let startDate = dateFromString(startTime), let endTime = $0.activeTime?.endTime, let endDate = dateFromString(endTime) {
+                    if let startTime = $0.startTime, let startDate = dateFromString(startTime), let endTime = $0.endTime, let endDate = dateFromString(endTime) {
                         return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
                     }
                     return false
@@ -147,23 +144,43 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let taskInfo = taskInfos[row]
-        guard let type = taskInfo.type else { return UITableViewCell()}
+        guard let type = taskInfo.type, let reward = taskInfo.reward, let rewardType = reward.type  else { return UITableViewCell() }
+        let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
         switch type {
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
             cell.setCell(taskInfo, finishTasks)
             return cell
-        case .advertise:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
-            let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
-            cell.taskInfo = taskInfo
-            return cell
+//        case .advertise:
+//            <#code#>
+//        case .battery:
+//            <#code#>
+//        case .bottle:
+//            <#code#>
+//        case .can:
+//            <#code#>
+//        case .cup:
+//            <#code#>
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, battery: batteryInt, bottle: bottleInt, colorlessBottle: colorlessBottleInt, can: canInt, cup: cupInt)
-            return cell
+            break
         }
+//        switch type {
+//        case .share:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//            let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
+//            cell.setCell(taskInfo, finishTasks)
+//            return cell
+//        case .advertise:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
+//            let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
+//            cell.taskInfo = taskInfo
+//            return cell
+//        default:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//            cell.setCell(taskInfo, battery: batteryInt, bottle: bottleInt, colorlessBottle: colorlessBottleInt, can: canInt, cup: cupInt)
+//            return cell
+//        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

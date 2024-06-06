@@ -27,7 +27,7 @@
     },
     "cjV-9E-d6S.normalTitle" : {
       "comment" : "Class = \"UIButton\"; normalTitle = \"票劵已領取\"; ObjectID = \"cjV-9E-d6S\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -63,7 +63,7 @@
     },
     "ddv-fT-tQ8.text" : {
       "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"ddv-fT-tQ8\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -115,6 +115,18 @@
         }
       }
     },
+    "krr-Zi-F0N.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"krr-Zi-F0N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "分享任務"
+          }
+        }
+      }
+    },
     "NIu-ir-pOU.text" : {
       "comment" : "Class = \"UILabel\"; text = \"50\"; ObjectID = \"NIu-ir-pOU\";",
       "extractionState" : "extracted_with_value",
@@ -135,7 +147,7 @@
     },
     "p6M-X8-5hj.normalTitle" : {
       "comment" : "Class = \"UIButton\"; normalTitle = \"領取票劵\"; ObjectID = \"p6M-X8-5hj\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -151,21 +163,33 @@
         }
       }
     },
-    "tPD-Ie-oWR.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"票券任務\"; ObjectID = \"tPD-Ie-oWR\";",
+    "PG8-3l-iBo.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"PG8-3l-iBo\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "票券任務"
+            "value" : "分享任務"
+          }
+        }
+      }
+    },
+    "tPD-Ie-oWR.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"tPD-Ie-oWR\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "分享任務"
           }
         }
       }
     },
     "UAt-0J-5h0.text" : {
       "comment" : "Class = \"UILabel\"; text = \"票券任務\"; ObjectID = \"UAt-0J-5h0\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -193,6 +217,18 @@
         }
       }
     },
+    "zDQ-nb-EVg.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"zDQ-nb-EVg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
     "zRe-Ad-52Z.text" : {
       "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"zRe-Ad-52Z\";",
       "extractionState" : "stale",
@@ -203,6 +239,18 @@
             "value" : "Label"
           }
         },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "zvy-Sf-fzt.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"zvy-Sf-fzt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",

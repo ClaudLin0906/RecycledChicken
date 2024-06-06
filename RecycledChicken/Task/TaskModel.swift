@@ -9,7 +9,8 @@ import Foundation
 
 struct TaskInfo: Codable {
     var createTime:String?
-    var activeTime:ActiveTime?
+    var startTime:String?
+    var endTime:String?
     var title:String?
     var description:String?
     var type:TaskType?
@@ -22,7 +23,8 @@ struct TaskInfo: Codable {
     
     enum CodingKeys:String, CodingKey {
         case createTime = "createTime"
-        case activeTime = "activeTime"
+        case startTime = "startTime"
+        case endTime = "endTime"
         case title = "title"
         case description = "description"
         case type = "type"
@@ -37,7 +39,8 @@ struct TaskInfo: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         createTime = try? container.decodeIfPresent(String.self, forKey: .createTime)
-        activeTime = try? container.decodeIfPresent(ActiveTime.self, forKey: .activeTime)
+        startTime = try? container.decodeIfPresent(String.self, forKey: .startTime)
+        endTime = try? container.decodeIfPresent(String.self, forKey: .endTime)
         title = try? container.decodeIfPresent(String.self, forKey: .title)
         description = try? container.decodeIfPresent(String.self, forKey: .description)
         type = try? container.decodeIfPresent(TaskType.self, forKey: .type)
