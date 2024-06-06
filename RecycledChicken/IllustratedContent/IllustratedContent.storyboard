@@ -275,10 +275,12 @@
                     <connections>
                         <outlet property="guideBackgroundImageView" destination="Aaq-iQ-pcv" id="HmY-rp-bFH"/>
                         <outlet property="illustratedGuideOfAbilityLabel" destination="nYe-rc-2CJ" id="be9-v5-Q5D"/>
+                        <outlet property="illustratedGuideOfAttackLabel" destination="tlV-7r-cvg" id="yUU-RW-ZTr"/>
                         <outlet property="illustratedGuideOfExperienceLabel" destination="KR8-AP-eF4" id="tyk-37-R7v"/>
                         <outlet property="illustratedGuideOfLevelLabel" destination="ZbH-W8-NEy" id="6kf-zg-gNz"/>
                         <outlet property="illustratedGuideOfNameLabel" destination="eiv-hu-luU" id="tLq-44-Ocz"/>
                         <outlet property="illustratedGuideOfTextView" destination="icD-lw-tcc" id="Gh6-ox-fcM"/>
+                        <outlet property="illustratedGuideOfTitleLabel" destination="jjq-Lg-kzY" id="lqL-1C-Tqe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
