@@ -121,7 +121,7 @@ extension SystemSettingVC:SwitchTableViewCellDelegate{
             }
             if !sender.isOn {
                 messagingUnSubscribe()
-            }
+            }   
         default:
             break
         }

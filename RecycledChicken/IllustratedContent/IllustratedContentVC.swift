@@ -11,9 +11,15 @@ class IllustratedContentVC: CustomVC {
     
     @IBOutlet weak var guideBackgroundImageView:UIImageView!
     
-    @IBOutlet weak var illustratedGuideOneOfNameLabel:CustomLabel!
+    @IBOutlet weak var illustratedGuideOfNameLabel:CustomLabel!
         
-    @IBOutlet weak var illustratedGuideguideOfTextView:UITextView!
+    @IBOutlet weak var illustratedGuideOfTextView:UITextView!
+    
+    @IBOutlet weak var illustratedGuideOfLevelLabel:UILabel!
+    
+    @IBOutlet weak var illustratedGuideOfExperienceLabel:UILabel!
+    
+    @IBOutlet weak var illustratedGuideOfAbilityLabel:UILabel!
     
     var illustratedGuideModelLevel:IllustratedGuideModelLevel?
     
@@ -35,8 +41,11 @@ class IllustratedContentVC: CustomVC {
     private func setValue() {
         guard let illustratedGuide = illustratedGuide else { return }
         guideBackgroundImageView.image = illustratedGuide.guideBackgroundImage
-        illustratedGuideOneOfNameLabel.text = illustratedGuide.name
-        illustratedGuideguideOfTextView.text = illustratedGuide.guide
+        illustratedGuideOfNameLabel.text = illustratedGuide.name
+        illustratedGuideOfTextView.text = illustratedGuide.guide
+        illustratedGuideOfLevelLabel.text = String(illustratedGuide.level)
+        illustratedGuideOfAbilityLabel.text = illustratedGuide.ability
+        illustratedGuideOfExperienceLabel.text = illustratedGuide.experience
     }
 
     override func viewWillAppear(_ animated: Bool) {
