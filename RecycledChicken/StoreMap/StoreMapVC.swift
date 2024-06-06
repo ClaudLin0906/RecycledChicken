@@ -133,75 +133,77 @@ class StoreMapVC: CustomRootVC {
     }
     
     private func getMakerIcon(_ info:MapInfo) -> UIImage? {
-        // remainBottle remainBattery remainCan remainCup isSpecial
-        let imageMap: [String: UIImage] = [
-            "false,false,false,true,false": #imageLiteral(resourceName: "ch-34"),
-            "false,false,false,true,true": #imageLiteral(resourceName: "ch-48"),
-            "false,false,true,false,false": #imageLiteral(resourceName: "ch-33"),
-            "false,false,true,false,true": #imageLiteral(resourceName: "ch-47"),
-            "false,false,true,true,false": #imageLiteral(resourceName: "ch-29"),
-            "false,false,true,true,true": #imageLiteral(resourceName: "ch-43"),
-            "false,true,false,false,false": "image9",
-            "false,true,false,false,true": "image10",
-            "false,true,false,true,false": "image11",
-            "false,true,false,true,true": "image12",
-            "false,true,true,false,false": "image13",
-            "false,true,true,false,true": "image14",
-            "false,true,true,true,false": "image15",
-            "false,true,true,true,true": "image16",
-            "true,false,false,false,false": "image17",
-            "true,false,false,false,true": "image18",
-            "true,false,false,true,false": "image19",
-            "true,false,false,true,true": "image20",
-            "true,false,true,false,false": "image21",
-            "true,false,true,false,true": "image22",
-            "true,false,true,true,false": "image23",
-            "true,false,true,true,true": "image24",
-            "true,true,false,false,false": "image25",
-            "true,true,false,false,true": "image26",
-            "true,true,false,true,false": "image27",
-            "true,true,false,true,true": "image28",
-            "true,true,true,false,false": "image29",
-            "true,true,true,false,true": "image30",
-            "true,true,true,true,false": "image31",
-            "true,true,true,true,true": "image32"
-        ]
         var image:UIImage?
         switch info.machineStatus {
-        case .full:
-            image = UIImage(named: "Group 124")
         case .submit:
-            if info.taskDescription != nil {
-                image = UIImage(named: "Group 128")
-            } else {
-                if let machineRemaining = info.machineRemaining {
-                    var remainBottle = false
-                    var remainBattery = false
-                    var remainCan = false
-                    var remainCup = false
-                    var isSpecial = false
-                    if info.taskDescription != nil {
-                        isSpecial = true
-                    }
-                    if machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorBottle ?? 0 > 0 {
-                        remainBottle = true
-                    }
-                    if machineRemaining.battery ?? 0 > 0 {
-                        remainBattery = true
-                    }
-                    if machineRemaining.can ?? 0 > 0 {
-                        remainCan = true
-                    }
-                    if machineRemaining.cup ?? 0 > 0 {
-                        remainCup = true
-                    }
+            // remainBottle remainBattery remainCan remainCup isSpecial
+            let imageMap: [String: UIImage] = [
+                "false,false,false,true,false": #imageLiteral(resourceName: "ch-34"),
+                "false,false,false,true,true": #imageLiteral(resourceName: "ch-48"),
+                "false,false,true,false,false": #imageLiteral(resourceName: "ch-33"),
+                "false,false,true,false,true": #imageLiteral(resourceName: "ch-47"),
+                "false,false,true,true,false": #imageLiteral(resourceName: "ch-29"),
+                "false,false,true,true,true": #imageLiteral(resourceName: "ch-43"),
+                "false,true,false,false,false": #imageLiteral(resourceName: "ch-31"),
+                "false,true,false,false,true": #imageLiteral(resourceName: "ch-45"),
+                "false,true,false,true,false": #imageLiteral(resourceName: "ch-27"),
+                "false,true,false,true,true": #imageLiteral(resourceName: "ch-41"),
+                "false,true,true,false,false": #imageLiteral(resourceName: "ch-26"),
+                "false,true,true,false,true": #imageLiteral(resourceName: "ch-40"),
+                "false,true,true,true,false": #imageLiteral(resourceName: "ch-24"),
+                "false,true,true,true,true": #imageLiteral(resourceName: "ch-38"),
+                "true,false,false,false,false": #imageLiteral(resourceName: "ch-32"),
+                "true,false,false,false,true": #imageLiteral(resourceName: "ch-48"),
+                "true,false,false,true,false": #imageLiteral(resourceName: "ch-28"),
+                "true,false,false,true,true": #imageLiteral(resourceName: "ch-42"),
+                "true,false,true,false,false": #imageLiteral(resourceName: "ch-30"),
+                "true,false,true,false,true": #imageLiteral(resourceName: "ch-44"),
+    //            "true,false,true,true,false": "image23",
+    //            "true,false,true,true,true": "image24",
+                "true,true,false,false,false": #imageLiteral(resourceName: "ch-25"),
+                "true,true,false,false,true": #imageLiteral(resourceName: "ch-39"),
+                "true,true,false,true,false": #imageLiteral(resourceName: "ch-23"),
+                "true,true,false,true,true": #imageLiteral(resourceName: "ch-37"),
+                "true,true,true,false,false": #imageLiteral(resourceName: "ch-22"),
+                "true,true,true,false,true": #imageLiteral(resourceName: "ch-36"),
+    //            "true,true,true,true,false": "image31",
+    //            "true,true,true,true,true": "image32"
+            ]
 
+            if let machineRemaining = info.machineRemaining {
+                var remainBottle = false
+                var remainBattery = false
+                var remainCan = false
+                var remainCup = false
+                var isSpecial = false
+                if machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorBottle ?? 0 > 0 {
+                    remainBottle = true
+                }
+                if machineRemaining.battery ?? 0 > 0 {
+                    remainBattery = true
+                }
+                if machineRemaining.can ?? 0 > 0 {
+                    remainCan = true
+                }
+                if machineRemaining.cup ?? 0 > 0 {
+                    remainCup = true
+                }
+                if info.taskDescription != nil {
+                    isSpecial = true
+                }
+                let key = "\(remainBottle),\(remainBattery),\(remainCan),\(remainCup),\(isSpecial)"
+                
+                if let imageChicken = imageMap[key] {
+                    image = imageChicken
                 }
             }
-        case .underMaintenance:
-            image = UIImage(named: "Group 160")
-        case .none:
-            break
+        default:
+            if info.taskDescription != nil {
+                image = #imageLiteral(resourceName: "ch-51")
+            }
+            if info.taskDescription == nil {
+                image = #imageLiteral(resourceName: "ch-50")
+            }
         }
         return imageWithImage(image:image, scaledToSize: CGSize(width: 50, height: 50))
     }
