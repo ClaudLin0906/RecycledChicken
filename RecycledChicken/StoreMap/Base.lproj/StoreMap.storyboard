@@ -61,7 +61,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點擊地圖上的碳竹雞可顯示機台剩餘回收數量" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyj-Mw-dme" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="86.666666666666686" y="699.66666666666663" width="220" height="13"/>
+                                <rect key="frame" x="86.666666666666686" y="699.66666666666663" width="220" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -187,13 +187,13 @@
     </scenes>
     <designables>
         <designable name="HVJ-UW-N16">
-            <size key="intrinsicContentSize" width="88" height="13"/>
+            <size key="intrinsicContentSize" width="88" height="15.666666666666666"/>
         </designable>
         <designable name="ZEl-gS-LnA">
-            <size key="intrinsicContentSize" width="56" height="29"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="fyj-Mw-dme">
-            <size key="intrinsicContentSize" width="220" height="13"/>
+            <size key="intrinsicContentSize" width="220" height="15.666666666666666"/>
         </designable>
     </designables>
     <resources>
