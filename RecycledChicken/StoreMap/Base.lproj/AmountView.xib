@@ -33,6 +33,15 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nl-GA-gGa">
+                    <rect key="frame" x="365.66666666666669" y="63" width="17.333333333333314" height="22"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="B98-en-BOz"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgR-Jo-pgb" userLabel="underLine">
                     <rect key="frame" x="10" y="89" width="373" height="1"/>
                     <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,6 +70,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="cgR-Jo-pgb" firstAttribute="trailing" secondItem="9nl-GA-gGa" secondAttribute="trailing" id="AQA-p9-JpR"/>
                 <constraint firstItem="cgR-Jo-pgb" firstAttribute="top" secondItem="npf-CX-5oO" secondAttribute="bottom" constant="5" id="Kft-Ns-X6e"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="npf-CX-5oO" secondAttribute="trailing" id="QQi-Rr-3ra"/>
                 <constraint firstItem="npf-CX-5oO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Wiv-AO-XJm"/>
@@ -71,6 +81,7 @@
                 <constraint firstItem="9KR-8t-mn7" firstAttribute="top" secondItem="cgR-Jo-pgb" secondAttribute="bottom" constant="10" id="tyL-B5-W5T"/>
                 <constraint firstItem="9KR-8t-mn7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vOD-XP-R1p"/>
                 <constraint firstAttribute="trailing" secondItem="cgR-Jo-pgb" secondAttribute="trailing" constant="10" id="wJ4-fx-maT"/>
+                <constraint firstItem="9nl-GA-gGa" firstAttribute="centerY" secondItem="npf-CX-5oO" secondAttribute="centerY" id="zyJ-8S-JIc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
@@ -87,4 +98,7 @@
             <point key="canvasLocation" x="-156" y="20"/>
         </view>
     </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

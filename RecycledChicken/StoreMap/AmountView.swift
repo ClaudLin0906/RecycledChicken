@@ -29,6 +29,10 @@ class AmountView: UIView, NibOwnerLoadable {
         loadNibContent()
     }
     
+    @IBAction func closeAction(_ sender:UIButton) {
+        self.isHidden = true
+    }
+    
     func setAmount(_ info:MapInfo) {
         stackView.removeFullyAllArrangedSubviews()
         self.isHidden = false

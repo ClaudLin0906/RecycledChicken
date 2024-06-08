@@ -64,7 +64,6 @@ class StoreMapVC: CustomRootVC {
                     }
                     mapInfosData.append(newMapInfo)
                 })
-//                mapInfosData = fakeMapInfosData
                 mapInfosData.forEach({
                     if $0.taskDescription != nil {
                         specialTaskMapInfos.append($0)
@@ -107,19 +106,6 @@ class StoreMapVC: CustomRootVC {
                 maker.icon = getMakerIcon(info)
                 maker.title = info.name
             }
-//            for mapInfo in infos {
-//                let maker = GMSMarker()
-//                if let coordinateArr = try? mapInfo.coordinate.components(separatedBy: ", "), coordinateArr.count == 2 {
-//                    if let latitude = Double(coordinateArr[0]), let longitude = Double(coordinateArr[1]) {
-//                        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-//                        maker.position = coordinate
-//                        maker.map = mapView
-//                        maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
-//                        maker.icon = getMakerIcon(mapInfo)
-//                        maker.title = mapInfo.storeName
-//                    }
-//                }
-//            }
         }
     }
     
@@ -166,8 +152,11 @@ class StoreMapVC: CustomRootVC {
                 var remainCan = false
                 var remainCup = false
                 var isSpecial = false
-                if machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorBottle ?? 0 > 0 {
+                if machineRemaining.bottle ?? 0 > 0 {
                     remainBottle = true
+                }
+                if  machineRemaining.colorBottle ?? 0 > 0  {
+                    remainColorBottle = true
                 }
                 if machineRemaining.battery ?? 0 > 0 {
                     remainBattery = true
@@ -247,14 +236,14 @@ class StoreMapVC: CustomRootVC {
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
+            currentMapInfos.removeAll()
             if text.trimmingCharacters(in: .whitespaces) != "" {
-                currentMapInfos.removeAll()
                 currentMapInfos = mapInfosData.filter({ mapInfo in
                     if let name = mapInfo.name {
-                        return text.contains(text)
+                        return name.contains(text)
                     }
                     if let address = mapInfo.address {
-                        return text.contains(address)
+                        return address.contains(text)
                     }
                     return false
                 })
@@ -265,7 +254,6 @@ class StoreMapVC: CustomRootVC {
             }
         }
     }
-    
 }
 
 
@@ -311,3 +299,4 @@ extension StoreMapVC:CLLocationManagerDelegate {
     }
 
 }
+
