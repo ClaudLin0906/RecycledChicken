@@ -80,19 +80,6 @@ class StoreMapVC: CustomRootVC {
         locationManager.stopUpdatingLocation()
     }
     
-    private func showSpecialTask() {
-        guard specialTaskMapInfos.count > 0 else {
-            specialTaskBackgroundView.isHidden = true
-            return
-        }
-        specialTaskBackgroundView.isHidden = false
-        specialTaskMapInfos.forEach { mapInfo in
-            let specialTaskView = SpecialTaskView()
-            specialTaskView.info = mapInfo
-            specialTaskBackgroundView.addSubview(specialTaskView)
-        }
-    }
-    
     private func addMarker(_ infos:[MapInfo]) {
         DispatchQueue.main.async { [self] in
             mapView?.clear()
@@ -260,7 +247,7 @@ class StoreMapVC: CustomRootVC {
 extension StoreMapVC: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        let mapInfoArr = currentMapInfos.filter { mapInfo in
+        let mapInfo = currentMapInfos.first { mapInfo in
             if let title = marker.title {
                 if title == mapInfo.name {
                     return true
@@ -268,11 +255,20 @@ extension StoreMapVC: GMSMapViewDelegate {
             }
             return false
         }
-        if !mapInfoArr.isEmpty {
-            let mapInfo = mapInfoArr[0]
+        
+        if let mapInfo = mapInfo {
             amountView.setAmount(mapInfo)
             if amountView.stackView.subviews.count > 3 {
                 amountViewHeight.constant = CGFloat(amountView.stackView.subviews.count * 30)
+            }
+            if let taskDescription = mapInfo.taskDescription {
+                let specialTaskView = SpecialTaskView()
+                specialTaskView.info = mapInfo
+                specialTaskBackgroundView.isHidden = false
+                specialTaskBackgroundView.addSubview(specialTaskView)
+            }
+            if mapInfo.taskDescription == nil {
+                specialTaskBackgroundView.isHidden = true
             }
         }
         return true

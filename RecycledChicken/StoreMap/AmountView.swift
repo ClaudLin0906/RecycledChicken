@@ -40,33 +40,33 @@ class AmountView: UIView, NibOwnerLoadable {
         if let machineRemaining = info.machineRemaining {
             
             if let battery = machineRemaining.battery, battery > 0 {
-                let label = labelInit("還可以投:\(battery)顆")
+                let label = labelInit("還可以投:\(battery)顆電池")
                 stackView.addArrangedSubview(label)
             }
             
             if let bottle = machineRemaining.bottle, bottle > 0, let colorBottle = machineRemaining.colorBottle, colorBottle > 0 {
-                let label = labelInit("還可以投無色:\(bottle)瓶")
-                let colorLabel = labelInit("還可以投有色:\(bottle)瓶")
+                let label = labelInit("還可以投無色:\(bottle)保特瓶")
+                let colorLabel = labelInit("還可以投有色:\(bottle)保特瓶")
                 stackView.addArrangedSubview(label)
                 stackView.addArrangedSubview(colorLabel)
             } else {
                 if let colorBottle = machineRemaining.colorBottle, colorBottle > 0 {
-                    let label = labelInit("還可以投:\(colorBottle)瓶")
+                    let label = labelInit("還可以投:\(colorBottle)保特瓶")
                     stackView.addArrangedSubview(label)
                 }
                 if let bottle = machineRemaining.bottle, bottle > 0 {
-                    let label = labelInit("還可以投:\(bottle)瓶")
+                    let label = labelInit("還可以投:\(bottle)保特瓶")
                     stackView.addArrangedSubview(label)
                 }
             }
             
             if let can = machineRemaining.can, can > 0 {
-                let label = labelInit("還可以投:\(can)個")
+                let label = labelInit("還可以投:\(can)鋁罐")
                 stackView.addArrangedSubview(label)
             }
             
             if let cup = machineRemaining.cup, cup > 0 {
-                let label = labelInit("還可以投:\(cup)個")
+                let label = labelInit("還可以投:\(cup)紙杯")
                 stackView.addArrangedSubview(label)
             }
         }
