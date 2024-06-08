@@ -91,6 +91,11 @@
                 <constraint firstItem="I5p-Qr-E1e" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="rno-vL-6v1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="-216" y="20"/>
         </view>
     </objects>

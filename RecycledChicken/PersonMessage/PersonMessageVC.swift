@@ -104,14 +104,6 @@ extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
 extension PersonMessageVC:PersonMessageTableViewCellDelegate {
     
     func tapDeleteViewPress(_ indexPath: IndexPath) {
-        print(indexPath)
-    }
-    
-}
-
-extension PersonMessageVC:DeleteAllMessageAlertViewDelegate {
-    
-    func deleteAllMessage() {
         guard personMessageInfos.count > 0 else { return }
         var personMessageInfosDic:[[String:Any]] = []
         personMessageInfos.forEach { info in
@@ -136,5 +128,4 @@ extension PersonMessageVC:DeleteAllMessageAlertViewDelegate {
             }
         }
     }
-    
 }
