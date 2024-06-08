@@ -25,15 +25,6 @@ class StoreMapVC: CustomRootVC {
     
     private var locationManager = CLLocationManager()
     
-//    private var fakeMapInfosData:[MapInfo] = 
-//    [
-//        MapInfo(isVisible: true, storeName: "店家1", storeID: "店家1ID", cellPath: "店家1cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家1storeAddress", coordinate: "24.8355593, 121.0090052"),
-//        MapInfo(isVisible: true, storeName: "店家2", storeID: "店家2ID", cellPath: "店家2cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "滿", storeAddress: "店家2storeAddress", coordinate: "22.8355593, 121.0090052"),
-//        MapInfo(isVisible: true, storeName: "店家3", storeID: "店家3ID", cellPath: "店家3cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 0, battery: 10), status: "可投遞", storeAddress: "店家3storeAddress", coordinate: "20.8355593, 121.0090052"),
-//        MapInfo(isVisible: true, storeName: "店家4", storeID: "店家4ID", cellPath: "店家4cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 0), status: "可投遞", storeAddress: "店家4storeAddress", coordinate: "18.8355593, 121.0090052"),
-//        MapInfo(isVisible: true, storeName: "店家5", storeID: "店家5ID", cellPath: "店家5cellPath", remainingProcessable: RemainingProcessableInfo(bottle: 12, battery: 10), status: "可投遞", storeAddress: "店家5storeAddress", coordinate: "16.8355593, 121.0090052")
-//    ]
-    
     private var mapInfosData:[MapInfo] = []
     
     private var currentMapInfos:[MapInfo] = []
@@ -136,43 +127,42 @@ class StoreMapVC: CustomRootVC {
         var image:UIImage?
         switch info.machineStatus {
         case .submit:
-            // remainBottle remainBattery remainCan remainCup isSpecial
+            // remainBottle remainBattery remainCan remainCup isSpecial colorBottle
             let imageMap: [String: UIImage] = [
-                "false,false,false,true,false": #imageLiteral(resourceName: "ch-34"),
-                "false,false,false,true,true": #imageLiteral(resourceName: "ch-48"),
-                "false,false,true,false,false": #imageLiteral(resourceName: "ch-33"),
-                "false,false,true,false,true": #imageLiteral(resourceName: "ch-47"),
-                "false,false,true,true,false": #imageLiteral(resourceName: "ch-29"),
-                "false,false,true,true,true": #imageLiteral(resourceName: "ch-43"),
-                "false,true,false,false,false": #imageLiteral(resourceName: "ch-31"),
-                "false,true,false,false,true": #imageLiteral(resourceName: "ch-45"),
-                "false,true,false,true,false": #imageLiteral(resourceName: "ch-27"),
-                "false,true,false,true,true": #imageLiteral(resourceName: "ch-41"),
-                "false,true,true,false,false": #imageLiteral(resourceName: "ch-26"),
-                "false,true,true,false,true": #imageLiteral(resourceName: "ch-40"),
-                "false,true,true,true,false": #imageLiteral(resourceName: "ch-24"),
-                "false,true,true,true,true": #imageLiteral(resourceName: "ch-38"),
-                "true,false,false,false,false": #imageLiteral(resourceName: "ch-32"),
-                "true,false,false,false,true": #imageLiteral(resourceName: "ch-48"),
-                "true,false,false,true,false": #imageLiteral(resourceName: "ch-28"),
-                "true,false,false,true,true": #imageLiteral(resourceName: "ch-42"),
-                "true,false,true,false,false": #imageLiteral(resourceName: "ch-30"),
-                "true,false,true,false,true": #imageLiteral(resourceName: "ch-44"),
-    //            "true,false,true,true,false": "image23",
-    //            "true,false,true,true,true": "image24",
-                "true,true,false,false,false": #imageLiteral(resourceName: "ch-25"),
-                "true,true,false,false,true": #imageLiteral(resourceName: "ch-39"),
-                "true,true,false,true,false": #imageLiteral(resourceName: "ch-23"),
-                "true,true,false,true,true": #imageLiteral(resourceName: "ch-37"),
-                "true,true,true,false,false": #imageLiteral(resourceName: "ch-22"),
-                "true,true,true,false,true": #imageLiteral(resourceName: "ch-36"),
-    //            "true,true,true,true,false": "image31",
-    //            "true,true,true,true,true": "image32"
+                "false,false,false,true,false,false": #imageLiteral(resourceName: "ch-34"),
+                "false,false,false,true,true,false": #imageLiteral(resourceName: "ch-48"),
+                "false,false,true,false,false,false": #imageLiteral(resourceName: "ch-33"),
+                "false,false,true,false,true,false": #imageLiteral(resourceName: "ch-47"),
+                "false,false,true,true,false,false": #imageLiteral(resourceName: "ch-29"),
+                "false,false,true,true,true,false": #imageLiteral(resourceName: "ch-43"),
+                "false,true,false,false,false,false": #imageLiteral(resourceName: "ch-31"),
+                "false,true,false,false,true,false": #imageLiteral(resourceName: "ch-45"),
+                "false,true,false,true,false,false": #imageLiteral(resourceName: "ch-27"),
+                "false,true,false,true,true,false": #imageLiteral(resourceName: "ch-41"),
+                "false,true,true,false,false,false": #imageLiteral(resourceName: "ch-26"),
+                "false,true,true,false,true,false": #imageLiteral(resourceName: "ch-40"),
+                "false,true,true,true,false,false": #imageLiteral(resourceName: "ch-24"),
+                "false,true,true,true,true,false": #imageLiteral(resourceName: "ch-38"),
+                "true,false,false,false,false,false": #imageLiteral(resourceName: "ch-32"),
+                "true,false,false,false,true,false": #imageLiteral(resourceName: "ch-48"),
+                "true,false,false,true,false,false": #imageLiteral(resourceName: "ch-28"),
+                "true,false,false,true,true,false": #imageLiteral(resourceName: "ch-42"),
+                "true,false,true,false,false,false": #imageLiteral(resourceName: "ch-30"),
+                "true,false,true,false,true,false": #imageLiteral(resourceName: "ch-44"),
+                "true,true,false,false,false,false": #imageLiteral(resourceName: "ch-25"),
+                "true,true,false,false,true,false": #imageLiteral(resourceName: "ch-39"),
+                "true,true,false,true,false,false": #imageLiteral(resourceName: "ch-23"),
+                "true,true,false,true,true,false": #imageLiteral(resourceName: "ch-37"),
+                "true,true,true,false,false,false": #imageLiteral(resourceName: "ch-22"),
+                "true,true,true,false,true,false": #imageLiteral(resourceName: "ch-36"),
+                "true,true,false,false,false,true": #imageLiteral(resourceName: "ch-35"),
+                "true,true,false,false,true,true": #imageLiteral(resourceName: "ch-49")
             ]
 
             if let machineRemaining = info.machineRemaining {
                 var remainBottle = false
                 var remainBattery = false
+                var remainColorBottle = false
                 var remainCan = false
                 var remainCup = false
                 var isSpecial = false
@@ -191,10 +181,9 @@ class StoreMapVC: CustomRootVC {
                 if info.taskDescription != nil {
                     isSpecial = true
                 }
-                let key = "\(remainBottle),\(remainBattery),\(remainCan),\(remainCup),\(isSpecial)"
+                let key = "\(remainBottle),\(remainBattery),\(remainCan),\(remainCup),\(isSpecial),\(remainColorBottle)"
                 
                 if let imageChicken = imageMap[key] {
-                    print("key \(key) image \(image)")
                     image = imageChicken
                 }
             }

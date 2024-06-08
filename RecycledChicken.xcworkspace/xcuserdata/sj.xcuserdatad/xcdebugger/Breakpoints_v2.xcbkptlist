@@ -34,6 +34,38 @@
             endingLineNumber = "78"
             landmarkName = "confirm(_:info:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BC724D75-89D6-4838-9C7B-FE6DDEEEA510 - bcecdc7cec7e6053"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.BuyCommodityVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/BuyCommodity/BuyCommodityVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "574">
+               </Location>
+               <Location
+                  uuid = "BC724D75-89D6-4838-9C7B-FE6DDEEEA510 - bcecdc7cec7e6053"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.BuyCommodityVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/BuyCommodity/BuyCommodityVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "436">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -48,8 +80,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
+            landmarkName = "TaskVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "86443A02-0626-4FFB-A94C-7DF067F070AD - b9c30057dbdbe255"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.TaskVC.updateInfo() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/Task/TaskVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "86443A02-0626-4FFB-A94C-7DF067F070AD - b9c30057dbdbe255"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.TaskVC.updateInfo() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/Task/TaskVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -66,6 +130,38 @@
             endingLineNumber = "221"
             landmarkName = "textFieldDidChange(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "56F268F2-13C5-4050-AB75-254B455420A7 - 34e3d3a6a0cdd0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.StationListVC.textFieldDidChange(__C.UITextField) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/StationList/StationListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "603">
+               </Location>
+               <Location
+                  uuid = "56F268F2-13C5-4050-AB75-254B455420A7 - 34e3d3a6a0cdd0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.StationListVC.textFieldDidChange(__C.UITextField) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/StationList/StationListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "496">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -82,6 +178,38 @@
             endingLineNumber = "37"
             landmarkName = "confirm(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "92B9E347-3FC0-4216-A62C-590D54D33517 - d0a8a93936febf25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.DeleteAllMessageAlertView.confirm(RecycledChicken.CustomButton) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/PersonMessage/DeleteAllMessageAlertView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "92B9E347-3FC0-4216-A62C-590D54D33517 - d0a8a93936febf25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.DeleteAllMessageAlertView.confirm(RecycledChicken.CustomButton) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/git/RecycledChicken/PersonMessage/DeleteAllMessageAlertView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -32,16 +32,40 @@ class AmountView: UIView, NibOwnerLoadable {
     func setAmount(_ info:MapInfo) {
         stackView.removeFullyAllArrangedSubviews()
         self.isHidden = false
-//        storeName.text = info.storeName
-//
-//        if let battery = info.remainingProcessable.battery, battery > 0 {
-//            let label = labelInit("還可以投:\(battery)顆")
-//            stackView.addArrangedSubview(label)
-//        }
-//        if let bottle = info.remainingProcessable.bottle, bottle > 0 {
-//            let label = labelInit("還可以投:\(bottle)瓶")
-//            stackView.addArrangedSubview(label)
-//        }
+        storeName.text = info.name
+        if let machineRemaining = info.machineRemaining {
+            
+            if let battery = machineRemaining.battery, battery > 0 {
+                let label = labelInit("還可以投:\(battery)顆")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let bottle = machineRemaining.bottle, bottle > 0, let colorBottle = machineRemaining.colorBottle, colorBottle > 0 {
+                let label = labelInit("還可以投無色:\(bottle)瓶")
+                let colorLabel = labelInit("還可以投有色:\(bottle)瓶")
+                stackView.addArrangedSubview(label)
+                stackView.addArrangedSubview(colorLabel)
+            } else {
+                if let colorBottle = machineRemaining.colorBottle, colorBottle > 0 {
+                    let label = labelInit("還可以投:\(colorBottle)瓶")
+                    stackView.addArrangedSubview(label)
+                }
+                if let bottle = machineRemaining.bottle, bottle > 0 {
+                    let label = labelInit("還可以投:\(bottle)瓶")
+                    stackView.addArrangedSubview(label)
+                }
+            }
+            
+            if let can = machineRemaining.can, can > 0 {
+                let label = labelInit("還可以投:\(can)個")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let cup = machineRemaining.cup, cup > 0 {
+                let label = labelInit("還可以投:\(cup)個")
+                stackView.addArrangedSubview(label)
+            }
+        }
     }
     
     private func labelInit(_ textCount:String) -> UILabel {

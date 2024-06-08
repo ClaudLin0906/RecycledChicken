@@ -336,3 +336,16 @@ extension UserDefaults {
         return try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data)
     }
 }
+
+extension UIView {
+    func asImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        context.saveGState()
+        layer.render(in: context)
+        context.restoreGState()
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return image
+    }
+}

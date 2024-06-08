@@ -14,6 +14,8 @@
 		331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */; };
 		331E77B52BFCC383002F6B0D /* IllustratedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */; };
 		331E77B72BFCC38F002F6B0D /* IllustratedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */; };
+		3351CC662C14C37C00AC0C2A /* MapIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351CC652C14C37C00AC0C2A /* MapIconView.swift */; };
+		3351CC682C14C38400AC0C2A /* MapIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3351CC672C14C38400AC0C2A /* MapIconView.xib */; };
 		335A452B2C0A1D4B000D2337 /* ChickeIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A452A2C0A1D4B000D2337 /* ChickeIntroduceView.swift */; };
 		335A452D2C0A1D55000D2337 /* ChickeIntroduceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A452C2C0A1D55000D2337 /* ChickeIntroduceView.xib */; };
 		335A452F2C0A3E5E000D2337 /* SignActivityCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A452E2C0A3E5D000D2337 /* SignActivityCodeView.swift */; };
@@ -304,6 +306,8 @@
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
 		331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedContentVC.swift; sourceTree = "<group>"; };
 		331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedContent.storyboard; sourceTree = "<group>"; };
+		3351CC652C14C37C00AC0C2A /* MapIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapIconView.swift; sourceTree = "<group>"; };
+		3351CC672C14C38400AC0C2A /* MapIconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapIconView.xib; sourceTree = "<group>"; };
 		335A452A2C0A1D4B000D2337 /* ChickeIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickeIntroduceView.swift; sourceTree = "<group>"; };
 		335A452C2C0A1D55000D2337 /* ChickeIntroduceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChickeIntroduceView.xib; sourceTree = "<group>"; };
 		335A452E2C0A3E5D000D2337 /* SignActivityCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignActivityCodeView.swift; sourceTree = "<group>"; };
@@ -1118,6 +1122,8 @@
 				590485F02B9AF67E008B9AFD /* SpecialTaskView.swift */,
 				59600F3D2B9EED37009AFA76 /* SpecialTaskView.xib */,
 				59CDA3592A45A7B800E3F74E /* StoreMapModel.swift */,
+				3351CC652C14C37C00AC0C2A /* MapIconView.swift */,
+				3351CC672C14C38400AC0C2A /* MapIconView.xib */,
 			);
 			path = StoreMap;
 			sourceTree = "<group>";
@@ -1481,6 +1487,7 @@
 				595D3CF02BE3260600FE9D85 /* SiteList.storyboard in Resources */,
 				593CDE682A83D22F007E1D10 /* cert.cer in Resources */,
 				59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */,
+				3351CC682C14C38400AC0C2A /* MapIconView.xib in Resources */,
 				59600EB72B9EE31F009AFA76 /* DeleteAllMessageAlertView.xib in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
 				59600EAB2B9EE2E8009AFA76 /* LogOutView.xib in Resources */,
@@ -1629,6 +1636,7 @@
 				59DBA1372B71F521009E5BBD /* RingProgressSingleView.swift in Sources */,
 				59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */,
 				5998DD402B8B304300C99A8C /* IllustratedGuideVC.swift in Sources */,
+				3351CC662C14C37C00AC0C2A /* MapIconView.swift in Sources */,
 				59CDA3522A42FC9600E3F74E /* ProfileModel.swift in Sources */,
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,
