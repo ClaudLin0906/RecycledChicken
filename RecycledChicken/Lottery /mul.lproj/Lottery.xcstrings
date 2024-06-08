@@ -20,37 +20,37 @@
       }
     },
     "4hB-xT-qBm.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"參與次數:0\"; ObjectID = \"4hB-xT-qBm\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "join count:0"
-          }
-        },
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "參與次數:0"
-          }
-        }
-      }
-    },
-    "6Le-SV-ZJu.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"參與次數0\"; ObjectID = \"6Le-SV-ZJu\";",
+      "comment" : "Class = \"UILabel\"; text = \"參與次數 0\"; ObjectID = \"4hB-xT-qBm\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "join count:0"
+            "value" : "join count 0"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "參與次數0"
+            "value" : "參與次數 0"
+          }
+        }
+      }
+    },
+    "6Le-SV-ZJu.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"參與次數 0\"; ObjectID = \"6Le-SV-ZJu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "join count 0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "參與次數 0"
           }
         }
       }
@@ -200,19 +200,19 @@
       }
     },
     "TuB-5i-Vyf.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"參與次數:0\"; ObjectID = \"TuB-5i-Vyf\";",
+      "comment" : "Class = \"UILabel\"; text = \"參與次數 0\"; ObjectID = \"TuB-5i-Vyf\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "participation count:0"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "參與次數:0"
+            "value" : "參與次數 0"
           }
         }
       }

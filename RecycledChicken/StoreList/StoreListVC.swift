@@ -22,7 +22,7 @@ class StoreListVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "門市列表"
+        title = "站點清單"
         UIInit()
         getStoreInfo()
         // Do any additional setup after loading the view.

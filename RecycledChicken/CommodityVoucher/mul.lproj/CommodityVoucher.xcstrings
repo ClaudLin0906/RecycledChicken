@@ -20,19 +20,19 @@
       }
     },
     "klM-Ui-Cg9.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"剩餘次數:0\"; ObjectID = \"klM-Ui-Cg9\";",
+      "comment" : "Class = \"UILabel\"; text = \"剩餘次數 0\"; ObjectID = \"klM-Ui-Cg9\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "remaining count:0"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "剩餘次數:0"
+            "value" : "剩餘次數 0"
           }
         }
       }

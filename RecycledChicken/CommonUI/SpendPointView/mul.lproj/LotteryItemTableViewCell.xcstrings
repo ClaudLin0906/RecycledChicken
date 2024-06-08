@@ -2,19 +2,19 @@
   "sourceLanguage" : "zh-Hant-TW",
   "strings" : {
     "G5K-Fs-0L8.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"參與次數:200\"; ObjectID = \"G5K-Fs-0L8\";",
+      "comment" : "Class = \"UILabel\"; text = \"參與次數 200\"; ObjectID = \"G5K-Fs-0L8\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "join:"
+            "state" : "needs_review",
+            "value" : "join "
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "參與次數:200"
+            "value" : "參與次數 200"
           }
         }
       }

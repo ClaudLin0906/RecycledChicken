@@ -101,13 +101,13 @@
     </objects>
     <designables>
         <designable name="Krd-LH-CnS">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
         <designable name="MF1-jq-4iR">
             <size key="intrinsicContentSize" width="117.33333333333333" height="20.333333333333332"/>
         </designable>
         <designable name="rt1-gC-Faw">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
     </designables>
     <resources>

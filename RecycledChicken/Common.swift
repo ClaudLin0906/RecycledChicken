@@ -922,7 +922,7 @@ func getStartAndEndDateOfMonth() -> (start: String, end: String)? {
     let calendar = Calendar.current
     let now = Date()
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
+    dateFormatter.dateFormat = "yyyy/MM/dd"
     
     let components = calendar.dateComponents([.year, .month], from: now)
     

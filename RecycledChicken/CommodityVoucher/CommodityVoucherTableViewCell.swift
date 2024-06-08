@@ -117,7 +117,7 @@ class CommodityVoucherTableViewCell: UITableViewCell {
             }
             
             if let remainingQuantity = commodityVoucherInfo.remainingQuantity {
-                self.drawPeople =  "remain".localized + ":" + String(remainingQuantity)
+                self.drawPeople =  "remain".localized + String(remainingQuantity)
             }
             
             if let points = commodityVoucherInfo.points {

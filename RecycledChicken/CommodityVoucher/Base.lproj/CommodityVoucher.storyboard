@@ -51,7 +51,7 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩餘次數:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klM-Ui-Cg9" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩餘次數 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klM-Ui-Cg9" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="72.666666666666657" width="118" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="QpJ-v7-tJt"/>
@@ -227,7 +227,7 @@
             <size key="intrinsicContentSize" width="70.333333333333329" height="19.666666666666668"/>
         </designable>
         <designable name="klM-Ui-Cg9">
-            <size key="intrinsicContentSize" width="84.333333333333329" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="84" height="20.333333333333332"/>
         </designable>
         <designable name="nZs-CU-wRK">
             <size key="intrinsicContentSize" width="33.666666666666664" height="10"/>
