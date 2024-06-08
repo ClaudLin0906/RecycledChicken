@@ -22,4 +22,9 @@ class MallCollectionViewCell: UICollectionViewCell {
         titleLabel.text = info.productName
         descriptionLabel.text = info.description
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        print("imageView \(imageView.frame.height)")
+    }
 }

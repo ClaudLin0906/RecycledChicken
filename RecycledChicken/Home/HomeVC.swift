@@ -276,7 +276,7 @@ class HomeVC: CustomRootVC {
     private func computeDate(_ startTime:String, endTime:String, completion: @escaping (_ battery:Int, _ bottle:Int, _ colorlessBottle:Int, _ can:Int) -> Void){
         let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
+            guard let data = data, statusCode == 100 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
