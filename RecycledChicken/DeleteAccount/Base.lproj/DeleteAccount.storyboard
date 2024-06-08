@@ -156,10 +156,10 @@
     </scenes>
     <designables>
         <designable name="Vrd-Eb-IDM">
-            <size key="intrinsicContentSize" width="56" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="29"/>
         </designable>
         <designable name="XiZ-fS-3Yz">
-            <size key="intrinsicContentSize" width="1547.3333333333333" height="166.33333333333334"/>
+            <size key="intrinsicContentSize" width="1548" height="138.66666666666666"/>
         </designable>
     </designables>
     <resources>

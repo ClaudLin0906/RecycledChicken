@@ -26,6 +26,7 @@
 "systemSetting" = "System Settings";
 "languageSetting" = "Language Settings";
 "contactPartnership" = "Customer Support & Collaboration";
+"partnership" = "Partnership";
 "logout" = "Log Out";
 "specialMissionNotifications" = "APP activity notification";
 "emailNotifications" = "Letter notification";
@@ -39,6 +40,7 @@
 "contentCannotBeEmpty" = "content cannot be empty";
 "emailCannotBeEmpty" = "email cannot be empty";
 "FAQs" = "FAQs";
+"customerContact" = "CustomerContact";
 "termsPrivacyPolicy" = "Terms & Privacy Policy";
 "recycleLog" = "Points Records";
 "allMonth" = "ALL MONTHS";

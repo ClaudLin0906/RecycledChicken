@@ -18,6 +18,8 @@
 		335A452D2C0A1D55000D2337 /* ChickeIntroduceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A452C2C0A1D55000D2337 /* ChickeIntroduceView.xib */; };
 		335A452F2C0A3E5E000D2337 /* SignActivityCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A452E2C0A3E5D000D2337 /* SignActivityCodeView.swift */; };
 		335A45312C0A3E69000D2337 /* SignActivityCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */; };
+		33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */; };
+		33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */; };
 		590251052B68DF250002E76C /* Pw_UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590251042B68DF250002E76C /* Pw_UserDefault.swift */; };
 		590251082B68E3020002E76C /* CombineHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 590251072B68E3020002E76C /* CombineHelper */; };
 		5902510B2B68E31F0002E76C /* CombineDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 5902510A2B68E31F0002E76C /* CombineDataSources */; };
@@ -306,6 +308,8 @@
 		335A452C2C0A1D55000D2337 /* ChickeIntroduceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChickeIntroduceView.xib; sourceTree = "<group>"; };
 		335A452E2C0A3E5D000D2337 /* SignActivityCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignActivityCodeView.swift; sourceTree = "<group>"; };
 		335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignActivityCodeView.xib; sourceTree = "<group>"; };
+		33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerContactVC.swift; sourceTree = "<group>"; };
+		33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerContact.storyboard; sourceTree = "<group>"; };
 		3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycledChicken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0DC3033FBF88A70BF0BC1 /* Pods-RecycledChicken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.release.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.release.xcconfig"; sourceTree = "<group>"; };
 		590251042B68DF250002E76C /* Pw_UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pw_UserDefault.swift; sourceTree = "<group>"; };
@@ -692,6 +696,15 @@
 			path = IllustratedContent;
 			sourceTree = "<group>";
 		};
+		33CFA5652C1453570067B5B4 /* CustomerContact */ = {
+			isa = PBXGroup;
+			children = (
+				33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */,
+				33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */,
+			);
+			path = CustomerContact;
+			sourceTree = "<group>";
+		};
 		5926C5712A04086400FAB49D = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +730,7 @@
 				590649EB2A151D3F008C778A /* RecycledChicken.entitlements */,
 				5926C57D2A04086400FAB49D /* AppDelegate.swift */,
 				5926C57F2A04086400FAB49D /* SceneDelegate.swift */,
+				33CFA5652C1453570067B5B4 /* CustomerContact */,
 				597521922A0B941A00D0B67C /* ConnectCompany */,
 				5975218D2A0B900500D0B67C /* CommonPronblem */,
 				597521882A0B8F1200D0B67C /* PrivacyPolicy */,
@@ -1435,6 +1449,7 @@
 				59600ECB2B9EE3B4009AFA76 /* RecycleLog.storyboard in Resources */,
 				593CDE662A83D229007E1D10 /* ca.pem in Resources */,
 				59600E9F2B9EE2A5009AFA76 /* SystemSetting.storyboard in Resources */,
+				33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */,
 				59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */,
 				59600F372B9EED25009AFA76 /* AmountView.xib in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
@@ -1655,6 +1670,7 @@
 				5996ADF32B89CE4400D6F6CF /* DeleteAllMessageAlertView.swift in Sources */,
 				599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
+				33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */,
 				335A452F2C0A3E5E000D2337 /* SignActivityCodeView.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
 				59A795772A0F770D0031710F /* ConfirmPasswordVC.swift in Sources */,

@@ -26,6 +26,7 @@
 "systemSetting" = "系統設定";
 "languageSetting" = "語言設定";
 "contactPartnership" = "聯絡客服與合作提案";
+"partnership" = "合作提案";
 "logout" = "登出";
 "specialMissionNotifications" = "APP活動通知";
 "emailNotifications" = "信件通知";
@@ -64,6 +65,7 @@
 "join" = "參與次數";
 "remain" = "剩餘數量";
 "validDate" = "使用日期";
+"customerContact" = "客服聯繫";
 "activityAward" = "活動獎勵";
 "raffleTicket" = "抽獎劵";
 "productvocher" = "商品劵";
