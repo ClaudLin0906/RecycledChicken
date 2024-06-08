@@ -19,7 +19,9 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var profileImageView:UIImageView!
     
-    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
+//    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
+    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "marketplace".localized]
+
     
     private let datePicker:UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -60,7 +62,7 @@ class ProfileVC: CustomVC {
         let illustratedGuide = getIllustratedGuide(getChickenLevel())
         chickenLeverLabel.text = "\("currentLevel".localized):\(illustratedGuide.name)"
         profileImageView.image = illustratedGuide.iconImage
-        barCodeView.setBarCodeValue("0932266860")
+        barCodeView.setBarCodeValue(CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber)
     }
     
     private func createDatePicker(_ textfield:UITextField) {
@@ -191,12 +193,12 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
                 cell.info.text = profileUserInfo.userPhoneNumber
             }
 
+//        case 2:
+//            if let profileUserInfo = profileUserInfo, let invitCode = profileUserInfo.invitCode, invitCode != "" {
+//                cell.info.isEnabled = false
+//                cell.info.text = invitCode
+//            }
         case 2:
-            if let profileUserInfo = profileUserInfo, let invitCode = profileUserInfo.invitCode, invitCode != "" {
-                cell.info.isEnabled = false
-                cell.info.text = invitCode
-            }
-        case 3:
             cell.phoneNumberCheckBox.isHidden = false
             cell.phoneNumberCheckBox.checkState = .unchecked
             if let linkedToBuenoMart = profileUserInfo?.linkedToBuenoMart, linkedToBuenoMart {

@@ -194,6 +194,7 @@ class StoreMapVC: CustomRootVC {
                 let key = "\(remainBottle),\(remainBattery),\(remainCan),\(remainCup),\(isSpecial)"
                 
                 if let imageChicken = imageMap[key] {
+                    print("key \(key) image \(image)")
                     image = imageChicken
                 }
             }

@@ -13,7 +13,7 @@ class PersonMessageVC: CustomVC {
     @IBOutlet weak var personMessageTableView:UITableView!
     
     private var personMessageInfos:[PersonMessageInfo] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "personalNotifications".localized
