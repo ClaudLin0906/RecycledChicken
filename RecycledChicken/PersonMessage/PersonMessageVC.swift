@@ -99,18 +99,8 @@ extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
         return cell
     }
     
-}
-
-extension PersonMessageVC:PersonMessageTableViewCellDelegate {
-    
-    func tapDeleteViewPress(_ indexPath: IndexPath) {
-        guard personMessageInfos.count > 0 else { return }
-        var personMessageInfosDic:[[String:Any]] = []
-        personMessageInfos.forEach { info in
-            if let infoDic = try? info.asDictionary() {
-                personMessageInfosDic.append(infoDic)
-            }
-        }
+    private func deleteMessage(_ personMessageInfosDic:[[String:Any]]) {
+        guard personMessageInfosDic.count > 0 else { return }
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete, parametersArray: personMessageInfosDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard statusCode == 200, let data = data else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
@@ -128,4 +118,31 @@ extension PersonMessageVC:PersonMessageTableViewCellDelegate {
             }
         }
     }
+    
+}
+
+extension PersonMessageVC:PersonMessageTableViewCellDelegate {
+    
+    func tapDeleteViewPress(_ indexPath: IndexPath) {
+        guard personMessageInfos.count > 0, let dic = try? personMessageInfos[indexPath.row].asDictionary() else { return }
+        var personMessageInfosDic:[[String:Any]] = []
+        personMessageInfosDic.append(dic)
+        deleteMessage(personMessageInfosDic)
+    }
+    
+}
+
+extension PersonMessageVC:DeleteAllMessageAlertViewDelegate {
+    
+    func deleteAllMessage() {
+        guard personMessageInfos.count > 0 else { return }
+        var personMessageInfosDic:[[String:Any]] = []
+        personMessageInfos.forEach { info in
+            if let infoDic = try? info.asDictionary() {
+                personMessageInfosDic.append(infoDic)
+            }
+        }
+        deleteMessage(personMessageInfosDic)
+    }
+    
 }
