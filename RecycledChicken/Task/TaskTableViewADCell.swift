@@ -110,13 +110,14 @@ class TaskTableViewADCell: UITableViewCell {
                 self.iconImageUrl = url
             }
             
+            self.taskInfo = taskInfo
+            
             for finishTime in finishTimes {
                 if createTime == finishTime {
                     self.taskInfo?.isFinish = true
                     break
                 }
             }
-            self.taskInfo = taskInfo
         }
     }
     

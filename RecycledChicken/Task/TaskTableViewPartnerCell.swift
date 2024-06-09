@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class TaskTableViewPartnerCell: UITableViewCell {
     
     static let identifier = "TaskTableViewPartnerCell"
@@ -25,9 +25,57 @@ class TaskTableViewPartnerCell: UITableViewCell {
     {
         willSet{
             if let newValue = newValue, let isFinish = newValue.isFinish, isFinish {
-                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
-            }else{
-                background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                DispatchQueue.main.async { [self] in
+                    background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                }
+            }
+        }
+    }
+    
+    private var title:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    titleLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var taskDescription:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    descriptionLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var partnerImageUrl:URL?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    partnerImageView.kf.setImage(with: newValue)
+                }
+            }
+        }
+    }
+    
+    private var leftImageUrl:URL?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    leftImageView.kf.setImage(with: newValue)
+                }
             }
         }
     }
@@ -44,7 +92,34 @@ class TaskTableViewPartnerCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo, _ finishTimes:[String]) {
-        
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            guard let createTime = taskInfo.createTime else { return }
+            
+            if let title = taskInfo.title {
+                self.title = title
+            }
+            
+            if let taskDescription = taskInfo.description {
+                self.taskDescription = taskDescription
+            }
+            
+            if let iconUrl = taskInfo.iconUrl, let url = URL(string: iconUrl) {
+                self.partnerImageUrl = url
+            }
+            
+            if let reward = taskInfo.reward, let leftIcon = reward.leftIcon, let url = URL(string: leftIcon) {
+                self.leftImageUrl = url
+            }
+            
+            self.taskInfo = taskInfo
+            
+            for finishTime in finishTimes {
+                if createTime == finishTime {
+                    self.taskInfo?.isFinish = true
+                    break
+                }
+            }
+        }
     }
 
 }

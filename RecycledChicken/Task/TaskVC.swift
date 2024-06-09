@@ -144,7 +144,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let taskInfo = taskInfos[row]
-        guard let type = taskInfo.type, let reward = taskInfo.reward, let rewardType = reward.type else {
+        guard let type = taskInfo.type else {
             return UITableViewCell()
         }
         let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
@@ -160,15 +160,31 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         case .battery:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.setCell(taskInfo, finishTasks, submitted: batteryInt)
+            return cell
         case .bottle:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.setCell(taskInfo, finishTasks, submitted: bottleInt)
+            return cell
         case .can:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.setCell(taskInfo, finishTasks, submitted: canInt)
+            return cell
         case .cup:
+            if let reward = taskInfo.reward, let rewardType = reward.type {
+                switch rewardType {
+                case .point:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
+                    cell.setCell(taskInfo, finishTasks, submitted: cupInt)
+                    return cell
+                case .ticket:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
+                    
+                    return cell
+                }
+            }
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.setCell(taskInfo, finishTasks, submitted: cupInt)
+            return cell
         }
 //        switch type {
 //        case .share:
@@ -186,7 +202,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
 //            cell.setCell(taskInfo, battery: batteryInt, bottle: bottleInt, colorlessBottle: colorlessBottleInt, can: canInt, cup: cupInt)
 //            return cell
 //        }
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

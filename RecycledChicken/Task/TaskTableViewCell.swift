@@ -80,22 +80,6 @@ class TaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
-//    func setCell(_ taskInfo:TaskInfo, battery:Int, bottle:Int, colorlessBottle:Int, can:Int, cup:Int) {
-//        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-//            guard let taskType = taskInfo.type, let title = taskInfo.title, let description = taskInfo.description, let reward = taskInfo.reward, let rewardPoint = reward.amount, let requiredAmount = taskInfo.requiredAmount else { return }
-//            self.taskInfo = taskInfo
-//            self.title = title
-//            self.taskDescription = description
-//            self.point = String(rewardPoint)
-////            taskProgressView.setPercent(0, denominator: requiredAmount)
-////            if molecular >= requiredAmount {
-////                finishAction()
-////                self.taskInfo?.isFinish = true
-////            }
-//        }
-//    }
-//    
     func setCell(_ taskInfo:TaskInfo, _ finishTimes:[String], submitted:Int = 0) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             guard let createTime = taskInfo.createTime else { return }
@@ -111,11 +95,7 @@ class TaskTableViewCell: UITableViewCell {
                 self.point = String(amount)
             }
             
-//            taskProgressView.setPercent(0, denominator: requiredAmount)
-//            if molecular >= requiredAmount {
-//                finishAction()
-//                self.taskInfo?.isFinish = true
-//            }
+            self.taskInfo = taskInfo
             
             for finishTime in finishTimes {
                 if createTime == finishTime {
