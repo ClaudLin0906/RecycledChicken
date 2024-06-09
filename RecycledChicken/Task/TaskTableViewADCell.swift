@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class TaskTableViewADCell: UITableViewCell {
     
     static let identifier = "TaskTableViewADCell"
@@ -19,13 +19,63 @@ class TaskTableViewADCell: UITableViewCell {
     
     @IBOutlet weak var pointLabel:UILabel!
     
+    @IBOutlet weak var iconImageView:UIImageView!
+    
     var taskInfo:TaskInfo?
     {
         willSet{
             if let newValue = newValue, let isFinish = newValue.isFinish, isFinish {
-                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                DispatchQueue.main.async { [self] in
+                    background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                }
             }else{
-                background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                DispatchQueue.main.async { [self] in
+                    background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                }
+            }
+        }
+    }
+    
+    private var title:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    titleLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var taskDescription:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    descriptionLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var point:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    pointLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var iconImageUrl:URL?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    iconImageView.kf.setImage(with: newValue)
+                }
             }
         }
     }
@@ -41,16 +91,32 @@ class TaskTableViewADCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo, _ finishTimes:[String]) {
-        guard let title = taskInfo.title, let description = taskInfo.description, let reward = taskInfo.reward, let rewardPoint = reward.amount, let createTime = taskInfo.createTime else { return }
-        self.taskInfo = taskInfo
-        titleLabel.text = title
-        descriptionLabel.text = description
-        pointLabel.text = String(rewardPoint)
-        for finishTime in finishTimes {
-            if createTime == finishTime {
-                self.taskInfo?.isFinish = true
-                break
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            guard let title = taskInfo.title, let description = taskInfo.description, let reward = taskInfo.reward, let rewardPoint = reward.amount, let createTime = taskInfo.createTime else { return }
+            
+            if let title = taskInfo.title {
+                self.title = title
             }
+            
+            if let taskDescription = taskInfo.description {
+                self.taskDescription = taskDescription
+            }
+            
+            if let reward = taskInfo.reward, let amount = reward.amount {
+                self.point = String(amount)
+            }
+            
+            if let iconUrl = taskInfo.iconUrl, let url = URL(string: iconUrl) {
+                self.iconImageUrl = url
+            }
+            
+            for finishTime in finishTimes {
+                if createTime == finishTime {
+                    self.taskInfo?.isFinish = true
+                    break
+                }
+            }
+            self.taskInfo = taskInfo
         }
     }
     

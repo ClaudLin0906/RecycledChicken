@@ -184,10 +184,10 @@
                                                                         </imageView>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="12J-NA-kHP" firstAttribute="leading" secondItem="gda-9s-7dw" secondAttribute="leading" id="74v-mD-vEY"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="12J-NA-kHP" secondAttribute="bottom" id="gE5-FG-vef"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="12J-NA-kHP" secondAttribute="trailing" id="obv-U2-fFc"/>
-                                                                        <constraint firstItem="12J-NA-kHP" firstAttribute="top" secondItem="gda-9s-7dw" secondAttribute="top" id="pyG-zC-T8B"/>
+                                                                        <constraint firstItem="12J-NA-kHP" firstAttribute="width" secondItem="gda-9s-7dw" secondAttribute="width" id="1Dt-wB-YIj"/>
+                                                                        <constraint firstItem="12J-NA-kHP" firstAttribute="centerY" secondItem="gda-9s-7dw" secondAttribute="centerY" id="6pe-se-AOw"/>
+                                                                        <constraint firstItem="12J-NA-kHP" firstAttribute="centerX" secondItem="gda-9s-7dw" secondAttribute="centerX" id="SgC-tA-nMD"/>
+                                                                        <constraint firstItem="12J-NA-kHP" firstAttribute="height" secondItem="gda-9s-7dw" secondAttribute="height" id="wLQ-nN-Iqz"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <connections>
@@ -217,10 +217,9 @@
                                                     <constraint firstItem="ngc-cf-F19" firstAttribute="top" secondItem="AMH-HZ-cmw" secondAttribute="top" id="0Ac-T0-bvg"/>
                                                     <constraint firstItem="EZ8-g4-AaR" firstAttribute="bottom" secondItem="ngc-cf-F19" secondAttribute="bottom" constant="-10" id="0dU-zD-VgU"/>
                                                     <constraint firstItem="ngc-cf-F19" firstAttribute="centerX" secondItem="AMH-HZ-cmw" secondAttribute="centerX" id="Cwc-oz-fqo"/>
+                                                    <constraint firstItem="ngc-cf-F19" firstAttribute="width" secondItem="AMH-HZ-cmw" secondAttribute="width" id="I7M-9Y-7YU"/>
                                                     <constraint firstAttribute="bottom" secondItem="ngc-cf-F19" secondAttribute="bottom" id="Lse-bY-xCr"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ngc-cf-F19" secondAttribute="trailing" id="aei-8G-7cU"/>
                                                     <constraint firstItem="EZ8-g4-AaR" firstAttribute="centerX" secondItem="ngc-cf-F19" secondAttribute="centerX" id="avf-sp-ABI"/>
-                                                    <constraint firstItem="ngc-cf-F19" firstAttribute="leading" secondItem="AMH-HZ-cmw" secondAttribute="leading" id="iE6-3w-bFy"/>
                                                     <constraint firstAttribute="height" constant="150" id="mwm-Q5-B2L"/>
                                                     <constraint firstItem="EZ8-g4-AaR" firstAttribute="width" secondItem="ngc-cf-F19" secondAttribute="width" multiplier="0.4" id="oY1-Gb-plR"/>
                                                     <constraint firstItem="ngc-cf-F19" firstAttribute="centerY" secondItem="AMH-HZ-cmw" secondAttribute="centerY" id="r28-7E-5le"/>

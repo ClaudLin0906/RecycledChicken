@@ -236,18 +236,8 @@ class HomeVC: CustomRootVC {
 //    }
     
     private func UIInit(){
-//        carbonReductionLogBtn.layer.borderWidth = 1
-//        carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-//        self.currentIndexSubject
-//            .sink { [self] index in
-//                guard adBannerInfos.count > 0 else { return }
-//                pageControl.currentPage = index
-//                bannerCollectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
-//            }
-//            .store(in: &self.cancellables)
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
-            self.changeBanner()
-        }
+        carbonReductionLogBtn.layer.borderWidth = 1
+        carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         petItemView.setInfo(.bottle)
         batteryItemView.setInfo(.battery)
         papperCubItemView.setInfo(.papperCub)
@@ -256,12 +246,21 @@ class HomeVC: CustomRootVC {
         bannerCollectionViewFlowLayout.estimatedItemSize = .zero
         bannerCollectionViewFlowLayout.minimumInteritemSpacing = 0
         bannerCollectionViewFlowLayout.minimumLineSpacing = 0
-        bannerCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: 100)
         mallCollectionViewFlowLayout.estimatedItemSize = .zero
         mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
         mallCollectionViewFlowLayout.minimumLineSpacing = 0
         mallCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.currentIndexSubject
+            .sink { [self] index in
+                guard adBannerInfos.count > 0 else { return }
+                pageControl.currentPage = index
+                bannerCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+            }
+            .store(in: &self.cancellables)
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
+            self.changeBanner()
+        }
     }
     
     private func getChoseDateRecycleAmount(){
@@ -276,7 +275,7 @@ class HomeVC: CustomRootVC {
     private func computeDate(_ startTime:String, endTime:String, completion: @escaping (_ battery:Int, _ bottle:Int, _ colorlessBottle:Int, _ can:Int) -> Void){
         let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
         NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 100 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }

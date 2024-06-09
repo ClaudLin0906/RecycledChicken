@@ -74,12 +74,12 @@ class TaskVC: CustomRootVC {
             if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
                 self.taskInfos.removeAll()
                 self.taskInfos.append(contentsOf: taskInfos)
-                self.taskInfos = self.taskInfos.filter {
-                    if let startTime = $0.startTime, let startDate = dateFromString(startTime), let endTime = $0.endTime, let endDate = dateFromString(endTime) {
-                        return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
-                    }
-                    return false
-                }
+//                self.taskInfos = self.taskInfos.filter {
+//                    if let startTime = $0.startTime, let startDate = dateFromString(startTime), let endTime = $0.endTime, let endDate = dateFromString(endTime) {
+//                        return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
+//                    }
+//                    return false
+//                }
                 completion()
             }
         }
@@ -144,25 +144,31 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let taskInfo = taskInfos[row]
-        guard let type = taskInfo.type, let reward = taskInfo.reward, let rewardType = reward.type  else { return UITableViewCell() }
+        guard let type = taskInfo.type, let reward = taskInfo.reward, let rewardType = reward.type else {
+            return UITableViewCell()
+        }
         let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
         switch type {
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.setCell(taskInfo, finishTasks)
             return cell
-//        case .advertise:
-//            <#code#>
-//        case .battery:
-//            <#code#>
-//        case .bottle:
-//            <#code#>
-//        case .can:
-//            <#code#>
-//        case .cup:
-//            <#code#>
-        default:
-            break
+        case .advertise:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
+            cell.setCell(taskInfo, finishTasks)
+            return cell
+        case .battery:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.setCell(taskInfo, finishTasks, submitted: batteryInt)
+        case .bottle:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.setCell(taskInfo, finishTasks, submitted: bottleInt)
+        case .can:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.setCell(taskInfo, finishTasks, submitted: canInt)
+        case .cup:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.setCell(taskInfo, finishTasks, submitted: cupInt)
         }
 //        switch type {
 //        case .share:
