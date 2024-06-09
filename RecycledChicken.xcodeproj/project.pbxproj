@@ -20,6 +20,7 @@
 		335A452D2C0A1D55000D2337 /* ChickeIntroduceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A452C2C0A1D55000D2337 /* ChickeIntroduceView.xib */; };
 		335A452F2C0A3E5E000D2337 /* SignActivityCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A452E2C0A3E5D000D2337 /* SignActivityCodeView.swift */; };
 		335A45312C0A3E69000D2337 /* SignActivityCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */; };
+		33A7359F2C160F46004218B4 /* CenteredCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 33A7359E2C160F46004218B4 /* CenteredCollectionView */; };
 		33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */; };
 		33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */; };
 		590251052B68DF250002E76C /* Pw_UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590251042B68DF250002E76C /* Pw_UserDefault.swift */; };
@@ -676,6 +677,7 @@
 				F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */,
 				590251082B68E3020002E76C /* CombineHelper in Frameworks */,
 				5902510B2B68E31F0002E76C /* CombineDataSources in Frameworks */,
+				33A7359F2C160F46004218B4 /* CenteredCollectionView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,6 +1372,7 @@
 				590251072B68E3020002E76C /* CombineHelper */,
 				5902510A2B68E31F0002E76C /* CombineDataSources */,
 				597FED9F2B932A3100D03B56 /* Kingfisher */,
+				33A7359E2C160F46004218B4 /* CenteredCollectionView */,
 			);
 			productName = RecycledChicken;
 			productReference = 5926C57A2A04086400FAB49D /* RecycledChicken.app */;
@@ -1406,6 +1409,7 @@
 				590251062B68E3020002E76C /* XCRemoteSwiftPackageReference "CombineHelper" */,
 				590251092B68E31F0002E76C /* XCRemoteSwiftPackageReference "CombineDataSources" */,
 				597FED9E2B932A3100D03B56 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				33A7359D2C160F46004218B4 /* XCRemoteSwiftPackageReference "CenteredCollectionView" */,
 			);
 			productRefGroup = 5926C57B2A04086400FAB49D /* Products */;
 			projectDirPath = "";
@@ -2690,6 +2694,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		33A7359D2C160F46004218B4 /* XCRemoteSwiftPackageReference "CenteredCollectionView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BenEmdon/CenteredCollectionView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.2;
+			};
+		};
 		590251062B68E3020002E76C /* XCRemoteSwiftPackageReference "CombineHelper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ytyubox/CombineHelper";
@@ -2733,6 +2745,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		33A7359E2C160F46004218B4 /* CenteredCollectionView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33A7359D2C160F46004218B4 /* XCRemoteSwiftPackageReference "CenteredCollectionView" */;
+			productName = CenteredCollectionView;
+		};
 		590251072B68E3020002E76C /* CombineHelper */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 590251062B68E3020002E76C /* XCRemoteSwiftPackageReference "CombineHelper" */;

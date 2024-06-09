@@ -54,7 +54,7 @@ class HomeVC: CustomRootVC {
     private var adBannerInfos:[ADBannerInfo] = []
     
     private var itemInfos:[ItemInfo] = []
-    
+//    
     private var cancellables: Set<AnyCancellable> = []
 
     @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: "") var displayToday:String
@@ -238,13 +238,13 @@ class HomeVC: CustomRootVC {
     private func UIInit(){
 //        carbonReductionLogBtn.layer.borderWidth = 1
 //        carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        self.currentIndexSubject
-            .sink { [self] index in
-                guard adBannerInfos.count > 0 else { return }
-                pageControl.currentPage = index
-                bannerCollectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
-            }
-            .store(in: &self.cancellables)
+//        self.currentIndexSubject
+//            .sink { [self] index in
+//                guard adBannerInfos.count > 0 else { return }
+//                pageControl.currentPage = index
+//                bannerCollectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+//            }
+//            .store(in: &self.cancellables)
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
             self.changeBanner()
         }

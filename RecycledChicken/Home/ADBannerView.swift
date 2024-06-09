@@ -62,15 +62,12 @@ class ADBannerView: UIView, NibOwnerLoadable {
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "ADBannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ADBannerCollectionViewCell")
         collectionViewFlowLayout.itemSize = collectionView.frame.size
-        collectionViewFlowLayout.estimatedItemSize = .zero
-        collectionViewFlowLayout.minimumInteritemSpacing = 0
-        collectionViewFlowLayout.minimumLineSpacing = 50
-        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionViewFlowLayout.minimumLineSpacing = 30
         pageControl.currentPage = currentIndex
         currentIndexSubject
             .sink { [weak self] index in
                 self?.pageControl.currentPage = index
-                self?.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+                self?.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
             }
             .store(in: &cancellables)
         let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(leftGesture(_:)))
