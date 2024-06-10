@@ -59,22 +59,14 @@ class RecycleLogVC: CustomVC {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)&endTime=\(endTime)"
-        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                self.useRecordInfoHandle(useRecordInfos)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.tableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
-                    })
-                }
+        getRecords(self, startTime, endTime: endTime) { useRecordInfos, battery, bottle, colorlessBottle, can in
+            self.useRecordInfoHandle(useRecordInfos)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    self.tableView.stopSkeletonAnimation()
+                    self.view.hideSkeleton()
+                })
             }
         }
     }

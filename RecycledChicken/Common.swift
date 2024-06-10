@@ -379,6 +379,39 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
+func getRecords(_ VC:UIViewController, site:String? = nil, _ startTime:String, endTime:String, completion: @escaping ( _ useRecordInfos:[UseRecordInfo], _ battery:Int, _ bottle:Int, _ colorlessBottle:Int, _ can:Int) -> Void){
+    let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
+    NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+        guard let data = data, statusCode == 200 else {
+            showAlert(VC: VC, title: "error".localized, message: errorMSG)
+            return
+        }
+        if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
+            var batteryInt = 0
+            var bottleInt = 0
+            var colorlessBottleInt = 0
+            var canInt = 0
+            useRecordInfos.forEach { useRecordInfo in
+                if let recycleDetails = useRecordInfo.recycleDetails {
+                    if let battery = recycleDetails.battery {
+                        batteryInt += battery
+                    }
+                    if let bottle = recycleDetails.bottle {
+                        bottleInt += bottle
+                    }
+                    if let colorlessBottle = recycleDetails.colorlessBottle {
+                        colorlessBottleInt += colorlessBottle
+                    }
+                    if let can = recycleDetails.can {
+                        canInt += can
+                    }
+                }
+            }
+            completion(useRecordInfos, batteryInt, bottleInt, colorlessBottleInt, canInt)
+        }
+    }
+}
+
 func loginOutRemoveObject(){
     CurrentUserInfo.shared.currentProfileNewInfo = nil
     CommonKey.shared.authToken = ""
@@ -918,11 +951,11 @@ func imageWithImage(image:UIImage?, scaledToSize newSize:CGSize) -> UIImage? {
     return newImage
 }
 
-func getStartAndEndDateOfMonth() -> (start: String, end: String)? {
+func getStartAndEndDateOfMonth(_ dateFormat: String = "yyyy-MM-dd") -> (start: String, end: String)? {
     let calendar = Calendar.current
     let now = Date()
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = dateFormat
     
     let components = calendar.dateComponents([.year, .month], from: now)
     
@@ -1024,6 +1057,7 @@ struct Certificates {
 struct UseRecordInfo:Codable {
     var userPhoneNumber:String?
     var storeName:String?
+    var storeID:String?
     var time:String?
     var type:RecycleType?
     var recycleDetails:RecycleDetails?
@@ -1031,6 +1065,7 @@ struct UseRecordInfo:Codable {
     enum CodingKeys:String, CodingKey {
         case userPhoneNumber = "userPhoneNumber"
         case storeName = "storeName"
+        case storeID = "storeID"
         case time = "time"
         case type = "type"
         case recycleDetails = "recycleDetails"
@@ -1040,6 +1075,7 @@ struct UseRecordInfo:Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         userPhoneNumber = try? container.decodeIfPresent(String.self, forKey: .userPhoneNumber)
         storeName = try? container.decodeIfPresent(String.self, forKey: .storeName)
+        storeID = try? container.decodeIfPresent(String.self, forKey: .storeID)
         time = try? container.decodeIfPresent(String.self, forKey: .time)
         type = try? container.decodeIfPresent(RecycleType.self, forKey: .type)
         recycleDetails = try? container.decodeIfPresent(RecycleDetails.self, forKey: .recycleDetails)

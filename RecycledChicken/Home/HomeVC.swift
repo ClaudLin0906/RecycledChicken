@@ -89,13 +89,11 @@ class HomeVC: CustomRootVC {
         }
         getItems()
         if let (startTime, endTime) = getStartAndEndDateOfMonth() {
-            computeDate(startTime, endTime: endTime) { battery, bottle, colorlessBottle, can in
-                DispatchQueue.main.async { [self] in
-                    petItemView.setAmount(bottle)
-                    batteryItemView.setAmount(battery + colorlessBottle)
-                    papperCubItemView.setAmount(0)
-                    aluminumCanItemView.setAmount(can)
-                }
+            getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorlessBottle, can  in
+                petItemView.setAmount(bottle)
+                batteryItemView.setAmount(battery + colorlessBottle)
+                papperCubItemView.setAmount(0)
+                aluminumCanItemView.setAmount(can)
             }
         }
     }
@@ -260,48 +258,6 @@ class HomeVC: CustomRootVC {
             .store(in: &self.cancellables)
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
             self.changeBanner()
-        }
-    }
-    
-    private func getChoseDateRecycleAmount(){
-        guard CommonKey.shared.authToken != "", CurrentUserInfo.shared.isGuest == false else { return }
-        computeDate(CustomCalenderModel.shared.selectedDate, endTime: CustomCalenderModel.shared.selectedDate, completion: { batteryStr, bottleStr, colorlessBottleStr, canStr in
-            DispatchQueue.main.async {
-                
-            }
-        })
-    }
-    
-    private func computeDate(_ startTime:String, endTime:String, completion: @escaping (_ battery:Int, _ bottle:Int, _ colorlessBottle:Int, _ can:Int) -> Void){
-        let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
-        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            var batteryInt = 0
-            var bottleInt = 0
-            var colorlessBottleInt = 0
-            var canInt = 0
-            if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
-                useRecordInfos.forEach { useRecordInfo in
-                    if let recycleDetails = useRecordInfo.recycleDetails {
-                        if let battery = recycleDetails.battery {
-                            batteryInt += battery
-                        }
-                        if let bottle = recycleDetails.bottle {
-                            bottleInt += bottle
-                        }
-                        if let colorlessBottle = recycleDetails.colorlessBottle {
-                            colorlessBottleInt += colorlessBottle
-                        }
-                        if let can = recycleDetails.can {
-                            canInt += can
-                        }
-                    }
-                }
-            }
-            completion(batteryInt, bottleInt, colorlessBottleInt, canInt)
         }
     }
     

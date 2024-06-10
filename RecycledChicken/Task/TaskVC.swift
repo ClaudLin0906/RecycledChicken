@@ -89,38 +89,12 @@ class TaskVC: CustomRootVC {
         let sevenDays = getSevenDaysArray(targetDate: Date())
         let startTime = sevenDays[0].0
         let endTime = sevenDays[6].0
-        let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
-        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            bottleInt = 0
-            batteryInt = 0
+        getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorlessBottle, can in
+            bottleInt = battery
+            batteryInt = bottle
             colorlessBottleInt = 0
-            canInt = 0
+            canInt = can
             cupInt = 0
-            if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
-                useRecordInfos.forEach { useRecordInfo in
-                    if let recycleDetails = useRecordInfo.recycleDetails {
-                        if let battery = recycleDetails.battery {
-                            batteryInt += battery
-                        }
-                        if let bottle = recycleDetails.bottle {
-                            bottleInt += bottle
-                        }
-                        if let colorlessBottle = recycleDetails.colorlessBottle {
-                            colorlessBottleInt += colorlessBottle
-                        }
-                        if let can = recycleDetails.can {
-                            canInt += can
-                        }
-                        if let cup = recycleDetails.cup {
-                            cupInt += cup
-                        }
-                    }
-                }
-            }
         }
     }
     

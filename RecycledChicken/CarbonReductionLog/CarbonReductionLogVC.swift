@@ -236,50 +236,16 @@ class CarbonReductionLogVC: CustomVC {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)&endTime=\(endTime)"
-        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { [self] (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            batteryCount = 0
-            bottleCount = 0
-//            colorlessBottleCount = 0
-            canCount = 0
-            if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
-                useRecordInfos.forEach { useRecordInfo in
-                    if let recycleDetails = useRecordInfo.recycleDetails {
-                        if let battery = recycleDetails.battery {
-                            batteryCount += battery
-                        }
-                        if let bottle = recycleDetails.bottle {
-                            bottleCount += bottle
-                        }
-                        if let colorlessBottle = recycleDetails.colorlessBottle {
-                            bottleCount += colorlessBottle
-                        }
-                        if let can = recycleDetails.can {
-                            canCount += can
-                        }
-                    }
-                }
-                DispatchQueue.main.async { [self] in
-                    bottleItemCellView.setCount(bottleCount)
-                    batteryItemCellView.setCount(batteryCount)
-                    papperCubItemCellView.setCount(papperCubCount)
-                    aluminumCanItemCellView.setCount(canCount)
-                    publicTransportItemCellView.setCount(publicTransportCount)
-//                    UIView.animate(withDuration: 0.5) { [self] in
-
-//                        let batteryprogress = Double(batteryInt)/1200
-//                        let bottleprogress = Double(bottleInt)/1200
-//                        progressGroup.ring1.progress = batteryprogress
-//                        progressGroup.ring2.progress = bottleprogress
-//                        if batteryprogress >= 1 && bottleprogress >= 1{
-//                            isHiddenCongratulations(false)
-//                        }
-//                    }
-                }
+        getRecords(self, startTime, endTime: endTime) { useRecordInfos, battery, bottle, colorlessBottle, can in
+            DispatchQueue.main.async { [self] in
+                batteryCount = battery
+                bottleCount = bottle + colorlessBottle
+                canCount = can
+                bottleItemCellView.setCount(bottleCount)
+                batteryItemCellView.setCount(batteryCount)
+                papperCubItemCellView.setCount(papperCubCount)
+                aluminumCanItemCellView.setCount(canCount)
+                publicTransportItemCellView.setCount(publicTransportCount)
             }
         }
     }
