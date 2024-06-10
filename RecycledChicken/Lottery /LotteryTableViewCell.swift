@@ -122,11 +122,23 @@ class LotteryTableViewCell: UITableViewCell {
             }
             
             if let drawDate = lotteryInfo.drawDate {
-                self.lotteryDrawDate = drawDate
+                self.lotteryDrawDate = changeFormat(drawDate)
             }
             if let infoPoint = lotteryInfo.point {
                 self.point = String(infoPoint)
             }
         }
+    }
+    
+    private func changeFormat(_ dateStr:String)-> String {
+        var changeDate = dateStr
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: changeDate) {
+            dateFormatter.dateFormat = "yyyy/MM/dd"
+            let formattedDate = dateFormatter.string(from: date)
+            return formattedDate
+        }
+        return dateStr
     }
 }
