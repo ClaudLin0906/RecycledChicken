@@ -90,9 +90,11 @@ class CarbonReductionLogVC: CustomVC {
     
     private var bottleCount = 0
     
-//    private var colorlessBottleCount = 0
+    private var colorlessBottle = 0
     
-    private var papperCubCount = 0
+    private var colorlessBottleCount = 0
+        
+    private var cupCount = 0
     
     private var canCount = 0
     
@@ -150,7 +152,7 @@ class CarbonReductionLogVC: CustomVC {
         case .battery:
             count = batteryCount
         case .papperCub:
-            count = papperCubCount
+            count = cupCount
         case .aluminumCan:
             count = canCount
         case .publicTransport:
@@ -236,14 +238,15 @@ class CarbonReductionLogVC: CustomVC {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        getRecords(self, startTime, endTime: endTime) { useRecordInfos, battery, bottle, colorlessBottle, can in
+        getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorledBottleInt, colorlessBottle, can, cup in
             DispatchQueue.main.async { [self] in
-                batteryCount = battery
-                bottleCount = bottle + colorlessBottle
-                canCount = can
+                batteryCount = battery ?? 0
+                bottleCount = bottle ?? 0
+                canCount = can ?? 0
+                cupCount = can ?? 0
                 bottleItemCellView.setCount(bottleCount)
                 batteryItemCellView.setCount(batteryCount)
-                papperCubItemCellView.setCount(papperCubCount)
+                papperCubItemCellView.setCount(cupCount)
                 aluminumCanItemCellView.setCount(canCount)
                 publicTransportItemCellView.setCount(publicTransportCount)
             }

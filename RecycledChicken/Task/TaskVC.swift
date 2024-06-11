@@ -15,15 +15,17 @@ class TaskVC: CustomRootVC {
     
 //    private var taskStatus:[TaskStatus] = []
     
-    private var batteryInt = 0
+    private var batteryInt:Int?
     
-    private var bottleInt = 0
+    private var bottleInt:Int?
     
-    private var colorlessBottleInt = 0
+    private var colorledBottleInt:Int?
     
-    private var canInt = 0
+    private var colorlessBottleInt:Int?
     
-    private var cupInt = 0
+    private var canInt:Int?
+    
+    private var cupInt:Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,16 +91,18 @@ class TaskVC: CustomRootVC {
         let sevenDays = getSevenDaysArray(targetDate: Date())
         let startTime = sevenDays[0].0
         let endTime = sevenDays[6].0
-        getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorlessBottle, can in
+        getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorledBottleInt, colorlessBottle, can, cup in
             bottleInt = battery
             batteryInt = bottle
-            colorlessBottleInt = 0
+            colorlessBottleInt = colorledBottleInt
+            colorlessBottleInt = colorlessBottle
             canInt = can
-            cupInt = 0
+            cupInt = cup
+
         }
     }
     
-    private func signAlert(){
+    private func signAlert() {
         let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
             loginOutRemoveObject()
             goToSignVC()
@@ -128,36 +132,49 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             cell.setCell(taskInfo, finishTasks)
             return cell
         case .advertise:
+            if let reward = taskInfo.reward, let type = reward.type, type == .ticket {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
+                cell.setCell(taskInfo, finishTasks)
+                return cell
+            }
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
             cell.setCell(taskInfo, finishTasks)
             return cell
         case .battery:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks, submitted: batteryInt)
-            return cell
-        case .bottle:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks, submitted: bottleInt)
-            return cell
-        case .can:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks, submitted: canInt)
-            return cell
-        case .cup:
-            if let reward = taskInfo.reward, let rewardType = reward.type {
-                switch rewardType {
-                case .point:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
-                    cell.setCell(taskInfo, finishTasks, submitted: cupInt)
-                    return cell
-                case .ticket:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
-                    
-                    return cell
-                }
+            if let reward = taskInfo.reward, let rewardType = reward.type, rewardType == .ticket {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
+                cell.setCell(taskInfo, finishTasks, submitted: batteryInt ?? 0)
+                return cell
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks, submitted: cupInt)
+            cell.setCell(taskInfo, finishTasks, submitted: batteryInt ?? 0)
+            return cell
+        case .bottle:
+            if let reward = taskInfo.reward, let rewardType = reward.type, rewardType == .ticket {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
+                cell.setCell(taskInfo, finishTasks, submitted: bottleInt ?? 0)
+                return cell
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.setCell(taskInfo, finishTasks, submitted: bottleInt ?? 0)
+            return cell
+        case .can:
+            if let reward = taskInfo.reward, let rewardType = reward.type, rewardType == .ticket {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
+                cell.setCell(taskInfo, finishTasks, submitted: canInt ?? 0)
+                return cell
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.setCell(taskInfo, finishTasks, submitted: canInt ?? 0)
+            return cell
+        case .cup:
+            if let reward = taskInfo.reward, let rewardType = reward.type, rewardType == .ticket {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
+                cell.setCell(taskInfo, finishTasks, submitted: cupInt ?? 0)
+                return cell
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+            cell.setCell(taskInfo, finishTasks, submitted: cupInt ?? 0)
             return cell
         }
 //        switch type {

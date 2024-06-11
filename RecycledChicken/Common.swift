@@ -379,7 +379,7 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
-func getRecords(_ VC:UIViewController, site:String? = nil, _ startTime:String, endTime:String, completion: @escaping ( _ useRecordInfos:[UseRecordInfo], _ battery:Int, _ bottle:Int, _ colorlessBottle:Int, _ can:Int) -> Void){
+func getRecords(_ VC:UIViewController, site:String? = nil, _ startTime:String, endTime:String, completion: @escaping ( _ useRecordInfos:[UseRecordInfo], _ battery:Int?, _ bottle:Int?, _ colorledBottleInt:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
     let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
         guard let data = data, statusCode == 200 else {
@@ -387,27 +387,41 @@ func getRecords(_ VC:UIViewController, site:String? = nil, _ startTime:String, e
             return
         }
         if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
-            var batteryInt = 0
-            var bottleInt = 0
-            var colorlessBottleInt = 0
-            var canInt = 0
+            var batteryInt:Int?
+            var bottleInt:Int?
+            var colorledBottleInt:Int?
+            var colorlessBottleInt:Int?
+            var canInt:Int?
+            var cupInt:Int?
             useRecordInfos.forEach { useRecordInfo in
                 if let recycleDetails = useRecordInfo.recycleDetails {
                     if let battery = recycleDetails.battery {
-                        batteryInt += battery
+                        batteryInt = batteryInt ?? 0
+                        batteryInt! += battery
                     }
                     if let bottle = recycleDetails.bottle {
-                        bottleInt += bottle
+                        bottleInt = bottleInt ?? 0
+                        bottleInt! += bottle
+                    }
+                    if let colorledBottle = recycleDetails.colorledBottle {
+                        colorledBottleInt = colorledBottleInt ?? 0
+                        colorledBottleInt! += colorledBottle
                     }
                     if let colorlessBottle = recycleDetails.colorlessBottle {
-                        colorlessBottleInt += colorlessBottle
+                        colorlessBottleInt = colorlessBottleInt ?? 0
+                        colorlessBottleInt! += colorlessBottle
                     }
                     if let can = recycleDetails.can {
-                        canInt += can
+                        canInt = canInt ?? 0
+                        canInt! += can
+                    }
+                    if let cup = recycleDetails.cup {
+                        cupInt = cupInt ?? 0
+                        cupInt! += cup
                     }
                 }
             }
-            completion(useRecordInfos, batteryInt, bottleInt, colorlessBottleInt, canInt)
+            completion(useRecordInfos, batteryInt, bottleInt, colorledBottleInt, colorlessBottleInt, canInt, cupInt)
         }
     }
 }
@@ -1085,13 +1099,16 @@ struct UseRecordInfo:Codable {
 enum RecycleType: String, Codable {
     case battery = "battery"
     case bottle = "bottle"
+    case colorledBottle = "colorledBottle"
     case colorlessBottle = "colorlessBottle"
     case can = "can"
+    case cup = "cup"
 }
 
 struct RecycleDetails:Codable {
     var battery:Int?
     var bottle:Int?
+    var colorledBottle:Int?
     var colorlessBottle:Int?
     var can:Int?
     var cup:Int?

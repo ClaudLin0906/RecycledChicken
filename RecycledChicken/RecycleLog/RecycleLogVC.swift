@@ -59,7 +59,7 @@ class RecycleLogVC: CustomVC {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        getRecords(self, startTime, endTime: endTime) { useRecordInfos, battery, bottle, colorlessBottle, can in
+        getRecords(self, startTime, endTime: endTime) { useRecordInfos, battery, bottle, colorledBottleInt, colorlessBottle, can, cup in
             self.useRecordInfoHandle(useRecordInfos)
             DispatchQueue.main.async {
                 self.tableView.reloadData()

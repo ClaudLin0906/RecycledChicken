@@ -89,11 +89,11 @@ class HomeVC: CustomRootVC {
         }
         getItems()
         if let (startTime, endTime) = getStartAndEndDateOfMonth() {
-            getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorlessBottle, can  in
-                petItemView.setAmount(bottle)
-                batteryItemView.setAmount(battery + colorlessBottle)
-                papperCubItemView.setAmount(0)
-                aluminumCanItemView.setAmount(can)
+            getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorledBottleInt, colorlessBottle, can, cup in
+                petItemView.setAmount(bottle ?? 0)
+                batteryItemView.setAmount(battery ?? 0)
+                papperCubItemView.setAmount(cup ?? 0)
+                aluminumCanItemView.setAmount(can ?? 0)
             }
         }
     }

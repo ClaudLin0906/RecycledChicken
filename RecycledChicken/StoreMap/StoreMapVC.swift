@@ -58,7 +58,7 @@ class StoreMapVC: CustomRootVC {
                 mapInfos.forEach({ mapInfo in
                     var newMapInfo = mapInfo
                     if newMapInfo.machineStatus == nil, let machineRemaining = newMapInfo.machineRemaining {
-                        if machineRemaining.battery ?? 0 > 0 || machineRemaining.bottle ?? 0 > 0 || machineRemaining.can ?? 0 > 0 || machineRemaining.cup ?? 0 > 0 || machineRemaining.colorBottle ?? 0 > 0 {
+                        if machineRemaining.battery ?? 0 > 0 || machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorBottle ?? 0 > 0 || machineRemaining.colorlessBottle ?? 0 > 0 || machineRemaining.can ?? 0 > 0 || machineRemaining.cup ?? 0 > 0 {
                             newMapInfo.machineStatus = .submit
                         }
                     }
@@ -139,14 +139,14 @@ class StoreMapVC: CustomRootVC {
                 var remainCan = false
                 var remainCup = false
                 var isSpecial = false
+                if machineRemaining.battery ?? 0 > 0 {
+                    remainBattery = true
+                }
                 if machineRemaining.bottle ?? 0 > 0 {
                     remainBottle = true
                 }
-                if  machineRemaining.colorBottle ?? 0 > 0  {
+                if machineRemaining.colorBottle ?? 0 > 0  {
                     remainColorBottle = true
-                }
-                if machineRemaining.battery ?? 0 > 0 {
-                    remainBattery = true
                 }
                 if machineRemaining.can ?? 0 > 0 {
                     remainCan = true
