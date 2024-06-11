@@ -16,7 +16,9 @@ class ADView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var closeBtn:UIButton!
     
-    var cell:TaskTableViewADCell?
+    var taskTableViewADCell:TaskTableViewADCell?
+    
+    var taskTableViewPartnerCell:TaskTableViewPartnerCell?
     
     var type:ADType = .isHome
     
@@ -67,9 +69,14 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func isFinishAction() {
-        var newTaskInfo = cell?.taskInfo
-        cell?.taskInfo = newTaskInfo
-        cell?.finishAction()
+        if let taskTableViewADCell = taskTableViewADCell {
+            taskTableViewADCell.finishAction()
+        }
+        
+        if let taskTableViewPartnerCell = taskTableViewPartnerCell {
+            taskTableViewPartnerCell.finishAction()
+        }
+        
     }
     
     private func taskAction(){

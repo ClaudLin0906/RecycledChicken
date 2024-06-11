@@ -121,5 +121,28 @@ class TaskTableViewPartnerCell: UITableViewCell {
             }
         }
     }
+    
+    func finishAction() {
+        guard let taskInfo = taskInfo, let createTime = taskInfo.createTime else { return }
+        let finishTaskInfo = FinishTaskInfo(createTime: createTime)
+        let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard let data = data, statusCode == 200 else {
+                return
+            }
+            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
+            if let status = apiResult?.status {
+                switch status {
+                case .success:
+                    self.taskInfo?.isFinish = true
+                    var finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String]
+                    finishTasks?.append(createTime)
+                    UserDefaults().set(finishTasks, forKey: UserDefaultKey.shared.finishTasks)
+                case .failure:
+                    break
+                }
+            }
+        }
+    }
 
 }

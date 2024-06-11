@@ -51,8 +51,12 @@ class TaskVC: CustomRootVC {
 //        getTaskStatus()
     }
     
-    private func sharedAction(taskInfo:TaskInfo, completion: @escaping (Bool, String?) -> Void){
-        let url = "https://apps.apple.com/app/id6449214570"
+    private func sharedAction(_ taskInfo:TaskInfo, completion: @escaping (Bool, String?) -> Void){
+//        let url = "https://apps.apple.com/app/id6449214570"
+        guard let url = taskInfo.url else { 
+            completion(false, "url 有問題")
+            return
+        }
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
 
@@ -177,22 +181,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             cell.setCell(taskInfo, finishTasks, submitted: cupInt ?? 0)
             return cell
         }
-//        switch type {
-//        case .share:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-//            let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
-//            cell.setCell(taskInfo, finishTasks)
-//            return cell
-//        case .advertise:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
-//            let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
-//            cell.taskInfo = taskInfo
-//            return cell
-//        default:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-//            cell.setCell(taskInfo, battery: batteryInt, bottle: bottleInt, colorlessBottle: colorlessBottleInt, can: canInt, cup: cupInt)
-//            return cell
-//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -200,35 +188,70 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             signAlert()
             return
         }
-        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
-            let type = cell.taskInfo?.type
+        let taskInfo = taskInfos[indexPath.row]
+        if let type = taskInfo.type, let isFinish = taskInfo.isFinish {
             switch type {
             case .share:
-                if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo {
-                    sharedAction(taskInfo: taskInfo, completion: { result, errorMSG in
-                        guard result else {
+                if !isFinish {
+                    sharedAction(taskInfo) { result, errorMSG in
+                        guard result else { 
                             showAlert(VC: self, title: errorMSG, message: nil)
                             return
                         }
-                        var newTaskInfo = taskInfo
-                        newTaskInfo.isFinish = result
-                        cell.taskInfo? = newTaskInfo
+                    }
+                    if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
                         cell.finishAction()
-                    })
+                    }
+                }
+            case .advertise:
+                if !isFinish {
+                    let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
+                    
+                    if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
+                        adView.taskTableViewADCell = cell
+                    }
+                    
+                    if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewPartnerCell {
+                        adView.taskTableViewPartnerCell = cell
+                    }
+                    adView.taskInfo = taskInfo
+                    keyWindow?.addSubview(adView)
+
                 }
             default:
                 break
             }
         }
-
-        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
-            if let isFinish = cell.taskInfo?.isFinish, !isFinish {
-                let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
-                adView.cell = cell
-                adView.taskInfo = cell.taskInfo
-                keyWindow?.addSubview(adView)
-            }
-        }
+       
+//        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
+//            let type = cell.taskInfo?.type
+//            switch type {
+//            case .share:
+//                if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo {
+//                    sharedAction(taskInfo: taskInfo, completion: { result, errorMSG in
+//                        guard result else {
+//                            showAlert(VC: self, title: errorMSG, message: nil)
+//                            return
+//                        }
+//                        var newTaskInfo = taskInfo
+//                        newTaskInfo.isFinish = result
+//                        cell.taskInfo? = newTaskInfo
+//                        cell.finishAction()
+//                    })
+//                }
+//            default:
+//                break
+//            }
+//        }
+//
+//        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
+//            if let isFinish = cell.taskInfo?.isFinish, !isFinish {
+//                let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
+//                adView.cell = cell
+//                adView.taskInfo = cell.taskInfo
+//                keyWindow?.addSubview(adView)
+//            }
+//        }
     }
     
 }
