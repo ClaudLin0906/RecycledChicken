@@ -115,13 +115,14 @@ class StationListVC: CustomVC {
             let distance2 = coordinate2.distance(from: currentLocation)
             return distance1 < distance2
         })
-        self.mapInfos.removeAll()
-        if newMapInfos.count > 5 {
-            mapInfos.append(contentsOf: newMapInfos.prefix(5))
-        }
-        if newMapInfos.count <= 5 {
-            mapInfos.append(contentsOf: newMapInfos)
-        }
+        mapInfos.removeAll()
+        mapInfos.append(contentsOf: newMapInfos)
+//        if newMapInfos.count > 5 {
+//            mapInfos.append(contentsOf: newMapInfos.prefix(5))
+//        }
+//        if newMapInfos.count <= 5 {
+//            mapInfos.append(contentsOf: newMapInfos)
+//        }
         print(" end \(mapInfos)")
     }
     
@@ -129,11 +130,12 @@ class StationListVC: CustomVC {
         self.areasDropDown.dataSource.removeAll()
         self.areas.removeAll()
         var newAreaMapInfo:[MapInfo] = []
-        if self.filterMapInfos.count > 5 {
-            newAreaMapInfo.append(contentsOf: self.filterMapInfos.prefix(5))
-        }else{
-            newAreaMapInfo.append(contentsOf: self.filterMapInfos)
-        }
+//        if self.filterMapInfos.count > 5 {
+//            newAreaMapInfo.append(contentsOf: self.filterMapInfos.prefix(5))
+//        }else{
+//            newAreaMapInfo.append(contentsOf: self.filterMapInfos)
+//        }
+        newAreaMapInfo.append(contentsOf: self.filterMapInfos)
         newAreaMapInfo.forEach({
             if let address = $0.address, let area = self.getAreas(address) {
                 self.areas.append(area)
@@ -209,7 +211,7 @@ class StationListVC: CustomVC {
     
     private func getAreas(_ address:String) -> String? {
         guard address.count > 6 else { return nil }
-        let startIndex = address.index(address.startIndex, offsetBy: 3)
+        let startIndex = address.index(address.startIndex, offsetBy: 0)
         let endIndex = address.index(address.startIndex, offsetBy: 6)
         return String(address[startIndex..<endIndex])
     }
