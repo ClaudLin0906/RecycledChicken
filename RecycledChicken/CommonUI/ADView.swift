@@ -28,10 +28,9 @@ class ADView: UIView, NibOwnerLoadable {
             if taskInfo != nil {
                 switch type {
                 case.isHome:
-                    HomeAction()
+                    homeAction()
                 case .isTask:
-                    break
-//                    taskAction()
+                    taskAction()
                 }
             }
         }
@@ -79,7 +78,7 @@ class ADView: UIView, NibOwnerLoadable {
         
     }
     
-    private func taskAction(){
+    private func taskAction() {
         if let urlStr = taskInfo?.url, let url = URL(string: urlStr) {
             let request = URLRequest(url: url)
             webviewLoadAction(request)
@@ -94,7 +93,7 @@ class ADView: UIView, NibOwnerLoadable {
         }
     }
     
-    private func HomeAction(){        
+    private func homeAction(){
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAd) { data, statusCode, errorMSG in
             guard let data = data, let urlStr = String(data: data, encoding: .utf8), let url = URL(string: urlStr) else {
                 return
@@ -112,8 +111,11 @@ class ADView: UIView, NibOwnerLoadable {
         webView.scrollView.backgroundColor = .clear
         webView.uiDelegate = self
         webView.navigationDelegate = self
-        if type == .isHome {
-            HomeAction()
+        switch type {
+        case .isHome:
+            homeAction()
+        case .isTask:
+            taskAction()
         }
     }
 }
