@@ -122,7 +122,7 @@ class LotteryTableViewCell: UITableViewCell {
             }
             
             if let drawDate = lotteryInfo.drawDate {
-                self.lotteryDrawDate = changeFormat(drawDate)
+                self.lotteryDrawDate = self.changeFormat(drawDate)
             }
             if let infoPoint = lotteryInfo.point {
                 self.point = String(infoPoint)
