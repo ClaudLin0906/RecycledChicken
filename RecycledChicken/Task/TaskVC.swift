@@ -47,9 +47,7 @@ class TaskVC: CustomRootVC {
         super.viewWillAppear(animated)
 //        getRecycleCount()
         getTaskInfo(completion: { [self] in
-            DispatchQueue.main.async {
-                self.taskTableView.reloadData()
-            }
+            reloadTableView()
         })
     }
     
@@ -141,9 +139,17 @@ class TaskVC: CustomRootVC {
             self.taskInfos[index].isFinish = true
         }
         if let createTime = taskInfo.createTime {
-            var finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String]
-            finishTasks?.append(createTime)
-            UserDefaults().set(finishTasks, forKey: UserDefaultKey.shared.finishTasks)
+            let finishTasks:[String] = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
+            var newFinishTasks = finishTasks
+            newFinishTasks.append(createTime)
+            UserDefaults().set(newFinishTasks, forKey: UserDefaultKey.shared.finishTasks)
+        }
+        reloadTableView()
+    }
+    
+    private func reloadTableView() {
+        DispatchQueue.main.async {
+            self.taskTableView.reloadData()
         }
     }
     
@@ -156,6 +162,7 @@ class TaskVC: CustomRootVC {
                 if statusCode == 304 {
                     self.successTaskAction(taskInfo)
                 }
+                showAlert(VC: self, title: errorMSG ?? "不知名的錯誤")
                 return
             }
             let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)

@@ -94,9 +94,7 @@ class TaskTableViewPartnerCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-            guard let createTime = taskInfo.createTime else { return }
-            
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {            
             if let title = taskInfo.title {
                 self.title = title
             }
@@ -112,7 +110,6 @@ class TaskTableViewPartnerCell: UITableViewCell {
             if let reward = taskInfo.reward, let leftIcon = reward.leftIcon, let url = URL(string: leftIcon) {
                 self.leftImageUrl = url
             }
-            
             self.taskInfo = taskInfo
         }
     }

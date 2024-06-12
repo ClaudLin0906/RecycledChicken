@@ -95,8 +95,6 @@ class TaskTableViewADCell: UITableViewCell {
     
     func setCell(_ taskInfo:TaskInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-            guard let title = taskInfo.title, let description = taskInfo.description, let reward = taskInfo.reward, let rewardPoint = reward.amount, let createTime = taskInfo.createTime else { return }
-            
             if let title = taskInfo.title {
                 self.title = title
             }
