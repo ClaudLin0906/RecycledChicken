@@ -154,15 +154,15 @@ enum RecyceledSort: CaseIterable {
         let publicTransportColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
         switch self {
         case .bottle:
-            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "Pet", color: bottleColor)
+            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "Pet", color: bottleColor, recycleUnit: "瓶", oUnit: "gCO2e")
         case .battery:
-            return RecyceledSortInfo(chineseName: "battery".localized, englishName: "BATTERY", iconName: "battery", color: batteryColor)
+            return RecyceledSortInfo(chineseName: "battery".localized, englishName: "BATTERY", iconName: "battery", color: batteryColor, recycleUnit: "顆", oUnit: "CO2e")
         case .papperCub:
-            return RecyceledSortInfo(chineseName: "papperCup".localized, englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor)
+            return RecyceledSortInfo(chineseName: "papperCup".localized, englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor, recycleUnit: "個", oUnit: "CO2e")
         case .aluminumCan:
-            return RecyceledSortInfo(chineseName: "aluminumCan".localized, englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor)
+            return RecyceledSortInfo(chineseName: "aluminumCan".localized, englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor, recycleUnit: "個", oUnit: "kgCO2e")
         case .publicTransport:
-            return RecyceledSortInfo(chineseName: "大眾運輸", englishName: "publicTransport", iconName: "bus", color: publicTransportColor)
+            return RecyceledSortInfo(chineseName: "大眾運輸", englishName: "publicTransport", iconName: "bus", color: publicTransportColor, recycleUnit: "次", oUnit: "gCO2e")
         }
     }
     
@@ -173,6 +173,8 @@ struct RecyceledSortInfo {
     var englishName: String
     var iconName: String
     var color:UIColor
+    var recycleUnit:String
+    var oUnit:String
 }
 
 
