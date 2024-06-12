@@ -11,6 +11,8 @@
 		2537419D2C103FB900FA0933 /* MallProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2537419C2C103FB900FA0933 /* MallProduct.storyboard */; };
 		2537419F2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */; };
 		253741A12C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */; };
+		2588F6BF2C197C3600636594 /* ConnectCompanyWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */; };
+		2588F6C12C197C3F00636594 /* ConnectCompanyWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */; };
 		331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */; };
 		331E77B52BFCC383002F6B0D /* IllustratedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */; };
 		331E77B72BFCC38F002F6B0D /* IllustratedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */; };
@@ -304,6 +306,8 @@
 		2537419C2C103FB900FA0933 /* MallProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MallProduct.storyboard; sourceTree = "<group>"; };
 		2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewPartnerCell.swift; sourceTree = "<group>"; };
 		253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewPartnerProgressCell.swift; sourceTree = "<group>"; };
+		2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyWebViewVC.swift; sourceTree = "<group>"; };
+		2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectCompanyWebView.storyboard; sourceTree = "<group>"; };
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
 		331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedContentVC.swift; sourceTree = "<group>"; };
 		331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedContent.storyboard; sourceTree = "<group>"; };
@@ -967,6 +971,8 @@
 				597521972A0BD10600D0B67C /* ConnectSuccessView.swift */,
 				59600E8D2B9EE137009AFA76 /* ConnectSuccessView.xib */,
 				59835DEF2A63C69300678BAF /* ConnectCompanyModel.swift */,
+				2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */,
+				2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */,
 			);
 			path = ConnectCompany;
 			sourceTree = "<group>";
@@ -1520,6 +1526,7 @@
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
 				59600EB32B9EE313009AFA76 /* PersonMessage.storyboard in Resources */,
+				2588F6C12C197C3F00636594 /* ConnectCompanyWebView.storyboard in Resources */,
 				595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */,
 				59600E972B9EE22E009AFA76 /* DeleteAccount.storyboard in Resources */,
 				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
@@ -1641,6 +1648,7 @@
 				59632D422B89EF530093BE6E /* LanguageSettingModel.swift in Sources */,
 				5998DD402B8B304300C99A8C /* IllustratedGuideVC.swift in Sources */,
 				3351CC662C14C37C00AC0C2A /* MapIconView.swift in Sources */,
+				2588F6BF2C197C3600636594 /* ConnectCompanyWebViewVC.swift in Sources */,
 				59CDA3522A42FC9600E3F74E /* ProfileModel.swift in Sources */,
 				597521802A0B8AB500D0B67C /* DeleteAccountVC.swift in Sources */,
 				59997A532A09428000E9FD7F /* BattView.swift in Sources */,

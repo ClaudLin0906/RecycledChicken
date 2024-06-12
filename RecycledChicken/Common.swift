@@ -357,6 +357,7 @@ struct WebViewUrl {
     static let PrivacyPolicyURL = "https://www.buenopartners.com.tw/privacy"
     static let CommonPronblemURL = "https://www.buenopartners.com.tw/faq"
     static let CustomerContactURL = "https://www.buenopartners.com.tw/fae"
+    static let ConnectCompanyURL = "https://www.buenopartners.com.tw/contact"
 }
 
 var attributes: [NSAttributedString.Key: Any] = [

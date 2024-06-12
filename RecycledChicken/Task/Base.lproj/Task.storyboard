@@ -29,13 +29,13 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每週任務" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k43-Uw-Q2N" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="162.66666666666666" y="153" width="68" height="24"/>
+                                <rect key="frame" x="162.66666666666666" y="153" width="68" height="20"/>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rvh-Nu-5VR">
-                                <rect key="frame" x="20" y="197" width="353" height="621"/>
+                                <rect key="frame" x="20" y="193" width="353" height="625"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableViewCell" id="a7h-YG-l8r" customClass="TaskTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
@@ -88,7 +88,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ1-3W-L2Y">
-                                                                    <rect key="frame" x="35" y="32.333333333333336" width="50" height="15.666666666666664"/>
+                                                                    <rect key="frame" x="35" y="30.666666666666664" width="50" height="18.666666666666664"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="szG-UP-Bjl"/>
                                                                     </constraints>
@@ -207,7 +207,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIu-ir-pOU">
-                                                                    <rect key="frame" x="35" y="32.333333333333336" width="50" height="15.666666666666664"/>
+                                                                    <rect key="frame" x="35" y="30.666666666666664" width="50" height="18.666666666666664"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="taf-0S-2CQ"/>
                                                                     </constraints>
@@ -537,31 +537,31 @@
     </scenes>
     <designables>
         <designable name="2z3-Bw-Vam">
-            <size key="intrinsicContentSize" width="68" height="24"/>
+            <size key="intrinsicContentSize" width="68" height="20"/>
         </designable>
         <designable name="PG8-3l-iBo">
-            <size key="intrinsicContentSize" width="68" height="24"/>
+            <size key="intrinsicContentSize" width="68" height="20"/>
         </designable>
         <designable name="aHa-Cv-mhz">
-            <size key="intrinsicContentSize" width="44.666666666666664" height="24"/>
+            <size key="intrinsicContentSize" width="41.666666666666664" height="20"/>
         </designable>
         <designable name="k43-Uw-Q2N">
-            <size key="intrinsicContentSize" width="68" height="24"/>
+            <size key="intrinsicContentSize" width="68" height="20"/>
         </designable>
         <designable name="krr-Zi-F0N">
-            <size key="intrinsicContentSize" width="68" height="24"/>
+            <size key="intrinsicContentSize" width="68" height="20"/>
         </designable>
         <designable name="tPD-Ie-oWR">
-            <size key="intrinsicContentSize" width="68" height="24"/>
+            <size key="intrinsicContentSize" width="68" height="20"/>
         </designable>
         <designable name="z3L-3e-cJZ">
-            <size key="intrinsicContentSize" width="44.666666666666664" height="24"/>
+            <size key="intrinsicContentSize" width="41.666666666666664" height="20"/>
         </designable>
         <designable name="zDQ-nb-EVg">
-            <size key="intrinsicContentSize" width="44.666666666666664" height="24"/>
+            <size key="intrinsicContentSize" width="41.666666666666664" height="20"/>
         </designable>
         <designable name="zvy-Sf-fzt">
-            <size key="intrinsicContentSize" width="44.666666666666664" height="24"/>
+            <size key="intrinsicContentSize" width="41.666666666666664" height="20"/>
         </designable>
     </designables>
     <resources>

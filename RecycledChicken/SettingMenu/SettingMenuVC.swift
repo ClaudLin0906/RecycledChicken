@@ -86,7 +86,7 @@ extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 3:
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ConnectCompany", bundle: Bundle.main).instantiateViewController(identifier: "ConnectCompany") as? ConnectCompanyVC {
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ConnectCompanyWebView", bundle: Bundle.main).instantiateViewController(identifier: "ConnectCompanyWebView") as? ConnectCompanyWebViewVC {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 4:
