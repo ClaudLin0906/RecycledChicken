@@ -56,7 +56,7 @@ class TaskTableViewCell: UITableViewCell {
         }
     }
     
-    var taskInfo:TaskInfo?
+    private var taskInfo:TaskInfo?
     {
         willSet{
             if let newValue = newValue, newValue.isFinish {
