@@ -89,7 +89,11 @@ class HomeVC: CustomRootVC {
         }
         getItems()
         if let (startTime, endTime) = getStartAndEndDateOfMonth() {
-            getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorledBottleInt, colorlessBottle, can, cup in
+            getRecords([], startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+                guard let statusCode = statusCode, statusCode == 200 else {
+                    showAlert(VC: self, title: "error".localized)
+                    return
+                }
                 petItemView.setAmount(bottle ?? 0)
                 batteryItemView.setAmount(battery ?? 0)
                 papperCubItemView.setAmount(cup ?? 0)

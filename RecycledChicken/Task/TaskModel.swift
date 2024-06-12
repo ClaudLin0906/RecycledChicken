@@ -19,7 +19,8 @@ struct TaskInfo: Codable {
     var requiredAmount:Int?
     var sites:[String]?
     var url:String?
-    var isFinish:Bool?
+    var isFinish:Bool
+    var isSpecifiedLocation:Bool
     
     enum CodingKeys:String, CodingKey {
         case createTime = "createTime"
@@ -34,6 +35,7 @@ struct TaskInfo: Codable {
         case sites = "sites"
         case url = "url"
         case isFinish = "isFinish"
+        case isSpecifiedLocation = "isSpecifiedLocation"
     }
     
     init(from decoder: Decoder) throws {
@@ -50,6 +52,7 @@ struct TaskInfo: Codable {
         sites = try? container.decodeIfPresent([String].self, forKey: .sites)
         url = try? container.decodeIfPresent(String.self, forKey: .url)
         isFinish = false
+        isSpecifiedLocation = false
     }
 
 }

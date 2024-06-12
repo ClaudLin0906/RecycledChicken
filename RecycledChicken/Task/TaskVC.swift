@@ -71,12 +71,15 @@ class TaskVC: CustomRootVC {
         self.present(activityVC, animated: true, completion: nil)
     }
     
-    private func addIsFinishStatus(_ responseTaskInfo:[TaskInfo], completion: @escaping () -> Void) {
-        responseTaskInfo.forEach { taskInfo in
+    private func addStatus(_ responseTaskInfos:[TaskInfo], completion: @escaping () -> Void) {
+        responseTaskInfos.forEach { taskInfo in
             var newTaskInfo = taskInfo
             self.currentFinishTaskss.forEach { finishTasks in
                 if let createTime = newTaskInfo.createTime, createTime == finishTasks {
                     newTaskInfo.isFinish = true
+                }
+                if let sites = newTaskInfo.sites, sites.count > 0 {
+                    newTaskInfo.isSpecifiedLocation = true
                 }
             }
             self.taskInfos.append(newTaskInfo)
@@ -102,7 +105,7 @@ class TaskVC: CustomRootVC {
             }
             if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
                 self.taskInfos.removeAll()
-                self.addIsFinishStatus(taskInfos) {
+                self.addStatus(taskInfos) {
 //                    self.filterTaskInfoDate {
                         completion()
 //                    }
@@ -115,7 +118,11 @@ class TaskVC: CustomRootVC {
         let sevenDays = getSevenDaysArray(targetDate: Date())
         let startTime = sevenDays[0].0
         let endTime = sevenDays[6].0
-        getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+        getRecords([], startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+            guard let statusCode = statusCode, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized)
+                return
+            }
             bottleInt = battery
             batteryInt = bottle
             colorledBottleInt = colorledBottle
@@ -247,10 +254,10 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             return
         }
         let taskInfo = taskInfos[indexPath.row]
-        if let type = taskInfo.type, let isFinish = taskInfo.isFinish {
+        if let type = taskInfo.type {
             switch type {
             case .share:
-                if !isFinish {
+                if !taskInfo.isFinish {
                     sharedAction(taskInfo) { result, errorMSG in
                         guard result else { 
                             showAlert(VC: self, title: errorMSG, message: nil)
@@ -262,7 +269,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             case .advertise:
-                if !isFinish {
+                if !taskInfo.isFinish {
                     let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
                     
                     if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {

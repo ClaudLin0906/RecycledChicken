@@ -379,11 +379,11 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
-func getRecords(_ VC:UIViewController, site:String? = nil, _ startTime:String, endTime:String, completion: @escaping ( _ useRecordInfos:[UseRecordInfo], _ battery:Int?, _ bottle:Int?, _ colorledBottleInt:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
+func getRecords(_ site:[String] = [], _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
     let urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
         guard let data = data, statusCode == 200 else {
-            showAlert(VC: VC, title: "error".localized, message: errorMSG)
+            completion(statusCode, errorMSG, nil, nil, nil, nil, nil, nil, nil)
             return
         }
         if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
@@ -421,7 +421,7 @@ func getRecords(_ VC:UIViewController, site:String? = nil, _ startTime:String, e
                     }
                 }
             }
-            completion(useRecordInfos, batteryInt, bottleInt, colorledBottleInt, colorlessBottleInt, canInt, cupInt)
+            completion(statusCode, errorMSG, useRecordInfos, batteryInt, bottleInt, colorledBottleInt, colorlessBottleInt, canInt, cupInt)
         }
     }
 }
