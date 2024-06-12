@@ -119,7 +119,6 @@ class CarbonReductionLogVC: CustomVC {
             }})
             itemDropDown.dataSource.removeAll()
             itemDropDown.dataSource.append(contentsOf: itemNames)
-            dropDownView.sortLabel.text = itemNames[0]
             changeType()
         })
     }
@@ -158,11 +157,12 @@ class CarbonReductionLogVC: CustomVC {
         case .publicTransport:
             count = publicTransportCount
         }
+        dropDownView.sortLabel.text = recyceledSort.getInfo().chineseName
         recycledRingInfoView.setRecycledRingInfo(recyceledSort, personalRecyleAmountAndTargetInfo: personalRecyleAmountAndTargetInfo, count)
+        
     }
 
     private func UIInit() {
-        dropDownView.sortLabel.text = recyceledSortInfos.first?.chineseName
         recycleBtn.layer.borderWidth = 1
         recycleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         bottleItemCellView.setType(.bottle)
@@ -197,7 +197,6 @@ class CarbonReductionLogVC: CustomVC {
                 }
                 return false
             })
-            setValueOfDropDown()
             changeType()
         }
         
@@ -221,11 +220,6 @@ class CarbonReductionLogVC: CustomVC {
                 completion()
             }
         }
-    }
-    
-    private func setValueOfDropDown() {
-        guard let currentPersonalRecyleAmountAndTargetInfo = currentPersonalRecyleAmountAndTargetInfo else { return }
-        dropDownView.sortLabel.text = currentPersonalRecyleAmountAndTargetInfo.itemName ?? ""
     }
     
     @IBAction func goBuenopartners(_ sender:UIButton) {
