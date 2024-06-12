@@ -21,6 +21,8 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     
     @IBOutlet weak var background:UIView!
     
+    var delegate:TaskTableViewCellFinishDelete?
+    
     var taskInfo:TaskInfo?
     {
         willSet{
@@ -80,7 +82,7 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ taskInfo:TaskInfo, _ finishTimes:[String], submitted:Int = 0) {
+    func setCell(_ taskInfo:TaskInfo, submitted:Int = 0) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             guard let createTime = taskInfo.createTime else { return }
             
@@ -98,13 +100,6 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
             
             self.taskInfo = taskInfo
             
-            for finishTime in finishTimes {
-                if createTime == finishTime {
-                    self.taskInfo?.isFinish = true
-                    break
-                }
-            }
-            
             if let requiredAmount = taskInfo.requiredAmount {
                 self.taskProgressView.setPercent(submitted, denominator: requiredAmount)
                 if submitted >= requiredAmount {
@@ -115,26 +110,7 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     }
     
     func finishAction() {
-        guard let taskInfo = taskInfo, let createTime = taskInfo.createTime else { return }
-        let finishTaskInfo = FinishTaskInfo(createTime: createTime)
-        let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                return
-            }
-            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
-            if let status = apiResult?.status {
-                switch status {
-                case .success:
-                    self.taskInfo?.isFinish = true
-                    var finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String]
-                    finishTasks?.append(createTime)
-                    UserDefaults().set(finishTasks, forKey: UserDefaultKey.shared.finishTasks)
-                case .failure:
-                    break
-                }
-            }
-        }
+        delegate?.taskTableViewCellFinish(taskInfo)
     }
 
 }

@@ -79,7 +79,7 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func taskAction() {
-        if let urlStr = taskInfo?.url, let url = URL(string: urlStr) {
+        if let urlStr = taskInfo?.url, let url = URL(string: "https://tw.yahoo.com/") {
             let request = URLRequest(url: url)
             webviewLoadAction(request)
             countdownLabel.isHidden = false
@@ -87,7 +87,6 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func webviewLoadAction(_ request:URLRequest) {
-        
         DispatchQueue.main.async { [self] in
             webView.load(request)
         }

@@ -434,30 +434,6 @@ func loginOutRemoveObject(){
     removeBiometricsAction()
 }
 
-func finishAction(_ taskInfo:TaskInfo, _ createTime:String, completion: @escaping(TaskInfo) -> Void) {
-    let finishTaskInfo = FinishTaskInfo(createTime: createTime)
-    let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
-    NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-        guard let data = data, statusCode == 200 else {
-            return
-        }
-        let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
-        if let status = apiResult?.status {
-            switch status {
-            case .success:
-                var finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String]
-                finishTasks?.append(createTime)
-                UserDefaults().set(finishTasks, forKey: UserDefaultKey.shared.finishTasks)
-                var newTaskInfo = taskInfo
-                newTaskInfo.isFinish = true
-                completion(newTaskInfo)
-            case .failure:
-                break
-            }
-        }
-    }
-}
-
 func removeBiometricsAction(){
     UserDefaults().set(false, forKey: UserDefaultKey.shared.biometrics)
     let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)

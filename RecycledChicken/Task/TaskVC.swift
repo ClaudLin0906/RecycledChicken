@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TaskTableViewCellFinishDelete {
+    func taskTableViewCellFinish(_ taskInfo:TaskInfo?)
+}
+
 class TaskVC: CustomRootVC {
     
     @IBOutlet weak var taskTableView:UITableView!
@@ -26,6 +30,8 @@ class TaskVC: CustomRootVC {
     private var canInt:Int?
     
     private var cupInt:Int?
+    
+    @UserDefault(UserDefaultKey.shared.finishTasks, defaultValue: []) var currentFinishTaskss:[String]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,7 @@ class TaskVC: CustomRootVC {
     }
     
     private func UIInit() {
-        
+        taskTableView.setSeparatorLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,10 +51,6 @@ class TaskVC: CustomRootVC {
                 self.taskTableView.reloadData()
             }
         })
-    }
-    
-    private func updateInfo(){
-//        getTaskStatus()
     }
     
     private func sharedAction(_ taskInfo:TaskInfo, completion: @escaping (Bool, String?) -> Void){
@@ -71,6 +73,29 @@ class TaskVC: CustomRootVC {
         self.present(activityVC, animated: true, completion: nil)
     }
     
+    private func addIsFinishStatus(_ responseTaskInfo:[TaskInfo], completion: @escaping () -> Void) {
+        responseTaskInfo.forEach { taskInfo in
+            var newTaskInfo = taskInfo
+            self.currentFinishTaskss.forEach { finishTasks in
+                if let createTime = newTaskInfo.createTime, createTime == finishTasks {
+                    newTaskInfo.isFinish = true
+                }
+            }
+            self.taskInfos.append(newTaskInfo)
+        }
+        completion()
+    }
+    
+    private func filterTaskInfoDate(completion: @escaping () -> Void) {
+        self.taskInfos = self.taskInfos.filter {
+            if let startTime = $0.startTime, let startDate = dateFromString(startTime), let endTime = $0.endTime, let endDate = dateFromString(endTime) {
+                return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
+            }
+            return false
+        }
+        completion()
+    }
+    
     private func getTaskInfo(completion: @escaping () -> Void) {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
@@ -79,14 +104,11 @@ class TaskVC: CustomRootVC {
             }
             if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
                 self.taskInfos.removeAll()
-                self.taskInfos.append(contentsOf: taskInfos)
-//                self.taskInfos = self.taskInfos.filter {
-//                    if let startTime = $0.startTime, let startDate = dateFromString(startTime), let endTime = $0.endTime, let endDate = dateFromString(endTime) {
-//                        return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
+                self.addIsFinishStatus(taskInfos) {
+//                    self.filterTaskInfoDate {
+                        completion()
 //                    }
-//                    return false
-//                }
-                completion()
+                }
             }
         }
     }
@@ -95,14 +117,13 @@ class TaskVC: CustomRootVC {
         let sevenDays = getSevenDaysArray(targetDate: Date())
         let startTime = sevenDays[0].0
         let endTime = sevenDays[6].0
-        getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorledBottleInt, colorlessBottle, can, cup in
+        getRecords(self, startTime, endTime: endTime) { [self] useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
             bottleInt = battery
             batteryInt = bottle
-            colorlessBottleInt = colorledBottleInt
+            colorledBottleInt = colorledBottle
             colorlessBottleInt = colorlessBottle
             canInt = can
             cupInt = cup
-
         }
     }
     
@@ -113,6 +134,53 @@ class TaskVC: CustomRootVC {
         }
         let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
         showAlert(VC: self, title: "碳員招募中！一起探索泥滑島的秘密", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+    }
+    
+    private func successTaskAction(_ taskInfo:TaskInfo) {
+        if let index = self.taskInfos.firstIndex(where: { $0.createTime == taskInfo.createTime}) {
+            self.taskInfos[index].isFinish = true
+        }
+        if let createTime = taskInfo.createTime {
+            var finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String]
+            finishTasks?.append(createTime)
+            UserDefaults().set(finishTasks, forKey: UserDefaultKey.shared.finishTasks)
+        }
+    }
+    
+    private func finishTaskAction(_ taskInfo:TaskInfo?) {
+        guard let taskInfo = taskInfo, let createTime = taskInfo.createTime, let type = taskInfo.type else { return }
+        let finishTaskInfo = FinishTaskInfo(createTime: createTime, type: type.rawValue)
+        let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.questComplete, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard let data = data, statusCode == 200 else {
+                if statusCode == 304 {
+                    self.successTaskAction(taskInfo)
+                }
+                return
+            }
+            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
+            if let status = apiResult?.status {
+                switch status {
+                case .success:
+                    self.successTaskAction(taskInfo)
+                case .failure:
+                    break
+                }
+            }
+        }
+    }
+    
+    private func handRecycledItemCell(_ tableView:UITableView, _ info:TaskInfo, _ submitted:Int?, _ finishTasks:[String]) -> UITableViewCell {
+        if let reward = info.reward, let rewardType = reward.type, rewardType == .ticket {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier) as! TaskTableViewPartnerProgressCell
+            cell.delegate = self
+            cell.setCell(info, submitted: submitted ?? 0)
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier) as! TaskTableViewCell
+        cell.delegate = self
+        cell.setCell(info, submitted: submitted ?? 0)
+        return cell
     }
 
 }
@@ -130,57 +198,40 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
+        var submitted:Int?
         switch type {
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks)
+            cell.delegate = self
+            cell.setCell(taskInfo)
             return cell
         case .advertise:
             if let reward = taskInfo.reward, let type = reward.type, type == .ticket {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
-                cell.setCell(taskInfo, finishTasks)
+                cell.delegate = self
+                cell.setCell(taskInfo)
                 return cell
             }
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
-            cell.setCell(taskInfo, finishTasks)
+            cell.delegate = self
+            cell.setCell(taskInfo)
             return cell
         case .battery:
-            if let reward = taskInfo.reward, let rewardType = reward.type, rewardType == .ticket {
-                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
-                cell.setCell(taskInfo, finishTasks, submitted: batteryInt ?? 0)
-                return cell
-            }
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks, submitted: batteryInt ?? 0)
-            return cell
+            submitted = batteryInt
         case .bottle:
-            if let reward = taskInfo.reward, let rewardType = reward.type, rewardType == .ticket {
-                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
-                cell.setCell(taskInfo, finishTasks, submitted: bottleInt ?? 0)
-                return cell
-            }
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks, submitted: bottleInt ?? 0)
-            return cell
+            submitted = bottleInt
+        case .colorledBottle:
+            submitted = colorledBottleInt
+        case .colorlessBottle:
+            submitted = colorlessBottleInt
         case .can:
-            if let reward = taskInfo.reward, let rewardType = reward.type, rewardType == .ticket {
-                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
-                cell.setCell(taskInfo, finishTasks, submitted: canInt ?? 0)
-                return cell
-            }
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks, submitted: canInt ?? 0)
-            return cell
+            submitted = canInt
         case .cup:
-            if let reward = taskInfo.reward, let rewardType = reward.type, rewardType == .ticket {
-                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier, for: indexPath) as! TaskTableViewPartnerProgressCell
-                cell.setCell(taskInfo, finishTasks, submitted: cupInt ?? 0)
-                return cell
-            }
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.setCell(taskInfo, finishTasks, submitted: cupInt ?? 0)
-            return cell
+            submitted = cupInt
         }
+        let cell = handRecycledItemCell(tableView, taskInfo, submitted, finishTasks)
+        return cell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -222,36 +273,11 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                 break
             }
         }
-       
-//        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
-//            let type = cell.taskInfo?.type
-//            switch type {
-//            case .share:
-//                if let isFinish = cell.taskInfo?.isFinish, !isFinish, let taskInfo = cell.taskInfo {
-//                    sharedAction(taskInfo: taskInfo, completion: { result, errorMSG in
-//                        guard result else {
-//                            showAlert(VC: self, title: errorMSG, message: nil)
-//                            return
-//                        }
-//                        var newTaskInfo = taskInfo
-//                        newTaskInfo.isFinish = result
-//                        cell.taskInfo? = newTaskInfo
-//                        cell.finishAction()
-//                    })
-//                }
-//            default:
-//                break
-//            }
-//        }
-//
-//        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewADCell {
-//            if let isFinish = cell.taskInfo?.isFinish, !isFinish {
-//                let adView = ADView(frame: UIScreen.main.bounds, type: .isTask)
-//                adView.cell = cell
-//                adView.taskInfo = cell.taskInfo
-//                keyWindow?.addSubview(adView)
-//            }
-//        }
     }
-    
+}
+
+extension TaskVC:TaskTableViewCellFinishDelete {
+    func taskTableViewCellFinish(_ taskInfo: TaskInfo?) {
+        finishTaskAction(taskInfo)
+    }
 }

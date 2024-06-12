@@ -59,6 +59,8 @@ enum TaskType: String, Codable {
     case advertise = "advertise"
     case battery = "battery"
     case bottle = "bottle"
+    case colorledBottle = "colorledBottle"
+    case colorlessBottle = "colorlessBottle"
     case can = "can"
     case cup = "cup"
 }
@@ -136,6 +138,7 @@ enum TaskStatus: String, Codable {
 
 struct FinishTaskInfo:Codable {
     var createTime:String
+    var type:String
 }
 
 //struct TaskStatus: Codable{

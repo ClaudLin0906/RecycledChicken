@@ -21,6 +21,8 @@ class TaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var pointLabel:UILabel!
     
+    var delegate:TaskTableViewCellFinishDelete?
+    
     private var title:String?
     {
         willSet {
@@ -80,7 +82,7 @@ class TaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ taskInfo:TaskInfo, _ finishTimes:[String], submitted:Int = 0) {
+    func setCell(_ taskInfo:TaskInfo, submitted:Int = 0) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             guard let createTime = taskInfo.createTime else { return }
             if let title = taskInfo.title {
@@ -96,13 +98,6 @@ class TaskTableViewCell: UITableViewCell {
             }
             
             self.taskInfo = taskInfo
-            
-            for finishTime in finishTimes {
-                if createTime == finishTime {
-                    self.taskInfo?.isFinish = true
-                    break
-                }
-            }
             
             if let type = taskInfo.type {
                 switch type {
@@ -127,39 +122,7 @@ class TaskTableViewCell: UITableViewCell {
 
     }
     
-    private func shareFinishAction() {
-        guard let taskInfo = taskInfo, let createTime = taskInfo.createTime else { return }
-        var finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String]
-        finishTasks?.append(createTime)
-        UserDefaults().set(finishTasks, forKey: UserDefaultKey.shared.finishTasks)
-        
-    }
-    
     func finishAction() {
-        guard let taskInfo = taskInfo, let createTime = taskInfo.createTime else { return }
-        let finishTaskInfo = FinishTaskInfo(createTime: createTime)
-        let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                return
-            }
-            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
-            if let status = apiResult?.status {
-                switch status {
-                case .success:
-                    self.taskInfo?.isFinish = true
-                    switch taskInfo.type {
-                    case .share:
-                        self.shareFinishAction()
-                    default:
-                        break
-                    }
-                case .failure:
-                    break
-                }
-            }
-        }
+        delegate?.taskTableViewCellFinish(taskInfo)
     }
-    
-
 }

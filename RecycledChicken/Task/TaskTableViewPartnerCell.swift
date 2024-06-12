@@ -20,6 +20,8 @@ class TaskTableViewPartnerCell: UITableViewCell {
     @IBOutlet weak var partnerImageView:UIImageView!
     
     @IBOutlet weak var leftImageView:UIImageView!
+    
+    var delegate:TaskTableViewCellFinishDelete?
             
     var taskInfo:TaskInfo?
     {
@@ -91,7 +93,7 @@ class TaskTableViewPartnerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ taskInfo:TaskInfo, _ finishTimes:[String]) {
+    func setCell(_ taskInfo:TaskInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             guard let createTime = taskInfo.createTime else { return }
             
@@ -112,37 +114,11 @@ class TaskTableViewPartnerCell: UITableViewCell {
             }
             
             self.taskInfo = taskInfo
-            
-            for finishTime in finishTimes {
-                if createTime == finishTime {
-                    self.taskInfo?.isFinish = true
-                    break
-                }
-            }
         }
     }
     
     func finishAction() {
-        guard let taskInfo = taskInfo, let createTime = taskInfo.createTime else { return }
-        let finishTaskInfo = FinishTaskInfo(createTime: createTime)
-        let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.quest, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                return
-            }
-            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
-            if let status = apiResult?.status {
-                switch status {
-                case .success:
-                    self.taskInfo?.isFinish = true
-                    var finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String]
-                    finishTasks?.append(createTime)
-                    UserDefaults().set(finishTasks, forKey: UserDefaultKey.shared.finishTasks)
-                case .failure:
-                    break
-                }
-            }
-        }
+        delegate?.taskTableViewCellFinish(taskInfo)
     }
 
 }
