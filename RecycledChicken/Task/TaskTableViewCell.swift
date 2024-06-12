@@ -97,23 +97,36 @@ class TaskTableViewCell: UITableViewCell {
             }
             
             self.taskInfo = taskInfo
+                        
+            if taskInfo.isSpecifiedLocation {
+                self.getSpecifiedLocation { submittedCount in
+                    self.requiredAmountHandle(submittedCount)
+                }
+            }
             
-            if let type = taskInfo.type {
-                switch type {
-                case .share:
-                    var molecular = 0
-                    if taskInfo.isFinish {
-                        molecular = 1
-                    }
-                    self.taskProgressView.setPercent(molecular, denominator: 1)
-                case .advertise:
-                    break
-                default:
-                    if let requiredAmount = taskInfo.requiredAmount {
-                        self.taskProgressView.setPercent(submitted, denominator: requiredAmount)
-                        if submitted >= requiredAmount {
-                            self.taskInfo?.isFinish = true
-                        }
+            if !taskInfo.isSpecifiedLocation {
+                self.requiredAmountHandle(submitted)
+            }
+        }
+    }
+    
+    private func requiredAmountHandle(_ submitted:Int){
+        guard let taskInfo = self.taskInfo else { return }
+        if let type = taskInfo.type {
+            switch type {
+            case .share:
+                var molecular = 0
+                if taskInfo.isFinish {
+                    molecular = 1
+                }
+                self.taskProgressView.setPercent(molecular, denominator: 1)
+            case .advertise:
+                break
+            default:
+                if let requiredAmount = taskInfo.requiredAmount {
+                    self.taskProgressView.setPercent(submitted, denominator: requiredAmount)
+                    if submitted >= requiredAmount {
+                        self.taskInfo?.isFinish = true
                     }
                 }
             }
@@ -124,7 +137,36 @@ class TaskTableViewCell: UITableViewCell {
         delegate?.taskTableViewCellFinish(taskInfo)
     }
     
-    private func getdfdf(){
-
+    private func getSpecifiedLocation(completion: @escaping (Int) -> Void) {
+        guard let taskInfo = taskInfo, let sites = taskInfo.sites, let type = taskInfo.type else {
+            completion(0)
+            return
+        }
+        let sevenDays = getSevenDaysArray(targetDate: Date())
+        let startTime = sevenDays[0].0
+        let endTime = sevenDays[6].0
+        getRecords(sites, startTime, endTime) {statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+            guard let statusCode = statusCode, statusCode == 200 else {
+                print("\(errorMSG ?? "error".localized)")
+                completion(0)
+                return
+            }
+            switch type {
+            case .battery:
+                completion(battery ?? 0)
+            case .bottle:
+                completion(bottle ?? 0)
+            case .colorledBottle:
+                completion(colorledBottle ?? 0)
+            case .colorlessBottle:
+                completion(colorlessBottle ?? 0)
+            case .can:
+                completion(can ?? 0)
+            case .cup:
+                completion(cup ?? 0)
+            default:
+                completion(0)
+            }
+        }
     }
 }

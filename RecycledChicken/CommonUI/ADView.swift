@@ -79,7 +79,7 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func taskAction() {
-        if let urlStr = taskInfo?.url, let url = URL(string: "https://tw.yahoo.com/") {
+        if let urlStr = taskInfo?.url, let url = URL(string: urlStr) {
             let request = URLRequest(url: url)
             webviewLoadAction(request)
             countdownLabel.isHidden = false
