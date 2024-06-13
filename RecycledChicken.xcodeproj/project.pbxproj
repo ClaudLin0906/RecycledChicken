@@ -16,6 +16,9 @@
 		331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */; };
 		331E77B52BFCC383002F6B0D /* IllustratedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */; };
 		331E77B72BFCC38F002F6B0D /* IllustratedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */; };
+		33342E332C1B0E6400CB14E7 /* private.key in Resources */ = {isa = PBXBuildFile; fileRef = 33342E302C1B0E6400CB14E7 /* private.key */; };
+		33342E342C1B0E6400CB14E7 /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 33342E312C1B0E6400CB14E7 /* cert.cer */; };
+		33342E352C1B0E6400CB14E7 /* certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 33342E322C1B0E6400CB14E7 /* certificate.p12 */; };
 		3351CC662C14C37C00AC0C2A /* MapIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351CC652C14C37C00AC0C2A /* MapIconView.swift */; };
 		3351CC682C14C38400AC0C2A /* MapIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3351CC672C14C38400AC0C2A /* MapIconView.xib */; };
 		335A452B2C0A1D4B000D2337 /* ChickeIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A452A2C0A1D4B000D2337 /* ChickeIntroduceView.swift */; };
@@ -45,9 +48,6 @@
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		593CDE2A2A7F5E13007E1D10 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CDE292A7F5E13007E1D10 /* DeleteModel.swift */; };
 		593CDE662A83D229007E1D10 /* ca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE652A83D229007E1D10 /* ca.pem */; };
-		593CDE682A83D22F007E1D10 /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE672A83D22F007E1D10 /* cert.cer */; };
-		593CDE6A2A83D236007E1D10 /* certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE692A83D236007E1D10 /* certificate.p12 */; };
-		593CDE6C2A83D23E007E1D10 /* private.key in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE6B2A83D23E007E1D10 /* private.key */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
 		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
 		595406B82BC2749B00D214BF /* ColorFillTypeThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */; };
@@ -311,6 +311,9 @@
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
 		331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedContentVC.swift; sourceTree = "<group>"; };
 		331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedContent.storyboard; sourceTree = "<group>"; };
+		33342E302C1B0E6400CB14E7 /* private.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.key; sourceTree = "<group>"; };
+		33342E312C1B0E6400CB14E7 /* cert.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.cer; sourceTree = "<group>"; };
+		33342E322C1B0E6400CB14E7 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
 		3351CC652C14C37C00AC0C2A /* MapIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapIconView.swift; sourceTree = "<group>"; };
 		3351CC672C14C38400AC0C2A /* MapIconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapIconView.xib; sourceTree = "<group>"; };
 		335A452A2C0A1D4B000D2337 /* ChickeIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickeIntroduceView.swift; sourceTree = "<group>"; };
@@ -345,9 +348,6 @@
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		593CDE292A7F5E13007E1D10 /* DeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModel.swift; sourceTree = "<group>"; };
 		593CDE652A83D229007E1D10 /* ca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.pem; sourceTree = "<group>"; };
-		593CDE672A83D22F007E1D10 /* cert.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.cer; sourceTree = "<group>"; };
-		593CDE692A83D236007E1D10 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
-		593CDE6B2A83D23E007E1D10 /* private.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.key; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeThreeView.swift; sourceTree = "<group>"; };
@@ -869,9 +869,9 @@
 			isa = PBXGroup;
 			children = (
 				593CDE652A83D229007E1D10 /* ca.pem */,
-				593CDE6B2A83D23E007E1D10 /* private.key */,
-				593CDE692A83D236007E1D10 /* certificate.p12 */,
-				593CDE672A83D22F007E1D10 /* cert.cer */,
+				33342E312C1B0E6400CB14E7 /* cert.cer */,
+				33342E322C1B0E6400CB14E7 /* certificate.p12 */,
+				33342E302C1B0E6400CB14E7 /* private.key */,
 			);
 			path = Certificate;
 			sourceTree = "<group>";
@@ -1450,6 +1450,7 @@
 				59600E832B9EE02A009AFA76 /* SignLogin.storyboard in Resources */,
 				59E69A262A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf in Resources */,
 				595406C22BC27B9500D214BF /* ColorFillTypeFourView.xib in Resources */,
+				33342E332C1B0E6400CB14E7 /* private.key in Resources */,
 				59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */,
 				59600EBF2B9EE34C009AFA76 /* Profile.storyboard in Resources */,
 				59600F4F2B9EEDF4009AFA76 /* IllustratedGuide.storyboard in Resources */,
@@ -1495,7 +1496,6 @@
 				59600ECF2B9EE3C8009AFA76 /* CarbonReductionLog.storyboard in Resources */,
 				59600EAF2B9EE2FD009AFA76 /* PersonMessageContent.storyboard in Resources */,
 				595D3CF02BE3260600FE9D85 /* SiteList.storyboard in Resources */,
-				593CDE682A83D22F007E1D10 /* cert.cer in Resources */,
 				59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */,
 				3351CC682C14C38400AC0C2A /* MapIconView.xib in Resources */,
 				59600EB72B9EE31F009AFA76 /* DeleteAllMessageAlertView.xib in Resources */,
@@ -1508,7 +1508,6 @@
 				59600F7F2B9EEFEE009AFA76 /* ADView.xib in Resources */,
 				335A452D2C0A1D55000D2337 /* ChickeIntroduceView.xib in Resources */,
 				59600EA32B9EE2BD009AFA76 /* InvitationCodeView.xib in Resources */,
-				593CDE6C2A83D23E007E1D10 /* private.key in Resources */,
 				59600E872B9EE10E009AFA76 /* ConnectCompany.storyboard in Resources */,
 				59E69A232A3722510062D4EB /* GenJyuuGothic-Medium.ttf in Resources */,
 				59600F8F2B9EF030009AFA76 /* LanguageSetting.storyboard in Resources */,
@@ -1535,14 +1534,15 @@
 				59600F732B9EEFB8009AFA76 /* CompleteTaskAlertView.xib in Resources */,
 				59600F672B9EEEEB009AFA76 /* DropDownView.xib in Resources */,
 				59600F1F2B9EEB81009AFA76 /* MyTicker.storyboard in Resources */,
+				33342E352C1B0E6400CB14E7 /* certificate.p12 in Resources */,
 				59600EEB2B9EE53A009AFA76 /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
-				593CDE6A2A83D236007E1D10 /* certificate.p12 in Resources */,
 				59600F832B9EEFF8009AFA76 /* Product.storyboard in Resources */,
 				59600ED32B9EE3F7009AFA76 /* RecycledRingInfoView.xib in Resources */,
 				59600EFB2B9EE5C5009AFA76 /* CustomCalenderView.xib in Resources */,
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
 				59600F5B2B9EEEA8009AFA76 /* SpendPointView.xib in Resources */,
+				33342E342C1B0E6400CB14E7 /* cert.cer in Resources */,
 				59600E8F2B9EE192009AFA76 /* Sign.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
