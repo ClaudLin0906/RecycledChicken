@@ -59,10 +59,16 @@ class StationListTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        if let name = name, name.contains("中興里") {
+            setMachineStatus()
+        }
     }
     
     private func setMachineStatus() {
-        guard let info = self.info, let machineStatus = info.machineStatus else { return }
+        guard let info = self.info, let machineStatus = info.machineStatus else { 
+            stationStatusStackView.isHidden = true
+            return
+        }
         switch machineStatus {
         case .full:
             stationStatusStackView.isHidden = false
@@ -76,13 +82,11 @@ class StationListTableViewCell: UITableViewCell {
     }
     
     func setCell(_ info:MapInfo, _ currentLocation:CLLocation?) {
-        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-            self.info = info
-            self.setMachineStatus()
-            self.name = info.name
-            self.address = info.address
-            self.getDisance(currentLocation)
-        }
+        self.info = info
+        self.setMachineStatus()
+        self.name = info.name
+        self.address = info.address
+        self.getDisance(currentLocation)
     }
     
     private func getDisance( _ currentLocation:CLLocation?) {
