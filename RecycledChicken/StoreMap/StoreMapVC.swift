@@ -258,8 +258,8 @@ extension StoreMapVC: GMSMapViewDelegate {
         
         if let mapInfo = mapInfo {
             amountView.setAmount(mapInfo)
-            if amountView.stackView.subviews.count > 3 {
-                amountViewHeight.constant = CGFloat(amountView.stackView.subviews.count * 30)
+            if amountView.stackView.subviews.count >= 3 {
+                amountViewHeight.constant = CGFloat(amountView.stackView.subviews.count * 40)
             }
             if let taskDescription = mapInfo.taskDescription {
                 let specialTaskView = SpecialTaskView()
