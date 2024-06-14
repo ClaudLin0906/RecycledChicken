@@ -51,25 +51,12 @@ class LoginVC: CustomLoginVC {
         }
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        if biometrics {
-//            keepLoginCheckBox.checkState = .checked
-//            evaluatePolicyAction { result, message in
-//                if result {
-//                    DispatchQueue.main.async {
-//                        let accountInfo = CurrentUserInfo.shared.currentAccountInfo
-//                        self.phoneTextfield.text = accountInfo.userPhoneNumber
-//                        self.passwordTextfield.text = accountInfo.userPassword
-//                        self.loginAction(phone: accountInfo.userPhoneNumber, password: accountInfo.userPassword)
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        biometricsAction()
+    }
+
+    private func biometricsAction() {
         if biometrics {
             keepLoginCheckBox.checkState = .checked
             evaluatePolicyAction { result, message in
@@ -85,7 +72,7 @@ class LoginVC: CustomLoginVC {
         }
     }
     
-    private func loginSuccess(){
+    private func loginSuccess() {
         DispatchQueue.main.async { [self] in
             if keepLoginCheckBox.checkState == .checked {
                 UserDefaults().set(true, forKey: UserDefaultKey.shared.biometrics)

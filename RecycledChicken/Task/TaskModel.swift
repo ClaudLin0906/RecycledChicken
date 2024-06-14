@@ -111,7 +111,8 @@ struct TaskReward: Codable {
 
 enum TaskRewardType: String, Codable {
     case point = "point"
-    case ticket = "ticket"
+    case coupons = "coupons"
+    case lottery = "lottery"
 }
 
 struct TaskStatusRequest: Codable {

@@ -185,7 +185,7 @@ class TaskVC: CustomRootVC {
     }
     
     private func handRecycledItemCell(_ tableView:UITableView, _ info:TaskInfo, _ submitted:Int?, _ finishTasks:[String]) -> UITableViewCell {
-        if let reward = info.reward, let rewardType = reward.type, rewardType == .ticket {
+        if let reward = info.reward, let rewardType = reward.type, rewardType != .point {
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier) as! TaskTableViewPartnerProgressCell
             cell.delegate = self
             cell.setCell(info, submitted: submitted ?? 0)
@@ -220,7 +220,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             cell.setCell(taskInfo)
             return cell
         case .advertise:
-            if let reward = taskInfo.reward, let type = reward.type, type == .ticket {
+            if let reward = taskInfo.reward, let type = reward.type, type != .point {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
                 cell.delegate = self
                 cell.setCell(taskInfo)
@@ -245,7 +245,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         }
         let cell = handRecycledItemCell(tableView, taskInfo, submitted, finishTasks)
         return cell
-
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
