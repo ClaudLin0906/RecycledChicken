@@ -26,6 +26,8 @@ class StationListVC: CustomVC {
         
     private var locationManager = CLLocationManager()
     
+    private let areasDropDown = DropDown()
+    
     private var currentLocation: CLLocation?
     {
         willSet {
@@ -35,8 +37,6 @@ class StationListVC: CustomVC {
             }
         }
     }
-    
-    private let areasDropDown = DropDown()
 
     override func viewDidLoad() {
         super.viewDidLoad()

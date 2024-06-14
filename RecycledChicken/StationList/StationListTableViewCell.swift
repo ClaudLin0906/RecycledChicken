@@ -22,6 +22,28 @@ class StationListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var stationStatusStackView:UIStackView!
     
+    private var name:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    nameLabel.text = newValue
+                }
+            }
+        }
+    }
+    
+    private var address:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    addressLabel.text = newValue
+                }
+            }
+        }
+    }
+    
     private var info:MapInfo?
 
     override func awakeFromNib() {
@@ -35,23 +57,32 @@ class StationListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ info:MapInfo, _ currentLocation:CLLocation?) {
-        self.info = info
-        nameLabel.text = info.name
-        if let machineStatus = info.machineStatus {
-            switch machineStatus {
-            case .full:
-                stationStatusStackView.isHidden = false
-                statusLabel.text = info.machineStatus?.rawValue
-            case .submit:
-                stationStatusStackView.isHidden = true
-            case .underMaintenance:
-                stationStatusStackView.isHidden = false
-                statusLabel.text = info.machineStatus?.rawValue
-            }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
+    private func setMachineStatus() {
+        guard let info = self.info, let machineStatus = info.machineStatus else { return }
+        switch machineStatus {
+        case .full:
+            stationStatusStackView.isHidden = false
+            statusLabel.text = info.machineStatus?.rawValue
+        case .submit:
+            stationStatusStackView.isHidden = true
+        case .underMaintenance:
+            stationStatusStackView.isHidden = false
+            statusLabel.text = info.machineStatus?.rawValue
         }
-        addressLabel.text = info.address
-        getDisance(currentLocation)
+    }
+    
+    func setCell(_ info:MapInfo, _ currentLocation:CLLocation?) {
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            self.info = info
+            self.setMachineStatus()
+            self.name = info.name
+            self.address = info.address
+            self.getDisance(currentLocation)
+        }
     }
     
     private func getDisance( _ currentLocation:CLLocation?) {

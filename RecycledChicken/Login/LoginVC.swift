@@ -95,7 +95,6 @@ class LoginVC: CustomLoginVC {
             }else{
                 removeBiometricsAction()
             }
-
             LoginSuccess = true
             dismiss(animated: true)
         }
@@ -105,7 +104,7 @@ class LoginVC: CustomLoginVC {
         let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
 //        let loginInfo = testLoginInfo
         let loginInfoDic = try? loginInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "帳號密碼有誤", message: nil)
                 return
