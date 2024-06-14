@@ -82,7 +82,7 @@ class TaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(_ taskInfo:TaskInfo, submitted:Int = 0) {
+    func setCell(_ taskInfo:TaskInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             if let title = taskInfo.title {
                 self.title = title
@@ -97,16 +97,18 @@ class TaskTableViewCell: UITableViewCell {
             }
             
             self.taskInfo = taskInfo
-                        
-            if taskInfo.isSpecifiedLocation {
-                self.getSpecifiedLocation { submittedCount in
-                    self.requiredAmountHandle(submittedCount)
-                }
+            if !taskInfo.isFinish {
+                
             }
-            
-            if !taskInfo.isSpecifiedLocation {
-                self.requiredAmountHandle(submitted)
-            }
+//            if taskInfo.isSpecifiedLocation {
+//                self.getSpecifiedLocation { submittedCount in
+//                    self.requiredAmountHandle(submittedCount)
+//                }
+//            }
+//            
+//            if !taskInfo.isSpecifiedLocation {
+//                self.requiredAmountHandle(submitted)
+//            }
         }
     }
     

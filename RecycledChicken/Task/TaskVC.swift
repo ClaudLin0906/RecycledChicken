@@ -19,17 +19,17 @@ class TaskVC: CustomRootVC {
     
 //    private var taskStatus:[TaskStatus] = []
     
-    private var batteryInt:Int?
-    
-    private var bottleInt:Int?
-    
-    private var colorledBottleInt:Int?
-    
-    private var colorlessBottleInt:Int?
-    
-    private var canInt:Int?
-    
-    private var cupInt:Int?
+//    private var batteryInt:Int?
+//    
+//    private var bottleInt:Int?
+//    
+//    private var colorledBottleInt:Int?
+//    
+//    private var colorlessBottleInt:Int?
+//    
+//    private var canInt:Int?
+//    
+//    private var cupInt:Int?
     
     @UserDefault(UserDefaultKey.shared.finishTasks, defaultValue: []) var currentFinishTaskss:[String]
 
@@ -45,7 +45,6 @@ class TaskVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        getRecycleCount()
         getTaskInfo(completion: { [self] in
             reloadTableView()
         })
@@ -114,24 +113,6 @@ class TaskVC: CustomRootVC {
         }
     }
     
-    private func getRecycleCount() {
-        let sevenDays = getSevenDaysArray(targetDate: Date())
-        let startTime = sevenDays[0].0
-        let endTime = sevenDays[6].0
-        getRecords(nil, startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-            guard let statusCode = statusCode, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized)
-                return
-            }
-            bottleInt = battery
-            batteryInt = bottle
-            colorledBottleInt = colorledBottle
-            colorlessBottleInt = colorlessBottle
-            canInt = can
-            cupInt = cup
-        }
-    }
-    
     private func signAlert() {
         let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
             loginOutRemoveObject()
@@ -184,16 +165,16 @@ class TaskVC: CustomRootVC {
         }
     }
     
-    private func handRecycledItemCell(_ tableView:UITableView, _ info:TaskInfo, _ submitted:Int?, _ finishTasks:[String]) -> UITableViewCell {
+    private func handRecycledItemCell(_ tableView:UITableView, _ info:TaskInfo, _ finishTasks:[String]) -> UITableViewCell {
         if let reward = info.reward, let rewardType = reward.type, rewardType != .point {
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier) as! TaskTableViewPartnerProgressCell
             cell.delegate = self
-            cell.setCell(info, submitted: submitted ?? 0)
+            cell.setCell(info)
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier) as! TaskTableViewCell
         cell.delegate = self
-        cell.setCell(info, submitted: submitted ?? 0)
+        cell.setCell(info)
         return cell
     }
 
@@ -212,7 +193,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
-        var submitted:Int?
         switch type {
         case .share:
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
@@ -230,21 +210,11 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             cell.delegate = self
             cell.setCell(taskInfo)
             return cell
-        case .battery:
-            submitted = batteryInt
-        case .bottle:
-            submitted = bottleInt
-        case .colorledBottle:
-            submitted = colorledBottleInt
-        case .colorlessBottle:
-            submitted = colorlessBottleInt
-        case .can:
-            submitted = canInt
-        case .cup:
-            submitted = cupInt
+        default:
+            let cell = handRecycledItemCell(tableView, taskInfo, finishTasks)
+            return cell
         }
-        let cell = handRecycledItemCell(tableView, taskInfo, submitted, finishTasks)
-        return cell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
