@@ -89,7 +89,7 @@ class HomeVC: CustomRootVC {
         }
         getItems()
         if let (startTime, endTime) = getStartAndEndDateOfMonth() {
-            getRecords([], startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+            getRecords(nil, startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
                 guard let statusCode = statusCode, statusCode == 200 else {
                     showAlert(VC: self, title: "error".localized)
                     return

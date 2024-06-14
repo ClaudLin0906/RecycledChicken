@@ -382,20 +382,12 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
-func getRecords(_ sites:[String] = [], _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
+func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
     var urlStr = ""
-    if sites.count > 0 {
-        var sitesUrl = ""
-        sites.forEach({
-            if sitesUrl == "" {
-                sitesUrl += $0
-            } else {
-                sitesUrl += ",\($0)"
-            }
-        })
-        urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sitesUrl)"
+    if let sites = sites, sites != "" {
+        urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sites)"
     }
-    if sites.count == 0 {
+    if sites == nil || sites == "" {
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     }
     NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in

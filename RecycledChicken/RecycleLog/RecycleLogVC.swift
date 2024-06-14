@@ -59,7 +59,7 @@ class RecycleLogVC: CustomVC {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        getRecords([], startTime, endTime) { statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+        getRecords(nil, startTime, endTime) { statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
             guard let statusCode = statusCode, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized)
                 return

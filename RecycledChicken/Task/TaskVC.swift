@@ -118,7 +118,7 @@ class TaskVC: CustomRootVC {
         let sevenDays = getSevenDaysArray(targetDate: Date())
         let startTime = sevenDays[0].0
         let endTime = sevenDays[6].0
-        getRecords([], startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+        getRecords(nil, startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
             guard let statusCode = statusCode, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized)
                 return

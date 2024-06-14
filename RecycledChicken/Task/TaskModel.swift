@@ -17,7 +17,7 @@ struct TaskInfo: Codable {
     var reward:TaskReward?
     var iconUrl:String?
     var requiredAmount:Int?
-    var sites:[String]?
+    var sites:String?
     var url:String?
     var isFinish:Bool
     var isSpecifiedLocation:Bool
@@ -49,7 +49,7 @@ struct TaskInfo: Codable {
         reward = try? container.decodeIfPresent(TaskReward.self, forKey: .reward)
         iconUrl = try? container.decodeIfPresent(String.self, forKey: .iconUrl)
         requiredAmount = try? container.decodeIfPresent(Int.self, forKey: .requiredAmount)
-        sites = try? container.decodeIfPresent([String].self, forKey: .sites)
+        sites = try? container.decodeIfPresent(String.self, forKey: .sites)
         url = try? container.decodeIfPresent(String.self, forKey: .url)
         isFinish = false
         isSpecifiedLocation = false
