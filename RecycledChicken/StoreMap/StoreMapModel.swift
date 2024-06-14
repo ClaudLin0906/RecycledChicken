@@ -44,7 +44,7 @@ enum MachineStatus:String, Codable {
 struct MachineRemaining:Codable {
     var battery:Int?
     var bottle:Int?
-    var colorBottle:Int?
+    var colorledBottle:Int?
     var colorlessBottle:Int?
     var can:Int?
     var cup:Int?
@@ -52,7 +52,7 @@ struct MachineRemaining:Codable {
     enum CodingKeys:String, CodingKey {
         case battery = "battery"
         case bottle = "bottle"
-        case colorBottle = "colorBottle"
+        case colorledBottle = "colorledBottle"
         case colorlessBottle = "colorlessBottle"
         case can = "can"
         case cup = "cup"
@@ -62,7 +62,7 @@ struct MachineRemaining:Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         battery = try? container.decodeIfPresent(Int.self, forKey: .battery)
         bottle = try? container.decodeIfPresent(Int.self, forKey: .bottle)
-        colorBottle = try? container.decodeIfPresent(Int.self, forKey: .colorBottle)
+        colorledBottle = try? container.decodeIfPresent(Int.self, forKey: .colorledBottle)
         colorlessBottle = try? container.decodeIfPresent(Int.self, forKey: .colorlessBottle)
         can = try? container.decodeIfPresent(Int.self, forKey: .can)
         cup = try? container.decodeIfPresent(Int.self, forKey: .cup)
