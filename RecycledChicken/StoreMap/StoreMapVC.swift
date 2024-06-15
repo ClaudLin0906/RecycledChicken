@@ -249,7 +249,7 @@ extension StoreMapVC: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         let mapInfo = currentMapInfos.first { mapInfo in
             if let title = marker.title {
-                if title == mapInfo.name {
+                if title == mapInfo.name, let machineStatus = mapInfo.machineStatus, machineStatus == .submit {
                     return true
                 }
             }

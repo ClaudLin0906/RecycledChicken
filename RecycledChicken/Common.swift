@@ -412,9 +412,9 @@ func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, com
                         bottleInt = bottleInt ?? 0
                         bottleInt! += bottle
                     }
-                    if let colorledBottle = recycleDetails.colorledBottle {
+                    if let coloredBottle = recycleDetails.coloredBottle {
                         colorledBottleInt = colorledBottleInt ?? 0
-                        colorledBottleInt! += colorledBottle
+                        colorledBottleInt! += coloredBottle
                     }
                     if let colorlessBottle = recycleDetails.colorlessBottle {
                         colorlessBottleInt = colorlessBottleInt ?? 0
@@ -950,21 +950,6 @@ func dateFromStringISO8601(date:Date) -> String {
     return dateString
 }
 
-func getDateFromStr(dateformat:String = "yyyy-MM-dd HH:mm:ss Z", dateStr:String) -> InfoTime? {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = dateformat
-    dateFormatter.locale = Locale(identifier: "zh_Hant_TW")
-    if let date = dateFormatter.date(from: dateStr) {
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        return InfoTime(year: year, month: month, day: day)
-    } else {
-        return nil
-    }
-}
-
 func imageWithImage(image:UIImage?, scaledToSize newSize:CGSize) -> UIImage? {
     guard let image = image else { return nil }
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
@@ -972,6 +957,19 @@ func imageWithImage(image:UIImage?, scaledToSize newSize:CGSize) -> UIImage? {
     let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
     UIGraphicsEndImageContext()
     return newImage
+}
+
+func convertDateFormat(inputDateString: String, inputFormat: String, outputFormat: String) -> String? {
+    let dateFormatterInput = DateFormatter()
+    dateFormatterInput.dateFormat = inputFormat
+
+    if let date = dateFormatterInput.date(from: inputDateString) {
+        let dateFormatterOutput = DateFormatter()
+        dateFormatterOutput.dateFormat = outputFormat
+        return dateFormatterOutput.string(from: date)
+    } else {
+        return nil
+    }
 }
 
 func getStartAndEndDateOfMonth(_ dateFormat: String = "yyyy-MM-dd") -> (start: String, end: String)? {
@@ -1108,7 +1106,7 @@ struct UseRecordInfo:Codable {
 enum RecycleType: String, Codable {
     case battery = "battery"
     case bottle = "bottle"
-    case colorledBottle = "colorledBottle"
+    case coloredBottle = "coloredBottle"
     case colorlessBottle = "colorlessBottle"
     case can = "can"
     case cup = "cup"
@@ -1117,7 +1115,7 @@ enum RecycleType: String, Codable {
 struct RecycleDetails:Codable {
     var battery:Int?
     var bottle:Int?
-    var colorledBottle:Int?
+    var coloredBottle:Int?
     var colorlessBottle:Int?
     var can:Int?
     var cup:Int?

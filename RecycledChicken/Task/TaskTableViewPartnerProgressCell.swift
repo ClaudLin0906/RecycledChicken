@@ -105,39 +105,6 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
         }
     }
     
-    private func getSpecifiedLocation(completion: @escaping (Int) -> Void) {
-        guard let taskInfo = taskInfo, let sites = taskInfo.sites, let type = taskInfo.type else {
-            completion(0)
-            return
-        }
-        let sevenDays = getSevenDaysArray(targetDate: Date())
-        let startTime = sevenDays[0].0
-        let endTime = sevenDays[6].0
-        getRecords(sites, startTime, endTime) {statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-            guard let statusCode = statusCode, statusCode == 200 else {
-                print("\(errorMSG ?? "error".localized)")
-                completion(0)
-                return
-            }
-            switch type {
-            case .battery:
-                completion(battery ?? 0)
-            case .bottle:
-                completion(bottle ?? 0)
-            case .colorledBottle:
-                completion(colorledBottle ?? 0)
-            case .colorlessBottle:
-                completion(colorlessBottle ?? 0)
-            case .can:
-                completion(can ?? 0)
-            case .cup:
-                completion(cup ?? 0)
-            default:
-                completion(0)
-            }
-        }
-    }
-    
     func setCell(_ taskInfo:TaskInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             if let title = taskInfo.title {
@@ -153,26 +120,27 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
             }
             self.taskInfo = taskInfo
             
-//            if taskInfo.isSpecifiedLocation {
-//                self.getSpecifiedLocation { submittedCount in
-//                    self.requiredAmountHandle(submittedCount)
-//                }
-//            }
-//            
-//            if !taskInfo.isSpecifiedLocation {
-//                self.requiredAmountHandle(submitted)
-//            }
-        }
-    }
-    
-    private func getRecycleCount() {
-        let sevenDays = getSevenDaysArray(targetDate: Date())
-        let startTime = sevenDays[0].0
-        let endTime = sevenDays[6].0
-        getRecords(nil, startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-            guard let statusCode = statusCode, statusCode == 200 else {
-                print("error".localized)
-                return
+            if let type = taskInfo.type, type == .battery || type == .bottle || type == .colorledBottle || type == .colorlessBottle || type == .cup || type == .can {
+                if let startTime = taskInfo.startTime, let endTime = taskInfo.endTime, let formattedStartDate = convertDateFormat(inputDateString: startTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd"), let formattedEndDate = convertDateFormat(inputDateString: endTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd") {
+                    getRecords(taskInfo.sites, formattedStartDate, formattedEndDate) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+                        switch type {
+                        case .battery:
+                            requiredAmountHandle(battery ?? 0)
+                        case .bottle:
+                            requiredAmountHandle(bottle ?? 0)
+                        case .colorledBottle:
+                            requiredAmountHandle(colorledBottle ?? 0)
+                        case .colorlessBottle:
+                            requiredAmountHandle(colorlessBottle ?? 0)
+                        case .can:
+                            requiredAmountHandle(can ?? 0)
+                        case .cup:
+                            requiredAmountHandle(cup ?? 0)
+                        default:
+                            break
+                        }
+                    }
+                }
             }
         }
     }

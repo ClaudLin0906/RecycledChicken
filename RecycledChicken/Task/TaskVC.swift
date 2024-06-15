@@ -17,20 +17,6 @@ class TaskVC: CustomRootVC {
     
     private var taskInfos:[TaskInfo] = []
     
-//    private var taskStatus:[TaskStatus] = []
-    
-//    private var batteryInt:Int?
-//    
-//    private var bottleInt:Int?
-//    
-//    private var colorledBottleInt:Int?
-//    
-//    private var colorlessBottleInt:Int?
-//    
-//    private var canInt:Int?
-//    
-//    private var cupInt:Int?
-    
     @UserDefault(UserDefaultKey.shared.finishTasks, defaultValue: []) var currentFinishTaskss:[String]
 
     override func viewDidLoad() {
@@ -214,7 +200,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             let cell = handRecycledItemCell(tableView, taskInfo, finishTasks)
             return cell
         }
-
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
