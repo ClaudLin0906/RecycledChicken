@@ -25,6 +25,8 @@
 		335A452D2C0A1D55000D2337 /* ChickeIntroduceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A452C2C0A1D55000D2337 /* ChickeIntroduceView.xib */; };
 		335A452F2C0A3E5E000D2337 /* SignActivityCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A452E2C0A3E5D000D2337 /* SignActivityCodeView.swift */; };
 		335A45312C0A3E69000D2337 /* SignActivityCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */; };
+		33976DFF2C1D60C100CD6892 /* GetTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33976DFE2C1D60C100CD6892 /* GetTicketView.swift */; };
+		33976E012C1D60C800CD6892 /* GetTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33976E002C1D60C800CD6892 /* GetTicketView.xib */; };
 		33A7359F2C160F46004218B4 /* CenteredCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 33A7359E2C160F46004218B4 /* CenteredCollectionView */; };
 		33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */; };
 		33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */; };
@@ -320,6 +322,8 @@
 		335A452C2C0A1D55000D2337 /* ChickeIntroduceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChickeIntroduceView.xib; sourceTree = "<group>"; };
 		335A452E2C0A3E5D000D2337 /* SignActivityCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignActivityCodeView.swift; sourceTree = "<group>"; };
 		335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignActivityCodeView.xib; sourceTree = "<group>"; };
+		33976DFE2C1D60C100CD6892 /* GetTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketView.swift; sourceTree = "<group>"; };
+		33976E002C1D60C800CD6892 /* GetTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetTicketView.xib; sourceTree = "<group>"; };
 		33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerContactVC.swift; sourceTree = "<group>"; };
 		33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerContact.storyboard; sourceTree = "<group>"; };
 		3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycledChicken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1303,6 +1307,8 @@
 				253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */,
 				5964AAF92A1364EE0005686F /* TaskProgressView.swift */,
 				59600F452B9EED83009AFA76 /* TaskProgressView.xib */,
+				33976DFE2C1D60C100CD6892 /* GetTicketView.swift */,
+				33976E002C1D60C800CD6892 /* GetTicketView.xib */,
 				59835DF12A63FA2200678BAF /* TaskModel.swift */,
 			);
 			path = Task;
@@ -1488,6 +1494,7 @@
 				59600F772B9EEFC9009AFA76 /* CompletetChangePWDView.xib in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59600F3B2B9EED37009AFA76 /* SpecialTaskView.xib in Resources */,
+				33976E012C1D60C800CD6892 /* GetTicketView.xib in Resources */,
 				331E77B72BFCC38F002F6B0D /* IllustratedContent.storyboard in Resources */,
 				59997A552A09429700E9FD7F /* BattView.xib in Resources */,
 				59E1E8402A6293C400396CF9 /* PersonMessageImageView.xib in Resources */,
@@ -1746,6 +1753,7 @@
 				59CC8DAF2A6BC0D50094CE57 /* SpendPointModel.swift in Sources */,
 				5926C5922A0630E200FAB49D /* LogoAnimationVC.swift in Sources */,
 				599495512A0BE7A3009F1B2E /* LotteryVC.swift in Sources */,
+				33976DFF2C1D60C100CD6892 /* GetTicketView.swift in Sources */,
 				598F394A2A0E078400DA9186 /* SearchView.swift in Sources */,
 				5926C5802A04086400FAB49D /* SceneDelegate.swift in Sources */,
 				59AA2EE32B930902001E1352 /* CompeleteSignUpView.swift in Sources */,
@@ -2593,7 +2601,7 @@
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2616,7 +2624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.22.1;
+				MARKETING_VERSION = 1.22.3;
 				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2640,7 +2648,7 @@
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2663,7 +2671,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.22.1;
+				MARKETING_VERSION = 1.22.3;
 				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

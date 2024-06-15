@@ -21,6 +21,8 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     
     @IBOutlet weak var background:UIView!
     
+    @IBOutlet weak var getTicketView:GetTicketView!
+    
     var delegate:TaskTableViewCellFinishDelete?
     
     private var taskInfo:TaskInfo?
@@ -29,6 +31,13 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
             if let newValue = newValue, newValue.isFinish {
                 DispatchQueue.main.async { [self] in
                     background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                    if let reward = newValue.reward, let type = reward.type, type != .point {
+                        getTicketView.isHidden = false
+                        taskProgressView.isHidden = true
+                    }else {
+                        getTicketView.isHidden = true
+                        taskProgressView.isHidden = false
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in

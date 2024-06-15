@@ -80,19 +80,19 @@
       }
     },
     "DZ1-3W-L2Y.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"50\"; ObjectID = \"DZ1-3W-L2Y\";",
+      "comment" : "Class = \"UILabel\"; text = \"00\"; ObjectID = \"DZ1-3W-L2Y\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "50"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "50"
+            "value" : "00"
           }
         }
       }
@@ -128,19 +128,19 @@
       }
     },
     "NIu-ir-pOU.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"50\"; ObjectID = \"NIu-ir-pOU\";",
+      "comment" : "Class = \"UILabel\"; text = \"00\"; ObjectID = \"NIu-ir-pOU\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "50"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "50"
+            "value" : "00"
           }
         }
       }
