@@ -2,19 +2,19 @@
   "sourceLanguage" : "zh-Hant-TW",
   "strings" : {
     "b9D-cr-uY6.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"5/10\"; ObjectID = \"b9D-cr-uY6\";",
+      "comment" : "Class = \"UILabel\"; text = \"0/0\"; ObjectID = \"b9D-cr-uY6\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "5/10"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "5/10"
+            "value" : "0/0"
           }
         }
       }
