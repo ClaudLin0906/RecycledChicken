@@ -8,6 +8,7 @@
 import Foundation
 
 struct CommodityVoucherInfo: Codable {
+    var ttl:Int64?
     var category:CouponsCategory?
     var createTime:String?
     var name:String?
@@ -22,6 +23,7 @@ struct CommodityVoucherInfo: Codable {
     var expire:String?
     
     enum CodingKeys:String, CodingKey {
+        case ttl = "ttl"
         case category = "category"
         case createTime = "createTime"
         case name = "name"
@@ -38,6 +40,7 @@ struct CommodityVoucherInfo: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        ttl = try? container.decodeIfPresent(Int64.self, forKey: .ttl)
         category = try? container.decodeIfPresent(CouponsCategory.self, forKey: .category)
         createTime = try? container.decodeIfPresent(String.self, forKey: .createTime)
         name = try? container.decodeIfPresent(String.self, forKey: .name)

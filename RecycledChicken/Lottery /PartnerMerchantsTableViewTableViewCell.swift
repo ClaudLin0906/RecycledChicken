@@ -23,6 +23,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var drawPeopleLabel:CustomLabel!
     
+    @IBOutlet weak var remainingQuantityLabel:CustomLabel!
+    
     private var imageURL:URL?
     {
         willSet {
@@ -77,6 +79,16 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
             }
         }
     }
+    private var remainingQuantity:Int?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    remainingQuantityLabel.text = "剩餘數量 \(String(newValue))"
+                }
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -116,7 +128,6 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
                 }else{
                     endTime = eventEndTime
                 }
-                
             }
             
             if let startTime = startTime, let endTime = endTime {
@@ -126,9 +137,15 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
             if let drawDate = commodityVoucherInfo.expire {
                 self.lotteryDrawDate = drawDate
             }
+            
             if let infoPoint = commodityVoucherInfo.points {
                 self.point = String(infoPoint)
             }
+            
+            if let remainingQuantity = commodityVoucherInfo.remainingQuantity {
+                self.remainingQuantity = remainingQuantity
+            }
+            
         }
     }
 }

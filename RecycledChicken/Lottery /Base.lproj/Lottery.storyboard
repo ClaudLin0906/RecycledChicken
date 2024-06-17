@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L3q-rm-ziV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L3q-rm-ziV">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -381,7 +381,7 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="參與次數 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Le-SV-ZJu" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩餘數量 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Le-SV-ZJu" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="74" width="112" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="9Rl-0T-dir"/>
@@ -519,6 +519,7 @@
                                             <outlet property="itemImageView" destination="1bB-h7-tT7" id="baY-ba-Y1k"/>
                                             <outlet property="itemNameLabel" destination="tZs-ol-m68" id="J6W-5j-JDm"/>
                                             <outlet property="pointLabel" destination="gxS-S4-ZKS" id="kzK-zM-csU"/>
+                                            <outlet property="remainingQuantityLabel" destination="6Le-SV-ZJu" id="Y3E-ij-lm4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
