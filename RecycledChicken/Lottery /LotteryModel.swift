@@ -12,7 +12,7 @@ struct LotteryInfo: Decodable {
     var createTime:String?
     var productImage:String?
     var point:Int?
-    var evnetStartTime:String?
+    var eventStartTime:String?
     var eventEndTime:String?
     var drawDate:String?
     var description:String?
@@ -25,7 +25,7 @@ struct LotteryInfo: Decodable {
         case createTime = "createTime"
         case productImage = "productImage"
         case point = "point"
-        case evnetStartTime = "evnetStartTime"
+        case eventStartTime = "eventStartTime"
         case eventEndTime = "eventEndTime"
         case drawDate = "drawDate"
         case description = "description"
@@ -40,7 +40,7 @@ struct LotteryInfo: Decodable {
         createTime = try? container.decodeIfPresent(String.self, forKey: .createTime)
         productImage = try? container.decodeIfPresent(String.self, forKey: .productImage)
         point = try? container.decodeIfPresent(Int.self, forKey: .point)
-        evnetStartTime = try? container.decodeIfPresent(String.self, forKey: .evnetStartTime)
+        eventStartTime = try? container.decodeIfPresent(String.self, forKey: .eventStartTime)
         eventEndTime = try? container.decodeIfPresent(String.self, forKey: .eventEndTime)
         drawDate = try? container.decodeIfPresent(String.self, forKey: .drawDate)
         description = try? container.decodeIfPresent(String.self, forKey: .description)

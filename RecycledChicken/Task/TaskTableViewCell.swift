@@ -63,27 +63,8 @@ class TaskTableViewCell: UITableViewCell {
     private var taskInfo:TaskInfo?
     {
         willSet{
-            if let newValue = newValue, let title = newValue.title {
-                if title.contains("投遞") {
-                    print("1123")
-                }
-            }
-            if let newValue = newValue, newValue.isFinish {
-                DispatchQueue.main.async { [self] in
-                    background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
-                    if let reward = newValue.reward, let type = reward.type, type != .point {
-                        getTicketView.isHidden = false
-                        taskProgressView.isHidden = true
-                        pointView.isHidden = true
-                    }
-                }
-            } else {
-                DispatchQueue.main.async { [self] in
-                    background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                    getTicketView.isHidden = true
-                    taskProgressView.isHidden = false
-                    pointView.isHidden = false
-                }
+            if let newValue = newValue {
+                finishUIAction(newValue)
             }
         }
     }
@@ -97,6 +78,26 @@ class TaskTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func finishUIAction(_ info:TaskInfo) {
+        if info.isFinish {
+            DispatchQueue.main.async { [self] in
+                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                if let reward = info.reward, let type = reward.type, type != .point {
+                    getTicketView.isHidden = false
+                    taskProgressView.isHidden = true
+                    pointView.isHidden = true
+                }
+            }
+        }else {
+            DispatchQueue.main.async { [self] in
+                background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                getTicketView.isHidden = true
+                taskProgressView.isHidden = false
+                pointView.isHidden = false
+            }
+        }
     }
     
     func setCell(_ taskInfo:TaskInfo) {

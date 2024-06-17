@@ -30,24 +30,8 @@ class TaskTableViewPartnerCell: UITableViewCell {
     private var taskInfo:TaskInfo?
     {
         willSet{
-            if let newValue = newValue, newValue.isFinish {
-                DispatchQueue.main.async { [self] in
-                    background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
-                    if let reward = newValue.reward, let type = reward.type, type != .point {
-                        getTicketView.isHidden = false
-                        playImageView.isHidden = true
-                        leftImageView.isHidden = true
-                        partnerImageView.isHidden = true
-                    }
-                }
-            } else {
-                DispatchQueue.main.async { [self] in
-                    background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                    getTicketView.isHidden = true
-                    playImageView.isHidden = false
-                    leftImageView.isHidden = false
-                    partnerImageView.isHidden = false
-                }
+            if let newValue = newValue {
+                finishUIAction(newValue)
             }
         }
     }
@@ -130,6 +114,28 @@ class TaskTableViewPartnerCell: UITableViewCell {
     
     func finishAction() {
         delegate?.taskTableViewCellFinish(taskInfo)
+    }
+    
+    private func finishUIAction(_ info:TaskInfo) {
+        if info.isFinish {
+            DispatchQueue.main.async { [self] in
+                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                if let reward = info.reward, let type = reward.type, type != .point {
+                    getTicketView.isHidden = false
+                    playImageView.isHidden = true
+                    leftImageView.isHidden = true
+                    partnerImageView.isHidden = true
+                }
+            }
+        }else {
+            DispatchQueue.main.async { [self] in
+                background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                getTicketView.isHidden = true
+                playImageView.isHidden = false
+                leftImageView.isHidden = false
+                partnerImageView.isHidden = false
+            }
+        }
     }
 
 }
