@@ -78,6 +78,17 @@ class LotteryTableViewCell: UITableViewCell {
         }
     }
     
+    private var purchaserCount:Int? 
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [self] in
+                    drawPeopleLabel.text = "參與次數 \(newValue)"
+                }
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -126,6 +137,9 @@ class LotteryTableViewCell: UITableViewCell {
             }
             if let infoPoint = lotteryInfo.point {
                 self.point = String(infoPoint)
+            }
+            if let purchaserCount = lotteryInfo.purchaserCount {
+                self.purchaserCount = purchaserCount
             }
         }
     }
