@@ -34,14 +34,13 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
                     if let reward = newValue.reward, let type = reward.type, type != .point {
                         getTicketView.isHidden = false
                         taskProgressView.isHidden = true
-                    }else {
-                        getTicketView.isHidden = true
-                        taskProgressView.isHidden = false
                     }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    getTicketView.isHidden = true
+                    taskProgressView.isHidden = false
                 }
             }
         }

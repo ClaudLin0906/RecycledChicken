@@ -22,10 +22,10 @@ class TaskTableViewPartnerCell: UITableViewCell {
     @IBOutlet weak var leftImageView:UIImageView!
     
     @IBOutlet weak var playImageView:UIImageView!
+        
+    @IBOutlet weak var getTicketView:GetTicketView!
     
     var delegate:TaskTableViewCellFinishDelete?
-    
-    @IBOutlet weak var getTicketView:GetTicketView!
             
     private var taskInfo:TaskInfo?
     {
@@ -37,15 +37,16 @@ class TaskTableViewPartnerCell: UITableViewCell {
                         getTicketView.isHidden = false
                         playImageView.isHidden = true
                         leftImageView.isHidden = true
-                    }else {
-                        getTicketView.isHidden = true
-                        playImageView.isHidden = false
-                        leftImageView.isHidden = false
+                        partnerImageView.isHidden = true
                     }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    getTicketView.isHidden = true
+                    playImageView.isHidden = false
+                    leftImageView.isHidden = false
+                    partnerImageView.isHidden = false
                 }
             }
         }

@@ -46,6 +46,25 @@ func localNotifications(_ title:String, _ body:String) {
     }
 }
 
+func convertWeight(_ value: Double, to targetUnit: WeightUnit = .gram) -> (convertedValue: Double, unit: WeightUnit) {
+    var resultValue: Double
+    var resultUnit: WeightUnit
+    
+    if value >= 1000 {
+        if value >= 1000_000 {
+            resultValue = value / 1000_000
+            resultUnit = .tonne
+        }else {
+            resultValue = value / 1000
+            resultUnit = .kilogram
+        }
+    }else{
+        resultValue = value
+        resultUnit = .gram
+    }
+    return (resultValue, resultUnit)
+}
+
 enum Language:String, CaseIterable {
     case traditionalChinese = "zh-Hant-TW"
     case english = "en-TW"
@@ -144,25 +163,25 @@ enum RecyceledSort: CaseIterable {
     case battery
     case papperCub
     case aluminumCan
-    case publicTransport
+//    case publicTransport
     
     func getInfo() -> RecyceledSortInfo {
         let bottleColor = #colorLiteral(red: 0.8862745098, green: 0.7607843137, blue: 0.4901960784, alpha: 1)
         let batteryColor = #colorLiteral(red: 0.2666666667, green: 0.4901960784, blue: 0.4156862745, alpha: 1)
         let papperCubColor = #colorLiteral(red: 0.6862745098, green: 0.5764705882, blue: 0.4431372549, alpha: 1)
         let aluminumCanColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
-        let publicTransportColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
+//        let publicTransportColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
         switch self {
         case .bottle:
-            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "Pet", color: bottleColor, recycleUnit: "瓶", oUnit: "gCO2e")
+            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "Pet", color: bottleColor, recycleUnit: "瓶")
         case .battery:
-            return RecyceledSortInfo(chineseName: "battery".localized, englishName: "BATTERY", iconName: "battery", color: batteryColor, recycleUnit: "顆", oUnit: "CO2e")
+            return RecyceledSortInfo(chineseName: "battery".localized, englishName: "BATTERY", iconName: "battery", color: batteryColor, recycleUnit: "顆")
         case .papperCub:
-            return RecyceledSortInfo(chineseName: "papperCup".localized, englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor, recycleUnit: "個", oUnit: "CO2e")
+            return RecyceledSortInfo(chineseName: "papperCup".localized, englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor, recycleUnit: "個")
         case .aluminumCan:
-            return RecyceledSortInfo(chineseName: "aluminumCan".localized, englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor, recycleUnit: "個", oUnit: "kgCO2e")
-        case .publicTransport:
-            return RecyceledSortInfo(chineseName: "大眾運輸", englishName: "publicTransport", iconName: "bus", color: publicTransportColor, recycleUnit: "次", oUnit: "gCO2e")
+            return RecyceledSortInfo(chineseName: "aluminumCan".localized, englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor, recycleUnit: "個")
+//        case .publicTransport:
+//            return RecyceledSortInfo(chineseName: "大眾運輸", englishName: "publicTransport", iconName: "bus", color: publicTransportColor, recycleUnit: "次", oUnit: "gCO2e")
         }
     }
     
@@ -174,9 +193,13 @@ struct RecyceledSortInfo {
     var iconName: String
     var color:UIColor
     var recycleUnit:String
-    var oUnit:String
 }
 
+enum WeightUnit: String {
+    case gram = "gCO2e"
+    case kilogram = "kgCO2e"
+    case tonne = "tCO2e"
+}
 
 var FirstTime = true
 

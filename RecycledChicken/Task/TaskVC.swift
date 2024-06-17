@@ -63,9 +63,9 @@ class TaskVC: CustomRootVC {
                 if let createTime = newTaskInfo.createTime, createTime == finishTasks {
                     newTaskInfo.isFinish = true
                 }
-                if let sites = newTaskInfo.sites, sites.count > 0 {
-                    newTaskInfo.isSpecifiedLocation = true
-                }
+            }
+            if let sites = newTaskInfo.sites, sites.count > 0 {
+                newTaskInfo.isSpecifiedLocation = true
             }
             self.taskInfos.append(newTaskInfo)
         }
@@ -135,6 +135,7 @@ class TaskVC: CustomRootVC {
             guard let data = data, statusCode == 200 else {
                 if statusCode == 304 {
                     self.successTaskAction(taskInfo)
+                    return
                 }
                 showAlert(VC: self, title: errorMSG ?? "不知名的錯誤")
                 return

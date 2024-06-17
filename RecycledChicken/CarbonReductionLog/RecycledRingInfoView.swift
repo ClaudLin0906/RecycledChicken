@@ -57,11 +57,14 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
         self.personalRecyleAmountAndTargetInfo = personalRecyleAmountAndTargetInfo
         if let totalRecycled = self.personalRecyleAmountAndTargetInfo?.totalRecycled, let target = personalRecyleAmountAndTargetInfo.target, let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate {
             totalRecycledLabel.text = String(totalRecycled)
-            let convetValue = Double(totalRecycled) * conversionRate
-            convetValueLabel.text = String(convetValue)
             recycleUnitLabel.text = info.getInfo().recycleUnit
-            oUnitLabel.text = info.getInfo().oUnit
+            let convetValue = Double(totalRecycled) * conversionRate
+            let (resultValue, resultUnit) = convertWeight(convetValue)
+            let resultValueStr = String(resultValue.rounded())
+            convetValueLabel.text = resultValueStr
+            oUnitLabel.text = resultUnit.rawValue
             progressView.setCount(Double(totalRecycled), Double(target), info.getInfo().color, .white)
         }
     }
+    
 }

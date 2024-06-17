@@ -24,6 +24,8 @@ class TaskTableViewADCell: UITableViewCell {
     
     @IBOutlet weak var playImageView:UIImageView!
     
+    @IBOutlet weak var pointView:UIView!
+    
     @IBOutlet weak var getTicketView:GetTicketView!
     
     var delegate:TaskTableViewCellFinishDelete?
@@ -38,15 +40,16 @@ class TaskTableViewADCell: UITableViewCell {
                         getTicketView.isHidden = false
                         playImageView.isHidden = true
                         iconImageView.isHidden = true
-                    }else {
-                        getTicketView.isHidden = true
-                        playImageView.isHidden = false
-                        iconImageView.isHidden = false
+                        pointView.isHidden = true
                     }
                 }
             }else{
                 DispatchQueue.main.async { [self] in
                     background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    getTicketView.isHidden = true
+                    playImageView.isHidden = false
+                    iconImageView.isHidden = false
+                    pointView.isHidden = false
                 }
             }
         }

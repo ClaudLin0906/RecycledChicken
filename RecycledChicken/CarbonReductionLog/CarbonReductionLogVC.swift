@@ -94,11 +94,11 @@ class CarbonReductionLogVC: CustomVC {
     
     private var colorlessBottleCount = 0
         
-    private var cupCount = 0
+//    private var cupCount = 0
     
     private var canCount = 0
     
-    private var publicTransportCount = 0
+//    private var publicTransportCount = 0
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,10 +132,10 @@ class CarbonReductionLogVC: CustomVC {
             result = .battery
         case "鋁罐":
             result = .aluminumCan
-        case "紙杯":
-            result = .papperCub
-        case "大眾運輸":
-            result = .publicTransport
+//        case "紙杯":
+//            result = .papperCub
+//        case "大眾運輸":
+//            result = .publicTransport
         default :
             break
         }
@@ -151,11 +151,12 @@ class CarbonReductionLogVC: CustomVC {
         case .battery:
             count = batteryCount
         case .papperCub:
-            count = cupCount
+            break
+//            count = cupCount
         case .aluminumCan:
             count = canCount
-        case .publicTransport:
-            count = publicTransportCount
+//        case .publicTransport:
+//            count = publicTransportCount
         }
         dropDownView.sortLabel.text = recyceledSort.getInfo().chineseName
         recycledRingInfoView.setRecycledRingInfo(recyceledSort, personalRecyleAmountAndTargetInfo: personalRecyleAmountAndTargetInfo, count)
@@ -167,9 +168,9 @@ class CarbonReductionLogVC: CustomVC {
         recycleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         bottleItemCellView.setType(.bottle)
         batteryItemCellView.setType(.battery)
-        papperCubItemCellView.setType(.papperCub)
+//        papperCubItemCellView.setType(.papperCub)
         aluminumCanItemCellView.setType(.aluminumCan)
-        publicTransportItemCellView.setType(.publicTransport)
+//        publicTransportItemCellView.setType(.publicTransport)
         recycledRingInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
         recycledRingInfoView.layer.shadowOpacity = 0.2
         if let frame = colorFillScrollView.subviews.first?.subviews[0].frame {
@@ -228,7 +229,7 @@ class CarbonReductionLogVC: CustomVC {
         }
     }
     
-    private func getRecycleLogData(){
+    private func getRecycleLogData() {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
@@ -241,12 +242,12 @@ class CarbonReductionLogVC: CustomVC {
                 batteryCount = battery ?? 0
                 bottleCount = bottle ?? 0
                 canCount = can ?? 0
-                cupCount = can ?? 0
+//                cupCount = can ?? 0
                 bottleItemCellView.setCount(bottleCount)
                 batteryItemCellView.setCount(batteryCount)
-                papperCubItemCellView.setCount(cupCount)
+//                papperCubItemCellView.setCount(cupCount)
                 aluminumCanItemCellView.setCount(canCount)
-                publicTransportItemCellView.setCount(publicTransportCount)
+//                publicTransportItemCellView.setCount(publicTransportCount)
             }
         }
     }
