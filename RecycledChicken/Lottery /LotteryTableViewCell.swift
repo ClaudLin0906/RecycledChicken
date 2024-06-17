@@ -83,7 +83,7 @@ class LotteryTableViewCell: UITableViewCell {
         willSet {
             if let newValue = newValue {
                 DispatchQueue.main.async { [self] in
-                    drawPeopleLabel.text = "參與次數 \(newValue)"
+                    drawPeopleLabel.text = "\("remain".localized) \(newValue)"
                 }
             }
         }
