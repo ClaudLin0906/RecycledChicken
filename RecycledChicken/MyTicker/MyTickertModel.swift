@@ -15,7 +15,8 @@ struct MyTickertLotteryInfo:Codable {
     var UUID:String?
     var userPhoneNumber:String?
     var itemName:String?
-    var ttl:Int?
+    var drawDate:String?
+    var ttl:Int64?
 
     enum CodingKeys:String, CodingKey {
         case activityStartTime = "activityStartTime"
@@ -25,6 +26,7 @@ struct MyTickertLotteryInfo:Codable {
         case UUID = "UUID"
         case userPhoneNumber = "userPhoneNumber"
         case itemName = "itemName"
+        case drawDate = "drawDate"
         case ttl = "ttl"
 
     }
@@ -38,7 +40,8 @@ struct MyTickertLotteryInfo:Codable {
         UUID = try? container.decodeIfPresent(String.self, forKey: .UUID)
         userPhoneNumber = try? container.decodeIfPresent(String.self, forKey: .userPhoneNumber)
         itemName = try? container.decodeIfPresent(String.self, forKey: .itemName)
-        ttl = try? container.decodeIfPresent(Int.self, forKey: .ttl)
+        drawDate = try? container.decodeIfPresent(String.self, forKey: .drawDate)
+        ttl = try? container.decodeIfPresent(Int64.self, forKey: .ttl)
     }
 }
 

@@ -471,6 +471,18 @@ func removeBiometricsAction(){
     let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
 }
 
+func changeFormat(_ dateStr:String)-> String {
+    var changeDate = dateStr
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    if let date = dateFormatter.date(from: changeDate) {
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let formattedDate = dateFormatter.string(from: date)
+        return formattedDate
+    }
+    return dateStr
+}
+
 func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
     NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.profile, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
         guard let data = data, statusCode == 200 else {
