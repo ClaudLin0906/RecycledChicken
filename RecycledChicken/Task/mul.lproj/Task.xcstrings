@@ -97,6 +97,18 @@
         }
       }
     },
+    "jQm-sn-AMb.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"jQm-sn-AMb\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
     "k43-Uw-Q2N.text" : {
       "comment" : "Class = \"UILabel\"; text = \"每週任務\"; ObjectID = \"k43-Uw-Q2N\";",
       "extractionState" : "extracted_with_value",
@@ -117,6 +129,18 @@
     },
     "krr-Zi-F0N.text" : {
       "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"krr-Zi-F0N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "分享任務"
+          }
+        }
+      }
+    },
+    "Mcd-MJ-5xd.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"Mcd-MJ-5xd\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "zh-Hant-TW" : {

@@ -88,6 +88,8 @@ class TaskVC: CustomRootVC {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+
             if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
                 self.taskInfos.removeAll()
                 self.addStatus(taskInfos) {
@@ -176,18 +178,24 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let taskInfo = taskInfos[row]
-        guard let type = taskInfo.type else {
+        guard let type = taskInfo.type, let reward = taskInfo.reward, let rewardType = reward.type else {
             return UITableViewCell()
         }
         let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
         switch type {
         case .share:
+            if rewardType != .point {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
+                cell.delegate = self
+                cell.setCell(taskInfo)
+                return cell
+            }
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
             cell.delegate = self
             cell.setCell(taskInfo)
             return cell
         case .advertise:
-            if let reward = taskInfo.reward, let type = reward.type, type != .point {
+            if rewardType != .point {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
                 cell.delegate = self
                 cell.setCell(taskInfo)

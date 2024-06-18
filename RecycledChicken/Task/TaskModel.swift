@@ -19,6 +19,8 @@ struct TaskInfo: Codable {
     var requiredAmount:Int?
     var sites:String?
     var url:String?
+    var ttl:Int64?
+    var leftIcon:String?
     var isFinish:Bool
     var isSpecifiedLocation:Bool
     
@@ -34,6 +36,8 @@ struct TaskInfo: Codable {
         case requiredAmount = "requiredAmount"
         case sites = "sites"
         case url = "url"
+        case ttl = "ttl"
+        case leftIcon = "leftIcon"
         case isFinish = "isFinish"
         case isSpecifiedLocation = "isSpecifiedLocation"
     }
@@ -51,6 +55,8 @@ struct TaskInfo: Codable {
         requiredAmount = try? container.decodeIfPresent(Int.self, forKey: .requiredAmount)
         sites = try? container.decodeIfPresent(String.self, forKey: .sites)
         url = try? container.decodeIfPresent(String.self, forKey: .url)
+        ttl = try? container.decodeIfPresent(Int64.self, forKey: .ttl)
+        leftIcon = try? container.decodeIfPresent(String.self, forKey: .leftIcon)
         isFinish = false
         isSpecifiedLocation = false
     }
@@ -88,15 +94,33 @@ struct TaskReward: Codable {
     var type:TaskRewardType?
     var amount:Int?
     var rewardTime:String?
-    var leftIcon:String?
     var rightIcon:String?
+    var ttl:Int64?
+    var remainingQuantity:Int?
+    var description:String?
+    var picture:String?
+    var total:String?
+    var expire:String?
+    var name:String?
+    var end:String?
+    var category:String?
+    var notice:String?
     
     enum CodingKeys:String, CodingKey {
         case type = "type"
         case amount = "amount"
         case rewardTime = "rewardTime"
-        case leftIcon = "leftIcon"
         case rightIcon = "rightIcon"
+        case ttl = "ttl"
+        case remainingQuantity = "remainingQuantity"
+        case description = "description"
+        case picture = "picture"
+        case total = "total"
+        case expire = "expire"
+        case name = "name"
+        case end = "end"
+        case category = "category"
+        case notice = "notice"
     }
     
     init(from decoder: Decoder) throws {
@@ -104,8 +128,17 @@ struct TaskReward: Codable {
         type = try? container.decodeIfPresent(TaskRewardType.self, forKey: .type)
         amount = try? container.decodeIfPresent(Int.self, forKey: .amount)
         rewardTime = try? container.decodeIfPresent(String.self, forKey: .rewardTime)
-        leftIcon = try? container.decodeIfPresent(String.self, forKey: .leftIcon)
         rightIcon = try? container.decodeIfPresent(String.self, forKey: .rightIcon)
+        ttl = try? container.decodeIfPresent(Int64.self, forKey: .ttl)
+        remainingQuantity = try? container.decodeIfPresent(Int.self, forKey: .remainingQuantity)
+        description = try? container.decodeIfPresent(String.self, forKey: .description)
+        picture = try? container.decodeIfPresent(String.self, forKey: .picture)
+        total = try? container.decodeIfPresent(String.self, forKey: .total)
+        expire = try? container.decodeIfPresent(String.self, forKey: .expire)
+        name = try? container.decodeIfPresent(String.self, forKey: .name)
+        end = try? container.decodeIfPresent(String.self, forKey: .end)
+        category = try? container.decodeIfPresent(String.self, forKey: .category)
+        notice = try? container.decodeIfPresent(String.self, forKey: .notice)
     }
 }
 

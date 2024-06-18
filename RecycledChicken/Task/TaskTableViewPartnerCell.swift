@@ -105,7 +105,7 @@ class TaskTableViewPartnerCell: UITableViewCell {
                 self.partnerImageUrl = url
             }
             
-            if let reward = taskInfo.reward, let leftIcon = reward.leftIcon, let url = URL(string: leftIcon) {
+            if let leftIcon = taskInfo.leftIcon, let url = URL(string: leftIcon) {
                 self.leftImageUrl = url
             }
             self.taskInfo = taskInfo
