@@ -106,10 +106,19 @@ class SpendPointView: UIView, NibOwnerLoadable {
             if let start = commodityVoucherInfo.start, let end = commodityVoucherInfo.end {
                 drawTimeLabel.text = "validDate".localized + ":" + start + "~" + end
             }
+    
+            var descriptionStr = ""
+            var noticeStr = ""
             
             if let description = commodityVoucherInfo.description {
-                itemDescriptionTextView.text = description
+                descriptionStr = "產品介紹:\n\(description)"
             }
+            
+            if let notice = commodityVoucherInfo.notice {
+                noticeStr =  "注意事項:\n\(notice)"
+            }
+            itemDescriptionTextView.text = "\(descriptionStr)\n\(noticeStr)"
+            
         case .Lottery:
             guard let lotteryInfo = lotteryInfo else { return }
             
@@ -129,9 +138,21 @@ class SpendPointView: UIView, NibOwnerLoadable {
                 drawTimeLabel.text = "duringDate".localized + ":" + drawDate
             }
             
+            var descriptionStr = ""
+            var notesStr = ""
+            
             if let description = lotteryInfo.description {
                 itemDescriptionTextView.text = description
             }
+            
+            if let description = lotteryInfo.description {
+                descriptionStr = "產品介紹:\n\(description)"
+            }
+            
+            if let notes = lotteryInfo.notes {
+                notesStr =  "注意事項:\n\(notes)"
+            }
+            itemDescriptionTextView.text = "\(descriptionStr)\n\(notesStr)"
         }
 
     }
@@ -139,8 +160,6 @@ class SpendPointView: UIView, NibOwnerLoadable {
     private func customInit(){
         loadNibContent()
         amount = 1
-//        tableView.setSeparatorLocation()
-//        tableView.register(UINib(nibName: "LotteryItemTableViewCell", bundle: nil), forCellReuseIdentifier: "LotteryItemTableViewCell")
     }
     
     @IBAction func plusBtn(_ sender:UIButton){

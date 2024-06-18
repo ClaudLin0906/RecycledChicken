@@ -11,15 +11,6 @@
 		2537419D2C103FB900FA0933 /* MallProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2537419C2C103FB900FA0933 /* MallProduct.storyboard */; };
 		2537419F2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */; };
 		253741A12C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */; };
-		257E8D202C2158F5006993D5 /* RewardTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E8D1F2C2158F5006993D5 /* RewardTicketView.swift */; };
-		257E8D222C2159C2006993D5 /* RewardTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257E8D212C2159C2006993D5 /* RewardTicketView.xib */; };
-		257E8D282C215A72006993D5 /* RewardPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E8D272C215A72006993D5 /* RewardPointView.swift */; };
-		257E8D2A2C215A90006993D5 /* RewardPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257E8D292C215A90006993D5 /* RewardPointView.xib */; };
-		257E8D2C2C215AC4006993D5 /* RewardSharePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E8D2B2C215AC4006993D5 /* RewardSharePointView.swift */; };
-		257E8D2E2C215ACA006993D5 /* RewardSharePointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257E8D2D2C215ACA006993D5 /* RewardSharePointView.xib */; };
-		257E8D302C215AEE006993D5 /* RewardShareTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E8D2F2C215AEE006993D5 /* RewardShareTicketView.swift */; };
-		257E8D322C215AF5006993D5 /* RewardShareTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257E8D312C215AF5006993D5 /* RewardShareTicketView.xib */; };
-		257E8D342C2171AC006993D5 /* TaskTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E8D332C2171AC006993D5 /* TaskTableCell.swift */; };
 		2588F6BF2C197C3600636594 /* ConnectCompanyWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */; };
 		2588F6C12C197C3F00636594 /* ConnectCompanyWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */; };
 		331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */; };
@@ -317,15 +308,6 @@
 		2537419C2C103FB900FA0933 /* MallProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MallProduct.storyboard; sourceTree = "<group>"; };
 		2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewPartnerCell.swift; sourceTree = "<group>"; };
 		253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewPartnerProgressCell.swift; sourceTree = "<group>"; };
-		257E8D1F2C2158F5006993D5 /* RewardTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTicketView.swift; sourceTree = "<group>"; };
-		257E8D212C2159C2006993D5 /* RewardTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardTicketView.xib; sourceTree = "<group>"; };
-		257E8D272C215A72006993D5 /* RewardPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPointView.swift; sourceTree = "<group>"; };
-		257E8D292C215A90006993D5 /* RewardPointView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardPointView.xib; sourceTree = "<group>"; };
-		257E8D2B2C215AC4006993D5 /* RewardSharePointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardSharePointView.swift; sourceTree = "<group>"; };
-		257E8D2D2C215ACA006993D5 /* RewardSharePointView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardSharePointView.xib; sourceTree = "<group>"; };
-		257E8D2F2C215AEE006993D5 /* RewardShareTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardShareTicketView.swift; sourceTree = "<group>"; };
-		257E8D312C215AF5006993D5 /* RewardShareTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardShareTicketView.xib; sourceTree = "<group>"; };
-		257E8D332C2171AC006993D5 /* TaskTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCell.swift; sourceTree = "<group>"; };
 		2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyWebViewVC.swift; sourceTree = "<group>"; };
 		2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectCompanyWebView.storyboard; sourceTree = "<group>"; };
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
@@ -1319,15 +1301,6 @@
 			children = (
 				59C2D9A22A0D37790085724F /* TaskVC.swift */,
 				59600F412B9EED51009AFA76 /* Task.storyboard */,
-				257E8D1F2C2158F5006993D5 /* RewardTicketView.swift */,
-				257E8D212C2159C2006993D5 /* RewardTicketView.xib */,
-				257E8D272C215A72006993D5 /* RewardPointView.swift */,
-				257E8D292C215A90006993D5 /* RewardPointView.xib */,
-				257E8D2B2C215AC4006993D5 /* RewardSharePointView.swift */,
-				257E8D2D2C215ACA006993D5 /* RewardSharePointView.xib */,
-				257E8D2F2C215AEE006993D5 /* RewardShareTicketView.swift */,
-				257E8D312C215AF5006993D5 /* RewardShareTicketView.xib */,
-				257E8D332C2171AC006993D5 /* TaskTableCell.swift */,
 				59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */,
 				5964AAF52A1364570005686F /* TaskTableViewADCell.swift */,
 				2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */,
@@ -1554,14 +1527,12 @@
 				5982A95C2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib in Resources */,
 				5960E5E12BA2E19F007F4AEF /* UpdateAppAlertView.xib in Resources */,
 				59600EDF2B9EE457009AFA76 /* ReSendVerificationCodeView.xib in Resources */,
-				257E8D2A2C215A90006993D5 /* RewardPointView.xib in Resources */,
 				59600F2F2B9EECF7009AFA76 /* StoreMap.storyboard in Resources */,
 				59600E9B2B9EE242009AFA76 /* DeleteAccountAlert.storyboard in Resources */,
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
 				59600EB32B9EE313009AFA76 /* PersonMessage.storyboard in Resources */,
 				2588F6C12C197C3F00636594 /* ConnectCompanyWebView.storyboard in Resources */,
-				257E8D322C215AF5006993D5 /* RewardShareTicketView.xib in Resources */,
 				595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */,
 				59600E972B9EE22E009AFA76 /* DeleteAccount.storyboard in Resources */,
 				59E69A292A37225D0062D4EB /* GenJyuuGothic-Regular.ttf in Resources */,
@@ -1573,10 +1544,8 @@
 				33342E352C1B0E6400CB14E7 /* certificate.p12 in Resources */,
 				59600EEB2B9EE53A009AFA76 /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
-				257E8D2E2C215ACA006993D5 /* RewardSharePointView.xib in Resources */,
 				59600F832B9EEFF8009AFA76 /* Product.storyboard in Resources */,
 				59600ED32B9EE3F7009AFA76 /* RecycledRingInfoView.xib in Resources */,
-				257E8D222C2159C2006993D5 /* RewardTicketView.xib in Resources */,
 				59600EFB2B9EE5C5009AFA76 /* CustomCalenderView.xib in Resources */,
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
 				59600F5B2B9EEEA8009AFA76 /* SpendPointView.xib in Resources */,
@@ -1671,7 +1640,6 @@
 				599EA5AA2B81E1E0007AF30F /* CarbonReductionItemCellView.swift in Sources */,
 				59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */,
 				5982A9562BBD319600CB2B08 /* ColorFillTypeOneCellView.swift in Sources */,
-				257E8D282C215A72006993D5 /* RewardPointView.swift in Sources */,
 				597521852A0B8EB600D0B67C /* BindAccountVC.swift in Sources */,
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
 				5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */,
@@ -1710,7 +1678,6 @@
 				59C8A9FD2B9722CD00DF9E9C /* IllustratedGuideFirstInfoView.swift in Sources */,
 				59997A772A0A53A000E9FD7F /* PersonMessageContentVC.swift in Sources */,
 				59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */,
-				257E8D2C2C215AC4006993D5 /* RewardSharePointView.swift in Sources */,
 				59B682F52A76A0D3008F5135 /* ARViewController.swift in Sources */,
 				5985D6BE2B6A1F7A00DE6EBA /* ADBannerView.swift in Sources */,
 				5975218A2A0B8F4600D0B67C /* PrivacyPolicyVC.swift in Sources */,
@@ -1756,10 +1723,8 @@
 				590251052B68DF250002E76C /* Pw_UserDefault.swift in Sources */,
 				597521792A0B84A200D0B67C /* SystemSettingModel.swift in Sources */,
 				599216C52B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift in Sources */,
-				257E8D202C2158F5006993D5 /* RewardTicketView.swift in Sources */,
 				59DB96AC2A08C32400ACAC31 /* BarCodeView.swift in Sources */,
 				59C8AA062B9852ED00DF9E9C /* IllustratedGuideSecondInfoView.swift in Sources */,
-				257E8D342C2171AC006993D5 /* TaskTableCell.swift in Sources */,
 				5926C57E2A04086400FAB49D /* AppDelegate.swift in Sources */,
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
 				59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */,
@@ -1777,7 +1742,6 @@
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
 				595D3CEE2BE325FE00FE9D85 /* SiteListVC.swift in Sources */,
 				59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */,
-				257E8D302C215AEE006993D5 /* RewardShareTicketView.swift in Sources */,
 				5960E5BB2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift in Sources */,
 				59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */,
 				5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */,
