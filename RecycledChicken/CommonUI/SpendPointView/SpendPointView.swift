@@ -111,13 +111,13 @@ class SpendPointView: UIView, NibOwnerLoadable {
             var noticeStr = ""
             
             if let description = commodityVoucherInfo.description {
-                descriptionStr = "產品介紹:\n\(description)"
+                descriptionStr = "產品介紹:\n\n\(description)"
             }
             
             if let notice = commodityVoucherInfo.notice {
-                noticeStr =  "注意事項:\n\(notice)"
+                noticeStr =  "注意事項:\n\n\(notice)"
             }
-            itemDescriptionTextView.text = "\(descriptionStr)\n\(noticeStr)"
+            itemDescriptionTextView.text = "\(descriptionStr)\n\n\(noticeStr)"
             
         case .Lottery:
             guard let lotteryInfo = lotteryInfo else { return }
@@ -146,13 +146,13 @@ class SpendPointView: UIView, NibOwnerLoadable {
             }
             
             if let description = lotteryInfo.description {
-                descriptionStr = "產品介紹:\n\(description)"
+                descriptionStr = "產品介紹:\n\n\(description)"
             }
             
             if let notes = lotteryInfo.notes {
-                notesStr =  "注意事項:\n\(notes)"
+                notesStr =  "注意事項:\n\n\(notes)"
             }
-            itemDescriptionTextView.text = "\(descriptionStr)\n\(notesStr)"
+            itemDescriptionTextView.text = "\(descriptionStr)\n\n\(notesStr)"
         }
 
     }
