@@ -347,8 +347,14 @@ class HomeVC: CustomRootVC {
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if collectionView == bannerCollectionView {
+            let adBannerInfo = adBannerInfos[row]
+            if let adBannerInfoURL = adBannerInfo.URL, let url = URL(string: adBannerInfoURL), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
         if collectionView == mallCollectionView {
-            let row = indexPath.row
             let itemInfo = itemInfos[row]
             if let productLink = itemInfo.productLink, let productUrl = URL(string: productLink) {
                 if let navigationController = self.navigationController, let VC = UIStoryboard(name: "MallProduct", bundle: Bundle.main).instantiateViewController(identifier: "MallProduct") as? MallProductVC {
