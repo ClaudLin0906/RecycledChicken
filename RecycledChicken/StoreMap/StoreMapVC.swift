@@ -58,7 +58,7 @@ class StoreMapVC: CustomRootVC {
                 mapInfos.forEach({ mapInfo in
                     var newMapInfo = mapInfo
                     if newMapInfo.machineStatus == nil, let machineRemaining = newMapInfo.machineRemaining {
-                        if machineRemaining.battery ?? 0 > 0 || machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorledBottle ?? 0 > 0 || machineRemaining.colorledBottle ?? 0 > 0 || machineRemaining.can ?? 0 > 0 || machineRemaining.cup ?? 0 > 0 {
+                        if machineRemaining.battery ?? 0 > 0 || machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorlessBottle ?? 0 > 0 || machineRemaining.coloredBottle ?? 0 > 0 || machineRemaining.can ?? 0 > 0 || machineRemaining.cup ?? 0 > 0 {
                             newMapInfo.machineStatus = .submit
                         }
                     }
@@ -117,8 +117,9 @@ class StoreMapVC: CustomRootVC {
                 "false,true,true,true,false,false": #imageLiteral(resourceName: "ch-24"),
                 "false,true,true,true,true,false": #imageLiteral(resourceName: "ch-38"),
                 "true,false,false,false,false,false": #imageLiteral(resourceName: "ch-32"),
-                "true,false,false,false,true,false": #imageLiteral(resourceName: "ch-48"),
+                "true,false,false,false,true,false": #imageLiteral(resourceName: "ch-46"),
                 "true,false,false,true,false,false": #imageLiteral(resourceName: "ch-28"),
+                "true,true,false,false,false,true": #imageLiteral(resourceName: "ch-35"),
                 "true,false,false,true,true,false": #imageLiteral(resourceName: "ch-42"),
                 "true,false,true,false,false,false": #imageLiteral(resourceName: "ch-30"),
                 "true,false,true,false,true,false": #imageLiteral(resourceName: "ch-44"),
@@ -128,7 +129,6 @@ class StoreMapVC: CustomRootVC {
                 "true,true,false,true,true,false": #imageLiteral(resourceName: "ch-37"),
                 "true,true,true,false,false,false": #imageLiteral(resourceName: "ch-22"),
                 "true,true,true,false,true,false": #imageLiteral(resourceName: "ch-36"),
-                "true,true,false,false,false,true": #imageLiteral(resourceName: "ch-35"),
                 "true,true,false,false,true,true": #imageLiteral(resourceName: "ch-49")
             ]
 
@@ -142,10 +142,10 @@ class StoreMapVC: CustomRootVC {
                 if machineRemaining.battery ?? 0 > 0 {
                     remainBattery = true
                 }
-                if machineRemaining.bottle ?? 0 > 0 {
+                if machineRemaining.bottle ?? 0 > 0 || machineRemaining.coloredBottle ?? 0 > 0 {
                     remainBottle = true
                 }
-                if machineRemaining.colorledBottle ?? 0 > 0  {
+                if machineRemaining.colorlessBottle ?? 0 > 0 {
                     remainColorBottle = true
                 }
                 if machineRemaining.can ?? 0 > 0 {
@@ -161,6 +161,8 @@ class StoreMapVC: CustomRootVC {
                 
                 if let imageChicken = imageMap[key] {
                     image = imageChicken
+                }else{
+                    print("\(key)")
                 }
             }
         default:
@@ -197,8 +199,6 @@ class StoreMapVC: CustomRootVC {
         mapView.settings.compassButton = true
         mapView.settings.myLocationButton = false
         mapView.isMyLocationEnabled = true
-        
-        
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self

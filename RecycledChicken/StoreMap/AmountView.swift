@@ -49,8 +49,8 @@ class AmountView: UIView, NibOwnerLoadable {
                 stackView.addArrangedSubview(label)
             }
             
-            if let colorledBottle = machineRemaining.colorledBottle, colorledBottle > 0 {
-                let label = labelInit("有色寶特瓶還可投入：\(colorledBottle)")
+            if let coloredBottle = machineRemaining.coloredBottle, coloredBottle > 0 {
+                let label = labelInit("有色寶特瓶還可投入：\(coloredBottle)")
                 stackView.addArrangedSubview(label)
             }
             

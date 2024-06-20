@@ -60,7 +60,7 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
             recycleUnitLabel.text = info.getInfo().recycleUnit
             let convetValue = Double(totalRecycled) * conversionRate
             let (resultValue, resultUnit) = convertWeight(convetValue)
-            let resultValueStr = String(resultValue.rounded())
+            let resultValueStr = String(format: "%.1f", resultValue) 
             convetValueLabel.text = resultValueStr
             oUnitLabel.text = resultUnit.rawValue
             progressView.setCount(Double(totalRecycled), Double(target), info.getInfo().color, .white)
