@@ -473,7 +473,7 @@ func removeBiometricsAction(){
 }
 
 func changeFormat(_ dateStr:String)-> String {
-    var changeDate = dateStr
+    let changeDate = dateStr
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
     if let date = dateFormatter.date(from: changeDate) {
