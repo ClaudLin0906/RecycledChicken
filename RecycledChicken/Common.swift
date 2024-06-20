@@ -461,6 +461,7 @@ func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, com
 func loginOutRemoveObject(){
     CurrentUserInfo.shared.currentProfileNewInfo = nil
     CommonKey.shared.authToken = ""
+    UserDefaults().removeObject(forKey: UserDefaultKey.shared.oldChickenLevel)
     LoginSuccess = false
     FirstTime = true
     removeBiometricsAction()
