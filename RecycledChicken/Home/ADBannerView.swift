@@ -10,10 +10,15 @@ import Combine
 import M13Checkbox
 class ADBannerView: UIView, NibOwnerLoadable {
     
-    @IBOutlet weak var collectionView:UICollectionView!
+    private var scrollView:UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.isScrollEnabled = false
+        return scrollView
+    }()
     
-    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
-    
+    @IBOutlet weak var bannnerView:UIView!
+        
     @IBOutlet weak var pageControl:UIPageControl!
     
     @IBOutlet weak var checkBox:M13Checkbox!
@@ -47,6 +52,11 @@ class ADBannerView: UIView, NibOwnerLoadable {
         customInit()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addScrollSubView()
+    }
+    
     @IBAction func btnHandle(_ sender:UIButton) {
         if checkBox.checkState == .checked {
             displayToday = getDates(i: 0, currentDate: Date()).0
@@ -54,28 +64,46 @@ class ADBannerView: UIView, NibOwnerLoadable {
         removeFromSuperview()
     }
     
+    private func addScrollSubView() {
+        guard imageURLs.count > 0 else { return }
+        var currentX = 0
+        let scrollViewWidth:Int = Int(self.frame.width * 0.8)
+        let scrollViewHeight:Int = Int(self.frame.height * 0.5)
+        imageURLs.forEach { url in
+            let imageView = UIImageView(frame: CGRect(x: currentX, y: 0, width: scrollViewWidth, height: scrollViewHeight))
+            imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = 10
+            imageView.kf.setImage(with: URL(string: url))
+            scrollView.addSubview(imageView)
+            currentX += scrollViewWidth
+        }
+        scrollView.contentSize = CGSize(width: currentX, height: scrollViewHeight)
+    }
+    
     private func customInit(){
         loadNibContent()
+        bannnerView.addSubview(scrollView)
+        scrollView.centerXAnchor.constraint(equalTo: bannnerView.centerXAnchor).isActive = true
+        scrollView.centerYAnchor.constraint(equalTo: bannnerView.centerYAnchor).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: bannnerView.widthAnchor).isActive = true
+        scrollView.heightAnchor.constraint(equalTo: bannnerView.heightAnchor).isActive = true
         checkBox.boxType = .square
         checkBox.stateChangeAnimation = .fill
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib(nibName: "ADBannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ADBannerCollectionViewCell")
-        collectionViewFlowLayout.itemSize = collectionView.frame.size
-        collectionViewFlowLayout.minimumLineSpacing = 30
         pageControl.currentPage = currentIndex
         currentIndexSubject
             .sink { [weak self] index in
                 self?.pageControl.currentPage = index
-                self?.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+                UIView.animate(withDuration: 0.5) {
+                    self?.scrollView.contentOffset = CGPoint(x: Int(self?.scrollView.frame.width ?? 0) * index, y: 0)
+                }
             }
             .store(in: &cancellables)
         let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(leftGesture(_:)))
         let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(rightGesture(_:)))
         rightGesture.direction = .right
         leftGesture.direction = .left
-        collectionView.addGestureRecognizer(leftGesture)
-        collectionView.addGestureRecognizer(rightGesture)
+        scrollView.addGestureRecognizer(leftGesture)
+        scrollView.addGestureRecognizer(rightGesture)
     }
     
     @objc private func leftGesture(_ gesture:UISwipeGestureRecognizer) {
@@ -97,22 +125,5 @@ class ADBannerView: UIView, NibOwnerLoadable {
         }
         currentIndexSubject.send(currentIndex)
     }
-    
-
-}
-
-extension ADBannerView: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        imageURLs.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ADBannerCollectionViewCell", for: indexPath) as! ADBannerCollectionViewCell
-//        cell.setCell(adBannerInfos[indexPath.row])
-        cell.setCell(imageURLs[indexPath.row])
-        return cell
-    }
-    
 }
 

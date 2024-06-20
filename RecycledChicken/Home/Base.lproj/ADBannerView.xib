@@ -11,9 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ADBannerView" customModule="RecycledChicken" customModuleProvider="target">
             <connections>
+                <outlet property="bannnerView" destination="ARh-lV-kCA" id="dU4-Df-kPE"/>
                 <outlet property="checkBox" destination="1ng-Q3-yUb" id="yj0-Kj-3YC"/>
-                <outlet property="collectionView" destination="K8d-pQ-RhT" id="KfF-3g-DTg"/>
-                <outlet property="collectionViewFlowLayout" destination="UCm-er-jI1" id="Kh9-Zb-Nhv"/>
                 <outlet property="pageControl" destination="pvz-cW-usA" id="wFt-DJ-G3F"/>
             </connections>
         </placeholder>
@@ -22,29 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="K8d-pQ-RhT">
-                    <rect key="frame" x="39.333333333333343" y="183" width="314.33333333333326" height="511"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UCm-er-jI1">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARh-lV-kCA" userLabel="bannerView">
+                    <rect key="frame" x="39.333333333333343" y="210.66666666666666" width="314.33333333333326" height="455.66666666666674"/>
+                </view>
                 <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pvz-cW-usA">
-                    <rect key="frame" x="133.66666666666666" y="704" width="125.66666666666666" height="25"/>
+                    <rect key="frame" x="133.66666666666666" y="666.33333333333337" width="125.66666666666666" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="Yjk-wa-eJI"/>
                     </constraints>
                 </pageControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puL-7n-GCf">
-                    <rect key="frame" x="318.66666666666669" y="183" width="35" height="35"/>
+                    <rect key="frame" x="318.66666666666669" y="210.66666666666666" width="35" height="35"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="puL-7n-GCf" secondAttribute="height" multiplier="1:1" id="5t9-XO-D66"/>
@@ -60,7 +47,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-h8-Duc">
-                    <rect key="frame" x="138.33333333333334" y="739" width="116.66666666666666" height="20"/>
+                    <rect key="frame" x="138.33333333333334" y="701.33333333333337" width="116.66666666666666" height="20"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ng-Q3-yUb" customClass="M13Checkbox" customModule="M13Checkbox">
                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -83,17 +70,17 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80044140460000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="puL-7n-GCf" firstAttribute="top" secondItem="K8d-pQ-RhT" secondAttribute="top" id="1h0-b1-0b2"/>
-                <constraint firstItem="puL-7n-GCf" firstAttribute="trailing" secondItem="K8d-pQ-RhT" secondAttribute="trailing" id="4y9-Mb-gy3"/>
-                <constraint firstItem="K8d-pQ-RhT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="EHM-p6-8BB"/>
-                <constraint firstItem="K8d-pQ-RhT" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="FfZ-Fa-Fu7"/>
-                <constraint firstItem="K8d-pQ-RhT" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.8" id="IXn-pF-NeM"/>
-                <constraint firstItem="K8d-pQ-RhT" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.6" id="Kbz-Jo-lnn"/>
+                <constraint firstItem="puL-7n-GCf" firstAttribute="top" secondItem="ARh-lV-kCA" secondAttribute="top" id="1h0-b1-0b2"/>
+                <constraint firstItem="puL-7n-GCf" firstAttribute="trailing" secondItem="ARh-lV-kCA" secondAttribute="trailing" id="4y9-Mb-gy3"/>
+                <constraint firstItem="ARh-lV-kCA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="LSa-NY-5Pu"/>
+                <constraint firstItem="ARh-lV-kCA" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.8" id="PBZ-f8-Oaf"/>
+                <constraint firstItem="ARh-lV-kCA" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="TOQ-UV-z0m"/>
                 <constraint firstItem="TIC-h8-Duc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="bcq-g0-n2R"/>
-                <constraint firstItem="pvz-cW-usA" firstAttribute="centerX" secondItem="K8d-pQ-RhT" secondAttribute="centerX" id="hZJ-52-y4X"/>
+                <constraint firstItem="pvz-cW-usA" firstAttribute="centerX" secondItem="ARh-lV-kCA" secondAttribute="centerX" id="hZJ-52-y4X"/>
                 <constraint firstItem="TIC-h8-Duc" firstAttribute="top" secondItem="pvz-cW-usA" secondAttribute="bottom" constant="10" id="j2x-d4-jfI"/>
-                <constraint firstItem="pvz-cW-usA" firstAttribute="top" secondItem="K8d-pQ-RhT" secondAttribute="bottom" constant="10" id="oMi-oy-hol"/>
-                <constraint firstItem="pvz-cW-usA" firstAttribute="width" secondItem="K8d-pQ-RhT" secondAttribute="width" multiplier="0.4" id="sT9-Hs-qSg"/>
+                <constraint firstItem="pvz-cW-usA" firstAttribute="top" secondItem="ARh-lV-kCA" secondAttribute="bottom" id="oMi-oy-hol"/>
+                <constraint firstItem="pvz-cW-usA" firstAttribute="width" secondItem="ARh-lV-kCA" secondAttribute="width" multiplier="0.4" id="sT9-Hs-qSg"/>
+                <constraint firstItem="ARh-lV-kCA" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.6" id="zoV-OY-ZXc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="66" y="21"/>
