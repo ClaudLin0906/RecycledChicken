@@ -341,64 +341,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E1F263A-BEF6-4B40-8F18-184E5685D9EE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/StoreMap/StoreMapVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "getMakerIcon(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3E1F263A-BEF6-4B40-8F18-184E5685D9EE - 5cbf4b2aa89072c1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.StoreMapVC.getMakerIcon(RecycledChicken.MapInfo) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/StoreMap/StoreMapVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "165"
-                  endingLineNumber = "165"
-                  offsetFromSymbolStart = "4276">
-               </Location>
-               <Location
-                  uuid = "3E1F263A-BEF6-4B40-8F18-184E5685D9EE - 5cbf4b2aa89072c1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.StoreMapVC.getMakerIcon(RecycledChicken.MapInfo) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/StoreMap/StoreMapVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "165"
-                  endingLineNumber = "165"
-                  offsetFromSymbolStart = "5224">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8D1521C4-D6BF-4162-B76C-BE589EAF1F57"
+            uuid = "CDF8937A-EB0E-495A-A1F8-147546A28ABB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecycledChicken/SignLogin/SignLoginVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "checkVersion()"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "compareVersions(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7843DB3-FC35-4A70-A024-7DE8F59522C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/SignLogin/SignLoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "compareVersions(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55921665-4365-405B-AF0D-F5A425056E90"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/SignLogin/SignLoginVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "compareVersions(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

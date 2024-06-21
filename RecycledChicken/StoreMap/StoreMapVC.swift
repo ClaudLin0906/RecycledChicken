@@ -139,19 +139,19 @@ class StoreMapVC: CustomRootVC {
                 var remainCan = false
                 var remainCup = false
                 var isSpecial = false
-                if machineRemaining.battery ?? 0 > 0 {
+                if machineRemaining.battery != nil {
                     remainBattery = true
                 }
-                if machineRemaining.bottle ?? 0 > 0 || machineRemaining.coloredBottle ?? 0 > 0 {
+                if  machineRemaining.bottle != nil || machineRemaining.coloredBottle != nil  {
                     remainBottle = true
                 }
-                if machineRemaining.colorlessBottle ?? 0 > 0 {
+                if machineRemaining.colorlessBottle != nil  {
                     remainColorBottle = true
                 }
-                if machineRemaining.can ?? 0 > 0 {
+                if machineRemaining.can != nil  {
                     remainCan = true
                 }
-                if machineRemaining.cup ?? 0 > 0 {
+                if machineRemaining.cup != nil  {
                     remainCup = true
                 }
                 if info.taskDescription != nil {

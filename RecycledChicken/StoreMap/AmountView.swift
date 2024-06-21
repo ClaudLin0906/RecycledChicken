@@ -39,32 +39,32 @@ class AmountView: UIView, NibOwnerLoadable {
         storeName.text = info.name
         if let machineRemaining = info.machineRemaining {
             
-            if let battery = machineRemaining.battery, battery > 0 {
+            if let battery = machineRemaining.battery {
                 let label = labelInit("電池還可投入：\(battery)")
                 stackView.addArrangedSubview(label)
             }
             
-            if let bottle = machineRemaining.bottle, bottle > 0 {
+            if let bottle = machineRemaining.bottle {
                 let label = labelInit("寶特瓶還可投入：\(bottle)")
                 stackView.addArrangedSubview(label)
             }
             
-            if let coloredBottle = machineRemaining.coloredBottle, coloredBottle > 0 {
+            if let coloredBottle = machineRemaining.coloredBottle {
                 let label = labelInit("有色寶特瓶還可投入：\(coloredBottle)")
                 stackView.addArrangedSubview(label)
             }
             
-            if let colorlessBottle = machineRemaining.colorlessBottle, colorlessBottle > 0 {
+            if let colorlessBottle = machineRemaining.colorlessBottle {
                 let label = labelInit("透明寶特瓶還可投入：\(colorlessBottle)")
                 stackView.addArrangedSubview(label)
             }
             
-            if let can = machineRemaining.can, can > 0 {
+            if let can = machineRemaining.can {
                 let label = labelInit("鋁罐還可投入\(can)")
                 stackView.addArrangedSubview(label)
             }
             
-            if let cup = machineRemaining.cup, cup > 0 {
+            if let cup = machineRemaining.cup {
                 let label = labelInit("紙杯還可投入:\(cup)")
                 stackView.addArrangedSubview(label)
             }
