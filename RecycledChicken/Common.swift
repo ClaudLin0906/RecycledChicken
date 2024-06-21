@@ -376,6 +376,9 @@ struct APIUrl {
     static let havingCoupons = "/coupons/bought"
     static let enterActivityCode = "/user/enterActivityCode"
     static let getPopBanner = "/ad/popup"
+    static let appleStoreID = "6449214570"
+    static let connectAppleStore = "itms-apps://itunes.apple.com/app/\(appleStoreID)"
+    static let checkAppleStoreVersion = "https://itunes.apple.com/tw/lookup?id=\(appleStoreID)"
 }
 
 struct WebViewUrl {

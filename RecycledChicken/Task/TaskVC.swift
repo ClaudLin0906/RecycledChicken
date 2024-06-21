@@ -88,8 +88,6 @@ class TaskVC: CustomRootVC {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-
             if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
                 self.taskInfos.removeAll()
                 self.addStatus(taskInfos) {
