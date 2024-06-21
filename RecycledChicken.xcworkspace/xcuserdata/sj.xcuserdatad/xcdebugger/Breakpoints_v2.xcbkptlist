@@ -352,6 +352,38 @@
             endingLineNumber = "165"
             landmarkName = "getMakerIcon(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E1F263A-BEF6-4B40-8F18-184E5685D9EE - 5cbf4b2aa89072c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.StoreMapVC.getMakerIcon(RecycledChicken.MapInfo) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/StoreMap/StoreMapVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "4276">
+               </Location>
+               <Location
+                  uuid = "3E1F263A-BEF6-4B40-8F18-184E5685D9EE - 5cbf4b2aa89072c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.StoreMapVC.getMakerIcon(RecycledChicken.MapInfo) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/StoreMap/StoreMapVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "5224">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
