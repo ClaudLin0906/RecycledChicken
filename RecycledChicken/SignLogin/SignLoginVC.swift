@@ -40,7 +40,7 @@ class SignLoginVC: CustomLoginVC {
                 if let appleStoreVersion = results[0]["version"] as? String, let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
                     let compareResult = self.compareVersions( currentVersion, appleStoreVersion)
                     switch compareResult {
-                    case .orderedDescending:
+                    case .orderedAscending:
                         self.showUpdateAppAlertView()
                     default:
                         break

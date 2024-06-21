@@ -28,4 +28,5 @@ class UpdateAppAlertView: UIView, NibOwnerLoadable {
             UIApplication.shared.open(url)
         }
     }
+    
 }
