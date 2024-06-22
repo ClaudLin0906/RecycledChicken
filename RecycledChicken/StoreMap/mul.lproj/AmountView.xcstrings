@@ -1,0 +1,48 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "npf-CX-5oO.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"地點:新竹市公所\"; ObjectID = \"npf-CX-5oO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "location:hsinchu city hall"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "地點:新竹市公所"
+          }
+        }
+      }
+    },
+    "PKU-kK-Xoa.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"PKU-kK-Xoa\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "Q2Z-ix-RDT.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"Q2Z-ix-RDT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

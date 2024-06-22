@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "hQx-dB-uqQ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"2\"; ObjectID = \"hQx-dB-uqQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "2"
+          }
+        }
+      }
+    },
+    "lij-gs-CUk.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"mon\"; ObjectID = \"lij-gs-CUk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mon"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "mon"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

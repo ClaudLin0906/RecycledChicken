@@ -66,7 +66,7 @@ class CommonImageButton: UIButton {
     func setTitle(_ title: String?) {
         newTitLabel.text = title
         let attrString = NSMutableAttributedString(attributedString: newTitLabel.attributedText!)
-        attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Normal", size: 14)!, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Medium", size: 14)!, range: NSMakeRange(0, attrString.length))
         attrString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(3.0), range: NSRange(location: 0, length: attrString.length))
         newTitLabel.attributedText = attrString
     }

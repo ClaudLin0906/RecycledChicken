@@ -11,22 +11,9 @@ class AmountView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var storeName:UILabel!
     
-    @IBOutlet weak var bottleCount:UILabel!
+    @IBOutlet weak var stackView:UIStackView!
     
-    @IBOutlet weak var batteryCount:UILabel!
-    
-    var mapInfo:MapInfo? {
-        willSet{
-            if let newValue = newValue {
-                self.isHidden = false
-                storeName.text = newValue.storeName
-                bottleCount.text = "還可以投:\(newValue.remainingProcessable.bottle ?? 0)瓶"
-                batteryCount.text = "還可以投:\(newValue.remainingProcessable.battery ?? 0)顆"
-            }else{
-                self.isHidden = true
-            }
-        }
-    }
+    var mapInfo:MapInfo?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,5 +27,56 @@ class AmountView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    @IBAction func closeAction(_ sender:UIButton) {
+        self.isHidden = true
+    }
+    
+    func setAmount(_ info:MapInfo) {
+        stackView.removeFullyAllArrangedSubviews()
+        self.isHidden = false
+        storeName.text = info.name
+        if let machineRemaining = info.machineRemaining {
+            
+            if let battery = machineRemaining.battery {
+                let label = labelInit("電池還可投入：\(battery)")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let bottle = machineRemaining.bottle {
+                let label = labelInit("寶特瓶還可投入：\(bottle)")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let coloredBottle = machineRemaining.coloredBottle {
+                let label = labelInit("有色寶特瓶還可投入：\(coloredBottle)")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let colorlessBottle = machineRemaining.colorlessBottle {
+                let label = labelInit("透明寶特瓶還可投入：\(colorlessBottle)")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let can = machineRemaining.can {
+                let label = labelInit("鋁罐還可投入\(can)")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let cup = machineRemaining.cup {
+                let label = labelInit("紙杯還可投入:\(cup)")
+                stackView.addArrangedSubview(label)
+            }
+        }
+    }
+    
+    private func labelInit(_ textCount:String) -> UILabel {
+        let label = UILabel()
+        label.font = storeName.font
+        label.text = textCount
+        label.textColor = storeName.textColor
+        label.textAlignment = storeName.textAlignment
+        return label
     }
 }

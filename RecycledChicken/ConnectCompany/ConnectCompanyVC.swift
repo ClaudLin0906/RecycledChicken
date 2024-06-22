@@ -17,13 +17,15 @@ class ConnectCompanyVC: CustomVC {
     
     @IBOutlet weak var emailTextfield:UITextField!
     
+    @IBOutlet weak var errorMessageLabel:UILabel!
+    
     let identityListDropDown = DropDown()
     
     private var keyMoveSize:CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "聯絡客服與合作提案"
+        title = "contactPartnership".localized
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -54,8 +56,8 @@ class ConnectCompanyVC: CustomVC {
         
         identityListDropDown.dataSource =
         [
-            "用戶",
-            "合作廠商"
+            "user".localized,
+            "collaboratingPartner".localized
         ]
         
         identityListDropDown.selectionAction = { [weak self] (index, item) in
@@ -77,13 +79,13 @@ class ConnectCompanyVC: CustomVC {
     }
     
     private func sendEmailAction(content:String, email:String){
-        let username = CurrentUserInfo.shared.currentProfileInfo?.userName ?? ""
+        let username = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
         let identity = identityLabel.text ?? ""
         let sendEmailInfo = SendEmailInfo(recipient: identity, content: content, email: email, userName: username)
         let sendEmailDic = try? sendEmailInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.sendEmail, parameters: sendEmailDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.sendEmail, parameters: sendEmailDic, AuthorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             if data != nil {
@@ -96,25 +98,45 @@ class ConnectCompanyVC: CustomVC {
         identityListDropDown.show()
     }
     
+    func showErrorMessage(_ errorContent:String) {
+        errorMessageLabel.isHidden = false
+        errorMessageLabel.text = errorContent
+    }
+    
     @IBAction func mailSendSuccess(_ sender:UIButton) {
         var alertMsg = ""
         let email = emailTextfield.text
         let content = contentView.text
         
         if content == "" {
-            alertMsg += "內容不能為空"
+            showErrorMessage("contentCannotBeEmpty".localized)
+            return
         }
         
         if email == "" {
-            alertMsg += "Email不能為空"
-        } else if !validateEmail(text: email!) {
-            alertMsg += "Email格式不正確"
-        }
-        alertMsg = removeWhitespace(from: alertMsg)
-        guard alertMsg == "" else {
-            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+            showErrorMessage("emailCannotBeEmpty".localized)
             return
         }
+        
+        if !validateEmail(text: email!) {
+            showErrorMessage("incorrectEmailFormat".localized)
+            return
+        }
+        
+//        if content == "" {
+//            alertMsg += "內容不能為空"
+//        }
+//
+//        if email == "" {
+//            alertMsg += "Email不能為空"
+//        } else if !validateEmail(text: email!) {
+//            alertMsg += "輸入正確聯絡信箱格式"
+//        }
+//        alertMsg = removeWhitespace(from: alertMsg)
+//        guard alertMsg == "" else {
+//            showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+//            return
+//        }
         sendEmailAction(content: content!, email: email!)
         
     }

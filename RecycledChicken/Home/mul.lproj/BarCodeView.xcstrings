@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "9bY-BU-8Ee.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"會員條碼\"; ObjectID = \"9bY-BU-8Ee\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Membership Barcode"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "會員條碼"
+          }
+        }
+      }
+    },
+    "UAc-4R-JNr.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0200 2344 1256\"; ObjectID = \"UAc-4R-JNr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0200 2344 1256"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0200 2344 1256"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

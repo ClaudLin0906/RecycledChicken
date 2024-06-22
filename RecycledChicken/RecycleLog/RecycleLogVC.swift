@@ -9,14 +9,10 @@ import UIKit
 import DropDown
 import SkeletonView
 class RecycleLogVC: CustomVC {
-    
-    private struct RecycleLogInfo {
-        var time:Date
-        var battery:Int = 0
-        var bottle:Int = 0
-    }
-    
+        
     @IBOutlet weak var monthBtn:CommonImageButton!
+    
+    @IBOutlet weak var monthBtnWidth:NSLayoutConstraint!
     
     @IBOutlet weak var tableView:UITableView!
     
@@ -26,9 +22,11 @@ class RecycleLogVC: CustomVC {
 
     private var filterUseRecordInfos:[RecycleLogInfo] = []
     
+    private var allMonth = "allMonth".localized
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "回收紀錄"
+        title = "recycleLog".localized
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -38,6 +36,9 @@ class RecycleLogVC: CustomVC {
         tableView.startSkeletonAnimation()
         monthBtn.newImageView.tintColor = CommonColor.shared.color1
         setupAmountDropDown()
+        if getLanguage() == .english {
+            monthBtnWidth.constant = 150
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,18 +47,16 @@ class RecycleLogVC: CustomVC {
         getRecycleLogData()        
     }
     
-    private func getRecycleLogData(){
+    private func getRecycleLogData() {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)&endTime=\(endTime)"
-        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+        getRecords(nil, startTime, endTime) { statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+            guard let statusCode = statusCode, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized)
                 return
             }
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
+            if let useRecordInfos = useRecordInfos {
                 self.useRecordInfoHandle(useRecordInfos)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -72,17 +71,20 @@ class RecycleLogVC: CustomVC {
     
     private func useRecordInfoHandle(_ data:[UseRecordInfo]) {
         
-        var integratedDict: [Date: (battery: Int, bottle: Int)] = [:]
+        var integratedDict: [Date: (battery: Int, bottle: Int, coloredBottle:Int, colorlessBottle: Int, can: Int)] = [:]
         
         for datum in data {
-            if let date = dateFromString(datum.time){
+            if let datmTime = datum.time, let date = dateFromString(datmTime){
                 let dayComponent = Calendar.current.startOfDay(for: date)
                 if var existingValues = integratedDict[dayComponent] {
-                    existingValues.battery += datum.battery ?? 0
-                    existingValues.bottle += datum.bottle ?? 0
+                    existingValues.battery += datum.recycleDetails?.battery ?? 0
+                    existingValues.bottle += datum.recycleDetails?.bottle ?? 0
+                    existingValues.colorlessBottle += datum.recycleDetails?.colorlessBottle ?? 0
+                    existingValues.coloredBottle += datum.recycleDetails?.coloredBottle ?? 0
+                    existingValues.can += datum.recycleDetails?.can ?? 0
                     integratedDict[dayComponent] = existingValues
                 } else {
-                    integratedDict[dayComponent] = (battery: datum.battery ?? 0, bottle: datum.bottle ?? 0)
+                    integratedDict[dayComponent] = (battery: datum.recycleDetails?.battery ?? 0, bottle: datum.recycleDetails?.bottle ?? 0, coloredBottle:datum.recycleDetails?.coloredBottle ?? 0, colorlessBottle: datum.recycleDetails?.colorlessBottle ?? 0, datum.recycleDetails?.can ?? 0)
                 }
             }
         }
@@ -98,6 +100,21 @@ class RecycleLogVC: CustomVC {
                     recycleLogInfo.bottle = info.bottle
                     recycleLogInfos.append(recycleLogInfo)
                 }
+                
+                if info.coloredBottle > 0 {
+                    recycleLogInfo.coloredBottle = info.coloredBottle
+                    recycleLogInfos.append(recycleLogInfo)
+                }
+                
+                if info.colorlessBottle > 0 {
+                    recycleLogInfo.colorlessBottle = info.colorlessBottle
+                    recycleLogInfos.append(recycleLogInfo)
+                }
+                
+                if info.can > 0 {
+                    recycleLogInfo.can = info.can
+                    recycleLogInfos.append(recycleLogInfo)
+                }
             }
         }
         recycleLogInfos.sort{$0.time < $1.time }
@@ -105,25 +122,25 @@ class RecycleLogVC: CustomVC {
     }
     
     private func setupAmountDropDown() {
-        monthBtn.setTitle("所有月份")
+        monthBtn.setTitle(allMonth)
         amountDropDown.anchorView = monthBtn
         amountDropDown.bottomOffset = CGPoint(x: 0, y: monthBtn.bounds.height)
         
         amountDropDown.dataSource =
         [
-            "所有月份",
-            "1月",
-            "2月",
-            "3月",
-            "4月",
-            "5月",
-            "6月",
-            "7月",
-            "8月",
-            "9月",
-            "10月",
-            "11月",
-            "12月"
+            allMonth,
+            "jan".localized,
+            "feb".localized,
+            "mar".localized,
+            "apr".localized,
+            "may".localized,
+            "jun".localized,
+            "jul".localized,
+            "aug".localized,
+            "sep".localized,
+            "oct".localized,
+            "nov".localized,
+            "dec".localized,
         ]
         
         amountDropDown.selectionAction = { [self] (index, item) in
@@ -158,11 +175,7 @@ extension RecycleLogVC: UITableViewDelegate, SkeletonTableViewDataSource {
     func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
         nil
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         filterUseRecordInfos.count
     }
@@ -170,12 +183,17 @@ extension RecycleLogVC: UITableViewDelegate, SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
         let info = filterUseRecordInfos[indexPath.row]
-        if info.bottle > 0 {
-            cell.setCell(info.time, bottle: info.bottle, battery: nil)
+        if info.bottle > 0 || info.colorlessBottle > 0 || info.coloredBottle > 0{
+            let count = info.bottle + info.colorlessBottle + info.coloredBottle
+            cell.setCell(info.time, bottle: count, battery: nil, can: nil)
             return cell
         }
         if info.battery > 0 {
-            cell.setCell(info.time, bottle: nil, battery: info.battery)
+            cell.setCell(info.time, bottle: nil, battery: info.battery, can: nil)
+            return cell
+        }
+        if info.can > 0 {
+            cell.setCell(info.time, bottle: nil, battery: nil, can: info.can)
             return cell
         }
         return cell

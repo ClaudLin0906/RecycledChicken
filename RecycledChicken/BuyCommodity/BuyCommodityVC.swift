@@ -15,20 +15,20 @@ class BuyCommodityVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "購買商品序號"
+        title = "兌換商品序號"
         UIInit()
         // Do any additional setup after loading the view.
     }
     
     private func UIInit(){
-        spendPointView.setConfirmBtnTitle("確認兌換")
+        spendPointView.setConfirmBtnTitle("confirmBuy".localized)
         spendPointView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        if let commodityVoucherInfo = commodityVoucherInfo{
+        if let commodityVoucherInfo = commodityVoucherInfo {
             spendPointView.commodityVoucherInfo = commodityVoucherInfo
         }
     }
@@ -39,9 +39,8 @@ class BuyCommodityVC: CustomVC {
 extension BuyCommodityVC: SpendPointViewDelegate {
     
     func alertMessage(_ message: String) {
-        showAlert(VC: self, title: message, message: nil, alertAction: nil)
+        showAlert(VC: self, title: message, message: nil)
     }
-    
     
     func btnAction(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointAlertView = SpendPointAlertView(frame: UIScreen.main.bounds)
@@ -55,22 +54,24 @@ extension BuyCommodityVC: SpendPointViewDelegate {
 extension BuyCommodityVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
-        spendPointAction(info) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+        let spendPointInfoDic = try? info.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.couponsBuy, parameters: spendPointInfoDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            getUserInfo(VC: self) {
-                DispatchQueue.main.async { [self] in
-                    let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
-                    fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
-                    if let navigationController = navigationController {
-                        navigationController.popToRootViewController(animated: true)
+            if let spendPointResponse = try? JSONDecoder().decode(SpendPointResponse.self, from: data) {
+                getUserNewInfo(VC: self) {
+                    DispatchQueue.main.async { [self] in
+                        let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
+                        fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+                        if let navigationController = navigationController {
+                            navigationController.popToRootViewController(animated: true)
+                        }
                     }
                 }
             }
         }
     }
-    
 }
 

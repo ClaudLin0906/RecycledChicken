@@ -1,0 +1,96 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "hdA-nK-jlN.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"返回登入頁面\"; ObjectID = \"hdA-nK-jlN\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "go to the login "
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "返回登入頁面"
+          }
+        }
+      }
+    },
+    "W2s-Vl-axg.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"註冊完成\"; ObjectID = \"W2s-Vl-axg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "registration completed"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "註冊完成"
+          }
+        }
+      }
+    },
+    "YFt-X4-3Dc.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定使用\"; ObjectID = \"YFt-X4-3Dc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirm"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定使用"
+          }
+        }
+      }
+    },
+    "Z5x-io-OUa.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"輸入錯誤 / 活動碼已兌換完畢\"; ObjectID = \"Z5x-io-OUa\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "input error / Activation code has been fully redeemed"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "輸入錯誤 / 活動碼已兌換完畢"
+          }
+        }
+      }
+    },
+    "ZuM-aL-aJB.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"請繼續登入\"; ObjectID = \"ZuM-aL-aJB\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "proceed to log in"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請繼續登入"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

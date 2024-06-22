@@ -1,0 +1,132 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "0u8-p8-d8R.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"密碼\"; ObjectID = \"0u8-p8-d8R\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASSWORD"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "密碼"
+          }
+        }
+      }
+    },
+    "g2r-G4-nOM.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"回首頁\"; ObjectID = \"g2r-G4-nOM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HOMEPAGE"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "回首頁"
+          }
+        }
+      }
+    },
+    "h0L-jY-0Jz.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"開啟生物辨識\"; ObjectID = \"h0L-jY-0Jz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ENABLE BIOMETRICS"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "開啟生物辨識"
+          }
+        }
+      }
+    },
+    "Ha9-t1-1jj.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Login\"; ObjectID = \"Ha9-t1-1jj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LOGIN"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Login"
+          }
+        }
+      }
+    },
+    "J9E-N1-95v.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"手機\"; ObjectID = \"J9E-N1-95v\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PHONE"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "手機"
+          }
+        }
+      }
+    },
+    "yEI-G7-B9N.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"忘記密碼?\"; ObjectID = \"yEI-G7-B9N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FORGOT PASSWORD"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "忘記密碼?"
+          }
+        }
+      }
+    },
+    "ZPq-0X-imi.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"登入\"; ObjectID = \"ZPq-0X-imi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LOGIN"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "登入"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

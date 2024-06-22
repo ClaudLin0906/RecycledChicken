@@ -1,0 +1,258 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "4cV-SI-zbG.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"4cV-SI-zbG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ItemName"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
+          }
+        }
+      }
+    },
+    "4hB-xT-qBm.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"參與次數 0\"; ObjectID = \"4hB-xT-qBm\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "join count 0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "參與次數 0"
+          }
+        }
+      }
+    },
+    "6Le-SV-ZJu.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"剩餘數量 0\"; ObjectID = \"6Le-SV-ZJu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "join count 0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "剩餘數量 0"
+          }
+        }
+      }
+    },
+    "bNL-5b-M5r.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"duringTime\"; ObjectID = \"bNL-5b-M5r\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "duringTime"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "duringTime"
+          }
+        }
+      }
+    },
+    "e8E-lZ-LzW.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"e8E-lZ-LzW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "drawTime"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "drawTime"
+          }
+        }
+      }
+    },
+    "f3U-Nd-p6P.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"350\"; ObjectID = \"f3U-Nd-p6P\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "350"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "350"
+          }
+        }
+      }
+    },
+    "Gte-w0-KtV.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"duringTime\"; ObjectID = \"Gte-w0-KtV\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "duringTime"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "duringTime"
+          }
+        }
+      }
+    },
+    "gxS-S4-ZKS.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"350\"; ObjectID = \"gxS-S4-ZKS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "350"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "350"
+          }
+        }
+      }
+    },
+    "IbK-ZD-VhC.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"IbK-ZD-VhC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "drawTime"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "drawTime"
+          }
+        }
+      }
+    },
+    "PxJ-LG-vh9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"PxJ-LG-vh9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "drawTime"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "drawTime"
+          }
+        }
+      }
+    },
+    "SKR-pS-7to.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"SKR-pS-7to\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ItemName"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
+          }
+        }
+      }
+    },
+    "TuB-5i-Vyf.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"參與次數 0\"; ObjectID = \"TuB-5i-Vyf\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "participation count:0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "參與次數 0"
+          }
+        }
+      }
+    },
+    "tZs-ol-m68.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"tZs-ol-m68\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ItemName"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
+          }
+        }
+      }
+    },
+    "xmv-EX-kc9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"350\"; ObjectID = \"xmv-EX-kc9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "350"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "350"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

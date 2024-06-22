@@ -35,12 +35,19 @@ class NetworkManager: NSObject {
     }
 
 
-    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, AuthorizationToken:String = "", completion: @escaping (Data?, Int?, String?) -> Void){
+    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, parametersArray: [[String: Any]]? = nil, AuthorizationToken:String = "", completion: @escaping (Data?, Int?, String?) -> Void){
         let url = URL(string: urlString.urlEncoded())!
         var request = URLRequest(url: url)
         if parameters != nil {
             do{
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions())
+            }catch let error{
+                print(error)
+            }
+        }
+        if parametersArray != nil {
+            do{
+                request.httpBody = try JSONSerialization.data(withJSONObject: parametersArray, options: JSONSerialization.WritingOptions())
             }catch let error{
                 print(error)
             }

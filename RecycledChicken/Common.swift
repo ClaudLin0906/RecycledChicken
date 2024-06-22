@@ -7,6 +7,127 @@
 
 import Foundation
 import UIKit
+import UserNotifications
+import FirebaseMessaging
+
+class Setting {
+    static let shared = Setting()
+    var language:Language? = getLanguage()
+}
+
+func getLanguage() -> Language? {
+    if let appleLanguagesArr = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String] {
+        let appleLanguages = appleLanguagesArr[0]
+        return Language(rawValue: appleLanguages)
+    }
+    return nil
+}
+
+func setLanguage(_ language:Language) {
+    var languages = Language.allCases.filter({return language != $0 })
+    languages.insert(language, at: 0)
+    let languageStrs = languages.map({$0.rawValue})
+    UserDefaults.standard.set(languageStrs, forKey: "AppleLanguages")
+}
+
+func localNotifications(_ title:String, _ body:String) {
+    let content = UNMutableNotificationContent()
+    content.title = title
+    content.body = body
+    content.sound = UNNotificationSound.default
+    let tigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+    let uuidString = UUID().uuidString
+    let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: tigger)
+    UNUserNotificationCenter.current().add(request) { error in
+        guard error == nil else {
+            print(error?.localizedDescription)
+            return
+        }
+    }
+}
+
+func convertWeight(_ value: Double, to targetUnit: WeightUnit = .gram) -> (convertedValue: Double, unit: WeightUnit) {
+    var resultValue: Double
+    var resultUnit: WeightUnit
+    
+    if value >= 1000 {
+        if value >= 1000_000 {
+            resultValue = value / 1000_000
+            resultUnit = .tonne
+        }else {
+            resultValue = value / 1000
+            resultUnit = .kilogram
+        }
+    }else{
+        resultValue = value
+        resultUnit = .gram
+    }
+    return (resultValue, resultUnit)
+}
+
+enum Language:String, CaseIterable {
+    case traditionalChinese = "zh-Hant-TW"
+    case english = "en-TW"
+}
+
+func getChickenLevel() -> IllustratedGuideModelLevel {
+    return CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel ?? .one
+}
+
+struct IllustratedGuide {
+    var level:Int
+    var levelImage:UIImage
+    var iconImage:UIImage
+    var guideImage:UIImage
+    var guideBackgroundImage:UIImage
+    var name:String
+    var title:String
+    var guide:String
+    var discover:String
+    var ability:String
+    var experience:String
+    var attack:String
+}
+
+enum IllustratedGuideModelLevel:Int, CaseIterable, Codable {
+    case one = 1
+    case two = 2
+    case three = 3
+    case four = 4
+    case five = 5
+    case six = 6
+    case seven = 7
+    case eight = 8
+    case nine = 9
+    case ten = 10
+}
+
+func getIllustratedGuide(_ illustratedGuideModelLevel: IllustratedGuideModelLevel) -> IllustratedGuide {
+    switch illustratedGuideModelLevel {
+    case .one:
+        return IllustratedGuide(level: 1, levelImage: UIImage(named:"level1")!, iconImage: UIImage(named:"level1-icon")!, guideImage: UIImage(named: "level1-guide")!, guideBackgroundImage: UIImage(named: "level1-guideBackground")!, name: "illustratedGuideOneOfName".localized, title: "illustratedGuideOneOfTitle".localized, guide: "illustratedGuideOneOfGuide".localized, discover: "", ability: "5056", experience: "0", attack: "物理攻擊")
+    case .two:
+        return IllustratedGuide(level: 2, levelImage: UIImage(named:"level2")!, iconImage: UIImage(named: "level2-icon")!, guideImage: UIImage(named: "level2-guide")!, guideBackgroundImage: UIImage(named: "level2-guideBackground")!, name: "illustratedGuideTwoOfName".localized, title: "illustratedGuideTwoOfTitle".localized, guide: "illustratedGuideTwoOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....", ability: "7424", experience: "10000", attack: "治癒")
+    case .three:
+        return IllustratedGuide(level: 3, levelImage: UIImage(named:"level3")!, iconImage: UIImage(named: "level3-icon")!, guideImage: UIImage(named: "level3-guide")!, guideBackgroundImage: UIImage(named: "level3-guideBackground")!, name: "illustratedGuideThreeOfName".localized, title: "illustratedGuideThreeOfTitle".localized, guide: "illustratedGuideThreeOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....", ability: "1800", experience: "20000", attack: "魔性攻擊")
+    case .four:
+        return IllustratedGuide(level: 4, levelImage: UIImage(named:"level4")!, iconImage: UIImage(named: "level4-icon")!, guideImage: UIImage(named: "level4-guide")!, guideBackgroundImage: UIImage(named: "level4-guideBackground")!, name: "illustratedGuideFourOfName".localized, title: "illustratedGuideFourOfTitle".localized, guide: "illustratedGuideFourOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....", ability: "7130", experience: "30000", attack: "魔性攻擊")
+    case .five:
+        return IllustratedGuide(level: 5, levelImage: UIImage(named:"level5")!, iconImage: UIImage(named: "level5-icon")!, guideImage: UIImage(named: "level5-guide")!, guideBackgroundImage: UIImage(named: "level5-guideBackground")!, name: "illustratedGuideFiveOfName".localized, title: "illustratedGuideFiveOfTitle".localized, guide: "illustratedGuideFiveOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....", ability: "2500", experience: "40000", attack: "防禦")
+    case .six:
+        return IllustratedGuide(level: 6, levelImage: UIImage(named:"level6")!, iconImage: UIImage(named: "level6-icon")!, guideImage: UIImage(named: "level6-guide")!, guideBackgroundImage: UIImage(named: "level6-guideBackground")!, name: "illustratedGuideSixOfName".localized, title: "illustratedGuideSixOfTitle".localized
+                                , guide: "illustratedGuideSixOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....", ability: "63", experience: "50000", attack: "物理攻擊")
+    case .seven:
+        return IllustratedGuide(level: 7, levelImage: UIImage(named:"level7")!, iconImage: UIImage(named: "level7-icon")!, guideImage: UIImage(named: "level7-guide")!, guideBackgroundImage: UIImage(named: "level7-guideBackground")!, name: "illustratedGuideSevenOfName".localized, title: "illustratedGuideSevenOfTitle".localized, guide: "illustratedGuideSevenOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....", ability: "2013", experience: "60000", attack: "魔性攻擊")
+    case .eight:
+        return IllustratedGuide(level: 8, levelImage: UIImage(named:"level8")!, iconImage: UIImage(named: "level8-icon")!, guideImage: UIImage(named: "level8-guide")!, guideBackgroundImage: UIImage(named: "level8-guideBackground")!, name: "illustratedGuideEightOfName".localized, title: "illustratedGuideEightOfTitle".localized, guide: "illustratedGuideEightOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....", ability: "2535", experience: "70000", attack: "物理攻擊")
+    case .nine:
+        return IllustratedGuide(level: 9, levelImage: UIImage(named:"level9")!, iconImage: UIImage(named: "level9-icon")!, guideImage: UIImage(named: "level9-guide")!, guideBackgroundImage: UIImage(named: "level9-guideBackground")!, name: "illustratedGuideNineOfName".localized, title: "illustratedGuideNineOfTitle".localized, guide: "illustratedGuideNineOfGuide".localized, discover: "感謝你一直努力減少排碳量 泥滑島的碳竹雞們又可以自由在的生活！ 還會遇到誰呢....", ability: "13625", experience: "80000", attack: "治癒")
+    case .ten:
+        return IllustratedGuide(level: 10, levelImage: UIImage(named:"level10")!, iconImage: UIImage(named: "level10-icon")!, guideImage: UIImage(named: "level10-guide")!, guideBackgroundImage: UIImage(named: "level10-guideBackground")!, name: "illustratedGuideTenOfName".localized, title: "illustratedGuideTenOfTitle".localized, guide: "illustratedGuideTenOfGuide".localized, discover: "各位地球的智慧生命呀 感謝你們一同努力減少排碳量！ 接下來有碳長的帶領 相信我們的世界一定會越來越好", ability: "2190", experience: "90000", attack: "防禦")
+    }
+}
+
 class CommonColor {
     
     static let shared = CommonColor()
@@ -35,6 +156,51 @@ class CommonColor {
     
 }
 
+
+enum RecyceledSort: CaseIterable {
+    
+    case bottle
+    case battery
+    case papperCub
+    case aluminumCan
+//    case publicTransport
+    
+    func getInfo() -> RecyceledSortInfo {
+        let bottleColor = #colorLiteral(red: 0.8862745098, green: 0.7607843137, blue: 0.4901960784, alpha: 1)
+        let batteryColor = #colorLiteral(red: 0.2666666667, green: 0.4901960784, blue: 0.4156862745, alpha: 1)
+        let papperCubColor = #colorLiteral(red: 0.6862745098, green: 0.5764705882, blue: 0.4431372549, alpha: 1)
+        let aluminumCanColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
+//        let publicTransportColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
+        switch self {
+        case .bottle:
+            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "Pet", color: bottleColor, recycleUnit: "瓶")
+        case .battery:
+            return RecyceledSortInfo(chineseName: "battery".localized, englishName: "BATTERY", iconName: "battery", color: batteryColor, recycleUnit: "顆")
+        case .papperCub:
+            return RecyceledSortInfo(chineseName: "papperCup".localized, englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor, recycleUnit: "個")
+        case .aluminumCan:
+            return RecyceledSortInfo(chineseName: "aluminumCan".localized, englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor, recycleUnit: "個")
+//        case .publicTransport:
+//            return RecyceledSortInfo(chineseName: "大眾運輸", englishName: "publicTransport", iconName: "bus", color: publicTransportColor, recycleUnit: "次", oUnit: "gCO2e")
+        }
+    }
+    
+}
+
+struct RecyceledSortInfo {
+    var chineseName: String
+    var englishName: String
+    var iconName: String
+    var color:UIColor
+    var recycleUnit:String
+}
+
+enum WeightUnit: String {
+    case gram = "gCO2e"
+    case kilogram = "kgCO2e"
+    case tonne = "tCO2e"
+}
+
 var FirstTime = true
 
 var LoginSuccess = false
@@ -60,14 +226,61 @@ class KeyChainKey {
 class UserDefaultKey {
     static let shared = UserDefaultKey()
     let biometrics = "biometrics"
-    let keepLogin = "keepLogin"
+    let displayToday = "displayToday"
+    let colorFillTypeOne = "colorFillTypeOne"
+    let colorFillTypeThree = "colorFillTypeThree"
+    let colorFillTypeFour = "colorFillTypeFour"
+    let oneCellViewImageViewOfColorFillTypeOneView = "oneCellViewImageViewOfColorFillTypeOneView"
+    let oneCellViewBackgroundOfColorFillTypeOneView = "oneCellViewBackgroundOfColorFillTypeOneView"
+    let twoCellViewImageViewOfColorFillTypeOneView = "twoCellViewImageViewOfColorFillTypeOneView"
+    let twoCellViewBackgroundOfColorFillTypeOneView = "twoCellViewBackgroundOfColorFillTypeOneView"
+    let threeCellViewImageViewOfColorFillTypeOneView = "threeCellViewImageViewOfColorFillTypeOneView"
+    let threeCellViewBackgroundOfColorFillTypeOneView = "threeCellViewBackgroundOfColorFillTypeOneView"
+    let fourCellViewImageViewOfColorFillTypeOneView = "fourCellViewImageViewOfColorFillTypeOneView"
+    let fourCellViewBackgroundOfColorFillTypeOneView = "fourCellViewBackgroundOfColorFillTypeOneView"
+    let fiveCellViewImageViewOfColorFillTypeOneView = "fiveCellViewImageViewOfColorFillTypeOneView"
+    let fiveCellViewBackgroundOfColorFillTypeOneView = "fiveCellViewBackgroundOfColorFillTypeOneView"
+    let sixCellViewImageViewOfColorFillTypeOneView = "sixCellViewImageViewOfColorFillTypeOneView"
+    let sixCellViewBackgroundOfColorFillTypeOneView = "sixCellViewBackgroundOfColorFillTypeOneView"
+    let sevenCellViewImageViewOfColorFillTypeOneView = "sevenCellViewImageViewOfColorFillTypeOneView"
+    let sevenCellViewBackgroundOfColorFillTypeOneView = "sevenCellViewBackgroundOfColorFillTypeOneView"
+    let eightCellViewImageViewOfColorFillTypeOneView = "eightCellViewImageViewOfColorFillTypeOneView"
+    let eightCellViewBackgroundOfColorFillTypeOneView = "eightCellViewBackgroundOfColorFillTypeOneView"
+    let nineCellViewImageViewOfColorFillTypeOneView = "nineCellViewImageViewOfColorFillTypeOneView"
+    let nineCellViewBackgroundOfColorFillTypeOneView = "nineCellViewBackgroundOfColorFillTypeOneView"
+    let backgroundOfColorFillTypeTwoView = "backgroundOfColorFillTypeTwoView"
+    let bigFillRightChickenOfColorFillTypeTwoView = "bigFillRightChickenOfColorFillTypeTwoView"
+    let medFillRightChickenOfFillTypeTwoView = "medFillRightChickenOfFillTypeTwoView"
+    let smallFillRightChickenOfFillTypeTwoView = "smallFillRightChickenOfFillTypeTwoView"
+    let bottomFillRightChickenOfColorFillTypeTwoView = "bottomFillRightChickenOfColorFillTypeTwoView"
+    let fillColorBatteryOfColorFillTypeTwoView = "fillColorBatteryOfColorFillTypeTwoView"
+    let fillColorPaperCupOfColorFillTypeTwoView = "fillColorPaperCupOfColorFillTypeTwoView"
+    let fillColoraluminumCanOfColorFillTypeTwoView = "fillColoraluminumCanOfColorFillTypeTwoView"
+    let fillColorBigPETOfColorFillTypeTwoView = "fillColorBigPETOfColorFillTypeTwoView"
+    let backgroundOfColorFillTypeThreeView = "backgroundOfColorFillTypeThreeView"
+    let bigFillRightChickenOfColorFillTypeThreeView = "bigFillRightChickenOfColorFillTypeThreeView"
+    let leftTopOneFillRightChickenOfColorFillTypeThreeView = "leftTopOneFillRightChickenOfColorFillTypeThreeView"
+    let leftTopTwoFillRightChickenOfColorFillTypeThreeView = "leftTopTwoFillRightChickenOfColorFillTypeThreeView"
+    let leftTopThreeFillRightChickenOfColorFillTypeThreeView = "leftTopThreeFillRightChickenOfColorFillTypeThreeView"
+    let leftTopFourFillRightChickenOfColorFillTypeThreeView = "leftTopFourFillRightChickenOfColorFillTypeThreeView"
+    let leftBottomOneFillRightChickenOfColorFillTypeThreeView = "leftBottomOneFillRightChickenOfColorFillTypeThreeView"
+    let leftBottomTwoFillRightChickenOfColorFillTypeThreeView = "leftBottomTwoFillRightChickenOfColorFillTypeThreeView"
+    let leftBottomThreeFillRightChickenOfColorFillTypeThreeView = "bigFillRightChickenOfColorFillTypeThreeView"
+    let leftBottomFourFillRightChickenOfColorFillTypeThreeView = "leftBottomFourFillRightChickenOfColorFillTypeThreeView"
+    let rightBottomOneFillLeftChickenOfColorFillTypeThreeView = "rightBottomOneFillLeftChickenOfColorFillTypeThreeView"
+    let rightBottomTwoFillRightChickenOfColorFillTypeThreeView = "rightBottomTwoFillRightChickenOfColorFillTypeThreeView"
+    let rightBottomThreeFillRightChickenOfColorFillTypeThreeView = "rightBottomThreeFillRightChickenOfColorFillTypeThreeView"
+    let rightBottomFourFillRightChickenOfColorFillTypeThreeView = "rightBottomFourFillRightChickenOfColorFillTypeThreeView"
+    let backgroundOfColorFillTypeFourView = "backgroundOfColorFillTypeFourView"
+    let bigFillRightChickenOfColorFillTypeFourView = "bigFillRightChickenOfColorFillTypeFourView"
+    let bigFillLeftChickenOfColorFillTypeFourView = "bigFillLeftChickenOfColorFillTypeFourView"
+    let oneFillRightChickenOfColorFillTypeFourView = "oneFillRightChickenOfColorFillTypeFourView"
+    let twoFillRightChickenOfColorFillTypeFourView = "twoFillRightChickenOfColorFillTypeFourView"
+    let threeFillRightChickenOfColorFillTypeFourView = "threeFillRightChickenOfColorFillTypeFourView"
     let isFirstProduct = "isFirstProduct"
-}
-
-struct LevelObject{
-    var icon:UIImage?
-    var chicken:UIImage?
-    var chickenName:String
+    let oldChickenLevel = "oldChickenLevel"
+    let finishTasks = "finishTasks"
+    let isSubscribed = "isSubscribed"
 }
 
 class CurrentUserInfo {
@@ -82,7 +295,18 @@ class CurrentUserInfo {
         }
     }()
     
-    var currentProfileInfo:ProfileInfo?
+    var currentProfileInfo:ProfileNewInfo?
+    {
+        willSet{
+            if let newValue = newValue, newValue.userPhoneNumber == "0000000000" {
+                isGuest = true
+            }else{
+                isGuest = false
+            }
+        }
+    }
+    
+    var currentProfileNewInfo:ProfileNewInfo?
     {
         willSet{
             if let newValue = newValue, newValue.userPhoneNumber == "0000000000" {
@@ -107,22 +331,22 @@ class GuestInfo {
 }
 
 struct APIUrl {
-    static let domainName = "https://useries.buenooptics.com:8443/app"
-    static let register = "/regist"
-    static let login = "/login"
+    static let domainName = "https://useries.buenooptics.com:8443/app/v2"
+    static let register = "/auth/register"
+    static let login = "/auth/login"
     static let changePWD = "/reset"
-    static let smsCode = "/smsCode"
+    static let smsCode = "/auth/generateSmsCode"
     static let useRecord = "/useRecord"
     static let tradeRecord = "/tradeRecord"
-    static let machineStatus = "/machineStatus"
+    static let machineStatus = "/machine/status"
     static let buyLottery = "/buyLottery"
-    static let checkLotteryItem = "/checkLotteryItem"
+    static let checkLotteryItem = "/lottery/items"
     static let checkLotteryRecord = "/checkLotteryRecord"
     static let searchUserData = "/searchUserData"
-    static let updateProfile = "/updateProfile"
+    static let updateProfile = "/user/profile"
     static let sendEmail = "/sendEmail"
     static let getQuestList = "/getQuestList"
-    static let forgotPassword = "/forgotPassword"
+    static let forgotPassword = "/auth/forgotPassword"
     static let smsCertificate = "/smsCertificate"
     static let getAd = "/getAd"
     static let getNotification = "/getNotification"
@@ -130,21 +354,48 @@ struct APIUrl {
     static let getQuestStatus = "/getQuestStatus"
     static let taskAD = "https://www.buenopartners.com.tw/recyclepunk"
     static let delete = "/delete"
+    static let siteList = "https://www.buenopartners.com.tw/list"
+    static let siteListEnglish = "https://www.buenopartners.com.tw/en/list"
+    static let mall = "https://www.buenocoop.com/"
+    static let getAdBanner = "/ad/banner"
+    static let profile = "/user/profile"
+    static let items = "/shop/items"
+    static let records = "/recycle/records"
+    static let pointRecords = "/point/records"
+    static let enterInviteCode = "/user/enterInviteCode"
+    static let carbonReductionRecords = "/recycle/carbonReductionRecords"
+    static let ticketCoupons = "/coupons?category=ticket"
+    static let eventCoupons = "/coupons?category=event"
+    static let partnerCoupons = "/coupons?category=partner"
+    static let questComplete = "/quest/complete"
+    static let message = "/message"
+    static let lotteryBuy = "/lottery/buy"
+    static let couponsBuy = "/coupons/buy"
+    static let messageDelete = "/message/delete"
+    static let havingLottery = "/lottery/bought"
+    static let havingCoupons = "/coupons/bought"
+    static let enterActivityCode = "/user/enterActivityCode"
+    static let getPopBanner = "/ad/popup"
+    static let appleStoreID = "6449214570"
+    static let connectAppleStore = "itms-apps://itunes.apple.com/app/\(appleStoreID)"
+    static let checkAppleStoreVersion = "https://itunes.apple.com/tw/lookup?id=\(appleStoreID)"
 }
 
-struct WebViewUrl{
+struct WebViewUrl {
     static let PrivacyPolicyURL = "https://www.buenopartners.com.tw/privacy"
     static let CommonPronblemURL = "https://www.buenopartners.com.tw/faq"
+    static let CustomerContactURL = "https://www.buenopartners.com.tw/fae"
+    static let ConnectCompanyURL = "https://www.buenopartners.com.tw/contact"
 }
 
 var attributes: [NSAttributedString.Key: Any] = [
-    NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
+    NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Medium", size: 17)!,
     NSAttributedString.Key.foregroundColor: UIColor.white,
     NSAttributedString.Key.kern: 5 // 設定字距
 ]
 
 let attributes2: [NSAttributedString.Key: Any] = [
-    NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Normal", size: 17)!,
+    NSAttributedString.Key.font: UIFont(name: "GenJyuuGothic-Medium", size: 17)!,
 //    NSAttributedString.Key.foregroundColor: UIColor.black,
     NSAttributedString.Key.kern: 5 // 設定字距
 ]
@@ -157,9 +408,63 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
+func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
+    var urlStr = ""
+    if let sites = sites, sites != "" {
+        urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sites)"
+    }
+    if sites == nil || sites == "" {
+        urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
+    }
+    NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+        guard let data = data, statusCode == 200 else {
+            completion(statusCode, errorMSG, nil, nil, nil, nil, nil, nil, nil)
+            return
+        }
+        if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
+            var batteryInt:Int?
+            var bottleInt:Int?
+            var colorledBottleInt:Int?
+            var colorlessBottleInt:Int?
+            var canInt:Int?
+            var cupInt:Int?
+            useRecordInfos.forEach { useRecordInfo in
+                if let recycleDetails = useRecordInfo.recycleDetails {
+                    if let battery = recycleDetails.battery {
+                        batteryInt = batteryInt ?? 0
+                        batteryInt! += battery
+                    }
+                    if let bottle = recycleDetails.bottle {
+                        bottleInt = bottleInt ?? 0
+                        bottleInt! += bottle
+                    }
+                    if let coloredBottle = recycleDetails.coloredBottle {
+                        colorledBottleInt = colorledBottleInt ?? 0
+                        colorledBottleInt! += coloredBottle
+                    }
+                    if let colorlessBottle = recycleDetails.colorlessBottle {
+                        colorlessBottleInt = colorlessBottleInt ?? 0
+                        colorlessBottleInt! += colorlessBottle
+                    }
+                    if let can = recycleDetails.can {
+                        canInt = canInt ?? 0
+                        canInt! += can
+                    }
+                    if let cup = recycleDetails.cup {
+                        cupInt = cupInt ?? 0
+                        cupInt! += cup
+                    }
+                }
+            }
+            completion(statusCode, errorMSG, useRecordInfos, batteryInt, bottleInt, colorledBottleInt, colorlessBottleInt, canInt, cupInt)
+        }
+    }
+}
+
 func loginOutRemoveObject(){
-    CurrentUserInfo.shared.currentProfileInfo = nil
+    CurrentUserInfo.shared.currentProfileNewInfo = nil
     CommonKey.shared.authToken = ""
+    UserDefaults().removeObject(forKey: UserDefaultKey.shared.oldChickenLevel)
     LoginSuccess = false
     FirstTime = true
     removeBiometricsAction()
@@ -170,48 +475,42 @@ func removeBiometricsAction(){
     let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
 }
 
-func getUserInfo(VC:UIViewController, finishAction:(()->())?){
-    NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.searchUserData, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-        guard statusCode == 200 else {
-            showAlert(VC: VC, title: "發生錯誤", message: errorMSG, alertAction: nil)
+func changeFormat(_ dateStr:String)-> String {
+    let changeDate = dateStr
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    if let date = dateFormatter.date(from: changeDate) {
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let formattedDate = dateFormatter.string(from: date)
+        return formattedDate
+    }
+    return dateStr
+}
+
+func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
+    NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.profile, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+        guard let data = data, statusCode == 200 else {
+            showAlert(VC: VC, title: "error".localized, message: errorMSG)
             return
         }
-        if let data = data {
-            let json = NetworkManager.shared.dataToDictionary(data: data)
-            var userInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "", experiencePoint: 0)
-            if let userPhoneNumber = json["userPhoneNumber"] as? String {
-                userInfo.userPhoneNumber = userPhoneNumber
+        if let profileNewInfo = try? JSONDecoder().decode(ProfileNewInfo.self, from: data) {
+            var userInfo = profileNewInfo
+            if let experiencePoint = profileNewInfo.experiencePoint {
+                userInfo.levelInfo = getLevelInfo(experiencePoint)
             }
-            if let userEmail = json["userEmail"] as? String {
-                userInfo.userEmail = userEmail
-            }
-            if let userName = json["userName"] as? String {
-                userInfo.userName = userName
-            }
-            if let point = json["point"] as? Int {
-                userInfo.point = point
-            }
-            if let userBirth = json["userBirth"] as? String {
-                userInfo.userBirth = userBirth
-            }
-            if let experiencePoint = json["experiencePoint"] as? Int {
-                userInfo.experiencePoint = experiencePoint
-            }
-            
-            CurrentUserInfo.shared.currentProfileInfo = computeGrade(userinfo: userInfo)
-            
+            CurrentUserInfo.shared.currentProfileNewInfo = nil
+            CurrentUserInfo.shared.currentProfileNewInfo = userInfo
             if let finishAction = finishAction {
                 finishAction()
             }
-
         }
     }
 }
 
-private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
-    var newUserInfo = userinfo
-    let experiencePoint = userinfo.experiencePoint
-    var levelInfo:LevelInfo = LevelInfo(level: 1, chickenLevel: .one)
+private func getLevelInfo(_ experiencePoint:Int) -> LevelInfo {
+//    var newUserInfo = userinfo
+//    let experiencePoint = userinfo.experiencePoint
+    var levelInfo:LevelInfo = LevelInfo(progress: 1, chickenLevel: .one)
     if experiencePoint >= 0 && experiencePoint <= 10000{
         levelInfo.chickenLevel = .one
     }else if experiencePoint > 10000 && experiencePoint <= 20000{
@@ -235,336 +534,306 @@ private func computeGrade(userinfo:ProfileInfo) -> ProfileInfo{
     }
     
     if experiencePoint >= 0 && experiencePoint <= 100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 100 && experiencePoint <= 400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 400 && experiencePoint <= 900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 900 && experiencePoint <= 1600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 1600 && experiencePoint <= 2500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 2500 && experiencePoint <= 3600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 3600 && experiencePoint <= 4900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 4900 && experiencePoint <= 6400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 6400 && experiencePoint <= 8100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 8100 && experiencePoint <= 10000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 10000 && experiencePoint <= 10100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 10100 && experiencePoint <= 10400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 10400 && experiencePoint <= 10900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 10900 && experiencePoint <= 11600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 11600 && experiencePoint <= 12500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 12500 && experiencePoint <= 13600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 13600 && experiencePoint <= 14900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 14900 && experiencePoint <= 16400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 16400 && experiencePoint <= 18100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 18100 && experiencePoint <= 20000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 20000 && experiencePoint <= 20100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 20100 && experiencePoint <= 20400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 20400 && experiencePoint <= 20900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 20900 && experiencePoint <= 21600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 21600 && experiencePoint <= 22500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 22500 && experiencePoint <= 23600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 23600 && experiencePoint <= 24900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 24900 && experiencePoint <= 26400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 26400 && experiencePoint <= 28100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 28100 && experiencePoint <= 30000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 30000 && experiencePoint <= 30100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 30100 && experiencePoint <= 30400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 30400 && experiencePoint <= 30900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 30900 && experiencePoint <= 31600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 31600 && experiencePoint <= 32500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 32500 && experiencePoint <= 33600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 33600 && experiencePoint <= 34900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 34900 && experiencePoint <= 36400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 36400 && experiencePoint <= 38100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 38100 && experiencePoint <= 40000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 40000 && experiencePoint <= 40100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 40100 && experiencePoint <= 40400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 40400 && experiencePoint <= 40900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 40900 && experiencePoint <= 41600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 41600 && experiencePoint <= 42500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 42500 && experiencePoint <= 43600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 43600 && experiencePoint <= 44900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 44900 && experiencePoint <= 46400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 46400 && experiencePoint <= 48100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 48100 && experiencePoint <= 50000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 50000 && experiencePoint <= 50100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 50100 && experiencePoint <= 50400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 50400 && experiencePoint <= 50900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 50900 && experiencePoint <= 51600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 51600 && experiencePoint <= 52500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 52500 && experiencePoint <= 53600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 53600 && experiencePoint <= 54900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 54900 && experiencePoint <= 56400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 56400 && experiencePoint <= 58100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 58100 && experiencePoint <= 60000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 60000 && experiencePoint <= 60100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 60100 && experiencePoint <= 60400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 60400 && experiencePoint <= 60900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 60900 && experiencePoint <= 61600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 61600 && experiencePoint <= 62500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 62500 && experiencePoint <= 63600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 63600 && experiencePoint <= 64900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 64900 && experiencePoint <= 66400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 66400 && experiencePoint <= 68100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 68100 && experiencePoint <= 70000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 70000 && experiencePoint <= 70100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 70100 && experiencePoint <= 70400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 70400 && experiencePoint <= 70900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 70900 && experiencePoint <= 71600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 71600 && experiencePoint <= 72500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 72500 && experiencePoint <= 73600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 73600 && experiencePoint <= 74900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 74900 && experiencePoint <= 76400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 76400 && experiencePoint <= 78100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 78100 && experiencePoint <= 80000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 80000 && experiencePoint <= 80100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 80100 && experiencePoint <= 80400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 80400 && experiencePoint <= 80900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 80900 && experiencePoint <= 81600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 81600 && experiencePoint <= 82500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 82500 && experiencePoint <= 83600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 83600 && experiencePoint <= 84900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 84900 && experiencePoint <= 86400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 86400 && experiencePoint <= 88100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 88100 && experiencePoint <= 90000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
     else if experiencePoint > 90000 && experiencePoint <= 90100{
-        levelInfo.level = 1
+        levelInfo.progress = 1
     }
     else if experiencePoint > 90100 && experiencePoint <= 90400 {
-        levelInfo.level = 2
+        levelInfo.progress = 2
     }
     else if experiencePoint > 90400 && experiencePoint <= 90900 {
-        levelInfo.level = 3
+        levelInfo.progress = 3
     }
     else if experiencePoint > 90900 && experiencePoint <= 91600 {
-        levelInfo.level = 4
+        levelInfo.progress = 4
     }
     else if experiencePoint > 91600 && experiencePoint <= 92500 {
-        levelInfo.level = 5
+        levelInfo.progress = 5
     }
     else if experiencePoint > 92500 && experiencePoint <= 93600 {
-        levelInfo.level = 6
+        levelInfo.progress = 6
     }
     else if experiencePoint > 93600 && experiencePoint <= 94900 {
-        levelInfo.level = 7
+        levelInfo.progress = 7
     }
     else if experiencePoint > 94900 && experiencePoint <= 96400 {
-        levelInfo.level = 8
+        levelInfo.progress = 8
     }
     else if experiencePoint > 96400 && experiencePoint <= 98100 {
-        levelInfo.level = 9
+        levelInfo.progress = 9
     }
     else if experiencePoint > 98100 && experiencePoint <= 100000 {
-        levelInfo.level = 10
+        levelInfo.progress = 10
     }
-    newUserInfo.levelInfo = levelInfo
-    return newUserInfo
-
-}
-
-func getLevelObject()-> LevelObject?{
-    let chickenLevel = CurrentUserInfo.shared.currentProfileInfo?.levelInfo?.chickenLevel
-    switch chickenLevel {
-    case.one:
-        return LevelObject(icon: UIImage(named: "level1-icon"), chicken: UIImage(named: "level1"), chickenName: "碳員")
-    case.two:
-        return LevelObject(icon: UIImage(named: "level2-icon"), chicken: UIImage(named: "level2"), chickenName: "割草雞")
-    case.three:
-        return LevelObject(icon: UIImage(named: "level3-icon"), chicken: UIImage(named: "level3"), chickenName: "潛水雞")
-    case.four:
-        return LevelObject(icon: UIImage(named: "level4-icon"), chicken: UIImage(named: "level4"), chickenName: "技術雞")
-    case.five:
-        return LevelObject(icon: UIImage(named: "level5-icon"), chicken: UIImage(named: "level5"), chickenName: "挖土雞")
-    case.six:
-        return LevelObject(icon: UIImage(named: "level6-icon"), chicken: UIImage(named: "level6"), chickenName: "紳士雞")
-    case.seven:
-        return LevelObject(icon: UIImage(named: "level7-icon"), chicken: UIImage(named: "level7"), chickenName: "發電雞")
-    case.eight:
-        return LevelObject(icon: UIImage(named: "level8-icon"), chicken: UIImage(named: "level8"), chickenName: "冒險雞")
-    case.nine:
-        return LevelObject(icon: UIImage(named: "level9-icon"), chicken: UIImage(named: "level9"), chickenName: "花雕雞")
-    case.ten:
-        return LevelObject(icon: UIImage(named: "level10-icon"), chicken: UIImage(named: "level10"), chickenName: "碳長")
-    case .none:
-        return nil
-    }
+    return levelInfo
 }
 
 func generateBarCode(from string: String) -> UIImage? {
@@ -611,7 +880,7 @@ func showAlert(VC:UIViewController, title:String?, message:String? = nil, alertA
         if let alertAction = alertAction {
             alertVC.addAction(alertAction)
         }else{
-            alertVC.addAction(UIAlertAction(title: "確定", style: .default))
+            alertVC.addAction(UIAlertAction(title: "confirm".localized, style: .default))
         }
         if let cancelAction = cancelAction {
             alertVC.addAction(cancelAction)
@@ -693,7 +962,7 @@ func isDateWithinInterval(date: Date, start: Date, end: Date) -> Bool {
     return date >= start && date <= end
 }
 
-func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy-MM-dd","EEE")) -> (String, String, Date){
+func getDates(i: Int, currentDate:Date, dateformat:(String,String) = ("yyyy/MM/dd","EEE")) -> (String, String, Date){
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "en_US")
     var date = currentDate
@@ -720,28 +989,52 @@ func dateFromStringISO8601(date:Date) -> String {
     return dateString
 }
 
-func getDateFromStr(dateformat:String = "yyyy-MM-dd HH:mm:ss Z", dateStr:String) -> InfoTime? {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = dateformat
-    dateFormatter.locale = Locale(identifier: "zh_Hant_TW")
-    if let date = dateFormatter.date(from: dateStr) {
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        return InfoTime(year: year, month: month, day: day)
-    } else {
-        return nil
-    }
-}
-
-func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+func imageWithImage(image:UIImage?, scaledToSize newSize:CGSize) -> UIImage? {
+    guard let image = image else { return nil }
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
     image.draw(in: CGRectMake(0, 0, newSize.width, newSize.height))
     let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
     UIGraphicsEndImageContext()
     return newImage
 }
+
+func convertDateFormat(inputDateString: String, inputFormat: String, outputFormat: String) -> String? {
+    let dateFormatterInput = DateFormatter()
+    dateFormatterInput.dateFormat = inputFormat
+
+    if let date = dateFormatterInput.date(from: inputDateString) {
+        let dateFormatterOutput = DateFormatter()
+        dateFormatterOutput.dateFormat = outputFormat
+        return dateFormatterOutput.string(from: date)
+    } else {
+        return nil
+    }
+}
+
+func getStartAndEndDateOfMonth(_ dateFormat: String = "yyyy-MM-dd") -> (start: String, end: String)? {
+    let calendar = Calendar.current
+    let now = Date()
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = dateFormat
+    
+    let components = calendar.dateComponents([.year, .month], from: now)
+    
+    // Get the start date of the month
+    guard let startOfMonth = calendar.date(from: components) else {
+        return nil
+    }
+    let startString = dateFormatter.string(from: startOfMonth)
+    
+    // Get the end date of the month
+    guard let plusOneMonth = calendar.date(byAdding: .month, value: 1, to: startOfMonth) else {
+        return nil
+    }
+    let endOfMonth = calendar.date(byAdding: .day, value: -1, to: plusOneMonth)!
+    let endString = dateFormatter.string(from: endOfMonth)
+    
+    return (startString, endString)
+}
+
 
 func getSevenDaysArray(targetDate:Date) -> [(String, String, Date)] {
     let weekDay = getDayOfTheWeek()
@@ -789,6 +1082,25 @@ func fadeInOutAni(showView:UIView, finishAction:(()->())?){
     }
 }
 
+func messagingSubscribe() {
+    Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
+        guard error == nil else {
+            print(error?.localizedDescription ?? "")
+            return
+        }
+        UserDefaults.standard.setValue(true, forKey: UserDefaultKey.shared.isSubscribed)
+    }
+}
+
+func messagingUnSubscribe() {
+    Messaging.messaging().unsubscribe(fromTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber){ error in
+        guard error == nil else {
+            print(error?.localizedDescription ?? "")
+            return
+        }
+        UserDefaults.standard.setValue(false, forKey: UserDefaultKey.shared.isSubscribed)
+    }
+}
 
 struct Certificates {
     
@@ -802,9 +1114,69 @@ struct Certificates {
     }
 }
 
-struct UseRecordInfo:Decodable {
-    var storeName:String
-    var time:String
+struct UseRecordInfo:Codable {
+    var userPhoneNumber:String?
+    var storeName:String?
+    var storeID:String?
+    var time:String?
+    var type:RecycleType?
+    var recycleDetails:RecycleDetails?
+    
+    enum CodingKeys:String, CodingKey {
+        case userPhoneNumber = "userPhoneNumber"
+        case storeName = "storeName"
+        case storeID = "storeID"
+        case time = "time"
+        case type = "type"
+        case recycleDetails = "recycleDetails"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        userPhoneNumber = try? container.decodeIfPresent(String.self, forKey: .userPhoneNumber)
+        storeName = try? container.decodeIfPresent(String.self, forKey: .storeName)
+        storeID = try? container.decodeIfPresent(String.self, forKey: .storeID)
+        time = try? container.decodeIfPresent(String.self, forKey: .time)
+        type = try? container.decodeIfPresent(RecycleType.self, forKey: .type)
+        recycleDetails = try? container.decodeIfPresent(RecycleDetails.self, forKey: .recycleDetails)
+    }
+}
+
+enum RecycleType: String, Codable {
+    case battery = "battery"
+    case bottle = "bottle"
+    case coloredBottle = "coloredBottle"
+    case colorlessBottle = "colorlessBottle"
+    case can = "can"
+    case cup = "cup"
+}
+
+struct RecycleDetails:Codable {
     var battery:Int?
     var bottle:Int?
+    var coloredBottle:Int?
+    var colorlessBottle:Int?
+    var can:Int?
+    var cup:Int?
+}
+
+struct ApiResult:Codable {
+    var message:String?
+    var status:ApiStatus?
+    
+    enum CodingKeys:String, CodingKey {
+        case status = "status"
+        case message = "message"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        message = try? container.decodeIfPresent(String.self, forKey: .message)
+        status = try? container.decodeIfPresent(ApiStatus.self, forKey: .status)
+    }
+}
+
+enum ApiStatus:String, Codable {
+    case success = "success"
+    case failure = "failure"
 }

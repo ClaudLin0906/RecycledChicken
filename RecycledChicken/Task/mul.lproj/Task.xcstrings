@@ -1,0 +1,264 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "2z3-Bw-Vam.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"票券任務\"; ObjectID = \"2z3-Bw-Vam\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "票券任務"
+          }
+        }
+      }
+    },
+    "aHa-Cv-mhz.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"aHa-Cv-mhz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "cjV-9E-d6S.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"票劵已領取\"; ObjectID = \"cjV-9E-d6S\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ticket has been claimed"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "票劵已領取"
+          }
+        }
+      }
+    },
+    "dB3-QH-e1L.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"dB3-QH-e1L\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "ddv-fT-tQ8.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"ddv-fT-tQ8\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "DZ1-3W-L2Y.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"00\"; ObjectID = \"DZ1-3W-L2Y\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "50"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "00"
+          }
+        }
+      }
+    },
+    "k43-Uw-Q2N.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"每週任務\"; ObjectID = \"k43-Uw-Q2N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weekly Tasks"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "每週任務"
+          }
+        }
+      }
+    },
+    "krr-Zi-F0N.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"krr-Zi-F0N\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "分享任務"
+          }
+        }
+      }
+    },
+    "NIu-ir-pOU.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"00\"; ObjectID = \"NIu-ir-pOU\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "50"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "00"
+          }
+        }
+      }
+    },
+    "p6M-X8-5hj.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"領取票劵\"; ObjectID = \"p6M-X8-5hj\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Tickets"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "領取票劵"
+          }
+        }
+      }
+    },
+    "PG8-3l-iBo.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"PG8-3l-iBo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "分享任務"
+          }
+        }
+      }
+    },
+    "tPD-Ie-oWR.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"tPD-Ie-oWR\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "分享任務"
+          }
+        }
+      }
+    },
+    "UAt-0J-5h0.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"票券任務\"; ObjectID = \"UAt-0J-5h0\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mission"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "票券任務"
+          }
+        }
+      }
+    },
+    "z3L-3e-cJZ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"z3L-3e-cJZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "zDQ-nb-EVg.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"zDQ-nb-EVg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "zRe-Ad-52Z.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"zRe-Ad-52Z\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "zvy-Sf-fzt.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"zvy-Sf-fzt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "2Bd-Al-cez.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"重新發送驗證碼\"; ObjectID = \"2Bd-Al-cez\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resend the code"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "重新發送驗證碼"
+          }
+        }
+      }
+    },
+    "A2e-xR-t8j.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"(60)\"; ObjectID = \"A2e-xR-t8j\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(60)"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "(60)"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

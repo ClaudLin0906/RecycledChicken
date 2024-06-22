@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "eru-wJ-rV7.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"品項\"; ObjectID = \"eru-wJ-rV7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "item"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "品項"
+          }
+        }
+      }
+    },
+    "fBC-3W-26o.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"日期\"; ObjectID = \"fBC-3W-26o\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "date"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "日期"
+          }
+        }
+      }
+    },
+    "mII-21-EXa.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"點數\"; ObjectID = \"mII-21-EXa\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "point"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "點數"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

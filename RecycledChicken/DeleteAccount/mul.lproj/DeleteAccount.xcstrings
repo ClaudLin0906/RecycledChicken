@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "Vrd-Eb-IDM.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"刪除帳號\"; ObjectID = \"Vrd-Eb-IDM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DELETE"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "刪除帳號"
+          }
+        }
+      }
+    },
+    "XiZ-fS-3Yz.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"1. 點數遺失：刪除帳號將永久移除您在碳竹雞APP上的所有點數餘額、累積優惠券以及其他相關獎勵或福利。請確保您已兌換或使用您的點數和優惠券，以免因刪除帳號而失去這些價值。\\n\\n2. 停止累積與兌換：刪除帳號將停止您在碳竹雞APP上的所有累積點數和兌換活動。您將無法再累積新的點數，也無法使用現有的點數進行兌換或換取禮品、優惠券或其他獎勵。\\n\\n3. 關聯資訊遺失：刪除帳號可能會導致您在碳竹雞APP上的所有相關資訊遺失，包括帳戶設定、個人資料、消費記錄、兌換紀錄等。請在刪除帳號之前確保您已保存或備份您重要的資料，以免後悔無法恢復。\\n\\n4. 無法回復帳號：一旦刪除帳號，您將無法以任何方式恢復或回復該帳號。如果您之後改變主意或需要重新使用該累積點數應用程式，您將需要重新註冊一個新的帳號，並且需要重新累積點數。\"; ObjectID = \"XiZ-fS-3Yz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1. POINTS LOSS:\nDeleting your account will permanently remove all your points balance, accumulated coupons, and other related rewards or benefits on the Carbon Chicken app. Please ensure that you have redeemed or used your points and coupons to avoid losing this value.\n\n2. ACCUMULATION AND REDEMPTION STOP:\nDeleting your account will halt all point accumulation and redemption activities on the Carbon Chicken app. You will no longer be able to accumulate new points or use existing points to redeem or exchange for gifts, coupons, or other rewards.\n\n3. ASSOCIATED INFORMATION LOSS:\nDeleting your account may result in the loss of all associated information on the Carbon Chicken app, including account settings, personal data, transaction history, and redemption records. Please ensure that you have saved or backed up your important data before deleting your account to avoid regret.\n\n4. IRRECOVERABLE ACCOUNT:\nOnce your account is deleted, you won't be able to recover or restore it in any way. If you change your mind later or need to reuse the points accumulation application, you will need to register a new account and start accumulating points again."
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "1. 點數遺失：刪除帳號將永久移除您在碳竹雞APP上的所有點數餘額、累積優惠券以及其他相關獎勵或福利。請確保您已兌換或使用您的點數和優惠券，以免因刪除帳號而失去這些價值。\n\n2. 停止累積與兌換：刪除帳號將停止您在碳竹雞APP上的所有累積點數和兌換活動。您將無法再累積新的點數，也無法使用現有的點數進行兌換或換取禮品、優惠券或其他獎勵。\n\n3. 關聯資訊遺失：刪除帳號可能會導致您在碳竹雞APP上的所有相關資訊遺失，包括帳戶設定、個人資料、消費記錄、兌換紀錄等。請在刪除帳號之前確保您已保存或備份您重要的資料，以免後悔無法恢復。\n\n4. 無法回復帳號：一旦刪除帳號，您將無法以任何方式恢復或回復該帳號。如果您之後改變主意或需要重新使用該累積點數應用程式，您將需要重新註冊一個新的帳號，並且需要重新累積點數。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "Yaf-cr-pZZ.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"所在地區搜尋\"; ObjectID = \"Yaf-cr-pZZ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "search"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "所在地區搜尋"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -19,7 +19,7 @@ class CustomVC: UIViewController {
 
     }
 
-    @objc private func backBtnPressed(){
+    @objc private func backBtnPressed() {
         if let navigationController = navigationController {
             navigationController.popViewController(animated: true)
         }else{
@@ -27,7 +27,7 @@ class CustomVC: UIViewController {
         }
     }
     
-    func setDefaultNavigationBackBtn(){
+    func setDefaultNavigationBackBtn(_ backgroundColor:UIColor = CommonColor.shared.color1) {
         navigationController?.navigationBar.isTranslucent = true
         let backBtn = UIBarButtonItem(image: UIImage(named: "路径 273"), style: .plain, target: self, action: #selector(backBtnPressed))
         backBtn.tintColor = .white
@@ -35,14 +35,14 @@ class CustomVC: UIViewController {
         
         let barAppearance =  UINavigationBarAppearance()
         barAppearance.configureWithTransparentBackground()
-        barAppearance.backgroundColor = CommonColor.shared.color1
+        barAppearance.backgroundColor = backgroundColor
         barAppearance.titleTextAttributes = attributes
         navigationController?.navigationBar.standardAppearance = barAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         
     }
     
-    func setDefaultNavigationBackBtn2(){
+    func setDefaultNavigationBackBtn2() {
         navigationController?.navigationBar.isTranslucent = true
         let backBtn = UIBarButtonItem(image: UIImage(named: "路径 273"), style: .plain, target: self, action: #selector(backBtnPressed))
         backBtn.tintColor = .black

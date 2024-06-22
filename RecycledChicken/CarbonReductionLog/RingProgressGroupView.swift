@@ -99,7 +99,7 @@ class RingProgressGroupView: UIView {
         congratulationsContent.widthAnchor.constraint(equalTo: congratulationsTitle.widthAnchor).isActive = true
         congratulationsContent.heightAnchor.constraint(equalToConstant: 40).isActive = true
         let attrString = NSMutableAttributedString(attributedString: congratulationsContent.attributedText!)
-        attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Normal", size: 10)!, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "GenJyuuGothic-Medium", size: 10)!, range: NSMakeRange(0, attrString.length))
         attrString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(3.0), range: NSRange(location: 0, length: attrString.length))
         congratulationsContent.attributedText = attrString
 

@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct RecycleLogInfo: Decodable {
-    var storeID:String
-    var time:String
+struct RecycleLogInfo:Codable {
+    var time:Date
+    var battery:Int = 0
+    var bottle:Int = 0
+    var colorlessBottle:Int = 0
+    var coloredBottle:Int = 0
+    var can:Int = 0
 }
 
-struct InfoTime {
-    var year:Int
-    var month:Int
-    var day:Int
-}
+

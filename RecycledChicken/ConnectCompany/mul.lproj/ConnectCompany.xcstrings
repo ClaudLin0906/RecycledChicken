@@ -1,0 +1,132 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "GMt-iW-Jcr.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"請問您是用戶還是合作廠商?\"; ObjectID = \"GMt-iW-Jcr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you a user or a collaborating partner？"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請問您是用戶還是合作廠商?"
+          }
+        }
+      }
+    },
+    "m9r-lg-nnF.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"輸入正確聯絡信箱格式\"; ObjectID = \"m9r-lg-nnF\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the correct contact email format."
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "輸入正確聯絡信箱格式"
+          }
+        }
+      }
+    },
+    "MoM-A1-zCu.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"E-mail\"; ObjectID = \"MoM-A1-zCu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E-mail"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "E-mail"
+          }
+        }
+      }
+    },
+    "mpC-zY-24I.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"您使用的連絡信箱\"; ObjectID = \"mpC-zY-24I\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The contact email you use"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "您使用的連絡信箱"
+          }
+        }
+      }
+    },
+    "xfb-tz-uIe.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"用戶\"; ObjectID = \"xfb-tz-uIe\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "用戶"
+          }
+        }
+      }
+    },
+    "YsI-6F-Gi0.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"請輸入您的意見內容\"; ObjectID = \"YsI-6F-Gi0\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter the content of your feedback"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請輸入您的意見內容"
+          }
+        }
+      }
+    },
+    "zcT-WR-qFV.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"送出\"; ObjectID = \"zcT-WR-qFV\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEND OUT"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "送出"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

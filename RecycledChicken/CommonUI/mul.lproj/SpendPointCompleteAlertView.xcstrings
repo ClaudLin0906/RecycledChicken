@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "29u-7z-C59.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"購買完成\"; ObjectID = \"29u-7z-C59\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "purchase completed"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "購買完成"
+          }
+        }
+      }
+    },
+    "Ht3-VY-Hay.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"票劵已存入您的票夾\"; ObjectID = \"Ht3-VY-Hay\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "the ticket has been stored in your wallet"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "票劵已存入您的票夾"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

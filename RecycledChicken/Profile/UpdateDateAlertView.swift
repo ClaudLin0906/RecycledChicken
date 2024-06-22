@@ -13,7 +13,7 @@ class UpdateDateAlertView: UIView, NibOwnerLoadable {
     
     var VC:ProfileVC?
     
-    var userInfo:ProfileInfo?
+    var profilePostInfo:ProfilePostInfo?
     {
         willSet{
             if let newValue = newValue {
@@ -38,8 +38,8 @@ class UpdateDateAlertView: UIView, NibOwnerLoadable {
     }
     
     @IBAction func confirm(_ sender:UIButton) {
-        if let VC = VC, let userInfo = userInfo {
-            VC.updateUserInfo(userInfo: userInfo)
+        if let VC = VC, let profilePostInfo = profilePostInfo {
+            VC.updateUserInfo(profilePostInfo)
             remove()
         }
     }

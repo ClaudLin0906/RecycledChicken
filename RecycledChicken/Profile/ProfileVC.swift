@@ -13,17 +13,25 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var chickenLeverLabel:CustomLabel!
     
-    let profileInfoArr:[String] = ["用戶名稱", "E-mail", "手機號碼", "生日"]
+    @IBOutlet weak var barCodeView:BarCodeView!
     
-    let datePicker:UIDatePicker = {
+    @IBOutlet weak var comfirmBtnWidth:NSLayoutConstraint!
+    
+    @IBOutlet weak var profileImageView:UIImageView!
+    
+//    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
+    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "marketplace".localized]
+
+    
+    private let datePicker:UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.maximumDate = Date()
         return datePicker
     }()
         
-    let rightNow = Date()
+    private let rightNow = Date()
     
-    var profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
+    private var profileUserInfo = CurrentUserInfo.shared.currentProfileNewInfo
     {
         didSet{
             DispatchQueue.main.async {
@@ -34,23 +42,27 @@ class ProfileVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "個人賬戶"
+        title = "personalAccount".localized
         UIInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        getUserInfo(VC: self) {
-            self.profileUserInfo = CurrentUserInfo.shared.currentProfileInfo
+        getUserNewInfo(VC: self) {
+            self.profileUserInfo = CurrentUserInfo.shared.currentProfileNewInfo
+        }
+        if getLanguage() == .english {
+            comfirmBtnWidth.constant = 250
         }
     }
     
     private func UIInit(){
         profileTableView.setSeparatorLocation()
-        if let chickenName = getLevelObject()?.chickenName as? String{
-            chickenLeverLabel.text = "目前等級為\(chickenName)雞"
-        }
+        let illustratedGuide = getIllustratedGuide(getChickenLevel())
+        chickenLeverLabel.text = "\("currentLevel".localized):\(illustratedGuide.name)"
+        profileImageView.image = illustratedGuide.iconImage
+        barCodeView.setBarCodeValue(CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber)
     }
     
     private func createDatePicker(_ textfield:UITextField) {
@@ -91,91 +103,51 @@ class ProfileVC: CustomVC {
         view.endEditing(true)
     }
     
-    func updateUserInfo( userInfo:ProfileInfo){
-        let userInfoDic = try? userInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: userInfoDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+    func updateUserInfo(_ profilePostInfo:ProfilePostInfo) {
+        let profilePostInfoDic = try? profilePostInfo.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: profilePostInfoDic, AuthorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            if data != nil {
-                self.showProfileUpdateView()
+            let ApiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
+            if let status = ApiResult?.status {
+                switch status {
+                case .success:
+                    self.showProfileUpdateView()
+                case .failure:
+                    break
+                }
             }
         }
     }
     
-    @IBAction func confirm(_ sender:UIButton) {
+    @IBAction func IllustratedGuideBtnPress(_ sender:CustomButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "IllustratedGuide", bundle: Bundle.main).instantiateViewController(identifier: "IllustratedGuide") as? IllustratedGuideVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
+    @IBAction func confirm(_ sender:CustomButton) {
         guard CurrentUserInfo.shared.isGuest == false else { return } 
-        var newUserInfo = ProfileInfo(userEmail: "", userName: "", userBirth: "", point: 0, userPhoneNumber: "", experiencePoint: 0)
         let cells = cellsForTableView(tableView: profileTableView)
+        var userName = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
+        var userEmail = CurrentUserInfo.shared.currentProfileNewInfo?.userEmail ?? ""
+        var userPhoneNumber = CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber ?? ""
+        let userBirth = CurrentUserInfo.shared.currentProfileNewInfo?.userBirth ?? ""
+        var invitCode = CurrentUserInfo.shared.currentProfileNewInfo?.invitCode ?? ""
         for cell in cells {
             if let profileTableViewCell = cell as? ProfileTableViewCell {
                 if profileTableViewCell.tag == 0 {
-                    newUserInfo.userName = profileTableViewCell.info.text ?? ""
-                }
-                if profileTableViewCell.tag == 1 {
-                    newUserInfo.userEmail = profileTableViewCell.info.text ?? ""
+                    userName = profileTableViewCell.info.text ?? ""
                 }
                 if profileTableViewCell.tag == 2 {
-                    newUserInfo.userPhoneNumber = profileTableViewCell.info.text ?? ""
-                }
-                if profileTableViewCell.tag == 3 {
-                    newUserInfo.userBirth = profileTableViewCell.info.text ?? ""
+                    invitCode = profileTableViewCell.info.text ?? ""
                 }
             }
         }
-        
-        var errorStr = ""
-        
-//        if newUserInfo.userName == "" {
-//            errorStr += "用戶名稱不能為空"
-//        }
-        
-//        if newUserInfo.userEmail == "" {
-//            errorStr += "Email不能為空"
-//        } else if !validateEmail(text: newUserInfo.userEmail) {
-//            errorStr += "Email格式不正確"
-//        }
-        
-        if newUserInfo.userEmail != "" && !validateEmail(text: newUserInfo.userEmail){
-            errorStr += "Email格式不正確"
-        }
-        
-        errorStr = removeWhitespace(from: errorStr)
-        guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
-            return
-        }
-        
-        if newUserInfo.userPhoneNumber == "" {
-            errorStr += "手機不能為空"
-        }else if !validateCellPhone(text: newUserInfo.userPhoneNumber) {
-            errorStr += "手機格式不正確"
-        }
-        
-        errorStr = removeWhitespace(from: errorStr)
-        guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
-            return
-        }
-        
-        if newUserInfo.userBirth == "" {
-            errorStr += "生日不能為空"
-        }
-        errorStr = removeWhitespace(from: errorStr)
-        guard errorStr == "" else {
-            showAlert(VC: self, title: nil, message: errorStr, alertAction: nil)
-            return
-        }
-        
-        if profileUserInfo?.userBirth != newUserInfo.userBirth && newUserInfo.userBirth != "" {
-            let updateDateAlertView = UpdateDateAlertView(frame: view.frame)
-            updateDateAlertView.VC = self
-            updateDateAlertView.userInfo = newUserInfo
-            keyWindow?.addSubview(updateDateAlertView)
-        }else{
-            updateUserInfo(userInfo: newUserInfo)
-        }
+        let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth)
+        updateUserInfo(profilePostInfo)
     }
     
     private func showProfileUpdateView() {
@@ -209,30 +181,44 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
                 cell.info.isEnabled = false
             }
         case 1:
-            cell.info.text = profileUserInfo?.userEmail
-            if CurrentUserInfo.shared.isGuest {
-                cell.info.isEnabled = false
-            }
-        case 2:
-            cell.info.keyboardType = .numberPad
-            cell.phoneNumberCheckBox.isHidden = false
-            cell.phoneNumberCheckBox.checkState = .checked
-            cell.info.isEnabled = false
-            cell.info.text = profileUserInfo?.userPhoneNumber
-        case 3:
-            cell.info.placeholder = "2000/11/11"
-            cell.phoneNumberCheckBox.isHidden = false
-            
-            if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
+//            cell.info.text = profileUserInfo?.userEmail
+//            if CurrentUserInfo.shared.isGuest {
+//                cell.info.isEnabled = false
+//            }
+            if let profileUserInfo = profileUserInfo, let userPhoneNumber = profileUserInfo.userPhoneNumber, userPhoneNumber != "" {
+                cell.info.keyboardType = .numberPad
+                cell.phoneNumberCheckBox.isHidden = false
                 cell.phoneNumberCheckBox.checkState = .checked
                 cell.info.isEnabled = false
-                cell.info.text = profileUserInfo?.userBirth
+                cell.info.text = profileUserInfo.userPhoneNumber
             }
-            
-            if CurrentUserInfo.shared.isGuest {
-                cell.info.isEnabled = false
+
+//        case 2:
+//            if let profileUserInfo = profileUserInfo, let invitCode = profileUserInfo.invitCode, invitCode != "" {
+//                cell.info.isEnabled = false
+//                cell.info.text = invitCode
+//            }
+        case 2:
+            cell.phoneNumberCheckBox.isHidden = false
+            cell.phoneNumberCheckBox.checkState = .unchecked
+            if let linkedToBuenoMart = profileUserInfo?.linkedToBuenoMart, linkedToBuenoMart {
+                cell.phoneNumberCheckBox.checkState = .checked
             }
-            createDatePicker(cell.info)
+            cell.info.isEnabled = false
+            cell.info.text = "BUENO COOP 連動"
+//            cell.info.placeholder = "2000/11/11"
+//            cell.phoneNumberCheckBox.isHidden = false
+//
+//            if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
+//                cell.phoneNumberCheckBox.checkState = .checked
+//                cell.info.isEnabled = false
+//                cell.info.text = profileUserInfo?.userBirth
+//            }
+//
+//            if CurrentUserInfo.shared.isGuest {
+//                cell.info.isEnabled = false
+//            }
+//            createDatePicker(cell.info)
         default:
             break
         }

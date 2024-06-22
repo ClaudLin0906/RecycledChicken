@@ -1,0 +1,96 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "FX4-bk-xzG.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"FX4-bk-xzG\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "j0L-4Y-vox.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"j0L-4Y-vox\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "LbN-g0-p8F.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"abc123\"; ObjectID = \"LbN-g0-p8F\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "abc123"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "abc123"
+          }
+        }
+      }
+    },
+    "lcv-4Y-APJ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"好友邀請碼已使用\"; ObjectID = \"lcv-4Y-APJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The invitation code has already been used"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "好友邀請碼已使用"
+          }
+        }
+      }
+    },
+    "UFK-7K-CxL.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"UFK-7K-CxL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

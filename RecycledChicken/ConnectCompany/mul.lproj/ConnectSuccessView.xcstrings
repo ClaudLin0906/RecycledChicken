@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "iHr-L1-W0U.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"我們會在郵件寄出的一週內回覆您!謝謝\"; ObjectID = \"iHr-L1-W0U\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We will reply to you within one week!\nThank you."
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "我們會在郵件寄出的一週內回覆您!謝謝"
+          }
+        }
+      }
+    },
+    "kNp-6Y-rxs.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"信件已傳送\"; ObjectID = \"kNp-6Y-rxs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The message has been sent."
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "信件已傳送"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

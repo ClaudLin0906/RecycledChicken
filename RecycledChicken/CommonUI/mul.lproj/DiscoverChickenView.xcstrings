@@ -1,0 +1,66 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "pf8-eC-fst.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"」了！\"; ObjectID = \"pf8-eC-fst\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\" !"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "」了！"
+          }
+        }
+      }
+    },
+    "qEH-wQ-lYb.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"發現「\"; ObjectID = \"qEH-wQ-lYb\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discovered the \""
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "發現「"
+          }
+        }
+      }
+    },
+    "qh7-bC-6Ou.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"qh7-bC-6Ou\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "wxj-cg-xLI.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"wxj-cg-xLI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

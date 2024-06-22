@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="jf-openhuninn-2.0.ttf">
+            <string>jf-openhuninn-2.0</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CarbonReductionItemCellView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="countLabel" destination="PJd-yS-Z36" id="B6g-JL-h0E"/>
+                <outlet property="imageView" destination="Qvb-AM-MbM" id="87v-DN-USs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qvb-AM-MbM">
+                    <rect key="frame" x="0.0" y="59" width="393" height="734"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJd-yS-Z36">
+                    <rect key="frame" x="0.0" y="793" width="393" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="yol-bb-Ned"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="10"/>
+                    <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="PJd-yS-Z36" firstAttribute="top" secondItem="Qvb-AM-MbM" secondAttribute="bottom" id="0w2-8r-HeH"/>
+                <constraint firstItem="PJd-yS-Z36" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="26C-r2-gbZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qvb-AM-MbM" secondAttribute="trailing" id="P3j-bM-XuQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PJd-yS-Z36" secondAttribute="trailing" id="f40-Cx-Qtn"/>
+                <constraint firstItem="Qvb-AM-MbM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ibg-0p-tXD"/>
+                <constraint firstItem="Qvb-AM-MbM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="o2j-ob-Rck"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="PJd-yS-Z36" secondAttribute="bottom" id="uRp-Ph-Uez"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="43" y="21"/>
+        </view>
+    </objects>
+</document>

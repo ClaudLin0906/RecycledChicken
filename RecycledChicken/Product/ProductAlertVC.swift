@@ -2,7 +2,7 @@
 //  ProductAlertVC.swift
 //  RecycledChicken
 //
-//  Created by ClaudLin on 2024/5/28.
+//  Created by 林書郁 on 2024/3/2.
 //
 
 import UIKit
@@ -15,18 +15,18 @@ class ProductAlertVC: CustomVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "帳號連結功能說明"
-        UIInit()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setDefaultNavigationBackBtn2()
+        UIInit()
     }
     
     private func UIInit() {
         checkBox.boxType = .square
         checkBox.stateChangeAnimation = .fill
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setDefaultNavigationBackBtn2()
     }
     
     @IBAction func confirm(_ sender:UIButton) {

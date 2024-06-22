@@ -49,7 +49,7 @@ class ARVC: CustomRootVC {
             loginOutRemoveObject()
             goToSignVC()
         }
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
         showAlert(VC: self, title: "碳員招募中！一起探索泥滑島的秘密", message: nil, alertAction: alertAction, cancelAction: cancelAction)
     }
     

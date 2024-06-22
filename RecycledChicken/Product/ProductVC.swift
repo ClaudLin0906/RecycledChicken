@@ -2,7 +2,7 @@
 //  ProductVC.swift
 //  RecycledChicken
 //
-//  Created by ClaudLin on 2024/5/28.
+//  Created by 林書郁 on 2024/2/28.
 //
 
 import UIKit
@@ -11,10 +11,8 @@ class ProductVC: CustomVC {
     
     @IBOutlet weak var webView:WKWebView!
     
-//    private var buenocoopURL = URL(string: "https://www.buenocoop.com/")!
-    
     private var buenocoopURL:URL = {
-        var isFirstProduct = UserDefaults().bool(forKey: UserDefaultKey.shared.isFirstProduct) 
+        let isFirstProduct = UserDefaults().bool(forKey: UserDefaultKey.shared.isFirstProduct)
         var urlStr = ""
         if isFirstProduct {
             urlStr = "https://www.buenocoop.com/login"
@@ -22,14 +20,14 @@ class ProductVC: CustomVC {
         if !isFirstProduct {
             urlStr = "https://www.buenocoop.com/"
         }
-        return URL(string: urlStr)!
+        return URL(string:urlStr)!
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "商品專區"
-        UIInit()
         // Do any additional setup after loading the view.
+        UIInit()
     }
     
     private func UIInit() {
@@ -43,13 +41,13 @@ class ProductVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
     }
-    
-    @IBAction func openBorwser(_ sender:UIButton) {
+
+    @IBAction func openBrowser(_ sender:UIButton) {
         if UIApplication.shared.canOpenURL(buenocoopURL) {
             UIApplication.shared.open(buenocoopURL)
         }
     }
-
+    
 }
 
 extension ProductVC:WKNavigationDelegate {

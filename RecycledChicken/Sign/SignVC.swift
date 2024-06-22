@@ -15,6 +15,12 @@ class SignVC: CustomLoginVC {
     
     @IBOutlet weak var goHomeBtn:CustomButton!
     
+    @IBOutlet weak var mobileLabelWidth:NSLayoutConstraint!
+    
+    @IBOutlet weak var passwordLabelWidth:NSLayoutConstraint!
+    
+    @IBOutlet weak var signUpBtnWidth:NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -23,6 +29,14 @@ class SignVC: CustomLoginVC {
     
     private func UIInit(){
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
+        if getLanguage() == .english {
+            mobileLabelWidth.constant = 50
+            passwordLabelWidth.constant = 100
+            signUpBtnWidth.constant = 300
+            let attributes: [NSAttributedString.Key: Any] = [ .font: passwordTextfield.font?.withSize(12), .foregroundColor: UIColor.gray]
+            let attributedPlaceholder = NSAttributedString(string: passwordTextfield.placeholder ?? "", attributes: attributes)
+            passwordTextfield.attributedPlaceholder = attributedPlaceholder
+        }
     }
     
     private func goToVerificationCode(phone:String, password:String ){
@@ -47,13 +61,13 @@ class SignVC: CustomLoginVC {
         } else if !validateCellPhone(text: phone!) {
             alertMsg += "電話格式不對"
         }
-        
+
         alertMsg = removeWhitespace(from: alertMsg)
         guard alertMsg == "" else {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
-        
+
         if password == "" {
             alertMsg += "密碼不能為空"
         }else if !validatePassword(text: password!) {

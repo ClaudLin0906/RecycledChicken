@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FUA-iB-Ary">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Buy CommodityVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="BuyCommodity" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="BuyCommodityVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBackground" translatesAutoresizingMaskIntoConstraints="NO" id="l9l-ok-Its" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEm-PS-qkS" customClass="SpendPointView" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="l9l-ok-Its" secondAttribute="bottom" id="149-69-f8E"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GEm-PS-qkS" secondAttribute="trailing" id="EcJ-BP-h23"/>
+                            <constraint firstItem="l9l-ok-Its" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="FOd-pr-hYb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="GEm-PS-qkS" secondAttribute="bottom" id="J6R-Gb-YxD"/>
+                            <constraint firstItem="l9l-ok-Its" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Oek-m5-IJq"/>
+                            <constraint firstItem="l9l-ok-Its" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QKh-5J-K4P"/>
+                            <constraint firstItem="GEm-PS-qkS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="W40-9w-nBa"/>
+                            <constraint firstItem="GEm-PS-qkS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="muG-70-687"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="p0Y-1g-s7O"/>
+                    <connections>
+                        <outlet property="spendPointView" destination="GEm-PS-qkS" id="MV7-yz-t80"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739.69465648854964" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Prm-8t-Wzp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="FUA-iB-Ary" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AJ7-lC-is5">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="QbG-bF-1Nf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91B-H2-HK1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-187.02290076335876" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultBackground" width="1125" height="2436"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

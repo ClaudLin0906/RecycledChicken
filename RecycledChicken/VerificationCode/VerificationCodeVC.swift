@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Combine
 
 class VerificationCodeVC: CustomLoginVC {
     
@@ -20,6 +21,17 @@ class VerificationCodeVC: CustomLoginVC {
     
     @IBOutlet weak var goHomeBtn:CustomButton!
     
+    @IBOutlet weak var reSendBtn:CustomButton!
+    
+    @IBOutlet weak var reSendBtnWidth:NSLayoutConstraint!
+    {
+        willSet {
+            if reSendBtnWidth != nil {
+                reSendVerificationCodeView.frame.size = CGSize(width:reSendBtnWidth.constant, height: reSendVerificationCodeView.frame.height)
+            }
+        }
+    }
+    
     var password:String = ""
     
     var phone:String = ""
@@ -28,6 +40,12 @@ class VerificationCodeVC: CustomLoginVC {
     
     var info:forgetPasswordInfo?
     
+    private var cancellables: Set<AnyCancellable> = []
+    
+    private var reSendVerificationCodeView = ReSendVerificationCodeView()
+    
+    private var reSendVerificationCodeViewWidth = 200
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -37,30 +55,66 @@ class VerificationCodeVC: CustomLoginVC {
     
     private func UIInit(){
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
+        if getLanguage() == .english {
+            reSendBtnWidth.constant = 250
+            reSendVerificationCodeViewWidth = 250
+        }
+    }
+    
+    private func startCountdown() {
+        Timer.publish(every: 1, on: .main, in: .default)
+            .autoconnect()
+            .scan(60) { currentCount, _ in
+                return currentCount > 0 ? currentCount - 1 : 0
+            }
+            .sink { count in
+                self.reSendVerificationCodeView.reciprocalLabel.text = "(\(count))"
+                if count == 0 {
+                    self.stopCountdown()
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func stopCountdown() {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+        reSendVerificationCodeView.removeFromSuperview()
+    }
+    
+    private func addReSendVerificationCodeView() {
+        reSendVerificationCodeView = ReSendVerificationCodeView(frame: CGRect(x: 0, y: 0, width: reSendVerificationCodeViewWidth, height: Int(reSendBtn.frame.height)))
+        reSendBtn.addSubview(reSendVerificationCodeView)
     }
     
     private func sendSMS(){
+        
+        self.startCountdown()
+        self.addReSendVerificationCodeView()
+        
         switch currentType {
         case .forgetPassword:
             phone = info?.userPhoneNumber ?? ""
         default:
             break
         }
-        
         let smsInfo = SMSInfo(userPhoneNumber: phone)
         let smsInfoDic = try? smsInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in
-            
-            guard statusCode == 200 else {
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
                 return
             }
-            
-            if let data = data {
-                let json = NetworkManager.shared.dataToDictionary(data: data)
-                print(json)
+            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
+            if let status = apiResult?.status {
+                switch status {
+                case .success:
+                    self.startCountdown()
+                    self.addReSendVerificationCodeView()
+                case .failure:
+                    break
+                }
             }
-            
         }
     }
     
@@ -74,10 +128,13 @@ class VerificationCodeVC: CustomLoginVC {
         let signUpInfoDic = try? signUpInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.register, parameters: signUpInfoDic) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             DispatchQueue.main.async {
+//                let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
+//                signActivityCodeView.delegate = self
+//                keyWindow?.addSubview(signActivityCodeView)
                 let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
                     self.goToLoginVC()
                 }
@@ -102,12 +159,12 @@ class VerificationCodeVC: CustomLoginVC {
         let forgetPasswordInfo = info
         let forgetPasswordInfoDic = try? forgetPasswordInfo.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.forgotPassword, parameters: forgetPasswordInfoDic) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            
-            if let data = data {
+            let completetChangePWDView = CompletetChangePWDView(frame: UIScreen.main.bounds)
+            fadeInOutAni(showView: completetChangePWDView) {
                 let json = NetworkManager.shared.dataToDictionary(data: data)
                 print(json)
                 DispatchQueue.main.async { [self] in
@@ -120,7 +177,7 @@ class VerificationCodeVC: CustomLoginVC {
         }
     }
     
-    func goToLoginVC(){
+    func goToLoginVC() {
         self.dismiss(animated: false) {
             if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
                 VC.modalPresentationStyle = .fullScreen
@@ -166,6 +223,16 @@ extension VerificationCodeVC:UITextFieldDelegate{
                 nextResponder?.becomeFirstResponder()
             }
             return false
+        }
+    }
+}
+
+
+extension VerificationCodeVC:SignActivityCodeViewDelegate {
+    func comfirmInvitationCode(finishAction: (() -> ())?) {
+        DispatchQueue.main.async {
+            finishAction?()
+            self.goToLoginVC()
         }
     }
 }

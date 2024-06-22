@@ -8,6 +8,19 @@
 import Foundation
 import UIKit
 
+extension UIView {
+
+    func takeSnapshot() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
+
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
+
 extension UITextField {
     
     func addBottomBorader(BoraderColor:UIColor){
@@ -186,6 +199,21 @@ extension NSLayoutConstraint {
     
 }
 
+extension String {
+
+  var localized: String {
+    return NSLocalizedString(self, comment: "\(self)_comment")
+  }
+  
+  func localized(_ args: [CVarArg]) -> String {
+    return localized(args)
+  }
+  
+  func localized(_ args: CVarArg...) -> String {
+    return String(format: localized, args)
+  }
+}
+
 extension Encodable {
     
     var jsonString: String {
@@ -275,4 +303,49 @@ extension UIImage {
     }
 }
 
+extension UIResponder {
 
+    func next<U: UIResponder>(of type: U.Type = U.self) -> U? {
+        return self.next.flatMap({ $0 as? U ?? $0.next() })
+    }
+    
+}
+
+extension UITableViewCell {
+    var tableView: UITableView? {
+        return self.next(of: UITableView.self)
+    }
+
+    var indexPath: IndexPath? {
+        return self.tableView?.indexPath(for: self)
+    }
+}
+
+extension UserDefaults {
+    func setColor(_ color: UIColor?, forKey key: String) {
+        guard let color = color else {
+            removeObject(forKey: key)
+            return
+        }
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: false)
+        set(data, forKey: key)
+    }
+
+    func colorForKey(_ key: String) -> UIColor? {
+        guard let data = data(forKey: key) else { return nil }
+        return try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data)
+    }
+}
+
+extension UIView {
+    func asImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        context.saveGState()
+        layer.render(in: context)
+        context.restoreGState()
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return image
+    }
+}

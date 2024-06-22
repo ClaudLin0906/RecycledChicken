@@ -15,4 +15,15 @@ struct switchTableViewInfo {
 
 struct accountTableViewInfo {
     var title:String
+    var inviteInfo:InviteInfo?
+}
+
+struct InviteInfo {
+    var inviteCode:String
+    var isInvite:Bool
+}
+
+
+struct InviteRequestInfo:Codable {
+    var inviteCode:String
 }

@@ -1,0 +1,96 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "dgz-r1-9c8.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"剩餘點數\"; ObjectID = \"dgz-r1-9c8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "remaining points"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "剩餘點數"
+          }
+        }
+      }
+    },
+    "NWz-m4-IGd.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"250\"; ObjectID = \"NWz-m4-IGd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "250"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "250"
+          }
+        }
+      }
+    },
+    "Oef-qn-oml.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"取消\"; ObjectID = \"Oef-qn-oml\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cancel"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "XbS-S6-UNo.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定使用\"; ObjectID = \"XbS-S6-UNo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirm"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定使用"
+          }
+        }
+      }
+    },
+    "yfG-sV-bEK.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"本次將使用點數XXXX點\"; ObjectID = \"yfG-sV-bEK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XXXX points will be used"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "本次將使用點數XXXX點"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

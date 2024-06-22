@@ -22,7 +22,7 @@ class StoreListVC: CustomVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "門市列表"
+        title = "站點清單"
         UIInit()
         getStoreInfo()
         // Do any additional setup after loading the view.
@@ -31,7 +31,7 @@ class StoreListVC: CustomVC {
     private func getStoreInfo(){
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             
@@ -59,13 +59,13 @@ class StoreListVC: CustomVC {
         setDefaultNavigationBackBtn2()
     }
     
-    private func filterText(_ query:String?){
+    private func filterText(_ query:String?) {
         guard let query = query else { return }
         filterMapInfos.removeAll()
         
         let newData = mapInfos.filter({
-            let storeNameResult =  $0.storeName.range(of: query, options: .caseInsensitive)
-            let storeAddressResult = $0.storeAddress.range(of: query, options: .caseInsensitive)
+            let storeNameResult =  $0.name?.range(of: query, options: .caseInsensitive)
+            let storeAddressResult = $0.address?.range(of: query, options: .caseInsensitive)
             if storeNameResult != nil || storeAddressResult != nil {
                 return true
             }else{
@@ -83,13 +83,13 @@ class StoreListVC: CustomVC {
 
     }
     
-    @objc private func textFieldDidChange(_ textfield:UITextField){
+    @objc private func textFieldDidChange(_ textfield:UITextField) {
         if let text = textfield.text {
             filterText(text)
         }
     }
     
-    private func getTableViewCount() -> Int{
+    private func getTableViewCount() -> Int {
         if !filterMapInfos.isEmpty {
             return filterMapInfos.count
         }
@@ -103,10 +103,6 @@ extension StoreListVC:UITableViewDelegate, SkeletonTableViewDataSource {
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         StoreListTableViewCell.identifier
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        40
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {

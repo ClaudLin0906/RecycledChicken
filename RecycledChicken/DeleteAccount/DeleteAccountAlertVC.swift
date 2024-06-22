@@ -40,7 +40,7 @@ class DeleteAccountAlertVC: UIViewController {
             alertMsg = removeWhitespace(from: alertMsg)
             
             guard alertMsg == "" else {
-                showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
+                showAlert(VC: self, title: nil, message: alertMsg)
                 return
             }
             deleteAccountAction(phone)
@@ -51,7 +51,7 @@ class DeleteAccountAlertVC: UIViewController {
         let deleteDic = try? DeleteInfo(password: password).asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.delete, parameters: deleteDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             loginOutRemoveObject()

@@ -1,0 +1,96 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "27q-m1-PrE.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定使用\"; ObjectID = \"27q-m1-PrE\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "confirm"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定使用"
+          }
+        }
+      }
+    },
+    "DKr-mr-4Yi.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"取消\"; ObjectID = \"DKr-mr-4Yi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cancel"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "qfw-UX-b1J.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"輸入好友邀請碼\"; ObjectID = \"qfw-UX-b1J\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "enter invitation code"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "輸入好友邀請碼"
+          }
+        }
+      }
+    },
+    "rEb-BN-JFP.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"（每一位碳員僅能使用一組！確認後無法更改）\"; ObjectID = \"rEb-BN-JFP\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "（每一位碳員僅能使用一組！確認後無法更改）"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "（每一位碳員僅能使用一組！確認後無法更改）"
+          }
+        }
+      }
+    },
+    "VR0-rd-ITp.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"好友邀請碼\"; ObjectID = \"VR0-rd-ITp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "invitation code"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "好友邀請碼"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

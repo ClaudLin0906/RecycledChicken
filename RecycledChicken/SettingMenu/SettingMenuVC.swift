@@ -15,21 +15,23 @@ class SettingMenuVC: CustomVC {
     
     private let defaultSettingMenuInfoArr:[settingMenuInfo] =
     [
-        settingMenuInfo(icon: UIImage(named: "组 431")!, title: "系統設定", rightImage: UIImage(named: "273")!),
-        settingMenuInfo(icon: UIImage(named: "组 430")!, title: "常見問題說明", rightImage: UIImage(named: "273")!),
-        settingMenuInfo(icon: UIImage(named: "组 428")!, title: "聯絡客服與合作提案", rightImage: UIImage(named: "273")!),
-        settingMenuInfo(icon: UIImage(named: "组 618")!, title: "服務條款與隱私政策", rightImage: UIImage(named: "273")!),
-        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "登出", rightImage: nil)
+        settingMenuInfo(icon: UIImage(named: "组 431")!, title: "systemSetting".localized),
+//        settingMenuInfo(icon: UIImage(named: "globe")!, title: "languageSetting".localized),
+        settingMenuInfo(icon: UIImage(named: "组 428")!, title: "FAQs".localized),
+        settingMenuInfo(icon: UIImage(named: "Group 187")!, title: "customerContact".localized),
+        settingMenuInfo(icon: UIImage(named: "组 618")!, title: "partnership".localized),
+        settingMenuInfo(icon: UIImage(named: "组 430")!, title: "termsPrivacyPolicy".localized),
+        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "logout".localized)
     ]
     
     private let guestSettingMenuInfoArr:[settingMenuInfo] =
     [
-        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "登出", rightImage: nil)
+        settingMenuInfo(icon: UIImage(named: "组 423")!, title: "logout".localized)
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "會員資料與系統設定"
+        title = "memberInformationSystemSettings".localized
         if CurrentUserInfo.shared.isGuest {
             settingMenuInfoArr.append(contentsOf: guestSettingMenuInfoArr)
         }else{
@@ -71,19 +73,27 @@ extension SettingMenuVC:UITableViewDelegate, UITableViewDataSource {
                     pushVC(targetVC: VC, navigation: navigationController)
                 }
             }
+//        case 1:
+//            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "LanguageSetting", bundle: Bundle.main).instantiateViewController(identifier: "LanguageSetting") as? LanguageSettingVC {
+//                pushVC(targetVC: VC, navigation: navigationController)
+//            }
         case 1:
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CommonPronblem", bundle: Bundle.main).instantiateViewController(identifier: "CommonPronblem") as? CommonPronblemVC {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 2:
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ConnectCompany", bundle: Bundle.main).instantiateViewController(identifier: "ConnectCompany") as? ConnectCompanyVC {
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CustomerContact", bundle: Bundle.main).instantiateViewController(identifier: "CustomerContact") as? CustomerContactVC {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 3:
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PrivacyPolicy", bundle: Bundle.main).instantiateViewController(identifier: "PrivacyPolicy") as? PrivacyPolicyVC {
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ConnectCompanyWebView", bundle: Bundle.main).instantiateViewController(identifier: "ConnectCompanyWebView") as? ConnectCompanyWebViewVC {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         case 4:
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PrivacyPolicy", bundle: Bundle.main).instantiateViewController(identifier: "PrivacyPolicy") as? PrivacyPolicyVC {
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
+        case 5:
             logOutAction()
         default:
             break

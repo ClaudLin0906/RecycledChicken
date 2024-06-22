@@ -13,4 +13,5 @@ target 'RecycledChicken' do
   pod 'GooglePlaces'
   pod 'MKRingProgressView'
   pod 'Alamofire'
+  pod 'SwiftGifOrigin', '~> 1.7.0'
 end

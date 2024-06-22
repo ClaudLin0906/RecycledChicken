@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fWu-W6-j1h">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenJyuuGothic-Medium.ttf">
+            <string>GenJyuuGothic-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Store ListVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="StoreList" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="StoreListVC" customModule="RecycledChicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultBackground" translatesAutoresizingMaskIntoConstraints="NO" id="U4Q-ba-gS4" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mv7-Z4-qUr" customClass="SearchView" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="39.333333333333343" y="123" width="314.33333333333326" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BLo-Kh-u4P"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3tr-2J-jlc">
+                                <rect key="frame" x="20" y="173" width="353" height="645"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoreListTableViewCell" id="o2f-8r-sz7" customClass="StoreListTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="353" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o2f-8r-sz7" id="5ST-n8-kAV">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新豐寶門市" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4M-1z-Rhd" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="18" width="100" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="mgd-G7-zgN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台中市豐原區中山路99巷12弄10號" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQj-Lb-aS6" userLabel="地址" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                    <rect key="frame" x="120" y="6.3333333333333321" width="213" height="47.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NQj-Lb-aS6" firstAttribute="centerY" secondItem="5ST-n8-kAV" secondAttribute="centerY" id="0X6-Qx-4oh"/>
+                                                <constraint firstItem="C4M-1z-Rhd" firstAttribute="centerY" secondItem="5ST-n8-kAV" secondAttribute="centerY" id="9G2-Jw-CcT"/>
+                                                <constraint firstItem="C4M-1z-Rhd" firstAttribute="leading" secondItem="5ST-n8-kAV" secondAttribute="leading" id="WPm-0u-9kz"/>
+                                                <constraint firstItem="NQj-Lb-aS6" firstAttribute="leading" secondItem="C4M-1z-Rhd" secondAttribute="trailing" constant="20" id="e6B-AJ-n7q"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NQj-Lb-aS6" secondAttribute="trailing" id="hiM-zv-uR7"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="storeAddress" destination="NQj-Lb-aS6" id="Hrm-R0-vGX"/>
+                                            <outlet property="storeName" destination="C4M-1z-Rhd" id="CMf-kC-uHo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="t11-cf-IRC"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="mRF-Kq-66L"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3tr-2J-jlc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="2bk-nZ-XT0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3tr-2J-jlc" secondAttribute="bottom" id="2if-84-m2Q"/>
+                            <constraint firstItem="3tr-2J-jlc" firstAttribute="top" secondItem="mv7-Z4-qUr" secondAttribute="bottom" constant="20" id="9Je-uq-Ee3"/>
+                            <constraint firstItem="U4Q-ba-gS4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CnD-Ad-Z65"/>
+                            <constraint firstItem="U4Q-ba-gS4" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Hj4-Qs-3ZW"/>
+                            <constraint firstItem="mv7-Z4-qUr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="IHg-jB-5xt"/>
+                            <constraint firstItem="U4Q-ba-gS4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="NqX-zl-sZi"/>
+                            <constraint firstAttribute="bottom" secondItem="U4Q-ba-gS4" secondAttribute="bottom" id="eTD-qM-TaM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3tr-2J-jlc" secondAttribute="trailing" constant="20" id="ivL-7I-L0i"/>
+                            <constraint firstItem="mv7-Z4-qUr" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.8" id="tzU-Tb-4sD"/>
+                            <constraint firstItem="mv7-Z4-qUr" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="y9Z-TJ-Rc7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="J70-IO-r4j"/>
+                    <connections>
+                        <outlet property="searchView" destination="mv7-Z4-qUr" id="2og-jw-5OY"/>
+                        <outlet property="storeListTableView" destination="3tr-2J-jlc" id="RjC-Je-nBj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797.70992366412213" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z3n-x6-UT4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="fWu-W6-j1h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P4b-Kd-7H6">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="5Xw-Po-oGa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="440-AE-5ii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129.00763358778624" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="C4M-1z-Rhd">
+            <size key="intrinsicContentSize" width="85" height="24"/>
+        </designable>
+        <designable name="NQj-Lb-aS6">
+            <size key="intrinsicContentSize" width="262.33333333333331" height="24"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="defaultBackground" width="1125" height="2436"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "C4M-1z-Rhd.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"新豐寶門市\"; ObjectID = \"C4M-1z-Rhd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "store name"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "新豐寶門市"
+          }
+        }
+      }
+    },
+    "NQj-Lb-aS6.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"台中市豐原區中山路99巷12弄10號\"; ObjectID = \"NQj-Lb-aS6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "store address"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "台中市豐原區中山路99巷12弄10號"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

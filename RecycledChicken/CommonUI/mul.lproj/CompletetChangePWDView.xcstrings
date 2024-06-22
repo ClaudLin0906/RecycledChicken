@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "ezR-Gb-75D.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"密碼已更改完成\\n請重新登入\"; ObjectID = \"ezR-Gb-75D\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "password has been successfully changed. please log in again"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "密碼已更改完成\n請重新登入"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

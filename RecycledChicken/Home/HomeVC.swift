@@ -6,56 +6,203 @@
 //
 
 import UIKit
-import FirebaseMessaging
+import Combine
 class HomeVC: CustomRootVC {
+        
+    @IBOutlet weak var bannerCollectionView:UICollectionView!
     
-    @IBOutlet weak var barcodeView:BarCodeView!
+    @IBOutlet weak var bannerCollectionViewFlowLayout: UICollectionViewFlowLayout!
     
+    @IBOutlet weak var pageControl:UIPageControl!
+        
     @IBOutlet weak var carbonReductionLogBtn:UIButton!
     
-    @IBOutlet weak var currentDateLabel:UILabel!
-    
+    @IBOutlet weak var carbonReductionLogBtnWidth:NSLayoutConstraint!
+        
     @IBOutlet weak var welcomeLabel:UILabel!
-    
-    @IBOutlet weak var batteryLabel:UILabel!
-    
-    @IBOutlet weak var bottleLabel:UILabel!
     
     @IBOutlet weak var chickenLevelImageView:UIImageView!
     
+    @IBOutlet weak var chickenLevelLabel:CustomLabel!
+    
     @IBOutlet weak var trendChartImageView:UIImageView!
+    
+    @IBOutlet weak var petItemView:RecycledItemView!
+        
+    @IBOutlet weak var batteryItemView:RecycledItemView!
+    
+    @IBOutlet weak var papperCubItemView:RecycledItemView!
+    
+    @IBOutlet weak var aluminumCanItemView:RecycledItemView!
+    
+    @IBOutlet weak var mallCollectionView:UICollectionView!
+    
+    @IBOutlet weak var mallCollectionViewFlowLayout: UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var accountLabel:CustomLabel!
+    
+    @IBOutlet weak var messageLabel:CustomLabel!
+    
+    @IBOutlet weak var settingLabel:CustomLabel!
+    
+    @IBOutlet weak var mallHeight:NSLayoutConstraint!
+
+    private var currentIndexSubject = PassthroughSubject<Int, Never>()
+    
+    private var currentIndex:Int = 0
+        
+    private var adBannerInfos:[ADBannerInfo] = []
+    
+    private var itemInfos:[ItemInfo] = []
+//    
+    private var cancellables: Set<AnyCancellable> = []
+
+    @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: "") var displayToday:String
         
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
+        if getLanguage() == .english {
+            accountLabel.font = accountLabel.font.withSize(12)
+            messageLabel.font = messageLabel.font.withSize(12)
+            settingLabel.font = settingLabel.font.withSize(12)
+            chickenLevelLabel.font = chickenLevelLabel.font.withSize(11)
+            carbonReductionLogBtnWidth.constant = 180
+        }
 //        NotificationCenter.default.addObserver(self, selector: #selector(receiveCalenderCell(_:)), name: .calenderCellOnCilck, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getUserNewInfo(VC: self) {
+            DispatchQueue.main.async { [self] in
+                let illustratedGuide = getIllustratedGuide(getChickenLevel())
+                chickenLevelImageView.image = illustratedGuide.levelImage
+                if let image = getTrendChart() {
+                    trendChartImageView.image = image
+                }
+                self.chickenLevelLabel.text = "\("currentLevel".localized)：\(illustratedGuide.name.localized)"
+                messagingSubscribe()
+                self.updateCurrentDateInfo()
+                self.checkChickenLevel()
+            }
+        }
+        getItems()
+        if let (startTime, endTime) = getStartAndEndDateOfMonth() {
+            getRecords(nil, startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+                guard let statusCode = statusCode, statusCode == 200 else {
+                    showAlert(VC: self, title: "error".localized)
+                    return
+                }
+                var petItemCount:Int = 0
+                if let bottle = bottle {
+                    petItemCount += bottle
+                }
+                if let colorledBottle = colorledBottle {
+                    petItemCount += colorledBottle
+                }
+                if let colorlessBottle = colorlessBottle {
+                    petItemCount += colorlessBottle
+                }
+                petItemView.setAmount(petItemCount)
+                batteryItemView.setAmount(battery ?? 0)
+                papperCubItemView.setAmount(cup ?? 0)
+                aluminumCanItemView.setAmount(can ?? 0)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getUserInfo(VC: self, finishAction: {
-            DispatchQueue.main.async {
-                if let levelObject = getLevelObject(), let image = levelObject.chicken {
-                    self.chickenLevelImageView.image = image
+        if FirstTime && LoginSuccess {
+            FirstTime = false
+            getPopUpData { imageURLs in
+                DispatchQueue.main.async {
+                    let adbannerView = ADBannerView(frame: UIScreen.main.bounds)
+                    adbannerView.imageURLs.append(contentsOf: imageURLs)
+                    Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+                        adbannerView.changeBanner()
+                    }
+                    keyWindow?.addSubview(adbannerView)
                 }
-                if let image = self.getTrendChart() {
-                    self.trendChartImageView.image = image
+            }
+            getADBannerInfos {
+                DispatchQueue.main.async { [self] in
+                    pageControl.numberOfPages = adBannerInfos.count
+                    bannerCollectionView.reloadData()
                 }
-                
-                self.barcodeView.code = CurrentUserInfo.shared.currentProfileInfo?.userPhoneNumber ?? "0912345678"
-                self.barcodeView.setTitle()
             }
-
-            Messaging.messaging().subscribe(toTopic: CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber) { error in
+            NotificationCenter.default.post(name: .removeBackground, object: nil)
+        }
+    }
+    
+    private func checkChickenLevel() {
+        var showChicken = true
+        guard let currentChickenLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel?.rawValue else { return }
+        
+        if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) != nil {
+            let oldChickenLevel = UserDefaults().integer(forKey: UserDefaultKey.shared.oldChickenLevel)
+            if currentChickenLevel <= oldChickenLevel {
+                showChicken = false
             }
-            
-        })
+        }
+        
+        if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) == nil {
+            UserDefaults().set(currentChickenLevel, forKey: UserDefaultKey.shared.oldChickenLevel)
+        }
+        
+        if showChicken {
+            let chickeIntroduceView = ChickeIntroduceView(frame: UIScreen.main.bounds)
+            fadeInOutAni(showView: chickeIntroduceView, finishAction: nil)
+        }
+    }
+    
+    private func getItems() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.items, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+            if let itemInfos = try? JSONDecoder().decode([ItemInfo].self, from: data) {
+                self.itemInfos.removeAll()
+                self.itemInfos.append(contentsOf: itemInfos)
+                DispatchQueue.main.async {
+                    self.mallHeight.constant = CGFloat(itemInfos.count / 3 * 150) + 70
+                    self.mallCollectionView.reloadData()
+                }
+            }
+        }
+    }
+    
+    private func getPopUpData(completion: @escaping ([String]) -> Void) {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getPopBanner, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                print(errorMSG?.localized ?? "something error")
+                return
+            }
+            if let imageURLs = try? JSONDecoder().decode([String].self, from: data) {
+                completion(imageURLs)
+            }
+        }
+    }
+    
+    private func getADBannerInfos(completion: @escaping () -> Void) {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAdBanner, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
+                print(errorMSG?.localized ?? "something error")
+                return
+            }
+            if let adBannerInfos = try? JSONDecoder().decode([ADBannerInfo].self, from: data) {
+                self.adBannerInfos.append(contentsOf: adBannerInfos)
+                completion()
+            }
+        }
     }
     
     private func getTrendChart() -> UIImage?{
-        if let levelInfo = CurrentUserInfo.shared.currentProfileInfo?.levelInfo {
+        if let levelInfo = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo {
             var image:UIImage?
-            switch levelInfo.level {
+            switch levelInfo.progress {
             case 1:
                 image = UIImage(named: "RecycledLevel1")
             case 2:
@@ -84,61 +231,75 @@ class HomeVC: CustomRootVC {
         return nil
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if FirstTime && LoginSuccess {
-//            let adView = ADView(frame: UIScreen.main.bounds)
-            let adView = ADView(frame: UIScreen.main.bounds, type: .isHome)
-            keyWindow?.addSubview(adView)
-            FirstTime = false
-            NotificationCenter.default.post(name: .removeBackground, object: nil)
-        }
-        
-        currentDateLabel.text = getDates(i: 0, currentDate: Date()).0
-        updateCurrentDateInfo()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        if FirstTime && LoginSuccess {
+//            if displayToday != getDates(i: 0, currentDate: Date()).0 {
+//                FirstTime = false
+//                let  adbannerView = ADBannerView(frame: UIScreen.main.bounds)
+//                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+//                    adbannerView.changeBanner()
+//                }
+//                keyWindow?.addSubview(adbannerView)
+//            }
+//            NotificationCenter.default.post(name: .removeBackground, object: nil)
+//        }
+//        updateCurrentDateInfo()
+//    }
     
     private func UIInit(){
         carbonReductionLogBtn.layer.borderWidth = 1
         carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-    }
-    
-    private func getChoseDateRecycleAmount(){
-        guard CommonKey.shared.authToken != "", CurrentUserInfo.shared.isGuest == false else { return }
-        computeDate(CustomCalenderModel.shared.selectedDate, endTime: CustomCalenderModel.shared.selectedDate, completion: { batteryStr, bottleStr in
-            DispatchQueue.main.async {
-                self.batteryLabel.text = batteryStr
-                self.bottleLabel.text = bottleStr
+        petItemView.setInfo(.bottle)
+        batteryItemView.setInfo(.battery)
+        papperCubItemView.setInfo(.papperCub)
+        aluminumCanItemView.setInfo(.aluminumCan)
+        bannerCollectionViewFlowLayout.itemSize = bannerCollectionView.frame.size
+        bannerCollectionViewFlowLayout.estimatedItemSize = .zero
+        bannerCollectionViewFlowLayout.minimumInteritemSpacing = 0
+        bannerCollectionViewFlowLayout.minimumLineSpacing = 0
+        mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: 100)
+        mallCollectionViewFlowLayout.estimatedItemSize = .zero
+        mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
+        mallCollectionViewFlowLayout.minimumLineSpacing = 0
+        mallCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.currentIndexSubject
+            .sink { [self] index in
+                guard adBannerInfos.count > 0 else { return }
+                pageControl.currentPage = index
+                bannerCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
             }
-        })
-    }
-    
-    private func computeDate(_ startTime:String, endTime:String, completion: @escaping (String, String) -> Void){
-        let urlStr = APIUrl.domainName + APIUrl.useRecord + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
-        NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            var batteryInt = 0
-            var bottleInt = 0
-            if let data = data, let dic = try! JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [Any] {
-                let useRecordInfos = try! JSONDecoder().decode([UseRecordInfo].self, from: JSONSerialization.data(withJSONObject: dic))
-                for useRecordInfo in useRecordInfos {
-                    if let battery = useRecordInfo.battery {
-                        batteryInt += battery
-                    }
-                    if let bottle = useRecordInfo.bottle {
-                        bottleInt += bottle
-                    }
-                }
-            }
-            completion(String(batteryInt), String(bottleInt))
+            .store(in: &self.cancellables)
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
+            self.changeBanner()
         }
     }
     
     func updateCurrentDateInfo(){
-        if let username = CurrentUserInfo.shared.currentProfileInfo?.userName , username != "" {
+        if let username = CurrentUserInfo.shared.currentProfileNewInfo?.userName , username != "" {
             welcomeLabel.text = "Good morning, \(username)"
         }
-        getChoseDateRecycleAmount()
+//        getChoseDateRecycleAmount()
+    }
+    
+    @IBAction private func leftGesture(_ gesture:UISwipeGestureRecognizer) {
+        changeBanner(-1)
+    }
+    
+    @IBAction private func rightGesture(_ gesture:UISwipeGestureRecognizer) {
+        changeBanner()
+    }
+    
+    private func changeBanner(_ changeIndex:Int = 1) {
+        guard adBannerInfos.count > 0 else { return }
+        currentIndex += changeIndex
+        if currentIndex > (adBannerInfos.count - 1) {
+            currentIndex = 0
+        }
+        if currentIndex < 0 {
+            currentIndex = adBannerInfos.count - 1
+        }
+        currentIndexSubject.send(currentIndex)
     }
     
     private func signAlert(_ title:String){
@@ -146,7 +307,7 @@ class HomeVC: CustomRootVC {
             loginOutRemoveObject()
             goToSignVC()
         }
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
         showAlert(VC: self, title: title, message: nil, alertAction: alertAction, cancelAction: cancelAction)
     }
     
@@ -185,4 +346,62 @@ class HomeVC: CustomRootVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
+    
+    @IBAction func openURLForMall(_ sender:UIButton) {
+        guard let url = URL(string: APIUrl.mall) else { return }
+        UIApplication.shared.open(url)
+    }
+}
+
+
+extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if collectionView == bannerCollectionView {
+            let adBannerInfo = adBannerInfos[row]
+            if let adBannerInfoURL = adBannerInfo.URL, let url = URL(string: adBannerInfoURL), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+        if collectionView == mallCollectionView {
+            let itemInfo = itemInfos[row]
+            if let productLink = itemInfo.productLink, let productUrl = URL(string: productLink) {
+                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "MallProduct", bundle: Bundle.main).instantiateViewController(identifier: "MallProduct") as? MallProductVC {
+                    VC.setProductURL(productUrl)
+                    pushVC(targetVC: VC, navigation: navigationController)
+                }
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if collectionView == bannerCollectionView {
+            return adBannerInfos.count
+        }
+        
+        if collectionView == mallCollectionView {
+            return itemInfos.count
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == bannerCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+            cell.setCell(adBannerInfos[indexPath.row])
+            return cell
+        }
+        
+        if collectionView == mallCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MallCollectionViewCell", for: indexPath) as! MallCollectionViewCell
+            cell.setCell(itemInfos[indexPath.row])
+            return cell
+        }
+        
+        return UICollectionViewCell()
+
+    }
+    
 }

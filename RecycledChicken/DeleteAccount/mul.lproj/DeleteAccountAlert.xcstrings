@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "2AW-ih-Ne8.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"密碼\"; ObjectID = \"2AW-ih-Ne8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PASSWORD"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "密碼"
+          }
+        }
+      }
+    },
+    "7w1-ll-Mhg.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"請輸入密碼以刪除帳號\"; ObjectID = \"7w1-ll-Mhg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enter your password to \ndelete your account."
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請輸入密碼以刪除帳號"
+          }
+        }
+      }
+    },
+    "Rgf-jB-7O7.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"確定刪除\"; ObjectID = \"Rgf-jB-7O7\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DELETE"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "確定刪除"
+          }
+        }
+      }
+    },
+    "w4q-s3-Qks.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"取消\"; ObjectID = \"w4q-s3-Qks\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CANCEL"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "取消"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

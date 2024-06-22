@@ -1,0 +1,117 @@
+/* 
+  Localizable.strings
+  RecycledChicken
+
+  Created by Claud on 2024/3/12.
+  
+*/
+"point" = "點數";
+"store" = "站點";
+"home" = "首頁";
+"task" = "任務";
+"bottle" = "寶特瓶";
+"battery" = "電池";
+"papperCup" = "紙杯";
+"aluminumCan" = "鋁罐";
+"error" = "發生錯誤";
+"profile" = "個人帳戶";
+"userName" = "用戶名稱";
+"cellPhoneNumber" = "手機號碼";
+"invitationCode" = "我的邀請碼";
+"marketplace" = "連動商城";
+"incorrectEmailFormat" = "Email格式不正確";
+"phoneCannotBeEmpty" = "手機不能為空";
+"incorrectPhoneNumberFormat" = "手機格式不正確";
+"memberInformationSystemSettings" = "會員資料與系統設定";
+"systemSetting" = "系統設定";
+"languageSetting" = "語言設定";
+"contactPartnership" = "聯絡客服與合作提案";
+"partnership" = "合作提案";
+"logout" = "登出";
+"specialMissionNotifications" = "APP活動通知";
+"emailNotifications" = "信件通知";
+"recyclingMachineNotifications" = "回收機消息通知";
+"biometricIdentification" = "生物辨識";
+"enterInvitationCode" = "輸入好友邀情碼";
+"deleteAccount" = "刪除帳號";
+"version" = "版本資訊";
+"user" = "用戶";
+"collaboratingPartner" = "合作廠商";
+"contentCannotBeEmpty" = "內容不能為空";
+"emailCannotBeEmpty" = "Email不能為空";
+"FAQs" = "常見問題說明";
+"termsPrivacyPolicy" = "服務條款與隱私政策";
+"recycleLog" = "回收紀錄";
+"allMonth" = "所有月份";
+"jan" = "1月";
+"feb" = "2月";
+"mar" = "3月";
+"apr" = "4月";
+"may" = "5月";
+"jun" = "6月";
+"jul" = "7月";
+"aug" = "8月";
+"sep" = "9月";
+"oct" = "10月";
+"nov" = "11月";
+"dec" = "12月";
+"pointRecord" = "點數紀錄";
+"myWallet" = "我的票夾";
+"region" = "地區選擇";
+"stationList" = "站點列表";
+"activitiesLuckyDraws" = "活動抽獎專區";
+"activityTime" = "活動時間";
+"duringDate" = "開獎日期";
+"join" = "參與次數";
+"remain" = "剩餘數量";
+"validDate" = "使用日期";
+"customerContact" = "客服聯繫";
+"activityAward" = "活動獎勵";
+"raffleTicket" = "抽獎劵";
+"productvocher" = "商品劵";
+"merchants" = "合作商家";
+"coupon" = "禮劵專區";
+"confirmBuy" = "確認購買";
+"reStartOfChangeLanuage" = "切換語言重開app才會生效，關閉後請重新打開app";
+"confirm" = "確認";
+"cancel" = "取消";
+"appClose" = "the app has been closed";
+"tapOpenApp" = "tap to open the app";
+"sign" = "註冊";
+"personalNotifications" = "個人訊息";
+"personalAccount" = "個人帳戶";
+"currentLevel" = "目前等級";
+"carbonJourney" = "減碳歷程";
+"restorationOfCoopland" = "泥滑島修復";
+"birthdayCannotBeEmpty" = "生日不能為空";
+"illustratedGuideOneOfName" = "碳員";
+"illustratedGuideOneOfTitle" = "新手碳教學";
+"illustratedGuideOneOfGuide" = "碳員是生態系統中的重要成員，他代表著碳固定這一關鍵生物學過程。 碳員的工作是將二氧化碳轉化為有機化合物，這一過程在自然界中扮演著關鍵角色，有助於維持生態平衡並支持生命的存在。 他的存在提醒著我們碳固定這一過程的重要性，以及生物如何將二氧化碳轉化為能量和有機物質，從而影響著整個生態系統的運作。";
+"illustratedGuideTwoOfName" = "割草雞";
+"illustratedGuideTwoOfTitle" = "堆肥";
+"illustratedGuideTwoOfGuide" = "割草雞是生態系統中重要的一員，他的工作是將草地上的植物生物（如草、樹葉等）割下，並將其轉化為堆肥。 這些堆肥是被分解和回收的有機物質，用作肥料和土壤調理劑，支持著有機農業的發展。 割草雞的工作是為了促進生態系統中有機物的再利用，維持土壤的健康，並支持農作物的生長與發展！";
+"illustratedGuideThreeOfName" = "潛水雞";
+"illustratedGuideThreeOfTitle" = "水資源";
+"illustratedGuideThreeOfGuide" = "潛水雞是一位對水資源關注的重要夥伴。 全球的水資源只有少於2.5%是淡水，其餘的都是海水，他深知全球水資源的珍貴性，並致力於保護和合理利用水資源。 潛水雞的使命是呼籲人們珍惜水資源，隨時關注水的使用量，避免不必要的浪費，促進水資源的可持續利用。";
+"illustratedGuideFourOfName" = "技術雞";
+"illustratedGuideFourOfTitle" = "技術研發";
+"illustratedGuideFourOfGuide" = "技術雞代表著對新技術和新能源的探索與推動。 作為一位科技先鋒，他不斷追求創新，致力於發展出更加環保、高效的技術和能源來解決當前的環境問題。 技術雞的使命是啟發人們對科技的信心，鼓勵大家積極採納和應用新技術，為地球的可持續發展貢獻一份力量。";
+"illustratedGuideFiveOfName" = "挖土雞";
+"illustratedGuideFiveOfTitle" = "土壤";
+"illustratedGuideFiveOfGuide" = "挖土雞是土壤保護的守護者，主要任務是保護土壤免受污染和破壞。 土壤是生命的基礎，它支持著植物的生長，為我們提供糧食和生物多樣性。";
+"illustratedGuideSixOfName" = "紳士雞";
+"illustratedGuideSixOfTitle" = "紡織纖維材料";
+"illustratedGuideSixOfGuide" = "紳士雞是一位愛護地球的紳士，他致力於推動環保行動，特別關注塑料廢棄物的問題。 他憑藉著高貴的氣質和堅定的信念，引領著大家走向減塑的道路，以實際行動支持地球的可持續發展。";
+"illustratedGuideSevenOfName" = "發電雞";
+"illustratedGuideSevenOfTitle" = "綠電";
+"illustratedGuideSevenOfGuide" = "發電雞是一位熱愛環保的夥伴，他專注於推動清潔能源的使用，以減少碳排放並保護地球。 他的使命是鼓勵人們轉向使用綠色能源，例如太陽能或風能，以減輕對環境的負擔，實現可持續發展的目標。";
+"illustratedGuideEightOfName" = "冒險雞";
+"illustratedGuideEightOfTitle" = "大眾運輸";
+"illustratedGuideEightOfGuide" = "冒險雞是一位勇於嘗試新事物的冒險家，他總是尋找各種新奇的冒險和挑戰。 他堅信著生活應該充滿著不斷探索與挑戰，因此他鼓勵人們嘗試著更環保的出行方式，以及發掘各種可持續的生活方式。 冒險雞的冒險精神激勵著人們勇於嘗試新的交通方式，並享受在綠色出行中的樂趣。";
+"illustratedGuideNineOfName" = "花雕雞";
+"illustratedGuideNineOfTitle" = "親民代表";
+"illustratedGuideNineOfGuide" = "花雕雞是大自然中的草本植物守護者，對草本植物的生長、繁衍和保護充滿熱情。 他漫步在草地間，呼吸著清新的空氣，感受著大自然的美妙。 花雕雞的使命是守護草本植物，促進草地生態的保護和恢復，讓每一片綠色都充滿生命力。";
+"illustratedGuideTenOfName" = "碳長";
+"illustratedGuideTenOfTitle" = "碳匯";
+"illustratedGuideTenOfGuide" = "碳長是碳竹雞的領導者，承載著歷史的記憶和智慧的光芒。 作為碳長他保護著碳竹雞們，守護著世界的奧秘，並將這份智慧代代相傳。 碳長懂得尊重生命、愛護生態，他的存在提醒著我們建立友善的世界。";
+"siteList" = "門市列表";

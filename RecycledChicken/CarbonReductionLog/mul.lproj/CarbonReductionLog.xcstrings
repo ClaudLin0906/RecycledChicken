@@ -1,0 +1,228 @@
+{
+  "sourceLanguage" : "zh-Hant-TW",
+  "strings" : {
+    "2UQ-jW-c2f.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"泥滑島修復1\"; ObjectID = \"2UQ-jW-c2f\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restoration of Coopland1"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "泥滑島修復1"
+          }
+        }
+      }
+    },
+    "5uQ-vd-ZBq.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"kgCO2e\"; ObjectID = \"5uQ-vd-ZBq\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kgCO2e"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "kgCO2e"
+          }
+        }
+      }
+    },
+    "7bh-BB-ISm.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"減碳量\"; ObjectID = \"7bh-BB-ISm\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carbon Reduction\nAmount"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "減碳量"
+          }
+        }
+      }
+    },
+    "21v-Px-0q5.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"修復資源\"; ObjectID = \"21v-Px-0q5\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "修復資源"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "修復資源"
+          }
+        }
+      }
+    },
+    "BRQ-nn-bQE.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"BRQ-nn-bQE\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0"
+          }
+        }
+      }
+    },
+    "FcG-TD-lP9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"/\"; ObjectID = \"FcG-TD-lP9\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "/"
+          }
+        }
+      }
+    },
+    "gx6-Be-wMx.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"00\"; ObjectID = \"gx6-Be-wMx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "00"
+          }
+        }
+      }
+    },
+    "izV-dL-Ize.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"減碳量\"; ObjectID = \"izV-dL-Ize\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "減碳量"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "減碳量"
+          }
+        }
+      }
+    },
+    "iZZ-lD-1hs.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"回收紀錄\"; ObjectID = \"iZZ-lD-1hs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RECYCLING RECORD"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "回收紀錄"
+          }
+        }
+      }
+    },
+    "KwH-fx-ljc.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"kgCO2e\"; ObjectID = \"KwH-fx-ljc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "kgCO2e"
+          }
+        }
+      }
+    },
+    "Ltp-Es-FTB.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"0\"; ObjectID = \"Ltp-Es-FTB\";",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0"
+          }
+        }
+      }
+    },
+    "qw0-zw-FUi.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"※每月達成目標為前一個月全部使用者的平均投遞量\"; ObjectID = \"qw0-zw-FUi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "※The monthly goal achievement is the average delivery volume of\nall users from the previous month."
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "※每月達成目標為前一個月全部使用者的平均投遞量"
+          }
+        }
+      }
+    },
+    "rlC-Jl-2oQ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"個人回收量與目標\"; ObjectID = \"rlC-Jl-2oQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personal Recycling\nVolume and Goals"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "個人回收量與目標"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

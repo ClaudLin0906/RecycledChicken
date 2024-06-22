@@ -7,61 +7,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "19A30C9C-1676-4876-A6AD-BED53ABAE929"
+            uuid = "35E8FFEA-64D5-4CBD-906A-0C8EA356C0CF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/MainTabBarController.swift"
+            filePath = "RecycledChicken/ForgetPassword/ForgetPasswordVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BDB13E4F-B4D8-470F-9949-8505FFA2F8A9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/BuyLottery/BuyLotteryVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "confirm(_:info:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "sendSMS(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "BDB13E4F-B4D8-470F-9949-8505FFA2F8A9 - 1edbac2f10af0a50"
+                  uuid = "35E8FFEA-64D5-4CBD-906A-0C8EA356C0CF - 68325d1e8305350a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.BuyLotteryVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
+                  symbolName = "RecycledChicken.ForgetPasswordVC.showErrorMSG(Swift.String) -&gt; ()"
                   moduleName = "RecycledChicken"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/BuyLottery/BuyLotteryVC.swift"
+                  urlString = "file:///Users/claud/Desktop/Work/RecycledChicken/RecycledChicken/ForgetPassword/ForgetPasswordVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "97">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "104">
                </Location>
                <Location
-                  uuid = "BDB13E4F-B4D8-470F-9949-8505FFA2F8A9 - 37fad6d4f450964e"
+                  uuid = "35E8FFEA-64D5-4CBD-906A-0C8EA356C0CF - 69a2d6f821d35135"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in RecycledChicken.BuyLotteryVC.confirm(_: __C.UIButton, info: RecycledChicken.SpendPointInfo) -&gt; ()"
+                  symbolName = "RecycledChicken.ForgetPasswordVC.sendSMS(__C.UIButton) -&gt; ()"
                   moduleName = "RecycledChicken"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/claud/Desktop/Work/%E5%A4%96%E5%8C%85/%E7%A2%B3%E7%AB%B9%E9%9B%9E/git/RecycledChicken/BuyLottery/BuyLotteryVC.swift"
+                  urlString = "file:///Users/claud/Desktop/Work/RecycledChicken/RecycledChicken/ForgetPassword/ForgetPasswordVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "206">
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "1332">
+               </Location>
+               <Location
+                  uuid = "35E8FFEA-64D5-4CBD-906A-0C8EA356C0CF - 69a2d6f821d35135"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecycledChicken.ForgetPasswordVC.sendSMS(__C.UIButton) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/claud/Desktop/Work/RecycledChicken/RecycledChicken/ForgetPassword/ForgetPasswordVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "1372">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -69,16 +70,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4C460B9F-2CB1-4E7C-A064-00C76C3645B7"
+            uuid = "CB9C4156-8F50-46CA-BCFE-1FE5081B7821"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/BuyLottery/BuyLotteryVC.swift"
+            filePath = "RecycledChicken/VerificationCode/VerificationCodeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "confirm(_:info:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "VerificationCodeVC"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3C8166D2-2187-491F-81F1-43086F04FC99"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/CarbonReductionLog/CarbonReductionLogVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "tapImage(_:userdefultKey:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

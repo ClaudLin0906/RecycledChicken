@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenJyuuGothic-Medium.ttf">
+            <string>GenJyuuGothic-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AmountView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="9KR-8t-mn7" id="ght-YI-WcY"/>
+                <outlet property="storeName" destination="npf-CX-5oO" id="7aP-vU-XGj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地點:新竹市公所" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npf-CX-5oO">
+                    <rect key="frame" x="0.0" y="64" width="393" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Ak5-YP-H0d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nl-GA-gGa">
+                    <rect key="frame" x="365.66666666666669" y="63" width="17.333333333333314" height="22"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="B98-en-BOz"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgR-Jo-pgb" userLabel="underLine">
+                    <rect key="frame" x="10" y="89" width="373" height="1"/>
+                    <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ySj-zE-b5B"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KR-8t-mn7">
+                    <rect key="frame" x="0.0" y="100" width="393" height="708"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKU-kK-Xoa">
+                            <rect key="frame" x="176" y="0.0" width="41.333333333333343" height="284"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Z-ix-RDT">
+                            <rect key="frame" x="176" y="294" width="41.333333333333343" height="414"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="cgR-Jo-pgb" firstAttribute="trailing" secondItem="9nl-GA-gGa" secondAttribute="trailing" id="AQA-p9-JpR"/>
+                <constraint firstItem="cgR-Jo-pgb" firstAttribute="top" secondItem="npf-CX-5oO" secondAttribute="bottom" constant="5" id="Kft-Ns-X6e"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="npf-CX-5oO" secondAttribute="trailing" id="QQi-Rr-3ra"/>
+                <constraint firstItem="npf-CX-5oO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Wiv-AO-XJm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9KR-8t-mn7" secondAttribute="trailing" id="XKl-VM-std"/>
+                <constraint firstItem="npf-CX-5oO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="h2J-SG-HLm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9KR-8t-mn7" secondAttribute="bottom" constant="10" id="jgT-sB-2Kr"/>
+                <constraint firstItem="cgR-Jo-pgb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="lyY-WD-M8f"/>
+                <constraint firstItem="9KR-8t-mn7" firstAttribute="top" secondItem="cgR-Jo-pgb" secondAttribute="bottom" constant="10" id="tyL-B5-W5T"/>
+                <constraint firstItem="9KR-8t-mn7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vOD-XP-R1p"/>
+                <constraint firstAttribute="trailing" secondItem="cgR-Jo-pgb" secondAttribute="trailing" constant="10" id="wJ4-fx-maT"/>
+                <constraint firstItem="9nl-GA-gGa" firstAttribute="centerY" secondItem="npf-CX-5oO" secondAttribute="centerY" id="zyJ-8S-JIc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                    <size key="value" width="1" height="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                    <real key="value" value="0.40000000000000002"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="-156" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>

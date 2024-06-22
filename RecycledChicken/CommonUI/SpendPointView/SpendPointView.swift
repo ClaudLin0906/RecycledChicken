@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 protocol SpendPointViewDelegate{
     func btnAction(_ sender:UIButton, info:SpendPointInfo)
     func alertMessage(_ message:String)
@@ -15,21 +15,33 @@ protocol SpendPointViewDelegate{
 class SpendPointView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var confirm:UIButton!
-    
-    @IBOutlet weak var tableView:UITableView!
-    
+        
     @IBOutlet weak var itemAmount:UILabel!
     
     @IBOutlet weak var needPoint:UILabel!
     
-    @IBOutlet weak var bigPictureImageView:UIImageView!
+    @IBOutlet weak var itemImageView:UIImageView!
     
+    @IBOutlet weak var itemNameLabel:CustomLabel!
+    
+    @IBOutlet weak var itemPriceLabel:UILabel!
+    
+    @IBOutlet weak var drawTimeLabel:CustomLabel!
+    
+    @IBOutlet weak var itemDescriptionTextView:UITextView!
+        
     private var amount:Int = 0
     {
         willSet{
             DispatchQueue.main.async { [self] in
                 itemAmount.text = String(newValue)
-                let needPointInt = (lotteryInfo?.itemPrice ?? 0) * newValue
+                var needPointInt:Int = 0
+                switch type {
+                case .CommodityVoucher:
+                    needPointInt = (commodityVoucherInfo?.points ?? 0) * newValue
+                case .Lottery:
+                    needPointInt = (lotteryInfo?.point ?? 0) * newValue
+                }
                 needPoint.text = String(needPointInt)
             }
         }
@@ -45,10 +57,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
     {
         willSet{
             type = .Lottery
-            tableView.reloadData()
-            if let lotteryInfo = newValue, let data = try? Data(contentsOf: URL(string: lotteryInfo.pictureBig)!), let image = UIImage(data: data){
-                bigPictureImageView.image = image
-            }
+            setInfo()
         }
     }
     
@@ -56,7 +65,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
     {
         willSet{
             type = .CommodityVoucher
-            tableView.reloadData()
+            setInfo()
         }
     }
     
@@ -72,12 +81,85 @@ class SpendPointView: UIView, NibOwnerLoadable {
         customInit()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setInfo()
+    }
+    
+    private func setInfo() {
+        switch type {
+        case .CommodityVoucher:
+            guard let commodityVoucherInfo = commodityVoucherInfo else { return }
+            
+            if let picture = commodityVoucherInfo.picture, let imageURL = URL(string: picture) {
+                itemImageView.kf.setImage(with: imageURL)
+            }
+            
+            if let name = commodityVoucherInfo.name {
+                itemNameLabel.text = name
+            }
+            
+            if let points = commodityVoucherInfo.points {
+                itemPriceLabel.text = String(points)
+            }
+            
+            if let start = commodityVoucherInfo.start, let end = commodityVoucherInfo.end {
+                drawTimeLabel.text = "validDate".localized + ":" + start + "~" + end
+            }
+    
+            var descriptionStr = ""
+            var noticeStr = ""
+            
+            if let description = commodityVoucherInfo.description {
+                descriptionStr = "產品介紹:\n\n\(description)"
+            }
+            
+            if let notice = commodityVoucherInfo.notice {
+                noticeStr =  "注意事項:\n\n\(notice)"
+            }
+            itemDescriptionTextView.text = "\(descriptionStr)\n\n\(noticeStr)"
+            
+        case .Lottery:
+            guard let lotteryInfo = lotteryInfo else { return }
+            
+            if let productImage = lotteryInfo.productImage, let imageURL = URL(string: productImage) {
+                itemImageView.kf.setImage(with: imageURL)
+            }
+            
+            if let itemName = lotteryInfo.itemName {
+                itemNameLabel.text = itemName
+            }
+            
+            if let point = lotteryInfo.point {
+                itemPriceLabel.text = String(point)
+            }
+            
+            if let drawDate = lotteryInfo.drawDate {
+                drawTimeLabel.text = "duringDate".localized + ":" + drawDate
+            }
+            
+            var descriptionStr = ""
+            var notesStr = ""
+            
+            if let description = lotteryInfo.description {
+                itemDescriptionTextView.text = description
+            }
+            
+            if let description = lotteryInfo.description {
+                descriptionStr = "產品介紹:\n\n\(description)"
+            }
+            
+            if let notes = lotteryInfo.notes {
+                notesStr =  "注意事項:\n\n\(notes)"
+            }
+            itemDescriptionTextView.text = "\(descriptionStr)\n\n\(notesStr)"
+        }
+
+    }
+    
     private func customInit(){
         loadNibContent()
         amount = 1
-        itemAmount.text = String(amount)
-        tableView.setSeparatorLocation()
-        tableView.register(UINib(nibName: "LotteryItemTableViewCell", bundle: nil), forCellReuseIdentifier: "LotteryItemTableViewCell")
     }
     
     @IBAction func plusBtn(_ sender:UIButton){
@@ -92,62 +174,44 @@ class SpendPointView: UIView, NibOwnerLoadable {
         if amount < 0 {
             amount = 0
         }
-        
     }
     
     func setConfirmBtnTitle(_ title:String){
         confirm.setTitle(title, for: .normal)
     }
     
-    @IBAction func btnAction(_sender:UIButton) {
+    private func handleInfo(_ sender:UIButton, _ itemName:String, _ itemCreateTime:String, _ totalPoint:String) {
+        let spendPointInfo = SpendPointInfo(name: itemName, createTime: itemCreateTime, count: amount, totalPoint: totalPoint)
+        delegate?.btnAction(sender, info: spendPointInfo)
+    }
+    
+    @IBAction func btnAction(_ sender:UIButton) {
         
         guard amount > 0 else {
             delegate?.alertMessage("數量要大於0")
             return
         }
-        
-        guard let profileInfo = CurrentUserInfo.shared.currentProfileInfo, let lotteryInfo = lotteryInfo, profileInfo.point >= (lotteryInfo.itemPrice * amount) else {
-            delegate?.alertMessage("點數不足")
-            return
-        }
-        
-        let spendPointInfo = SpendPointInfo(lotteryItemName: lotteryInfo.itemName, lotteryItemCreateTime: lotteryInfo.createTime, count: amount, totalPoint: String(lotteryInfo.itemPrice * amount))
-        delegate?.btnAction(_sender, info: spendPointInfo)
-    }
-
-}
-
-extension SpendPointView:UITableViewDelegate {
-    
-}
-
-
-extension SpendPointView:UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        200
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LotteryItemTableViewCell", for: indexPath) as! LotteryItemTableViewCell
+        guard let profileInfo = CurrentUserInfo.shared.currentProfileNewInfo else { return }
         switch type {
-        case .Lottery:
-            if let lotteryInfo = lotteryInfo {
-                cell.setCell(lotteryInfo: lotteryInfo)
-            }
         case .CommodityVoucher:
-            if let commodityVoucherInfo = commodityVoucherInfo {
-                cell.setCell(commodityVoucherInfo: commodityVoucherInfo)
+            guard let commodityVoucherInfo = commodityVoucherInfo, let profileInfoPoint = profileInfo.point, let point = commodityVoucherInfo.points else { return }
+            if profileInfoPoint < (point * amount) {
+                delegate?.alertMessage("點數不足")
             }
+            if profileInfoPoint >= (point * amount), let createTime = commodityVoucherInfo.createTime  {
+                handleInfo(sender, commodityVoucherInfo.name ?? "", createTime, String(point * amount))
+            }
+        case .Lottery:
+            guard let lotteryInfo = lotteryInfo, let profileInfoPoint = profileInfo.point, let point = lotteryInfo.point else { return }
+            if profileInfoPoint < (point * amount) {
+                delegate?.alertMessage("點數不足")
+            }
+            if profileInfoPoint >= (point * amount), let createTime = lotteryInfo.createTime {
+                handleInfo(sender, lotteryInfo.itemName ?? "", createTime, String(point * amount))
+            }
+
         }
-
-        return cell
-
+        
     }
-    
-    
+
 }

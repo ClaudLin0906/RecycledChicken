@@ -13,33 +13,42 @@ class PersonMessageVC: CustomVC {
     @IBOutlet weak var personMessageTableView:UITableView!
     
     private var personMessageInfos:[PersonMessageInfo] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "個人訊息"
+        title = "personalNotifications".localized
         UIInit()
-        getData()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+        getData()
     }
     
     private func UIInit(){
+        let backBtn = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(showDeleteAllMessage(_:)))
+        backBtn.tintColor = #colorLiteral(red: 0.2039215686, green: 0.2039215686, blue: 0.2039215686, alpha: 1)
+        navigationItem.rightBarButtonItem = backBtn
         personMessageTableView.setSeparatorLocation()
         personMessageTableView.showAnimatedSkeleton()
-
     }
     
-    private func getData(){
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getNotification, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+    @objc private func showDeleteAllMessage(_ sender:UIBarButtonItem) {
+        let deleteAllMessageAlertView = DeleteAllMessageAlertView(frame: UIScreen.main.bounds)
+        deleteAllMessageAlertView.delegate = self
+        keyWindow?.addSubview(deleteAllMessageAlertView)
+    }
+
+    private func getData() {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.message, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
             if let data = data, let personMessageInfos = try? JSONDecoder().decode([PersonMessageInfo].self, from: data) {
+                self.personMessageInfos.removeAll()
                 self.personMessageInfos = personMessageInfos
                 DispatchQueue.main.async {
                     self.personMessageTableView.reloadData()
@@ -51,8 +60,6 @@ class PersonMessageVC: CustomVC {
             }
         }
     }
-
-
 }
 
 extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
@@ -86,10 +93,56 @@ extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonMessageTableViewCell.identifier, for: indexPath) as! PersonMessageTableViewCell
+        cell.delegate = self
         let info = personMessageInfos[indexPath.row]
         cell.setCell(info)
         return cell
     }
     
+    private func deleteMessage(_ personMessageInfosDic:[[String:Any]]) {
+        guard personMessageInfosDic.count > 0 else { return }
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete, parametersArray: personMessageInfosDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard statusCode == 200, let data = data else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+            if let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data), let status = apiResult.status {
+                switch status {
+                case .success:
+                    if let navigationController = self.navigationController {
+                        navigationController.popViewController(animated: true)
+                    }
+                case .failure:
+                    showAlert(VC: self, title: apiResult.message ?? "")
+                }
+            }
+        }
+    }
+    
+}
+
+extension PersonMessageVC:PersonMessageTableViewCellDelegate {
+    
+    func tapDeleteViewPress(_ indexPath: IndexPath) {
+        guard personMessageInfos.count > 0, let dic = try? personMessageInfos[indexPath.row].asDictionary() else { return }
+        var personMessageInfosDic:[[String:Any]] = []
+        personMessageInfosDic.append(dic)
+        deleteMessage(personMessageInfosDic)
+    }
+    
+}
+
+extension PersonMessageVC:DeleteAllMessageAlertViewDelegate {
+    
+    func deleteAllMessage() {
+        guard personMessageInfos.count > 0 else { return }
+        var personMessageInfosDic:[[String:Any]] = []
+        personMessageInfos.forEach { info in
+            if let infoDic = try? info.asDictionary() {
+                personMessageInfosDic.append(infoDic)
+            }
+        }
+        deleteMessage(personMessageInfosDic)
+    }
     
 }

@@ -15,7 +15,7 @@ class BuyLotteryVC: CustomVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "購買抽獎序號"
+        title = "兌換抽獎/活動序號"
         UIInit()
         // Do any additional setup after loading the view.
     }
@@ -27,7 +27,7 @@ class BuyLotteryVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        if let lotteryInfo = lotteryInfo{
+        if let lotteryInfo = lotteryInfo {
             spendPointView.lotteryInfo = lotteryInfo
         }
     }
@@ -38,7 +38,7 @@ class BuyLotteryVC: CustomVC {
 extension BuyLotteryVC: SpendPointViewDelegate {
     
     func alertMessage(_ message: String) {
-        showAlert(VC: self, title: message, message: nil, alertAction: nil)
+        showAlert(VC: self, title: message, message: nil)
     }
     
     func btnAction(_ sender: UIButton, info: SpendPointInfo) {
@@ -53,17 +53,20 @@ extension BuyLotteryVC: SpendPointViewDelegate {
 extension BuyLotteryVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
-        spendPointAction(info) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
+        let spendPointInfoDic = try? info.asDictionary()
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.lotteryBuy, parameters: spendPointInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+            guard let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            getUserInfo(VC: self) {
-                DispatchQueue.main.async { [self] in
-                    let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
-                    fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
-                    if let navigationController = navigationController {
-                        navigationController.popToRootViewController(animated: true)
+            if let spendPointResponse = try? JSONDecoder().decode(SpendPointResponse.self, from: data) {
+                getUserNewInfo(VC: self) {
+                    DispatchQueue.main.async { [self] in
+                        let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
+                        fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
+                        if let navigationController = navigationController {
+                            navigationController.popToRootViewController(animated: true)
+                        }
                     }
                 }
             }
