@@ -68,8 +68,6 @@ enum TaskType: String, Codable {
     case advertise = "advertise"
     case battery = "battery"
     case bottle = "bottle"
-    case colorledBottle = "colorledBottle"
-    case colorlessBottle = "colorlessBottle"
     case can = "can"
     case cup = "cup"
 }

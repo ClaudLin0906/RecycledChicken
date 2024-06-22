@@ -79,10 +79,10 @@
     </objects>
     <designables>
         <designable name="XWy-XY-PMs">
-            <size key="intrinsicContentSize" width="94" height="26"/>
+            <size key="intrinsicContentSize" width="91" height="29"/>
         </designable>
         <designable name="cVo-QU-Ejg">
-            <size key="intrinsicContentSize" width="204" height="39.666666666666664"/>
+            <size key="intrinsicContentSize" width="204" height="47.666666666666664"/>
         </designable>
     </designables>
     <resources>

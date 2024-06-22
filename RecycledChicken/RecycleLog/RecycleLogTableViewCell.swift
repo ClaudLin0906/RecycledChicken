@@ -17,8 +17,6 @@ class RecycleLogTableViewCell: UITableViewCell {
     
     @IBOutlet weak var amountLabel:UILabel!
     
-    var infoTime:InfoTime?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

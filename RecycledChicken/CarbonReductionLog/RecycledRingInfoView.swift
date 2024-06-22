@@ -52,7 +52,7 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
         ringProgressSingleBackgroundView.layer.shadowOpacity = 0.2
     }
     
-    func setRecycledRingInfo(_ info:RecyceledSort, personalRecyleAmountAndTargetInfo:PersonalRecycleAmountAndTargetInfo, _ count:Int) {
+    func setRecycledRingInfo(_ info:RecyceledSort, personalRecyleAmountAndTargetInfo:PersonalRecycleAmountAndTargetInfo) {
         self.info = info
         self.personalRecyleAmountAndTargetInfo = personalRecyleAmountAndTargetInfo
         if let totalRecycled = self.personalRecyleAmountAndTargetInfo?.totalRecycled, let target = personalRecyleAmountAndTargetInfo.target, let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate {

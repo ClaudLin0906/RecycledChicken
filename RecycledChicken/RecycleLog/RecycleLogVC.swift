@@ -9,15 +9,7 @@ import UIKit
 import DropDown
 import SkeletonView
 class RecycleLogVC: CustomVC {
-    
-    private struct RecycleLogInfo {
-        var time:Date
-        var battery:Int = 0
-        var bottle:Int = 0
-        var colorlessBottle:Int = 0
-        var can:Int = 0
-    }
-    
+        
     @IBOutlet weak var monthBtn:CommonImageButton!
     
     @IBOutlet weak var monthBtnWidth:NSLayoutConstraint!
@@ -79,7 +71,7 @@ class RecycleLogVC: CustomVC {
     
     private func useRecordInfoHandle(_ data:[UseRecordInfo]) {
         
-        var integratedDict: [Date: (battery: Int, bottle: Int, colorlessBottle:Int, can:Int)] = [:]
+        var integratedDict: [Date: (battery: Int, bottle: Int, coloredBottle:Int, colorlessBottle: Int, can: Int)] = [:]
         
         for datum in data {
             if let datmTime = datum.time, let date = dateFromString(datmTime){
@@ -88,10 +80,11 @@ class RecycleLogVC: CustomVC {
                     existingValues.battery += datum.recycleDetails?.battery ?? 0
                     existingValues.bottle += datum.recycleDetails?.bottle ?? 0
                     existingValues.colorlessBottle += datum.recycleDetails?.colorlessBottle ?? 0
+                    existingValues.coloredBottle += datum.recycleDetails?.coloredBottle ?? 0
                     existingValues.can += datum.recycleDetails?.can ?? 0
                     integratedDict[dayComponent] = existingValues
                 } else {
-                    integratedDict[dayComponent] = (battery: datum.recycleDetails?.battery ?? 0, bottle: datum.recycleDetails?.bottle ?? 0, colorlessBottle: datum.recycleDetails?.colorlessBottle ?? 0, datum.recycleDetails?.can ?? 0)
+                    integratedDict[dayComponent] = (battery: datum.recycleDetails?.battery ?? 0, bottle: datum.recycleDetails?.bottle ?? 0, coloredBottle:datum.recycleDetails?.coloredBottle ?? 0, colorlessBottle: datum.recycleDetails?.colorlessBottle ?? 0, datum.recycleDetails?.can ?? 0)
                 }
             }
         }
@@ -105,6 +98,11 @@ class RecycleLogVC: CustomVC {
                 }
                 if info.bottle > 0 {
                     recycleLogInfo.bottle = info.bottle
+                    recycleLogInfos.append(recycleLogInfo)
+                }
+                
+                if info.coloredBottle > 0 {
+                    recycleLogInfo.coloredBottle = info.coloredBottle
                     recycleLogInfos.append(recycleLogInfo)
                 }
                 
@@ -185,8 +183,8 @@ extension RecycleLogVC: UITableViewDelegate, SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
         let info = filterUseRecordInfos[indexPath.row]
-        if info.bottle > 0 || info.colorlessBottle > 0 {
-            let count = info.bottle + info.colorlessBottle
+        if info.bottle > 0 || info.colorlessBottle > 0 || info.coloredBottle > 0{
+            let count = info.bottle + info.colorlessBottle + info.coloredBottle
             cell.setCell(info.time, bottle: count, battery: nil, can: nil)
             return cell
         }

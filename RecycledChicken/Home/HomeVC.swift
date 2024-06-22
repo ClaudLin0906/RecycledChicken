@@ -94,7 +94,17 @@ class HomeVC: CustomRootVC {
                     showAlert(VC: self, title: "error".localized)
                     return
                 }
-                petItemView.setAmount(bottle ?? 0)
+                var petItemCount:Int = 0
+                if let bottle = bottle {
+                    petItemCount += bottle
+                }
+                if let colorledBottle = colorledBottle {
+                    petItemCount += colorledBottle
+                }
+                if let colorlessBottle = colorlessBottle {
+                    petItemCount += colorlessBottle
+                }
+                petItemView.setAmount(petItemCount)
                 batteryItemView.setAmount(battery ?? 0)
                 papperCubItemView.setAmount(cup ?? 0)
                 aluminumCanItemView.setAmount(can ?? 0)

@@ -144,23 +144,8 @@ class CarbonReductionLogVC: CustomVC {
     
     private func changeType() {
         guard let personalRecyleAmountAndTargetInfo = currentPersonalRecyleAmountAndTargetInfo, let itemName = personalRecyleAmountAndTargetInfo.itemName, let recyceledSort = getRecyceledSortInfo(itemName) else { return }
-        var count = 0
-        switch recyceledSort {
-        case .bottle:
-            count = bottleCount
-        case .battery:
-            count = batteryCount
-        case .papperCub:
-            break
-//            count = cupCount
-        case .aluminumCan:
-            count = canCount
-//        case .publicTransport:
-//            count = publicTransportCount
-        }
         dropDownView.sortLabel.text = recyceledSort.getInfo().chineseName
-        recycledRingInfoView.setRecycledRingInfo(recyceledSort, personalRecyleAmountAndTargetInfo: personalRecyleAmountAndTargetInfo, count)
-        
+        recycledRingInfoView.setRecycledRingInfo(recyceledSort, personalRecyleAmountAndTargetInfo: personalRecyleAmountAndTargetInfo)
     }
 
     private func UIInit() {
@@ -240,7 +225,17 @@ class CarbonReductionLogVC: CustomVC {
             }
             DispatchQueue.main.async { [self] in
                 batteryCount = battery ?? 0
-                bottleCount = bottle ?? 0
+                var totalBottleCount = 0
+                if let bottle = bottle {
+                    totalBottleCount += bottle
+                }
+                if let colorledBottle = colorledBottle {
+                    totalBottleCount += colorledBottle
+                }
+                if let colorlessBottle = colorlessBottle {
+                    totalBottleCount += colorlessBottle
+                }
+                bottleCount = totalBottleCount
                 canCount = can ?? 0
 //                cupCount = can ?? 0
                 bottleItemCellView.setCount(bottleCount)
