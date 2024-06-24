@@ -118,6 +118,7 @@ class TaskTableViewADCell: UITableViewCell {
     private func finishUIAction(_ info:TaskInfo) {
         if info.isFinish {
             DispatchQueue.main.async { [self] in
+                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
                 if let reward = info.reward, let type = reward.type, type != .point {
                     getTicketView.isHidden = false
                     playImageView.isHidden = true
