@@ -8,10 +8,6 @@
 import UIKit
 import Combine
 class HomeVC: CustomRootVC {
-        
-    @IBOutlet weak var bannerCollectionView:UICollectionView!
-    
-    @IBOutlet weak var bannerCollectionViewFlowLayout: UICollectionViewFlowLayout!
     
     @IBOutlet weak var pageControl:UIPageControl!
         
@@ -46,6 +42,15 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var settingLabel:CustomLabel!
     
     @IBOutlet weak var mallHeight:NSLayoutConstraint!
+    
+    @IBOutlet weak var bannerView:UIView!
+    
+    private var scrollView:UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.isScrollEnabled = false
+        return scrollView
+    }()
 
     private var currentIndexSubject = PassthroughSubject<Int, Never>()
     
@@ -129,7 +134,7 @@ class HomeVC: CustomRootVC {
             getADBannerInfos {
                 DispatchQueue.main.async { [self] in
                     pageControl.numberOfPages = adBannerInfos.count
-                    bannerCollectionView.reloadData()
+                    addScrollSubView()
                 }
             }
             NotificationCenter.default.post(name: .removeBackground, object: nil)
@@ -193,6 +198,7 @@ class HomeVC: CustomRootVC {
                 return
             }
             if let adBannerInfos = try? JSONDecoder().decode([ADBannerInfo].self, from: data) {
+                self.adBannerInfos.removeAll()
                 self.adBannerInfos.append(contentsOf: adBannerInfos)
                 completion()
             }
@@ -254,25 +260,59 @@ class HomeVC: CustomRootVC {
         batteryItemView.setInfo(.battery)
         papperCubItemView.setInfo(.papperCub)
         aluminumCanItemView.setInfo(.aluminumCan)
-        bannerCollectionViewFlowLayout.itemSize = bannerCollectionView.frame.size
-        bannerCollectionViewFlowLayout.estimatedItemSize = .zero
-        bannerCollectionViewFlowLayout.minimumInteritemSpacing = 0
-        bannerCollectionViewFlowLayout.minimumLineSpacing = 0
         mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: 100)
         mallCollectionViewFlowLayout.estimatedItemSize = .zero
         mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
         mallCollectionViewFlowLayout.minimumLineSpacing = 0
         mallCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        bannerView.addSubview(scrollView)
+        scrollView.centerXAnchor.constraint(equalTo: bannerView.centerXAnchor).isActive = true
+        scrollView.centerYAnchor.constraint(equalTo: bannerView.centerYAnchor).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: bannerView.widthAnchor).isActive = true
+        scrollView.heightAnchor.constraint(equalTo: bannerView.heightAnchor).isActive = true
+        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(leftGesture(_:)))
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(rightGesture(_:)))
+        rightGesture.direction = .left
+        leftGesture.direction = .right
+        scrollView.addGestureRecognizer(leftGesture)
+        scrollView.addGestureRecognizer(rightGesture)
         self.currentIndexSubject
             .sink { [self] index in
                 guard adBannerInfos.count > 0 else { return }
                 pageControl.currentPage = index
-                bannerCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+                UIView.animate(withDuration: 0.5) {
+                    self.scrollView.contentOffset = CGPoint(x: Int(self.scrollView.frame.width) * index, y: 0)
+                }
             }
             .store(in: &self.cancellables)
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
             self.changeBanner()
         }
+    }
+    
+    private func addScrollSubView() {
+        guard adBannerInfos.count > 0 else { return }
+        scrollView.subviews.forEach { v in
+            if v is UIImageView {
+                v.removeFromSuperview()
+            }
+        }
+        var currentX = 0
+        let scrollViewWidth:Int = Int(bannerView.frame.width)
+        let scrollViewHeight:Int = Int(bannerView.frame.height)
+        for i in 0...adBannerInfos.count - 1 {
+            let imageView = UIImageView(frame: CGRect(x: currentX, y: 0, width: scrollViewWidth, height: scrollViewHeight))
+            imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = 10
+            imageView.isUserInteractionEnabled = true
+            imageView.tag = i
+            imageView.kf.setImage(with: URL(string: adBannerInfos[i].image ?? ""))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
+            imageView.addGestureRecognizer(tap)
+            scrollView.addSubview(imageView)
+            currentX += scrollViewWidth
+        }
+        scrollView.contentSize = CGSize(width: currentX, height: scrollViewHeight)
     }
     
     func updateCurrentDateInfo(){
@@ -282,12 +322,21 @@ class HomeVC: CustomRootVC {
 //        getChoseDateRecycleAmount()
     }
     
-    @IBAction private func leftGesture(_ gesture:UISwipeGestureRecognizer) {
+    @objc private func leftGesture(_ gesture:UISwipeGestureRecognizer) {
         changeBanner(-1)
     }
     
-    @IBAction private func rightGesture(_ gesture:UISwipeGestureRecognizer) {
+    @objc private func rightGesture(_ gesture:UISwipeGestureRecognizer) {
         changeBanner()
+    }
+    
+    @objc private func tapGesture(_ gesture:UISwipeGestureRecognizer) {
+        if let v = gesture.view, let imageView = v as? UIImageView {
+            let index = imageView.tag
+            if let urlStr = adBannerInfos[index].URL, let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
     }
     
     private func changeBanner(_ changeIndex:Int = 1) {
@@ -358,50 +407,23 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = indexPath.row
-        if collectionView == bannerCollectionView {
-            let adBannerInfo = adBannerInfos[row]
-            if let adBannerInfoURL = adBannerInfo.URL, let url = URL(string: adBannerInfoURL), UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-            }
-        }
-        if collectionView == mallCollectionView {
-            let itemInfo = itemInfos[row]
-            if let productLink = itemInfo.productLink, let productUrl = URL(string: productLink) {
-                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "MallProduct", bundle: Bundle.main).instantiateViewController(identifier: "MallProduct") as? MallProductVC {
-                    VC.setProductURL(productUrl)
-                    pushVC(targetVC: VC, navigation: navigationController)
-                }
+        let itemInfo = itemInfos[row]
+        if let productLink = itemInfo.productLink, let productUrl = URL(string: productLink) {
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "MallProduct", bundle: Bundle.main).instantiateViewController(identifier: "MallProduct") as? MallProductVC {
+                VC.setProductURL(productUrl)
+                pushVC(targetVC: VC, navigation: navigationController)
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if collectionView == bannerCollectionView {
-            return adBannerInfos.count
-        }
-        
-        if collectionView == mallCollectionView {
-            return itemInfos.count
-        }
-        return 0
+        return itemInfos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == bannerCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-            cell.setCell(adBannerInfos[indexPath.row])
-            return cell
-        }
-        
-        if collectionView == mallCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MallCollectionViewCell", for: indexPath) as! MallCollectionViewCell
-            cell.setCell(itemInfos[indexPath.row])
-            return cell
-        }
-        
-        return UICollectionViewCell()
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MallCollectionViewCell", for: indexPath) as! MallCollectionViewCell
+        cell.setCell(itemInfos[indexPath.row])
+        return cell
     }
     
 }
