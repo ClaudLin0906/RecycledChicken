@@ -119,132 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B6FFE3B4-CF14-4304-AD98-50EB74EC594E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Task/TaskTableViewADCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "setCell(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B6FFE3B4-CF14-4304-AD98-50EB74EC594E - 8bbe126f71974a48"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.TaskTableViewADCell.finishUIAction(RecycledChicken.TaskInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/Task/TaskTableViewADCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "B6FFE3B4-CF14-4304-AD98-50EB74EC594E - 8bbe126f71974a48"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.TaskTableViewADCell.finishUIAction(RecycledChicken.TaskInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/Task/TaskTableViewADCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "184">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F7236B44-4D74-4D69-B83B-229991FF58F5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Task/TaskTableViewADCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "setCell(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F7236B44-4D74-4D69-B83B-229991FF58F5 - 8bbe126f71974a67"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.TaskTableViewADCell.finishUIAction(RecycledChicken.TaskInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/Task/TaskTableViewADCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "232">
-               </Location>
-               <Location
-                  uuid = "F7236B44-4D74-4D69-B83B-229991FF58F5 - 1191f3ebda5369a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in RecycledChicken.TaskTableViewADCell.finishUIAction(RecycledChicken.TaskInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/Task/TaskTableViewADCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "F7236B44-4D74-4D69-B83B-229991FF58F5 - 8bbe126f71974a67"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.TaskTableViewADCell.finishUIAction(RecycledChicken.TaskInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/Task/TaskTableViewADCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "F7236B44-4D74-4D69-B83B-229991FF58F5 - 1191f3ebda5369a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in RecycledChicken.TaskTableViewADCell.finishUIAction(RecycledChicken.TaskInfo) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/Task/TaskTableViewADCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "93">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "42F119FA-7224-44A9-9682-ACE24FDB0219"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -288,6 +162,38 @@
                   offsetFromSymbolStart = "708">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B943556-CB4D-42D8-8DC4-78EDE7BD4604"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/CommonUI/ADView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "isFinishAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75FEE717-B5FD-4D8E-92ED-1A3DB0769769"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/CommonUI/ADView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "isFinishAction()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
