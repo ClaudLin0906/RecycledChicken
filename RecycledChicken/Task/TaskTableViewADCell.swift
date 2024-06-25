@@ -28,6 +28,8 @@ class TaskTableViewADCell: UITableViewCell {
     
     @IBOutlet weak var getTicketView:GetTicketView!
     
+    @IBOutlet weak var pointFinishView:UIView!
+    
     var delegate:TaskTableViewCellFinishDelete?
     
     private var taskInfo:TaskInfo?
@@ -122,11 +124,16 @@ class TaskTableViewADCell: UITableViewCell {
                 titleLabel.textColor = .white
                 descriptionLabel.textColor = .white
                 pointLabel.textColor = .white
-                if let reward = info.reward, let type = reward.type, type != .point {
-                    getTicketView.isHidden = false
-                    playImageView.isHidden = true
-                    iconImageView.isHidden = true
-                    pointView.isHidden = true
+                iconImageView.isHidden = true
+                if let reward = info.reward, let type = reward.type {
+                    if type != .point {
+                        getTicketView.isHidden = false
+                        playImageView.isHidden = true
+                        pointView.isHidden = true
+                    }
+                    if type == .point {
+                        pointFinishView.isHidden = false
+                    }
                 }
             }
         }else {
@@ -139,6 +146,7 @@ class TaskTableViewADCell: UITableViewCell {
                 playImageView.isHidden = false
                 iconImageView.isHidden = false
                 pointView.isHidden = false
+                pointFinishView.isHidden = true
             }
         }
     }
