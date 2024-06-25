@@ -119,6 +119,9 @@ class TaskTableViewADCell: UITableViewCell {
         if info.isFinish {
             DispatchQueue.main.async { [self] in
                 background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                titleLabel.textColor = .white
+                descriptionLabel.textColor = .white
+                pointLabel.textColor = .white
                 if let reward = info.reward, let type = reward.type, type != .point {
                     getTicketView.isHidden = false
                     playImageView.isHidden = true
@@ -129,6 +132,9 @@ class TaskTableViewADCell: UITableViewCell {
         }else {
             DispatchQueue.main.async { [self] in
                 background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                titleLabel.textColor = .black
+                descriptionLabel.textColor = .black
+                pointLabel.textColor = .black
                 getTicketView.isHidden = true
                 playImageView.isHidden = false
                 iconImageView.isHidden = false
