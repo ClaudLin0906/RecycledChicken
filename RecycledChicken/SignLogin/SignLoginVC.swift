@@ -26,6 +26,7 @@ class SignLoginVC: CustomLoginVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkVersion()
+        forcedConversionLanguage(self, .traditionalChinese)
     }
     
     private func showUpdateAppAlertView() {

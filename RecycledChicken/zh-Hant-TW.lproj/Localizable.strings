@@ -73,6 +73,7 @@
 "coupon" = "禮劵專區";
 "confirmBuy" = "確認購買";
 "reStartOfChangeLanuage" = "切換語言重開app才會生效，關閉後請重新打開app";
+"forcedConversion" = "因為暫時不支援多國語言，自動轉換支援的語系，需要重新開啟app";
 "confirm" = "確認";
 "cancel" = "取消";
 "appClose" = "the app has been closed";
