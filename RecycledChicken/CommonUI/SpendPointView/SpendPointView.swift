@@ -115,7 +115,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
             }
             
             if let notice = commodityVoucherInfo.notice {
-                noticeStr =  "注意事項:\n\n\(notice)"
+                noticeStr =  "注意事項:\n\n在此活動中蘋果不是贊助者也沒有以任何形式參與活動\n\(notice)"
             }
             itemDescriptionTextView.text = "\(descriptionStr)\n\n\(noticeStr)"
             
@@ -150,7 +150,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
             }
             
             if let notes = lotteryInfo.notes {
-                notesStr =  "注意事項:\n\n\(notes)"
+                notesStr =  "注意事項:\n\n在此活動中蘋果不是贊助者也沒有以任何形式參與活動\n\(notes)"
             }
             itemDescriptionTextView.text = "\(descriptionStr)\n\n\(notesStr)"
         }
