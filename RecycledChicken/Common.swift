@@ -23,6 +23,16 @@ func getLanguage() -> Language? {
     return nil
 }
 
+func forcedConversionLanguage(_ vc:UIViewController, _ language:Language) {
+    guard getLanguage() != language else { return }
+    let action = UIAlertAction(title: "confirm".localized, style: .default) { _ in
+        setLanguage(language)
+        localNotifications("appClose".localized, "tapOpenApp".localized)
+        exit(2)
+    }
+    showAlert(VC: vc, title: "forcedConversion".localized, alertAction: action)
+}
+
 func setLanguage(_ language:Language) {
     var languages = Language.allCases.filter({return language != $0 })
     languages.insert(language, at: 0)

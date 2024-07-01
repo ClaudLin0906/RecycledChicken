@@ -73,6 +73,7 @@
 "coupon" = "Voucher Zone";
 "confirmBuy" = "confirm";
 "reStartOfChangeLanuage" = "switching the language will take effect only after restarting the app. Please reopen the app after it has been closed";
+"forcedConversion" = "Due to temporary lack of multi-language support, automatic language conversion is required upon reopening the app";
 "confirm" = "confirm";
 "cancel" = "cancel";
 "appClose" = "app已經關閉";
