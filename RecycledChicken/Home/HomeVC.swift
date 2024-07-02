@@ -151,11 +151,7 @@ class HomeVC: CustomRootVC {
                 showChicken = false
             }
         }
-        
-        if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) == nil {
-            UserDefaults().set(currentChickenLevel, forKey: UserDefaultKey.shared.oldChickenLevel)
-        }
-        
+        UserDefaults().set(currentChickenLevel, forKey: UserDefaultKey.shared.oldChickenLevel)
         if showChicken {
             let chickeIntroduceView = ChickeIntroduceView(frame: UIScreen.main.bounds)
             fadeInOutAni(showView: chickeIntroduceView, finishAction: nil)

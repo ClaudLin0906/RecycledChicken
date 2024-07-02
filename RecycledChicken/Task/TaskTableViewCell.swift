@@ -89,10 +89,10 @@ class TaskTableViewCell: UITableViewCell {
                 titleLabel.textColor = .white
                 descriptionLabel.textColor = .white
                 pointLabel.textColor = .white
+                taskProgressView.isHidden = true
                 if let reward = info.reward, let type = reward.type {
                     if type != .point {
                         getTicketView.isHidden = false
-                        taskProgressView.isHidden = true
                         pointView.isHidden = true
                     }
                     if type == .point {
@@ -175,6 +175,7 @@ class TaskTableViewCell: UITableViewCell {
                     self.taskProgressView.setPercent(submitted, denominator: requiredAmount)
                     if submitted >= requiredAmount {
                         self.taskInfo?.isFinish = true
+                        finishAction()
                     }
                 }
             }
