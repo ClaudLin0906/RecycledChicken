@@ -15,7 +15,7 @@ class IllustratedGuideVC: CustomVC {
         var illustratedGuideTableDatas:[IllustratedGuideTableData] = []
         IllustratedGuideModelLevel.allCases.forEach { illustratedGuideModelLevel in
             var isRead = false
-            if let profileInfo = CurrentUserInfo.shared.currentProfileNewInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.progress, level >= getIllustratedGuide(illustratedGuideModelLevel).level {
+            if let profileInfo = CurrentUserInfo.shared.currentProfileNewInfo, let levelInfo = profileInfo.levelInfo, let level = levelInfo.chickenLevel, level.rawValue >= getIllustratedGuide(illustratedGuideModelLevel).level {
                 isRead = true
             }
             illustratedGuideTableDatas.append( IllustratedGuideTableData(illustratedGuideModelLevel: illustratedGuideModelLevel, isRead: isRead))
