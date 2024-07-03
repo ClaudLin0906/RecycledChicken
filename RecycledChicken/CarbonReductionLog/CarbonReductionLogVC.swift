@@ -8,7 +8,7 @@
 import UIKit
 import DropDown
 import MKRingProgressView
-
+import OverlayContainer
 class CarbonReductionLogVC: CustomVC {
         
     @IBOutlet weak var recycleBtn:UIButton!
@@ -99,6 +99,8 @@ class CarbonReductionLogVC: CustomVC {
     private var canCount = 0
     
 //    private var publicTransportCount = 0
+    
+    private var chooseObject:ChooseObject?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -273,16 +275,57 @@ class CarbonReductionLogVC: CustomVC {
     }
 }
 
+extension CarbonReductionLogVC: ChooseColorVCDelete {
+    func chooseColor(_ color: UIColor ) {
+        guard let chooseObject = chooseObject else { return }
+        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
+        chooseObject.imageView.tintColor = selectedColor
+    }
+}
+
 extension CarbonReductionLogVC: ColorFillTypeDelegate {
     
     func tapImage(_ imageView: UIImageView, userdefultKey: String) {
-        UserDefaults().setColor(selectedColor, forKey: userdefultKey)
-        imageView.image = imageView.image?.withTintColor(selectedColor, renderingMode: .alwaysTemplate)
+        chooseObject = nil
+        chooseObject = ChooseObject(imageView: imageView, userdefultKey: userdefultKey)
+        if let VC = UIStoryboard(name: "ChooseColor", bundle: Bundle.main).instantiateViewController(identifier: "ChooseColor") as? ChooseColorVC {
+            VC.delegate = self
+            let container = OverlayContainerViewController()
+            container.viewControllers = [VC]
+            container.delegate = self
+            container.moveOverlay(toNotchAt: Notch.minimum.rawValue, animated: false)
+            container.transitioningDelegate = self
+            container.modalPresentationStyle = .custom
+            present(container, animated: true, completion: nil)
+        }
     }
     
     func tapBackground(_ backgroundView: UIView, userdefultKey: String) {
         UserDefaults().setColor(selectedColor, forKey: userdefultKey)
         backgroundView.backgroundColor = selectedColor
+    }
+    
+}
+
+extension CarbonReductionLogVC: UIViewControllerTransitioningDelegate {
+    
+}
+
+extension CarbonReductionLogVC: OverlayTransitioningDelegate, OverlayContainerViewControllerDelegate, OverlayContainerSheetPresentationControllerDelegate {
+    
+    func overlayContainerViewController(_ containerViewController: OverlayContainer.OverlayContainerViewController, heightForNotchAt index: Int, availableSpace: CGFloat) -> CGFloat {
+        switch Notch.allCases[index] {
+        case .minimum:
+            return 150
+        case .medium:
+            return 300
+        case .maximum:
+            return availableSpace - 200
+        }
+    }
+    
+    func numberOfNotches(in containerViewController: OverlayContainerViewController) -> Int {
+        Notch.allCases.count
     }
     
 }

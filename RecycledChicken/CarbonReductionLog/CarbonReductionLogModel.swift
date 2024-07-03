@@ -13,6 +13,15 @@ protocol ColorFillTypeDelegate {
     func tapBackground(_ backgroundView:UIView, userdefultKey:String)
 }
 
+enum Notch: Int, CaseIterable {
+    case minimum, medium, maximum
+}
+
+struct ChooseObject {
+    var imageView:UIImageView
+    var userdefultKey:String
+}
+
 struct CarbonReductionLogInfo: Codable {
     var personalRecycleAmountAndTarget:[PersonalRecycleAmountAndTargetInfo]?
     var fix:FixInfo?

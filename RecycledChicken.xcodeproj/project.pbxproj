@@ -11,8 +11,11 @@
 		2537419D2C103FB900FA0933 /* MallProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2537419C2C103FB900FA0933 /* MallProduct.storyboard */; };
 		2537419F2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */; };
 		253741A12C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */; };
+		2580F5762C353DA4009309A1 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 2580F5752C353DA4009309A1 /* OverlayContainer */; };
 		2588F6BF2C197C3600636594 /* ConnectCompanyWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */; };
 		2588F6C12C197C3F00636594 /* ConnectCompanyWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */; };
+		25F535932C354872001FFE95 /* ChooseColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F535922C354872001FFE95 /* ChooseColorVC.swift */; };
+		25F535952C35487A001FFE95 /* ChooseColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F535942C35487A001FFE95 /* ChooseColor.storyboard */; };
 		33006BA82C24001600A8D742 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BA72C24001600A8D742 /* Kingfisher */; };
 		33006BAB2C24001F00A8D742 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BAA2C24001F00A8D742 /* SkeletonView */; };
 		33006BB92C2401A000A8D742 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BB82C2401A000A8D742 /* FirebaseAnalytics */; };
@@ -333,6 +336,8 @@
 		253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewPartnerProgressCell.swift; sourceTree = "<group>"; };
 		2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyWebViewVC.swift; sourceTree = "<group>"; };
 		2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectCompanyWebView.storyboard; sourceTree = "<group>"; };
+		25F535922C354872001FFE95 /* ChooseColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseColorVC.swift; sourceTree = "<group>"; };
+		25F535942C35487A001FFE95 /* ChooseColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseColor.storyboard; sourceTree = "<group>"; };
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
 		331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedContentVC.swift; sourceTree = "<group>"; };
 		331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedContent.storyboard; sourceTree = "<group>"; };
@@ -722,6 +727,7 @@
 				33006BBB2C2401A000A8D742 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				33006BE92C2401A000A8D742 /* FirebaseRemoteConfigSwift in Frameworks */,
 				33006BC72C2401A000A8D742 /* FirebaseAuthCombine-Community in Frameworks */,
+				2580F5762C353DA4009309A1 /* OverlayContainer in Frameworks */,
 				33006BD72C2401A000A8D742 /* FirebaseFunctions in Frameworks */,
 				33006BBF2C2401A000A8D742 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				33006BED2C2401A000A8D742 /* FirebaseStorageCombine-Community in Frameworks */,
@@ -1228,6 +1234,8 @@
 				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
 				59997A482A0917D300E9FD7F /* CarbonReductionLogVC.swift */,
 				59600ED12B9EE3C8009AFA76 /* CarbonReductionLog.storyboard */,
+				25F535922C354872001FFE95 /* ChooseColorVC.swift */,
+				25F535942C35487A001FFE95 /* ChooseColor.storyboard */,
 				59980BEF2B734712002FDF41 /* RecycledRingInfoView.swift */,
 				59600ED52B9EE3F7009AFA76 /* RecycledRingInfoView.xib */,
 				599EA5A92B81E1E0007AF30F /* CarbonReductionItemCellView.swift */,
@@ -1454,6 +1462,7 @@
 				33006BEA2C2401A000A8D742 /* FirebaseStorage */,
 				33006BEC2C2401A000A8D742 /* FirebaseStorageCombine-Community */,
 				33006BEE2C2401A000A8D742 /* FirebaseVertexAI-Preview */,
+				2580F5752C353DA4009309A1 /* OverlayContainer */,
 			);
 			productName = RecycledChicken;
 			productReference = 5926C57A2A04086400FAB49D /* RecycledChicken.app */;
@@ -1488,6 +1497,7 @@
 				33006BA62C24001600A8D742 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				33006BA92C24001F00A8D742 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				33006BB72C2401A000A8D742 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2580F5742C353DA4009309A1 /* XCRemoteSwiftPackageReference "OverlayContainer" */,
 			);
 			productRefGroup = 5926C57B2A04086400FAB49D /* Products */;
 			projectDirPath = "";
@@ -1541,6 +1551,7 @@
 				33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */,
 				59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */,
 				59600F372B9EED25009AFA76 /* AmountView.xib in Resources */,
+				25F535952C35487A001FFE95 /* ChooseColor.storyboard in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
 				59600F332B9EED12009AFA76 /* IconView.xib in Resources */,
 				59600EFF2B9EE5D1009AFA76 /* CustomCalenderViewCell.xib in Resources */,
@@ -1703,6 +1714,7 @@
 				59B682F32A76A0C7008F5135 /* ScanViewController.swift in Sources */,
 				59C2D9A32A0D37790085724F /* TaskVC.swift in Sources */,
 				59632D3C2B89EC070093BE6E /* LanguageSettingVC.swift in Sources */,
+				25F535932C354872001FFE95 /* ChooseColorVC.swift in Sources */,
 				599EA5AA2B81E1E0007AF30F /* CarbonReductionItemCellView.swift in Sources */,
 				59CDA3562A4591BC00E3F74E /* ConfirmPasswordModel.swift in Sources */,
 				5982A9562BBD319600CB2B08 /* ColorFillTypeOneCellView.swift in Sources */,
@@ -2776,6 +2788,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2580F5742C353DA4009309A1 /* XCRemoteSwiftPackageReference "OverlayContainer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/applidium/OverlayContainer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.2;
+			};
+		};
 		33006BA62C24001600A8D742 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -2803,6 +2823,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2580F5752C353DA4009309A1 /* OverlayContainer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2580F5742C353DA4009309A1 /* XCRemoteSwiftPackageReference "OverlayContainer" */;
+			productName = OverlayContainer;
+		};
 		33006BA72C24001600A8D742 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 33006BA62C24001600A8D742 /* XCRemoteSwiftPackageReference "Kingfisher" */;
