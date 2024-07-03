@@ -155,8 +155,8 @@ class CarbonReductionLogVC: CustomVC {
         recycleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         bottleItemCellView.setType(.bottle)
         batteryItemCellView.setType(.battery)
-//        papperCubItemCellView.setType(.papperCub)
         aluminumCanItemCellView.setType(.aluminumCan)
+        papperCubItemCellView.setType(.papperCub)
 //        publicTransportItemCellView.setType(.publicTransport)
         recycledRingInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
         recycledRingInfoView.layer.shadowOpacity = 0.2
@@ -279,7 +279,7 @@ extension CarbonReductionLogVC: ChooseColorVCDelete {
     func chooseColor(_ color: UIColor ) {
         guard let chooseObject = chooseObject else { return }
         UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
-        chooseObject.imageView.tintColor = selectedColor
+        chooseObject.imageView.tintColor = color
     }
 }
 
