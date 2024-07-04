@@ -39,7 +39,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JAg-tE-AkJ">
-                                <rect key="frame" x="0.0" y="89" width="393" height="729"/>
+                                <rect key="frame" x="0.0" y="99" width="393" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="6I1-Rh-f4C"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -49,10 +52,9 @@
                             <constraint firstItem="JAg-tE-AkJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5Ng-3t-3e0"/>
                             <constraint firstItem="nak-Ki-hse" firstAttribute="centerY" secondItem="TfA-EM-Df0" secondAttribute="centerY" id="8Jm-Uu-0On"/>
                             <constraint firstItem="TfA-EM-Df0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="FVh-F7-Tzm"/>
-                            <constraint firstItem="JAg-tE-AkJ" firstAttribute="top" secondItem="nak-Ki-hse" secondAttribute="bottom" id="KTf-kQ-Uqz"/>
+                            <constraint firstItem="JAg-tE-AkJ" firstAttribute="top" secondItem="nak-Ki-hse" secondAttribute="bottom" constant="10" id="KTf-kQ-Uqz"/>
                             <constraint firstItem="nak-Ki-hse" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bGQ-zw-Dtp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nak-Ki-hse" secondAttribute="trailing" constant="10" id="mAI-EN-PU3"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JAg-tE-AkJ" secondAttribute="bottom" id="rAt-Mr-SIz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JAg-tE-AkJ" secondAttribute="trailing" id="x8J-Xj-0ko"/>
                         </constraints>
                     </view>

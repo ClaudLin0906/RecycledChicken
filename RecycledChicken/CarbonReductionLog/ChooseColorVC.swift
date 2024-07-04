@@ -60,7 +60,6 @@ class ChooseColorVC: UIViewController {
         stackView.addArrangedSubview(batteryItemCellView)
         stackView.addArrangedSubview(papperCubItemCellView)
         stackView.addArrangedSubview(aluminumCanItemCellView)
-        stackView.addArrangedSubview(aluminumCanItemCellView)
     }
     
     @IBAction func confirm(_ sender:UIButton) {
@@ -78,6 +77,6 @@ class ChooseColorVC: UIViewController {
 
 extension ChooseColorVC:CarbonReductionItemCellViewDelegate {
     func tapItem(_ color: UIColor) {
-        delegate?.chooseColor(RecyceledSort.bottle.getInfo().color)
+        delegate?.chooseColor(color)
     }
 }
