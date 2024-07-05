@@ -36,9 +36,7 @@ class CarbonReductionLogVC: CustomVC {
     @IBOutlet weak var bottomLineSpace:NSLayoutConstraint!
     
     @IBOutlet weak var convertVauleLabel:UILabel!
-    
-    private  var selectedColor:UIColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
-    
+        
     private var colorFillTypeOneView = ColorFillTypeOneView()
     
     private var colorFillTypeTwoView:ColorFillTypeTwoView = {
@@ -64,7 +62,7 @@ class CarbonReductionLogVC: CustomVC {
     private var maskView:UIView = {
         let v = UIView(frame: UIScreen.main.bounds)
         v.isHidden = true
-        v.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7971088435)
+        v.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7)
         return v
     }()
     
@@ -209,8 +207,6 @@ class CarbonReductionLogVC: CustomVC {
             bottomLineSpace.constant = -5
         }
         keyWindow?.addSubview(maskView)
-//        "Congratulations!\n恭喜你電池回收量\n超額完成!"
-        // Do any additional setup after loading the view.
     }
     
     private func getCarbonReductionRecords(completion: @escaping () -> Void) {
@@ -291,35 +287,22 @@ class CarbonReductionLogVC: CustomVC {
         itemDropDown.show()
     }
     
+    private func startViewHanle(_ v:UIView?, _ imageView:UIImageView?, _ userdefultKey: String) {
+        chooseObject = nil
+        if let v = v {
+            chooseObject = ChooseObject(backgroundView: v, userdefultKey: userdefultKey)
+        }
+        if let imageView = imageView {
+            chooseObject = ChooseObject(imageView: imageView, userdefultKey: userdefultKey)
+        }
+        maskView.isHidden = false
+    }
+    
     private func finishViewHandle() {
         maskView.isHidden = true
     }
-}
-
-extension CarbonReductionLogVC: ChooseColorVCDelete {
     
-    func comfirm() {
-        finishViewHandle()
-    }
-    
-    func cancel() {
-        finishViewHandle()
-    }
-    
-    func chooseColor(_ color: UIColor) {
-        guard let chooseObject = chooseObject else { return }
-        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
-        chooseObject.imageView.image = chooseObject.imageView.image?.withRenderingMode(.alwaysTemplate)
-        chooseObject.imageView.tintColor = color
-    }
-}
-
-extension CarbonReductionLogVC: ColorFillTypeDelegate {
-    
-    func tapImage(_ imageView: UIImageView, userdefultKey: String) {
-        chooseObject = nil
-        chooseObject = ChooseObject(imageView: imageView, userdefultKey: userdefultKey)
-        maskView.isHidden = false
+    private func goChooseColorVC() {
         if let VC = UIStoryboard(name: "ChooseColor", bundle: Bundle.main).instantiateViewController(identifier: "ChooseColor") as? ChooseColorVC {
             VC.delegate = self
             let container = OverlayContainerViewController()
@@ -330,10 +313,43 @@ extension CarbonReductionLogVC: ColorFillTypeDelegate {
             present(container, animated: true, completion: nil)
         }
     }
+}
+
+extension CarbonReductionLogVC: ChooseColorVCDelete {
+    
+    func comfirm(_ color: UIColor) {
+        finishViewHandle()
+        guard let chooseObject = chooseObject else { return }
+        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
+    }
+    
+    func cancel() {
+        finishViewHandle()
+    }
+    
+    func chooseColor(_ color: UIColor) {
+        guard let chooseObject = chooseObject else { return }
+        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
+        if let imageView = chooseObject.imageView {
+            imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
+            imageView.tintColor = color
+        }
+        if let backgroundView = chooseObject.backgroundView {
+            backgroundView.backgroundColor = color
+        }
+    }
+}
+
+extension CarbonReductionLogVC: ColorFillTypeDelegate {
+    
+    func tapImage(_ imageView: UIImageView, userdefultKey: String) {
+        startViewHanle(nil, imageView, userdefultKey)
+        goChooseColorVC()
+    }
     
     func tapBackground(_ backgroundView: UIView, userdefultKey: String) {
-        UserDefaults().setColor(selectedColor, forKey: userdefultKey)
-        backgroundView.backgroundColor = selectedColor
+        startViewHanle(backgroundView, nil, userdefultKey)
+        goChooseColorVC()
     }
     
 }

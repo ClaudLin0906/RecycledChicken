@@ -18,7 +18,8 @@ enum Notch: Int, CaseIterable {
 }
 
 struct ChooseObject {
-    var imageView:UIImageView
+    var imageView:UIImageView?
+    var backgroundView:UIView?
     var userdefultKey:String
 }
 
