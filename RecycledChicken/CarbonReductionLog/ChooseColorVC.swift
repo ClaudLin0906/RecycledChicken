@@ -9,6 +9,7 @@ import UIKit
 
 protocol ChooseColorVCDelete {
     func chooseColor(_ color:UIColor )
+    func cancel()
 }
 
 class ChooseColorVC: UIViewController {
@@ -69,6 +70,7 @@ class ChooseColorVC: UIViewController {
     }
 
     @IBAction func cancel(_ sender:UIButton) {
+        delegate?.cancel()
         self.dismiss(animated: true)
     }
 

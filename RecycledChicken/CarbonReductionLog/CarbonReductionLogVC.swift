@@ -59,6 +59,13 @@ class CarbonReductionLogVC: CustomVC {
         return colorFillTypeFourView
     }()
     
+    private var maskView:UIView = {
+        let v = UIView(frame: UIScreen.main.bounds)
+        v.isHidden = true
+        v.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7971088435)
+        return v
+    }()
+    
     private lazy var colorFillTypeViews = [colorFillTypeTwoView, colorFillTypeOneView, colorFillTypeThreeView, colorFillTypeFourView]
         
     private var colorFillScroViewIndex = 0
@@ -192,6 +199,7 @@ class CarbonReductionLogVC: CustomVC {
             recycleBtnWidth.constant = 200
             bottomLineSpace.constant = -5
         }
+        keyWindow?.addSubview(maskView)
 //        "Congratulations!\n恭喜你電池回收量\n超額完成!"
         // Do any additional setup after loading the view.
     }
@@ -276,10 +284,16 @@ class CarbonReductionLogVC: CustomVC {
 }
 
 extension CarbonReductionLogVC: ChooseColorVCDelete {
-    func chooseColor(_ color: UIColor ) {
+    func cancel() {
+        maskView.isHidden = true
+    }
+    
+    func chooseColor(_ color: UIColor) {
         guard let chooseObject = chooseObject else { return }
-        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
+//        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
+        chooseObject.imageView.image = chooseObject.imageView.image?.withRenderingMode(.alwaysTemplate)
         chooseObject.imageView.tintColor = color
+        maskView.isHidden = true
     }
 }
 
@@ -288,6 +302,7 @@ extension CarbonReductionLogVC: ColorFillTypeDelegate {
     func tapImage(_ imageView: UIImageView, userdefultKey: String) {
         chooseObject = nil
         chooseObject = ChooseObject(imageView: imageView, userdefultKey: userdefultKey)
+        maskView.isHidden = false
         if let VC = UIStoryboard(name: "ChooseColor", bundle: Bundle.main).instantiateViewController(identifier: "ChooseColor") as? ChooseColorVC {
             VC.delegate = self
             let container = OverlayContainerViewController()
