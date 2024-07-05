@@ -73,8 +73,8 @@ class RecycleLogVC: CustomVC {
         
         var integratedDict: [Date: (battery: Int, bottle: Int, coloredBottle:Int, colorlessBottle: Int, can: Int)] = [:]
         
-        for datum in data {
-            if let datmTime = datum.time, let date = dateFromString(datmTime){
+        data.forEach { datum in
+            if let datmTime = datum.time, let date = dateFromString(datmTime) {
                 let dayComponent = Calendar.current.startOfDay(for: date)
                 if var existingValues = integratedDict[dayComponent] {
                     existingValues.battery += datum.recycleDetails?.battery ?? 0
@@ -89,29 +89,21 @@ class RecycleLogVC: CustomVC {
             }
         }
         
-        for dateKey in integratedDict.keys {
+        integratedDict.keys.forEach { dateKey in
             if let info = integratedDict[dateKey] {
-                var recycleLogInfo = RecycleLogInfo(time: dateKey)
                 if info.battery > 0 {
+                    var recycleLogInfo = RecycleLogInfo(time: dateKey)
                     recycleLogInfo.battery = info.battery
                     recycleLogInfos.append(recycleLogInfo)
                 }
-                if info.bottle > 0 {
-                    recycleLogInfo.bottle = info.bottle
+                if info.bottle > 0 || info.coloredBottle > 0 || info.colorlessBottle > 0 {
+                    var recycleLogInfo = RecycleLogInfo(time: dateKey)
+                    let count = info.bottle + info.coloredBottle + info.coloredBottle
+                    recycleLogInfo.bottle = count
                     recycleLogInfos.append(recycleLogInfo)
                 }
-                
-                if info.coloredBottle > 0 {
-                    recycleLogInfo.coloredBottle = info.coloredBottle
-                    recycleLogInfos.append(recycleLogInfo)
-                }
-                
-                if info.colorlessBottle > 0 {
-                    recycleLogInfo.colorlessBottle = info.colorlessBottle
-                    recycleLogInfos.append(recycleLogInfo)
-                }
-                
                 if info.can > 0 {
+                    var recycleLogInfo = RecycleLogInfo(time: dateKey)
                     recycleLogInfo.can = info.can
                     recycleLogInfos.append(recycleLogInfo)
                 }
