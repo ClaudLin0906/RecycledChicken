@@ -281,19 +281,27 @@ class CarbonReductionLogVC: CustomVC {
     @IBAction func changeItem(_ tap: UITapGestureRecognizer) {
         itemDropDown.show()
     }
+    
+    private func finishViewHandle() {
+        maskView.isHidden = true
+    }
 }
 
 extension CarbonReductionLogVC: ChooseColorVCDelete {
+    
+    func comfirm() {
+        finishViewHandle()
+    }
+    
     func cancel() {
-        maskView.isHidden = true
+        finishViewHandle()
     }
     
     func chooseColor(_ color: UIColor) {
         guard let chooseObject = chooseObject else { return }
-//        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
+        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
         chooseObject.imageView.image = chooseObject.imageView.image?.withRenderingMode(.alwaysTemplate)
         chooseObject.imageView.tintColor = color
-        maskView.isHidden = true
     }
 }
 

@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ChooseColorVCDelete {
+    func comfirm()
     func chooseColor(_ color:UIColor )
     func cancel()
 }
@@ -66,6 +67,7 @@ class ChooseColorVC: UIViewController {
     @IBAction func confirm(_ sender:UIButton) {
 //        guard let selectedColor = selectedColor else { return }
 //        delegate?.chooseColor(selectedColor)
+        delegate?.comfirm()
         self.dismiss(animated: true)
     }
 
