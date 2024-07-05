@@ -59,6 +59,8 @@ class CarbonReductionLogVC: CustomVC {
         return colorFillTypeFourView
     }()
     
+    private lazy var colorFillViews = [colorFillTypeTwoView, colorFillTypeThreeView , colorFillTypeFourView, colorFillTypeOneView]
+    
     private var maskView:UIView = {
         let v = UIView(frame: UIScreen.main.bounds)
         v.isHidden = true
@@ -168,18 +170,25 @@ class CarbonReductionLogVC: CustomVC {
         recycledRingInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
         recycledRingInfoView.layer.shadowOpacity = 0.2
         if let frame = colorFillScrollView.subviews.first?.subviews[0].frame {
-            colorFillTypeTwoView.frame = frame
-            colorFillTypeOneView.frame = frame
-            colorFillTypeThreeView.frame = frame
-            colorFillTypeFourView.frame = frame
-            colorFillTypeOneView.delegate = self
-            colorFillTypeTwoView.delegate = self
-            colorFillTypeThreeView.delegate = self
-            colorFillTypeFourView.delegate = self
-            colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
-            colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
-            colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
-            colorFillScrollView.subviews.first?.subviews[3].addSubview(colorFillTypeOneView)
+            colorFillViews.forEach { v in
+                v.frame = frame
+                if v == colorFillTypeTwoView, let colorFillView = v as? ColorFillTypeTwoView {
+                    colorFillView.delegate = self
+                    colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
+                }
+                if v == colorFillTypeThreeView, let colorFillView = v as? ColorFillTypeThreeView {
+                    colorFillView.delegate = self
+                    colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
+                }
+                if v == colorFillTypeFourView, let colorFillView = v as? ColorFillTypeFourView {
+                    colorFillView.delegate = self
+                    colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
+                }
+                if v == colorFillTypeOneView, let colorFillView = v as? ColorFillTypeOneView {
+                    colorFillView.delegate = self
+                    colorFillScrollView.subviews.first?.subviews[3].addSubview(colorFillTypeOneView)
+                }
+            }
         }
         itemDropDown.anchorView = dropDownView
         itemDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
@@ -317,7 +326,6 @@ extension CarbonReductionLogVC: ColorFillTypeDelegate {
             container.viewControllers = [VC]
             container.delegate = self
             container.moveOverlay(toNotchAt: Notch.minimum.rawValue, animated: false)
-            container.transitioningDelegate = self
             container.modalPresentationStyle = .custom
             present(container, animated: true, completion: nil)
         }
@@ -327,10 +335,6 @@ extension CarbonReductionLogVC: ColorFillTypeDelegate {
         UserDefaults().setColor(selectedColor, forKey: userdefultKey)
         backgroundView.backgroundColor = selectedColor
     }
-    
-}
-
-extension CarbonReductionLogVC: UIViewControllerTransitioningDelegate {
     
 }
 
