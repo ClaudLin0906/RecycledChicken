@@ -41,8 +41,8 @@ class RecycleLogTableViewCell: UITableViewCell {
         }
         
         if let can = can {
-            recycledItemLabel.text = "紙杯"
-            amountLabel.text = "杯數:\(can)"
+            recycledItemLabel.text = "鋁罐"
+            amountLabel.text = "罐數:\(can)"
         }
     
     }
