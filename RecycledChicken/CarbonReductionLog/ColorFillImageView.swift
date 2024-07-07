@@ -15,6 +15,7 @@ class ColorFillImageView: UIImageView {
             guard newValue != "" else { return }
             if let color = UserDefaults().colorForKey(newValue) {
                 self.image = self.image?.withTintColor(color, renderingMode: .alwaysTemplate)
+                self.tintColor = color
             }
         }
     }

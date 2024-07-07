@@ -34,38 +34,6 @@
             endingLineNumber = "221"
             landmarkName = "textFieldDidChange(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "56F268F2-13C5-4050-AB75-254B455420A7 - 61707158afc209a1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.StationListVC.textFieldDidChange(__C.UITextField) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/StationList/StationListVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "400">
-               </Location>
-               <Location
-                  uuid = "56F268F2-13C5-4050-AB75-254B455420A7 - 61707158afc209a1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.StationListVC.textFieldDidChange(__C.UITextField) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/StationList/StationListVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "221"
-                  endingLineNumber = "221"
-                  offsetFromSymbolStart = "487">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -82,38 +50,6 @@
             endingLineNumber = "37"
             landmarkName = "confirm(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "92B9E347-3FC0-4216-A62C-590D54D33517 - 55bd19c20b86a8ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.DeleteAllMessageAlertView.confirm(RecycledChicken.CustomButton) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/PersonMessage/DeleteAllMessageAlertView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "92B9E347-3FC0-4216-A62C-590D54D33517 - 55bd19c20b86a8ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RecycledChicken.DeleteAllMessageAlertView.confirm(RecycledChicken.CustomButton) -&gt; ()"
-                  moduleName = "RecycledChicken"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/PersonMessage/DeleteAllMessageAlertView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "65">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
