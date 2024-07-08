@@ -137,7 +137,26 @@ class CarbonReductionLogVC: CustomVC {
             itemDropDown.dataSource.removeAll()
             itemDropDown.dataSource.append(contentsOf: itemNames)
             changeType()
+            reloadItemCellViewValue()
         })
+    }
+    
+    private func reloadItemCellViewValue() {
+        if let numberOfColorsCounts = getNumberOfColorsCounts() {
+            numberOfColorsCounts.forEach { numberOfColorsCount in
+                let count = numberOfColorsCount.count
+                switch numberOfColorsCount.recycleType {
+                case .bottle:
+                    bottleItemCellView.setCount(count)
+                case .battery:
+                    batteryItemCellView.setCount(count)
+                case .papperCub:
+                    papperCubItemCellView.setCount(count)
+                case .aluminumCan:
+                    aluminumCanItemCellView.setCount(count)
+                }
+            }
+        }
     }
     
     private func getRecyceledSortInfo(_ itemName:String) -> RecyceledSort? {
@@ -310,35 +329,34 @@ class CarbonReductionLogVC: CustomVC {
         maskView.isHidden = true
     }
     
-    private func getNumberOfColorsCount() -> [NumberOfColorsCount]? {
+    private func getNumberOfColorsCounts() -> [NumberOfColorsCount]? {
         guard let carbonReductionLogInfo = carbonReductionLogInfo, let personalRecycleAmountAndTargets = carbonReductionLogInfo.personalRecycleAmountAndTarget else { return nil }
         var numberOfColorsCounts:[NumberOfColorsCount] = []
         personalRecycleAmountAndTargets.forEach { info in
             guard let totalRecycled = info.totalRecycled, totalRecycled > 0, let itemName = info.itemName, let recyceledSort = getRecyceledSortInfo(itemName) else { return }
             var total = 0
+            let colorCount = totalRecycled / 20
             switch recyceledSort {
             case .bottle:
-                total = totalRecycled - colorBottleUseCount
+                total = colorCount - colorBottleUseCount
             case .battery:
-                total = totalRecycled - colorlessBatteryCount
+                total = colorCount - colorlessBatteryCount
             case .papperCub:
-                total = totalRecycled - colorPapperCubUseCount
+                total = colorCount - colorPapperCubUseCount
             case .aluminumCan:
-                total = totalRecycled - colorAluminumCanUseCount
+                total = colorCount - colorAluminumCanUseCount
             }
-            if total > 0 {
-                let numberOfColorsCount = NumberOfColorsCount(recycleType: recyceledSort, count: totalRecycled)
-                numberOfColorsCounts.append(numberOfColorsCount)
-            }
+            let numberOfColorsCount = NumberOfColorsCount(recycleType: recyceledSort, count: total)
+            numberOfColorsCounts.append(numberOfColorsCount)
         }
         return numberOfColorsCounts
     }
     
     private func goChooseColorVC() {
-        guard let numberOfColorsCount = getNumberOfColorsCount() else { return }
+        guard let numberOfColorsCounts = getNumberOfColorsCounts() else { return }
         if let VC = UIStoryboard(name: "ChooseColor", bundle: Bundle.main).instantiateViewController(identifier: "ChooseColor") as? ChooseColorVC {
             VC.delegate = self
-            VC.setNumberOfColorsCount(numberOfColorsCount)
+            VC.setNumberOfColorsCounts(numberOfColorsCounts)
             let container = OverlayContainerViewController()
             container.viewControllers = [VC]
             container.delegate = self
@@ -365,6 +383,7 @@ extension CarbonReductionLogVC: ChooseColorVCDelete {
         case .aluminumCan:
             colorAluminumCanUseCount += 1
         }
+        reloadItemCellViewValue()
     }
     
     func cancel() {
@@ -401,18 +420,20 @@ extension CarbonReductionLogVC: ColorFillTypeDelegate {
 extension CarbonReductionLogVC: OverlayTransitioningDelegate, OverlayContainerViewControllerDelegate, OverlayContainerSheetPresentationControllerDelegate {
     
     func overlayContainerViewController(_ containerViewController: OverlayContainer.OverlayContainerViewController, heightForNotchAt index: Int, availableSpace: CGFloat) -> CGFloat {
-        switch Notch.allCases[index] {
-        case .minimum:
-            return 150
-        case .medium:
-            return 300
-        case .maximum:
-            return availableSpace - 200
-        }
+        150
+//        switch Notch.allCases[index] {
+//        case .minimum:
+//            return 150
+//        case .medium:
+//            return 300
+//        case .maximum:
+//            return availableSpace - 200
+//        }
     }
     
     func numberOfNotches(in containerViewController: OverlayContainerViewController) -> Int {
-        Notch.allCases.count
+//        Notch.allCases.count
+        1
     }
     
 }

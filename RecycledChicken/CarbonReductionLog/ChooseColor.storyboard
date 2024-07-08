@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfA-EM-Df0">
-                                <rect key="frame" x="10" y="59" width="30" height="30"/>
+                                <rect key="frame" x="20" y="59" width="30" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="取消"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nak-Ki-hse">
-                                <rect key="frame" x="353" y="59" width="30" height="30"/>
+                                <rect key="frame" x="343" y="59" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ugs-db-6e0"/>
                                 </constraints>
@@ -38,6 +38,17 @@
                                     <action selector="confirm:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8iC-YH-vik"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前回收量不足" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVP-4p-Dqa" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="179" width="393" height="639"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="19"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JAg-tE-AkJ">
                                 <rect key="frame" x="0.0" y="99" width="393" height="80"/>
                                 <constraints>
@@ -48,18 +59,23 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="lVP-4p-Dqa" firstAttribute="top" secondItem="JAg-tE-AkJ" secondAttribute="bottom" id="0H9-iM-OJo"/>
                             <constraint firstItem="TfA-EM-Df0" firstAttribute="height" secondItem="nak-Ki-hse" secondAttribute="height" id="3XQ-oi-caU"/>
                             <constraint firstItem="JAg-tE-AkJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5Ng-3t-3e0"/>
                             <constraint firstItem="nak-Ki-hse" firstAttribute="centerY" secondItem="TfA-EM-Df0" secondAttribute="centerY" id="8Jm-Uu-0On"/>
-                            <constraint firstItem="TfA-EM-Df0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="FVh-F7-Tzm"/>
+                            <constraint firstItem="lVP-4p-Dqa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="E7O-u9-UCv"/>
+                            <constraint firstItem="TfA-EM-Df0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="FVh-F7-Tzm"/>
                             <constraint firstItem="JAg-tE-AkJ" firstAttribute="top" secondItem="nak-Ki-hse" secondAttribute="bottom" constant="10" id="KTf-kQ-Uqz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lVP-4p-Dqa" secondAttribute="bottom" id="X4P-jk-hU5"/>
                             <constraint firstItem="nak-Ki-hse" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bGQ-zw-Dtp"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nak-Ki-hse" secondAttribute="trailing" constant="10" id="mAI-EN-PU3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lVP-4p-Dqa" secondAttribute="trailing" id="lXr-OA-Sib"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nak-Ki-hse" secondAttribute="trailing" constant="20" id="mAI-EN-PU3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JAg-tE-AkJ" secondAttribute="trailing" id="x8J-Xj-0ko"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R4G-o9-RFo"/>
                     <connections>
+                        <outlet property="alertLabel" destination="lVP-4p-Dqa" id="9mx-cT-ugT"/>
                         <outlet property="stackView" destination="JAg-tE-AkJ" id="nMJ-Q3-csT"/>
                     </connections>
                 </viewController>

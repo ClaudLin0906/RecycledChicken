@@ -19,6 +19,8 @@ class ChooseColorVC: UIViewController {
     
     @IBOutlet weak var stackView:UIStackView!
     
+    @IBOutlet weak var alertLabel:CustomLabel!
+    
     private var numberOfColorsCounts:[NumberOfColorsCount] = []
     
     private var selectedRecyceledSort:RecyceledSort?
@@ -40,7 +42,11 @@ class ChooseColorVC: UIViewController {
     }
     
     private func addItemCellView() {
-        guard numberOfColorsCounts.count > 0 else { return }
+        guard numberOfColorsCounts.count > 0 else {
+            alertLabel.isHidden = false
+            return
+        }
+        alertLabel.isHidden = true
         stackView.removeFullyAllArrangedSubviews()
         numberOfColorsCounts.forEach { numberOfColorsCount in
             let carbonReductionItem = carbonReductionItemInit()
@@ -50,9 +56,10 @@ class ChooseColorVC: UIViewController {
         }
     }
     
-    func setNumberOfColorsCount(_ numberOfColorsCounts:[NumberOfColorsCount]) {
+    func setNumberOfColorsCounts(_ numberOfColorsCounts:[NumberOfColorsCount]) {
         self.numberOfColorsCounts.removeAll()
-        self.numberOfColorsCounts.append(contentsOf: numberOfColorsCounts)
+        let biggerZeroNumberOfColor = numberOfColorsCounts.filter({$0.count > 0})
+        self.numberOfColorsCounts.append(contentsOf: biggerZeroNumberOfColor)
     }
     
     @IBAction func confirm(_ sender:UIButton) {
