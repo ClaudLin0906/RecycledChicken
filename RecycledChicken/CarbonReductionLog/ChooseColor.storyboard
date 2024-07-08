@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前回收量不足" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVP-4p-Dqa" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="179" width="393" height="639"/>
+                                <rect key="frame" x="0.0" y="99" width="393" height="80"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,16 +59,16 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lVP-4p-Dqa" firstAttribute="top" secondItem="JAg-tE-AkJ" secondAttribute="bottom" id="0H9-iM-OJo"/>
                             <constraint firstItem="TfA-EM-Df0" firstAttribute="height" secondItem="nak-Ki-hse" secondAttribute="height" id="3XQ-oi-caU"/>
+                            <constraint firstItem="lVP-4p-Dqa" firstAttribute="centerY" secondItem="JAg-tE-AkJ" secondAttribute="centerY" id="52n-bc-u9V"/>
                             <constraint firstItem="JAg-tE-AkJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5Ng-3t-3e0"/>
                             <constraint firstItem="nak-Ki-hse" firstAttribute="centerY" secondItem="TfA-EM-Df0" secondAttribute="centerY" id="8Jm-Uu-0On"/>
-                            <constraint firstItem="lVP-4p-Dqa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="E7O-u9-UCv"/>
                             <constraint firstItem="TfA-EM-Df0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="FVh-F7-Tzm"/>
+                            <constraint firstItem="lVP-4p-Dqa" firstAttribute="height" secondItem="JAg-tE-AkJ" secondAttribute="height" id="JM5-U9-frJ"/>
                             <constraint firstItem="JAg-tE-AkJ" firstAttribute="top" secondItem="nak-Ki-hse" secondAttribute="bottom" constant="10" id="KTf-kQ-Uqz"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lVP-4p-Dqa" secondAttribute="bottom" id="X4P-jk-hU5"/>
+                            <constraint firstItem="lVP-4p-Dqa" firstAttribute="width" secondItem="JAg-tE-AkJ" secondAttribute="width" id="NFM-C3-Rcv"/>
+                            <constraint firstItem="lVP-4p-Dqa" firstAttribute="centerX" secondItem="JAg-tE-AkJ" secondAttribute="centerX" id="ZjI-ec-ISJ"/>
                             <constraint firstItem="nak-Ki-hse" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="bGQ-zw-Dtp"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lVP-4p-Dqa" secondAttribute="trailing" id="lXr-OA-Sib"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nak-Ki-hse" secondAttribute="trailing" constant="20" id="mAI-EN-PU3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JAg-tE-AkJ" secondAttribute="trailing" id="x8J-Xj-0ko"/>
                         </constraints>

@@ -64,6 +64,7 @@ class ChooseColorVC: UIViewController {
     
     @IBAction func confirm(_ sender:UIButton) {
         guard let selectedRecyceledSort = selectedRecyceledSort else {
+            delegate?.cancel()
             self.dismiss(animated: true)
             return
         }
