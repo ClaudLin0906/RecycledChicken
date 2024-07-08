@@ -108,6 +108,8 @@ class CarbonReductionLogVC: CustomVC {
 //    private var publicTransportCount = 0
     
     private var chooseObject:ChooseObject?
+    
+    @UserDefault(UserDefaultKey.shared.numberOfColorsUsed, defaultValue: nil) var numberOfColorsUsed:NumberOfColorsUsed?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -302,22 +304,22 @@ class CarbonReductionLogVC: CustomVC {
         maskView.isHidden = true
     }
     
-    private func getNumberOfColorsUseds() -> [NumberOfColorsUsed]? {
+    private func getNumberOfColorsCount() -> [NumberOfColorsCount]? {
         guard let carbonReductionLogInfo = carbonReductionLogInfo, let personalRecycleAmountAndTargets = carbonReductionLogInfo.personalRecycleAmountAndTarget else { return nil }
-        var numberOfColorsUseds:[NumberOfColorsUsed] = []
+        var numberOfColorsCounts:[NumberOfColorsCount] = []
         personalRecycleAmountAndTargets.forEach { info in
             guard let totalRecycled = info.totalRecycled, totalRecycled > 0, let itemName = info.itemName, let recyceledSort = getRecyceledSortInfo(itemName) else { return }
-            let numberOfColorsUsed = NumberOfColorsUsed(recycleType: recyceledSort, count: totalRecycled)
-            numberOfColorsUseds.append(numberOfColorsUsed)
+            let numberOfColorsCount = NumberOfColorsCount(recycleType: recyceledSort, count: totalRecycled)
+            numberOfColorsCounts.append(numberOfColorsCount)
         }
-        return numberOfColorsUseds
+        return numberOfColorsCounts
     }
     
     private func goChooseColorVC() {
-        guard let numberOfColorsUseds = getNumberOfColorsUseds() else { return }
+        guard let numberOfColorsCount = getNumberOfColorsCount() else { return }
         if let VC = UIStoryboard(name: "ChooseColor", bundle: Bundle.main).instantiateViewController(identifier: "ChooseColor") as? ChooseColorVC {
             VC.delegate = self
-            VC.setNumberOfColorsUsed(numberOfColorsUseds)
+            VC.setNumberOfColorsCount(numberOfColorsCount)
             let container = OverlayContainerViewController()
             container.viewControllers = [VC]
             container.delegate = self

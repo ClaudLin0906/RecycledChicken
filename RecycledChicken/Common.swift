@@ -240,6 +240,7 @@ class UserDefaultKey {
     let colorFillTypeOne = "colorFillTypeOne"
     let colorFillTypeThree = "colorFillTypeThree"
     let colorFillTypeFour = "colorFillTypeFour"
+    let numberOfColorsUsed = "numberOfColorsUsed"
     let oneCellViewImageViewOfColorFillTypeOneView = "oneCellViewImageViewOfColorFillTypeOneView"
     let oneCellViewBackgroundOfColorFillTypeOneView = "oneCellViewBackgroundOfColorFillTypeOneView"
     let twoCellViewImageViewOfColorFillTypeOneView = "twoCellViewImageViewOfColorFillTypeOneView"

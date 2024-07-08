@@ -19,7 +19,7 @@ class ChooseColorVC: UIViewController {
     
     @IBOutlet weak var stackView:UIStackView!
     
-    private var numberOfColorsUseds:[NumberOfColorsUsed] = []
+    private var numberOfColorsCounts:[NumberOfColorsCount] = []
 
     private  var selectedColor:UIColor?
 
@@ -40,23 +40,26 @@ class ChooseColorVC: UIViewController {
     }
     
     private func addItemCellView() {
-        guard numberOfColorsUseds.count > 0 else { return }
+        guard numberOfColorsCounts.count > 0 else { return }
         stackView.removeFullyAllArrangedSubviews()
-        numberOfColorsUseds.forEach { numberOfColorsUsed in
+        numberOfColorsCounts.forEach { numberOfColorsCount in
             let carbonReductionItem = carbonReductionItemInit()
-            carbonReductionItem.setType(numberOfColorsUsed.recycleType)
-            carbonReductionItem.setCount(numberOfColorsUsed.count)
+            carbonReductionItem.setType(numberOfColorsCount.recycleType)
+            carbonReductionItem.setCount(numberOfColorsCount.count)
             stackView.addArrangedSubview(carbonReductionItem)
         }
     }
     
-    func setNumberOfColorsUsed(_ numberOfColorsUseds:[NumberOfColorsUsed]) {
-        self.numberOfColorsUseds.removeAll()
-        self.numberOfColorsUseds.append(contentsOf: numberOfColorsUseds)
+    func setNumberOfColorsCount(_ numberOfColorsCounts:[NumberOfColorsCount]) {
+        self.numberOfColorsCounts.removeAll()
+        self.numberOfColorsCounts.append(contentsOf: numberOfColorsCounts)
     }
     
     @IBAction func confirm(_ sender:UIButton) {
-        guard let selectedColor = selectedColor else { return }
+        guard let selectedColor = selectedColor else {
+            self.dismiss(animated: true)
+            return
+        }
         delegate?.comfirm(selectedColor)
         self.dismiss(animated: true)
     }
@@ -67,7 +70,6 @@ class ChooseColorVC: UIViewController {
     }
 
 }
-
 
 extension ChooseColorVC:CarbonReductionItemCellViewDelegate {
     func tapItem(_ color: UIColor) {
