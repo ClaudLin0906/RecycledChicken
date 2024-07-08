@@ -64,6 +64,8 @@ class HomeVC: CustomRootVC {
 
     @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: "") var displayToday:String
         
+    @UserDefault(UserDefaultKey.shared.oldChickenLevel, defaultValue: nil) var oldChickenLevel:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -145,13 +147,12 @@ class HomeVC: CustomRootVC {
         var showChicken = true
         guard let currentChickenLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel?.rawValue else { return }
         
-        if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) != nil {
-            let oldChickenLevel = UserDefaults().integer(forKey: UserDefaultKey.shared.oldChickenLevel)
+        if let oldChickenLevel = oldChickenLevel {
             if currentChickenLevel <= oldChickenLevel {
                 showChicken = false
             }
         }
-        UserDefaults().set(currentChickenLevel, forKey: UserDefaultKey.shared.oldChickenLevel)
+        oldChickenLevel = currentChickenLevel
         if showChicken {
             let chickeIntroduceView = ChickeIntroduceView(frame: UIScreen.main.bounds)
             fadeInOutAni(showView: chickeIntroduceView, finishAction: nil)

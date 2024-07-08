@@ -74,7 +74,7 @@ class LoginVC: CustomLoginVC {
     private func loginSuccess() {
         DispatchQueue.main.async { [self] in
             if keepLoginCheckBox.checkState == .checked {
-                UserDefaults().set(true, forKey: UserDefaultKey.shared.biometrics)
+                biometrics = true
                 if let accountInfo = try? CurrentUserInfo.shared.currentAccountInfo.jsonString {
                     let _ = KeychainService.shared.saveJsonToKeychain(jsonString: accountInfo, account: KeyChainKey.shared.accountInfo)
                 }

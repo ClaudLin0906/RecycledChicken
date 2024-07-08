@@ -99,7 +99,7 @@ class CarbonReductionLogVC: CustomVC {
     
     private var colorlessBottle = 0
     
-    private var colorlessBottleCount = 0
+    private var colorlessBatteryCount = 0
         
 //    private var cupCount = 0
     
@@ -109,7 +109,13 @@ class CarbonReductionLogVC: CustomVC {
     
     private var chooseObject:ChooseObject?
     
-    @UserDefault(UserDefaultKey.shared.numberOfColorsUsed, defaultValue: nil) var numberOfColorsUsed:NumberOfColorsUsed?
+    @UserDefault(UserDefaultKey.shared.colorBottleUseCount, defaultValue: 0) var colorBottleUseCount:Int
+    
+    @UserDefault(UserDefaultKey.shared.colorBatteryUseCount, defaultValue: 0) var colorBatteryUseCount:Int
+    
+    @UserDefault(UserDefaultKey.shared.colorPapperCubUseCount, defaultValue: 0) var colorPapperCubUseCount:Int
+    
+    @UserDefault(UserDefaultKey.shared.colorAluminumCanUseCount, defaultValue: 0) var colorAluminumCanUseCount:Int
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -309,8 +315,21 @@ class CarbonReductionLogVC: CustomVC {
         var numberOfColorsCounts:[NumberOfColorsCount] = []
         personalRecycleAmountAndTargets.forEach { info in
             guard let totalRecycled = info.totalRecycled, totalRecycled > 0, let itemName = info.itemName, let recyceledSort = getRecyceledSortInfo(itemName) else { return }
-            let numberOfColorsCount = NumberOfColorsCount(recycleType: recyceledSort, count: totalRecycled)
-            numberOfColorsCounts.append(numberOfColorsCount)
+            var total = 0
+            switch recyceledSort {
+            case .bottle:
+                total = totalRecycled - colorBottleUseCount
+            case .battery:
+                total = totalRecycled - colorlessBatteryCount
+            case .papperCub:
+                total = totalRecycled - colorPapperCubUseCount
+            case .aluminumCan:
+                total = totalRecycled - colorAluminumCanUseCount
+            }
+            if total > 0 {
+                let numberOfColorsCount = NumberOfColorsCount(recycleType: recyceledSort, count: totalRecycled)
+                numberOfColorsCounts.append(numberOfColorsCount)
+            }
         }
         return numberOfColorsCounts
     }

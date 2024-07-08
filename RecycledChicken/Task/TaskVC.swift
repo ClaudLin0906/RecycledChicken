@@ -17,7 +17,7 @@ class TaskVC: CustomRootVC {
     
     private var taskInfos:[TaskInfo] = []
     
-    @UserDefault(UserDefaultKey.shared.finishTasks, defaultValue: []) var currentFinishTaskss:[String]
+    @UserDefault(UserDefaultKey.shared.finishTasks, defaultValue: []) var currentFinishTasks:[String]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +59,8 @@ class TaskVC: CustomRootVC {
     private func addStatus(_ responseTaskInfos:[TaskInfo], completion: @escaping () -> Void) {
         responseTaskInfos.forEach { taskInfo in
             var newTaskInfo = taskInfo
-            self.currentFinishTaskss.forEach { finishTasks in
-                if let createTime = newTaskInfo.createTime, createTime == finishTasks {
+            self.currentFinishTasks.forEach { finishTask in
+                if let createTime = newTaskInfo.createTime, createTime == finishTask {
                     newTaskInfo.isFinish = true
                 }
             }
@@ -113,10 +113,7 @@ class TaskVC: CustomRootVC {
             self.taskInfos[index].isFinish = true
         }
         if let createTime = taskInfo.createTime {
-            let finishTasks:[String] = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
-            var newFinishTasks = finishTasks
-            newFinishTasks.append(createTime)
-            UserDefaults().set(newFinishTasks, forKey: UserDefaultKey.shared.finishTasks)
+            currentFinishTasks.append(createTime)
         }
         reloadTableView()
     }
