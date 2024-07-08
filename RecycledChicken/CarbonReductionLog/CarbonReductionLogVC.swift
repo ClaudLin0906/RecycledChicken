@@ -351,10 +351,20 @@ class CarbonReductionLogVC: CustomVC {
 
 extension CarbonReductionLogVC: ChooseColorVCDelete {
     
-    func comfirm(_ color: UIColor) {
+    func comfirm(_ useRecyceledSort: RecyceledSort) {
         finishViewHandle()
         guard let chooseObject = chooseObject else { return }
-        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
+        UserDefaults().setColor(useRecyceledSort.getInfo().color, forKey: chooseObject.userdefultKey)
+        switch useRecyceledSort {
+        case .bottle:
+            colorBottleUseCount += 1
+        case .battery:
+            colorBatteryUseCount += 1
+        case .papperCub:
+            colorPapperCubUseCount += 1
+        case .aluminumCan:
+            colorAluminumCanUseCount += 1
+        }
     }
     
     func cancel() {

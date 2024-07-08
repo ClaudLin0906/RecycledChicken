@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CarbonReductionItemCellViewDelegate {
-    func tapItem(_ color:UIColor)
+    func tapItem(_ useRecyceledSort:RecyceledSort)
 }
 
 class CarbonReductionItemCellView: UIView, NibOwnerLoadable {
@@ -46,7 +46,7 @@ class CarbonReductionItemCellView: UIView, NibOwnerLoadable {
     
     @objc private func tapGesture(_ tap:UITapGestureRecognizer) {
         guard let type = type else { return }
-        delegate?.tapItem(type.getInfo().color)
+        delegate?.tapItem(type)
     }
     
     func setType(_ type:RecyceledSort) {
