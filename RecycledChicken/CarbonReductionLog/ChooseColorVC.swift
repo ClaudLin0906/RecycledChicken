@@ -18,30 +18,8 @@ class ChooseColorVC: UIViewController {
     var delegate:ChooseColorVCDelete?
     
     @IBOutlet weak var stackView:UIStackView!
-        
-    private lazy var bottleItemCellView:CarbonReductionItemCellView = {
-        let carbonReductionItem = carbonReductionItemInit()
-        carbonReductionItem.setType(.bottle)
-        return carbonReductionItem
-    }()
     
-    private lazy var batteryItemCellView:CarbonReductionItemCellView = {
-        let carbonReductionItem = carbonReductionItemInit()
-        carbonReductionItem.setType(.battery)
-        return carbonReductionItem
-    }()
-    
-    private lazy var papperCubItemCellView:CarbonReductionItemCellView = {
-        let carbonReductionItem = carbonReductionItemInit()
-        carbonReductionItem.setType(.papperCub)
-        return carbonReductionItem
-    }()
-    
-    private lazy var aluminumCanItemCellView:CarbonReductionItemCellView = {
-        let carbonReductionItem = carbonReductionItemInit()
-        carbonReductionItem.setType(.aluminumCan)
-        return carbonReductionItem
-    }()
+    private var numberOfColorsUseds:[NumberOfColorsUsed] = []
 
     private  var selectedColor:UIColor?
 
@@ -58,10 +36,23 @@ class ChooseColorVC: UIViewController {
     }
     
     private func UIInit() {
-        stackView.addArrangedSubview(bottleItemCellView)
-        stackView.addArrangedSubview(batteryItemCellView)
-        stackView.addArrangedSubview(papperCubItemCellView)
-        stackView.addArrangedSubview(aluminumCanItemCellView)
+        addItemCellView()
+    }
+    
+    private func addItemCellView() {
+        guard numberOfColorsUseds.count > 0 else { return }
+        stackView.removeFullyAllArrangedSubviews()
+        numberOfColorsUseds.forEach { numberOfColorsUsed in
+            let carbonReductionItem = carbonReductionItemInit()
+            carbonReductionItem.setType(numberOfColorsUsed.recycleType)
+            carbonReductionItem.setCount(numberOfColorsUsed.count)
+            stackView.addArrangedSubview(carbonReductionItem)
+        }
+    }
+    
+    func setNumberOfColorsUsed(_ numberOfColorsUseds:[NumberOfColorsUsed]) {
+        self.numberOfColorsUseds.removeAll()
+        self.numberOfColorsUseds.append(contentsOf: numberOfColorsUseds)
     }
     
     @IBAction func confirm(_ sender:UIButton) {

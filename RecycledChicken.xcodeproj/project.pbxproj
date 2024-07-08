@@ -11,6 +11,7 @@
 		2537419D2C103FB900FA0933 /* MallProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2537419C2C103FB900FA0933 /* MallProduct.storyboard */; };
 		2537419F2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */; };
 		253741A12C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */; };
+		2568F1F32C3B80C80086A5B1 /* ChooseColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2568F1F22C3B80C80086A5B1 /* ChooseColorModel.swift */; };
 		2580F5762C353DA4009309A1 /* OverlayContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 2580F5752C353DA4009309A1 /* OverlayContainer */; };
 		2588F6BF2C197C3600636594 /* ConnectCompanyWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */; };
 		2588F6C12C197C3F00636594 /* ConnectCompanyWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */; };
@@ -334,6 +335,7 @@
 		2537419C2C103FB900FA0933 /* MallProduct.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MallProduct.storyboard; sourceTree = "<group>"; };
 		2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewPartnerCell.swift; sourceTree = "<group>"; };
 		253741A02C1195E500FA0933 /* TaskTableViewPartnerProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewPartnerProgressCell.swift; sourceTree = "<group>"; };
+		2568F1F22C3B80C80086A5B1 /* ChooseColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseColorModel.swift; sourceTree = "<group>"; };
 		2588F6BE2C197C3600636594 /* ConnectCompanyWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCompanyWebViewVC.swift; sourceTree = "<group>"; };
 		2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectCompanyWebView.storyboard; sourceTree = "<group>"; };
 		25F535922C354872001FFE95 /* ChooseColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseColorVC.swift; sourceTree = "<group>"; };
@@ -1234,6 +1236,7 @@
 				59C73F472A702B400019E87D /* CarbonReductionLogModel.swift */,
 				59997A482A0917D300E9FD7F /* CarbonReductionLogVC.swift */,
 				59600ED12B9EE3C8009AFA76 /* CarbonReductionLog.storyboard */,
+				2568F1F22C3B80C80086A5B1 /* ChooseColorModel.swift */,
 				25F535922C354872001FFE95 /* ChooseColorVC.swift */,
 				25F535942C35487A001FFE95 /* ChooseColor.storyboard */,
 				59980BEF2B734712002FDF41 /* RecycledRingInfoView.swift */,
@@ -1791,6 +1794,7 @@
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */,
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
+				2568F1F32C3B80C80086A5B1 /* ChooseColorModel.swift in Sources */,
 				59CC8DA92A6BB3C30094CE57 /* LotteryItemTableViewCell.swift in Sources */,
 				5926C5A22A06364800FAB49D /* Common.swift in Sources */,
 				59768A632BE0A3700004EA78 /* ColorFillImageView.swift in Sources */,

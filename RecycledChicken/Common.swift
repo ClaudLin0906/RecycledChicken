@@ -1152,7 +1152,7 @@ struct UseRecordInfo:Codable {
     }
 }
 
-enum RecycleType: String, Codable {
+enum RecycleType: String, Codable, CaseIterable {
     case battery = "battery"
     case bottle = "bottle"
     case coloredBottle = "coloredBottle"

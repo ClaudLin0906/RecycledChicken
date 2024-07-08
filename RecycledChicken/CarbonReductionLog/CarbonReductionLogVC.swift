@@ -141,8 +141,8 @@ class CarbonReductionLogVC: CustomVC {
             result = .battery
         case "鋁罐":
             result = .aluminumCan
-//        case "紙杯":
-//            result = .papperCub
+        case "紙杯":
+            result = .papperCub
 //        case "大眾運輸":
 //            result = .publicTransport
         default :
@@ -302,9 +302,22 @@ class CarbonReductionLogVC: CustomVC {
         maskView.isHidden = true
     }
     
+    private func getNumberOfColorsUseds() -> [NumberOfColorsUsed]? {
+        guard let carbonReductionLogInfo = carbonReductionLogInfo, let personalRecycleAmountAndTargets = carbonReductionLogInfo.personalRecycleAmountAndTarget else { return nil }
+        var numberOfColorsUseds:[NumberOfColorsUsed] = []
+        personalRecycleAmountAndTargets.forEach { info in
+            guard let totalRecycled = info.totalRecycled, totalRecycled > 0, let itemName = info.itemName, let recyceledSort = getRecyceledSortInfo(itemName) else { return }
+            let numberOfColorsUsed = NumberOfColorsUsed(recycleType: recyceledSort, count: totalRecycled)
+            numberOfColorsUseds.append(numberOfColorsUsed)
+        }
+        return numberOfColorsUseds
+    }
+    
     private func goChooseColorVC() {
+        guard let numberOfColorsUseds = getNumberOfColorsUseds() else { return }
         if let VC = UIStoryboard(name: "ChooseColor", bundle: Bundle.main).instantiateViewController(identifier: "ChooseColor") as? ChooseColorVC {
             VC.delegate = self
+            VC.setNumberOfColorsUsed(numberOfColorsUseds)
             let container = OverlayContainerViewController()
             container.viewControllers = [VC]
             container.delegate = self
