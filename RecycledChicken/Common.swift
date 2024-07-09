@@ -478,14 +478,19 @@ func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, com
 func loginOutRemoveObject(){
     CurrentUserInfo.shared.currentProfileNewInfo = nil
     CommonKey.shared.authToken = ""
-    UserDefaults().removeObject(forKey: UserDefaultKey.shared.oldChickenLevel)
     LoginSuccess = false
     FirstTime = true
     removeBiometricsAction()
+    clearUserDefault()
+}
+
+func clearUserDefault() {
+    let domain = Bundle.main.bundleIdentifier!
+    UserDefaults.standard.removePersistentDomain(forName: domain)
+    UserDefaults.standard.synchronize()
 }
 
 func removeBiometricsAction(){
-    UserDefaults().set(false, forKey: UserDefaultKey.shared.biometrics)
     let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
 }
 

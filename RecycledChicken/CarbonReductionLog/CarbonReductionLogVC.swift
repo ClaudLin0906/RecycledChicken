@@ -109,6 +109,10 @@ class CarbonReductionLogVC: CustomVC {
     
     private var chooseObject:ChooseObject?
     
+    private var lastSelectedColor:UIColor?
+    
+    private var lastSelectedImage:UIImage?
+    
     @UserDefault(UserDefaultKey.shared.colorBottleUseCount, defaultValue: 0) var colorBottleUseCount:Int
     
     @UserDefault(UserDefaultKey.shared.colorBatteryUseCount, defaultValue: 0) var colorBatteryUseCount:Int
@@ -316,11 +320,15 @@ class CarbonReductionLogVC: CustomVC {
     
     private func startViewHanle(_ v:UIView?, _ imageView:UIImageView?, _ userdefultKey: String) {
         chooseObject = nil
+        lastSelectedColor = nil
+        lastSelectedImage = nil
         if let v = v {
             chooseObject = ChooseObject(backgroundView: v, userdefultKey: userdefultKey)
+            lastSelectedColor = v.backgroundColor
         }
         if let imageView = imageView {
             chooseObject = ChooseObject(imageView: imageView, userdefultKey: userdefultKey)
+            lastSelectedImage = imageView.image
         }
         maskView.isHidden = false
     }
@@ -388,11 +396,17 @@ extension CarbonReductionLogVC: ChooseColorVCDelete {
     
     func cancel() {
         finishViewHandle()
+        guard let chooseObject = chooseObject else { return }
+        if let imageView = chooseObject.imageView {
+            imageView.image = lastSelectedImage
+        }
+        if let backgroundView = chooseObject.backgroundView {
+            backgroundView.backgroundColor = lastSelectedColor
+        }
     }
     
     func chooseColor(_ color: UIColor) {
         guard let chooseObject = chooseObject else { return }
-        UserDefaults().setColor(color, forKey: chooseObject.userdefultKey)
         if let imageView = chooseObject.imageView {
             imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
             imageView.tintColor = color
