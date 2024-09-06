@@ -348,7 +348,7 @@ class CarbonReductionLogVC: CustomVC {
             case .bottle:
                 total = colorCount - colorBottleUseCount
             case .battery:
-                total = colorCount - colorlessBatteryCount
+                total = colorCount - colorBatteryUseCount
             case .papperCub:
                 total = colorCount - colorPapperCubUseCount
             case .aluminumCan:
