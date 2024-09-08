@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -428,7 +428,7 @@
                         <outlet property="bottomLineSpace" destination="e4Y-3T-hH1" id="93D-HX-cxa"/>
                         <outlet property="colorFillScrollView" destination="UlI-Nx-OoX" id="5aS-YE-XYs"/>
                         <outlet property="colorFillTitleLabel" destination="2UQ-jW-c2f" id="0M5-XV-FBb"/>
-                        <outlet property="convertVauleLabel" destination="gx6-Be-wMx" id="clb-DG-JKP"/>
+                        <outlet property="convertValueLabel" destination="gx6-Be-wMx" id="QvV-oR-6Ni"/>
                         <outlet property="dropDownView" destination="KyE-ZL-0e7" id="Cl9-pi-qC8"/>
                         <outlet property="papperCubItemCellView" destination="sAF-r6-42h" id="ls6-34-mCO"/>
                         <outlet property="publicTransportItemCellView" destination="YoP-vl-iYo" id="kzR-qW-CUw"/>

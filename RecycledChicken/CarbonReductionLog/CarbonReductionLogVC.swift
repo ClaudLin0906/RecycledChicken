@@ -35,7 +35,7 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var bottomLineSpace:NSLayoutConstraint!
     
-    @IBOutlet weak var convertVauleLabel:UILabel!
+    @IBOutlet weak var convertValueLabel:UILabel!
         
     private var colorFillTypeOneView = ColorFillTypeOneView()
     
