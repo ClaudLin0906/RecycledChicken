@@ -34,8 +34,8 @@ class CommodityVoucherVC: CustomVC {
     }
     
     private func getCouponsData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.ticketCoupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.ticketCoupons, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+            guard let self = self, let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
@@ -45,16 +45,16 @@ class CommodityVoucherVC: CustomVC {
                     guard let category = commodityVoucherInfo.category else { return }
                     switch category {
                     case .ticket:
-                        commodityVoucherInfos.append(commodityVoucherInfo)
+                        self.commodityVoucherInfos.append(commodityVoucherInfo)
                     default:
                         break
                     }
                 }
-                DispatchQueue.main.async { [self] in
-                    tableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
-                        tableView.stopSkeletonAnimation()
-                        view.hideSkeleton()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.tableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
                     })
                 }
             }

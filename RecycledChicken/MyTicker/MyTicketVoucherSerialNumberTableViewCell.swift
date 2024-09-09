@@ -27,7 +27,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemImageView.kf.setImage(with: newValue)
                 }
             }
@@ -38,7 +39,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemNameLabel.text = newValue
                 }
             }
@@ -49,7 +51,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     duringTimeLabel.text = newValue
                 }
             }
@@ -60,7 +63,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     serialNumberLabel.text = newValue
                 }
             }
@@ -71,7 +75,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     instructionLabel.text = newValue
                 }
             }
@@ -90,19 +95,20 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     }
     
     func setCell(_ info:MyTickertCouponsInfo) {
-        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async { [weak self] in
+            guard let self = self else { return }
             self.info = info
             if let pictureStr = info.picture, let pictureURL = URL(string: pictureStr) {
-                self.imageURL = pictureURL
+                imageURL = pictureURL
             }
             if let name = info.name {
-                self.itemName = name
+                itemName = name
             }
             if let code = info.code {
-                self.serialNumber = code
+                serialNumber = code
             }
             if let expire = info.expire {
-                self.duringTime = "使用期限至 \(expire)"
+                duringTime = "使用期限至 \(expire)"
             }
             if let instruction = info.instruction {
                 self.instruction = instruction

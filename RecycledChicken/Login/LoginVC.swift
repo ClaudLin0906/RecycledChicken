@@ -72,9 +72,9 @@ class LoginVC: CustomLoginVC {
     }
     
     private func loginSuccess() {
-        DispatchQueue.main.async { [self] in
-            if keepLoginCheckBox.checkState == .checked {
-                biometrics = true
+        DispatchQueue.main.async { [weak self] in
+            if self?.keepLoginCheckBox.checkState == .checked {
+                self?.biometrics = true
                 if let accountInfo = try? CurrentUserInfo.shared.currentAccountInfo.jsonString {
                     let _ = KeychainService.shared.saveJsonToKeychain(jsonString: accountInfo, account: KeyChainKey.shared.accountInfo)
                 }
@@ -82,7 +82,7 @@ class LoginVC: CustomLoginVC {
                 removeBiometricsAction()
             }
             LoginSuccess = true
-            dismiss(animated: true)
+            self?.dismiss(animated: true)
         }
     }
     

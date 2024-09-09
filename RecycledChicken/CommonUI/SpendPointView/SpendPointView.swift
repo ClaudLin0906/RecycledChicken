@@ -33,7 +33,8 @@ class SpendPointView: UIView, NibOwnerLoadable {
     private var amount:Int = 0
     {
         willSet{
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 itemAmount.text = String(newValue)
                 var needPointInt:Int = 0
                 switch type {

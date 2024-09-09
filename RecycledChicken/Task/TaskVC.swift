@@ -31,7 +31,8 @@ class TaskVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getTaskInfo(completion: { [self] in
+        getTaskInfo(completion: { [weak self] in
+            guard let self = self else { return }
             reloadTableView()
         })
     }

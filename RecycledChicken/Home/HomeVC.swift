@@ -82,7 +82,8 @@ class HomeVC: CustomRootVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getUserNewInfo(VC: self) {
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 let illustratedGuide = getIllustratedGuide(getChickenLevel())
                 chickenLevelImageView.image = illustratedGuide.levelImage
                 if let image = getTrendChart() {
@@ -96,8 +97,8 @@ class HomeVC: CustomRootVC {
         }
         getItems()
         if let (startTime, endTime) = getStartAndEndDateOfMonth() {
-            getRecords(nil, startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-                guard let statusCode = statusCode, statusCode == 200 else {
+            getRecords(nil, startTime, endTime) { [weak self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+                guard let self = self, let statusCode = statusCode, statusCode == 200 else {
                     showAlert(VC: self, title: "error".localized)
                     return
                 }
@@ -134,7 +135,8 @@ class HomeVC: CustomRootVC {
                 }
             }
             getADBannerInfos {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     pageControl.numberOfPages = adBannerInfos.count
                     addScrollSubView()
                 }
@@ -274,8 +276,8 @@ class HomeVC: CustomRootVC {
         scrollView.addGestureRecognizer(leftGesture)
         scrollView.addGestureRecognizer(rightGesture)
         self.currentIndexSubject
-            .sink { [self] index in
-                guard adBannerInfos.count > 0 else { return }
+            .sink { [weak self] index in
+                guard let self = self, adBannerInfos.count > 0 else { return }
                 pageControl.currentPage = index
                 UIView.animate(withDuration: 0.5) {
                     self.scrollView.contentOffset = CGPoint(x: Int(self.scrollView.frame.width) * index, y: 0)

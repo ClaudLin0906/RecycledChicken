@@ -49,7 +49,8 @@ class CustomCalenderScrollView: UIView, NibOwnerLoadable {
             threeWeekago.getSevenDays(targetDate: date)
         }
         
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             scrollView.setContentOffset(CGPoint(x: thisWeek.frame.minX, y: 0), animated: false)
         }
         
@@ -67,10 +68,11 @@ class CustomCalenderScrollView: UIView, NibOwnerLoadable {
     }
     
     private func contentViewScrollViewAnimator(){
-        DispatchQueue.main.async { [self] in
-            let targetView = customCalenderViews.filter({$0.tag == currentViewTag})[0]
-            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: { [self] in
-                scrollView.contentOffset.x = targetView.frame.minX
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let targetView = customCalenderViews.filter({$0.tag == self.currentViewTag})[0]
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, animations: { 
+                self.scrollView.contentOffset.x = targetView.frame.minX
             })
         }
     }

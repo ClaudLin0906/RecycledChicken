@@ -45,8 +45,8 @@ class StoreMapVC: CustomRootVC {
         } else {
            locationManager.requestWhenInUseAuthorization()
         }
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { [self] (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { [weak self] (data, statusCode, errorMSG) in
+            guard let self = self, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
@@ -62,11 +62,11 @@ class StoreMapVC: CustomRootVC {
                             newMapInfo.machineStatus = .submit
                         }
                     }
-                    mapInfosData.append(newMapInfo)
+                    self.mapInfosData.append(newMapInfo)
                 })
                 mapInfosData.forEach({
                     if $0.taskDescription != nil {
-                        specialTaskMapInfos.append($0)
+                        self.specialTaskMapInfos.append($0)
                     }
                 })
                 currentMapInfos = mapInfosData
@@ -81,16 +81,17 @@ class StoreMapVC: CustomRootVC {
     }
     
     private func addMarker(_ infos:[MapInfo]) {
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             mapView?.clear()
             infos.forEach { info in
                 guard let latitudeString = info.machineLocation?.latitude, let latitude = Double(latitudeString), let longitudeString = info.machineLocation?.longitude, let longitude = Double(longitudeString) else { return }
                 let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 let maker = GMSMarker()
                 maker.position = coordinate
-                maker.map = mapView
+                maker.map = self.mapView
                 maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
-                maker.icon = getMakerIcon(info)
+                maker.icon = self.getMakerIcon(info)
                 maker.title = info.name
             }
         }

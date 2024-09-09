@@ -87,7 +87,8 @@ class ADView: UIView, NibOwnerLoadable {
     }
     
     private func webviewLoadAction(_ request:URLRequest) {
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             webView.load(request)
         }
     }
@@ -97,7 +98,8 @@ class ADView: UIView, NibOwnerLoadable {
             guard let data = data, let urlStr = String(data: data, encoding: .utf8), let url = URL(string: urlStr) else {
                 return
             }
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 webView.load(URLRequest(url: url))
             }
         }
@@ -134,7 +136,8 @@ extension ADView: WKNavigationDelegate {
             guard isFirstTime else{ return }
             isFirstTime = false
             countdownLabel.isHidden = false
-            countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [self] timer in
+            countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] timer in
+                guard let self = self else { return }
                 print("remainingSeconds \(remainingSeconds)")
                 remainingSeconds -= 1
                 countdownLabel.text = "\(remainingSeconds)"

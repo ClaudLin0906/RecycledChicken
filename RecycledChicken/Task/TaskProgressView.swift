@@ -28,7 +28,8 @@ class TaskProgressView: UIView, NibOwnerLoadable {
     }
     
     func setPercent(_ molecular:Int, denominator:Int){
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             percentLabel.text = "\(molecular)/\(denominator)"
             percentprogressView.setProgress(Float(Float(molecular)/Float(denominator)), animated: true)
         }

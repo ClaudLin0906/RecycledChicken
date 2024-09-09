@@ -62,7 +62,8 @@ extension BuyCommodityVC: SpendPointAlertViewDelegate {
             }
             if let spendPointResponse = try? JSONDecoder().decode(SpendPointResponse.self, from: data) {
                 getUserNewInfo(VC: self) {
-                    DispatchQueue.main.async { [self] in
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
                         let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
                         fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
                         if let navigationController = navigationController {

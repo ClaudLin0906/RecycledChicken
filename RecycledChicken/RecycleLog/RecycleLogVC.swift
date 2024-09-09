@@ -135,16 +135,16 @@ class RecycleLogVC: CustomVC {
             "dec".localized,
         ]
         
-        amountDropDown.selectionAction = { [self] (index, item) in
-            monthBtn.setTitle(item)
-            filterUseRecordInfos.removeAll()
-            filterUseRecordInfos = recycleLogInfos.filter({ info in
+        amountDropDown.selectionAction = { [weak self] (index, item) in
+            self?.monthBtn.setTitle(item)
+            self?.filterUseRecordInfos.removeAll()
+            self?.filterUseRecordInfos = self?.recycleLogInfos.filter({ info in
                 if index == 0 {
                     return true
                 }
                 return Calendar.current.component(.month, from: getDates(i: 0, currentDate: info.time).2) == index
-            })
-            tableView.reloadData()
+            }) ?? []
+            self?.tableView.reloadData()
         }
     }
     

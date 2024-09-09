@@ -86,7 +86,8 @@ class PointRecordVC: CustomVC {
             "dec".localized,
         ]
         
-        amountDropDown.selectionAction = { [self] (index, item) in
+        amountDropDown.selectionAction = { [weak self] (index, item) in
+            guard let self = self else { return }
             monthBtn.setTitle(item)
             filterPointRecords.removeAll()
             filterPointRecords = pointRecords.filter({ pointRecord in

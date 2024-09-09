@@ -131,12 +131,12 @@ class CarbonReductionLogVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
         getRecycleLogData()
-        getCarbonReductionRecords(completion: { [self] in
-            guard let carbonReductionLogInfo = self.carbonReductionLogInfo else { return }
+        getCarbonReductionRecords(completion: { [weak self] in
+            guard let self = self, let carbonReductionLogInfo = self.carbonReductionLogInfo else { return }
             var itemNames:[String] = []
             carbonReductionLogInfo.personalRecycleAmountAndTarget?.forEach({ if let itemName = $0.itemName {
                 itemNames.append(itemName)
-                currentPersonalRecyleAmountAndTargetInfo = $0
+                self.currentPersonalRecyleAmountAndTargetInfo = $0
             }})
             itemDropDown.dataSource.removeAll()
             itemDropDown.dataSource.append(contentsOf: itemNames)
@@ -221,8 +221,8 @@ class CarbonReductionLogVC: CustomVC {
         }
         itemDropDown.anchorView = dropDownView
         itemDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
-        itemDropDown.selectionAction = { [self] (index, item) in
-            guard let carbonReductionLogInfo = carbonReductionLogInfo else { return }
+        itemDropDown.selectionAction = { [weak self] (index, item) in
+            guard let self = self, let carbonReductionLogInfo = carbonReductionLogInfo else { return }
             currentPersonalRecyleAmountAndTargetInfo = nil
             currentPersonalRecyleAmountAndTargetInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first(where: { personalRecyleAmountAndTargetInfo in
                 if let itemName = personalRecyleAmountAndTargetInfo.itemName {
@@ -269,7 +269,8 @@ class CarbonReductionLogVC: CustomVC {
                 showAlert(VC: self, title: "error".localized)
                 return
             }
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 batteryCount = battery ?? 0
                 var totalBottleCount = 0
                 if let bottle = bottle {

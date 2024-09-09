@@ -75,7 +75,8 @@ class ConfirmPasswordVC: CustomLoginVC {
     }
     
     private func goToVerificationCode(){
-        self.dismiss(animated: true) { [self] in
+        self.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
             if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC, let topVC = getTopController() {
                 VC.currentType = .forgetPassword
                 VC.modalPresentationStyle = .fullScreen
