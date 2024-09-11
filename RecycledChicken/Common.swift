@@ -206,9 +206,9 @@ struct RecyceledSortInfo {
 }
 
 enum WeightUnit: String {
-    case gram = "gCO2e"
-    case kilogram = "kgCO2e"
-    case tonne = "tCO2e"
+    case gram = "gCO₂e"
+    case kilogram = "kgCO₂e"
+    case tonne = "tCO₂e"
 }
 
 var FirstTime = true
@@ -296,6 +296,10 @@ class UserDefaultKey {
     let finishTasks = "finishTasks"
     let isSubscribed = "isSubscribed"
 }
+
+ func getCO2e() {
+    
+ }
 
 class CurrentUserInfo {
     

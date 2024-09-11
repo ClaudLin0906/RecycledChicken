@@ -44,7 +44,7 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var mallHeight:NSLayoutConstraint!
     
     @IBOutlet weak var bannerView:UIView!
-    
+        
     private var scrollView:UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +59,7 @@ class HomeVC: CustomRootVC {
     private var adBannerInfos:[ADBannerInfo] = []
     
     private var itemInfos:[ItemInfo] = []
-//    
+    
     private var cancellables: Set<AnyCancellable> = []
 
     @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: "") var displayToday:String
@@ -287,6 +287,7 @@ class HomeVC: CustomRootVC {
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
             self.changeBanner()
         }
+
     }
     
     private func addScrollSubView() {
@@ -426,3 +427,4 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
 }
+

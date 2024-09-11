@@ -142,7 +142,20 @@ class CarbonReductionLogVC: CustomVC {
             itemDropDown.dataSource.append(contentsOf: itemNames)
             changeType()
             reloadItemCellViewValue()
+            convertValueLabel.text = String(getTotalCO2e())
         })
+    }
+     
+    private func getTotalCO2e() -> Double {
+        guard let carbonReductionLogInfo = self.carbonReductionLogInfo else { return 0 }
+        var allRecycled:Double = 0
+        carbonReductionLogInfo.personalRecycleAmountAndTarget?.forEach({ info in
+            let totalRecycled:Double = Double(info.totalRecycled ?? 0)
+            let conversionRate:Double = info.conversionRate ?? 0
+            let (resultValue, _ ) = getCO2(totalRecycled, conversionRate)
+            allRecycled += Double(resultValue) ?? 0
+        })
+        return allRecycled
     }
     
     private func reloadItemCellViewValue() {
@@ -183,9 +196,17 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     private func changeType() {
-        guard let personalRecyleAmountAndTargetInfo = currentPersonalRecyleAmountAndTargetInfo, let itemName = personalRecyleAmountAndTargetInfo.itemName, let recyceledSort = getRecyceledSortInfo(itemName) else { return }
+        guard let personalRecyleAmountAndTargetInfo = currentPersonalRecyleAmountAndTargetInfo, let itemName = personalRecyleAmountAndTargetInfo.itemName, let recyceledSort = getRecyceledSortInfo(itemName), let totalRecycled = personalRecyleAmountAndTargetInfo.totalRecycled, let target = personalRecyleAmountAndTargetInfo.target, let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate else { return }
         dropDownView.sortLabel.text = recyceledSort.getInfo().chineseName
-        recycledRingInfoView.setRecycledRingInfo(recyceledSort, personalRecyleAmountAndTargetInfo: personalRecyleAmountAndTargetInfo)
+        let (resultValue, resultUnit) = getCO2(Double(totalRecycled), conversionRate)
+        recycledRingInfoView.setRecycledRingInfo(totalRecycled, recyceledSort.getInfo().recycleUnit, resultValue, resultUnit, Double(target), recyceledSort.getInfo().color)
+    }
+    
+    private func getCO2(_ totalRecycled:Double, _ conversionRate:Double) -> (String, String) {
+        let convetValue = totalRecycled * conversionRate
+        let (resultValue, resultUnit) = convertWeight(convetValue)
+        let resultValueStr = String(format: "%.1f", resultValue)
+        return (resultValueStr, resultUnit.rawValue)
     }
 
     private func UIInit() {

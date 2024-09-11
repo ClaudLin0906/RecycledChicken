@@ -24,11 +24,7 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
     @IBOutlet weak var recycleUnitLabel:CustomLabel!
     
     @IBOutlet weak var oUnitLabel:CustomLabel!
-    
-    private var info:RecyceledSort?
-    
-    private var personalRecyleAmountAndTargetInfo:PersonalRecycleAmountAndTargetInfo?
-    
+            
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -51,20 +47,13 @@ class RecycledRingInfoView: UIView, NibOwnerLoadable {
         ringProgressSingleBackgroundView.layer.shadowOffset = CGSize(width: 1, height: 1)
         ringProgressSingleBackgroundView.layer.shadowOpacity = 0.2
     }
-    
-    func setRecycledRingInfo(_ info:RecyceledSort, personalRecyleAmountAndTargetInfo:PersonalRecycleAmountAndTargetInfo) {
-        self.info = info
-        self.personalRecyleAmountAndTargetInfo = personalRecyleAmountAndTargetInfo
-        if let totalRecycled = self.personalRecyleAmountAndTargetInfo?.totalRecycled, let target = personalRecyleAmountAndTargetInfo.target, let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate {
-            totalRecycledLabel.text = String(totalRecycled)
-            recycleUnitLabel.text = info.getInfo().recycleUnit
-            let convetValue = Double(totalRecycled) * conversionRate
-            let (resultValue, resultUnit) = convertWeight(convetValue)
-            let resultValueStr = String(format: "%.1f", resultValue) 
-            convetValueLabel.text = resultValueStr
-            oUnitLabel.text = resultUnit.rawValue
-            progressView.setCount(Double(totalRecycled), Double(target), info.getInfo().color, .white)
-        }
+
+    func setRecycledRingInfo(_ totalRecycled:Int, _ recycleUnit:String, _ convetValue:String, _ oUnit:String, _ target:Double, _ startColor:UIColor , _ endColor:UIColor = .white) {
+        totalRecycledLabel.text = String(totalRecycled)
+        recycleUnitLabel.text = recycleUnit
+        convetValueLabel.text = convetValue
+        oUnitLabel.text = oUnit
+        progressView.setCount(Double(totalRecycled), target, startColor, endColor)
     }
     
 }
