@@ -89,7 +89,7 @@ class LotteryTableViewCell: UITableViewCell {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    drawPeopleLabel.text = "\("remain".localized) \(newValue)"
+                    drawPeopleLabel.text = "\("join".localized) \(newValue)"
                 }
             }
         }
