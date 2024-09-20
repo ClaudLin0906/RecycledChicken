@@ -397,6 +397,7 @@ struct APIUrl {
     static let appleStoreID = "6449214570"
     static let connectAppleStore = "itms-apps://itunes.apple.com/app/\(appleStoreID)"
     static let checkAppleStoreVersion = "https://itunes.apple.com/tw/lookup?id=\(appleStoreID)"
+    static let uiPoint = "/ui/point"
 }
 
 struct WebViewUrl {
@@ -434,6 +435,7 @@ func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, com
     if sites == nil || sites == "" {
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     }
+    print(urlStr)
     NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
         guard let data = data, statusCode == 200 else {
             completion(statusCode, errorMSG, nil, nil, nil, nil, nil, nil, nil)

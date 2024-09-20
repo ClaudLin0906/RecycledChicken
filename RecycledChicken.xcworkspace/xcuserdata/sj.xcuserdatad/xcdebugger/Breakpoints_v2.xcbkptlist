@@ -84,5 +84,113 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6EDE1D6D-E311-42AE-B7EE-333EDBD05131"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/RecycleLog/RecycleLogVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getRecycleLogData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6EDE1D6D-E311-42AE-B7EE-333EDBD05131 - 3ebb9ae768b3f46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Array&lt;RecycledChicken.UseRecordInfo&gt;&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in RecycledChicken.RecycleLogVC.getRecycleLogData() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/RecycleLog/RecycleLogVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55">
+               </Location>
+               <Location
+                  uuid = "6EDE1D6D-E311-42AE-B7EE-333EDBD05131 - 3ebb9ae768b3f46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Array&lt;RecycledChicken.UseRecordInfo&gt;&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in RecycledChicken.RecycleLogVC.getRecycleLogData() -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/RecycleLog/RecycleLogVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C99C513A-1FF5-4304-ABF3-4DC76E38ECFE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/Task/TaskTableViewPartnerProgressCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "setCell(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C99C513A-1FF5-4304-ABF3-4DC76E38ECFE - 26c6f7a2b87e624"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in RecycledChicken.TaskTableViewPartnerProgressCell.setCell(RecycledChicken.TaskInfo) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/Task/TaskTableViewPartnerProgressCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124">
+               </Location>
+               <Location
+                  uuid = "C99C513A-1FF5-4304-ABF3-4DC76E38ECFE - 486fb4f7554b60f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Array&lt;RecycledChicken.UseRecordInfo&gt;&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in RecycledChicken.TaskTableViewPartnerProgressCell.setCell(RecycledChicken.TaskInfo) -&gt; ()"
+                  moduleName = "RecycledChicken"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sj/Desktop/work/RecycledChicken/git/RecycledChicken/Task/TaskTableViewPartnerProgressCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8F98F6C-AE73-447C-8CFA-3D5EC1DAA829"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecycledChicken/Common.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "438"
+            endingLineNumber = "438"
+            landmarkName = "getRecords(_:_:_:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
