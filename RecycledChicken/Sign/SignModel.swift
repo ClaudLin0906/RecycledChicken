@@ -12,3 +12,11 @@ struct SignUpInfo:Codable {
     var userPassword:String
     var smsCode:String
 }
+
+struct ActivityCodeInfo:Codable {
+    var activityCode:String
+}
+
+struct InviteCodeInfo:Codable {
+    var inviteCode:String
+}
