@@ -50,90 +50,75 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         errorMSGLabel.isHidden = false
     }
     
-    private func enterActivityCodeAction(_ compeletion: @escaping(Bool, String)->()) {
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.enterActivityCode) { data, statusCode, errorMSG in
+    private func enterCode(urlString: String, completion: @escaping (Bool, String) -> Void) {
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + urlString) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
-                var errorMSG = "發生不明錯誤"
-                if let statusCode = statusCode {
-                    switch statusCode {
-                        case 400:
-                            errorMSG = "活動碼不能為空"
-                        case 404:
-                            errorMSG = "活動碼不正確"
-                        case 500:
-                            errorMSG = "活動碼處理失敗"
-                        default:
-                            break
-                    }
-                }
-                compeletion(false, errorMSG)
+                let errorMSG = self.getErrorMessage(for: statusCode, urlString: urlString)
+                completion(false, errorMSG)
                 return
             }
-            compeletion(true, "")
+            completion(true, "")
         }
     }
     
-    private func enterInviteCodeAction(_ compeletion: @escaping(Bool, String)->()) {
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.enterInviteCode) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                var errorMSG = "發生不明錯誤"
-                if let statusCode = statusCode {
-                    switch statusCode {
-                        case 400:
-                            errorMSG = "邀請碼為空"
-                        case 404:
-                            errorMSG = "邀請碼錯誤"
-                        case 403:
-                            errorMSG = "邀請碼已經被輸入"
-                        default:
-                            break
-                    }
-                }
-                compeletion(false, errorMSG)
-                return
-            }
-            compeletion(true, "")
+    private func getErrorMessage(for statusCode: Int?, urlString: String) -> String {
+        guard let statusCode = statusCode else { return "發生不明錯誤" }
+        
+        switch (statusCode, urlString) {
+        case (400, APIUrl.enterActivityCode):
+            return "活動碼不能為空"
+        case (404, APIUrl.enterActivityCode):
+            return "活動碼不正確"
+        case (500, APIUrl.enterActivityCode):
+            return "活動碼處理失敗"
+        case (400, APIUrl.enterInviteCode):
+            return "邀請碼為空"
+        case (404, APIUrl.enterInviteCode):
+            return "邀請碼錯誤"
+        case (403, APIUrl.enterInviteCode):
+            return "邀請碼已經被輸入"
+        default:
+            return "發生不明錯誤"
         }
     }
 
     @IBAction func confirm(_ sender:CustomButton) {
-        var alertMsg = ""
-        let activityCode = activityCodeTextField.text
-        if activityCode == "" {
-            alertMsg += "活動碼不能為空"
-        }
-        alertMsg = removeWhitespace(from: alertMsg)
-        if alertMsg != "" {
-            showErrorMSG(alertMsg)
-            return
-        }
+        guard validateInput() else { return }
         let group = DispatchGroup()
-        var activityCodeSuccess = false
-        var inviteCodeSuccess = friendActivityCodeTextField.text == "" ? true : false
-        var errorMSG = ""
-        if !inviteCodeSuccess {
+        var errors: [String] = []
+        
+        group.enter()
+        enterCode(urlString: APIUrl.enterActivityCode) { success, error in
+            if !success { errors.append(error) }
+            group.leave()
+        }
+        
+        if !friendActivityCodeTextField.text!.isEmpty {
             group.enter()
-            enterInviteCodeAction { (result, message) in
-                inviteCodeSuccess = result
-                errorMSG += message
+            enterCode(urlString: APIUrl.enterInviteCode) { success, error in
+                if !success { errors.append(error) }
                 group.leave()
             }
         }
-        group.enter()
-        enterActivityCodeAction { (result, message) in
-            activityCodeSuccess = result
-            errorMSG += message
-            group.leave()
-        }
+        
         group.notify(queue: .main) {
-            if activityCodeSuccess && inviteCodeSuccess {
+            if errors.isEmpty {
                 self.delegate?.comfirmInvitationCode(finishAction: {
                     self.removeFromSuperview()
                 })
             } else {
-                self.showErrorMSG(errorMSG)
+                self.showErrorMSG(errors.joined(separator: "\n"))
             }
         }
+    }
+    
+    private func validateInput() -> Bool {
+        let activityCode = activityCodeTextField.text ?? ""
+        if activityCode.isEmpty {
+            showErrorMSG("活動碼不能為空")
+            return false
+        }
+        return true
     }
 
     @IBAction func cancel(_ sender:CustomButton) {
