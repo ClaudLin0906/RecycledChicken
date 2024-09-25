@@ -50,44 +50,23 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         errorMSGLabel.isHidden = false
     }
     
-    private func enterActivityCodeAction(_ activityCode:String, _ compeletion: @escaping(Bool, String)->()) {
-        let activityCodeInfo = ActivityCodeInfo(activityCode: activityCode)
-        let activityCodeInfoDic = try? activityCodeInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.enterActivityCode, parameters: activityCodeInfoDic) { data, statusCode, errorMSG in
+    private func enterCodeAction(_ parameters: [String:Any], urlString:String, _ compeletion: @escaping(Bool, String)->()) {
+        NetworkManager.shared.requestWithJSONBody(urlString: urlString, parameters: parameters) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 var errorMSG = "發生不明錯誤"
                 if let statusCode = statusCode {
-                    switch statusCode {
-                        case 400:
+                    switch (statusCode, urlString) {
+                        case (400, APIUrl.domainName + APIUrl.enterActivityCode):
                             errorMSG = "活動碼不能為空"
-                        case 404:
+                        case (404, APIUrl.domainName + APIUrl.enterActivityCode):
                             errorMSG = "活動碼不正確"
-                        case 500:
+                        case (500, APIUrl.domainName + APIUrl.enterActivityCode):
                             errorMSG = "活動碼處理失敗"
-                        default:
-                            break
-                    }
-                }
-                compeletion(false, errorMSG)
-                return
-            }
-            compeletion(true, "")
-        }
-    }
-    
-    private func enterInviteCodeAction(_ inviteCode:String,  _ compeletion: @escaping(Bool, String)->()) {
-        let inviteCodeInfo = InviteCodeInfo(inviteCode: inviteCode)
-        let inviteCodeInfoDic = try? inviteCodeInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.enterInviteCode, parameters: inviteCodeInfoDic) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                var errorMSG = "發生不明錯誤"
-                if let statusCode = statusCode {
-                    switch statusCode {
-                        case 400:
+                        case (400, APIUrl.domainName + APIUrl.enterInviteCode):
                             errorMSG = "邀請碼為空"
-                        case 404:
+                        case (404, APIUrl.domainName + APIUrl.enterInviteCode):
                             errorMSG = "邀請碼錯誤"
-                        case 403:
+                        case (403, APIUrl.domainName + APIUrl.enterInviteCode):
                             errorMSG = "邀請碼已經被輸入"
                         default:
                             break
@@ -111,18 +90,24 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         var inviteCodeSuccess = friendActivityCodeTextField.text == "" ? true : false
         var errorMSG = ""
         if !inviteCodeSuccess, let friendActivityCodeText = friendActivityCodeTextField.text {
+            let inviteCodeInfo = InviteCodeInfo(inviteCode: friendActivityCodeText)
+            if let inviteCodeInfoDic = try? inviteCodeInfo.asDictionary() {
+                group.enter()
+                enterCodeAction(inviteCodeInfoDic, urlString: APIUrl.domainName + APIUrl.enterInviteCode) { (result, message) in
+                    inviteCodeSuccess = result
+                    errorMSG += message
+                    group.leave()
+                }
+            }
+        }
+        let activityCodeInfo = ActivityCodeInfo(activityCode: activityCode)
+        if let activityCodeInfoDic = try? activityCodeInfo.asDictionary() {
             group.enter()
-            enterInviteCodeAction(friendActivityCodeText) { (result, message) in
-                inviteCodeSuccess = result
+            enterCodeAction(activityCodeInfoDic, urlString: APIUrl.domainName + APIUrl.enterActivityCode) { (result, message) in
+                activityCodeSuccess = result
                 errorMSG += message
                 group.leave()
             }
-        }
-        group.enter()
-        enterActivityCodeAction(activityCode) { (result, message) in
-            activityCodeSuccess = result
-            errorMSG += message
-            group.leave()
         }
         group.notify(queue: .main) {
             if activityCodeSuccess && inviteCodeSuccess {
