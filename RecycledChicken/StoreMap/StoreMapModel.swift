@@ -13,7 +13,7 @@ struct MapInfo: Codable {
     var machineStatus:MachineStatus?
     var machineLocation:MachineLocation?
     var address:String?
-    var taskDescription:String?
+    var description:String?
     
     enum CodingKeys:String, CodingKey {
         case name = "name"
@@ -21,7 +21,7 @@ struct MapInfo: Codable {
         case machineStatus = "status"
         case machineLocation = "location"
         case address = "address"
-        case taskDescription = "taskDescription"
+        case description = "description"
     }
     
     init(from decoder: Decoder) throws {
@@ -31,7 +31,7 @@ struct MapInfo: Codable {
         machineStatus = try? container.decodeIfPresent(MachineStatus.self, forKey: .machineStatus)
         machineLocation = try? container.decodeIfPresent(MachineLocation.self, forKey: .machineLocation)
         address = try? container.decodeIfPresent(String.self, forKey: .address)
-        taskDescription = try? container.decodeIfPresent(String.self, forKey: .taskDescription)
+        description = try? container.decodeIfPresent(String.self, forKey: .description)
     }
 }
 

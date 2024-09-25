@@ -33,7 +33,7 @@ class SpecialTaskView: UIView, NibOwnerLoadable {
         super.layoutSubviews()
         guard let info = info else { return }
         addressLabel.text = info.address
-        taskDescriptionLabel.text = info.taskDescription
+        taskDescriptionLabel.text = info.description
     }
 
     @IBAction func closeBtnHandle(_ sender:UIButton) {

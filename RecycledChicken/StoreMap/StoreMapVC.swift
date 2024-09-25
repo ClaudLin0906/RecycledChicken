@@ -65,7 +65,7 @@ class StoreMapVC: CustomRootVC {
                     self.mapInfosData.append(newMapInfo)
                 })
                 mapInfosData.forEach({
-                    if $0.taskDescription != nil {
+                    if $0.description != nil {
                         self.specialTaskMapInfos.append($0)
                     }
                 })
@@ -155,7 +155,7 @@ class StoreMapVC: CustomRootVC {
                 if machineRemaining.cup != nil  {
                     remainCup = true
                 }
-                if info.taskDescription != nil {
+                if info.description != nil {
                     isSpecial = true
                 }
                 let key = "\(remainBottle),\(remainBattery),\(remainCan),\(remainCup),\(isSpecial),\(remainColorBottle)"
@@ -167,10 +167,10 @@ class StoreMapVC: CustomRootVC {
                 }
             }
         default:
-            if info.taskDescription != nil {
+            if info.description != nil {
                 image = #imageLiteral(resourceName: "ch-51")
             }
-            if info.taskDescription == nil {
+            if info.description == nil {
                 image = #imageLiteral(resourceName: "ch-50")
             }
         }
@@ -262,13 +262,13 @@ extension StoreMapVC: GMSMapViewDelegate {
             if amountView.stackView.subviews.count >= 3 {
                 amountViewHeight.constant = CGFloat(amountView.stackView.subviews.count * 40)
             }
-            if let taskDescription = mapInfo.taskDescription {
+            if let taskDescription = mapInfo.description {
                 let specialTaskView = SpecialTaskView()
                 specialTaskView.info = mapInfo
                 specialTaskBackgroundView.isHidden = false
                 specialTaskBackgroundView.addSubview(specialTaskView)
             }
-            if mapInfo.taskDescription == nil {
+            if mapInfo.description == nil {
                 specialTaskBackgroundView.isHidden = true
             }
         }
