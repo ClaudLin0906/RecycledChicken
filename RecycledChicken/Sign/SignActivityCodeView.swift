@@ -33,12 +33,17 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
-        let placeHolderColor = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
-        let attributes: [NSAttributedString.Key: Any] = [ .font: activityCodeTextField.font?.withSize(15), .foregroundColor:placeHolderColor]
-        let attributedPlaceholder = NSAttributedString(string: activityCodeTextField.placeholder ?? "", attributes: attributes)
-        activityCodeTextField.attributedPlaceholder = attributedPlaceholder
+        setAttributes(activityCodeTextField)
+        setAttributes(friendActivityCodeTextField)
         let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
         self.addGestureRecognizer(closeTap)
+    }
+    
+    private func setAttributes(_ textField:UITextField) {
+        let placeHolderColor = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
+        let attributes: [NSAttributedString.Key: Any] = [ .font: textField.font?.withSize(15), .foregroundColor:placeHolderColor]
+        let attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "", attributes: attributes)
+        textField.attributedPlaceholder = attributedPlaceholder
     }
     
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
@@ -86,7 +91,7 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         }
         
         let group = DispatchGroup()
-        var activityCodeSuccess = false
+        var activityCodeSuccess = activityCodeTextField.text == "" ? true : false
         var inviteCodeSuccess = friendActivityCodeTextField.text == "" ? true : false
         var errorMSG = ""
         if !inviteCodeSuccess, let friendActivityCodeText = friendActivityCodeTextField.text {
