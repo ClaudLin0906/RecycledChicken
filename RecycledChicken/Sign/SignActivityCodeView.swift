@@ -85,37 +85,32 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
     }
 
     @IBAction func confirm(_ sender:CustomButton) {
-        guard let activityCode = activityCodeTextField.text, !activityCode.isEmpty else {
-            showErrorMSG("活動碼不能為空")
+        guard let activityCode = activityCodeTextField.text, let inviteCode = friendActivityCodeTextField.text, !activityCode.isEmpty || !inviteCode.isEmpty else {
+            showErrorMSG("活動碼或是邀請碼要擇一填寫")
             return
         }
-        
         let group = DispatchGroup()
-        var activityCodeSuccess = activityCodeTextField.text == "" ? true : false
-        var inviteCodeSuccess = friendActivityCodeTextField.text == "" ? true : false
         var errorMSG = ""
-        if !inviteCodeSuccess, let friendActivityCodeText = friendActivityCodeTextField.text {
-            let inviteCodeInfo = InviteCodeInfo(inviteCode: friendActivityCodeText)
-            if let inviteCodeInfoDic = try? inviteCodeInfo.asDictionary() {
-                group.enter()
-                enterCodeAction(inviteCodeInfoDic, urlString: APIUrl.domainName + APIUrl.enterInviteCode) { (result, message) in
-                    inviteCodeSuccess = result
-                    errorMSG += message
-                    group.leave()
-                }
-            }
-        }
-        let activityCodeInfo = ActivityCodeInfo(activityCode: activityCode)
-        if let activityCodeInfoDic = try? activityCodeInfo.asDictionary() {
+        func processCode(_ code: String, isInviteCode: Bool, urlString: String) {
+            guard !code.isEmpty else { return }
+            
             group.enter()
-            enterCodeAction(activityCodeInfoDic, urlString: APIUrl.domainName + APIUrl.enterActivityCode) { (result, message) in
-                activityCodeSuccess = result
+            let codeInfo: [String: Any]?
+            if isInviteCode {
+                codeInfo = try? InviteCodeInfo(inviteCode: code).asDictionary()
+            } else {
+                codeInfo = try? ActivityCodeInfo(activityCode: code).asDictionary()
+            }
+            
+            enterCodeAction(codeInfo ?? [:], urlString: APIUrl.domainName + urlString) { result, message in
                 errorMSG += message
                 group.leave()
             }
         }
+        processCode(inviteCode, isInviteCode: true, urlString: APIUrl.enterInviteCode)
+        processCode(activityCode, isInviteCode: false, urlString: APIUrl.enterActivityCode)
         group.notify(queue: .main) {
-            if activityCodeSuccess && inviteCodeSuccess {
+            if errorMSG.isEmpty {
                 self.delegate?.comfirmInvitationCode(finishAction: {
                     self.removeFromSuperview()
                 })
