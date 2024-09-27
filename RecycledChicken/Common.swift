@@ -428,6 +428,7 @@ protocol NibOwnerLoadable: AnyObject {
 }
 
 func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
+    guard !CommonKey.shared.authToken.isEmpty else { return }
     var urlStr = ""
     if let sites = sites, sites != "" {
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sites)"

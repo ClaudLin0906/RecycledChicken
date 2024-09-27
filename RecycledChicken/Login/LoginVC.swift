@@ -41,7 +41,6 @@ class LoginVC: CustomLoginVC {
         keepLoginCheckBox.boxType = .square
         keepLoginCheckBox.stateChangeAnimation = .fill
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
-        
         if getLanguage() == .english {
             mobileLabelWidth.constant = 50
             passwordLabelWidth.constant = 100

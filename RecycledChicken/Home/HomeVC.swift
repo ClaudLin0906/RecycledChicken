@@ -162,6 +162,7 @@ class HomeVC: CustomRootVC {
     }
     
     private func getItems() {
+        guard !CommonKey.shared.authToken.isEmpty else { return }
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.items, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
