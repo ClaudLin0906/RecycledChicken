@@ -88,7 +88,6 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func sendSMS(){
-        
         self.startCountdown()
         self.addReSendVerificationCodeView()
         

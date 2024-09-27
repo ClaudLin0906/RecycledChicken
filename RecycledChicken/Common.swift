@@ -513,6 +513,7 @@ func changeFormat(_ dateStr:String)-> String {
 }
 
 func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
+    guard !CommonKey.shared.authToken.isEmpty else { return }
     NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.profile, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
         guard let data = data, statusCode == 200 else {
             showAlert(VC: VC, title: "error".localized, message: errorMSG)
