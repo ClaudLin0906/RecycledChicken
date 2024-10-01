@@ -295,7 +295,7 @@
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="g2r-G4-nOM">
-            <size key="intrinsicContentSize" width="42" height="32"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
     </designables>
     <resources>

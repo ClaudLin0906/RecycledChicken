@@ -67,7 +67,7 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    drawTimeLabel.text = "duringDate".localized + ":" + newValue
+                    drawTimeLabel.text = "timeOfUse".localized + ":" + newValue
                 }
             }
         }

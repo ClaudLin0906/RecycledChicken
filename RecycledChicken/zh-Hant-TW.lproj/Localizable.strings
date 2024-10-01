@@ -76,6 +76,7 @@
 "forcedConversion" = "因為暫時不支援多國語言，自動轉換支援的語系，需要重新開啟app";
 "confirm" = "確認";
 "cancel" = "取消";
+"timeOfUse" = "使用時間";
 "appClose" = "the app has been closed";
 "tapOpenApp" = "tap to open the app";
 "sign" = "註冊";

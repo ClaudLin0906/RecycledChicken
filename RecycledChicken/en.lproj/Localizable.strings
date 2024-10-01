@@ -78,6 +78,7 @@
 "cancel" = "cancel";
 "appClose" = "app已經關閉";
 "tapOpenApp" = "點擊打開app";
+"timeOfUse" = "time of use";
 "sign" = "Sign Up";
 "personalNotifications" = "Personal Notifications";
 "personalAccount" = "Personal Account";
