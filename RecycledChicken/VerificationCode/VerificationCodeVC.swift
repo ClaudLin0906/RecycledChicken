@@ -133,6 +133,7 @@ class VerificationCodeVC: CustomLoginVC {
             DispatchQueue.main.async {
                 let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
                 signActivityCodeView.delegate = self
+                signActivityCodeView.setUserID(self.phone)
                 keyWindow?.addSubview(signActivityCodeView)
 //                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
 //                    self.goToLoginVC()

@@ -14,9 +14,11 @@ struct SignUpInfo:Codable {
 }
 
 struct ActivityCodeInfo:Codable {
+    var userID:String
     var activityCode:String
 }
 
 struct InviteCodeInfo:Codable {
+    var userID:String
     var inviteCode:String
 }

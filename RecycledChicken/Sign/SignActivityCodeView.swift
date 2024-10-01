@@ -20,6 +20,8 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
     @IBOutlet weak var errorMSGLabel:CustomLabel!
         
     var delegate:SignActivityCodeViewDelegate?
+    
+    private var phoneNumber = ""
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +31,10 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         customInit()
+    }
+    
+    func setUserID(_ phoneNumber:String) {
+        self.phoneNumber = phoneNumber
     }
     
     private func customInit(){
@@ -97,9 +103,9 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
             group.enter()
             let codeInfo: [String: Any]?
             if isInviteCode {
-                codeInfo = try? InviteCodeInfo(inviteCode: code).asDictionary()
+                codeInfo = try? InviteCodeInfo(userID: phoneNumber, inviteCode: code).asDictionary()
             } else {
-                codeInfo = try? ActivityCodeInfo(activityCode: code).asDictionary()
+                codeInfo = try? ActivityCodeInfo(userID: phoneNumber, activityCode: code).asDictionary()
             }
             
             enterCodeAction(codeInfo ?? [:], urlString: APIUrl.domainName + urlString) { result, message in
