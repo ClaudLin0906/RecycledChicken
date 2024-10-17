@@ -19,10 +19,9 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var profileImageView:UIImageView!
     
-//    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
-    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "marketplace".localized]
+    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
+//    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "marketplace".localized]
 
-    
     private let datePicker:UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.maximumDate = Date()
@@ -49,8 +48,8 @@ class ProfileVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
-        getUserNewInfo(VC: self) {
-            self.profileUserInfo = CurrentUserInfo.shared.currentProfileNewInfo
+        getUserNewInfo(VC: self) { [weak self] in
+            self?.profileUserInfo = CurrentUserInfo.shared.currentProfileNewInfo
         }
         if getLanguage() == .english {
             comfirmBtnWidth.constant = 250
@@ -135,15 +134,15 @@ class ProfileVC: CustomVC {
         var userEmail = CurrentUserInfo.shared.currentProfileNewInfo?.userEmail ?? ""
         var userPhoneNumber = CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber ?? ""
         let userBirth = CurrentUserInfo.shared.currentProfileNewInfo?.userBirth ?? ""
-        var invitCode = CurrentUserInfo.shared.currentProfileNewInfo?.invitCode ?? ""
+//        var inviteCode = CurrentUserInfo.shared.currentProfileNewInfo?.inviteCode ?? ""
         for cell in cells {
             if let profileTableViewCell = cell as? ProfileTableViewCell {
                 if profileTableViewCell.tag == 0 {
                     userName = profileTableViewCell.info.text ?? ""
                 }
-                if profileTableViewCell.tag == 2 {
-                    invitCode = profileTableViewCell.info.text ?? ""
-                }
+//                if profileTableViewCell.tag == 2 {
+//                    inviteCode = profileTableViewCell.info.text ?? ""
+//                }
             }
         }
         let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth)
@@ -194,12 +193,12 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
                 cell.info.text = profileUserInfo.userPhoneNumber
             }
 
-//        case 2:
-//            if let profileUserInfo = profileUserInfo, let invitCode = profileUserInfo.invitCode, invitCode != "" {
-//                cell.info.isEnabled = false
-//                cell.info.text = invitCode
-//            }
         case 2:
+            if let profileUserInfo = profileUserInfo, let inviteCode = profileUserInfo.inviteCode, inviteCode != "" {
+                cell.info.isEnabled = false
+                cell.info.text = inviteCode
+            }
+        case 3:
             cell.phoneNumberCheckBox.isHidden = false
             cell.phoneNumberCheckBox.checkState = .unchecked
             if let linkedToBuenoMart = profileUserInfo?.linkedToBuenoMart, linkedToBuenoMart {

@@ -22,7 +22,8 @@ struct ProfileNewInfo: Codable {
     var userName:String?
     var userPhoneNumber:String?
     var userBirth:String?
-    var invitCode:String?
+    var inviteCode:String?
+    var inputInviteCode:String?
     var linkedToBuenoMart:Bool?
     var point:Int?
     var experiencePoint:Int?
@@ -33,7 +34,8 @@ struct ProfileNewInfo: Codable {
         case userName = "userName"
         case userPhoneNumber = "userPhoneNumber"
         case userBirth = "userBirth"
-        case invitCode = "invitCode"
+        case inviteCode = "inviteCode"
+        case inputInviteCode = "inputInviteCode"
         case linkedToBuenoMart = "linkedToBuenoMart"
         case point = "point"
         case experiencePoint = "experiencePoint"
@@ -45,7 +47,8 @@ struct ProfileNewInfo: Codable {
         userName = try? container.decodeIfPresent(String.self, forKey: .userName)
         userPhoneNumber = try? container.decodeIfPresent(String.self, forKey: .userPhoneNumber)
         userBirth = try? container.decodeIfPresent(String.self, forKey: .userBirth)
-        invitCode = try? container.decodeIfPresent(String.self, forKey: .invitCode)
+        inviteCode = try? container.decodeIfPresent(String.self, forKey: .inviteCode)
+        inputInviteCode = try? container.decodeIfPresent(String.self, forKey: .inputInviteCode)
         linkedToBuenoMart = try? container.decodeIfPresent(Bool.self, forKey: .linkedToBuenoMart)
         point = try? container.decodeIfPresent(Int.self, forKey: .point)
         experiencePoint = try? container.decodeIfPresent(Int.self, forKey: .experiencePoint)

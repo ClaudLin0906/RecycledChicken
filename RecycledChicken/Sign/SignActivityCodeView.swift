@@ -61,9 +61,9 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         errorMSGLabel.isHidden = false
     }
     
-    private func enterCodeAction(_ parameters: [String:Any], urlString:String, _ compeletion: @escaping(Bool, String)->()) {
+    private func  enterCodeAction(_ parameters: [String:Any], urlString:String, _ compeletion: @escaping(Bool, String)->()) {
         NetworkManager.shared.requestWithJSONBody(urlString: urlString, parameters: parameters) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
+            guard statusCode == 200 else {
                 var errorMSG = "發生不明錯誤"
                 if let statusCode = statusCode {
                     switch (statusCode, urlString) {
