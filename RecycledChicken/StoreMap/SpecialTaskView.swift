@@ -29,8 +29,7 @@ class SpecialTaskView: UIView, NibOwnerLoadable {
         loadNibContent()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    func setInfo() {
         guard let info = info else { return }
         addressLabel.text = info.address
         taskDescriptionLabel.text = info.description

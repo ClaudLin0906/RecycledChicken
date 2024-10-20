@@ -19,7 +19,7 @@ class StoreMapVC: CustomRootVC {
     
     @IBOutlet weak var amountViewHeight:NSLayoutConstraint!
     
-    @IBOutlet weak var specialTaskBackgroundView:UIView!
+    @IBOutlet weak var specialTaskView:SpecialTaskView!
         
     private var observation: NSKeyValueObservation?
     
@@ -99,6 +99,10 @@ class StoreMapVC: CustomRootVC {
     
     private func getMakerIcon(_ info:MapInfo) -> UIImage? {
         var image:UIImage?
+        var isSpecial = false
+        if info.description != nil, info.description != "" {
+            isSpecial = true
+        }
         switch info.machineStatus {
         case .submit:
             // remainBottle remainBattery remainCan remainCup isSpecial colorBottle
@@ -139,7 +143,6 @@ class StoreMapVC: CustomRootVC {
                 var remainColorBottle = false
                 var remainCan = false
                 var remainCup = false
-                var isSpecial = false
                 if machineRemaining.battery != nil {
                     remainBattery = true
                 }
@@ -155,24 +158,17 @@ class StoreMapVC: CustomRootVC {
                 if machineRemaining.cup != nil  {
                     remainCup = true
                 }
-                if info.description != nil {
-                    isSpecial = true
-                }
+
                 let key = "\(remainBottle),\(remainBattery),\(remainCan),\(remainCup),\(isSpecial),\(remainColorBottle)"
                 
                 if let imageChicken = imageMap[key] {
                     image = imageChicken
-                }else{
-                    print("\(key)")
                 }
             }
+        case .underMaintenance:
+            break
         default:
-            if info.description != nil {
-                image = #imageLiteral(resourceName: "ch-51")
-            }
-            if info.description == nil {
-                image = #imageLiteral(resourceName: "ch-50")
-            }
+            image = isSpecial ? #imageLiteral(resourceName: "ch-51") : #imageLiteral(resourceName: "ch-50")
         }
         return imageWithImage(image:image, scaledToSize: CGSize(width: 50, height: 50))
     }
@@ -244,7 +240,6 @@ class StoreMapVC: CustomRootVC {
     }
 }
 
-
 extension StoreMapVC: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -262,14 +257,12 @@ extension StoreMapVC: GMSMapViewDelegate {
             if amountView.stackView.subviews.count >= 3 {
                 amountViewHeight.constant = CGFloat(amountView.stackView.subviews.count * 40)
             }
-            if let taskDescription = mapInfo.description {
-                let specialTaskView = SpecialTaskView()
+            if let taskDescription = mapInfo.description, taskDescription != "" {
                 specialTaskView.info = mapInfo
-                specialTaskBackgroundView.isHidden = false
-                specialTaskBackgroundView.addSubview(specialTaskView)
-            }
-            if mapInfo.description == nil {
-                specialTaskBackgroundView.isHidden = true
+                specialTaskView.setInfo()
+                specialTaskView.isHidden = false
+            } else {
+                specialTaskView.isHidden = true
             }
         }
         return true
