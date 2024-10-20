@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@
             <rect key="frame" x="0.0" y="0.0" width="809" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="jwb-53-Vrw" userLabel="bigFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="jwb-53-Vrw" userLabel="bigFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                     <rect key="frame" x="30" y="69" width="344.66666666666669" height="267"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="bigFillRightChickenOfColorFillTypeThreeView"/>
@@ -39,25 +39,25 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aa3-8X-8w4" userLabel="rightUpView">
                     <rect key="frame" x="404.66666666666674" y="59" width="404.33333333333326" height="287"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="qiT-Ob-3Qf" userLabel="leftTopOneFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="qiT-Ob-3Qf" userLabel="leftTopOneFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="10" y="0.0" width="182" height="143.66666666666666"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="leftTopOneFillRightChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="BIQ-ik-kyA" userLabel="leftTopTwoFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="BIQ-ik-kyA" userLabel="leftTopTwoFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="211.99999999999994" y="0.0" width="182.33333333333331" height="143.66666666666666"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="leftTopTwoFillRightChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="3UC-un-qT8" userLabel="leftTopThreeFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="3UC-un-qT8" userLabel="leftTopThreeFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="10" y="143.66666666666663" width="182" height="143.33333333333337"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="leftTopThreeFillRightChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="J0v-oI-RF4" userLabel="leftTopFourFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="J0v-oI-RF4" userLabel="leftTopFourFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="211.99999999999994" y="143.66666666666663" width="182.33333333333331" height="143.33333333333337"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="leftTopFourFillRightChickenOfColorFillTypeThreeView"/>
@@ -90,25 +90,25 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKk-Wd-4Rh" userLabel="leftDownView">
                     <rect key="frame" x="0.0" y="346" width="404.66666666666669" height="287"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="x5a-b5-O9G" userLabel="leftBottomOneFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="x5a-b5-O9G" userLabel="leftBottomOneFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="10" y="0.0" width="182.33333333333334" height="143.66666666666666"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="leftBottomOneFillRightChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="ADy-B3-xls" userLabel="leftBottomTwoFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="ADy-B3-xls" userLabel="leftBottomTwoFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="212.33333333333331" y="0.0" width="182.33333333333331" height="143.66666666666666"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="leftBottomTwoFillRightChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="yt0-Hh-I3L" userLabel="leftBottomThreeFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="yt0-Hh-I3L" userLabel="leftBottomThreeFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="10" y="143.66666666666669" width="182.33333333333334" height="143.33333333333331"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="bigFillRightChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="DwT-6S-fiv" userLabel="leftBottomFourFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="DwT-6S-fiv" userLabel="leftBottomFourFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="212.33333333333331" y="143.66666666666669" width="182.33333333333331" height="143.33333333333331"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="leftBottomFourFillRightChickenOfColorFillTypeThreeView"/>
@@ -137,25 +137,25 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxW-jl-uH9" userLabel="rightDownView">
                     <rect key="frame" x="404.66666666666674" y="346" width="404.33333333333326" height="287"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillLeftChicken" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-qD-fMh" userLabel="rightBottomOneFillLeftChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="9" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillLeftChicken" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-qD-fMh" userLabel="rightBottomOneFillLeftChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="10" y="0.0" width="182" height="143.66666666666666"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="rightBottomOneFillLeftChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="fmz-Gu-SrH" userLabel="rightBottomTwoFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="10" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="fmz-Gu-SrH" userLabel="rightBottomTwoFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="211.99999999999994" y="0.0" width="182.33333333333331" height="143.66666666666666"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="rightBottomTwoFillRightChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="lq6-NR-SVV" userLabel="rightBottomThreeFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="11" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="lq6-NR-SVV" userLabel="rightBottomThreeFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="10" y="143.66666666666669" width="182" height="143.33333333333331"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="rightBottomThreeFillRightChickenOfColorFillTypeThreeView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-Ta-vJj" userLabel="rightBottomFourFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                        <imageView clipsSubviews="YES" tag="12" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-Ta-vJj" userLabel="rightBottomFourFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="211.99999999999994" y="143.66666666666669" width="182.33333333333331" height="143.33333333333331"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="rightBottomFourFillRightChickenOfColorFillTypeThreeView"/>
