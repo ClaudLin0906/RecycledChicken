@@ -49,9 +49,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-kB-cta" customClass="SpecialTaskView" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="73" y="252.99999999999997" width="247" height="300.33333333333326"/>
-                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPh-12-JyV" customClass="AmountView" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="96.666666666666686" y="543.66666666666663" width="200" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,6 +56,9 @@
                                     <constraint firstAttribute="width" constant="200" id="IlE-gd-ROe"/>
                                     <constraint firstAttribute="height" constant="100" id="hef-l4-jRW"/>
                                 </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ta9-kB-cta" customClass="SpecialTaskView" customModule="RecycledChicken" customModuleProvider="target">
+                                <rect key="frame" x="73" y="252.99999999999997" width="247" height="300.33333333333326"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點擊地圖上的碳竹雞可顯示機台剩餘回收數量" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyj-Mw-dme" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                 <rect key="frame" x="86.666666666666686" y="699.66666666666663" width="220" height="13"/>

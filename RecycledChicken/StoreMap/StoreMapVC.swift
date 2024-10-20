@@ -210,6 +210,8 @@ class StoreMapVC: CustomRootVC {
         searchTextField.leftView = leftView
         searchTextField.clearButtonMode = .always
         searchTextField.addTarget( self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        specialTaskView.delegate = self
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {
@@ -288,5 +290,13 @@ extension StoreMapVC:CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
     }
 
+}
+
+extension StoreMapVC:SpecialTaskViewDelegate {
+    
+    func tapClose() {
+        amountView.isHidden = true
+    }
+    
 }
 

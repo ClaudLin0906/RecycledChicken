@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SpecialTaskViewDelegate {
+    func tapClose()
+}
+
 class SpecialTaskView: UIView, NibOwnerLoadable {
     
     var info:MapInfo?
+    
+    var delegate:SpecialTaskViewDelegate?
     
     @IBOutlet weak var addressLabel:UILabel!
     
@@ -36,6 +42,7 @@ class SpecialTaskView: UIView, NibOwnerLoadable {
     }
 
     @IBAction func closeBtnHandle(_ sender:UIButton) {
+        delegate?.tapClose()
         isHidden.toggle()
     }
     
