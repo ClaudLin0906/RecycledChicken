@@ -130,7 +130,6 @@ class CarbonReductionLogVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
-        getRecycleLogData()
         getCarbonReductionRecords(completion: { [weak self] in
             guard let self = self, let carbonReductionLogInfo = self.carbonReductionLogInfo else { return }
             var itemNames:[String] = []
@@ -278,40 +277,6 @@ class CarbonReductionLogVC: CustomVC {
     @IBAction func goBuenopartners(_ sender:UIButton) {
         if let url = URL(string: "https://www.buenopartners.com.tw/formula") {
             UIApplication.shared.open(url)
-        }
-    }
-    
-    private func getRecycleLogData() {
-        guard let dateLastYear = dateLastYearSameDay() else { return }
-        let startTime = dateFromStringISO8601(date: dateLastYear)
-        let endTime = dateFromStringISO8601(date: Date())
-        getRecords(nil, startTime, endTime) { statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-            guard let statusCode = statusCode, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized)
-                return
-            }
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                batteryCount = battery ?? 0
-                var totalBottleCount = 0
-                if let bottle = bottle {
-                    totalBottleCount += bottle
-                }
-                if let colorledBottle = colorledBottle {
-                    totalBottleCount += colorledBottle
-                }
-                if let colorlessBottle = colorlessBottle {
-                    totalBottleCount += colorlessBottle
-                }
-                bottleCount = totalBottleCount
-                canCount = can ?? 0
-//                cupCount = can ?? 0
-                bottleItemCellView.setCount(bottleCount)
-                batteryItemCellView.setCount(batteryCount)
-//                papperCubItemCellView.setCount(cupCount)
-                aluminumCanItemCellView.setCount(canCount)
-//                publicTransportItemCellView.setCount(publicTransportCount)
-            }
         }
     }
     

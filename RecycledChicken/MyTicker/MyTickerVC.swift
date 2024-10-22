@@ -116,7 +116,7 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == voucherTableView {
             let row = indexPath.row
             let myVoucherInfo = myVoucherInfos[row]
-            if let link = myVoucherInfo.link {
+            if myVoucherInfo.link != nil {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
                 cell.setCell(myVoucherInfo)
                 return cell

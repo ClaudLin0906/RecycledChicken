@@ -87,6 +87,14 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemImageView.image = nil
+        itemNameLabel.text = nil
+        duringTimeLabel.text = nil
+        instructionLabel.text = nil
+    }
+    
     func setCell(_ info:MyTickertCouponsInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             self.info = info
