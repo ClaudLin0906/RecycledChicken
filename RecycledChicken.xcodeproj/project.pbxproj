@@ -61,6 +61,7 @@
 		335A45312C0A3E69000D2337 /* SignActivityCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */; };
 		33976DFF2C1D60C100CD6892 /* GetTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33976DFE2C1D60C100CD6892 /* GetTicketView.swift */; };
 		33976E012C1D60C800CD6892 /* GetTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33976E002C1D60C800CD6892 /* GetTicketView.xib */; };
+		33A37F522CC74FFC00FCCE8C /* PointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A37F512CC74FFC00FCCE8C /* PointModel.swift */; };
 		33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */; };
 		33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */; };
 		590251052B68DF250002E76C /* Pw_UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590251042B68DF250002E76C /* Pw_UserDefault.swift */; };
@@ -354,6 +355,7 @@
 		335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignActivityCodeView.xib; sourceTree = "<group>"; };
 		33976DFE2C1D60C100CD6892 /* GetTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketView.swift; sourceTree = "<group>"; };
 		33976E002C1D60C800CD6892 /* GetTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetTicketView.xib; sourceTree = "<group>"; };
+		33A37F512CC74FFC00FCCE8C /* PointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
 		33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerContactVC.swift; sourceTree = "<group>"; };
 		33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerContact.storyboard; sourceTree = "<group>"; };
 		3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycledChicken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1040,6 +1042,7 @@
 			children = (
 				5975219E2A0BD74300D0B67C /* PointVC.swift */,
 				59600F112B9EE9E5009AFA76 /* Point.storyboard */,
+				33A37F512CC74FFC00FCCE8C /* PointModel.swift */,
 			);
 			path = Point;
 			sourceTree = "<group>";
@@ -1854,6 +1857,7 @@
 				59CDA35A2A45A7B800E3F74E /* StoreMapModel.swift in Sources */,
 				597521702A0B6C7900D0B67C /* LogOutView.swift in Sources */,
 				599495772A0D0281009F1B2E /* PointRuleVC.swift in Sources */,
+				33A37F522CC74FFC00FCCE8C /* PointModel.swift in Sources */,
 				59997A4D2A09181D00E9FD7F /* CustomVC.swift in Sources */,
 				331E77B52BFCC383002F6B0D /* IllustratedContentVC.swift in Sources */,
 				5982A9522BBD314B00CB2B08 /* ColorFillTypeOneView.swift in Sources */,

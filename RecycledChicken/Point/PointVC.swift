@@ -36,12 +36,12 @@ class PointVC: CustomRootVC {
 //        myTicker.layer.borderWidth = 1
 //        myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         
-        if getLanguage() == .english {
-            lotteryBtn.setImage(UIImage(named: "lottery_english"), for: .normal)
-            giftVoucherBtn.setImage(UIImage(named: "giftVoucher_english"), for: .normal)
-            productBtn.setImage(UIImage(named: "Product_english"), for: .normal)
-            ponitRecordBtnWidth.constant = 200
-        }
+//        if getLanguage() == .english {
+//            lotteryBtn.setImage(UIImage(named: "lottery_english"), for: .normal)
+//            giftVoucherBtn.setImage(UIImage(named: "giftVoucher_english"), for: .normal)
+//            productBtn.setImage(UIImage(named: "Product_english"), for: .normal)
+//            ponitRecordBtnWidth.constant = 200
+//        }
     }
     
     private func signAlert(){
@@ -60,6 +60,17 @@ class PointVC: CustomRootVC {
                 self.myPoint.text = String(point)
             }
         }
+        getBtnImage { [weak self] pointBtnImage in
+            guard let self = self else { return }
+            setBtnImage(self.lotteryBtn, urlStr: pointBtnImage.activity)
+            setBtnImage(self.giftVoucherBtn, urlStr: pointBtnImage.coupon)
+            setBtnImage(self.productBtn, urlStr: pointBtnImage.product)
+        }
+    }
+    
+    private func setBtnImage(_ btn:UIButton, urlStr:String?) {
+        guard let urlStr = urlStr, let url = URL(string: urlStr), let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else { return }
+        btn.setImage(image, for: .normal)
     }
     
     @IBAction func goToCommodityVoucher(_ sender:UIButton) {
@@ -79,13 +90,22 @@ class PointVC: CustomRootVC {
         }
     }
     
-    func goToProductAlert() {
+    private func getBtnImage(finishAction: @escaping ((PointBtnImage)->())) {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.uiPoint, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else { return }
+            if let pointBtnImage = try? JSONDecoder().decode(PointBtnImage.self, from: data) {
+                finishAction(pointBtnImage)
+            }
+        }
+    }
+    
+    private func goToProductAlert() {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ProductAlert", bundle: Bundle.main).instantiateViewController(identifier: "ProductAlert") as? ProductAlertVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
     
-    func goToProduct() {
+    private func goToProduct() {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "Product", bundle: Bundle.main).instantiateViewController(identifier: "Product") as? ProductVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }

@@ -297,10 +297,6 @@ class UserDefaultKey {
     let isSubscribed = "isSubscribed"
 }
 
- func getCO2e() {
-    
- }
-
 class CurrentUserInfo {
     
     static let shared = CurrentUserInfo()
