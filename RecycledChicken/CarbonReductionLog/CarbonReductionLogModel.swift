@@ -9,12 +9,19 @@ import Foundation
 import UIKit
 
 protocol ColorFillTypeDelegate {
-    func tapImage(_ imageView:UIImageView, userdefultKey:String)
-    func tapBackground(_ backgroundView:UIView, userdefultKey:String)
+    func tapImage(_ imageView:UIImageView, userdefultKey:String, colorFillView:ColorFillView)
+    func tapBackground(_ backgroundView:UIView, userdefultKey:String, colorFillView:ColorFillView)
 }
 
 enum Notch: Int, CaseIterable {
     case minimum, medium, maximum
+}
+
+enum ColorFillView {
+    case ColorFillTypeOneView
+    case ColorFillTypeTwoView
+    case ColorFillTypeThreeView
+    case ColorFillTypeFourView
 }
 
 struct ChooseObject {

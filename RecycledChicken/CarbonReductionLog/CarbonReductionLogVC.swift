@@ -65,9 +65,7 @@ class CarbonReductionLogVC: CustomVC {
         v.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7)
         return v
     }()
-    
-    private lazy var colorFillTypeViews = [colorFillTypeTwoView, colorFillTypeOneView, colorFillTypeThreeView, colorFillTypeFourView]
-        
+            
     private var colorFillScroViewIndex = 0
     {
         didSet {
@@ -75,14 +73,6 @@ class CarbonReductionLogVC: CustomVC {
         }
     }
             
-    private var recyceledSortInfos:[RecyceledSortInfo] = {
-        var arr:[RecyceledSortInfo] = []
-        for i in RecyceledSort.allCases {
-            arr.append(i.getInfo())
-        }
-        return arr
-    }()
-    
     private var carbonReductionLogInfo:CarbonReductionLogInfo?
     
     private var currentPersonalRecyleAmountAndTargetInfo:PersonalRecycleAmountAndTargetInfo?
@@ -113,6 +103,8 @@ class CarbonReductionLogVC: CustomVC {
     
     private var lastSelectedImage:UIImage?
     
+    private var currentColorFillView:ColorFillView = .ColorFillTypeTwoView
+    
     @UserDefault(UserDefaultKey.shared.colorBottleUseCount, defaultValue: 0) var colorBottleUseCount:Int
     
     @UserDefault(UserDefaultKey.shared.colorBatteryUseCount, defaultValue: 0) var colorBatteryUseCount:Int
@@ -120,6 +112,14 @@ class CarbonReductionLogVC: CustomVC {
     @UserDefault(UserDefaultKey.shared.colorPapperCubUseCount, defaultValue: 0) var colorPapperCubUseCount:Int
     
     @UserDefault(UserDefaultKey.shared.colorAluminumCanUseCount, defaultValue: 0) var colorAluminumCanUseCount:Int
+    
+    @UserDefault(UserDefaultKey.shared.colorFillTypeOneViewCo2Value, defaultValue: 0) var colorFillTypeOneViewCo2Value:Double
+    
+    @UserDefault(UserDefaultKey.shared.colorFillTypeTwoViewCo2Value, defaultValue: 0) var colorFillTypeTwoViewCo2Value:Double
+    
+    @UserDefault(UserDefaultKey.shared.colorFillTypeThreeViewCo2Value, defaultValue: 0) var colorFillTypeThreeViewCo2Value:Double
+    
+    @UserDefault(UserDefaultKey.shared.colorFillTypeFourViewCo2Value, defaultValue: 0) var colorFillTypeFourViewCo2Value:Double
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,7 +141,7 @@ class CarbonReductionLogVC: CustomVC {
             itemDropDown.dataSource.append(contentsOf: itemNames)
             changeType()
             reloadItemCellViewValue()
-            convertValueLabel.text = String(getTotalCO2e())
+            setConvertValueLabelText()
         })
     }
      
@@ -294,11 +294,13 @@ class CarbonReductionLogVC: CustomVC {
     @IBAction func scrollViewNext(_ sender:UIButton) {
         guard let maxCount = colorFillScrollView.subviews.first?.subviews.count, maxCount > 0, colorFillScroViewIndex + 1 < maxCount else { return }
         colorFillScroViewIndex += 1
+        setConvertValueLabelText()
     }
     
     @IBAction func scrollViewLast(_ sender:UIButton) {
         guard colorFillScroViewIndex > 0 else { return }
         colorFillScroViewIndex -= 1
+        setConvertValueLabelText()
     }
     
     @IBAction func changeItem(_ tap: UITapGestureRecognizer) {
@@ -360,6 +362,41 @@ class CarbonReductionLogVC: CustomVC {
             present(container, animated: true, completion: nil)
         }
     }
+    
+    private func getConvertValue(_ useRecyceledSort:RecyceledSort) {
+        guard let carbonReductionLogInfo = self.carbonReductionLogInfo, let recycleInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first(where: {$0.itemName == useRecyceledSort.getInfo().chineseName}) else { return }
+        let totalRecycled:Double = Double(recycleInfo.totalRecycled ?? 0)
+        let conversionRate:Double = recycleInfo.conversionRate ?? 0
+        let (resultValue, _ ) = getCO2(totalRecycled, conversionRate)
+        switch currentColorFillView {
+        case .ColorFillTypeOneView:
+            colorFillTypeOneViewCo2Value += Double(resultValue) ?? 0
+        case .ColorFillTypeTwoView:
+            colorFillTypeTwoViewCo2Value += Double(resultValue) ?? 0
+        case .ColorFillTypeThreeView:
+            colorFillTypeThreeViewCo2Value += Double(resultValue) ?? 0
+        case .ColorFillTypeFourView:
+            colorFillTypeFourViewCo2Value += Double(resultValue) ?? 0
+        }
+    }
+    
+    private func setConvertValueLabelText() {
+        var resultValue:Double = 0
+        switch colorFillScroViewIndex {
+            case 0:
+                resultValue = colorFillTypeTwoViewCo2Value
+            case 1:
+                resultValue = colorFillTypeThreeViewCo2Value
+            case 2:
+                resultValue = colorFillTypeFourViewCo2Value
+            case 3:
+                resultValue = colorFillTypeOneViewCo2Value
+            default:
+                break
+        }
+        convertValueLabel.text = String(resultValue)
+    }
+    
 }
 
 extension CarbonReductionLogVC: ChooseColorVCDelete {
@@ -379,6 +416,8 @@ extension CarbonReductionLogVC: ChooseColorVCDelete {
             colorAluminumCanUseCount += 1
         }
         reloadItemCellViewValue()
+        getConvertValue(useRecyceledSort)
+        setConvertValueLabelText()
     }
     
     func cancel() {
@@ -402,16 +441,19 @@ extension CarbonReductionLogVC: ChooseColorVCDelete {
             backgroundView.backgroundColor = color
         }
     }
+    
 }
 
 extension CarbonReductionLogVC: ColorFillTypeDelegate {
     
-    func tapImage(_ imageView: UIImageView, userdefultKey: String) {
+    func tapImage(_ imageView: UIImageView, userdefultKey: String, colorFillView: ColorFillView) {
+        currentColorFillView = colorFillView
         startViewHanle(nil, imageView, userdefultKey)
         goChooseColorVC()
     }
     
-    func tapBackground(_ backgroundView: UIView, userdefultKey: String) {
+    func tapBackground(_ backgroundView: UIView, userdefultKey: String, colorFillView: ColorFillView) {
+        currentColorFillView = colorFillView
         startViewHanle(backgroundView, nil, userdefultKey)
         goChooseColorVC()
     }

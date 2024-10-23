@@ -295,6 +295,10 @@ class UserDefaultKey {
     let oldChickenLevel = "oldChickenLevel"
     let finishTasks = "finishTasks"
     let isSubscribed = "isSubscribed"
+    let colorFillTypeOneViewCo2Value = "colorFillTypeOneViewCo2Value"
+    let colorFillTypeTwoViewCo2Value = "colorFillTypeTwoViewCo2Value"
+    let colorFillTypeThreeViewCo2Value = "colorFillTypeThreeViewCo2Value"
+    let colorFillTypeFourViewCo2Value = "colorFillTypeFourViewCo2Value"
 }
 
 class CurrentUserInfo {
