@@ -8,19 +8,19 @@
 import Foundation
 
 struct PointBtnImage: Codable {
-    var activity:String?
+    var eventLottery:String?
     var coupon:String?
     var product:String?
     
     enum CodingKeys:String, CodingKey {
-        case activity = "activity"
+        case eventLottery = "eventLottery"
         case coupon = "coupon"
         case product = "product"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        activity = try? container.decodeIfPresent(String.self, forKey: .activity)
+        eventLottery = try? container.decodeIfPresent(String.self, forKey: .eventLottery)
         coupon = try? container.decodeIfPresent(String.self, forKey: .coupon)
         product = try? container.decodeIfPresent(String.self, forKey: .product)
     }

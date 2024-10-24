@@ -62,15 +62,17 @@ class PointVC: CustomRootVC {
         }
         getBtnImage { [weak self] pointBtnImage in
             guard let self = self else { return }
-            setBtnImage(self.lotteryBtn, urlStr: pointBtnImage.activity)
+            setBtnImage(self.lotteryBtn, urlStr: pointBtnImage.eventLottery)
             setBtnImage(self.giftVoucherBtn, urlStr: pointBtnImage.coupon)
             setBtnImage(self.productBtn, urlStr: pointBtnImage.product)
         }
     }
     
     private func setBtnImage(_ btn:UIButton, urlStr:String?) {
-        guard let urlStr = urlStr, let url = URL(string: urlStr), let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else { return }
-        btn.setImage(image, for: .normal)
+        DispatchQueue.main.async {
+            guard let urlStr = urlStr, let url = URL(string: urlStr), let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else { return }
+            btn.setImage(image, for: .normal)
+        }
     }
     
     @IBAction func goToCommodityVoucher(_ sender:UIButton) {
