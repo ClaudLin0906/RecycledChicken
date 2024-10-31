@@ -70,6 +70,23 @@ struct PersonalRecycleAmountAndTargetInfo: Codable  {
         conversionRate = try? container.decodeIfPresent(Double.self, forKey: .conversionRate)
         infoLink = try? container.decodeIfPresent(String.self, forKey: .infoLink)
     }
+    
+    func getColorRecycledValue() -> CGFloat {
+        var result:CGFloat = 0
+        switch itemName {
+        case "寶特瓶":
+            result = 1260
+        case "電池":
+            result = 182000
+        case "鋁罐":
+            result = 120100
+        case "紙杯":
+            result = 9060
+        default :
+            break
+        }
+        return result
+    }
 }
 
 struct FixInfo: Codable  {

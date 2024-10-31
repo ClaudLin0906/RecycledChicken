@@ -165,8 +165,6 @@ class StoreMapVC: CustomRootVC {
                     image = imageChicken
                 }
             }
-        case .underMaintenance:
-            break
         default:
             image = isSpecial ? #imageLiteral(resourceName: "ch-51") : #imageLiteral(resourceName: "ch-50")
         }

@@ -275,7 +275,7 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     @IBAction func goBuenopartners(_ sender:UIButton) {
-        if let url = URL(string: "https://www.buenopartners.com.tw/formula") {
+        if let url = URL(string:APIUrl.buenopartners) {
             UIApplication.shared.open(url)
         }
     }
@@ -365,18 +365,17 @@ class CarbonReductionLogVC: CustomVC {
     
     private func getConvertValue(_ useRecyceledSort:RecyceledSort) {
         guard let carbonReductionLogInfo = self.carbonReductionLogInfo, let recycleInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first(where: {$0.itemName == useRecyceledSort.getInfo().chineseName}) else { return }
-        let totalRecycled:Double = Double(recycleInfo.totalRecycled ?? 0)
-        let conversionRate:Double = recycleInfo.conversionRate ?? 0
-        let (resultValue, _ ) = getCO2(totalRecycled, conversionRate)
+        let colorRecycledValue = recycleInfo.getColorRecycledValue()
+        let resultValue = colorRecycledValue / 1000
         switch currentColorFillView {
         case .ColorFillTypeOneView:
-            colorFillTypeOneViewCo2Value += Double(resultValue) ?? 0
+            colorFillTypeOneViewCo2Value += Double(resultValue)
         case .ColorFillTypeTwoView:
-            colorFillTypeTwoViewCo2Value += Double(resultValue) ?? 0
+            colorFillTypeTwoViewCo2Value += Double(resultValue)
         case .ColorFillTypeThreeView:
-            colorFillTypeThreeViewCo2Value += Double(resultValue) ?? 0
+            colorFillTypeThreeViewCo2Value += Double(resultValue)
         case .ColorFillTypeFourView:
-            colorFillTypeFourViewCo2Value += Double(resultValue) ?? 0
+            colorFillTypeFourViewCo2Value += Double(resultValue)
         }
     }
     
