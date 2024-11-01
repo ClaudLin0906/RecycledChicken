@@ -65,23 +65,8 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         NetworkManager.shared.requestWithJSONBody(urlString: urlString, parameters: parameters) { data, statusCode, errorMSG in
             guard statusCode == 200 else {
                 var errorMSG = "發生不明錯誤"
-                if let statusCode = statusCode {
-                    switch (statusCode, urlString) {
-                        case (400, APIUrl.domainName + APIUrl.enterActivityCode):
-                            errorMSG = "活動碼不能為空"
-                        case (404, APIUrl.domainName + APIUrl.enterActivityCode):
-                            errorMSG = "活動碼不正確"
-                        case (500, APIUrl.domainName + APIUrl.enterActivityCode):
-                            errorMSG = "活動碼處理失敗"
-                        case (400, APIUrl.domainName + APIUrl.enterInviteCode):
-                            errorMSG = "邀請碼為空"
-                        case (404, APIUrl.domainName + APIUrl.enterInviteCode):
-                            errorMSG = "邀請碼錯誤"
-                        case (403, APIUrl.domainName + APIUrl.enterInviteCode):
-                            errorMSG = "邀請碼已經被輸入"
-                        default:
-                            break
-                    }
+                if let data = data, let ApiResult = try? JSONDecoder().decode(ApiResult.self, from: data),  let apiResponseMessage = ApiResult.message {
+                    errorMSG = apiResponseMessage
                 }
                 compeletion(false, errorMSG)
                 return

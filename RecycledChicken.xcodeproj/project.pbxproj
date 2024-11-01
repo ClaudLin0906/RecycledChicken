@@ -62,6 +62,8 @@
 		33976DFF2C1D60C100CD6892 /* GetTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33976DFE2C1D60C100CD6892 /* GetTicketView.swift */; };
 		33976E012C1D60C800CD6892 /* GetTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33976E002C1D60C800CD6892 /* GetTicketView.xib */; };
 		33A37F522CC74FFC00FCCE8C /* PointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A37F512CC74FFC00FCCE8C /* PointModel.swift */; };
+		33A8270F2CD4CDD3000CDEFA /* ColorFillTypeThreeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A8270E2CD4CDD2000CDEFA /* ColorFillTypeThreeSubView.xib */; };
+		33A827112CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A827102CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift */; };
 		33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */; };
 		33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */; };
 		590251052B68DF250002E76C /* Pw_UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590251042B68DF250002E76C /* Pw_UserDefault.swift */; };
@@ -356,6 +358,8 @@
 		33976DFE2C1D60C100CD6892 /* GetTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketView.swift; sourceTree = "<group>"; };
 		33976E002C1D60C800CD6892 /* GetTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetTicketView.xib; sourceTree = "<group>"; };
 		33A37F512CC74FFC00FCCE8C /* PointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
+		33A8270E2CD4CDD2000CDEFA /* ColorFillTypeThreeSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeThreeSubView.xib; sourceTree = "<group>"; };
+		33A827102CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeThreeSubView.swift; sourceTree = "<group>"; };
 		33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerContactVC.swift; sourceTree = "<group>"; };
 		33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerContact.storyboard; sourceTree = "<group>"; };
 		3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycledChicken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1261,6 +1265,8 @@
 				5982A95B2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib */,
 				595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */,
 				595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */,
+				33A827102CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift */,
+				33A8270E2CD4CDD2000CDEFA /* ColorFillTypeThreeSubView.xib */,
 				595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */,
 				595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */,
 			);
@@ -1590,6 +1596,7 @@
 				3351CC682C14C38400AC0C2A /* MapIconView.xib in Resources */,
 				59600EB72B9EE31F009AFA76 /* DeleteAllMessageAlertView.xib in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
+				33A8270F2CD4CDD3000CDEFA /* ColorFillTypeThreeSubView.xib in Resources */,
 				59600EAB2B9EE2E8009AFA76 /* LogOutView.xib in Resources */,
 				59600F632B9EEED8009AFA76 /* SearchView.xib in Resources */,
 				59600F4B2B9EEDE4009AFA76 /* ProductDescription.storyboard in Resources */,
@@ -1814,6 +1821,7 @@
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
 				59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */,
 				59E69A2D2A375B650062D4EB /* ScannerView.swift in Sources */,
+				33A827112CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift in Sources */,
 				5985D6BA2B6A1A2E00DE6EBA /* BannerCollectionVC.swift in Sources */,
 				599216C82B8F1E0D0056FFC1 /* ProductVC.swift in Sources */,
 				59C73F462A700C6A0019E87D /* HomeModel.swift in Sources */,
@@ -2687,7 +2695,7 @@
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2734,7 +2742,7 @@
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
