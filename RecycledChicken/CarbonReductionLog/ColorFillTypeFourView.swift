@@ -15,6 +15,8 @@ class ColorFillTypeFourView: UIView, NibOwnerLoadable {
     
     @IBInspectable var userdefultKeyOfBackground: String = ""
     
+    @IBOutlet weak var houseFill:ColorFillImageView!
+    
     @IBOutlet weak var bigFillRightChicken:ColorFillImageView!
     
     @IBOutlet weak var bigFillLeftChicken:ColorFillImageView!

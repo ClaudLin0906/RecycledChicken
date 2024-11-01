@@ -47,8 +47,6 @@
 		33006BEB2C2401A000A8D742 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BEA2C2401A000A8D742 /* FirebaseStorage */; };
 		33006BED2C2401A000A8D742 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BEC2C2401A000A8D742 /* FirebaseStorageCombine-Community */; };
 		33006BEF2C2401A000A8D742 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BEE2C2401A000A8D742 /* FirebaseVertexAI-Preview */; };
-		3309A0D02CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3309A0CF2CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib */; };
-		3309A0D22CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309A0D12CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift */; };
 		331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */; };
 		331E77B52BFCC383002F6B0D /* IllustratedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */; };
 		331E77B72BFCC38F002F6B0D /* IllustratedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */; };
@@ -343,8 +341,6 @@
 		2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectCompanyWebView.storyboard; sourceTree = "<group>"; };
 		25F535922C354872001FFE95 /* ChooseColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseColorVC.swift; sourceTree = "<group>"; };
 		25F535942C35487A001FFE95 /* ChooseColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseColor.storyboard; sourceTree = "<group>"; };
-		3309A0CF2CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeFourSubView.xib; sourceTree = "<group>"; };
-		3309A0D12CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeFourSubView.swift; sourceTree = "<group>"; };
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
 		331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedContentVC.swift; sourceTree = "<group>"; };
 		331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedContent.storyboard; sourceTree = "<group>"; };
@@ -1267,8 +1263,6 @@
 				595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */,
 				595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */,
 				595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */,
-				3309A0D12CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift */,
-				3309A0CF2CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1537,7 +1531,6 @@
 				595D3CF52BE3493400FE9D85 /* DiscoverChickenView.xib in Resources */,
 				5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */,
 				59600F172B9EEB1B009AFA76 /* Lottery.storyboard in Resources */,
-				3309A0D02CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib in Resources */,
 				59600EE72B9EE491009AFA76 /* UpdatePasswordSuccessView.xib in Resources */,
 				59600F132B9EEB0F009AFA76 /* BuyLottery.storyboard in Resources */,
 				59600EC32B9EE35B009AFA76 /* ProfileUpdateView.xib in Resources */,
@@ -1786,7 +1779,6 @@
 				5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */,
 				599216C32B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift in Sources */,
 				5996ADF32B89CE4400D6F6CF /* DeleteAllMessageAlertView.swift in Sources */,
-				3309A0D22CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift in Sources */,
 				599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */,
