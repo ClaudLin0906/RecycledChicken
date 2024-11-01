@@ -1,5 +1,5 @@
 //
-//  ColorFillTypeThreeSubView.swift
+//  ColorFillTypeFourSubView.swift
 //  RecycledChicken
 //
 //  Created by sj on 2024/11/1.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ColorFillTypeThreeSubView: UIView, NibOwnerLoadable {
-    
+class ColorFillTypeFourSubView: UIView, NibOwnerLoadable {
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -22,5 +22,4 @@ class ColorFillTypeThreeSubView: UIView, NibOwnerLoadable {
     private func customInit(){
         loadNibContent()
     }
-    
 }

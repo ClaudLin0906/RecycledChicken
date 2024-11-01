@@ -47,6 +47,8 @@
 		33006BEB2C2401A000A8D742 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BEA2C2401A000A8D742 /* FirebaseStorage */; };
 		33006BED2C2401A000A8D742 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BEC2C2401A000A8D742 /* FirebaseStorageCombine-Community */; };
 		33006BEF2C2401A000A8D742 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 33006BEE2C2401A000A8D742 /* FirebaseVertexAI-Preview */; };
+		3309A0D02CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3309A0CF2CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib */; };
+		3309A0D22CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309A0D12CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift */; };
 		331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */; };
 		331E77B52BFCC383002F6B0D /* IllustratedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */; };
 		331E77B72BFCC38F002F6B0D /* IllustratedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */; };
@@ -62,8 +64,6 @@
 		33976DFF2C1D60C100CD6892 /* GetTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33976DFE2C1D60C100CD6892 /* GetTicketView.swift */; };
 		33976E012C1D60C800CD6892 /* GetTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33976E002C1D60C800CD6892 /* GetTicketView.xib */; };
 		33A37F522CC74FFC00FCCE8C /* PointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A37F512CC74FFC00FCCE8C /* PointModel.swift */; };
-		33A8270F2CD4CDD3000CDEFA /* ColorFillTypeThreeSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A8270E2CD4CDD2000CDEFA /* ColorFillTypeThreeSubView.xib */; };
-		33A827112CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A827102CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift */; };
 		33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */; };
 		33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */; };
 		590251052B68DF250002E76C /* Pw_UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590251042B68DF250002E76C /* Pw_UserDefault.swift */; };
@@ -343,6 +343,8 @@
 		2588F6C02C197C3F00636594 /* ConnectCompanyWebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConnectCompanyWebView.storyboard; sourceTree = "<group>"; };
 		25F535922C354872001FFE95 /* ChooseColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseColorVC.swift; sourceTree = "<group>"; };
 		25F535942C35487A001FFE95 /* ChooseColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseColor.storyboard; sourceTree = "<group>"; };
+		3309A0CF2CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeFourSubView.xib; sourceTree = "<group>"; };
+		3309A0D12CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeFourSubView.swift; sourceTree = "<group>"; };
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
 		331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedContentVC.swift; sourceTree = "<group>"; };
 		331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedContent.storyboard; sourceTree = "<group>"; };
@@ -358,8 +360,6 @@
 		33976DFE2C1D60C100CD6892 /* GetTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketView.swift; sourceTree = "<group>"; };
 		33976E002C1D60C800CD6892 /* GetTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetTicketView.xib; sourceTree = "<group>"; };
 		33A37F512CC74FFC00FCCE8C /* PointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
-		33A8270E2CD4CDD2000CDEFA /* ColorFillTypeThreeSubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeThreeSubView.xib; sourceTree = "<group>"; };
-		33A827102CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeThreeSubView.swift; sourceTree = "<group>"; };
 		33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerContactVC.swift; sourceTree = "<group>"; };
 		33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerContact.storyboard; sourceTree = "<group>"; };
 		3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecycledChicken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1265,10 +1265,10 @@
 				5982A95B2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib */,
 				595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */,
 				595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */,
-				33A827102CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift */,
-				33A8270E2CD4CDD2000CDEFA /* ColorFillTypeThreeSubView.xib */,
 				595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */,
 				595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */,
+				3309A0D12CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift */,
+				3309A0CF2CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1537,6 +1537,7 @@
 				595D3CF52BE3493400FE9D85 /* DiscoverChickenView.xib in Resources */,
 				5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */,
 				59600F172B9EEB1B009AFA76 /* Lottery.storyboard in Resources */,
+				3309A0D02CD4DB34000D12B5 /* ColorFillTypeFourSubView.xib in Resources */,
 				59600EE72B9EE491009AFA76 /* UpdatePasswordSuccessView.xib in Resources */,
 				59600F132B9EEB0F009AFA76 /* BuyLottery.storyboard in Resources */,
 				59600EC32B9EE35B009AFA76 /* ProfileUpdateView.xib in Resources */,
@@ -1596,7 +1597,6 @@
 				3351CC682C14C38400AC0C2A /* MapIconView.xib in Resources */,
 				59600EB72B9EE31F009AFA76 /* DeleteAllMessageAlertView.xib in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
-				33A8270F2CD4CDD3000CDEFA /* ColorFillTypeThreeSubView.xib in Resources */,
 				59600EAB2B9EE2E8009AFA76 /* LogOutView.xib in Resources */,
 				59600F632B9EEED8009AFA76 /* SearchView.xib in Resources */,
 				59600F4B2B9EEDE4009AFA76 /* ProductDescription.storyboard in Resources */,
@@ -1786,6 +1786,7 @@
 				5998DD442B8B333A00C99A8C /* IllustratedGuideTableViewCell.swift in Sources */,
 				599216C32B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift in Sources */,
 				5996ADF32B89CE4400D6F6CF /* DeleteAllMessageAlertView.swift in Sources */,
+				3309A0D22CD4DB43000D12B5 /* ColorFillTypeFourSubView.swift in Sources */,
 				599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */,
@@ -1821,7 +1822,6 @@
 				5999F05F2A1323EC002F08D8 /* AmountView.swift in Sources */,
 				59632D402B89EDD80093BE6E /* LanguageTableViewCell.swift in Sources */,
 				59E69A2D2A375B650062D4EB /* ScannerView.swift in Sources */,
-				33A827112CD4CDE7000CDEFA /* ColorFillTypeThreeSubView.swift in Sources */,
 				5985D6BA2B6A1A2E00DE6EBA /* BannerCollectionVC.swift in Sources */,
 				599216C82B8F1E0D0056FFC1 /* ProductVC.swift in Sources */,
 				59C73F462A700C6A0019E87D /* HomeModel.swift in Sources */,
