@@ -7,9 +7,15 @@
 
 import UIKit
 import Kingfisher
+
+protocol MyTicketVoucherSerialNumberTableViewCellDelegate {
+    func copySerialNumber(_ serialNumber:String)
+}
 class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     
     static let identifier = "MyTicketVoucherSerialNumberTableViewCell"
+    
+    var delegate:MyTicketVoucherSerialNumberTableViewCellDelegate?
     
     @IBOutlet weak var itemImageView: UIImageView!
     
@@ -86,12 +92,18 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(_:)))
+        addGestureRecognizer(longPressGesture)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @objc private func longPressAction(_ longPress:UILongPressGestureRecognizer) {
+        delegate?.copySerialNumber(serialNumberLabel.text ?? "")
     }
     
     override func prepareForReuse() {
