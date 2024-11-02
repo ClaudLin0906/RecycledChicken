@@ -27,7 +27,7 @@ class ColorFillTypeFourView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var threeFillRightChicken:ColorFillImageView!
     
-    private lazy var imageViews:[UIImageView] = [bigFillRightChicken, bigFillLeftChicken, oneFillRightChicken, twoFillRightChicken, threeFillRightChicken]
+    private lazy var imageViews:[UIImageView] = [houseFill, bigFillRightChicken, bigFillLeftChicken, oneFillRightChicken, twoFillRightChicken, threeFillRightChicken]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
