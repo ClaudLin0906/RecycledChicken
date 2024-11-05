@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,6 +51,7 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="oneCellViewImageViewOfColorFillTypeOneView"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="oneCellViewBackgroundOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="fillColorPaperCup"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ria-7E-JdM" userLabel="line">
@@ -79,6 +80,7 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="threeCellViewImageViewOfColorFillTypeOneView"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="threeCellViewBackgroundOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="fillColoraluminumCan"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
@@ -185,6 +187,7 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="nineCellViewImageViewOfColorFillTypeOneView"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="nineCellViewBackgroundOfColorFillTypeOneView"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="fillColorBattery"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
@@ -235,7 +238,10 @@
         </view>
     </objects>
     <resources>
+        <image name="fillColorBattery" width="145" height="250"/>
         <image name="fillColorBigPET" width="436" height="787"/>
+        <image name="fillColorPaperCup" width="288" height="322"/>
+        <image name="fillColoraluminumCan" width="365" height="524"/>
         <image name="fillRightChicken" width="480" height="447"/>
     </resources>
 </document>
