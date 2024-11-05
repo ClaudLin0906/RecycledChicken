@@ -402,6 +402,12 @@ class CarbonReductionLogVC: CustomVC {
         convertValueLabel.text = String(resultValue)
     }
     
+    @IBAction func goToProductDescription(_ sender:UIButton) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "ProductDescription", bundle: Bundle.main).instantiateViewController(identifier: "ProductDescription") as? ProductDescriptionVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+    
 }
 
 extension CarbonReductionLogVC: ChooseColorVCDelete {

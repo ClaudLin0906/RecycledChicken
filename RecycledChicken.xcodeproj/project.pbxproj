@@ -61,6 +61,7 @@
 		335A45312C0A3E69000D2337 /* SignActivityCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */; };
 		33976DFF2C1D60C100CD6892 /* GetTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33976DFE2C1D60C100CD6892 /* GetTicketView.swift */; };
 		33976E012C1D60C800CD6892 /* GetTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33976E002C1D60C800CD6892 /* GetTicketView.xib */; };
+		339B71C82CDA07C6001664F2 /* ColoringTutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 339B71C72CDA07C6001664F2 /* ColoringTutorialVideo.mp4 */; };
 		33A37F522CC74FFC00FCCE8C /* PointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A37F512CC74FFC00FCCE8C /* PointModel.swift */; };
 		33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */; };
 		33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */; };
@@ -355,6 +356,7 @@
 		335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignActivityCodeView.xib; sourceTree = "<group>"; };
 		33976DFE2C1D60C100CD6892 /* GetTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketView.swift; sourceTree = "<group>"; };
 		33976E002C1D60C800CD6892 /* GetTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetTicketView.xib; sourceTree = "<group>"; };
+		339B71C72CDA07C6001664F2 /* ColoringTutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColoringTutorialVideo.mp4; sourceTree = "<group>"; };
 		33A37F512CC74FFC00FCCE8C /* PointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
 		33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerContactVC.swift; sourceTree = "<group>"; };
 		33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerContact.storyboard; sourceTree = "<group>"; };
@@ -766,6 +768,15 @@
 			path = IllustratedContent;
 			sourceTree = "<group>";
 		};
+		339B71C62CDA07A6001664F2 /* MP4 */ = {
+			isa = PBXGroup;
+			children = (
+				59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */,
+				339B71C72CDA07C6001664F2 /* ColoringTutorialVideo.mp4 */,
+			);
+			path = MP4;
+			sourceTree = "<group>";
+		};
 		33CFA5652C1453570067B5B4 /* CustomerContact */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +853,7 @@
 				5998DD492B8B3BDF00C99A8C /* PointRecord */,
 				59632D3A2B89EBC50093BE6E /* LanguageSetting */,
 				5950BF2B2A385D6600EEB21C /* Certificate */,
+				339B71C62CDA07A6001664F2 /* MP4 */,
 				5964AAFD2A14769C0005686F /* LAContextManager.swift */,
 				590251042B68DF250002E76C /* Pw_UserDefault.swift */,
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
@@ -867,7 +879,6 @@
 				59E69A202A3722500062D4EB /* GenJyuuGothic-Heavy.ttf */,
 				59E69A1F2A3722500062D4EB /* GenJyuuGothic-Light.ttf */,
 				59E69A1E2A37224F0062D4EB /* GenJyuuGothic-Medium.ttf */,
-				59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */,
 				59C5AF6D2A290E6F002322BE /* jf-openhuninn-2.0.ttf */,
 				5926C58B2A04086600FAB49D /* Info.plist */,
 				5960E5B82BA14F15007F4AEF /* InfoPlist.strings */,
@@ -1559,6 +1570,7 @@
 				59600F372B9EED25009AFA76 /* AmountView.xib in Resources */,
 				25F535952C35487A001FFE95 /* ChooseColor.storyboard in Resources */,
 				5926C58A2A04086600FAB49D /* LaunchScreen.storyboard in Resources */,
+				339B71C82CDA07C6001664F2 /* ColoringTutorialVideo.mp4 in Resources */,
 				59600F332B9EED12009AFA76 /* IconView.xib in Resources */,
 				59600EFF2B9EE5D1009AFA76 /* CustomCalenderViewCell.xib in Resources */,
 				59600F232B9EEBC7009AFA76 /* BuyCommodity.storyboard in Resources */,
