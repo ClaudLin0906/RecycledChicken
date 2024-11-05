@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="BL8-cY-iQz">
-                    <rect key="frame" x="0.0" y="186" width="300" height="80"/>
+                    <rect key="frame" x="0.0" y="146" width="300" height="80"/>
                     <subviews>
                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="J1o-PO-RKK" userLabel="bottomFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="40" width="40" height="40"/>
@@ -82,23 +82,29 @@
                     </constraints>
                 </stackView>
                 <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="Jdc-xe-8A4" userLabel="smallFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="62.666666666666657" y="181" width="40" height="40"/>
+                    <rect key="frame" x="62.666666666666657" y="141" width="40" height="40"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="smallFillRightChickenOfFillTypeTwoView"/>
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="IIC-C8-CBA" userLabel="medFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="133.66666666666666" y="133" width="48" height="48"/>
+                    <rect key="frame" x="133.66666666666666" y="93" width="48" height="48"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="medFillRightChickenOfFillTypeTwoView"/>
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="lPY-YS-nAS" userLabel="bigFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="181.66666666666666" y="99.333333333333314" width="118.33333333333334" height="57.666666666666686"/>
+                    <rect key="frame" x="181.66666666666666" y="59.333333333333343" width="118.33333333333334" height="57.666666666666657"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="bigFillRightChickenOfColorFillTypeTwoView"/>
                     </userDefinedRuntimeAttributes>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low carbon Living" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-fR-vNx" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="80.333333333333329" y="246" width="139.66666666666669" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
@@ -108,7 +114,8 @@
                 <constraint firstItem="Jdc-xe-8A4" firstAttribute="height" secondItem="J1o-PO-RKK" secondAttribute="height" id="I3r-O7-Zx4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lPY-YS-nAS" secondAttribute="trailing" id="Ocr-G0-R9H"/>
                 <constraint firstItem="BL8-cY-iQz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="P8I-9n-GBF"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="BL8-cY-iQz" secondAttribute="bottom" id="QxS-0w-Z0A"/>
+                <constraint firstItem="vcC-fR-vNx" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="PQ3-xc-sBL"/>
+                <constraint firstItem="vcC-fR-vNx" firstAttribute="top" secondItem="BL8-cY-iQz" secondAttribute="bottom" constant="20" id="QxS-0w-Z0A"/>
                 <constraint firstItem="Jdc-xe-8A4" firstAttribute="bottom" secondItem="J1o-PO-RKK" secondAttribute="top" constant="-5" id="VhM-AW-2yY"/>
                 <constraint firstItem="IIC-C8-CBA" firstAttribute="centerX" secondItem="qUR-e3-XMU" secondAttribute="leading" constant="10" id="aOv-U7-Twa"/>
                 <constraint firstItem="IIC-C8-CBA" firstAttribute="height" secondItem="Jdc-xe-8A4" secondAttribute="height" multiplier="1.2" id="aZx-uX-jVz"/>
@@ -116,6 +123,7 @@
                 <constraint firstItem="lPY-YS-nAS" firstAttribute="height" secondItem="IIC-C8-CBA" secondAttribute="height" multiplier="1.2" id="dAz-nc-t7Y"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BL8-cY-iQz" secondAttribute="trailing" id="ef3-OE-FLe"/>
                 <constraint firstItem="IIC-C8-CBA" firstAttribute="width" secondItem="Jdc-xe-8A4" secondAttribute="width" multiplier="1.2" id="nTp-Rs-cwJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vcC-fR-vNx" secondAttribute="bottom" id="xBk-SG-n5r"/>
                 <constraint firstItem="IIC-C8-CBA" firstAttribute="bottom" secondItem="Jdc-xe-8A4" secondAttribute="top" id="xBp-Xp-Myn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

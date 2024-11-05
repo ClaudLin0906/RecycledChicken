@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="jwb-53-Vrw" userLabel="bigFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                    <rect key="frame" x="30" y="69" width="344.66666666666669" height="267"/>
+                    <rect key="frame" x="10" y="69" width="384.66666666666669" height="267"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="bigFillRightChickenOfColorFillTypeThreeView"/>
                     </userDefinedRuntimeAttributes>
@@ -193,12 +193,12 @@
                 <constraint firstItem="uxW-jl-uH9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="L6s-PT-Kpj"/>
                 <constraint firstItem="aa3-8X-8w4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="NUP-e3-T4T"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uxW-jl-uH9" secondAttribute="bottom" id="Pz0-lz-haS"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="centerX" secondItem="jwb-53-Vrw" secondAttribute="trailing" constant="30" id="XJ5-7O-4ni"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="centerX" secondItem="jwb-53-Vrw" secondAttribute="trailing" constant="10" id="XJ5-7O-4ni"/>
                 <constraint firstItem="jwb-53-Vrw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="edD-GY-kci"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uxW-jl-uH9" secondAttribute="trailing" id="f8L-sW-IXf"/>
                 <constraint firstItem="aa3-8X-8w4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fpP-mI-JdI"/>
                 <constraint firstItem="wKk-Wd-4Rh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="rS3-yD-cn3"/>
-                <constraint firstItem="jwb-53-Vrw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="w5K-Fy-CVZ"/>
+                <constraint firstItem="jwb-53-Vrw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="w5K-Fy-CVZ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aa3-8X-8w4" secondAttribute="trailing" id="zLw-qE-0R7"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

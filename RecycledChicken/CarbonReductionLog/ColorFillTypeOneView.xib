@@ -156,7 +156,7 @@
                                 <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-y8-sEO" customClass="ColorFillTypeOneCellView" customModule="RecycledChicken" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="128.33333333333334" height="99.666666666666671"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="fillRightChicken"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="fillColorChickenNoEye"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfImage" value="sevenCellViewImageViewOfColorFillTypeOneView"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="userdefultKeyOfBackground" value="sevenCellViewBackgroundOfColorFillTypeOneView"/>
                                     </userDefinedRuntimeAttributes>
@@ -240,8 +240,8 @@
     <resources>
         <image name="fillColorBattery" width="145" height="250"/>
         <image name="fillColorBigPET" width="436" height="787"/>
+        <image name="fillColorChickenNoEye" width="148" height="138"/>
         <image name="fillColorPaperCup" width="288" height="322"/>
         <image name="fillColoraluminumCan" width="365" height="524"/>
-        <image name="fillRightChicken" width="480" height="447"/>
     </resources>
 </document>
