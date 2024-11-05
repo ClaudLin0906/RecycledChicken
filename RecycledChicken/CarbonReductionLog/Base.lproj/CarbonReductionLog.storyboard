@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="525"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oge-og-uPf" userLabel="content">
-                                                <rect key="frame" x="0.0" y="0.0" width="313" height="580"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="680"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-Hg-eYs" userLabel="step1">
                                                         <rect key="frame" x="20" y="10" width="273" height="50"/>
@@ -136,7 +136,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z66-iW-neP" userLabel="step4">
-                                                        <rect key="frame" x="20" y="260" width="273" height="200"/>
+                                                        <rect key="frame" x="20" y="260" width="273" height="300"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Cv-0j-HoS">
                                                                 <rect key="frame" x="59" y="0.0" width="155" height="30"/>
@@ -187,22 +187,22 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlI-Nx-OoX">
-                                                                <rect key="frame" x="10" y="40" width="253" height="150"/>
+                                                                <rect key="frame" x="10" y="40" width="253" height="250"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiF-58-bYb" userLabel="content">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="1012" height="150"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="1012" height="250"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jhr-Fk-jTd" userLabel="step1">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="150"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="250"/>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEQ-R4-4YO" userLabel="step2">
-                                                                                <rect key="frame" x="253" y="0.0" width="253" height="150"/>
+                                                                                <rect key="frame" x="253" y="0.0" width="253" height="250"/>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cga-zk-uSc" userLabel="step3">
-                                                                                <rect key="frame" x="506" y="0.0" width="253" height="150"/>
+                                                                                <rect key="frame" x="506" y="0.0" width="253" height="250"/>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TH7-57-nQP" userLabel="step4">
-                                                                                <rect key="frame" x="759" y="0.0" width="253" height="150"/>
+                                                                                <rect key="frame" x="759" y="0.0" width="253" height="250"/>
                                                                             </view>
                                                                         </subviews>
                                                                         <constraints>
@@ -240,7 +240,7 @@
                                                         <constraints>
                                                             <constraint firstItem="UlI-Nx-OoX" firstAttribute="centerX" secondItem="0Cv-0j-HoS" secondAttribute="centerX" id="0QZ-Mx-cVs"/>
                                                             <constraint firstAttribute="trailing" secondItem="UlI-Nx-OoX" secondAttribute="trailing" constant="10" id="MGX-L0-Xy2"/>
-                                                            <constraint firstAttribute="height" constant="200" id="Pid-w6-svJ"/>
+                                                            <constraint firstAttribute="height" constant="300" id="Pid-w6-svJ"/>
                                                             <constraint firstItem="UlI-Nx-OoX" firstAttribute="leading" secondItem="z66-iW-neP" secondAttribute="leading" constant="10" id="Tyx-fc-Tl5"/>
                                                             <constraint firstItem="0Cv-0j-HoS" firstAttribute="top" secondItem="z66-iW-neP" secondAttribute="top" id="gW6-cZ-v9Z"/>
                                                             <constraint firstAttribute="bottom" secondItem="UlI-Nx-OoX" secondAttribute="bottom" constant="10" id="m1l-rp-pRL"/>
@@ -249,7 +249,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x79-I0-g1C" userLabel="step5">
-                                                        <rect key="frame" x="20" y="470" width="273" height="110"/>
+                                                        <rect key="frame" x="20" y="570" width="273" height="110"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGy-vW-Y45">
                                                                 <rect key="frame" x="0.0" y="0.0" width="273" height="30"/>
@@ -476,7 +476,7 @@
             <size key="intrinsicContentSize" width="57.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="iZZ-lD-1hs">
-            <size key="intrinsicContentSize" width="30" height="32"/>
+            <size key="intrinsicContentSize" width="56" height="32"/>
         </designable>
         <designable name="qw0-zw-FUi">
             <size key="intrinsicContentSize" width="393.33333333333331" height="20.333333333333332"/>

@@ -233,9 +233,15 @@ class CarbonReductionLogVC: CustomVC {
                     colorFillView.delegate = self
                     colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
                 }
-                if v == colorFillTypeOneView, let colorFillView = v as? ColorFillTypeOneView {
+                if v == colorFillTypeOneView, let colorFillView = v as? ColorFillTypeOneView, let contentVoew = colorFillScrollView.subviews.first {
                     colorFillView.delegate = self
-                    colorFillScrollView.subviews.first?.subviews[3].addSubview(colorFillTypeOneView)
+                    contentVoew.subviews[3].addSubview(colorFillView)
+                    colorFillView.translatesAutoresizingMaskIntoConstraints = false
+                    colorFillView.centerXAnchor.constraint(equalTo: contentVoew.subviews[3].centerXAnchor).isActive = true
+                    colorFillView.centerYAnchor.constraint(equalTo: contentVoew.subviews[3].centerYAnchor).isActive = true
+                    colorFillView.widthAnchor.constraint(equalTo: contentVoew.subviews[3].heightAnchor).isActive = true
+                    colorFillView.heightAnchor.constraint(equalTo: contentVoew.subviews[3].heightAnchor).isActive = true
+
                 }
             }
         }
