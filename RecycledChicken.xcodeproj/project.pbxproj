@@ -62,6 +62,8 @@
 		33976DFF2C1D60C100CD6892 /* GetTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33976DFE2C1D60C100CD6892 /* GetTicketView.swift */; };
 		33976E012C1D60C800CD6892 /* GetTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33976E002C1D60C800CD6892 /* GetTicketView.xib */; };
 		339B71C82CDA07C6001664F2 /* ColoringTutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 339B71C72CDA07C6001664F2 /* ColoringTutorialVideo.mp4 */; };
+		339B71CA2CDBD07B001664F2 /* ColoringTutorialVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339B71C92CDBD07A001664F2 /* ColoringTutorialVideoView.xib */; };
+		339B71CC2CDBD0A2001664F2 /* ColoringTutorialVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B71CB2CDBD0A2001664F2 /* ColoringTutorialVideoView.swift */; };
 		33A37F522CC74FFC00FCCE8C /* PointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A37F512CC74FFC00FCCE8C /* PointModel.swift */; };
 		33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */; };
 		33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */; };
@@ -357,6 +359,8 @@
 		33976DFE2C1D60C100CD6892 /* GetTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketView.swift; sourceTree = "<group>"; };
 		33976E002C1D60C800CD6892 /* GetTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetTicketView.xib; sourceTree = "<group>"; };
 		339B71C72CDA07C6001664F2 /* ColoringTutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ColoringTutorialVideo.mp4; sourceTree = "<group>"; };
+		339B71C92CDBD07A001664F2 /* ColoringTutorialVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColoringTutorialVideoView.xib; sourceTree = "<group>"; };
+		339B71CB2CDBD0A2001664F2 /* ColoringTutorialVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringTutorialVideoView.swift; sourceTree = "<group>"; };
 		33A37F512CC74FFC00FCCE8C /* PointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
 		33CFA5662C1453740067B5B4 /* CustomerContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerContactVC.swift; sourceTree = "<group>"; };
 		33CFA5682C1453800067B5B4 /* CustomerContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerContact.storyboard; sourceTree = "<group>"; };
@@ -1274,6 +1278,8 @@
 				595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */,
 				595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */,
 				595406C12BC27B9500D214BF /* ColorFillTypeFourView.xib */,
+				339B71CB2CDBD0A2001664F2 /* ColoringTutorialVideoView.swift */,
+				339B71C92CDBD07A001664F2 /* ColoringTutorialVideoView.xib */,
 			);
 			path = CarbonReductionLog;
 			sourceTree = "<group>";
@@ -1542,6 +1548,7 @@
 				595D3CF52BE3493400FE9D85 /* DiscoverChickenView.xib in Resources */,
 				5982A9582BBD31A200CB2B08 /* ColorFillTypeOneCellView.xib in Resources */,
 				59600F172B9EEB1B009AFA76 /* Lottery.storyboard in Resources */,
+				339B71CA2CDBD07B001664F2 /* ColoringTutorialVideoView.xib in Resources */,
 				59600EE72B9EE491009AFA76 /* UpdatePasswordSuccessView.xib in Resources */,
 				59600F132B9EEB0F009AFA76 /* BuyLottery.storyboard in Resources */,
 				59600EC32B9EE35B009AFA76 /* ProfileUpdateView.xib in Resources */,
@@ -1808,6 +1815,7 @@
 				5998DD4B2B8B3BFB00C99A8C /* PointRecordVC.swift in Sources */,
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */,
+				339B71CC2CDBD0A2001664F2 /* ColoringTutorialVideoView.swift in Sources */,
 				5926C5822A04086400FAB49D /* ViewController.swift in Sources */,
 				2568F1F32C3B80C80086A5B1 /* ChooseColorModel.swift in Sources */,
 				59CC8DA92A6BB3C30094CE57 /* LotteryItemTableViewCell.swift in Sources */,
@@ -2621,7 +2629,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2680,7 +2688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2699,7 +2707,7 @@
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2717,7 +2725,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2746,7 +2754,7 @@
 				CODE_SIGN_ENTITLEMENTS = RecycledChicken/RecycledChicken.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 85QZ2RDHW3;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2764,7 +2772,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
