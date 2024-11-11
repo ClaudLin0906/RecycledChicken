@@ -25,7 +25,8 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemImageView.kf.setImage(with: newValue)
                 }
             }
@@ -36,7 +37,8 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemNameLabel.text = newValue
                 }
             }
@@ -47,7 +49,8 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     duringTimeLabel.text = newValue
                 }
             }
@@ -58,7 +61,8 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     instructionLabel.text = newValue
                 }
             }
@@ -81,6 +85,14 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemImageView.image = nil
+        itemNameLabel.text = nil
+        duringTimeLabel.text = nil
+        instructionLabel.text = nil
     }
     
     func setCell(_ info:MyTickertCouponsInfo) {

@@ -52,7 +52,7 @@
                             </constraints>
                         </imageView>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ra2-Zp-1qf" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="5" y="25" width="335" height="20.333333333333329"/>
+                            <rect key="frame" x="5" y="25" width="360" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHa-Uh-4Wz">
-                            <rect key="frame" x="5" y="534.33333333333337" width="335" height="24.666666666666629"/>
+                            <rect key="frame" x="5" y="534.33333333333337" width="360" height="24.666666666666629"/>
                             <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                         <constraint firstItem="45m-TY-EjN" firstAttribute="leading" secondItem="qC3-kb-zRw" secondAttribute="leading" constant="5" id="Mhq-V0-Vzu"/>
                         <constraint firstItem="aHa-Uh-4Wz" firstAttribute="trailing" secondItem="Ra2-Zp-1qf" secondAttribute="trailing" id="ldX-eR-y78"/>
                         <constraint firstItem="Ra2-Zp-1qf" firstAttribute="top" secondItem="45m-TY-EjN" secondAttribute="bottom" id="tij-m6-KiR"/>
-                        <constraint firstItem="Ra2-Zp-1qf" firstAttribute="trailing" secondItem="fMY-bV-pc4" secondAttribute="leading" constant="-5" id="vKb-GL-mfs"/>
+                        <constraint firstItem="Ra2-Zp-1qf" firstAttribute="trailing" secondItem="qC3-kb-zRw" secondAttribute="trailing" id="vKb-GL-mfs"/>
                         <constraint firstItem="Ra2-Zp-1qf" firstAttribute="leading" secondItem="45m-TY-EjN" secondAttribute="leading" id="wrC-Y7-at5"/>
                         <constraint firstItem="45m-TY-EjN" firstAttribute="trailing" secondItem="fMY-bV-pc4" secondAttribute="leading" constant="-5" id="yju-IQ-t42"/>
                         <constraint firstItem="aHa-Uh-4Wz" firstAttribute="leading" secondItem="Ra2-Zp-1qf" secondAttribute="leading" id="zLQ-E4-ql9"/>

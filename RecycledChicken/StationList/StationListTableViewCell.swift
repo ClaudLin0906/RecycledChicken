@@ -26,7 +26,8 @@ class StationListTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     nameLabel.text = newValue
                 }
             }
@@ -37,7 +38,8 @@ class StationListTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     addressLabel.text = newValue
                 }
             }

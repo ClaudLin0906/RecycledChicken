@@ -88,7 +88,8 @@ class StationListVC: CustomVC {
     private func setupAreaDropDown() {
         areasDropDown.anchorView = dropDownView
         areasDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
-        areasDropDown.selectionAction = { [self] (index, item) in
+        areasDropDown.selectionAction = { [weak self] (index, item) in
+            guard let self = self else { return }
             dropDownView.setDefaultTitle(areas[index])
             filterMapInfos.removeAll()
             if index == 0 {
@@ -96,7 +97,7 @@ class StationListVC: CustomVC {
             }
             if index != 0 {
                 filterMapInfos = mapInfos.filter({ mapInfo in
-                    if let address = mapInfo.address, address.contains(areas[index]) {
+                    if let address = mapInfo.address, address.contains(self.areas[index]) {
                         return true
                     }
                     return false

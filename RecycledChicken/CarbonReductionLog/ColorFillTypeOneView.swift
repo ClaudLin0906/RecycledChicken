@@ -11,6 +11,8 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeDelegate?
     
+    var colorFillView:ColorFillView = .ColorFillTypeOneView
+    
     @IBOutlet weak var oneCellView:ColorFillTypeOneCellView!
     
     @IBOutlet weak var twoCellView:ColorFillTypeOneCellView!
@@ -30,7 +32,7 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
     @IBOutlet weak var nineCellView:ColorFillTypeOneCellView!
     
     private lazy var colorFillTypeOneCellViews:[ColorFillTypeOneCellView] = [oneCellView, twoCellView, threeCellView, fourCellView, fiveCellView, sixCellView, sevenCellView, eightCellView, nineCellView]
-            
+                
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -50,11 +52,11 @@ class ColorFillTypeOneView: UIView, NibOwnerLoadable {
 extension ColorFillTypeOneView:ColorFillTypeOneCellViewDelegate {
     
     func tapImageViewHandle(_ imageView: UIImageView, userdefultKey: String) {
-        delegate?.tapImage(imageView, userdefultKey: userdefultKey)
+        delegate?.tapImage(imageView, userdefultKey: userdefultKey, colorFillView: colorFillView)
     }
     
     func tapBackgroundHandle(_ backgroundView: UIView, userdefultKey: String) {
-        delegate?.tapBackground(backgroundView, userdefultKey: userdefultKey)
+        delegate?.tapBackground(backgroundView, userdefultKey: userdefultKey, colorFillView: colorFillView)
     }
     
 }

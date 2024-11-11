@@ -88,7 +88,6 @@ class VerificationCodeVC: CustomLoginVC {
     }
     
     private func sendSMS(){
-        
         self.startCountdown()
         self.addReSendVerificationCodeView()
         
@@ -132,13 +131,14 @@ class VerificationCodeVC: CustomLoginVC {
                 return
             }
             DispatchQueue.main.async {
-//                let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
-//                signActivityCodeView.delegate = self
-//                keyWindow?.addSubview(signActivityCodeView)
-                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
-                    self.goToLoginVC()
-                }
-                showAlert(VC: self, title: "註冊成功, 請重新登入", alertAction: alertAction)
+                let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
+                signActivityCodeView.delegate = self
+                signActivityCodeView.setUserID(self.phone)
+                keyWindow?.addSubview(signActivityCodeView)
+//                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
+//                    self.goToLoginVC()
+//                }
+//                showAlert(VC: self, title: "註冊成功, 請重新登入", alertAction: alertAction)
             }
         }
     }
@@ -167,8 +167,9 @@ class VerificationCodeVC: CustomLoginVC {
             fadeInOutAni(showView: completetChangePWDView) {
                 let json = NetworkManager.shared.dataToDictionary(data: data)
                 print(json)
-                DispatchQueue.main.async { [self] in
-                    let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: view.frame)
                     fadeInOutAni(showView: updatePasswordSuccessView) {
                         self.goToLoginVC()
                     }

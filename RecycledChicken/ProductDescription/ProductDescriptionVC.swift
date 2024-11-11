@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import AVKit
 class ProductDescriptionVC: CustomVC {
+    
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
     
@@ -34,7 +35,7 @@ class ProductDescriptionVC: CustomVC {
     
     private func UIInit(){
         // 获取视频文件的URL
-        guard let videoURL = Bundle.main.url(forResource: "TutorialVideo", withExtension: "mp4") else {
+        guard let videoURL = Bundle.main.url(forResource: "ColoringTutorialVideo", withExtension: "mp4") else {
             return
         }
 

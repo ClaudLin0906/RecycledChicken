@@ -7,9 +7,15 @@
 
 import UIKit
 import Kingfisher
+
+protocol MyTicketVoucherSerialNumberTableViewCellDelegate {
+    func copySerialNumber(_ serialNumber:String)
+}
 class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     
     static let identifier = "MyTicketVoucherSerialNumberTableViewCell"
+    
+    var delegate:MyTicketVoucherSerialNumberTableViewCellDelegate?
     
     @IBOutlet weak var itemImageView: UIImageView!
     
@@ -27,7 +33,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemImageView.kf.setImage(with: newValue)
                 }
             }
@@ -38,7 +45,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemNameLabel.text = newValue
                 }
             }
@@ -49,7 +57,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     duringTimeLabel.text = newValue
                 }
             }
@@ -60,7 +69,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     serialNumberLabel.text = newValue
                 }
             }
@@ -71,7 +81,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     instructionLabel.text = newValue
                 }
             }
@@ -81,6 +92,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(_:)))
+        addGestureRecognizer(longPressGesture)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -89,20 +102,34 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @objc private func longPressAction(_ longPress:UILongPressGestureRecognizer) {
+        delegate?.copySerialNumber(serialNumberLabel.text ?? "")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemImageView.image = nil
+        serialNumberLabel.text = nil
+        itemNameLabel.text = nil
+        duringTimeLabel.text = nil
+        instructionLabel.text = nil
+    }
+    
     func setCell(_ info:MyTickertCouponsInfo) {
-        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async { [weak self] in
+            guard let self = self else { return }
             self.info = info
             if let pictureStr = info.picture, let pictureURL = URL(string: pictureStr) {
-                self.imageURL = pictureURL
+                imageURL = pictureURL
             }
             if let name = info.name {
-                self.itemName = name
+                itemName = name
             }
             if let code = info.code {
-                self.serialNumber = code
+                serialNumber = code
             }
             if let expire = info.expire {
-                self.duringTime = "使用期限至 \(expire)"
+                duringTime = "使用期限至 \(expire)"
             }
             if let instruction = info.instruction {
                 self.instruction = instruction

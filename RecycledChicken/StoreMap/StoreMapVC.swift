@@ -19,7 +19,7 @@ class StoreMapVC: CustomRootVC {
     
     @IBOutlet weak var amountViewHeight:NSLayoutConstraint!
     
-    @IBOutlet weak var specialTaskBackgroundView:UIView!
+    @IBOutlet weak var specialTaskView:SpecialTaskView!
         
     private var observation: NSKeyValueObservation?
     
@@ -45,8 +45,8 @@ class StoreMapVC: CustomRootVC {
         } else {
            locationManager.requestWhenInUseAuthorization()
         }
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { [self] (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { [weak self] (data, statusCode, errorMSG) in
+            guard let self = self, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
@@ -62,11 +62,11 @@ class StoreMapVC: CustomRootVC {
                             newMapInfo.machineStatus = .submit
                         }
                     }
-                    mapInfosData.append(newMapInfo)
+                    self.mapInfosData.append(newMapInfo)
                 })
                 mapInfosData.forEach({
-                    if $0.taskDescription != nil {
-                        specialTaskMapInfos.append($0)
+                    if $0.description != nil {
+                        self.specialTaskMapInfos.append($0)
                     }
                 })
                 currentMapInfos = mapInfosData
@@ -81,16 +81,17 @@ class StoreMapVC: CustomRootVC {
     }
     
     private func addMarker(_ infos:[MapInfo]) {
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             mapView?.clear()
             infos.forEach { info in
                 guard let latitudeString = info.machineLocation?.latitude, let latitude = Double(latitudeString), let longitudeString = info.machineLocation?.longitude, let longitude = Double(longitudeString) else { return }
                 let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 let maker = GMSMarker()
                 maker.position = coordinate
-                maker.map = mapView
+                maker.map = self.mapView
                 maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
-                maker.icon = getMakerIcon(info)
+                maker.icon = self.getMakerIcon(info)
                 maker.title = info.name
             }
         }
@@ -98,6 +99,10 @@ class StoreMapVC: CustomRootVC {
     
     private func getMakerIcon(_ info:MapInfo) -> UIImage? {
         var image:UIImage?
+        var isSpecial = false
+        if info.description != nil, info.description != "" {
+            isSpecial = true
+        }
         switch info.machineStatus {
         case .submit:
             // remainBottle remainBattery remainCan remainCup isSpecial colorBottle
@@ -138,7 +143,6 @@ class StoreMapVC: CustomRootVC {
                 var remainColorBottle = false
                 var remainCan = false
                 var remainCup = false
-                var isSpecial = false
                 if machineRemaining.battery != nil {
                     remainBattery = true
                 }
@@ -154,24 +158,15 @@ class StoreMapVC: CustomRootVC {
                 if machineRemaining.cup != nil  {
                     remainCup = true
                 }
-                if info.taskDescription != nil {
-                    isSpecial = true
-                }
+
                 let key = "\(remainBottle),\(remainBattery),\(remainCan),\(remainCup),\(isSpecial),\(remainColorBottle)"
                 
                 if let imageChicken = imageMap[key] {
                     image = imageChicken
-                }else{
-                    print("\(key)")
                 }
             }
         default:
-            if info.taskDescription != nil {
-                image = #imageLiteral(resourceName: "ch-51")
-            }
-            if info.taskDescription == nil {
-                image = #imageLiteral(resourceName: "ch-50")
-            }
+            image = isSpecial ? #imageLiteral(resourceName: "ch-51") : #imageLiteral(resourceName: "ch-50")
         }
         return imageWithImage(image:image, scaledToSize: CGSize(width: 50, height: 50))
     }
@@ -213,6 +208,8 @@ class StoreMapVC: CustomRootVC {
         searchTextField.leftView = leftView
         searchTextField.clearButtonMode = .always
         searchTextField.addTarget( self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        specialTaskView.delegate = self
     }
     
     @IBAction func goToStoreList(_ sender:UIButton) {
@@ -243,7 +240,6 @@ class StoreMapVC: CustomRootVC {
     }
 }
 
-
 extension StoreMapVC: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -261,14 +257,12 @@ extension StoreMapVC: GMSMapViewDelegate {
             if amountView.stackView.subviews.count >= 3 {
                 amountViewHeight.constant = CGFloat(amountView.stackView.subviews.count * 40)
             }
-            if let taskDescription = mapInfo.taskDescription {
-                let specialTaskView = SpecialTaskView()
+            if let taskDescription = mapInfo.description, taskDescription != "" {
                 specialTaskView.info = mapInfo
-                specialTaskBackgroundView.isHidden = false
-                specialTaskBackgroundView.addSubview(specialTaskView)
-            }
-            if mapInfo.taskDescription == nil {
-                specialTaskBackgroundView.isHidden = true
+                specialTaskView.setInfo()
+                specialTaskView.isHidden = false
+            } else {
+                specialTaskView.isHidden = true
             }
         }
         return true
@@ -294,5 +288,13 @@ extension StoreMapVC:CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
     }
 
+}
+
+extension StoreMapVC:SpecialTaskViewDelegate {
+    
+    func tapClose() {
+        amountView.isHidden = true
+    }
+    
 }
 

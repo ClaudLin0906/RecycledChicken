@@ -29,7 +29,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemImageView.kf.setImage(with: newValue)
                 }
             }
@@ -40,7 +41,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemNameLabel.text = newValue
                 }
             }
@@ -51,7 +53,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     duringTimeLabel.text = newValue
                 }
             }
@@ -62,8 +65,9 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
-                    drawTimeLabel.text = "duringDate".localized + ":" + newValue
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    drawTimeLabel.text = "timeOfUse".localized + ":" + newValue
                 }
             }
         }
@@ -73,7 +77,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     pointLabel.text = newValue
                 }
             }
@@ -83,7 +88,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     remainingQuantityLabel.text = "剩餘數量 \(String(newValue))"
                 }
             }

@@ -44,7 +44,7 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var mallHeight:NSLayoutConstraint!
     
     @IBOutlet weak var bannerView:UIView!
-    
+        
     private var scrollView:UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,11 +59,13 @@ class HomeVC: CustomRootVC {
     private var adBannerInfos:[ADBannerInfo] = []
     
     private var itemInfos:[ItemInfo] = []
-//    
+    
     private var cancellables: Set<AnyCancellable> = []
 
     @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: "") var displayToday:String
         
+    @UserDefault(UserDefaultKey.shared.oldChickenLevel, defaultValue: nil) var oldChickenLevel:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -80,7 +82,8 @@ class HomeVC: CustomRootVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getUserNewInfo(VC: self) {
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 let illustratedGuide = getIllustratedGuide(getChickenLevel())
                 chickenLevelImageView.image = illustratedGuide.levelImage
                 if let image = getTrendChart() {
@@ -94,8 +97,8 @@ class HomeVC: CustomRootVC {
         }
         getItems()
         if let (startTime, endTime) = getStartAndEndDateOfMonth() {
-            getRecords(nil, startTime, endTime) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-                guard let statusCode = statusCode, statusCode == 200 else {
+            getRecords(nil, startTime, endTime) { [weak self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+                guard let self = self, let statusCode = statusCode, statusCode == 200 else {
                     showAlert(VC: self, title: "error".localized)
                     return
                 }
@@ -132,7 +135,8 @@ class HomeVC: CustomRootVC {
                 }
             }
             getADBannerInfos {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     pageControl.numberOfPages = adBannerInfos.count
                     addScrollSubView()
                 }
@@ -145,13 +149,12 @@ class HomeVC: CustomRootVC {
         var showChicken = true
         guard let currentChickenLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel?.rawValue else { return }
         
-        if UserDefaults().object(forKey: UserDefaultKey.shared.oldChickenLevel) != nil {
-            let oldChickenLevel = UserDefaults().integer(forKey: UserDefaultKey.shared.oldChickenLevel)
+        if let oldChickenLevel = oldChickenLevel {
             if currentChickenLevel <= oldChickenLevel {
                 showChicken = false
             }
         }
-        UserDefaults().set(currentChickenLevel, forKey: UserDefaultKey.shared.oldChickenLevel)
+        oldChickenLevel = currentChickenLevel
         if showChicken {
             let chickeIntroduceView = ChickeIntroduceView(frame: UIScreen.main.bounds)
             fadeInOutAni(showView: chickeIntroduceView, finishAction: nil)
@@ -159,6 +162,7 @@ class HomeVC: CustomRootVC {
     }
     
     private func getItems() {
+        guard !CommonKey.shared.authToken.isEmpty else { return }
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.items, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
@@ -273,8 +277,8 @@ class HomeVC: CustomRootVC {
         scrollView.addGestureRecognizer(leftGesture)
         scrollView.addGestureRecognizer(rightGesture)
         self.currentIndexSubject
-            .sink { [self] index in
-                guard adBannerInfos.count > 0 else { return }
+            .sink { [weak self] index in
+                guard let self = self, adBannerInfos.count > 0 else { return }
                 pageControl.currentPage = index
                 UIView.animate(withDuration: 0.5) {
                     self.scrollView.contentOffset = CGPoint(x: Int(self.scrollView.frame.width) * index, y: 0)
@@ -284,6 +288,7 @@ class HomeVC: CustomRootVC {
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
             self.changeBanner()
         }
+
     }
     
     private func addScrollSubView() {
@@ -423,3 +428,4 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
 }
+

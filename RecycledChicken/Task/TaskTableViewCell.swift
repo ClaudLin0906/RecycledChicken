@@ -33,7 +33,8 @@ class TaskTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     titleLabel.text = newValue
                 }
             }
@@ -44,7 +45,8 @@ class TaskTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     descriptionLabel.text = newValue
                 }
             }
@@ -55,7 +57,8 @@ class TaskTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     pointLabel.text = newValue
                 }
             }
@@ -84,7 +87,8 @@ class TaskTableViewCell: UITableViewCell {
     
     private func finishUIAction(_ info:TaskInfo) {
         if info.isFinish {
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
                 titleLabel.textColor = .white
                 descriptionLabel.textColor = .white
@@ -101,7 +105,8 @@ class TaskTableViewCell: UITableViewCell {
                 }
             }
         }else {
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 titleLabel.textColor = .black
                 descriptionLabel.textColor = .black
@@ -115,7 +120,8 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async { [weak self] in
+            guard let self = self else { return }
             if let title = taskInfo.title {
                 self.title = title
             }
@@ -130,7 +136,8 @@ class TaskTableViewCell: UITableViewCell {
             
             self.taskInfo = taskInfo
             if let type = taskInfo.type, type == .battery || type == .bottle || type == .cup || type == .can, let startTime = taskInfo.startTime, let endTime = taskInfo.endTime, let formattedStartDate = convertDateFormat(inputDateString: startTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd"), let formattedEndDate = convertDateFormat(inputDateString: endTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd") {
-                getRecords(taskInfo.sites, formattedStartDate, formattedEndDate) { [self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+                getRecords(taskInfo.sites, formattedStartDate, formattedEndDate) { [weak self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+                    guard let self = self else { return }
                     switch type {
                     case .battery:
                         requiredAmountHandle(battery ?? 0)

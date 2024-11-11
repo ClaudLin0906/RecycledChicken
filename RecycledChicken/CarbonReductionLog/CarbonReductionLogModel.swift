@@ -9,8 +9,25 @@ import Foundation
 import UIKit
 
 protocol ColorFillTypeDelegate {
-    func tapImage(_ imageView:UIImageView, userdefultKey:String)
-    func tapBackground(_ backgroundView:UIView, userdefultKey:String)
+    func tapImage(_ imageView:UIImageView, userdefultKey:String, colorFillView:ColorFillView)
+    func tapBackground(_ backgroundView:UIView, userdefultKey:String, colorFillView:ColorFillView)
+}
+
+enum Notch: Int, CaseIterable {
+    case minimum, medium, maximum
+}
+
+enum ColorFillView {
+    case ColorFillTypeOneView
+    case ColorFillTypeTwoView
+    case ColorFillTypeThreeView
+    case ColorFillTypeFourView
+}
+
+struct ChooseObject {
+    var imageView:UIImageView?
+    var backgroundView:UIView?
+    var userdefultKey:String
 }
 
 struct CarbonReductionLogInfo: Codable {
@@ -52,6 +69,23 @@ struct PersonalRecycleAmountAndTargetInfo: Codable  {
         totalRecycled = try? container.decodeIfPresent(Int.self, forKey: .totalRecycled)
         conversionRate = try? container.decodeIfPresent(Double.self, forKey: .conversionRate)
         infoLink = try? container.decodeIfPresent(String.self, forKey: .infoLink)
+    }
+    
+    func getColorRecycledValue() -> CGFloat {
+        var result:CGFloat = 0
+        switch itemName {
+        case "寶特瓶":
+            result = 1260
+        case "電池":
+            result = 182000
+        case "鋁罐":
+            result = 120100
+        case "紙杯":
+            result = 9060
+        default :
+            break
+        }
+        return result
     }
 }
 

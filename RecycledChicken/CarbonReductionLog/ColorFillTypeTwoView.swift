@@ -11,6 +11,8 @@ class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
     
     var delegate:ColorFillTypeDelegate?
     
+    var colorFillView:ColorFillView = .ColorFillTypeTwoView
+    
     @IBInspectable var userdefultKeyOfBackground: String = ""
     
     @IBOutlet weak var bigFillRightChicken:ColorFillImageView!
@@ -60,12 +62,12 @@ class ColorFillTypeTwoView: UIView, NibOwnerLoadable {
     
     @objc private func tapImageView(_ tapGesture:UITapGestureRecognizer) {
         if let imageView = tapGesture.view as? ColorFillImageView {
-            delegate?.tapImage(imageView, userdefultKey: imageView.userDefaultKey)
+            delegate?.tapImage(imageView, userdefultKey: imageView.userDefaultKey, colorFillView: colorFillView)
         }
     }
     
     @objc private func tapView(_ tapGesture:UITapGestureRecognizer) {
-        delegate?.tapBackground(self, userdefultKey: userdefultKeyOfBackground)
+        delegate?.tapBackground(self, userdefultKey: userdefultKeyOfBackground, colorFillView: colorFillView)
     }
     
 }

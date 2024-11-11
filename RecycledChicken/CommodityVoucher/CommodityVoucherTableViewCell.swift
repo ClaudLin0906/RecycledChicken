@@ -25,7 +25,8 @@ class CommodityVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemImageView.kf.setImage(with: newValue)
                 }
             }
@@ -36,7 +37,8 @@ class CommodityVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     itemNameLabel.text = newValue
                 }
             }
@@ -47,7 +49,8 @@ class CommodityVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     drawTimeLabel.text = newValue
                 }
             }
@@ -58,7 +61,8 @@ class CommodityVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     drawPeopleLabel.text = newValue
                 }
             }
@@ -68,7 +72,8 @@ class CommodityVoucherTableViewCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     pointLabel.text = newValue
                 }
             }

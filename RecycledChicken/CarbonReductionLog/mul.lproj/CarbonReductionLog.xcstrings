@@ -26,7 +26,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kgCO2e"
+            "value" : "kgCO₂e"
           }
         },
         "zh-Hant-TW" : {
@@ -158,13 +158,13 @@
       }
     },
     "KwH-fx-ljc.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"kgCO2e\"; ObjectID = \"KwH-fx-ljc\";",
+      "comment" : "Class = \"UILabel\"; text = \"kgCO₂e\"; ObjectID = \"KwH-fx-ljc\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "kgCO2e"
+            "value" : "kgCO₂e"
           }
         }
       }
@@ -183,6 +183,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "0"
+          }
+        }
+      }
+    },
+    "mbL-oh-SzM.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"填色教學\"; ObjectID = \"mbL-oh-SzM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "填色教學"
           }
         }
       }

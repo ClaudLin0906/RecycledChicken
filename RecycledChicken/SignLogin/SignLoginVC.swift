@@ -102,9 +102,10 @@ class SignLoginVC: CustomLoginVC {
     }
     
     private func loginSuccess(){
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             LoginSuccess = true
-            dismiss(animated: true)
+            self.dismiss(animated: true)
         }
     }
     

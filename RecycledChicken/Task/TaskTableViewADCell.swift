@@ -45,7 +45,8 @@ class TaskTableViewADCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     titleLabel.text = newValue
                 }
             }
@@ -56,7 +57,8 @@ class TaskTableViewADCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     descriptionLabel.text = newValue
                 }
             }
@@ -67,7 +69,8 @@ class TaskTableViewADCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     pointLabel.text = newValue
                 }
             }
@@ -78,7 +81,8 @@ class TaskTableViewADCell: UITableViewCell {
     {
         willSet {
             if let newValue = newValue {
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     iconImageView.kf.setImage(with: newValue)
                 }
             }
@@ -119,7 +123,8 @@ class TaskTableViewADCell: UITableViewCell {
     
     private func finishUIAction(_ info:TaskInfo) {
         if info.isFinish {
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
                 titleLabel.textColor = .white
                 descriptionLabel.textColor = .white
@@ -137,7 +142,8 @@ class TaskTableViewADCell: UITableViewCell {
                 }
             }
         }else {
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 titleLabel.textColor = .black
                 descriptionLabel.textColor = .black

@@ -52,8 +52,8 @@ class LotteryVC: CustomVC {
     }
     
     private func getPartnerCouponsData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.partnerCoupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.partnerCoupons, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+            guard let self = self, let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
@@ -63,16 +63,16 @@ class LotteryVC: CustomVC {
                     guard let category = commodityVoucherInfo.category else { return }
                     switch category {
                     case .partner:
-                        partnerMerchantsInfos.append(commodityVoucherInfo)
+                        self.partnerMerchantsInfos.append(commodityVoucherInfo)
                     default:
                         break
                     }
                 }
-                DispatchQueue.main.async { [self] in
-                    partnerMerchantsTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
-                        partnerMerchantsTableView.stopSkeletonAnimation()
-                        view.hideSkeleton()
+                DispatchQueue.main.async {
+                    self.partnerMerchantsTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.partnerMerchantsTableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
                     })
                 }
             }
@@ -80,8 +80,8 @@ class LotteryVC: CustomVC {
     }
     
     private func getEventCouponsData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.eventCoupons, authorizationToken: CommonKey.shared.authToken) { [self] data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.eventCoupons, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+            guard let self = self, let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
@@ -91,16 +91,16 @@ class LotteryVC: CustomVC {
                     guard let category = commodityVoucherInfo.category else { return }
                     switch category {
                     case .event:
-                        activityVoucherInfos.append(commodityVoucherInfo)
+                        self.activityVoucherInfos.append(commodityVoucherInfo)
                     default:
                         break
                     }
                 }
-                DispatchQueue.main.async { [self] in
-                    activityVoucherTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
-                        activityVoucherTableView.stopSkeletonAnimation()
-                        view.hideSkeleton()
+                DispatchQueue.main.async {
+                    self.activityVoucherTableView.reloadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.activityVoucherTableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
                     })
                 }
             }
@@ -116,11 +116,12 @@ class LotteryVC: CustomVC {
             if let lotteryInfos = try? JSONDecoder().decode([LotteryInfo].self, from: data) {
                 self.lotteryInfos.removeAll()
                 self.lotteryInfos.append(contentsOf: lotteryInfos)
-                DispatchQueue.main.async { [self] in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
                     lotteryTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [self] in
-                        lotteryTableView.stopSkeletonAnimation()
-                        view.hideSkeleton()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        self.lotteryTableView.stopSkeletonAnimation()
+                        self.view.hideSkeleton()
                     })
                 }
             }

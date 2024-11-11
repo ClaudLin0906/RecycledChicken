@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorFillTypeFourView" customModule="RecycledChicken" customModuleProvider="target">
             <connections>
-                <outlet property="bigFillLeftChicken" destination="d6c-1c-HAU" id="L0A-Ja-OoL"/>
-                <outlet property="bigFillRightChicken" destination="8LH-fy-bbp" id="FsB-Xg-yu8"/>
+                <outlet property="bigFillLeftChicken" destination="irO-Oy-qbW" id="KrK-Gt-ZQR"/>
+                <outlet property="bigFillRightChicken" destination="h7l-zP-TBd" id="cr5-KJ-ynH"/>
+                <outlet property="houseFill" destination="zlA-br-ySG" id="ZsN-Y0-F7j"/>
                 <outlet property="oneFillRightChicken" destination="UqU-Yp-hDi" id="OD6-mx-fVp"/>
                 <outlet property="threeFillRightChicken" destination="UUu-9P-0EE" id="Tla-NX-aeS"/>
                 <outlet property="twoFillRightChicken" destination="m0v-EK-cKD" id="4hO-0k-wRv"/>
@@ -22,40 +23,32 @@
             <rect key="frame" x="0.0" y="0.0" width="588" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1sH-J4-3kg">
-                    <rect key="frame" x="20" y="59" width="548" height="374.66666666666669"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="8LH-fy-bbp" userLabel="bigFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="264" height="374.66666666666669"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="bigFillRightChickenOfColorFillTypeFourView"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                        <imageView clipsSubviews="YES" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillLeftChicken" translatesAutoresizingMaskIntoConstraints="NO" id="d6c-1c-HAU" userLabel="bigFillLeftChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="284" y="0.0" width="264" height="374.66666666666669"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="bigFillLeftChickenOfColorFillTypeFourView"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                    </subviews>
-                </stackView>
+                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillHouse" translatesAutoresizingMaskIntoConstraints="NO" id="zlA-br-ySG" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="568" height="438.66666666666669"/>
+                </imageView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillLeftChicken" translatesAutoresizingMaskIntoConstraints="NO" id="irO-Oy-qbW" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="375.33333333333331" y="49.666666666666657" width="182.66666666666669" height="359.33333333333337"/>
+                </imageView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="h7l-zP-TBd" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="20" y="49.666666666666657" width="182.66666666666666" height="359.33333333333337"/>
+                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Fm-VB-K2J">
-                    <rect key="frame" x="0.0" y="438.66666666666674" width="588" height="379.33333333333326"/>
+                    <rect key="frame" x="0.0" y="458.66666666666674" width="588" height="359.33333333333326"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UqU-Yp-hDi" userLabel="oneFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="379.33333333333331"/>
+                        <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UqU-Yp-hDi" userLabel="oneFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="359.33333333333331"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="oneFillRightChickenOfColorFillTypeFourView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="m0v-EK-cKD" userLabel="twoFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="202.66666666666669" y="0.0" width="182.66666666666669" height="379.33333333333331"/>
+                        <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="m0v-EK-cKD" userLabel="twoFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="202.66666666666669" y="0.0" width="182.66666666666669" height="359.33333333333331"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="twoFillRightChickenOfColorFillTypeFourView"/>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <imageView clipsSubviews="YES" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UUu-9P-0EE" userLabel="threeFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
-                            <rect key="frame" x="405.33333333333331" y="0.0" width="182.66666666666669" height="379.33333333333331"/>
+                        <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fillRightChicken" translatesAutoresizingMaskIntoConstraints="NO" id="UUu-9P-0EE" userLabel="threeFillRightChicken" customClass="ColorFillImageView" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="405.33333333333331" y="0.0" width="182.66666666666669" height="359.33333333333331"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="userDefaultKey" value="threeFillRightChickenOfColorFillTypeFourView"/>
                             </userDefinedRuntimeAttributes>
@@ -65,20 +58,29 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="centerY" secondItem="1sH-J4-3kg" secondAttribute="bottom" constant="5" id="2MW-Vn-4go"/>
+                <constraint firstItem="irO-Oy-qbW" firstAttribute="centerY" secondItem="h7l-zP-TBd" secondAttribute="centerY" id="08t-CH-adF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zlA-br-ySG" secondAttribute="trailing" constant="10" id="0yU-jk-XhQ"/>
+                <constraint firstItem="zlA-br-ySG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="5Nd-VZ-PWv"/>
+                <constraint firstItem="irO-Oy-qbW" firstAttribute="width" secondItem="h7l-zP-TBd" secondAttribute="width" id="9ss-TK-MVx"/>
+                <constraint firstItem="zlA-br-ySG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="C82-Id-8p5"/>
+                <constraint firstItem="h7l-zP-TBd" firstAttribute="leading" secondItem="zlA-br-ySG" secondAttribute="leading" constant="10" id="Fuo-wA-ZYR"/>
+                <constraint firstItem="h7l-zP-TBd" firstAttribute="centerY" secondItem="zlA-br-ySG" secondAttribute="centerY" id="ID5-C1-8uF"/>
+                <constraint firstItem="h7l-zP-TBd" firstAttribute="width" secondItem="m0v-EK-cKD" secondAttribute="width" id="Laq-tY-efU"/>
+                <constraint firstItem="irO-Oy-qbW" firstAttribute="trailing" secondItem="zlA-br-ySG" secondAttribute="trailing" constant="-20" id="SUO-sz-DGz"/>
                 <constraint firstItem="1Fm-VB-K2J" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SXX-eT-pGX"/>
+                <constraint firstItem="irO-Oy-qbW" firstAttribute="height" secondItem="h7l-zP-TBd" secondAttribute="height" id="Z63-ok-MSa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1Fm-VB-K2J" secondAttribute="bottom" id="eQI-NH-TLl"/>
                 <constraint firstAttribute="trailing" secondItem="1Fm-VB-K2J" secondAttribute="trailing" id="i7q-du-nhL"/>
-                <constraint firstAttribute="trailing" secondItem="1sH-J4-3kg" secondAttribute="trailing" constant="20" id="iqX-1P-KgX"/>
-                <constraint firstItem="1Fm-VB-K2J" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="kpJ-kX-VPs"/>
-                <constraint firstItem="1sH-J4-3kg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="oDF-Pb-zDk"/>
-                <constraint firstItem="1sH-J4-3kg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="qfE-S4-Z0a"/>
+                <constraint firstItem="1Fm-VB-K2J" firstAttribute="top" secondItem="zlA-br-ySG" secondAttribute="bottom" constant="10" id="kpJ-kX-VPs"/>
+                <constraint firstItem="h7l-zP-TBd" firstAttribute="height" secondItem="m0v-EK-cKD" secondAttribute="height" id="qJS-PV-0nI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="centerY" secondItem="zlA-br-ySG" secondAttribute="bottom" constant="-10" id="xR7-A3-fpY"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="187.78625954198472" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
+        <image name="fillHouse" width="519" height="244.66667175292969"/>
         <image name="fillLeftChicken" width="482" height="434"/>
         <image name="fillRightChicken" width="480" height="447"/>
     </resources>

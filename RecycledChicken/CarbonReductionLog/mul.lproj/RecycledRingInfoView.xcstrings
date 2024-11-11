@@ -43,8 +43,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "kgCO2e"
+            "state" : "translated",
+            "value" : "kgCO₂e"
           }
         },
         "zh-Hant-TW" : {
@@ -74,13 +74,13 @@
       }
     },
     "ddg-Sf-3V9.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"CO2e\"; ObjectID = \"ddg-Sf-3V9\";",
+      "comment" : "Class = \"UILabel\"; text = \"CO₂e\"; ObjectID = \"ddg-Sf-3V9\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "CO2e"
+            "value" : "CO₂e"
           }
         }
       }

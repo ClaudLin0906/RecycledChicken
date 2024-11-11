@@ -206,9 +206,9 @@ struct RecyceledSortInfo {
 }
 
 enum WeightUnit: String {
-    case gram = "gCO2e"
-    case kilogram = "kgCO2e"
-    case tonne = "tCO2e"
+    case gram = "gCO₂e"
+    case kilogram = "kgCO₂e"
+    case tonne = "tCO₂e"
 }
 
 var FirstTime = true
@@ -240,6 +240,10 @@ class UserDefaultKey {
     let colorFillTypeOne = "colorFillTypeOne"
     let colorFillTypeThree = "colorFillTypeThree"
     let colorFillTypeFour = "colorFillTypeFour"
+    let colorBottleUseCount = "colorBottleUseCount"
+    let colorBatteryUseCount = "colorBatteryUseCount"
+    let colorPapperCubUseCount = "colorPapperCubUseCount"
+    let colorAluminumCanUseCount = "colorAluminumCanUseCount"
     let oneCellViewImageViewOfColorFillTypeOneView = "oneCellViewImageViewOfColorFillTypeOneView"
     let oneCellViewBackgroundOfColorFillTypeOneView = "oneCellViewBackgroundOfColorFillTypeOneView"
     let twoCellViewImageViewOfColorFillTypeOneView = "twoCellViewImageViewOfColorFillTypeOneView"
@@ -291,6 +295,10 @@ class UserDefaultKey {
     let oldChickenLevel = "oldChickenLevel"
     let finishTasks = "finishTasks"
     let isSubscribed = "isSubscribed"
+    let colorFillTypeOneViewCo2Value = "colorFillTypeOneViewCo2Value"
+    let colorFillTypeTwoViewCo2Value = "colorFillTypeTwoViewCo2Value"
+    let colorFillTypeThreeViewCo2Value = "colorFillTypeThreeViewCo2Value"
+    let colorFillTypeFourViewCo2Value = "colorFillTypeFourViewCo2Value"
 }
 
 class CurrentUserInfo {
@@ -342,6 +350,7 @@ class GuestInfo {
 
 struct APIUrl {
     static let domainName = "https://useries.buenooptics.com:8443/app/v2"
+    static let buenopartners = "https://www.buenopartners.com.tw/formula"
     static let register = "/auth/register"
     static let login = "/auth/login"
     static let changePWD = "/reset"
@@ -372,7 +381,6 @@ struct APIUrl {
     static let items = "/shop/items"
     static let records = "/recycle/records"
     static let pointRecords = "/point/records"
-    static let enterInviteCode = "/user/enterInviteCode"
     static let carbonReductionRecords = "/recycle/carbonReductionRecords"
     static let ticketCoupons = "/coupons?category=ticket"
     static let eventCoupons = "/coupons?category=event"
@@ -385,10 +393,12 @@ struct APIUrl {
     static let havingLottery = "/lottery/bought"
     static let havingCoupons = "/coupons/bought"
     static let enterActivityCode = "/user/enterActivityCode"
+    static let enterInviteCode = "/user/enterInviteCode"
     static let getPopBanner = "/ad/popup"
     static let appleStoreID = "6449214570"
     static let connectAppleStore = "itms-apps://itunes.apple.com/app/\(appleStoreID)"
     static let checkAppleStoreVersion = "https://itunes.apple.com/tw/lookup?id=\(appleStoreID)"
+    static let uiPoint = "/ui/point"
 }
 
 struct WebViewUrl {
@@ -419,6 +429,7 @@ protocol NibOwnerLoadable: AnyObject {
 }
 
 func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
+    guard !CommonKey.shared.authToken.isEmpty else { return }
     var urlStr = ""
     if let sites = sites, sites != "" {
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sites)"
@@ -426,6 +437,7 @@ func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, com
     if sites == nil || sites == "" {
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     }
+    print(urlStr)
     NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
         guard let data = data, statusCode == 200 else {
             completion(statusCode, errorMSG, nil, nil, nil, nil, nil, nil, nil)
@@ -474,14 +486,19 @@ func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, com
 func loginOutRemoveObject(){
     CurrentUserInfo.shared.currentProfileNewInfo = nil
     CommonKey.shared.authToken = ""
-    UserDefaults().removeObject(forKey: UserDefaultKey.shared.oldChickenLevel)
     LoginSuccess = false
     FirstTime = true
     removeBiometricsAction()
+    clearUserDefault()
+}
+
+func clearUserDefault() {
+    let domain = Bundle.main.bundleIdentifier!
+    UserDefaults.standard.removePersistentDomain(forName: domain)
+    UserDefaults.standard.synchronize()
 }
 
 func removeBiometricsAction(){
-    UserDefaults().set(false, forKey: UserDefaultKey.shared.biometrics)
     let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
 }
 
@@ -498,6 +515,7 @@ func changeFormat(_ dateStr:String)-> String {
 }
 
 func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
+    guard !CommonKey.shared.authToken.isEmpty else { return }
     NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.profile, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
         guard let data = data, statusCode == 200 else {
             showAlert(VC: VC, title: "error".localized, message: errorMSG)
@@ -884,7 +902,8 @@ func pushVC(targetVC:UIViewController, navigation:UINavigationController) {
     }
 }
 
-func showAlert(VC:UIViewController, title:String?, message:String? = nil, alertAction:UIAlertAction? = nil, cancelAction:UIAlertAction? = nil) {
+func showAlert(VC:UIViewController?, title:String?, message:String? = nil, alertAction:UIAlertAction? = nil, cancelAction:UIAlertAction? = nil) {
+    guard let VC = VC else { return }
     DispatchQueue.main.async {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if let alertAction = alertAction {
@@ -1152,7 +1171,7 @@ struct UseRecordInfo:Codable {
     }
 }
 
-enum RecycleType: String, Codable {
+enum RecycleType: String, Codable, CaseIterable {
     case battery = "battery"
     case bottle = "bottle"
     case coloredBottle = "coloredBottle"

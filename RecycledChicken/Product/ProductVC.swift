@@ -11,8 +11,9 @@ class ProductVC: CustomVC {
     
     @IBOutlet weak var webView:WKWebView!
     
-    private var buenocoopURL:URL = {
-        let isFirstProduct = UserDefaults().bool(forKey: UserDefaultKey.shared.isFirstProduct)
+    @UserDefault(UserDefaultKey.shared.isFirstProduct, defaultValue: false) var isFirstProduct:Bool
+    
+    private lazy var buenocoopURL:URL = {
         var urlStr = ""
         if isFirstProduct {
             urlStr = "https://www.buenocoop.com/login"
@@ -52,7 +53,7 @@ class ProductVC: CustomVC {
 
 extension ProductVC:WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        UserDefaults().set(false, forKey: UserDefaultKey.shared.isFirstProduct)
+        isFirstProduct = false
     }
 }
 

@@ -78,6 +78,7 @@
 "cancel" = "cancel";
 "appClose" = "app已經關閉";
 "tapOpenApp" = "點擊打開app";
+"timeOfUse" = "time of use";
 "sign" = "Sign Up";
 "personalNotifications" = "Personal Notifications";
 "personalAccount" = "Personal Account";
@@ -116,4 +117,4 @@
 "illustratedGuideTenOfTitle" = "Carbon Sink";
 "illustratedGuideTenOfGuide" = "A carbon sink is a natural or artificial \"warehouse\" that stores carbon dioxide.";
 "siteList" = "SiteList";
-
+"copySuccess" = "CopySuccess";

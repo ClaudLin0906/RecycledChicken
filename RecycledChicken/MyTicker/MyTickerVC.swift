@@ -93,6 +93,10 @@ class MyTickerVC: CustomVC {
         }
         return 0
     }
+    
+    @IBAction func longPressAction(_ LPGesutre:UILongPressGestureRecognizer) {
+        
+    }
 
 }
 
@@ -116,25 +120,16 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == voucherTableView {
             let row = indexPath.row
             let myVoucherInfo = myVoucherInfos[row]
-            if let link = myVoucherInfo.link {
+            if myVoucherInfo.link != nil {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
                 cell.setCell(myVoucherInfo)
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
+                cell.delegate = self
                 cell.setCell(myVoucherInfo)
                 return cell
             }
-            
-//            if let code = myVoucherInfo.code, code != "" {
-//                let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
-//                cell.setCell(myVoucherInfo)
-//                return cell
-//            }else {
-//                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
-//                cell.setCell(myVoucherInfo)
-//                return cell
-//            }
         }
         return UITableViewCell()
     }
@@ -178,4 +173,11 @@ extension MyTickerVC: CustomSegmentedControlDelegate {
         }
     }
     
+}
+
+extension MyTickerVC: MyTicketVoucherSerialNumberTableViewCellDelegate {
+    func copySerialNumber(_ serialNumber: String) {
+        UIPasteboard.general.string = serialNumber
+        showAlert(VC: self, title: "copySuccess".localized)
+    }
 }

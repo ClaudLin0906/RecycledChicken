@@ -15,9 +15,13 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var activityCodeTextField:UITextField!
     
+    @IBOutlet weak var friendActivityCodeTextField:UITextField!
+    
     @IBOutlet weak var errorMSGLabel:CustomLabel!
         
     var delegate:SignActivityCodeViewDelegate?
+    
+    private var phoneNumber = ""
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,14 +33,23 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         customInit()
     }
     
+    func setUserID(_ phoneNumber:String) {
+        self.phoneNumber = phoneNumber
+    }
+    
     private func customInit(){
         loadNibContent()
-        let placeHolderColor = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
-        let attributes: [NSAttributedString.Key: Any] = [ .font: activityCodeTextField.font?.withSize(15), .foregroundColor:placeHolderColor]
-        let attributedPlaceholder = NSAttributedString(string: activityCodeTextField.placeholder ?? "", attributes: attributes)
-        activityCodeTextField.attributedPlaceholder = attributedPlaceholder
+        setAttributes(activityCodeTextField)
+        setAttributes(friendActivityCodeTextField)
         let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
         self.addGestureRecognizer(closeTap)
+    }
+    
+    private func setAttributes(_ textField:UITextField) {
+        let placeHolderColor = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
+        let attributes: [NSAttributedString.Key: Any] = [ .font: textField.font?.withSize(15), .foregroundColor:placeHolderColor]
+        let attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "", attributes: attributes)
+        textField.attributedPlaceholder = attributedPlaceholder
     }
     
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
@@ -48,32 +61,52 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         errorMSGLabel.isHidden = false
     }
     
-    @IBAction func confirm(_ sender:CustomButton) {
-        var alertMsg = ""
-        let activityCode = activityCodeTextField.text
-        if activityCode == "" {
-            alertMsg += "活動碼不能為空"
-        }
-        alertMsg = removeWhitespace(from: alertMsg)
-        if alertMsg != "" {
-            showErrorMSG(alertMsg)
-            return
-        }
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.enterActivityCode) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                self.showErrorMSG(errorMSG ?? "")
+    private func  enterCodeAction(_ parameters: [String:Any], urlString:String, _ compeletion: @escaping(Bool, String)->()) {
+        NetworkManager.shared.requestWithJSONBody(urlString: urlString, parameters: parameters) { data, statusCode, errorMSG in
+            guard statusCode == 200 else {
+                var errorMSG = "發生不明錯誤"
+                if let data = data, let ApiResult = try? JSONDecoder().decode(ApiResult.self, from: data),  let apiResponseMessage = ApiResult.message {
+                    errorMSG = apiResponseMessage
+                }
+                compeletion(false, errorMSG)
                 return
             }
-            let ApiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
-            if let status = ApiResult?.status {
-                switch status {
-                case .success:
-                    self.delegate?.comfirmInvitationCode(finishAction: {
-                        self.removeFromSuperview()
-                    })
-                case .failure:
-                    self.showErrorMSG(ApiResult?.message ?? "")
-                }
+            compeletion(true, "")
+        }
+    }
+
+    @IBAction func confirm(_ sender:CustomButton) {
+        guard let activityCode = activityCodeTextField.text, let inviteCode = friendActivityCodeTextField.text, !activityCode.isEmpty || !inviteCode.isEmpty else {
+            showErrorMSG("活動碼或是邀請碼要擇一填寫")
+            return
+        }
+        let group = DispatchGroup()
+        var errorMSG = ""
+        func processCode(_ code: String, isInviteCode: Bool, urlString: String) {
+            guard !code.isEmpty else { return }
+            
+            group.enter()
+            let codeInfo: [String: Any]?
+            if isInviteCode {
+                codeInfo = try? InviteCodeInfo(userID: phoneNumber, inviteCode: code).asDictionary()
+            } else {
+                codeInfo = try? ActivityCodeInfo(userID: phoneNumber, activityCode: code).asDictionary()
+            }
+            
+            enterCodeAction(codeInfo ?? [:], urlString: APIUrl.domainName + urlString) { result, message in
+                errorMSG += message
+                group.leave()
+            }
+        }
+        processCode(inviteCode, isInviteCode: true, urlString: APIUrl.enterInviteCode)
+        processCode(activityCode, isInviteCode: false, urlString: APIUrl.enterActivityCode)
+        group.notify(queue: .main) {
+            if errorMSG.isEmpty {
+                self.delegate?.comfirmInvitationCode(finishAction: {
+                    self.removeFromSuperview()
+                })
+            } else {
+                self.showErrorMSG(errorMSG)
             }
         }
     }
