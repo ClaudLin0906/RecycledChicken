@@ -222,9 +222,9 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                             showAlert(VC: self, title: errorMSG, message: nil)
                             return
                         }
-                    }
-                    if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
-                        cell.finishAction()
+                        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewPartnerCell {
+                            cell.finishAction()
+                        }
                     }
                 }
             case .advertise:
