@@ -224,6 +224,11 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                         }
                         if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewPartnerCell {
                             cell.finishAction()
+                            return
+                        }
+                        if let cell = tableView.cellForRow(at: indexPath) as? TaskTableViewCell {
+                            cell.finishAction()
+                            return
                         }
                     }
                 }

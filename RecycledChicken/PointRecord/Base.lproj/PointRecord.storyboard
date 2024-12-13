@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Io-eG-TuI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Io-eG-TuI">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,7 +55,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-aa-rlq">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-aa-rlq">
                                                             <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uwy-DE-8AS" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
@@ -67,7 +67,7 @@
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="內容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9B-6P-0Xs" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="內容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9B-6P-0Xs" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                                     <rect key="frame" x="95.333333333333329" y="13" width="33.999999999999986" height="24"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -88,7 +88,7 @@
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMV-vT-mF6" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMV-vT-mF6" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                                     <rect key="frame" x="312" y="16.666666666666664" width="21" height="16.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -191,18 +191,4 @@
             <point key="canvasLocation" x="-115.26717557251908" y="3.5211267605633805"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="4VY-21-b4K">
-            <size key="intrinsicContentSize" width="39.333333333333336" height="24"/>
-        </designable>
-        <designable name="Uwy-DE-8AS">
-            <size key="intrinsicContentSize" width="34" height="24"/>
-        </designable>
-        <designable name="Y9B-6P-0Xs">
-            <size key="intrinsicContentSize" width="34" height="24"/>
-        </designable>
-        <designable name="eMV-vT-mF6">
-            <size key="intrinsicContentSize" width="21" height="16.666666666666668"/>
-        </designable>
-    </designables>
 </document>
