@@ -50,6 +50,8 @@ struct LotteryInfo: Decodable {
     }
 }
 
-var LotterySegmentedControlTitles = ["raffleTicket".localized, "activityAward".localized, "merchants".localized]
+//var LotterySegmentedControlTitles = ["raffleTicket".localized, "activityAward".localized, "merchants".localized]
+
+var LotterySegmentedControlTitles = ["raffleTicket".localized, "merchants".localized]
 
 
