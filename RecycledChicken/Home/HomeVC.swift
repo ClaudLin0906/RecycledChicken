@@ -205,7 +205,7 @@ class HomeVC: CustomRootVC {
         }
     }
     
-    private func getTrendChart() -> UIImage?{
+    private func getTrendChart() -> UIImage? {
         if let levelInfo = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo {
             var image:UIImage?
             switch levelInfo.progress {

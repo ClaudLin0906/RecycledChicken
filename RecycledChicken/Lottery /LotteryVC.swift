@@ -24,10 +24,8 @@ class LotteryVC: CustomVC {
     
     private var partnerMerchantsInfos:[CommodityVoucherInfo] = []
     
-//    private lazy var tableViews = [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView]
+    private lazy var tableViews = [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView]
     
-    private lazy var tableViews = [lotteryTableView, partnerMerchantsTableView]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "activitiesLuckyDraws".localized
@@ -40,7 +38,7 @@ class LotteryVC: CustomVC {
         segmentedControl.setButtonTitles(LotterySegmentedControlTitles)
         segmentedControl.delegate = self
         lotteryTableView.setSeparatorLocation()
-//        activityVoucherTableView.setSeparatorLocation()
+        activityVoucherTableView.setSeparatorLocation()
         partnerMerchantsTableView.setSeparatorLocation()
         lotteryTableView.showAnimatedSkeleton()
     }
@@ -49,7 +47,7 @@ class LotteryVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         getLotteryData()
-//        getEventCouponsData()
+        getEventCouponsData()
         getPartnerCouponsData()
     }
     
@@ -134,9 +132,9 @@ class LotteryVC: CustomVC {
         if tableView == lotteryTableView {
             return lotteryInfos.count
         }
-//        if tableView == activityVoucherTableView {
-//            return activityVoucherInfos.count
-//        }
+        if tableView == activityVoucherTableView {
+            return activityVoucherInfos.count
+        }
         if tableView == partnerMerchantsTableView {
             return partnerMerchantsInfos.count
         }
@@ -144,9 +142,9 @@ class LotteryVC: CustomVC {
     }
     
     private func getCommodityVoucherInfo(_ tableView:UITableView, _ row:Int) -> CommodityVoucherInfo? {
-//        if tableView == activityVoucherTableView {
-//            return activityVoucherInfos[row]
-//        }
+        if tableView == activityVoucherTableView {
+            return activityVoucherInfos[row]
+        }
         if tableView == partnerMerchantsTableView {
             return partnerMerchantsInfos[row]
         }
@@ -181,12 +179,12 @@ extension LotteryVC: UITableViewDelegate {
             }
         }
 
-//        if tableView == activityVoucherTableView {
-//            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-//                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
-//                pushVC(targetVC: VC, navigation: navigationController)
-//            }
-//        }
+        if tableView == activityVoucherTableView {
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
+        }
         
         if tableView == partnerMerchantsTableView  {
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
@@ -209,14 +207,14 @@ extension LotteryVC: UITableViewDelegate {
             return cell
         }
         
-//        if tableView == activityVoucherTableView {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
-//            let row = indexPath.row
-//            if let CommodityVoucherInfo = getCommodityVoucherInfo(tableView,row) {
-//                cell.setCell(CommodityVoucherInfo)
-//            }
-//            return cell
-//        }
+        if tableView == activityVoucherTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
+            let row = indexPath.row
+            if let CommodityVoucherInfo = getCommodityVoucherInfo(tableView,row) {
+                cell.setCell(CommodityVoucherInfo)
+            }
+            return cell
+        }
         
         if tableView == partnerMerchantsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: PartnerMerchantsTableViewTableViewCell.identifier, for: indexPath) as! PartnerMerchantsTableViewTableViewCell
