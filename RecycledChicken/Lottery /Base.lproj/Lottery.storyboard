@@ -229,7 +229,7 @@
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="參與次數 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-5i-Vyf" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩餘數量 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-5i-Vyf" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="74" width="112" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="uHT-Nd-3g7"/>

@@ -40,7 +40,7 @@ class LotteryVC: CustomVC {
         segmentedControl.setButtonTitles(LotterySegmentedControlTitles)
         segmentedControl.delegate = self
         lotteryTableView.setSeparatorLocation()
-        activityVoucherTableView.setSeparatorLocation()
+//        activityVoucherTableView.setSeparatorLocation()
         partnerMerchantsTableView.setSeparatorLocation()
         lotteryTableView.showAnimatedSkeleton()
     }
@@ -49,7 +49,7 @@ class LotteryVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         getLotteryData()
-        getEventCouponsData()
+//        getEventCouponsData()
         getPartnerCouponsData()
     }
     
@@ -134,9 +134,9 @@ class LotteryVC: CustomVC {
         if tableView == lotteryTableView {
             return lotteryInfos.count
         }
-        if tableView == activityVoucherTableView {
-            return activityVoucherInfos.count
-        }
+//        if tableView == activityVoucherTableView {
+//            return activityVoucherInfos.count
+//        }
         if tableView == partnerMerchantsTableView {
             return partnerMerchantsInfos.count
         }
@@ -144,9 +144,9 @@ class LotteryVC: CustomVC {
     }
     
     private func getCommodityVoucherInfo(_ tableView:UITableView, _ row:Int) -> CommodityVoucherInfo? {
-        if tableView == activityVoucherTableView {
-            return activityVoucherInfos[row]
-        }
+//        if tableView == activityVoucherTableView {
+//            return activityVoucherInfos[row]
+//        }
         if tableView == partnerMerchantsTableView {
             return partnerMerchantsInfos[row]
         }
