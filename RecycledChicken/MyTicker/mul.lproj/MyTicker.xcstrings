@@ -74,19 +74,19 @@
       }
     },
     "KRF-aU-rDg.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"使用期限至\"; ObjectID = \"KRF-aU-rDg\";",
+      "comment" : "Class = \"UILabel\"; text = \"使用期限\"; ObjectID = \"KRF-aU-rDg\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Expiration Date"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "使用期限至"
+            "value" : "使用期限"
           }
         }
       }
@@ -128,19 +128,19 @@
       }
     },
     "ueR-i0-koe.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"使用期限至\"; ObjectID = \"ueR-i0-koe\";",
+      "comment" : "Class = \"UILabel\"; text = \"使用期限\"; ObjectID = \"ueR-i0-koe\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "expiration date"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "使用期限至"
+            "value" : "使用期限"
           }
         }
       }
