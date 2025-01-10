@@ -154,7 +154,7 @@ extension UIButton {
 
 extension UITableView {
     
-    func setSeparatorLocation(){
+    func setSeparatorLocation() {
         self.separatorInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
     
