@@ -7,9 +7,16 @@
 
 import UIKit
 import M13Checkbox
+
+protocol ProfileTableViewCellDelegate {
+    func longPress(_ gesture:UILongPressGestureRecognizer, inviteCode:String?)
+}
+
 class ProfileTableViewCell: UITableViewCell {
     
     static let identifier = "ProfileTableViewCell"
+    
+    var delegate:ProfileTableViewCellDelegate?
     
     @IBOutlet weak var infoTitle:UILabel!
     
@@ -22,6 +29,8 @@ class ProfileTableViewCell: UITableViewCell {
         phoneNumberCheckBox.boxType = .square
         phoneNumberCheckBox.stateChangeAnimation = .fill
         phoneNumberCheckBox.isEnabled = false
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandle(_:)))
+        addGestureRecognizer(longPress)
         // Initialization code
     }
 
@@ -29,6 +38,10 @@ class ProfileTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @objc private func longPressHandle(_ gesture:UILongPressGestureRecognizer) {
+        delegate?.longPress(gesture, inviteCode: info.text)
     }
     
     override func prepareForReuse() {

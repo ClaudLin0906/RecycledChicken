@@ -25,7 +25,7 @@ class LotteryVC: CustomVC {
     private var partnerMerchantsInfos:[CommodityVoucherInfo] = []
     
     private lazy var tableViews = [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "activitiesLuckyDraws".localized

@@ -161,6 +161,10 @@ class ProfileVC: CustomVC {
 
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("123")
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         50
     }
@@ -197,6 +201,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             if let profileUserInfo = profileUserInfo, let inviteCode = profileUserInfo.inviteCode, inviteCode != "" {
                 cell.info.isEnabled = false
                 cell.info.text = inviteCode
+                cell.delegate = self
             }
         case 3:
             cell.phoneNumberCheckBox.isHidden = false
@@ -225,5 +230,16 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
+}
+
+
+extension ProfileVC: ProfileTableViewCellDelegate {
+    
+    func longPress(_ gesture: UILongPressGestureRecognizer, inviteCode: String?) {
+        guard let inviteCode = inviteCode, inviteCode != "" else { return }
+        UIPasteboard.general.string = inviteCode
+        showAlert(VC: self, title: "copySuccess".localized)
+    }
     
 }

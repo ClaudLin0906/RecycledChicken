@@ -200,7 +200,7 @@
       }
     },
     "TuB-5i-Vyf.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"參與次數 0\"; ObjectID = \"TuB-5i-Vyf\";",
+      "comment" : "Class = \"UILabel\"; text = \"剩餘數量 0\"; ObjectID = \"TuB-5i-Vyf\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -212,7 +212,7 @@
         "zh-Hant-TW" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "參與次數 0"
+            "value" : "剩餘數量 0"
           }
         }
       }

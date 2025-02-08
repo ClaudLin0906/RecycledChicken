@@ -26,5 +26,13 @@ class MallCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         print("imageView \(imageView.frame.height)")
+        addImgeViewTopCornerRadii(imageView)
+    }
+    
+    private func addImgeViewTopCornerRadii(_ imageView:UIImageView) {
+        let path = UIBezierPath( roundedRect: imageView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 20, height: 20))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        imageView.layer.mask = maskLayer
     }
 }

@@ -27,6 +27,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     
     @IBOutlet weak var instructionLabel: CustomLabel!
     
+    @IBOutlet weak var contentGetureView:UIView!
+    
     private var info:MyTickertCouponsInfo?
     
     private var imageURL:URL?
@@ -93,7 +95,7 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(_:)))
-        addGestureRecognizer(longPressGesture)
+        contentView.addGestureRecognizer(longPressGesture)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

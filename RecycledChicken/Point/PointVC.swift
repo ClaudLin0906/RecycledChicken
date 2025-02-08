@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SkeletonView
 class PointVC: CustomRootVC {
     
     @IBOutlet weak var ponitRecordBtn:UIButton!
@@ -22,7 +22,9 @@ class PointVC: CustomRootVC {
     @IBOutlet weak var productBtn:UIButton!
     
     @IBOutlet weak var ponitRecordBtnWidth:NSLayoutConstraint!
-
+        
+    @IBOutlet weak var scrollContentView:UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -33,6 +35,7 @@ class PointVC: CustomRootVC {
     private func UIInit(){
         ponitRecordBtn.layer.borderWidth = 1
         ponitRecordBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
+        scrollContentView.showSkeleton()
 //        myTicker.layer.borderWidth = 1
 //        myTicker.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
         
@@ -55,24 +58,33 @@ class PointVC: CustomRootVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let group = DispatchGroup()
+        group.enter()
         getUserNewInfo(VC: self) {
             if let point = CurrentUserInfo.shared.currentProfileNewInfo?.point {
                 self.myPoint.text = String(point)
             }
+            group.leave()
         }
+        group.enter()
         getBtnImage { [weak self] pointBtnImage in
             guard let self = self else { return }
             setBtnImage(self.lotteryBtn, urlStr: pointBtnImage.eventLottery)
             setBtnImage(self.giftVoucherBtn, urlStr: pointBtnImage.coupon)
             setBtnImage(self.productBtn, urlStr: pointBtnImage.product)
+            group.leave()
+        }
+        group.notify(queue: .main) { [weak self] in
+            guard let self = self else { return }
+            // After both data fetches are complete, hide the skeleton animation
+            self.scrollContentView.stopSkeletonAnimation()
+            self.scrollContentView.hideSkeleton()
         }
     }
     
     private func setBtnImage(_ btn:UIButton, urlStr:String?) {
-        DispatchQueue.main.async {
-            guard let urlStr = urlStr, let url = URL(string: urlStr), let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else { return }
-            btn.setImage(image, for: .normal)
-        }
+        guard let urlStr = urlStr, let url = URL(string: urlStr), let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else { return }
+        btn.setImage(image, for: .normal)
     }
     
     @IBAction func goToCommodityVoucher(_ sender:UIButton) {

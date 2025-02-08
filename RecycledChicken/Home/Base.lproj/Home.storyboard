@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5P2-Sd-Osb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5P2-Sd-Osb">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -319,7 +319,7 @@
                                                 <rect key="frame" x="10" y="590" width="333" height="250"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商城情報" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OK-Ce-Ygq" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                        <rect key="frame" x="132" y="0.0" width="69.333333333333314" height="20.333333333333332"/>
+                                                        <rect key="frame" x="132.66666666666666" y="0.0" width="67.666666666666657" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -345,13 +345,8 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="100"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applelogo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vPB-IO-7eh">
-                                                                                    <rect key="frame" x="0.0" y="0.3333333333333357" width="41.333333333333336" height="98.333333333333314"/>
+                                                                                    <rect key="frame" x="0.0" y="0.33333333333333215" width="41.333333333333336" height="58.333333333333343"/>
                                                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                            <integer key="value" value="20"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </imageView>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvd-I6-9Bo" userLabel="headerView">
                                                                                     <rect key="frame" x="0.0" y="60" width="41.333333333333336" height="15"/>
@@ -403,7 +398,7 @@
                                                                                 <constraint firstAttribute="trailing" secondItem="gvd-I6-9Bo" secondAttribute="trailing" id="Eky-Vc-Fqx"/>
                                                                                 <constraint firstAttribute="height" constant="100" id="Goe-AU-Mql"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="QcJ-yl-V5a" secondAttribute="bottom" id="Muz-20-gly"/>
-                                                                                <constraint firstAttribute="bottom" secondItem="vPB-IO-7eh" secondAttribute="bottom" id="U6t-wB-zPn"/>
+                                                                                <constraint firstItem="gvd-I6-9Bo" firstAttribute="top" secondItem="vPB-IO-7eh" secondAttribute="bottom" id="U6t-wB-zPn"/>
                                                                                 <constraint firstItem="gvd-I6-9Bo" firstAttribute="top" secondItem="QcJ-yl-V5a" secondAttribute="top" id="YBY-I6-nnv"/>
                                                                                 <constraint firstItem="vPB-IO-7eh" firstAttribute="leading" secondItem="9o7-hv-5Fl" secondAttribute="leading" id="ZZB-Ah-bgO"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="vPB-IO-7eh" secondAttribute="trailing" id="rIa-4x-uPl"/>
@@ -590,38 +585,6 @@
             <point key="canvasLocation" x="-150.38167938931298" y="3.5211267605633805"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="0BO-rY-Eud">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
-        </designable>
-        <designable name="3UU-pC-oBk">
-            <size key="intrinsicContentSize" width="52" height="20.333333333333332"/>
-        </designable>
-        <designable name="7OK-Ce-Ygq">
-            <size key="intrinsicContentSize" width="69.333333333333329" height="20.333333333333332"/>
-        </designable>
-        <designable name="7c1-o0-Ah6">
-            <size key="intrinsicContentSize" width="86.666666666666671" height="20.333333333333332"/>
-        </designable>
-        <designable name="7wA-1Y-6h3">
-            <size key="intrinsicContentSize" width="34" height="24"/>
-        </designable>
-        <designable name="gcO-Mb-bsb">
-            <size key="intrinsicContentSize" width="34" height="24"/>
-        </designable>
-        <designable name="mjb-We-kba">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
-        </designable>
-        <designable name="uFO-hx-dt1">
-            <size key="intrinsicContentSize" width="34" height="24"/>
-        </designable>
-        <designable name="xbn-3n-maM">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
-        </designable>
-        <designable name="ybu-Dt-ZtI">
-            <size key="intrinsicContentSize" width="30" height="32"/>
-        </designable>
-    </designables>
     <resources>
         <image name="RecycledLevel1" width="588.66668701171875" height="434"/>
         <image name="applelogo" catalog="system" width="105" height="128"/>

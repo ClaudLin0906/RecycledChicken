@@ -68,6 +68,18 @@ class ActivityVoucherTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    private var drawPeople:String?
+    {
+        willSet {
+            if let newValue = newValue {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    drawPeopleLabel.text = "\(newValue)"
+                }
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -113,6 +125,10 @@ class ActivityVoucherTableViewCell: UITableViewCell {
 
             if let infoPoint = commodityVoucherInfo.points {
                 self.point = String(infoPoint)
+            }
+            
+            if let peopleCount = commodityVoucherInfo.remainingQuantity {
+                self.drawPeople = "剩餘數量 \(peopleCount)"
             }
             
         }

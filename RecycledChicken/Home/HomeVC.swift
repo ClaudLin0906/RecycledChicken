@@ -205,7 +205,7 @@ class HomeVC: CustomRootVC {
         }
     }
     
-    private func getTrendChart() -> UIImage?{
+    private func getTrendChart() -> UIImage? {
         if let levelInfo = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo {
             var image:UIImage?
             switch levelInfo.progress {
@@ -260,7 +260,7 @@ class HomeVC: CustomRootVC {
         batteryItemView.setInfo(.battery)
         papperCubItemView.setInfo(.papperCub)
         aluminumCanItemView.setInfo(.aluminumCan)
-        mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 5, height: 100)
+        mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 10, height: UIScreen.main.bounds.size.height / 8)
         mallCollectionViewFlowLayout.estimatedItemSize = .zero
         mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
         mallCollectionViewFlowLayout.minimumLineSpacing = 0
