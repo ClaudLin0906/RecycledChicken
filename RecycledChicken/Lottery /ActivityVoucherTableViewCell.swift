@@ -115,7 +115,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
                 if let activityEndTimeDate = dateFromString(eventEndTime) {
                     endTime = getDates(i: 0, currentDate: activityEndTimeDate).0
                 }else {
-                    endTime = startTime
+                    endTime = eventEndTime
                 }
             }
             
