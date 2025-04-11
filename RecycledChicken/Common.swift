@@ -428,14 +428,11 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
-func getRecords(_ sites:String? = nil, _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
+func getRecords(_ sites:[String]? = nil, _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
     guard !CommonKey.shared.authToken.isEmpty else { return }
-    var urlStr = ""
-    if let sites = sites, sites != "" {
+    var urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
+    if let sites = sites {
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sites)"
-    }
-    if sites == nil || sites == "" {
-        urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     }
     print(urlStr)
     NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in

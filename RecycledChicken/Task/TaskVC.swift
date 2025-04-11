@@ -135,6 +135,7 @@ class TaskVC: CustomRootVC {
                     self.successTaskAction(taskInfo)
                     return
                 }
+                print("statusCode \(statusCode)")
                 showAlert(VC: self, title: errorMSG ?? "不知名的錯誤")
                 return
             }
