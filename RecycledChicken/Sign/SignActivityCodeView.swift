@@ -18,11 +18,13 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
     @IBOutlet weak var friendActivityCodeTextField:UITextField!
     
     @IBOutlet weak var errorMSGLabel:CustomLabel!
-        
+    
+    private var originFrame: CGRect?
+    
     var delegate:SignActivityCodeViewDelegate?
     
     private var phoneNumber = ""
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -43,6 +45,7 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         setAttributes(friendActivityCodeTextField)
         let closeTap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard(_:)))
         self.addGestureRecognizer(closeTap)
+        setupKeyboardNotifications()
     }
     
     private func setAttributes(_ textField:UITextField) {
@@ -50,6 +53,42 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         let attributes: [NSAttributedString.Key: Any] = [ .font: textField.font?.withSize(15), .foregroundColor:placeHolderColor]
         let attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "", attributes: attributes)
         textField.attributedPlaceholder = attributedPlaceholder
+    }
+    
+    private func setupKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if originFrame == nil {
+            originFrame = self.frame
+        }
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            let textFieldBottom = max(activityCodeTextField.convert(activityCodeTextField.bounds, to: nil).maxY, friendActivityCodeTextField.convert(friendActivityCodeTextField.bounds, to: nil).maxY)
+            let screenHeight = UIScreen.main.bounds.height
+            let overlap = textFieldBottom + keyboardHeight - screenHeight
+            if overlap < 0 {
+                UIView.animate(withDuration: 0.3) {
+                    self.frame.origin.y -= overlap + UIScreen.main.bounds.height * 0.3
+                }
+            }
+        }
+    }
+    
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        if let originalFrame = originFrame {
+            UIView.animate(withDuration: 0.3) {
+                self.frame = originalFrame
+            }
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
@@ -74,7 +113,7 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
             compeletion(true, "")
         }
     }
-
+    
     @IBAction func confirm(_ sender:CustomButton) {
         guard let activityCode = activityCodeTextField.text, let inviteCode = friendActivityCodeTextField.text, !activityCode.isEmpty || !inviteCode.isEmpty else {
             showErrorMSG("活動碼或是邀請碼要擇一填寫")
@@ -92,7 +131,6 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
             } else {
                 codeInfo = try? ActivityCodeInfo(userID: phoneNumber, activityCode: code).asDictionary()
             }
-            
             enterCodeAction(codeInfo ?? [:], urlString: APIUrl.domainName + urlString) { result, message in
                 errorMSG += message
                 group.leave()
@@ -101,7 +139,7 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         processCode(inviteCode, isInviteCode: true, urlString: APIUrl.enterInviteCode)
         processCode(activityCode, isInviteCode: false, urlString: APIUrl.enterActivityCode)
         group.notify(queue: .main) {
-            if errorMSG.isEmpty {
+            if errorMSG.isEmpty || errorMSG.contains("重複") {
                 self.delegate?.comfirmInvitationCode(finishAction: {
                     self.removeFromSuperview()
                 })
@@ -110,7 +148,7 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
             }
         }
     }
-
+    
     @IBAction func cancel(_ sender:CustomButton) {
         self.delegate?.comfirmInvitationCode(finishAction: {
             self.removeFromSuperview()

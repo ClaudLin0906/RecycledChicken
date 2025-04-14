@@ -5,6 +5,11 @@
 //  Created by 林書郁 on 2023/5/4.
 //
 
+
+//iOS開發者帳號
+//jack@buenooptics.com
+//Buenooptics2023
+
 import UIKit
 import GoogleMaps
 import UserNotifications
