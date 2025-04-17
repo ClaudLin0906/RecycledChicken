@@ -30,8 +30,8 @@
             filePath = "RecycledChicken/Sign/SignActivityCodeView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "confirm(_:)"
             landmarkType = "7">
          </BreakpointContent>

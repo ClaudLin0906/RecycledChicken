@@ -35,6 +35,10 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         customInit()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func setUserID(_ phoneNumber:String) {
         self.phoneNumber = phoneNumber
     }
@@ -78,17 +82,12 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         }
     }
     
-    
     @objc private func keyboardWillHide(notification: NSNotification) {
         if let originalFrame = originFrame {
             UIView.animate(withDuration: 0.3) {
                 self.frame = originalFrame
             }
         }
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){

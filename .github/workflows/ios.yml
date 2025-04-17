@@ -1,0 +1,30 @@
+name: iOS Build (No Tests)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-14  # Xcode 16 以上的 GitHub runner
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set Xcode version
+      run: sudo xcode-select -s /Applications/Xcode_16.1.app
+
+    - name: Install CocoaPods
+      run: |
+        brew install cocoapods
+        pod install
+
+    - name: Build project
+      run: |
+        xcodebuild clean build \
+          -workspace RecycledChicken.xcworkspace \
+          -scheme RecycledChicken \
+          -destination 'generic/platform=iOS'
