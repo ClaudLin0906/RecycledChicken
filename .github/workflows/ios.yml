@@ -1,28 +1,62 @@
-name: iOS Build (No Tests)
+name: iOS CI/CD
+
 on:
   push:
-    branches: [ develop ]  # 確保推送的是 'develop' 分支
+    branches: [ "develop" ]
   pull_request:
-    branches: [ develop ]  # 確保 Pull Request 是針對 'develop' 分支
+    branches: [ "develop" ]
+
 jobs:
   build:
-    runs-on: macos-14  # macOS Sonoma 對應 Xcode 16.x
+    name: Build and Test
+    runs-on: macos-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+      
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode.app
+      
+      - name: Build and test
+        run: |
+          xcodebuild clean test -project RecycledChicken.xcodeproj -scheme RecycledChicken -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2'
+          
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: macos-latest
+    if: github.ref == 'refs/heads/main'
     
-    - name: Set Xcode version
-      run: sudo xcode-select -s /Applications/Xcode_16.1.app
-    
-    - name: Install CocoaPods
-      run: |
-        brew install cocoapods
-        pod install
-    
-    - name: Build project
-      run: |
-        xcodebuild clean build \
-          -workspace RecycledChicken.xcworkspace \
-          -scheme RecycledChicken \
-          -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=latest'
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Apple Certificate
+        uses: apple-actions/import-codesign-certs@v1
+        with: 
+          p12-file-base64: ${{ secrets.P12_BASE64 }}
+          p12-password: ${{ secrets.P12_PASSWORD }}
+          
+      - name: Install Provisioning Profile
+        uses: apple-actions/download-provisioning-profiles@v1
+        with:
+          bundle-id: 'your.bundle.id'
+          profile-type: 'IOS_APP_STORE'
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+          
+      - name: Build App
+        run: |
+          xcodebuild clean archive -project RecycledChicken.xcodeproj -scheme RecycledChicken -configuration Release -archivePath build/RecycledChicken.xcarchive
+          
+      - name: Export IPA
+        run: |
+          xcodebuild -exportArchive -archivePath build/RecycledChicken.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath build/
+          
+      - name: Upload to App Store
+        uses: apple-actions/upload-testflight-build@v1
+        with:
+          app-path: build/RecycledChicken.ipa
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }} 
+          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
