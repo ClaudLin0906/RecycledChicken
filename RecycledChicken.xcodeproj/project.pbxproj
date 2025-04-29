@@ -331,6 +331,8 @@
 		59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */; };
 		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
 		59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */; };
+		C97633C72DC12FF300150E2A /* TaskTableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */; };
+		C97633C92DC130A500150E2A /* TaskTableSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97633C82DC130A500150E2A /* TaskTableSectionView.xib */; };
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -709,6 +711,8 @@
 		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
 		59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TutorialVideo.mp4; sourceTree = "<group>"; };
 		B3875E129FF487C1791895B2 /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.debug.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
+		C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableSectionView.swift; sourceTree = "<group>"; };
+		C97633C82DC130A500150E2A /* TaskTableSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableSectionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1378,6 +1382,8 @@
 			children = (
 				59C2D9A22A0D37790085724F /* TaskVC.swift */,
 				59600F412B9EED51009AFA76 /* Task.storyboard */,
+				C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */,
+				C97633C82DC130A500150E2A /* TaskTableSectionView.xib */,
 				59AFE15E2A0FB7B500490BD8 /* TaskTableViewCell.swift */,
 				5964AAF52A1364570005686F /* TaskTableViewADCell.swift */,
 				2537419E2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift */,
@@ -1536,6 +1542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97633C92DC130A500150E2A /* TaskTableSectionView.xib in Resources */,
 				59600F5F2B9EEEC2009AFA76 /* LotteryItemTableViewCell.xib in Resources */,
 				59997A512A09385400E9FD7F /* PetView.xib in Resources */,
 				59600EEF2B9EE57A009AFA76 /* RecycledItemView.xib in Resources */,
@@ -1850,6 +1857,7 @@
 				5960E5BB2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift in Sources */,
 				59CDA34E2A42DEB700E3F74E /* SignModel.swift in Sources */,
 				5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */,
+				C97633C72DC12FF300150E2A /* TaskTableSectionView.swift in Sources */,
 				599216C12B8EFAAC0056FFC1 /* CustomSegmentedControl.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
 				59CDA3582A45963E00E3F74E /* RecycleLogModel.swift in Sources */,

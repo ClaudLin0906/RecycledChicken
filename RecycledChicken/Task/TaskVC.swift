@@ -17,8 +17,16 @@ class TaskVC: CustomRootVC {
     
     private var taskInfos:[TaskInfo] = []
     
+    private var shareTaskInfos:[TaskInfo] = []
+    
+    private var advertiseTaskInfos:[TaskInfo] = []
+    
+    private var recycledTaskInfos:[TaskInfo] = []
+    
+    private var specifiedLocationTaskInfos:[TaskInfo] = []
+    
     @UserDefault(UserDefaultKey.shared.finishTasks, defaultValue: []) var currentFinishTasks:[String]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -26,6 +34,7 @@ class TaskVC: CustomRootVC {
     }
     
     private func UIInit() {
+        taskTableView.register(UINib(nibName: "TaskTableSectionView", bundle: nil), forHeaderFooterViewReuseIdentifier: "TaskTableSectionView")
         taskTableView.setSeparatorLocation()
     }
     
@@ -33,19 +42,19 @@ class TaskVC: CustomRootVC {
         super.viewWillAppear(animated)
         getTaskInfo(completion: { [weak self] in
             guard let self = self else { return }
+            classification()
             reloadTableView()
         })
     }
     
     private func sharedAction(_ taskInfo:TaskInfo, completion: @escaping (Bool, String?) -> Void){
-//        let url = "https://apps.apple.com/app/id6449214570"
-        guard let url = taskInfo.url else { 
+        guard let url = taskInfo.url else {
             completion(false, "url 有問題")
             return
         }
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
-
+            
             if error != nil {
                 completion(false, error?.localizedDescription)
                 return
@@ -83,6 +92,19 @@ class TaskVC: CustomRootVC {
         completion()
     }
     
+    private func classification() {
+        let share = self.taskInfos.filter { $0.type == .share }
+        let advertise = self.taskInfos.filter { $0.type == .advertise }
+        let specified = self.taskInfos.filter { $0.isSpecifiedLocation }
+        let remaining = self.taskInfos.filter { task in
+            task.type != .share && task.type != .advertise && !task.isSpecifiedLocation
+        }
+        shareTaskInfos.append(contentsOf: share)
+        advertiseTaskInfos.append(contentsOf: advertise)
+        specifiedLocationTaskInfos.append(contentsOf: specified)
+        recycledTaskInfos.append(contentsOf: remaining)
+    }
+    
     private func getTaskInfo(completion: @escaping () -> Void) {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
@@ -90,14 +112,22 @@ class TaskVC: CustomRootVC {
                 return
             }
             if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
-                self.taskInfos.removeAll()
+                self.clearTableViewData()
                 self.addStatus(taskInfos) {
-//                    self.filterTaskInfoDate {
-                        completion()
-//                    }
+                    //                    self.filterTaskInfoDate {
+                    completion()
+                    //                    }
                 }
             }
         }
+    }
+    
+    private func clearTableViewData() {
+        taskInfos.removeAll()
+        shareTaskInfos.removeAll()
+        advertiseTaskInfos.removeAll()
+        recycledTaskInfos.removeAll()
+        specifiedLocationTaskInfos.removeAll()
     }
     
     private func signAlert() {
@@ -163,49 +193,106 @@ class TaskVC: CustomRootVC {
         cell.setCell(info)
         return cell
     }
+    
+    private func dequeueAndConfigureCell(for tableView: UITableView, info: TaskInfo, section: Int, finishTasks: [String]) -> UITableViewCell {
+        if section == 2 || section == 3 {
+            return handRecycledItemCell(tableView, info, finishTasks)
+        }
 
+        let isPartnerTask = info.reward?.type != .point
+
+        if section == 0 {
+            if isPartnerTask {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier) as! TaskTableViewPartnerCell
+                cell.delegate = self
+                cell.setCell(info)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier) as! TaskTableViewCell
+                cell.delegate = self
+                cell.setCell(info)
+                return cell
+            }
+        }
+
+        if section == 1 {
+            if isPartnerTask {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier) as! TaskTableViewPartnerCell
+                cell.delegate = self
+                cell.setCell(info)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier) as! TaskTableViewADCell
+                cell.delegate = self
+                cell.setCell(info)
+                return cell
+            }
+        }
+
+        return UITableViewCell()
+    }
+    
+    private func getSectionInfos(for section: Int) -> [TaskInfo] {
+        
+        var availableSections: [TaskInfo] = []
+        switch section {
+        case 0:
+            availableSections.append(contentsOf: shareTaskInfos)
+        case 1:
+            availableSections.append(contentsOf: advertiseTaskInfos)
+        case 2:
+            availableSections.append(contentsOf: recycledTaskInfos)
+        case 3:
+            availableSections.append(contentsOf: specifiedLocationTaskInfos)
+        default:
+            break
+        }
+        return availableSections
+    }
+    
 }
 
-extension TaskVC:UITableViewDelegate, UITableViewDataSource {
+extension TaskVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        4
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        // 根據實際的 section 資料來決定高度
+        let sectionInfos = getSectionInfos(for: section)
+        return sectionInfos.isEmpty ? 0 : UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionInfos = getSectionInfos(for: section)
+        guard !sectionInfos.isEmpty else { return nil }
+        
+        let taskTableSectionView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TaskTableSectionView") as? TaskTableSectionView
+        taskTableSectionView?.automaticallyUpdatesBackgroundConfiguration = false
+        switch section {
+        case 0:
+            taskTableSectionView?.setTitleLabel("分享連結")
+        case 1:
+            taskTableSectionView?.setTitleLabel("廣告播放")
+        case 2:
+            taskTableSectionView?.setTitleLabel("全站投遞")
+        case 3:
+            taskTableSectionView?.setTitleLabel("特殊站點投遞")
+        default:
+            taskTableSectionView?.setTitleLabel("")
+        }
+        return taskTableSectionView
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        taskInfos.count
+        return getSectionInfos(for: section).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row
-        let taskInfo = taskInfos[row]
-        guard let type = taskInfo.type, let reward = taskInfo.reward, let rewardType = reward.type else {
-            return UITableViewCell()
-        }
         let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
-        switch type {
-        case .share:
-            if rewardType != .point {
-                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
-                cell.delegate = self
-                cell.setCell(taskInfo)
-                return cell
-            }
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
-            cell.delegate = self
-            cell.setCell(taskInfo)
-            return cell
-        case .advertise:
-            if rewardType != .point {
-                let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerCell.identifier, for: indexPath) as! TaskTableViewPartnerCell
-                cell.delegate = self
-                cell.setCell(taskInfo)
-                return cell
-            }
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewADCell.identifier, for: indexPath) as! TaskTableViewADCell
-            cell.delegate = self
-            cell.setCell(taskInfo)
-            return cell
-        default:
-            let cell = handRecycledItemCell(tableView, taskInfo, finishTasks)
-            return cell
-        }
+        let taskInfo = getSectionInfos(for: indexPath.section)[indexPath.row]
+        return dequeueAndConfigureCell(for: tableView, info: taskInfo, section: indexPath.section, finishTasks: finishTasks)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -213,13 +300,15 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
             signAlert()
             return
         }
-        let taskInfo = taskInfos[indexPath.row]
+        
+        let taskInfo = getSectionInfos(for: indexPath.section)[indexPath.row]
+        
         if let type = taskInfo.type {
             switch type {
             case .share:
                 if !taskInfo.isFinish {
                     sharedAction(taskInfo) { result, errorMSG in
-                        guard result else { 
+                        guard result else {
                             showAlert(VC: self, title: errorMSG, message: nil)
                             return
                         }
@@ -246,7 +335,6 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
                     }
                     adView.taskInfo = taskInfo
                     keyWindow?.addSubview(adView)
-
                 }
             default:
                 break
@@ -254,6 +342,7 @@ extension TaskVC:UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
 
 extension TaskVC:TaskTableViewCellFinishDelete {
     func taskTableViewCellFinish(_ taskInfo: TaskInfo?) {
