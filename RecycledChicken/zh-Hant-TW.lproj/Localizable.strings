@@ -32,7 +32,7 @@
 "emailNotifications" = "信件通知";
 "recyclingMachineNotifications" = "回收機消息通知";
 "biometricIdentification" = "生物辨識";
-"enterInvitationCode" = "輸入好友邀情碼";
+"enterInvitationCode" = "輸入好友邀請碼";
 "deleteAccount" = "刪除帳號";
 "version" = "版本資訊";
 "user" = "用戶";

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol InvitationCodeViewDelegate {
-    func comfirmInvitationCode(_ invitationCode:String, finishAction:(()->())?)
+    func comfirmInvitationCode(_ invitationCode:String, finishAction:((ApiResult?)->())?)
 }
 
 class InvitationCodeView: UIView, NibOwnerLoadable {
@@ -20,7 +20,9 @@ class InvitationCodeView: UIView, NibOwnerLoadable {
     private var originFrame: CGRect?
     
     var delegate:InvitationCodeViewDelegate?
-
+    
+    var VC:UIViewController?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -77,14 +79,26 @@ class InvitationCodeView: UIView, NibOwnerLoadable {
             }
         }
     }
-
+    
     @objc private func closeKeyboard(_ tap:UITapGestureRecognizer){
         self.endEditing(true)
     }
     
     @IBAction func comfirm(_ sender:UIButton ) {
-        delegate?.comfirmInvitationCode(invitationCodeTextField.text ?? "", finishAction: {
-            self.removeFromSuperview()
+        delegate?.comfirmInvitationCode(invitationCodeTextField.text ?? "", finishAction: { [weak self] apiResult in
+            guard let apiResult = apiResult else {
+                showAlert(VC: self?.VC!, title: "不知名的錯誤")
+                self?.removeFromSuperview()
+                return
+            }
+            if let status = apiResult.status {
+                switch status {
+                case .success:
+                    self?.removeFromSuperview()
+                case .failure:
+                    showAlert(VC: self?.VC!, title: apiResult.message)
+                }
+            }
         })
     }
 }
