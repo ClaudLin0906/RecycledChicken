@@ -1094,10 +1094,10 @@ func getSevenDaysArray(targetDate:Date) -> [(String, String, Date)] {
 func fadeInOutAni(showView:UIView, finishAction:(()->())?){
     showView.alpha = 0
     keyWindow?.addSubview(showView)
-    UIView.animate(withDuration: 2, delay: 0) {
+    UIView.animate(withDuration: 1, delay: 0) {
         showView.alpha = 1
     } completion: { _ in
-        UIView.animate(withDuration: 2, delay: 1) {
+        UIView.animate(withDuration: 1, delay: 1) {
             showView.alpha = 0
         } completion: { _ in
             showView.removeFromSuperview()

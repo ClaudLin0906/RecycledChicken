@@ -23,6 +23,10 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     
     @IBOutlet weak var getTicketView:GetTicketView!
     
+    @IBOutlet weak var comfirmButton:CustomButton!
+    
+    @IBOutlet weak var isReceiveBtn:CustomButton!
+    
     var delegate:TaskTableViewCellFinishDelete?
     
     private var taskInfo:TaskInfo?
@@ -72,6 +76,8 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        isReceiveBtn.layer.borderWidth = 1
+        isReceiveBtn.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         // Initialization code
     }
 
@@ -96,37 +102,51 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
             default:
                 if let requiredAmount = taskInfo.requiredAmount {
                     self.taskProgressView.setPercent(submitted, denominator: requiredAmount)
-                    if submitted >= requiredAmount {
-                        self.taskInfo?.isFinish = true
-                    }
+//                    if submitted >= requiredAmount {
+//                        self.taskInfo?.isFinish = true
+//                    }
                 }
             }
         }
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-            if let title = taskInfo.title {
-                self.title = title
+        if let title = taskInfo.title {
+            self.title = title
+        }
+        
+        if let taskDescription = taskInfo.description {
+            self.taskDescription = taskDescription
+        }
+        
+        if let iconUrl = taskInfo.iconUrl, let url = URL(string: iconUrl) {
+            self.partnerImageUrl = url
+        }
+        
+        if let reward = taskInfo.reward, let rewardType = reward.type {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                if rewardType == .point {
+                    self.comfirmButton.setTitle("點擊領取", for: .normal)
+                    self.isReceiveBtn.setTitle("點數已領取", for: .normal)
+                } else {
+                    self.comfirmButton.setTitle("領取票卷", for: .normal)
+                    self.isReceiveBtn.setTitle("票卷已領取", for: .normal)
+                }
             }
-            
-            if let taskDescription = taskInfo.description {
-                self.taskDescription = taskDescription
-            }
-            
-            if let iconUrl = taskInfo.iconUrl, let url = URL(string: iconUrl) {
-                self.partnerImageUrl = url
-            }
-            self.taskInfo = taskInfo
-            
-            if !taskInfo.isFinish {
-                if let type = taskInfo.type, type == .battery || type == .bottle || type == .cup || type == .can {
-                    if let startTime = taskInfo.startTime, let endTime = taskInfo.endTime, let formattedStartDate = convertDateFormat(inputDateString: startTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd"), let formattedEndDate = convertDateFormat(inputDateString: endTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd") {
-                        getRecords(taskInfo.sites, formattedStartDate, formattedEndDate) { [weak self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-                            guard let self = self else { return }
+        }
+        
+        self.taskInfo = taskInfo
+        
+        if !taskInfo.isFinish {
+            if let type = taskInfo.type, type == .battery || type == .bottle || type == .cup || type == .can {
+                if let startTime = taskInfo.startTime, let endTime = taskInfo.endTime, let formattedStartDate = convertDateFormat(inputDateString: startTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd"), let formattedEndDate = convertDateFormat(inputDateString: endTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd") {
+                    getRecords(taskInfo.sites, formattedStartDate, formattedEndDate) { [weak self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
+                        guard let self = self else { return }
+                        DispatchQueue.main.async {
                             switch type {
                             case .battery:
-                                requiredAmountHandle(battery ?? 0)
+                                self.requiredAmountHandle(battery ?? 0)
                             case .bottle:
                                 var bottleCount = 0
                                 if let bottle = bottle {
@@ -138,11 +158,11 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
                                 if let colorlessBottle = colorlessBottle {
                                     bottleCount += colorlessBottle
                                 }
-                                requiredAmountHandle(bottleCount)
+                                self.requiredAmountHandle(bottleCount)
                             case .can:
-                                requiredAmountHandle(can ?? 0)
+                                self.requiredAmountHandle(can ?? 0)
                             case .cup:
-                                requiredAmountHandle(cup ?? 0)
+                                self.requiredAmountHandle(cup ?? 0)
                             default:
                                 break
                             }
@@ -152,8 +172,8 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
             }
         }
     }
-    
-    func finishAction() {
+
+    @IBAction func finishActionConfirm(_ btn:CustomButton) {
         delegate?.taskTableViewCellFinish(taskInfo)
     }
     

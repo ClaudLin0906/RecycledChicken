@@ -24,7 +24,7 @@ class TaskTableViewPartnerCell: UITableViewCell {
     @IBOutlet weak var playImageView:UIImageView!
         
     @IBOutlet weak var getTicketView:GetTicketView!
-    
+        
     var delegate:TaskTableViewCellFinishDelete?
             
     private var taskInfo:TaskInfo?
@@ -96,24 +96,22 @@ class TaskTableViewPartnerCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {            
-            if let title = taskInfo.title {
-                self.title = title
-            }
-            
-            if let taskDescription = taskInfo.description {
-                self.taskDescription = taskDescription
-            }
-            
-            if let iconUrl = taskInfo.iconUrl, let url = URL(string: iconUrl) {
-                self.partnerImageUrl = url
-            }
-            
-            if let leftIcon = taskInfo.leftIcon, let url = URL(string: leftIcon) {
-                self.leftImageUrl = url
-            }
-            self.taskInfo = taskInfo
+        if let title = taskInfo.title {
+            self.title = title
         }
+        
+        if let taskDescription = taskInfo.description {
+            self.taskDescription = taskDescription
+        }
+        
+        if let iconUrl = taskInfo.iconUrl, let url = URL(string: iconUrl) {
+            self.partnerImageUrl = url
+        }
+        
+        if let leftIcon = taskInfo.leftIcon, let url = URL(string: leftIcon) {
+            self.leftImageUrl = url
+        }
+        self.taskInfo = taskInfo
     }
     
     func finishAction() {

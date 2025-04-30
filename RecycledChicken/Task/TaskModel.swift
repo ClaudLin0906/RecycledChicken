@@ -23,6 +23,7 @@ struct TaskInfo: Codable {
     var leftIcon:String?
     var isFinish:Bool
     var isSpecifiedLocation:Bool
+    var isReceive:Bool
     
     enum CodingKeys:String, CodingKey {
         case createTime = "createTime"
@@ -40,6 +41,7 @@ struct TaskInfo: Codable {
         case leftIcon = "leftIcon"
         case isFinish = "isFinish"
         case isSpecifiedLocation = "isSpecifiedLocation"
+        case isReceive = "isReceive"
     }
     
     init(from decoder: Decoder) throws {
@@ -59,6 +61,7 @@ struct TaskInfo: Codable {
         leftIcon = try? container.decodeIfPresent(String.self, forKey: .leftIcon)
         isFinish = false
         isSpecifiedLocation = false
+        isReceive = false
     }
 
 }

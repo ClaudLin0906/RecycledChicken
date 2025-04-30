@@ -100,25 +100,23 @@ class TaskTableViewADCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-            if let title = taskInfo.title {
-                self.title = title
-            }
-            
-            if let taskDescription = taskInfo.description {
-                self.taskDescription = taskDescription
-            }
-            
-            if let reward = taskInfo.reward, let amount = reward.amount {
-                self.point = String(amount)
-            }
-            
-            if let iconUrl = taskInfo.iconUrl, let url = URL(string: iconUrl) {
-                self.iconImageUrl = url
-            }
-            
-            self.taskInfo = taskInfo
+        if let title = taskInfo.title {
+            self.title = title
         }
+        
+        if let taskDescription = taskInfo.description {
+            self.taskDescription = taskDescription
+        }
+        
+        if let reward = taskInfo.reward, let amount = reward.amount {
+            self.point = String(amount)
+        }
+        
+        if let iconUrl = taskInfo.iconUrl, let url = URL(string: iconUrl) {
+            self.iconImageUrl = url
+        }
+        
+        self.taskInfo = taskInfo
     }
     
     private func finishUIAction(_ info:TaskInfo) {

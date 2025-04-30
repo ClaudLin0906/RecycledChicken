@@ -333,6 +333,8 @@
 		59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */; };
 		C97633C72DC12FF300150E2A /* TaskTableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */; };
 		C97633C92DC130A500150E2A /* TaskTableSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97633C82DC130A500150E2A /* TaskTableSectionView.xib */; };
+		C981BF892DC1D942008FFC09 /* ReceivePointFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */; };
+		C981BF8B2DC1D949008FFC09 /* ReceivePointFinishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C981BF8A2DC1D949008FFC09 /* ReceivePointFinishView.xib */; };
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -713,6 +715,8 @@
 		B3875E129FF487C1791895B2 /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.debug.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
 		C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableSectionView.swift; sourceTree = "<group>"; };
 		C97633C82DC130A500150E2A /* TaskTableSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableSectionView.xib; sourceTree = "<group>"; };
+		C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePointFinishView.swift; sourceTree = "<group>"; };
+		C981BF8A2DC1D949008FFC09 /* ReceivePointFinishView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivePointFinishView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1392,6 +1396,8 @@
 				59600F452B9EED83009AFA76 /* TaskProgressView.xib */,
 				33976DFE2C1D60C100CD6892 /* GetTicketView.swift */,
 				33976E002C1D60C800CD6892 /* GetTicketView.xib */,
+				C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */,
+				C981BF8A2DC1D949008FFC09 /* ReceivePointFinishView.xib */,
 				59835DF12A63FA2200678BAF /* TaskModel.swift */,
 			);
 			path = Task;
@@ -1601,6 +1607,7 @@
 				59600EC72B9EE367009AFA76 /* UpdateDateAlertView.xib in Resources */,
 				59600F572B9EEE8C009AFA76 /* IllustratedGuideSecondInfoView.xib in Resources */,
 				59600F772B9EEFC9009AFA76 /* CompletetChangePWDView.xib in Resources */,
+				C981BF8B2DC1D949008FFC09 /* ReceivePointFinishView.xib in Resources */,
 				597521872A0B8EDD00D0B67C /* BindAccount.storyboard in Resources */,
 				59600F3B2B9EED37009AFA76 /* SpecialTaskView.xib in Resources */,
 				33976E012C1D60C800CD6892 /* GetTicketView.xib in Resources */,
@@ -1674,9 +1681,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1713,9 +1724,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1859,6 +1874,7 @@
 				5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */,
 				C97633C72DC12FF300150E2A /* TaskTableSectionView.swift in Sources */,
 				599216C12B8EFAAC0056FFC1 /* CustomSegmentedControl.swift in Sources */,
+				C981BF892DC1D942008FFC09 /* ReceivePointFinishView.swift in Sources */,
 				5975218F2A0B902C00D0B67C /* CommonPronblemVC.swift in Sources */,
 				59CDA3582A45963E00E3F74E /* RecycleLogModel.swift in Sources */,
 				59CDA34C2A42DE8B00E3F74E /* VerificationCodeModel.swift in Sources */,

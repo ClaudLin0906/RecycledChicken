@@ -42,8 +42,8 @@ class TaskVC: CustomRootVC {
         super.viewWillAppear(animated)
         getTaskInfo(completion: { [weak self] in
             guard let self = self else { return }
-            classification()
-            reloadTableView()
+            self.classification()
+            self.reloadTableView()
         })
     }
     
@@ -67,19 +67,22 @@ class TaskVC: CustomRootVC {
     }
     
     private func addStatus(_ responseTaskInfos:[TaskInfo], completion: @escaping () -> Void) {
-        responseTaskInfos.forEach { taskInfo in
-            var newTaskInfo = taskInfo
-            self.currentFinishTasks.forEach { finishTask in
-                if let createTime = newTaskInfo.createTime, createTime == finishTask {
-                    newTaskInfo.isFinish = true
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            responseTaskInfos.forEach { taskInfo in
+                var newTaskInfo = taskInfo
+                self.currentFinishTasks.forEach { finishTask in
+                    if let createTime = newTaskInfo.createTime, createTime == finishTask {
+//                        newTaskInfo.isFinish = true
+                    }
                 }
+                if let sites = newTaskInfo.sites, sites.count > 0 {
+                    newTaskInfo.isSpecifiedLocation = true
+                }
+                self.taskInfos.append(newTaskInfo)
             }
-            if let sites = newTaskInfo.sites, sites.count > 0 {
-                newTaskInfo.isSpecifiedLocation = true
-            }
-            self.taskInfos.append(newTaskInfo)
+            completion()
         }
-        completion()
     }
     
     private func filterTaskInfoDate(completion: @escaping () -> Void) {
@@ -93,30 +96,36 @@ class TaskVC: CustomRootVC {
     }
     
     private func classification() {
-        let share = self.taskInfos.filter { $0.type == .share }
-        let advertise = self.taskInfos.filter { $0.type == .advertise }
-        let specified = self.taskInfos.filter { $0.isSpecifiedLocation }
-        let remaining = self.taskInfos.filter { task in
-            task.type != .share && task.type != .advertise && !task.isSpecifiedLocation
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let share = self.taskInfos.filter { $0.type == .share }
+            let advertise = self.taskInfos.filter { $0.type == .advertise }
+            let specified = self.taskInfos.filter { $0.isSpecifiedLocation }
+            let remaining = self.taskInfos.filter { task in
+                task.type != .share && task.type != .advertise && !task.isSpecifiedLocation
+            }
+            self.shareTaskInfos.append(contentsOf: share)
+            self.advertiseTaskInfos.append(contentsOf: advertise)
+            self.specifiedLocationTaskInfos.append(contentsOf: specified)
+            self.recycledTaskInfos.append(contentsOf: remaining)
         }
-        shareTaskInfos.append(contentsOf: share)
-        advertiseTaskInfos.append(contentsOf: advertise)
-        specifiedLocationTaskInfos.append(contentsOf: specified)
-        recycledTaskInfos.append(contentsOf: remaining)
     }
     
     private func getTaskInfo(completion: @escaping () -> Void) {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
-                self.clearTableViewData()
-                self.addStatus(taskInfos) {
-                    //                    self.filterTaskInfoDate {
-                    completion()
-                    //                    }
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                guard let data = data, statusCode == 200 else {
+                    showAlert(VC: self, title: "error".localized, message: errorMSG)
+                    return
+                }
+                if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
+                    self.clearTableViewData()
+                    self.addStatus(taskInfos) {
+                        //                    self.filterTaskInfoDate {
+                        completion()
+                        //                    }
+                    }
                 }
             }
         }
@@ -142,6 +151,7 @@ class TaskVC: CustomRootVC {
     private func successTaskAction(_ taskInfo:TaskInfo) {
         if let index = self.taskInfos.firstIndex(where: { $0.createTime == taskInfo.createTime}) {
             self.taskInfos[index].isFinish = true
+            self.taskInfos[index].isReceive = true
         }
         if let createTime = taskInfo.createTime {
             currentFinishTasks.append(createTime)
@@ -165,8 +175,11 @@ class TaskVC: CustomRootVC {
                     self.successTaskAction(taskInfo)
                     return
                 }
-                print("statusCode \(statusCode)")
-                showAlert(VC: self, title: errorMSG ?? "不知名的錯誤")
+                var apiErrorMessage = "不知名的錯誤"
+                if let data = data,let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data), let message = apiResult.message {
+                    apiErrorMessage = message
+                }
+                showAlert(VC: self, title: errorMSG ?? apiErrorMessage)
                 return
             }
             let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
@@ -181,7 +194,7 @@ class TaskVC: CustomRootVC {
         }
     }
     
-    private func handRecycledItemCell(_ tableView:UITableView, _ info:TaskInfo, _ finishTasks:[String]) -> UITableViewCell {
+    private func handleRecycledItemCell(_ tableView:UITableView, _ info:TaskInfo, _ finishTasks:[String]) -> UITableViewCell {
         if let reward = info.reward, let rewardType = reward.type, rewardType != .point {
             let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewPartnerProgressCell.identifier) as! TaskTableViewPartnerProgressCell
             cell.delegate = self
@@ -196,7 +209,7 @@ class TaskVC: CustomRootVC {
     
     private func dequeueAndConfigureCell(for tableView: UITableView, info: TaskInfo, section: Int, finishTasks: [String]) -> UITableViewCell {
         if section == 2 || section == 3 {
-            return handRecycledItemCell(tableView, info, finishTasks)
+            return handleRecycledItemCell(tableView, info, finishTasks)
         }
 
         let isPartnerTask = info.reward?.type != .point
@@ -343,9 +356,10 @@ extension TaskVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
 extension TaskVC:TaskTableViewCellFinishDelete {
+    
     func taskTableViewCellFinish(_ taskInfo: TaskInfo?) {
         finishTaskAction(taskInfo)
     }
+    
 }
