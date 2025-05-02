@@ -11,6 +11,8 @@ class TaskTableViewCell: UITableViewCell {
     
     static let identifier = "TaskTableViewCell"
     
+    @IBOutlet weak var titleStackView:UIStackView!
+    
     @IBOutlet weak var titleLabel:CustomLabel!
     
     @IBOutlet weak var descriptionLabel:CustomLabel!
@@ -88,52 +90,21 @@ class TaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    private func finishUIAction(_ info:TaskInfo) {
-        if info.isReceive {
+    private func finishUIAction(_ taskInfo:TaskInfo) {
+        print("finishUIAction isReceive \(taskInfo.isReceive) isFinish \(taskInfo.isFinish)")
+        if taskInfo.isReceive {
             receiveFinishUIAction()
-        } else if info.isFinish && !info.isReceive {
+        } else if taskInfo.isFinish && !taskInfo.isReceive {
             finishNoReceiveUIAction()
-        } else if !info.isFinish && !info.isReceive {
+        } else if !taskInfo.isFinish && !taskInfo.isReceive {
             noFinishNoReceiveUIAction()
         }
-//        if info.isFinish {
-//            DispatchQueue.main.async { [weak self] in
-//                guard let self = self else { return }
-//                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
-//                titleLabel.textColor = .white
-//                descriptionLabel.textColor = .white
-//                pointLabel.textColor = .white
-//                taskProgressView.isHidden = true
-//                if let reward = info.reward, let type = reward.type {
-//                    if type != .point {
-//                        getTicketView.isHidden = false
-//                        pointView.isHidden = true
-//                    }
-//                    if type == .point {
-//                        pointFinishView.isHidden = false
-//                    }
-//                }
-//            }
-//        } else {
-//            DispatchQueue.main.async { [weak self] in
-//                guard let self = self else { return }
-//                background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//                titleLabel.textColor = .black
-//                descriptionLabel.textColor = .black
-//                pointLabel.textColor = .black
-//                getTicketView.isHidden = true
-//                taskProgressView.isHidden = false
-//                pointView.isHidden = false
-//                pointFinishView.isHidden = true
-//            }
-//        }
     }
     
     private func receiveFinishUIAction() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             background.backgroundColor = #colorLiteral(red: 0.7843137255, green: 0.4392156863, blue: 0.1960784314, alpha: 1)
-            titleLabel.textColor = .white
             descriptionLabel.textColor = .white
             pointLabel.textColor = .white
             taskProgressView.isHidden = true
@@ -163,7 +134,6 @@ class TaskTableViewCell: UITableViewCell {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            titleLabel.textColor = .black
             descriptionLabel.textColor = .black
             pointLabel.textColor = .black
             getTicketView.isHidden = true
@@ -176,8 +146,14 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        if let title = taskInfo.title {
-            self.title = title
+        if taskInfo.isSpecifiedLocation {
+            if let title = taskInfo.title {
+                self.title = title
+            }
+        } else {
+            if titleLabel != nil {
+                titleStackView.removeFully(view: titleLabel)
+            }
         }
         
         if let taskDescription = taskInfo.description {

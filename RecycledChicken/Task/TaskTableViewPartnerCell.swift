@@ -12,9 +12,7 @@ class TaskTableViewPartnerCell: UITableViewCell {
     static let identifier = "TaskTableViewPartnerCell"
     
     @IBOutlet weak var background:UIView!
-    
-    @IBOutlet weak var titleLabel:CustomLabel!
-    
+        
     @IBOutlet weak var descriptionLabel:CustomLabel!
     
     @IBOutlet weak var partnerImageView:UIImageView!
@@ -32,18 +30,6 @@ class TaskTableViewPartnerCell: UITableViewCell {
         willSet{
             if let newValue = newValue {
                 finishUIAction(newValue)
-            }
-        }
-    }
-    
-    private var title:String?
-    {
-        willSet {
-            if let newValue = newValue {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    titleLabel.text = newValue
-                }
             }
         }
     }
@@ -96,9 +82,6 @@ class TaskTableViewPartnerCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        if let title = taskInfo.title {
-            self.title = title
-        }
         
         if let taskDescription = taskInfo.description {
             self.taskDescription = taskDescription
@@ -123,7 +106,6 @@ class TaskTableViewPartnerCell: UITableViewCell {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
-                titleLabel.textColor = .white
                 descriptionLabel.textColor = .white
                 if let reward = info.reward, let type = reward.type, type != .point {
                     getTicketView.isHidden = false
@@ -136,7 +118,6 @@ class TaskTableViewPartnerCell: UITableViewCell {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                titleLabel.textColor = .black
                 descriptionLabel.textColor = .black
                 getTicketView.isHidden = true
                 playImageView.isHidden = false

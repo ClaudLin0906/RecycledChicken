@@ -115,18 +115,6 @@
         }
       }
     },
-    "krr-Zi-F0N.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"krr-Zi-F0N\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "分享任務"
-          }
-        }
-      }
-    },
     "NIu-ir-pOU.text" : {
       "comment" : "Class = \"UILabel\"; text = \"00\"; ObjectID = \"NIu-ir-pOU\";",
       "extractionState" : "extracted_with_value",
@@ -165,18 +153,6 @@
     },
     "PG8-3l-iBo.text" : {
       "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"PG8-3l-iBo\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "zh-Hant-TW" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "分享任務"
-          }
-        }
-      }
-    },
-    "tPD-Ie-oWR.text" : {
-      "comment" : "Class = \"UILabel\"; text = \"分享任務\"; ObjectID = \"tPD-Ie-oWR\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "zh-Hant-TW" : {

@@ -134,26 +134,6 @@
                                                                 <action selector="finishActionConfirm:" destination="a7h-YG-l8r" eventType="touchUpInside" id="tY8-nY-UZN"/>
                                                             </connections>
                                                         </button>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-24-hAA" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="223" y="20" width="100" height="40"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="kCc-R0-brH"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="20"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftO-ap-QXO" customClass="GetTicketView" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="223" y="20" width="100" height="40"/>
                                                             <constraints>
@@ -183,8 +163,6 @@
                                                     <constraints>
                                                         <constraint firstItem="iz3-M3-oHz" firstAttribute="leading" secondItem="ftO-ap-QXO" secondAttribute="leading" id="4AL-zw-FAC"/>
                                                         <constraint firstAttribute="trailing" secondItem="Jiq-gy-5nk" secondAttribute="trailing" constant="10" id="5wO-Ji-RlY"/>
-                                                        <constraint firstItem="EMz-24-hAA" firstAttribute="top" secondItem="nUo-Bj-BKl" secondAttribute="top" id="DqL-kZ-Uwa"/>
-                                                        <constraint firstItem="EMz-24-hAA" firstAttribute="bottom" secondItem="nUo-Bj-BKl" secondAttribute="bottom" id="EQR-cp-dPf"/>
                                                         <constraint firstItem="a5W-zn-0cR" firstAttribute="width" secondItem="HVs-S3-nqu" secondAttribute="width" multiplier="0.4" id="HXN-ZD-1QD"/>
                                                         <constraint firstAttribute="trailing" secondItem="KmW-Cy-R44" secondAttribute="trailing" constant="10" id="I0D-Ni-gIV"/>
                                                         <constraint firstItem="iz3-M3-oHz" firstAttribute="bottom" secondItem="ftO-ap-QXO" secondAttribute="bottom" id="JTe-S2-pfx"/>
@@ -195,18 +173,14 @@
                                                         <constraint firstItem="ftO-ap-QXO" firstAttribute="height" secondItem="a5W-zn-0cR" secondAttribute="height" id="OCp-bn-x8x"/>
                                                         <constraint firstItem="a5W-zn-0cR" firstAttribute="height" secondItem="HVs-S3-nqu" secondAttribute="height" multiplier="0.5" id="QxT-Ay-w2x"/>
                                                         <constraint firstItem="a5W-zn-0cR" firstAttribute="leading" secondItem="HVs-S3-nqu" secondAttribute="leading" constant="20" id="RFr-9a-GkT"/>
-                                                        <constraint firstItem="EMz-24-hAA" firstAttribute="centerY" secondItem="nUo-Bj-BKl" secondAttribute="centerY" id="RgX-50-rOR"/>
                                                         <constraint firstItem="ftO-ap-QXO" firstAttribute="centerY" secondItem="KmW-Cy-R44" secondAttribute="centerY" id="VBH-yy-AgU"/>
                                                         <constraint firstItem="Jiq-gy-5nk" firstAttribute="height" secondItem="ftO-ap-QXO" secondAttribute="height" id="Xah-SD-hxk"/>
-                                                        <constraint firstItem="EMz-24-hAA" firstAttribute="leading" secondItem="nUo-Bj-BKl" secondAttribute="leading" id="YjE-pQ-RHb"/>
                                                         <constraint firstItem="KmW-Cy-R44" firstAttribute="width" secondItem="HVs-S3-nqu" secondAttribute="width" multiplier="0.3" id="Zgo-EQ-q6n"/>
-                                                        <constraint firstItem="EMz-24-hAA" firstAttribute="trailing" secondItem="nUo-Bj-BKl" secondAttribute="trailing" id="cZ4-re-BYz"/>
                                                         <constraint firstItem="bzU-Ku-0Pd" firstAttribute="centerY" secondItem="HVs-S3-nqu" secondAttribute="centerY" id="cbf-P8-IPq"/>
                                                         <constraint firstItem="iz3-M3-oHz" firstAttribute="trailing" secondItem="ftO-ap-QXO" secondAttribute="trailing" id="h7Z-Ew-JvP"/>
                                                         <constraint firstItem="nUo-Bj-BKl" firstAttribute="centerX" secondItem="KmW-Cy-R44" secondAttribute="centerX" id="ibT-hF-C3K"/>
                                                         <constraint firstItem="bzU-Ku-0Pd" firstAttribute="leading" secondItem="a5W-zn-0cR" secondAttribute="trailing" constant="10" id="jAv-vw-ent"/>
                                                         <constraint firstItem="KmW-Cy-R44" firstAttribute="leading" secondItem="bzU-Ku-0Pd" secondAttribute="trailing" id="kAb-mG-cwK"/>
-                                                        <constraint firstItem="EMz-24-hAA" firstAttribute="centerX" secondItem="nUo-Bj-BKl" secondAttribute="centerX" id="mI4-IT-7ko"/>
                                                         <constraint firstItem="a5W-zn-0cR" firstAttribute="centerY" secondItem="HVs-S3-nqu" secondAttribute="centerY" id="mrY-ZE-4xe"/>
                                                         <constraint firstAttribute="trailing" secondItem="ftO-ap-QXO" secondAttribute="trailing" constant="10" id="pI1-1f-pd8"/>
                                                         <constraint firstItem="KmW-Cy-R44" firstAttribute="height" secondItem="bzU-Ku-0Pd" secondAttribute="height" id="sRN-6Y-NNg"/>
@@ -247,6 +221,7 @@
                                             <outlet property="receivePointFinishView" destination="iz3-M3-oHz" id="CIL-pU-5eY"/>
                                             <outlet property="taskProgressView" destination="KmW-Cy-R44" id="of3-Uf-dIX"/>
                                             <outlet property="titleLabel" destination="2z3-Bw-Vam" id="ngx-po-Vmw"/>
+                                            <outlet property="titleStackView" destination="a5W-zn-0cR" id="9cC-EW-1Xw"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableViewADCell" id="iuf-kH-pMA" customClass="TaskTableViewADCell" customModule="RecycledChicken" customModuleProvider="target">
@@ -262,20 +237,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tn0-B9-Qkd">
                                                             <rect key="frame" x="20" y="20" width="133.33333333333334" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享任務" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPD-Ie-oWR" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="133.33333333333334" height="15"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
-                                                                    <color key="textColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                            <real key="value" value="13"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHa-Cv-mhz" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="25" width="133.33333333333334" height="15"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="133.33333333333334" height="40"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -404,7 +367,6 @@
                                             <outlet property="pointFinishView" destination="zYz-cs-dD2" id="nqx-aW-abG"/>
                                             <outlet property="pointLabel" destination="NIu-ir-pOU" id="eCf-nb-RTY"/>
                                             <outlet property="pointView" destination="bHa-Aa-Uq7" id="Ecc-Et-rb2"/>
-                                            <outlet property="titleLabel" destination="tPD-Ie-oWR" id="DTQ-Ms-TgL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableViewPartnerCell" id="zhp-dB-9cK" customClass="TaskTableViewPartnerCell" customModule="RecycledChicken" customModuleProvider="target">
@@ -420,20 +382,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gBI-iZ-mJQ">
                                                             <rect key="frame" x="20" y="20" width="133.33333333333334" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享任務" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krr-Zi-F0N" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="133.33333333333334" height="15"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
-                                                                    <color key="textColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                            <real key="value" value="13"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvy-Sf-fzt" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="25" width="133.33333333333334" height="15"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="133.33333333333334" height="40"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -521,7 +471,6 @@
                                             <outlet property="leftImageView" destination="aMN-5L-9y9" id="zX4-ow-1Hf"/>
                                             <outlet property="partnerImageView" destination="eHf-vQ-Ktb" id="4aN-wY-45S"/>
                                             <outlet property="playImageView" destination="Q5q-Zl-sh8" id="gf8-lO-RMf"/>
-                                            <outlet property="titleLabel" destination="krr-Zi-F0N" id="YEs-SA-VwM"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableViewPartnerProgressCell" id="mGx-P4-kKH" customClass="TaskTableViewPartnerProgressCell" customModule="RecycledChicken" customModuleProvider="target">
@@ -597,59 +546,40 @@
                                                                 <action selector="finishActionConfirm:" destination="mGx-P4-kKH" eventType="touchUpInside" id="sVP-sl-PyZ"/>
                                                             </connections>
                                                         </button>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dog-9H-FHc" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="223" y="20" width="100" height="40"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="IUc-YA-LGD"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="20"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cd6-GJ-XVi" customClass="GetTicketView" customModule="RecycledChicken" customModuleProvider="target">
-                                                            <rect key="frame" x="173" y="20" width="150" height="40"/>
+                                                            <rect key="frame" x="223" y="20" width="100" height="40"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="150" id="Oz8-jY-T75"/>
+                                                                <constraint firstAttribute="width" constant="100" id="Oz8-jY-T75"/>
                                                             </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEi-E7-LEi" customClass="ReceivePointFinishView" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="223" y="20" width="100" height="40"/>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="95P-cm-BWh" firstAttribute="leading" secondItem="OeC-tq-gOr" secondAttribute="trailing" constant="20" id="0qQ-pK-TsI"/>
-                                                        <constraint firstItem="dog-9H-FHc" firstAttribute="centerX" secondItem="ucY-Mg-Qqj" secondAttribute="centerX" id="2oZ-y1-8Ln"/>
-                                                        <constraint firstItem="dog-9H-FHc" firstAttribute="leading" secondItem="ucY-Mg-Qqj" secondAttribute="leading" id="5R4-4P-eQw"/>
-                                                        <constraint firstItem="dog-9H-FHc" firstAttribute="trailing" secondItem="ucY-Mg-Qqj" secondAttribute="trailing" id="6Pm-cF-lv8"/>
                                                         <constraint firstItem="OeC-tq-gOr" firstAttribute="leading" secondItem="1C8-7S-3Km" secondAttribute="trailing" constant="10" id="9Hj-2m-vmU"/>
                                                         <constraint firstItem="1C8-7S-3Km" firstAttribute="width" secondItem="7Xr-FE-ZWB" secondAttribute="width" multiplier="0.4" id="A2p-8K-tcl"/>
                                                         <constraint firstItem="cd6-GJ-XVi" firstAttribute="height" secondItem="1C8-7S-3Km" secondAttribute="height" id="FLx-b2-wVz"/>
                                                         <constraint firstItem="1C8-7S-3Km" firstAttribute="height" secondItem="7Xr-FE-ZWB" secondAttribute="height" multiplier="0.5" id="Fhw-cB-oaH"/>
                                                         <constraint firstItem="ucY-Mg-Qqj" firstAttribute="leading" secondItem="95P-cm-BWh" secondAttribute="leading" id="IG3-yn-Y4H"/>
+                                                        <constraint firstItem="YEi-E7-LEi" firstAttribute="bottom" secondItem="cd6-GJ-XVi" secondAttribute="bottom" id="IQz-rQ-pEX"/>
+                                                        <constraint firstItem="YEi-E7-LEi" firstAttribute="trailing" secondItem="cd6-GJ-XVi" secondAttribute="trailing" id="JiL-tI-L6g"/>
                                                         <constraint firstItem="1C8-7S-3Km" firstAttribute="leading" secondItem="7Xr-FE-ZWB" secondAttribute="leading" constant="20" id="K65-b8-DL8"/>
-                                                        <constraint firstItem="dog-9H-FHc" firstAttribute="top" secondItem="ucY-Mg-Qqj" secondAttribute="top" id="KEl-K7-aeZ"/>
                                                         <constraint firstItem="ucY-Mg-Qqj" firstAttribute="centerX" secondItem="95P-cm-BWh" secondAttribute="centerX" id="PUj-xN-bUl"/>
                                                         <constraint firstItem="OeC-tq-gOr" firstAttribute="centerY" secondItem="1C8-7S-3Km" secondAttribute="centerY" id="VPE-we-sli"/>
                                                         <constraint firstItem="ucY-Mg-Qqj" firstAttribute="centerY" secondItem="95P-cm-BWh" secondAttribute="centerY" id="X3y-N5-l0n"/>
+                                                        <constraint firstItem="YEi-E7-LEi" firstAttribute="leading" secondItem="cd6-GJ-XVi" secondAttribute="leading" id="Z1a-Ov-RvU"/>
                                                         <constraint firstItem="1C8-7S-3Km" firstAttribute="centerY" secondItem="7Xr-FE-ZWB" secondAttribute="centerY" id="Zpq-Sz-dag"/>
                                                         <constraint firstAttribute="trailing" secondItem="cd6-GJ-XVi" secondAttribute="trailing" constant="10" id="atF-ry-h9q"/>
                                                         <constraint firstItem="cd6-GJ-XVi" firstAttribute="centerY" secondItem="1C8-7S-3Km" secondAttribute="centerY" id="aty-De-OOs"/>
                                                         <constraint firstItem="95P-cm-BWh" firstAttribute="height" secondItem="7Xr-FE-ZWB" secondAttribute="height" id="bIT-Kv-7aW"/>
                                                         <constraint firstItem="95P-cm-BWh" firstAttribute="centerY" secondItem="OeC-tq-gOr" secondAttribute="centerY" id="bmd-7s-sdZ"/>
                                                         <constraint firstAttribute="trailing" secondItem="95P-cm-BWh" secondAttribute="trailing" constant="10" id="eGB-zd-z3Q"/>
-                                                        <constraint firstItem="dog-9H-FHc" firstAttribute="bottom" secondItem="ucY-Mg-Qqj" secondAttribute="bottom" id="hZy-Ij-Frw"/>
-                                                        <constraint firstItem="dog-9H-FHc" firstAttribute="centerY" secondItem="ucY-Mg-Qqj" secondAttribute="centerY" id="jJE-f6-tix"/>
                                                         <constraint firstItem="ucY-Mg-Qqj" firstAttribute="trailing" secondItem="95P-cm-BWh" secondAttribute="trailing" id="mus-fS-FnI"/>
                                                         <constraint firstItem="95P-cm-BWh" firstAttribute="width" secondItem="7Xr-FE-ZWB" secondAttribute="width" multiplier="0.3" id="pby-iI-CaQ"/>
+                                                        <constraint firstItem="YEi-E7-LEi" firstAttribute="top" secondItem="cd6-GJ-XVi" secondAttribute="top" id="ypU-SH-awL"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -678,8 +608,8 @@
                                             <outlet property="comfirmButton" destination="ucY-Mg-Qqj" id="DEC-ID-Eug"/>
                                             <outlet property="descriptionLabel" destination="zDQ-nb-EVg" id="A39-dJ-1eH"/>
                                             <outlet property="getTicketView" destination="cd6-GJ-XVi" id="VL6-Ql-dI9"/>
-                                            <outlet property="isReceiveBtn" destination="dog-9H-FHc" id="8c3-1Y-Ine"/>
                                             <outlet property="partnerImageView" destination="OeC-tq-gOr" id="7Xc-jj-rym"/>
+                                            <outlet property="receivePointFinishView" destination="YEi-E7-LEi" id="RaL-b5-Smd"/>
                                             <outlet property="taskProgressView" destination="95P-cm-BWh" id="UdR-yE-S2H"/>
                                             <outlet property="titleLabel" destination="PG8-3l-iBo" id="eh4-O9-20W"/>
                                         </connections>

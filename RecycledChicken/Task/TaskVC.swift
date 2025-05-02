@@ -42,7 +42,7 @@ class TaskVC: CustomRootVC {
         super.viewWillAppear(animated)
         getTaskInfo(completion: { [weak self] in
             guard let self = self else { return }
-            self.classification()
+            self.classificationAction()
             self.reloadTableView()
         })
     }
@@ -73,7 +73,8 @@ class TaskVC: CustomRootVC {
                 var newTaskInfo = taskInfo
                 self.currentFinishTasks.forEach { finishTask in
                     if let createTime = newTaskInfo.createTime, createTime == finishTask {
-//                        newTaskInfo.isFinish = true
+                        newTaskInfo.isFinish = true
+                        newTaskInfo.isFinish = taskInfo.isFinish
                     }
                 }
                 if let sites = newTaskInfo.sites, sites.count > 0 {
@@ -111,6 +112,11 @@ class TaskVC: CustomRootVC {
         }
     }
     
+    private func classificationAction() {
+        clearClassificationData()
+        classification()
+    }
+    
     private func getTaskInfo(completion: @escaping () -> Void) {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
             guard let self = self else { return }
@@ -122,9 +128,7 @@ class TaskVC: CustomRootVC {
                 if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
                     self.clearTableViewData()
                     self.addStatus(taskInfos) {
-                        //                    self.filterTaskInfoDate {
                         completion()
-                        //                    }
                     }
                 }
             }
@@ -133,6 +137,10 @@ class TaskVC: CustomRootVC {
     
     private func clearTableViewData() {
         taskInfos.removeAll()
+        clearClassificationData()
+    }
+    
+    private func clearClassificationData() {
         shareTaskInfos.removeAll()
         advertiseTaskInfos.removeAll()
         recycledTaskInfos.removeAll()
@@ -149,13 +157,19 @@ class TaskVC: CustomRootVC {
     }
     
     private func successTaskAction(_ taskInfo:TaskInfo) {
-        if let index = self.taskInfos.firstIndex(where: { $0.createTime == taskInfo.createTime}) {
+        if let index = self.taskInfos.firstIndex(where: { taskInfo1 in
+            if let createTime1 = taskInfo1.createTime, let createTime2 = taskInfo.createTime {
+                return createTime1 == createTime2
+            }
+            return false
+        }) {
             self.taskInfos[index].isFinish = true
             self.taskInfos[index].isReceive = true
         }
         if let createTime = taskInfo.createTime {
             currentFinishTasks.append(createTime)
         }
+        classificationAction()
         reloadTableView()
     }
     

@@ -172,7 +172,7 @@ class HomeVC: CustomRootVC {
                 self.itemInfos.removeAll()
                 self.itemInfos.append(contentsOf: itemInfos)
                 DispatchQueue.main.async {
-                    self.mallHeight.constant = CGFloat(itemInfos.count / 3 * 150) + 70
+                    self.mallHeight.constant = CGFloat(itemInfos.count / 3 ) * 150 + 70
                     self.mallCollectionView.reloadData()
                 }
             }
@@ -263,7 +263,7 @@ class HomeVC: CustomRootVC {
         mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 10, height: UIScreen.main.bounds.size.height / 8)
         mallCollectionViewFlowLayout.estimatedItemSize = .zero
         mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
-        mallCollectionViewFlowLayout.minimumLineSpacing = 0
+        mallCollectionViewFlowLayout.minimumLineSpacing = 15
         mallCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         bannerView.addSubview(scrollView)
         scrollView.centerXAnchor.constraint(equalTo: bannerView.centerXAnchor).isActive = true

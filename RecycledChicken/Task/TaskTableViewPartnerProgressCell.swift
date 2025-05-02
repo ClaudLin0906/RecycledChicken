@@ -25,8 +25,8 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     
     @IBOutlet weak var comfirmButton:CustomButton!
     
-    @IBOutlet weak var isReceiveBtn:CustomButton!
-    
+    @IBOutlet weak var receivePointFinishView:ReceivePointFinishView!
+        
     var delegate:TaskTableViewCellFinishDelete?
     
     private var taskInfo:TaskInfo?
@@ -76,8 +76,6 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        isReceiveBtn.layer.borderWidth = 1
-        isReceiveBtn.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         // Initialization code
     }
 
@@ -128,10 +126,8 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
                 guard let self = self else { return }
                 if rewardType == .point {
                     self.comfirmButton.setTitle("點擊領取", for: .normal)
-                    self.isReceiveBtn.setTitle("點數已領取", for: .normal)
                 } else {
                     self.comfirmButton.setTitle("領取票卷", for: .normal)
-                    self.isReceiveBtn.setTitle("票卷已領取", for: .normal)
                 }
             }
         }
@@ -178,26 +174,53 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     }
     
     private func finishUIAction(_ info:TaskInfo) {
-        if info.isFinish {
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
-                titleLabel.textColor = .white
-                descriptionLabel.textColor = .white
-                if let reward = info.reward, let type = reward.type, type != .point {
+        if info.isReceive {
+            receiveFinishUIAction()
+        } else if info.isFinish && !info.isReceive {
+            finishNoReceiveUIAction()
+        } else if !info.isFinish && !info.isReceive {
+            noFinishNoReceiveUIAction()
+        }
+    }
+    
+    private func receiveFinishUIAction() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            background.backgroundColor = #colorLiteral(red: 0.7843137255, green: 0.4392156863, blue: 0.1960784314, alpha: 1)
+            titleLabel.textColor = .white
+            descriptionLabel.textColor = .white
+            taskProgressView.isHidden = true
+            if let taskInfo = self.taskInfo, let reward = taskInfo.reward, let type = reward.type {
+                if type != .point {
                     getTicketView.isHidden = false
-                    taskProgressView.isHidden = true
+                    receivePointFinishView.isHidden = true
+                }
+                if type == .point {
+                    getTicketView.isHidden = true
+                    receivePointFinishView.isHidden = false
                 }
             }
-        }else{
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                titleLabel.textColor = .black
-                descriptionLabel.textColor = .black
-                getTicketView.isHidden = true
-                taskProgressView.isHidden = false
-            }
+        }
+    }
+    
+    private func finishNoReceiveUIAction() {
+        updateNoReceiveUI(showConfirmButton: true)
+    }
+
+    private func noFinishNoReceiveUIAction() {
+        updateNoReceiveUI(showConfirmButton: false)
+    }
+    
+    private func updateNoReceiveUI(showConfirmButton: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            titleLabel.textColor = .black
+            descriptionLabel.textColor = .black
+            getTicketView.isHidden = true
+            receivePointFinishView.isHidden = true
+            taskProgressView.isHidden = showConfirmButton
+            comfirmButton.isHidden = !showConfirmButton
         }
     }
 

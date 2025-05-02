@@ -28,9 +28,7 @@ class StoreMapVC: CustomRootVC {
     private var mapInfosData:[MapInfo] = []
     
     private var currentMapInfos:[MapInfo] = []
-    
-    private var specialTaskMapInfos:[MapInfo] = []
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -53,7 +51,6 @@ class StoreMapVC: CustomRootVC {
             
             if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
                 mapInfosData.removeAll()
-                specialTaskMapInfos.removeAll()
                 currentMapInfos.removeAll()
                 mapInfos.forEach({ mapInfo in
                     var newMapInfo = mapInfo
@@ -63,11 +60,6 @@ class StoreMapVC: CustomRootVC {
                         }
                     }
                     self.mapInfosData.append(newMapInfo)
-                })
-                mapInfosData.forEach({
-                    if $0.description != nil {
-                        self.specialTaskMapInfos.append($0)
-                    }
                 })
                 currentMapInfos = mapInfosData
                 addMarker(currentMapInfos)

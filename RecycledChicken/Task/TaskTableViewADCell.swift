@@ -13,9 +13,7 @@ class TaskTableViewADCell: UITableViewCell {
     static let identifier = "TaskTableViewADCell"
     
     @IBOutlet weak var background:UIView!
-    
-    @IBOutlet weak var titleLabel:CustomLabel!
-    
+        
     @IBOutlet weak var descriptionLabel:CustomLabel!
     
     @IBOutlet weak var pointLabel:UILabel!
@@ -37,18 +35,6 @@ class TaskTableViewADCell: UITableViewCell {
         willSet{
             if let newValue = newValue {
                 finishUIAction(newValue)
-            }
-        }
-    }
-    
-    private var title:String?
-    {
-        willSet {
-            if let newValue = newValue {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    titleLabel.text = newValue
-                }
             }
         }
     }
@@ -100,9 +86,6 @@ class TaskTableViewADCell: UITableViewCell {
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        if let title = taskInfo.title {
-            self.title = title
-        }
         
         if let taskDescription = taskInfo.description {
             self.taskDescription = taskDescription
@@ -124,7 +107,6 @@ class TaskTableViewADCell: UITableViewCell {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
-                titleLabel.textColor = .white
                 descriptionLabel.textColor = .white
                 pointLabel.textColor = .white
                 iconImageView.isHidden = true
@@ -143,7 +125,6 @@ class TaskTableViewADCell: UITableViewCell {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                titleLabel.textColor = .black
                 descriptionLabel.textColor = .black
                 pointLabel.textColor = .black
                 getTicketView.isHidden = true
