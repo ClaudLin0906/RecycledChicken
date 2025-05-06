@@ -106,7 +106,7 @@ class TaskTableViewADCell: UITableViewCell {
         if info.isFinish {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                background.backgroundColor = #colorLiteral(red: 0.783845365, green: 0.4409029484, blue: 0.1943545341, alpha: 1)
+                background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
                 descriptionLabel.textColor = .white
                 pointLabel.textColor = .white
                 iconImageView.isHidden = true

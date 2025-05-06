@@ -40,7 +40,7 @@ class TaskTableViewCell: UITableViewCell {
         willSet {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+                    guard let self = self, titleLabel != nil else { return }
                     titleLabel.text = newValue
                 }
             }
@@ -91,7 +91,6 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     private func finishUIAction(_ taskInfo:TaskInfo) {
-        print("finishUIAction isReceive \(taskInfo.isReceive) isFinish \(taskInfo.isFinish)")
         if taskInfo.isReceive {
             receiveFinishUIAction()
         } else if taskInfo.isFinish && !taskInfo.isReceive {
@@ -104,9 +103,10 @@ class TaskTableViewCell: UITableViewCell {
     private func receiveFinishUIAction() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            background.backgroundColor = #colorLiteral(red: 0.7843137255, green: 0.4392156863, blue: 0.1960784314, alpha: 1)
+            background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
             descriptionLabel.textColor = .white
             pointLabel.textColor = .white
+            comfirmButton.isHidden = true
             taskProgressView.isHidden = true
             if let taskInfo = self.taskInfo, let reward = taskInfo.reward, let type = reward.type {
                 pointFinishView.isHidden = true

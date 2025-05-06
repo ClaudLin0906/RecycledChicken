@@ -25,7 +25,6 @@ class MallCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print("imageView \(imageView.frame.height)")
         addImgeViewTopCornerRadii(imageView)
     }
     

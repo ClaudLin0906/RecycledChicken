@@ -186,7 +186,7 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     private func receiveFinishUIAction() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            background.backgroundColor = #colorLiteral(red: 0.7843137255, green: 0.4392156863, blue: 0.1960784314, alpha: 1)
+            background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
             titleLabel.textColor = .white
             descriptionLabel.textColor = .white
             taskProgressView.isHidden = true

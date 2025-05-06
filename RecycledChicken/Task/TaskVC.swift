@@ -27,6 +27,8 @@ class TaskVC: CustomRootVC {
     
     @UserDefault(UserDefaultKey.shared.finishTasks, defaultValue: []) var currentFinishTasks:[String]
     
+    @UserDefault(UserDefaultKey.shared.receiveTasks, defaultValue: []) var currentReceiveTasks:[String]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -74,7 +76,11 @@ class TaskVC: CustomRootVC {
                 self.currentFinishTasks.forEach { finishTask in
                     if let createTime = newTaskInfo.createTime, createTime == finishTask {
                         newTaskInfo.isFinish = true
-                        newTaskInfo.isFinish = taskInfo.isFinish
+                    }
+                }
+                self.currentReceiveTasks.forEach { finishTask in
+                    if let createTime = newTaskInfo.createTime, createTime == finishTask {
+                        newTaskInfo.isReceive = true
                     }
                 }
                 if let sites = newTaskInfo.sites, sites.count > 0 {
@@ -168,6 +174,7 @@ class TaskVC: CustomRootVC {
         }
         if let createTime = taskInfo.createTime {
             currentFinishTasks.append(createTime)
+            currentReceiveTasks.append(createTime)
         }
         classificationAction()
         reloadTableView()

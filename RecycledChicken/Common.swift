@@ -294,6 +294,7 @@ class UserDefaultKey {
     let isFirstProduct = "isFirstProduct"
     let oldChickenLevel = "oldChickenLevel"
     let finishTasks = "finishTasks"
+    let receiveTasks = "receiveTasks"
     let isSubscribed = "isSubscribed"
     let colorFillTypeOneViewCo2Value = "colorFillTypeOneViewCo2Value"
     let colorFillTypeTwoViewCo2Value = "colorFillTypeTwoViewCo2Value"

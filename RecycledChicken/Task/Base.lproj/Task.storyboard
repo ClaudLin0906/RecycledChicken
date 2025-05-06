@@ -111,13 +111,13 @@
                                                             <rect key="frame" x="223" y="0.0" width="100" height="80"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUo-Bj-BKl" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYD-Mq-7wj" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="223" y="20" width="100" height="40"/>
-                                                            <color key="backgroundColor" red="0.78431372549019607" green="0.4392156862745098" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.72941176470588232" green="0.36078431372549019" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="qeT-vx-MD1"/>
+                                                                <constraint firstAttribute="height" constant="40" id="uYL-IE-pev"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="12"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <state key="normal">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,11 +127,11 @@
                                                                     <integer key="value" value="20"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="12"/>
+                                                                    <real key="value" value="13"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="finishActionConfirm:" destination="a7h-YG-l8r" eventType="touchUpInside" id="tY8-nY-UZN"/>
+                                                                <action selector="finishActionConfirm:" destination="a7h-YG-l8r" eventType="touchUpInside" id="lVG-TG-UaC"/>
                                                             </connections>
                                                         </button>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftO-ap-QXO" customClass="GetTicketView" customModule="RecycledChicken" customModuleProvider="target">
@@ -163,30 +163,30 @@
                                                     <constraints>
                                                         <constraint firstItem="iz3-M3-oHz" firstAttribute="leading" secondItem="ftO-ap-QXO" secondAttribute="leading" id="4AL-zw-FAC"/>
                                                         <constraint firstAttribute="trailing" secondItem="Jiq-gy-5nk" secondAttribute="trailing" constant="10" id="5wO-Ji-RlY"/>
+                                                        <constraint firstItem="iYD-Mq-7wj" firstAttribute="centerX" secondItem="KmW-Cy-R44" secondAttribute="centerX" id="6yV-FT-PAU"/>
                                                         <constraint firstItem="a5W-zn-0cR" firstAttribute="width" secondItem="HVs-S3-nqu" secondAttribute="width" multiplier="0.4" id="HXN-ZD-1QD"/>
                                                         <constraint firstAttribute="trailing" secondItem="KmW-Cy-R44" secondAttribute="trailing" constant="10" id="I0D-Ni-gIV"/>
                                                         <constraint firstItem="iz3-M3-oHz" firstAttribute="bottom" secondItem="ftO-ap-QXO" secondAttribute="bottom" id="JTe-S2-pfx"/>
-                                                        <constraint firstItem="nUo-Bj-BKl" firstAttribute="leading" secondItem="KmW-Cy-R44" secondAttribute="leading" id="Jmn-7b-u1H"/>
                                                         <constraint firstItem="KmW-Cy-R44" firstAttribute="centerY" secondItem="bzU-Ku-0Pd" secondAttribute="centerY" id="L8d-ch-NQ6"/>
                                                         <constraint firstItem="iz3-M3-oHz" firstAttribute="top" secondItem="ftO-ap-QXO" secondAttribute="top" id="LoT-Gq-Gg5"/>
                                                         <constraint firstItem="Jiq-gy-5nk" firstAttribute="centerY" secondItem="HVs-S3-nqu" secondAttribute="centerY" id="Mq4-On-jw2"/>
                                                         <constraint firstItem="ftO-ap-QXO" firstAttribute="height" secondItem="a5W-zn-0cR" secondAttribute="height" id="OCp-bn-x8x"/>
+                                                        <constraint firstItem="iYD-Mq-7wj" firstAttribute="centerY" secondItem="KmW-Cy-R44" secondAttribute="centerY" id="Otq-9R-GyD"/>
                                                         <constraint firstItem="a5W-zn-0cR" firstAttribute="height" secondItem="HVs-S3-nqu" secondAttribute="height" multiplier="0.5" id="QxT-Ay-w2x"/>
                                                         <constraint firstItem="a5W-zn-0cR" firstAttribute="leading" secondItem="HVs-S3-nqu" secondAttribute="leading" constant="20" id="RFr-9a-GkT"/>
+                                                        <constraint firstItem="iYD-Mq-7wj" firstAttribute="leading" secondItem="KmW-Cy-R44" secondAttribute="leading" id="Uj8-56-a6w"/>
                                                         <constraint firstItem="ftO-ap-QXO" firstAttribute="centerY" secondItem="KmW-Cy-R44" secondAttribute="centerY" id="VBH-yy-AgU"/>
                                                         <constraint firstItem="Jiq-gy-5nk" firstAttribute="height" secondItem="ftO-ap-QXO" secondAttribute="height" id="Xah-SD-hxk"/>
                                                         <constraint firstItem="KmW-Cy-R44" firstAttribute="width" secondItem="HVs-S3-nqu" secondAttribute="width" multiplier="0.3" id="Zgo-EQ-q6n"/>
                                                         <constraint firstItem="bzU-Ku-0Pd" firstAttribute="centerY" secondItem="HVs-S3-nqu" secondAttribute="centerY" id="cbf-P8-IPq"/>
+                                                        <constraint firstItem="iYD-Mq-7wj" firstAttribute="trailing" secondItem="KmW-Cy-R44" secondAttribute="trailing" id="gfn-Xw-upp"/>
                                                         <constraint firstItem="iz3-M3-oHz" firstAttribute="trailing" secondItem="ftO-ap-QXO" secondAttribute="trailing" id="h7Z-Ew-JvP"/>
-                                                        <constraint firstItem="nUo-Bj-BKl" firstAttribute="centerX" secondItem="KmW-Cy-R44" secondAttribute="centerX" id="ibT-hF-C3K"/>
                                                         <constraint firstItem="bzU-Ku-0Pd" firstAttribute="leading" secondItem="a5W-zn-0cR" secondAttribute="trailing" constant="10" id="jAv-vw-ent"/>
                                                         <constraint firstItem="KmW-Cy-R44" firstAttribute="leading" secondItem="bzU-Ku-0Pd" secondAttribute="trailing" id="kAb-mG-cwK"/>
                                                         <constraint firstItem="a5W-zn-0cR" firstAttribute="centerY" secondItem="HVs-S3-nqu" secondAttribute="centerY" id="mrY-ZE-4xe"/>
                                                         <constraint firstAttribute="trailing" secondItem="ftO-ap-QXO" secondAttribute="trailing" constant="10" id="pI1-1f-pd8"/>
                                                         <constraint firstItem="KmW-Cy-R44" firstAttribute="height" secondItem="bzU-Ku-0Pd" secondAttribute="height" id="sRN-6Y-NNg"/>
-                                                        <constraint firstItem="nUo-Bj-BKl" firstAttribute="centerY" secondItem="KmW-Cy-R44" secondAttribute="centerY" id="uzk-s2-P9k"/>
                                                         <constraint firstItem="bzU-Ku-0Pd" firstAttribute="height" secondItem="HVs-S3-nqu" secondAttribute="height" id="xyV-pd-R3j"/>
-                                                        <constraint firstItem="nUo-Bj-BKl" firstAttribute="trailing" secondItem="KmW-Cy-R44" secondAttribute="trailing" id="yFn-DV-rV9"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -212,7 +212,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="background" destination="HVs-S3-nqu" id="0cb-km-YGH"/>
-                                            <outlet property="comfirmButton" destination="nUo-Bj-BKl" id="TKo-5L-YzU"/>
+                                            <outlet property="comfirmButton" destination="iYD-Mq-7wj" id="jAD-ON-8JR"/>
                                             <outlet property="descriptionLabel" destination="z3L-3e-cJZ" id="fBV-54-0sQ"/>
                                             <outlet property="getTicketView" destination="ftO-ap-QXO" id="vgv-mM-TIM"/>
                                             <outlet property="pointFinishView" destination="Jiq-gy-5nk" id="yWX-gF-7eY"/>
@@ -523,13 +523,13 @@
                                                             <rect key="frame" x="223" y="0.0" width="100" height="80"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
-                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucY-Mg-Qqj" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8A4-v1-WMQ" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
                                                             <rect key="frame" x="223" y="20" width="100" height="40"/>
-                                                            <color key="backgroundColor" red="0.55294117649999996" green="0.34901960780000002" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.72941176470000002" green="0.36078431370000003" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="a4X-Y4-nZE"/>
+                                                                <constraint firstAttribute="height" constant="40" id="knT-RK-ds4"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="12"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <state key="normal">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -539,11 +539,11 @@
                                                                     <integer key="value" value="20"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                    <real key="value" value="12"/>
+                                                                    <real key="value" value="13"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="finishActionConfirm:" destination="mGx-P4-kKH" eventType="touchUpInside" id="sVP-sl-PyZ"/>
+                                                                <action selector="finishActionConfirm:" destination="mGx-P4-kKH" eventType="touchUpInside" id="1Lm-cN-hHh"/>
                                                             </connections>
                                                         </button>
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cd6-GJ-XVi" customClass="GetTicketView" customModule="RecycledChicken" customModuleProvider="target">
@@ -561,15 +561,15 @@
                                                         <constraint firstItem="95P-cm-BWh" firstAttribute="leading" secondItem="OeC-tq-gOr" secondAttribute="trailing" constant="20" id="0qQ-pK-TsI"/>
                                                         <constraint firstItem="OeC-tq-gOr" firstAttribute="leading" secondItem="1C8-7S-3Km" secondAttribute="trailing" constant="10" id="9Hj-2m-vmU"/>
                                                         <constraint firstItem="1C8-7S-3Km" firstAttribute="width" secondItem="7Xr-FE-ZWB" secondAttribute="width" multiplier="0.4" id="A2p-8K-tcl"/>
+                                                        <constraint firstItem="8A4-v1-WMQ" firstAttribute="leading" secondItem="95P-cm-BWh" secondAttribute="leading" id="DBx-T5-8OS"/>
+                                                        <constraint firstItem="8A4-v1-WMQ" firstAttribute="trailing" secondItem="95P-cm-BWh" secondAttribute="trailing" id="Db9-5F-eZ1"/>
                                                         <constraint firstItem="cd6-GJ-XVi" firstAttribute="height" secondItem="1C8-7S-3Km" secondAttribute="height" id="FLx-b2-wVz"/>
                                                         <constraint firstItem="1C8-7S-3Km" firstAttribute="height" secondItem="7Xr-FE-ZWB" secondAttribute="height" multiplier="0.5" id="Fhw-cB-oaH"/>
-                                                        <constraint firstItem="ucY-Mg-Qqj" firstAttribute="leading" secondItem="95P-cm-BWh" secondAttribute="leading" id="IG3-yn-Y4H"/>
                                                         <constraint firstItem="YEi-E7-LEi" firstAttribute="bottom" secondItem="cd6-GJ-XVi" secondAttribute="bottom" id="IQz-rQ-pEX"/>
                                                         <constraint firstItem="YEi-E7-LEi" firstAttribute="trailing" secondItem="cd6-GJ-XVi" secondAttribute="trailing" id="JiL-tI-L6g"/>
                                                         <constraint firstItem="1C8-7S-3Km" firstAttribute="leading" secondItem="7Xr-FE-ZWB" secondAttribute="leading" constant="20" id="K65-b8-DL8"/>
-                                                        <constraint firstItem="ucY-Mg-Qqj" firstAttribute="centerX" secondItem="95P-cm-BWh" secondAttribute="centerX" id="PUj-xN-bUl"/>
+                                                        <constraint firstItem="8A4-v1-WMQ" firstAttribute="centerX" secondItem="95P-cm-BWh" secondAttribute="centerX" id="SZ2-cW-UDK"/>
                                                         <constraint firstItem="OeC-tq-gOr" firstAttribute="centerY" secondItem="1C8-7S-3Km" secondAttribute="centerY" id="VPE-we-sli"/>
-                                                        <constraint firstItem="ucY-Mg-Qqj" firstAttribute="centerY" secondItem="95P-cm-BWh" secondAttribute="centerY" id="X3y-N5-l0n"/>
                                                         <constraint firstItem="YEi-E7-LEi" firstAttribute="leading" secondItem="cd6-GJ-XVi" secondAttribute="leading" id="Z1a-Ov-RvU"/>
                                                         <constraint firstItem="1C8-7S-3Km" firstAttribute="centerY" secondItem="7Xr-FE-ZWB" secondAttribute="centerY" id="Zpq-Sz-dag"/>
                                                         <constraint firstAttribute="trailing" secondItem="cd6-GJ-XVi" secondAttribute="trailing" constant="10" id="atF-ry-h9q"/>
@@ -577,7 +577,7 @@
                                                         <constraint firstItem="95P-cm-BWh" firstAttribute="height" secondItem="7Xr-FE-ZWB" secondAttribute="height" id="bIT-Kv-7aW"/>
                                                         <constraint firstItem="95P-cm-BWh" firstAttribute="centerY" secondItem="OeC-tq-gOr" secondAttribute="centerY" id="bmd-7s-sdZ"/>
                                                         <constraint firstAttribute="trailing" secondItem="95P-cm-BWh" secondAttribute="trailing" constant="10" id="eGB-zd-z3Q"/>
-                                                        <constraint firstItem="ucY-Mg-Qqj" firstAttribute="trailing" secondItem="95P-cm-BWh" secondAttribute="trailing" id="mus-fS-FnI"/>
+                                                        <constraint firstItem="8A4-v1-WMQ" firstAttribute="centerY" secondItem="95P-cm-BWh" secondAttribute="centerY" id="fbr-lh-gUS"/>
                                                         <constraint firstItem="95P-cm-BWh" firstAttribute="width" secondItem="7Xr-FE-ZWB" secondAttribute="width" multiplier="0.3" id="pby-iI-CaQ"/>
                                                         <constraint firstItem="YEi-E7-LEi" firstAttribute="top" secondItem="cd6-GJ-XVi" secondAttribute="top" id="ypU-SH-awL"/>
                                                     </constraints>
@@ -605,7 +605,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="background" destination="7Xr-FE-ZWB" id="RgG-cL-wFy"/>
-                                            <outlet property="comfirmButton" destination="ucY-Mg-Qqj" id="DEC-ID-Eug"/>
+                                            <outlet property="comfirmButton" destination="8A4-v1-WMQ" id="UPc-T6-vBn"/>
                                             <outlet property="descriptionLabel" destination="zDQ-nb-EVg" id="A39-dJ-1eH"/>
                                             <outlet property="getTicketView" destination="cd6-GJ-XVi" id="VL6-Ql-dI9"/>
                                             <outlet property="partnerImageView" destination="OeC-tq-gOr" id="7Xc-jj-rym"/>
