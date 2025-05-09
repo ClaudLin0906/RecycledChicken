@@ -433,7 +433,8 @@ func getRecords(_ sites:[String]? = nil, _ startTime:String, _ endTime:String, c
     guard !CommonKey.shared.authToken.isEmpty else { return }
     var urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     if let sites = sites {
-        urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sites)"
+        let sitesStr = sites.joined(separator: ",")
+        urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sitesStr)"
     }
     print(urlStr)
     NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in

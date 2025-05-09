@@ -215,13 +215,13 @@
                                             <outlet property="comfirmButton" destination="iYD-Mq-7wj" id="jAD-ON-8JR"/>
                                             <outlet property="descriptionLabel" destination="z3L-3e-cJZ" id="fBV-54-0sQ"/>
                                             <outlet property="getTicketView" destination="ftO-ap-QXO" id="vgv-mM-TIM"/>
+                                            <outlet property="labelStackView" destination="a5W-zn-0cR" id="AXe-JU-pRC"/>
                                             <outlet property="pointFinishView" destination="Jiq-gy-5nk" id="yWX-gF-7eY"/>
                                             <outlet property="pointLabel" destination="DZ1-3W-L2Y" id="ugk-1C-x3k"/>
                                             <outlet property="pointView" destination="bzU-Ku-0Pd" id="bAY-iH-j1e"/>
                                             <outlet property="receivePointFinishView" destination="iz3-M3-oHz" id="CIL-pU-5eY"/>
                                             <outlet property="taskProgressView" destination="KmW-Cy-R44" id="of3-Uf-dIX"/>
                                             <outlet property="titleLabel" destination="2z3-Bw-Vam" id="ngx-po-Vmw"/>
-                                            <outlet property="titleStackView" destination="a5W-zn-0cR" id="9cC-EW-1Xw"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableViewADCell" id="iuf-kH-pMA" customClass="TaskTableViewADCell" customModule="RecycledChicken" customModuleProvider="target">
@@ -608,6 +608,7 @@
                                             <outlet property="comfirmButton" destination="8A4-v1-WMQ" id="UPc-T6-vBn"/>
                                             <outlet property="descriptionLabel" destination="zDQ-nb-EVg" id="A39-dJ-1eH"/>
                                             <outlet property="getTicketView" destination="cd6-GJ-XVi" id="VL6-Ql-dI9"/>
+                                            <outlet property="labelStackView" destination="1C8-7S-3Km" id="OVF-ys-hhL"/>
                                             <outlet property="partnerImageView" destination="OeC-tq-gOr" id="7Xc-jj-rym"/>
                                             <outlet property="receivePointFinishView" destination="YEi-E7-LEi" id="RaL-b5-Smd"/>
                                             <outlet property="taskProgressView" destination="95P-cm-BWh" id="UdR-yE-S2H"/>

@@ -10,12 +10,12 @@ import UIKit
 class TaskTableViewCell: UITableViewCell {
     
     static let identifier = "TaskTableViewCell"
-    
-    @IBOutlet weak var titleStackView:UIStackView!
-    
+        
     @IBOutlet weak var titleLabel:CustomLabel!
     
     @IBOutlet weak var descriptionLabel:CustomLabel!
+    
+    @IBOutlet weak var labelStackView:UIStackView!
     
     @IBOutlet weak var taskProgressView:TaskProgressView!
     
@@ -40,7 +40,7 @@ class TaskTableViewCell: UITableViewCell {
         willSet {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
-                    guard let self = self, titleLabel != nil else { return }
+                    guard let self = self else { return }
                     titleLabel.text = newValue
                 }
             }
@@ -103,6 +103,10 @@ class TaskTableViewCell: UITableViewCell {
     private func receiveFinishUIAction() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            labelStackViewUIInit()
+            if let titleLabel = titleLabel {
+                titleLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            }
             background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
             descriptionLabel.textColor = .white
             pointLabel.textColor = .white
@@ -133,6 +137,10 @@ class TaskTableViewCell: UITableViewCell {
     private func updateNoReceiveUI(showConfirmButton: Bool) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            if let titleLabel = titleLabel {
+                titleLabel.textColor = #colorLiteral(red: 0.3215686275, green: 0.4862745098, blue: 0.4196078431, alpha: 1)
+            }
+            labelStackViewUIInit()
             background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             descriptionLabel.textColor = .black
             pointLabel.textColor = .black
@@ -145,14 +153,21 @@ class TaskTableViewCell: UITableViewCell {
         }
     }
     
+    private func labelStackViewUIInit() {
+        if let taskInfo = taskInfo {
+            titleLabel.isHidden = !taskInfo.isSpecifiedLocation
+            if !taskInfo.isSpecifiedLocation {
+                self.labelStackView.spacing = 0
+            } else {
+                self.labelStackView.spacing = 8
+            }
+        }
+    }
+    
     func setCell(_ taskInfo:TaskInfo) {
         if taskInfo.isSpecifiedLocation {
             if let title = taskInfo.title {
                 self.title = title
-            }
-        } else {
-            if titleLabel != nil {
-                titleStackView.removeFully(view: titleLabel)
             }
         }
         

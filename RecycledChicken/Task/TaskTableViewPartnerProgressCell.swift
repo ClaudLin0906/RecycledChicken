@@ -10,10 +10,12 @@ import Kingfisher
 class TaskTableViewPartnerProgressCell: UITableViewCell {
     
     static let identifier = "TaskTableViewPartnerProgressCell"
-    
+        
     @IBOutlet weak var titleLabel:CustomLabel!
     
     @IBOutlet weak var descriptionLabel:CustomLabel!
+    
+    @IBOutlet weak var labelStackView:UIStackView!
     
     @IBOutlet weak var taskProgressView:TaskProgressView!
     
@@ -100,19 +102,17 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
             default:
                 if let requiredAmount = taskInfo.requiredAmount {
                     self.taskProgressView.setPercent(submitted, denominator: requiredAmount)
-//                    if submitted >= requiredAmount {
-//                        self.taskInfo?.isFinish = true
-//                    }
                 }
             }
         }
     }
     
     func setCell(_ taskInfo:TaskInfo) {
-        if let title = taskInfo.title {
-            self.title = title
+        if taskInfo.isSpecifiedLocation {
+            if let title = taskInfo.title {
+                self.title = title
+            }
         }
-        
         if let taskDescription = taskInfo.description {
             self.taskDescription = taskDescription
         }
@@ -186,6 +186,10 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     private func receiveFinishUIAction() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            labelStackViewUIInit()
+            if let titleLabel = titleLabel {
+                titleLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            }
             background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
             titleLabel.textColor = .white
             descriptionLabel.textColor = .white
@@ -214,13 +218,27 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     private func updateNoReceiveUI(showConfirmButton: Bool) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            labelStackViewUIInit()
             background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            titleLabel.textColor = .black
+            if let titleLabel = titleLabel {
+                titleLabel.textColor = .black
+            }
             descriptionLabel.textColor = .black
             getTicketView.isHidden = true
             receivePointFinishView.isHidden = true
             taskProgressView.isHidden = showConfirmButton
             comfirmButton.isHidden = !showConfirmButton
+        }
+    }
+    
+    private func labelStackViewUIInit() {
+        if let taskInfo = taskInfo {
+            titleLabel.isHidden = !taskInfo.isSpecifiedLocation
+            if !taskInfo.isSpecifiedLocation {
+                self.labelStackView.spacing = 0
+            } else {
+                self.labelStackView.spacing = 8
+            }
         }
     }
 

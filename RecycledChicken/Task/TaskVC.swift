@@ -25,6 +25,8 @@ class TaskVC: CustomRootVC {
     
     private var specifiedLocationTaskInfos:[TaskInfo] = []
     
+    private let sectionCount = 4
+    
     @UserDefault(UserDefaultKey.shared.finishTasks, defaultValue: []) var currentFinishTasks:[String]
     
     @UserDefault(UserDefaultKey.shared.receiveTasks, defaultValue: []) var currentReceiveTasks:[String]
@@ -181,8 +183,11 @@ class TaskVC: CustomRootVC {
     }
     
     private func reloadTableView() {
-        DispatchQueue.main.async {
-            self.taskTableView.reloadData()
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else { return }
+            taskTableView.beginUpdates()
+            taskTableView.reloadSections(IndexSet(0...sectionCount - 1), with: .automatic)
+            taskTableView.endUpdates()
         }
     }
     
@@ -289,7 +294,7 @@ class TaskVC: CustomRootVC {
 extension TaskVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        4
+        sectionCount
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
