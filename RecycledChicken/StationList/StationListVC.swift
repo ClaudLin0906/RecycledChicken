@@ -118,31 +118,35 @@ class StationListVC: CustomVC {
         })
         mapInfos.removeAll()
         mapInfos.append(contentsOf: newMapInfos)
-//        if newMapInfos.count > 5 {
-//            mapInfos.append(contentsOf: newMapInfos.prefix(5))
-//        }
-//        if newMapInfos.count <= 5 {
-//            mapInfos.append(contentsOf: newMapInfos)
-//        }
-        print(" end \(mapInfos)")
     }
     
     private func addDropDownData() {
         self.areasDropDown.dataSource.removeAll()
         self.areas.removeAll()
         var newAreaMapInfo:[MapInfo] = []
-//        if self.filterMapInfos.count > 5 {
-//            newAreaMapInfo.append(contentsOf: self.filterMapInfos.prefix(5))
-//        }else{
-//            newAreaMapInfo.append(contentsOf: self.filterMapInfos)
-//        }
         newAreaMapInfo.append(contentsOf: self.filterMapInfos)
+        
+        // Create a dictionary to store area and its corresponding latitude
+        var areaLatitudeDict: [String: Double] = [:]
+        
         newAreaMapInfo.forEach({
             if let address = $0.address, let area = self.getAreas(address) {
+                if let location = getLocation($0) {
+                    if let existingLat = areaLatitudeDict[area] {
+                        areaLatitudeDict[area] = max(existingLat, location.coordinate.latitude)
+                    } else {
+                        areaLatitudeDict[area] = location.coordinate.latitude
+                    }
+                }
                 self.areas.append(area)
             }
         })
         self.areas = Array(Set(self.areas))
+        self.areas.sort { area1, area2 in
+            let lat1 = areaLatitudeDict[area1] ?? 0
+            let lat2 = areaLatitudeDict[area2] ?? 0
+            return lat1 > lat2
+        }
         self.areas.insert("region".localized, at: 0)
         self.areasDropDown.dataSource.append(contentsOf: self.areas)
     }
