@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C4502813-29C1-4260-97FB-C62DCED69C28"
+            uuid = "1F8D6AF2-2BEB-468D-BD76-A8F51DAF981A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/StoreMap/StoreMapVC.swift"
+            filePath = "RecycledChicken/MyTicker/MyTickerVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "collectionSkeletonView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

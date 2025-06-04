@@ -143,7 +143,7 @@ class StationListVC: CustomVC {
             }
         })
         self.areas = Array(Set(self.areas))
-        self.areas.insert("地區選擇", at: 0)
+        self.areas.insert("region".localized, at: 0)
         self.areasDropDown.dataSource.append(contentsOf: self.areas)
     }
     

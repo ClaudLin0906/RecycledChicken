@@ -18,7 +18,7 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
     @IBOutlet weak var duringTimeLabel: CustomLabel!
     
     @IBOutlet weak var instructionLabel: CustomLabel!
-    
+        
     private var info:MyTickertCouponsInfo?
     
     private var imageURL:URL?
@@ -93,6 +93,7 @@ class MyTickerVoucherTableViewCell: UITableViewCell {
         itemNameLabel.text = nil
         duringTimeLabel.text = nil
         instructionLabel.text = nil
+        imageURL = nil
     }
     
     func setCell(_ info:MyTickertCouponsInfo) {
