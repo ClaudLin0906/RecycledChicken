@@ -331,6 +331,9 @@
 		59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */; };
 		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
 		59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */; };
+		C933C8E52DF3504B00AAE168 /* intermediate 2.cer in Resources */ = {isa = PBXBuildFile; fileRef = C933C8E22DF3504B00AAE168 /* intermediate 2.cer */; };
+		C933C8E62DF3504B00AAE168 /* root 2.cer in Resources */ = {isa = PBXBuildFile; fileRef = C933C8E32DF3504B00AAE168 /* root 2.cer */; };
+		C933C8E72DF3504B00AAE168 /* server 2.cer in Resources */ = {isa = PBXBuildFile; fileRef = C933C8E42DF3504B00AAE168 /* server 2.cer */; };
 		C97633C72DC12FF300150E2A /* TaskTableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */; };
 		C97633C92DC130A500150E2A /* TaskTableSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97633C82DC130A500150E2A /* TaskTableSectionView.xib */; };
 		C981BF892DC1D942008FFC09 /* ReceivePointFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */; };
@@ -713,6 +716,9 @@
 		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
 		59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TutorialVideo.mp4; sourceTree = "<group>"; };
 		B3875E129FF487C1791895B2 /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.debug.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
+		C933C8E22DF3504B00AAE168 /* intermediate 2.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = "intermediate 2.cer"; sourceTree = "<group>"; };
+		C933C8E32DF3504B00AAE168 /* root 2.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = "root 2.cer"; sourceTree = "<group>"; };
+		C933C8E42DF3504B00AAE168 /* server 2.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = "server 2.cer"; sourceTree = "<group>"; };
 		C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableSectionView.swift; sourceTree = "<group>"; };
 		C97633C82DC130A500150E2A /* TaskTableSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableSectionView.xib; sourceTree = "<group>"; };
 		C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePointFinishView.swift; sourceTree = "<group>"; };
@@ -951,6 +957,9 @@
 		5950BF2B2A385D6600EEB21C /* Certificate */ = {
 			isa = PBXGroup;
 			children = (
+				C933C8E22DF3504B00AAE168 /* intermediate 2.cer */,
+				C933C8E32DF3504B00AAE168 /* root 2.cer */,
+				C933C8E42DF3504B00AAE168 /* server 2.cer */,
 				593CDE652A83D229007E1D10 /* ca.pem */,
 				33342E312C1B0E6400CB14E7 /* cert.cer */,
 				33342E322C1B0E6400CB14E7 /* certificate.p12 */,
@@ -1664,6 +1673,9 @@
 				59600ED32B9EE3F7009AFA76 /* RecycledRingInfoView.xib in Resources */,
 				59600EFB2B9EE5C5009AFA76 /* CustomCalenderView.xib in Resources */,
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
+				C933C8E52DF3504B00AAE168 /* intermediate 2.cer in Resources */,
+				C933C8E62DF3504B00AAE168 /* root 2.cer in Resources */,
+				C933C8E72DF3504B00AAE168 /* server 2.cer in Resources */,
 				59600F5B2B9EEEA8009AFA76 /* SpendPointView.xib in Resources */,
 				33342E342C1B0E6400CB14E7 /* cert.cer in Resources */,
 				59600E8F2B9EE192009AFA76 /* Sign.storyboard in Resources */,
