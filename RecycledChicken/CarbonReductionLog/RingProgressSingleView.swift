@@ -62,10 +62,6 @@ class RingProgressSingleView: UIView {
     private func setup() {
         addSubview(ring)
         addSubview(stackView)
-//        addSubview(targetLabel)
-//        addSubview(slashLabel)
-//        addSubview(totalLabel)
-//        addSubview(countLabel)
     }
     
     private func labelInit() -> UILabel {
@@ -119,9 +115,9 @@ class RingProgressSingleView: UIView {
     func setCount(_ count:Double, _ total:Double, _ startColor:UIColor, _ endColor:UIColor) {
         countLabel.text = String(Int(count))
         totalLabel.text = String(Int(total))
-        ring.progress = count / total
         ringStartColor = startColor
         ringEndColor = endColor
+        ring.progress = count / total
     }
 
 }

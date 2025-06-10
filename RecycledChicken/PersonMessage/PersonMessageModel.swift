@@ -11,11 +11,13 @@ struct PersonMessageInfo:Codable {
     var title:String?
     var createTime:String?
     var message:String?
+    var isShowDeleteView:Bool
     
     enum CodingKeys:String, CodingKey {
         case title = "title"
         case createTime = "createTime"
         case message = "message"
+        case isShowDeleteView = "isShowDeleteView"
     }
     
     init(from decoder: Decoder) throws {
@@ -23,5 +25,6 @@ struct PersonMessageInfo:Codable {
         title = try? container.decodeIfPresent(String.self, forKey: .title)
         createTime = try? container.decodeIfPresent(String.self, forKey: .createTime)
         message = try? container.decodeIfPresent(String.self, forKey: .message)
+        isShowDeleteView = false
     }
 }

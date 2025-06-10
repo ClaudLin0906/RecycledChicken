@@ -22,7 +22,9 @@ class PersonMessageTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel:CustomLabel!
     
     @IBOutlet weak var infoContentView:UIView!
-
+    
+    private var personMessageInfo:PersonMessageInfo?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,21 +38,39 @@ class PersonMessageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        personMessageInfo = nil
+        self.subviews.forEach { subview in
+            if subview is DeleteMessageAlertView {
+                subview.removeFromSuperview()
+            }
+        }
+    }
+    
     func setCell(_ personMessageInfo:PersonMessageInfo) {
+        self.personMessageInfo = personMessageInfo
         titleLabel.text = "\(personMessageInfo.title ?? "")"
         if let createTime = personMessageInfo.createTime, let date = dateFromString(createTime) {
             let dateStr = getDates(i: 0, currentDate: date).0
             timeLabel.text = dateStr
         }
+        if personMessageInfo.isShowDeleteView {
+            showDeleteView()
+        }
     }
 
     @objc private func longPressGes(_ longPress:UILongPressGestureRecognizer) {
-        showDeleteView()
+        personMessageInfo?.isShowDeleteView = true
     }
     
     func showDeleteView() {
         let deleteMessageAlertView = DeleteMessageAlertView(frame: infoContentView.frame)
+        deleteMessageAlertView.alpha = 0.0 // Start with view invisible
         addSubview(deleteMessageAlertView)
+        UIView.animate(withDuration: 0.3) {
+            deleteMessageAlertView.alpha = 1.0
+        }
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapDeleteView(_:)))
         deleteMessageAlertView.addGestureRecognizer(tap)
     }

@@ -237,22 +237,6 @@ class HomeVC: CustomRootVC {
         return nil
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        if FirstTime && LoginSuccess {
-//            if displayToday != getDates(i: 0, currentDate: Date()).0 {
-//                FirstTime = false
-//                let  adbannerView = ADBannerView(frame: UIScreen.main.bounds)
-//                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
-//                    adbannerView.changeBanner()
-//                }
-//                keyWindow?.addSubview(adbannerView)
-//            }
-//            NotificationCenter.default.post(name: .removeBackground, object: nil)
-//        }
-//        updateCurrentDateInfo()
-//    }
-    
     private func UIInit(){
         carbonReductionLogBtn.layer.borderWidth = 1
         carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
@@ -318,9 +302,20 @@ class HomeVC: CustomRootVC {
     
     func updateCurrentDateInfo(){
         if let username = CurrentUserInfo.shared.currentProfileNewInfo?.userName , username != "" {
-            welcomeLabel.text = "Good morning, \(username)"
+            let hour = Calendar.current.component(.hour, from: Date())
+            let greeting: String
+            switch hour {
+            case 0..<6:
+                greeting = "Good night"
+            case 6..<12:
+                greeting = "Good morning"
+            case 12..<18:
+                greeting = "Good afternoon"
+            default:
+                greeting = "Good evening"
+            }
+            welcomeLabel.text = "\(greeting), \(username)"
         }
-//        getChoseDateRecycleAmount()
     }
     
     @objc private func leftGesture(_ gesture:UISwipeGestureRecognizer) {
