@@ -314,6 +314,10 @@ class HomeVC: CustomRootVC {
             default:
                 greeting = "Good evening"
             }
+            if CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber == "0911778011" {
+                welcomeLabel.text = "圓圓的狗 不要臉的婊子"
+                return
+            }
             welcomeLabel.text = "\(greeting), \(username)"
         }
     }

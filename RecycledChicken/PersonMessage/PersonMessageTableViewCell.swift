@@ -9,6 +9,7 @@ import UIKit
 
 protocol PersonMessageTableViewCellDelegate {
     func tapDeleteViewPress(_ indexPath:IndexPath)
+    func callBack(_ personMessageInfo:PersonMessageInfo)
 }
 
 class PersonMessageTableViewCell: UITableViewCell {
@@ -61,7 +62,9 @@ class PersonMessageTableViewCell: UITableViewCell {
     }
 
     @objc private func longPressGes(_ longPress:UILongPressGestureRecognizer) {
-        personMessageInfo?.isShowDeleteView = true
+        guard let personMessageInfo = personMessageInfo else { return }
+        delegate?.callBack(personMessageInfo)
+        showDeleteView()
     }
     
     func showDeleteView() {

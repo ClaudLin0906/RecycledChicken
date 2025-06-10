@@ -123,6 +123,12 @@ extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
 
 extension PersonMessageVC:PersonMessageTableViewCellDelegate {
     
+    func callBack(_ personMessageInfo: PersonMessageInfo) {
+        if let index = personMessageInfos.firstIndex(where: { $0.createTime == personMessageInfo.createTime }) {
+            personMessageInfos[index].isShowDeleteView = true
+        }
+    }
+    
     func tapDeleteViewPress(_ indexPath: IndexPath) {
         guard personMessageInfos.count > 0, let dic = try? personMessageInfos[indexPath.row].asDictionary() else { return }
         var personMessageInfosDic:[[String:Any]] = []
