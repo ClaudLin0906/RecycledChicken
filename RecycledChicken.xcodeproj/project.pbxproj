@@ -50,9 +50,6 @@
 		331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */; };
 		331E77B52BFCC383002F6B0D /* IllustratedContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */; };
 		331E77B72BFCC38F002F6B0D /* IllustratedContent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */; };
-		33342E332C1B0E6400CB14E7 /* private.key in Resources */ = {isa = PBXBuildFile; fileRef = 33342E302C1B0E6400CB14E7 /* private.key */; };
-		33342E342C1B0E6400CB14E7 /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 33342E312C1B0E6400CB14E7 /* cert.cer */; };
-		33342E352C1B0E6400CB14E7 /* certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 33342E322C1B0E6400CB14E7 /* certificate.p12 */; };
 		3351CC662C14C37C00AC0C2A /* MapIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351CC652C14C37C00AC0C2A /* MapIconView.swift */; };
 		3351CC682C14C38400AC0C2A /* MapIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3351CC672C14C38400AC0C2A /* MapIconView.xib */; };
 		335A452B2C0A1D4B000D2337 /* ChickeIntroduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A452A2C0A1D4B000D2337 /* ChickeIntroduceView.swift */; };
@@ -84,7 +81,6 @@
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		593CDE2A2A7F5E13007E1D10 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CDE292A7F5E13007E1D10 /* DeleteModel.swift */; };
-		593CDE662A83D229007E1D10 /* ca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 593CDE652A83D229007E1D10 /* ca.pem */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
 		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
 		595406B82BC2749B00D214BF /* ColorFillTypeThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */; };
@@ -331,13 +327,12 @@
 		59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */; };
 		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
 		59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */; };
-		C933C8E52DF3504B00AAE168 /* intermediate 2.cer in Resources */ = {isa = PBXBuildFile; fileRef = C933C8E22DF3504B00AAE168 /* intermediate 2.cer */; };
-		C933C8E62DF3504B00AAE168 /* root 2.cer in Resources */ = {isa = PBXBuildFile; fileRef = C933C8E32DF3504B00AAE168 /* root 2.cer */; };
-		C933C8E72DF3504B00AAE168 /* server 2.cer in Resources */ = {isa = PBXBuildFile; fileRef = C933C8E42DF3504B00AAE168 /* server 2.cer */; };
 		C97633C72DC12FF300150E2A /* TaskTableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */; };
 		C97633C92DC130A500150E2A /* TaskTableSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97633C82DC130A500150E2A /* TaskTableSectionView.xib */; };
 		C981BF892DC1D942008FFC09 /* ReceivePointFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */; };
 		C981BF8B2DC1D949008FFC09 /* ReceivePointFinishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C981BF8A2DC1D949008FFC09 /* ReceivePointFinishView.xib */; };
+		C99D6FC42DFAA2AD004A07D6 /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = C99D6FC12DFAA2AD004A07D6 /* cert.cer */; };
+		C99D6FC82DFAB0D1004A07D6 /* certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C99D6FC72DFAB0D1004A07D6 /* certificate.p12 */; };
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -354,9 +349,6 @@
 		331E77B12BF9D99B002F6B0D /* PointRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointRecordModel.swift; sourceTree = "<group>"; };
 		331E77B42BFCC383002F6B0D /* IllustratedContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustratedContentVC.swift; sourceTree = "<group>"; };
 		331E77B62BFCC38F002F6B0D /* IllustratedContent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IllustratedContent.storyboard; sourceTree = "<group>"; };
-		33342E302C1B0E6400CB14E7 /* private.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private.key; sourceTree = "<group>"; };
-		33342E312C1B0E6400CB14E7 /* cert.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.cer; sourceTree = "<group>"; };
-		33342E322C1B0E6400CB14E7 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
 		3351CC652C14C37C00AC0C2A /* MapIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapIconView.swift; sourceTree = "<group>"; };
 		3351CC672C14C38400AC0C2A /* MapIconView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapIconView.xib; sourceTree = "<group>"; };
 		335A452A2C0A1D4B000D2337 /* ChickeIntroduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickeIntroduceView.swift; sourceTree = "<group>"; };
@@ -396,7 +388,6 @@
 		5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLoginVC.swift; sourceTree = "<group>"; };
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		593CDE292A7F5E13007E1D10 /* DeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModel.swift; sourceTree = "<group>"; };
-		593CDE652A83D229007E1D10 /* ca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca.pem; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeThreeView.swift; sourceTree = "<group>"; };
@@ -716,13 +707,12 @@
 		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
 		59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TutorialVideo.mp4; sourceTree = "<group>"; };
 		B3875E129FF487C1791895B2 /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.debug.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
-		C933C8E22DF3504B00AAE168 /* intermediate 2.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = "intermediate 2.cer"; sourceTree = "<group>"; };
-		C933C8E32DF3504B00AAE168 /* root 2.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = "root 2.cer"; sourceTree = "<group>"; };
-		C933C8E42DF3504B00AAE168 /* server 2.cer */ = {isa = PBXFileReference; lastKnownFileType = text; path = "server 2.cer"; sourceTree = "<group>"; };
 		C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableSectionView.swift; sourceTree = "<group>"; };
 		C97633C82DC130A500150E2A /* TaskTableSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableSectionView.xib; sourceTree = "<group>"; };
 		C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePointFinishView.swift; sourceTree = "<group>"; };
 		C981BF8A2DC1D949008FFC09 /* ReceivePointFinishView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivePointFinishView.xib; sourceTree = "<group>"; };
+		C99D6FC12DFAA2AD004A07D6 /* cert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert.cer; sourceTree = "<group>"; };
+		C99D6FC72DFAB0D1004A07D6 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -957,13 +947,8 @@
 		5950BF2B2A385D6600EEB21C /* Certificate */ = {
 			isa = PBXGroup;
 			children = (
-				C933C8E22DF3504B00AAE168 /* intermediate 2.cer */,
-				C933C8E32DF3504B00AAE168 /* root 2.cer */,
-				C933C8E42DF3504B00AAE168 /* server 2.cer */,
-				593CDE652A83D229007E1D10 /* ca.pem */,
-				33342E312C1B0E6400CB14E7 /* cert.cer */,
-				33342E322C1B0E6400CB14E7 /* certificate.p12 */,
-				33342E302C1B0E6400CB14E7 /* private.key */,
+				C99D6FC72DFAB0D1004A07D6 /* certificate.p12 */,
+				C99D6FC12DFAA2AD004A07D6 /* cert.cer */,
 			);
 			path = Certificate;
 			sourceTree = "<group>";
@@ -1578,7 +1563,6 @@
 				59600E832B9EE02A009AFA76 /* SignLogin.storyboard in Resources */,
 				59E69A262A3722510062D4EB /* GenJyuuGothic-ExtraLight.ttf in Resources */,
 				595406C22BC27B9500D214BF /* ColorFillTypeFourView.xib in Resources */,
-				33342E332C1B0E6400CB14E7 /* private.key in Resources */,
 				59C5AF6E2A290E6F002322BE /* jf-openhuninn-2.0.ttf in Resources */,
 				59600EBF2B9EE34C009AFA76 /* Profile.storyboard in Resources */,
 				59600F4F2B9EEDF4009AFA76 /* IllustratedGuide.storyboard in Resources */,
@@ -1592,7 +1576,6 @@
 				59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */,
 				59600E8B2B9EE137009AFA76 /* ConnectSuccessView.xib in Resources */,
 				59600ECB2B9EE3B4009AFA76 /* RecycleLog.storyboard in Resources */,
-				593CDE662A83D229007E1D10 /* ca.pem in Resources */,
 				59600E9F2B9EE2A5009AFA76 /* SystemSetting.storyboard in Resources */,
 				33CFA5692C1453800067B5B4 /* CustomerContact.storyboard in Resources */,
 				59E69A242A3722510062D4EB /* GenJyuuGothic-Light.ttf in Resources */,
@@ -1664,20 +1647,17 @@
 				59B682FA2A76A5EB008F5135 /* ARViewController.storyboard in Resources */,
 				59600EE32B9EE473009AFA76 /* ConfirmPassword.storyboard in Resources */,
 				59600F732B9EEFB8009AFA76 /* CompleteTaskAlertView.xib in Resources */,
+				C99D6FC42DFAA2AD004A07D6 /* cert.cer in Resources */,
 				59600F672B9EEEEB009AFA76 /* DropDownView.xib in Resources */,
 				59600F1F2B9EEB81009AFA76 /* MyTicker.storyboard in Resources */,
-				33342E352C1B0E6400CB14E7 /* certificate.p12 in Resources */,
 				59600EEB2B9EE53A009AFA76 /* Home.storyboard in Resources */,
 				5975218C2A0B8FAD00D0B67C /* PrivacyPolicy.storyboard in Resources */,
 				59600F832B9EEFF8009AFA76 /* Product.storyboard in Resources */,
 				59600ED32B9EE3F7009AFA76 /* RecycledRingInfoView.xib in Resources */,
+				C99D6FC82DFAB0D1004A07D6 /* certificate.p12 in Resources */,
 				59600EFB2B9EE5C5009AFA76 /* CustomCalenderView.xib in Resources */,
 				59E69A2B2A3722670062D4EB /* GenJyuuGothic-Normal.ttf in Resources */,
-				C933C8E52DF3504B00AAE168 /* intermediate 2.cer in Resources */,
-				C933C8E62DF3504B00AAE168 /* root 2.cer in Resources */,
-				C933C8E72DF3504B00AAE168 /* server 2.cer in Resources */,
 				59600F5B2B9EEEA8009AFA76 /* SpendPointView.xib in Resources */,
-				33342E342C1B0E6400CB14E7 /* cert.cer in Resources */,
 				59600E8F2B9EE192009AFA76 /* Sign.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2766,7 +2746,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.16;
+				MARKETING_VERSION = 2.0.18;
 				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2812,7 +2792,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.16;
+				MARKETING_VERSION = 2.0.18;
 				PRODUCT_BUNDLE_IDENTIFIER = lowcarbon.partridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
