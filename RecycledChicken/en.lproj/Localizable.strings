@@ -12,6 +12,7 @@
 "bottle" = "BOTTLE";
 "battery" = "BATTERY";
 "papperCup" = "PAPPER CUP";
+"pointDetail" = "PointDetail";
 "aluminumCan" = "ALUMINUM CAN";
 "error" = "error";
 "userName" = "Username";

@@ -109,7 +109,7 @@ class RecycleLogVC: CustomVC {
                 }
             }
         }
-        recycleLogInfos.sort{$0.time < $1.time }
+        recycleLogInfos.sort{$0.time > $1.time }
         filterUseRecordInfos = recycleLogInfos
     }
     

@@ -333,6 +333,15 @@
 		C981BF8B2DC1D949008FFC09 /* ReceivePointFinishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C981BF8A2DC1D949008FFC09 /* ReceivePointFinishView.xib */; };
 		C99D6FC42DFAA2AD004A07D6 /* cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = C99D6FC12DFAA2AD004A07D6 /* cert.cer */; };
 		C99D6FC82DFAB0D1004A07D6 /* certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C99D6FC72DFAB0D1004A07D6 /* certificate.p12 */; };
+		C9C5B3712E1796F600BD682F /* PointDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C5B3702E1796F600BD682F /* PointDetailView.xib */; };
+		C9C5B3732E17970400BD682F /* PointDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B3722E17970400BD682F /* PointDetailView.swift */; };
+		C9C5B3772E17A0ED00BD682F /* PointDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B3762E17A0ED00BD682F /* PointDetailVC.swift */; };
+		C9C5B3792E17A0FB00BD682F /* PointDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C5B3782E17A0FB00BD682F /* PointDetail.storyboard */; };
+		C9C5B37B2E17ADA800BD682F /* PointDetailAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B37A2E17ADA800BD682F /* PointDetailAlertCell.swift */; };
+		C9C5B37D2E17ADB000BD682F /* PointDetailAlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C5B37C2E17ADB000BD682F /* PointDetailAlertCell.xib */; };
+		C9C5B37F2E17AF6300BD682F /* PointsAboutToExpireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B37E2E17AF6300BD682F /* PointsAboutToExpireView.swift */; };
+		C9C5B3812E17AF6900BD682F /* PointsAboutToExpireView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C5B3802E17AF6900BD682F /* PointsAboutToExpireView.xib */; };
+		C9C5B3832E17B49900BD682F /* PointDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B3822E17B49900BD682F /* PointDetailModel.swift */; };
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -713,6 +722,15 @@
 		C981BF8A2DC1D949008FFC09 /* ReceivePointFinishView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivePointFinishView.xib; sourceTree = "<group>"; };
 		C99D6FC12DFAA2AD004A07D6 /* cert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert.cer; sourceTree = "<group>"; };
 		C99D6FC72DFAB0D1004A07D6 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
+		C9C5B3702E1796F600BD682F /* PointDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointDetailView.xib; sourceTree = "<group>"; };
+		C9C5B3722E17970400BD682F /* PointDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailView.swift; sourceTree = "<group>"; };
+		C9C5B3762E17A0ED00BD682F /* PointDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailVC.swift; sourceTree = "<group>"; };
+		C9C5B3782E17A0FB00BD682F /* PointDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PointDetail.storyboard; sourceTree = "<group>"; };
+		C9C5B37A2E17ADA800BD682F /* PointDetailAlertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailAlertCell.swift; sourceTree = "<group>"; };
+		C9C5B37C2E17ADB000BD682F /* PointDetailAlertCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointDetailAlertCell.xib; sourceTree = "<group>"; };
+		C9C5B37E2E17AF6300BD682F /* PointsAboutToExpireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsAboutToExpireView.swift; sourceTree = "<group>"; };
+		C9C5B3802E17AF6900BD682F /* PointsAboutToExpireView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsAboutToExpireView.xib; sourceTree = "<group>"; };
+		C9C5B3822E17B49900BD682F /* PointDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -840,6 +858,7 @@
 				5926C5972A06329300FAB49D /* Home */,
 				59A795702A0F727B0031710F /* ForgetPassword */,
 				5975219B2A0BD70800D0B67C /* Point */,
+				C9C5B3752E17A0D300BD682F /* PointDetail */,
 				599495642A0BF9E0009F1B2E /* BuyLottery */,
 				5994954F2A0BE77E009F1B2E /* Lottery  */,
 				599495562A0BF17E009F1B2E /* CommodityVoucher */,
@@ -1060,6 +1079,8 @@
 				5975219E2A0BD74300D0B67C /* PointVC.swift */,
 				59600F112B9EE9E5009AFA76 /* Point.storyboard */,
 				33A37F512CC74FFC00FCCE8C /* PointModel.swift */,
+				C9C5B3722E17970400BD682F /* PointDetailView.swift */,
+				C9C5B3702E1796F600BD682F /* PointDetailView.xib */,
 			);
 			path = Point;
 			sourceTree = "<group>";
@@ -1441,6 +1462,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9C5B3752E17A0D300BD682F /* PointDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C9C5B3762E17A0ED00BD682F /* PointDetailVC.swift */,
+				C9C5B3782E17A0FB00BD682F /* PointDetail.storyboard */,
+				C9C5B3822E17B49900BD682F /* PointDetailModel.swift */,
+				C9C5B37A2E17ADA800BD682F /* PointDetailAlertCell.swift */,
+				C9C5B37C2E17ADB000BD682F /* PointDetailAlertCell.xib */,
+				C9C5B37E2E17AF6300BD682F /* PointsAboutToExpireView.swift */,
+				C9C5B3802E17AF6900BD682F /* PointsAboutToExpireView.xib */,
+			);
+			path = PointDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1592,6 +1627,7 @@
 				335A45312C0A3E69000D2337 /* SignActivityCodeView.xib in Resources */,
 				59600F2B2B9EEC12009AFA76 /* PointRule.storyboard in Resources */,
 				59600F3F2B9EED51009AFA76 /* Task.storyboard in Resources */,
+				C9C5B3712E1796F600BD682F /* PointDetailView.xib in Resources */,
 				59600F472B9EED98009AFA76 /* StoreList.storyboard in Resources */,
 				59600ED72B9EE42F009AFA76 /* CarbonReductionItemCellView.xib in Resources */,
 				5926C5872A04086600FAB49D /* Assets.xcassets in Resources */,
@@ -1615,9 +1651,11 @@
 				3351CC682C14C38400AC0C2A /* MapIconView.xib in Resources */,
 				59600EB72B9EE31F009AFA76 /* DeleteAllMessageAlertView.xib in Resources */,
 				59E69A252A3722510062D4EB /* GenJyuuGothic-Heavy.ttf in Resources */,
+				C9C5B3792E17A0FB00BD682F /* PointDetail.storyboard in Resources */,
 				59600EAB2B9EE2E8009AFA76 /* LogOutView.xib in Resources */,
 				59600F632B9EEED8009AFA76 /* SearchView.xib in Resources */,
 				59600F4B2B9EEDE4009AFA76 /* ProductDescription.storyboard in Resources */,
+				C9C5B37D2E17ADB000BD682F /* PointDetailAlertCell.xib in Resources */,
 				59600EA72B9EE2DE009AFA76 /* SettingMenu.storyboard in Resources */,
 				59600F032B9EE5E4009AFA76 /* WelcomeView.xib in Resources */,
 				59600F7F2B9EEFEE009AFA76 /* ADView.xib in Resources */,
@@ -1633,6 +1671,7 @@
 				59600EF72B9EE5B3009AFA76 /* CustomCalenderScrollView.xib in Resources */,
 				59600EBB2B9EE32F009AFA76 /* DeleteMessageAlertView.xib in Resources */,
 				5982A95C2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib in Resources */,
+				C9C5B3812E17AF6900BD682F /* PointsAboutToExpireView.xib in Resources */,
 				5960E5E12BA2E19F007F4AEF /* UpdateAppAlertView.xib in Resources */,
 				59600EDF2B9EE457009AFA76 /* ReSendVerificationCodeView.xib in Resources */,
 				59600F2F2B9EECF7009AFA76 /* StoreMap.storyboard in Resources */,
@@ -1736,6 +1775,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C5B3772E17A0ED00BD682F /* PointDetailVC.swift in Sources */,
 				597E7F142B70D7660018528A /* RecycledItemView.swift in Sources */,
 				59CC8DA22A67C8CE0094CE57 /* PersonMessageModel.swift in Sources */,
 				59DBA1352B71F4CD009E5BBD /* RingProgressGroupView.swift in Sources */,
@@ -1788,6 +1828,7 @@
 				597521942A0B944300D0B67C /* ConnectCompanyVC.swift in Sources */,
 				5975217B2A0B86A700D0B67C /* SwitchTableViewCell.swift in Sources */,
 				59632D442B8B15660093BE6E /* InvitationCodeView.swift in Sources */,
+				C9C5B37F2E17AF6300BD682F /* PointsAboutToExpireView.swift in Sources */,
 				59A795882A0F8F2B0031710F /* UpdateDateAlertView.swift in Sources */,
 				5994957C2A0D2C1E009F1B2E /* StoreMapVC.swift in Sources */,
 				59A795902A0F9F6C0031710F /* SpendPointCompleteAlertView.swift in Sources */,
@@ -1826,7 +1867,9 @@
 				59997A492A0917D300E9FD7F /* CarbonReductionLogVC.swift in Sources */,
 				59F6BE2C2A07639A00D7B3CB /* Extension.swift in Sources */,
 				59CC8DB12A6BD56D0094CE57 /* MyTickertModel.swift in Sources */,
+				C9C5B3732E17970400BD682F /* PointDetailView.swift in Sources */,
 				5998DD4B2B8B3BFB00C99A8C /* PointRecordVC.swift in Sources */,
+				C9C5B3832E17B49900BD682F /* PointDetailModel.swift in Sources */,
 				5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */,
 				59A795722A0F72990031710F /* ForgetPasswordVC.swift in Sources */,
 				339B71CC2CDBD0A2001664F2 /* ColoringTutorialVideoView.swift in Sources */,
@@ -1913,6 +1956,7 @@
 				2537419F2C1193BE00FA0933 /* TaskTableViewPartnerCell.swift in Sources */,
 				5964AAFE2A14769C0005686F /* LAContextManager.swift in Sources */,
 				599495662A0BFA1A009F1B2E /* BuyLotteryVC.swift in Sources */,
+				C9C5B37B2E17ADA800BD682F /* PointDetailAlertCell.swift in Sources */,
 				59980BF02B734713002FDF41 /* RecycledRingInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

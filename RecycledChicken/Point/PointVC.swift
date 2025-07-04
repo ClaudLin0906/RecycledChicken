@@ -25,6 +25,8 @@ class PointVC: CustomRootVC {
         
     @IBOutlet weak var scrollContentView:UIView!
     
+    @IBOutlet weak var pointDetailView:PointDetailView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -85,6 +87,12 @@ class PointVC: CustomRootVC {
     private func setBtnImage(_ btn:UIButton, urlStr:String?) {
         guard let urlStr = urlStr, let url = URL(string: urlStr), let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else { return }
         btn.setImage(image, for: .normal)
+    }
+    
+    @IBAction func goToPointDetailVC(_ tap:UITapGestureRecognizer) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "PointDetail", bundle: Bundle.main).instantiateViewController(identifier: "PointDetail") as? PointDetailVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
     }
     
     @IBAction func goToCommodityVoucher(_ sender:UIButton) {
