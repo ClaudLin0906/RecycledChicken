@@ -32,7 +32,7 @@
                                         <rect key="frame" x="20" y="20" width="293" height="519.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g36-fl-jN3" userLabel="content">
-                                                <rect key="frame" x="0.0" y="0.0" width="293" height="702"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="682"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLZ-Ku-RBM" userLabel="step1">
                                                         <rect key="frame" x="0.0" y="0.0" width="293" height="50"/>
@@ -63,7 +63,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dta-ui-Mz8" userLabel="step2">
-                                                        <rect key="frame" x="0.0" y="100" width="293" height="200"/>
+                                                        <rect key="frame" x="0.0" y="80" width="293" height="200"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gf7-WQ-flM" customClass="PointDetailAlertCell" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="293" height="200"/>
@@ -78,7 +78,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48T-l7-5wy" userLabel="step3">
-                                                        <rect key="frame" x="0.0" y="300" width="293" height="200"/>
+                                                        <rect key="frame" x="0.0" y="280" width="293" height="200"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yB1-eF-R7W" customClass="PointDetailAlertCell" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="293" height="200"/>
@@ -92,14 +92,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mk3-3b-0Gk" userLabel="line1">
-                                                        <rect key="frame" x="0.0" y="500" width="293" height="1"/>
+                                                        <rect key="frame" x="0.0" y="480" width="293" height="1"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="7Tc-I6-aMt"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBA-hk-Wbv" userLabel="step4">
-                                                        <rect key="frame" x="0.0" y="501" width="293" height="100"/>
+                                                        <rect key="frame" x="0.0" y="481" width="293" height="100"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2n-3m-sUk" customClass="PointsAboutToExpireView" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="293" height="100"/>
@@ -114,14 +114,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdU-E0-iFk" userLabel="line2">
-                                                        <rect key="frame" x="0.0" y="601" width="293" height="1"/>
+                                                        <rect key="frame" x="0.0" y="581" width="293" height="1"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="pvX-97-ewo"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsS-sv-EXT" userLabel="step5">
-                                                        <rect key="frame" x="0.0" y="602" width="293" height="100"/>
+                                                        <rect key="frame" x="0.0" y="582" width="293" height="100"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcj-sH-yDf" customClass="PointsAboutToExpireView" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="293" height="100"/>
@@ -138,7 +138,7 @@
                                                 <constraints>
                                                     <constraint firstItem="48T-l7-5wy" firstAttribute="height" secondItem="dta-ui-Mz8" secondAttribute="height" id="2P4-we-zws"/>
                                                     <constraint firstItem="jsS-sv-EXT" firstAttribute="trailing" secondItem="vdU-E0-iFk" secondAttribute="trailing" id="C1D-Gr-YvL"/>
-                                                    <constraint firstItem="dta-ui-Mz8" firstAttribute="top" secondItem="PLZ-Ku-RBM" secondAttribute="bottom" constant="50" id="EOx-9N-71w"/>
+                                                    <constraint firstItem="dta-ui-Mz8" firstAttribute="top" secondItem="PLZ-Ku-RBM" secondAttribute="bottom" constant="30" id="EOx-9N-71w"/>
                                                     <constraint firstAttribute="bottom" secondItem="jsS-sv-EXT" secondAttribute="bottom" id="Eqa-YG-Tn0"/>
                                                     <constraint firstItem="48T-l7-5wy" firstAttribute="trailing" secondItem="dta-ui-Mz8" secondAttribute="trailing" id="FdU-fZ-7yN"/>
                                                     <constraint firstItem="Mk3-3b-0Gk" firstAttribute="top" secondItem="48T-l7-5wy" secondAttribute="bottom" id="Inf-MC-Doa"/>
@@ -210,7 +210,9 @@
                     <navigationItem key="navigationItem" id="PwR-AQ-95i"/>
                     <connections>
                         <outlet property="myPoint" destination="hcR-CX-N5h" id="C7G-vf-dDz"/>
+                        <outlet property="nextYearAboutToExpireView" destination="hcj-sH-yDf" id="uX4-ey-MRa"/>
                         <outlet property="pointDetailAlertCell" destination="yB1-eF-R7W" id="cZF-kQ-dco"/>
+                        <outlet property="thisYearAboutToExpireView" destination="A2n-3m-sUk" id="XHY-Ay-zcW"/>
                         <outlet property="userGuideAlertCell" destination="gf7-WQ-flM" id="Ysj-YO-zNa"/>
                     </connections>
                 </viewController>

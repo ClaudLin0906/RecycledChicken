@@ -62,9 +62,13 @@ class PointVC: CustomRootVC {
         super.viewWillAppear(animated)
         let group = DispatchGroup()
         group.enter()
-        getUserNewInfo(VC: self) {
+        getUserNewInfo(VC: self) {[weak self] in
+            guard let self = self else { return }
             if let point = CurrentUserInfo.shared.currentProfileNewInfo?.point {
-                self.myPoint.text = String(point)
+                myPoint.text = String(point)
+            }
+            if let expirePoint = CurrentUserInfo.shared.currentProfileNewInfo?.expirePoint {
+                pointDetailView.set(String(expirePoint))
             }
             group.leave()
         }

@@ -501,6 +501,14 @@ func removeBiometricsAction(){
     let _ = KeychainService.shared.deleteJSONFromKeychain(account: KeyChainKey.shared.accountInfo)
 }
 
+func defaultDateFormatter() -> DateFormatter {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.locale = Locale(identifier: "en_US")
+    dateFormatter.timeZone = TimeZone.current
+    return dateFormatter
+}
+
 func changeFormat(_ dateStr:String)-> String {
     let changeDate = dateStr
     let dateFormatter = DateFormatter()

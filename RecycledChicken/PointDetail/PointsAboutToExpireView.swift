@@ -8,6 +8,12 @@
 import UIKit
 
 class PointsAboutToExpireView: UIView, NibOwnerLoadable {
+    
+    @IBOutlet weak var titleLabel: CustomLabel!
+    
+    @IBOutlet weak var expirationDateLabel: CustomLabel!
+    
+    @IBOutlet weak var pointLabel: UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,5 +27,11 @@ class PointsAboutToExpireView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+    }
+    
+    func set(_ title: String, _ offset:Int = 0, point:String = "0" ) {
+        titleLabel.text = title
+        expirationDateLabel.text = "到期日 " + Calendar.current.endOfYear(offset: offset)
+        pointLabel.text = point
     }
 }

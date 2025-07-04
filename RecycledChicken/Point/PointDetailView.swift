@@ -26,5 +26,10 @@ class PointDetailView:  UIView, NibOwnerLoadable {
     private func customInit(){
         loadNibContent()
     }
+    
+    func set(_ expirePoint:String) {
+        pointsAboutToExpire.text = expirePoint
+        expirationDate.text = Calendar.current.endOfYear()
+    }
 
 }

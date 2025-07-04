@@ -26,6 +26,7 @@ struct ProfileNewInfo: Codable {
     var inputInviteCode:String?
     var linkedToBuenoMart:Bool?
     var point:Int?
+    var expirePoint:Int?
     var experiencePoint:Int?
     var levelInfo:LevelInfo?
     
@@ -38,6 +39,7 @@ struct ProfileNewInfo: Codable {
         case inputInviteCode = "inputInviteCode"
         case linkedToBuenoMart = "linkedToBuenoMart"
         case point = "point"
+        case expirePoint = "expirePoint"
         case experiencePoint = "experiencePoint"
     }
     
@@ -51,6 +53,7 @@ struct ProfileNewInfo: Codable {
         inputInviteCode = try? container.decodeIfPresent(String.self, forKey: .inputInviteCode)
         linkedToBuenoMart = try? container.decodeIfPresent(Bool.self, forKey: .linkedToBuenoMart)
         point = try? container.decodeIfPresent(Int.self, forKey: .point)
+        expirePoint = try? container.decodeIfPresent(Int.self, forKey: .expirePoint)
         experiencePoint = try? container.decodeIfPresent(Int.self, forKey: .experiencePoint)
     }
 }

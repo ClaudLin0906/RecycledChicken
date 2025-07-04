@@ -15,6 +15,10 @@ class PointDetailVC: CustomVC {
     
     @IBOutlet weak var pointDetailAlertCell:PointDetailAlertCell!
     
+    @IBOutlet weak var thisYearAboutToExpireView:PointsAboutToExpireView!
+    
+    @IBOutlet weak var nextYearAboutToExpireView:PointsAboutToExpireView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "pointDetail".localized
@@ -26,6 +30,22 @@ class PointDetailVC: CustomVC {
         setPointText()
         userGuideAlertCell.setCell("使用說明", "")
         pointDetailAlertCell.setCell("注意事項", "")
+        thisYearAboutToExpireView.set("即將到期點數", point: getExpirePoint())
+        nextYearAboutToExpireView.set("隔年度到期點數", 1 , point: getExpirePointNextYear())
+    }
+    
+    private func getExpirePoint() -> String {
+        guard let expirePoint = CurrentUserInfo.shared.currentProfileNewInfo?.expirePoint else {
+            return "0"
+        }
+        return String(expirePoint)
+    }
+    
+    private func getExpirePointNextYear() -> String {
+        guard let expirePoint = CurrentUserInfo.shared.currentProfileNewInfo?.expirePoint, let point = CurrentUserInfo.shared.currentProfileNewInfo?.point, (point - expirePoint) > 0 else {
+            return "0"
+        }
+        return String(point - expirePoint)
     }
     
     override func viewWillAppear(_ animated: Bool) {

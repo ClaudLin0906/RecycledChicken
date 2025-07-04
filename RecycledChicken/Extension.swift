@@ -371,3 +371,15 @@ extension UIImage {
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
 }
+
+
+
+extension Calendar {
+    /// 0 今年、1 明年、-1 去年…依 offset 取最後一天
+    func endOfYear(offset: Int = 0) -> String {
+        let target = date(byAdding: .year, value: offset, to: Date())!
+        let interval = dateInterval(of: .year, for: target)!
+        let formatter = defaultDateFormatter()
+        return formatter.string(from:  date(byAdding: .second, value: -1, to: interval.end)!)
+    }
+}
