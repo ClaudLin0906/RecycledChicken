@@ -342,6 +342,8 @@
 		C9C5B37F2E17AF6300BD682F /* PointsAboutToExpireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B37E2E17AF6300BD682F /* PointsAboutToExpireView.swift */; };
 		C9C5B3812E17AF6900BD682F /* PointsAboutToExpireView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C5B3802E17AF6900BD682F /* PointsAboutToExpireView.xib */; };
 		C9C5B3832E17B49900BD682F /* PointDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B3822E17B49900BD682F /* PointDetailModel.swift */; };
+		C9C5B4A32E1B98C400BD682F /* HideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C5B4A22E1B98C400BD682F /* HideView.xib */; };
+		C9C5B4A52E1B98D200BD682F /* HideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B4A42E1B98D200BD682F /* HideView.swift */; };
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -731,6 +733,8 @@
 		C9C5B37E2E17AF6300BD682F /* PointsAboutToExpireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsAboutToExpireView.swift; sourceTree = "<group>"; };
 		C9C5B3802E17AF6900BD682F /* PointsAboutToExpireView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsAboutToExpireView.xib; sourceTree = "<group>"; };
 		C9C5B3822E17B49900BD682F /* PointDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailModel.swift; sourceTree = "<group>"; };
+		C9C5B4A22E1B98C400BD682F /* HideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HideView.xib; sourceTree = "<group>"; };
+		C9C5B4A42E1B98D200BD682F /* HideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1124,6 +1128,8 @@
 				599216C22B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift */,
 				599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */,
 				59835DF32A6406DA00678BAF /* LotteryModel.swift */,
+				C9C5B4A22E1B98C400BD682F /* HideView.xib */,
+				C9C5B4A42E1B98D200BD682F /* HideView.swift */,
 			);
 			path = "Lottery ";
 			sourceTree = "<group>";
@@ -1645,6 +1651,7 @@
 				59600EF32B9EE597009AFA76 /* BarCodeView.xib in Resources */,
 				59E69A272A3722510062D4EB /* GenJyuuGothic-Bold.ttf in Resources */,
 				59600ECF2B9EE3C8009AFA76 /* CarbonReductionLog.storyboard in Resources */,
+				C9C5B4A32E1B98C400BD682F /* HideView.xib in Resources */,
 				59600EAF2B9EE2FD009AFA76 /* PersonMessageContent.storyboard in Resources */,
 				595D3CF02BE3260600FE9D85 /* SiteList.storyboard in Resources */,
 				59C926D72A8481A800EB6418 /* GoogleService-Info.plist in Resources */,
@@ -1805,6 +1812,7 @@
 				59A7957B2A0F78F20031710F /* UpdatePasswordSuccessView.swift in Sources */,
 				59CDA34A2A42DBA100E3F74E /* KeyChainManager.swift in Sources */,
 				5982A95A2BBE749500CB2B08 /* ColorFillTypeTwoView.swift in Sources */,
+				C9C5B4A52E1B98D200BD682F /* HideView.swift in Sources */,
 				599495632A0BF8D9009F1B2E /* MyTickerTableViewCell.swift in Sources */,
 				331E77B22BF9D99B002F6B0D /* PointRecordModel.swift in Sources */,
 				59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */,

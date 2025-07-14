@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenJyuuGothic-Medium.ttf">
+            <string>GenJyuuGothic-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HideView" customModule="RecycledChicken" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HideView" customModule="RecycledChicken" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="354"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AwB-ls-ONj">
+                    <rect key="frame" x="10" y="128" width="131" height="182"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活動標題" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTf-XX-L4D" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="151" y="128" width="232" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="eIO-x3-vNj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活動標題" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-2k-KMp" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="151" y="178" width="232" height="3"/>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="2"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="11"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入LINE提供的6碼驗證碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xSd-H5-l4u">
+                    <rect key="frame" x="151" y="191" width="232" height="67"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKV-VK-DiW" userLabel="line">
+                    <rect key="frame" x="151" y="267" width="232" height="1"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="E2I-IO-Iec"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tW2-gT-WbD" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="151" y="278" width="116" height="32"/>
+                    <color key="backgroundColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="請點擊進行解鎖">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="UKV-VK-DiW" firstAttribute="leading" secondItem="xSd-H5-l4u" secondAttribute="leading" id="0Xp-y4-1c1"/>
+                <constraint firstItem="tW2-gT-WbD" firstAttribute="bottom" secondItem="AwB-ls-ONj" secondAttribute="bottom" id="3EW-BO-AAX"/>
+                <constraint firstItem="tW2-gT-WbD" firstAttribute="trailing" secondItem="xSd-H5-l4u" secondAttribute="centerX" id="46p-Ln-HEV"/>
+                <constraint firstItem="UKV-VK-DiW" firstAttribute="bottom" secondItem="xSd-H5-l4u" secondAttribute="bottom" constant="10" id="50E-FW-oQ2"/>
+                <constraint firstItem="tW2-gT-WbD" firstAttribute="top" secondItem="UKV-VK-DiW" secondAttribute="bottom" constant="10" id="74x-Be-Si8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RTf-XX-L4D" secondAttribute="trailing" constant="10" id="A6c-pR-dzI"/>
+                <constraint firstItem="dLa-2k-KMp" firstAttribute="trailing" secondItem="RTf-XX-L4D" secondAttribute="trailing" id="BdF-er-7y9"/>
+                <constraint firstItem="dLa-2k-KMp" firstAttribute="leading" secondItem="RTf-XX-L4D" secondAttribute="leading" id="CRe-cd-NKe"/>
+                <constraint firstItem="AwB-ls-ONj" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.3333" id="Qfc-OW-aTb"/>
+                <constraint firstItem="dLa-2k-KMp" firstAttribute="top" secondItem="RTf-XX-L4D" secondAttribute="bottom" constant="10" id="S8e-5E-T13"/>
+                <constraint firstItem="UKV-VK-DiW" firstAttribute="trailing" secondItem="xSd-H5-l4u" secondAttribute="trailing" id="avD-xC-SM5"/>
+                <constraint firstItem="RTf-XX-L4D" firstAttribute="top" secondItem="AwB-ls-ONj" secondAttribute="top" id="cM9-vH-t0z"/>
+                <constraint firstItem="RTf-XX-L4D" firstAttribute="leading" secondItem="AwB-ls-ONj" secondAttribute="trailing" constant="10" id="iQV-0y-xM6"/>
+                <constraint firstItem="xSd-H5-l4u" firstAttribute="leading" secondItem="dLa-2k-KMp" secondAttribute="leading" id="jD7-3x-td0"/>
+                <constraint firstItem="AwB-ls-ONj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="lmA-jk-ZDg"/>
+                <constraint firstItem="xSd-H5-l4u" firstAttribute="top" secondItem="dLa-2k-KMp" secondAttribute="bottom" constant="10" id="njQ-tR-Kh4"/>
+                <constraint firstItem="tW2-gT-WbD" firstAttribute="leading" secondItem="xSd-H5-l4u" secondAttribute="leading" id="p6s-Ki-Ujo"/>
+                <constraint firstItem="AwB-ls-ONj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="qez-IO-Zeh"/>
+                <constraint firstItem="AwB-ls-ONj" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="qve-oL-tju"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="AwB-ls-ONj" secondAttribute="bottom" constant="10" id="snz-Fo-wIt"/>
+                <constraint firstItem="xSd-H5-l4u" firstAttribute="trailing" secondItem="dLa-2k-KMp" secondAttribute="trailing" id="xa7-gn-10J"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-211.4503816793893" y="195.07042253521126"/>
+        </view>
+    </objects>
+</document>

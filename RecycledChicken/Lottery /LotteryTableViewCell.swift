@@ -23,6 +23,8 @@ class LotteryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var drawPeopleLabel:CustomLabel!
     
+    @IBOutlet weak var hideView:UIView!
+    
     private var imageURL:URL?
     {
         willSet {

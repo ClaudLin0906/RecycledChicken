@@ -91,10 +91,13 @@ class StationListTableViewCell: UITableViewCell {
         self.getDisance(currentLocation)
     }
     
-    private func getDisance( _ currentLocation:CLLocation?) {
-        guard let info = info, let machineLocation = info.machineLocation , let latitudeStr = machineLocation.latitude, let longitudeStr = machineLocation.longitude, let latitude = Double(latitudeStr), let longitude = Double(longitudeStr), let currentLocation = currentLocation else { return }
+    private func getDisance(_ currentLocation: CLLocation?) {
+        guard let info = info, let machineLocation = info.machineLocation, let latitudeStr = machineLocation.latitude, let longitudeStr = machineLocation.longitude, let latitude = Double(latitudeStr), let longitude = Double(longitudeStr), let currentLocation = currentLocation else { return }
         let distance = CLLocation(latitude: latitude, longitude: longitude).distance(from: currentLocation) / 1000
-        distanceLabel.text = "\(String(format: "%.2f", distance))km"
+        let roundedDistance = round(distance * 10) / 10
+        let distanceString = String(format: "%.1f", roundedDistance)
+        let finalString = distanceString.hasSuffix(".0") ? String(distanceString.dropLast(2)) : distanceString
+        distanceLabel.text = "\(finalString)km"
     }
     
     @IBAction func navigationAction(_ sender:UIButton) {
