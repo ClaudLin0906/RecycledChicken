@@ -28,7 +28,7 @@ class PointDetailVC: CustomVC {
     
     private func UIInit() {
         setPointText()
-        userGuideAlertCell.setCell("使用說明", "")
+        userGuideAlertCell.setCell("碳碳金點數提醒與使用說明","\n• 碳碳金是你用心回收和參與任務換來的獎勵，讓它們發揮價值吧！\n\n• 點數會即時或最晚7天內自動入帳會員帳戶。\n\n• 點數有效期為12個月，記得及時使用，讓每分努力都有回報！\n\n• 你可以隨時查詢近12個月內的點數紀錄，掌握自己的積分動態。\n\n小提醒\n\n• 系統每年會進行定期維護，維護期間可能暫時無法查看或使用點數，敬請見諒！\n\n• 發現異常使用行為（如重複投遞），平台會取消點數並保留停權權利。\n\n🔗 更多詳細點數規則，請點這裡查看完整條款")
         pointDetailAlertCell.setCell("注意事項", "")
         thisYearAboutToExpireView.set("即將到期點數", point: getExpirePoint())
         nextYearAboutToExpireView.set("隔年度到期點數", 1 , point: getExpirePointNextYear())

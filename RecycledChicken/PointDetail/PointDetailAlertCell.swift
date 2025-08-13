@@ -25,6 +25,8 @@ class PointDetailAlertCell: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+        alertTextView.textContainerInset = .zero
+        alertTextView.textContainer.lineFragmentPadding = 0
     }
     
     func setCell(_ title:String, _ content:String) {
