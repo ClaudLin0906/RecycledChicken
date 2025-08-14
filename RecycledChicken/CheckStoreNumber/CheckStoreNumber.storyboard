@@ -241,21 +241,25 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKE-Wh-FGR" userLabel="step3.5">
                                                 <rect key="frame" x="0.0" y="760" width="393" height="30"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店號輸入錯誤/查無此店號" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s06-v4-860" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                        <rect key="frame" x="110" y="6" width="172" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.92941176470588238" green="0.27450980392156865" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="17"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Vvm-VE-HBk"/>
+                                                    <constraint firstItem="s06-v4-860" firstAttribute="centerY" secondItem="sKE-Wh-FGR" secondAttribute="centerY" id="bAU-ig-Jen"/>
+                                                    <constraint firstItem="s06-v4-860" firstAttribute="centerX" secondItem="sKE-Wh-FGR" secondAttribute="centerX" id="jas-B9-HjB"/>
                                                 </constraints>
                                             </view>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店號輸入錯誤/查無此店號" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s06-v4-860" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                <rect key="frame" x="110.66666666666669" y="766" width="172" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.92941176470588238" green="0.27450980392156865" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="17"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktM-D8-4pL" userLabel="step4">
                                                 <rect key="frame" x="0.0" y="790" width="393" height="60"/>
                                                 <subviews>
@@ -294,11 +298,9 @@
                                             <constraint firstItem="ktM-D8-4pL" firstAttribute="top" secondItem="sKE-Wh-FGR" secondAttribute="bottom" id="3Jv-wD-1ti"/>
                                             <constraint firstItem="Iso-Yv-kzy" firstAttribute="trailing" secondItem="zDp-gb-2Gk" secondAttribute="trailing" id="719-UF-UN5"/>
                                             <constraint firstAttribute="trailing" secondItem="KEd-7r-WoK" secondAttribute="trailing" id="AcK-2v-1Ny"/>
-                                            <constraint firstItem="s06-v4-860" firstAttribute="centerY" secondItem="sKE-Wh-FGR" secondAttribute="centerY" id="Ctn-jC-maF"/>
                                             <constraint firstItem="KEd-7r-WoK" firstAttribute="leading" secondItem="YWH-bB-s80" secondAttribute="leading" id="DHk-Tw-Vu0"/>
                                             <constraint firstItem="sKE-Wh-FGR" firstAttribute="top" secondItem="Iso-Yv-kzy" secondAttribute="bottom" id="HfF-cO-UhH"/>
                                             <constraint firstItem="zDp-gb-2Gk" firstAttribute="trailing" secondItem="KEd-7r-WoK" secondAttribute="trailing" id="JKR-XP-gMr"/>
-                                            <constraint firstItem="s06-v4-860" firstAttribute="centerX" secondItem="sKE-Wh-FGR" secondAttribute="centerX" id="MpS-dn-X8T"/>
                                             <constraint firstItem="ktM-D8-4pL" firstAttribute="trailing" secondItem="Iso-Yv-kzy" secondAttribute="trailing" id="Nmi-ee-7X1"/>
                                             <constraint firstItem="KEd-7r-WoK" firstAttribute="top" secondItem="YWH-bB-s80" secondAttribute="top" id="T6U-vl-xnG"/>
                                             <constraint firstItem="zDp-gb-2Gk" firstAttribute="leading" secondItem="KEd-7r-WoK" secondAttribute="leading" id="U9d-rr-MXU"/>

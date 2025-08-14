@@ -137,10 +137,14 @@ class CheckStoreNumberVC: CustomVC {
     }
     
     @IBAction func checkStoreCode(_ btn:CustomButton) {
-        guard let myTickertCouponsInfo = myTickertCouponsInfo, let partnerCode = myTickertCouponsInfo.partner, let storeCodeText = storeCodeTextField.text else { return }
-        if partnerCode == storeCodeText {
-            
-        }
+//        guard let myTickertCouponsInfo = myTickertCouponsInfo, let partnerCode = myTickertCouponsInfo.partner, let storeCodeText = storeCodeTextField.text else { return }
+//        if partnerCode == storeCodeText {
+//            
+//        }
+//        
+//        if partnerCode != storeCodeText {
+            errorMSGLabel.isHidden = false
+//        }
     }
         
 }
