@@ -8,19 +8,6 @@
 import Foundation
 import UIKit
 
-extension UIView {
-
-    func takeSnapshot() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
-
-        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image!
-    }
-}
-
 extension UITextField {
     
     func addBottomBorader(BoraderColor:UIColor){
@@ -256,6 +243,17 @@ extension String {
 
 extension UIView {
     
+    func asImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        context.saveGState()
+        layer.render(in: context)
+        context.restoreGState()
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
     var parentViewController: UIViewController? {
         var parentResponder: UIResponder? = self.next
         while parentResponder != nil {
@@ -263,6 +261,24 @@ extension UIView {
                 return viewController
             }
             parentResponder = parentResponder?.next
+        }
+        return nil
+    }
+    
+    func takeSnapshot() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0.0)
+
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+    
+    func findFirstResponder() -> UIView? {
+        if isFirstResponder { return self }
+        for subview in subviews {
+            if let first = subview.findFirstResponder() { return first }
         }
         return nil
     }
@@ -334,19 +350,6 @@ extension UserDefaults {
     func colorForKey(_ key: String) -> UIColor? {
         guard let data = data(forKey: key) else { return nil }
         return try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data)
-    }
-}
-
-extension UIView {
-    func asImage() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        context.saveGState()
-        layer.render(in: context)
-        context.restoreGState()
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
-        UIGraphicsEndImageContext()
-        return image
     }
 }
 

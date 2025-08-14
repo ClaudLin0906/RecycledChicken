@@ -20,18 +20,10 @@ internal extension UIView {
 		addConstraints(format: "H:\(format)", options: options, metrics: metrics, views: views)
 		addConstraints(format: "V:\(format)", options: options, metrics: metrics, views: views)
 	}
-	
-}
-
-
-
-//MARK: - Bounds
-
-internal extension UIView {
-	
-	var windowFrame: CGRect? {
-		return superview?.convert(frame, to: nil)
-	}
+    
+    var windowFrame: CGRect? {
+        return superview?.convert(frame, to: nil)
+    }
 	
 }
 
@@ -39,10 +31,8 @@ internal extension UIWindow {
 	
 	static func visibleWindow() -> UIWindow? {
 		var currentWindow = UIApplication.shared.keyWindow
-		
 		if currentWindow == nil {
 			let frontToBackWindows = Array(UIApplication.shared.windows.reversed()) 
-			
 			for window in frontToBackWindows {
 				if window.windowLevel == UIWindow.Level.normal {
 					currentWindow = window
@@ -50,7 +40,6 @@ internal extension UIWindow {
 				}
 			}
 		}
-		
 		return currentWindow
 	}
 	
