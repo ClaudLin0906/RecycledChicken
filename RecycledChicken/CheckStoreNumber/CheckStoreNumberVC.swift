@@ -19,7 +19,7 @@ class CheckStoreNumberVC: CustomVC {
     
     @IBOutlet weak var drawTimeLabel:CustomLabel!
     
-    @IBOutlet weak var itemDescriptionTextView:UITextView!
+    @IBOutlet weak var itemInstructionTextView:UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +34,23 @@ class CheckStoreNumberVC: CustomVC {
     
     private func addValue() {
         guard let myTickertCouponsInfo = myTickertCouponsInfo else { return }
+        
         if let picture = myTickertCouponsInfo.picture, let imageURL = URL(string: picture) {
             itemImageView.kf.setImage(with: imageURL)
         }
+        
         itemNameLabel.text = myTickertCouponsInfo.name
+        
         if let code = myTickertCouponsInfo.code {
             serialNumberLabel.text = "使用序號\(code)"
         }
+        
         if let expire = myTickertCouponsInfo.expire {
             drawTimeLabel.text = "使用期限至\(expire)"
+        }
+        
+        if let instruction = myTickertCouponsInfo.instruction {
+            itemInstructionTextView.text = instruction
         }
         
     }
