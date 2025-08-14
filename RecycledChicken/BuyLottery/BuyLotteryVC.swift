@@ -54,7 +54,7 @@ extension BuyLotteryVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointInfoDic = try? info.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.lotteryBuy, parameters: spendPointInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.lotteryBuy, parameters: spendPointInfoDic, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return

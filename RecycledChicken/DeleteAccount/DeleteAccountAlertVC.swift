@@ -49,7 +49,7 @@ class DeleteAccountAlertVC: UIViewController {
 
     private func deleteAccountAction(_ password:String){
         let deleteDic = try? DeleteInfo(password: password).asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.delete, parameters: deleteDic, AuthorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.delete, parameters: deleteDic, authorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return

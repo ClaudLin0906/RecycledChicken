@@ -35,7 +35,7 @@ class NetworkManager: NSObject {
     }
 
 
-    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, parametersArray: [[String: Any]]? = nil, AuthorizationToken:String = "", completion: @escaping (Data?, Int?, String?) -> Void){
+    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, parametersArray: [[String: Any]]? = nil, authorizationToken:String = "", completion: @escaping (Data?, Int?, String?) -> Void){
         let url = URL(string: urlString.urlEncoded())!
         var request = URLRequest(url: url)
         if parameters != nil {
@@ -54,7 +54,7 @@ class NetworkManager: NSObject {
         }
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(AuthorizationToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(authorizationToken)", forHTTPHeaderField: "Authorization")
         fetchedDataByDataTask(from: request, completion: completion)
      }
 

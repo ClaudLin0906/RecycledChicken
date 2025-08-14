@@ -83,7 +83,7 @@ class ConnectCompanyVC: CustomVC {
         let identity = identityLabel.text ?? ""
         let sendEmailInfo = SendEmailInfo(recipient: identity, content: content, email: email, userName: username)
         let sendEmailDic = try? sendEmailInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.sendEmail, parameters: sendEmailDic, AuthorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.sendEmail, parameters: sendEmailDic, authorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
             guard statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return

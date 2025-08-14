@@ -104,7 +104,7 @@ class ProfileVC: CustomVC {
     
     func updateUserInfo(_ profilePostInfo:ProfilePostInfo) {
         let profilePostInfoDic = try? profilePostInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: profilePostInfoDic, AuthorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: profilePostInfoDic, authorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return

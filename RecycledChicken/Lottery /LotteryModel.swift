@@ -50,6 +50,13 @@ struct LotteryInfo: Decodable {
     }
 }
 
+struct checkVerifyCode:Codable {
+    var name:String
+    var createTime:String
+    var category:String
+    var unlockCode:String
+}
+
 var LotterySegmentedControlTitles = ["raffleTicket".localized, "activityAward".localized, "merchants".localized]
 
 

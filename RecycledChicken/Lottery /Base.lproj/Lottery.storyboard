@@ -456,6 +456,9 @@
                                                                     <state key="normal" title="請點擊進行解鎖">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="buttonEvent:" destination="XJJ-mi-zpa" eventType="touchUpInside" id="Ptw-cU-1EA"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -708,6 +711,9 @@
                                                                     <state key="normal" title="請點擊進行解鎖">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="buttonEvent:" destination="anQ-ov-nKk" eventType="touchUpInside" id="U5S-9M-ttb"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>

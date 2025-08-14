@@ -181,23 +181,23 @@ extension LotteryVC: UITableViewDelegate {
         }
 
         if tableView == activityVoucherTableView {
-//            let isUnlocked = activityVoucherInfos[row].isUnlocked ?? true
-//            if isUnlocked {
-//                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-//                    VC.commodityVoucherInfo = activityVoucherInfos[row]
-//                    pushVC(targetVC: VC, navigation: navigationController)
-//                }
-//            }
+            let isUnlocked = activityVoucherInfos[row].isUnlocked ?? true
+            if isUnlocked {
+                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+                    VC.commodityVoucherInfo = activityVoucherInfos[row]
+                    pushVC(targetVC: VC, navigation: navigationController)
+                }
+            }
         }
         
         if tableView == partnerMerchantsTableView  {
-//            let isUnlocked = partnerMerchantsInfos[row].isUnlocked ?? true
-//            if isUnlocked {
-//                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-//                    VC.commodityVoucherInfo = partnerMerchantsInfos[row]
-//                    pushVC(targetVC: VC, navigation: navigationController)
-//                }
-//            }
+            let isUnlocked = partnerMerchantsInfos[row].isUnlocked ?? true
+            if isUnlocked {
+                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+                    VC.commodityVoucherInfo = partnerMerchantsInfos[row]
+                    pushVC(targetVC: VC, navigation: navigationController)
+                }
+            }
         }
     }
 
@@ -242,6 +242,17 @@ extension LotteryVC: UITableViewDelegate {
         UIApplication.shared.open(url)
     }
     
+    private func checkVerify(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String, completion: @escaping (Bool) -> Void) {
+        let checkVerifyCode = checkVerifyCode(name: name, createTime: createTime, category: category, unlockCode: veriftyCode)
+        let checkVerifyCodeDic = try? checkVerifyCode.asDictionary()
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.unlock,  parameters: checkVerifyCodeDic, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+            guard let self = self, let data = data, statusCode == 200 else {
+                showAlert(VC: self, title: "error".localized, message: errorMSG)
+                return
+            }
+        }
+    }
+        
 }
 
 extension LotteryVC: CustomSegmentedControlDelegate {
@@ -261,12 +272,25 @@ extension LotteryVC: CustomSegmentedControlDelegate {
 }
 
 extension LotteryVC: ActivityVoucherTableViewCellDelegate {
+    func activityVoucherButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
+        checkVerify(name, category, veriftyCode, createTime) { [weak self] isSuccess in
+            
+        }
+    }
+    
     func activityVoucherHideImageEvent(_ link: String) {
         openURL(link)
     }
 }
 
 extension LotteryVC: PartnerMerchantsTableViewTableViewCellDelegate {
+    
+    func partnerMerchantsHideButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
+        checkVerify(name, category, veriftyCode, createTime) { [weak self] isSuccess in
+            
+        }
+    }
+    
     func partnerMerchantsHideImageEvent(_ link: String) {
         openURL(link)
     }

@@ -195,7 +195,7 @@ class TaskVC: CustomRootVC {
         guard let taskInfo = taskInfo, let createTime = taskInfo.createTime, let type = taskInfo.type else { return }
         let finishTaskInfo = FinishTaskInfo(createTime: createTime, type: type.rawValue)
         let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.questComplete, parameters: finishTaskInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.questComplete, parameters: finishTaskInfoDic, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
             guard let data = data, statusCode == 200 else {
                 if statusCode == 304 {
                     self.successTaskAction(taskInfo)

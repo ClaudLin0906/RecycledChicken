@@ -101,7 +101,7 @@ extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
     
     private func deleteMessage(_ personMessageInfosDic:[[String:Any]]) {
         guard personMessageInfosDic.count > 0 else { return }
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete, parametersArray: personMessageInfosDic, AuthorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
+        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete, parametersArray: personMessageInfosDic, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard statusCode == 200, let data = data else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return

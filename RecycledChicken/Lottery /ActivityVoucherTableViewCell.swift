@@ -9,6 +9,7 @@ import UIKit
 
 protocol ActivityVoucherTableViewCellDelegate {
     func activityVoucherHideImageEvent(_ link:String)
+    func activityVoucherButtonEvent(_ name:String, _ category:String, _ veriftyCode:String, _ createTime:String)
 }
 
 class ActivityVoucherTableViewCell: UITableViewCell {
@@ -38,6 +39,10 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     @IBOutlet weak var verityTextField:UITextField!
     
     @IBOutlet weak var verityLineButton:CustomButton!
+    
+    private var category: CouponsCategory?
+    
+    private var createTime:String?
     
     private var link:String?
     
@@ -160,11 +165,24 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         verityTextField.layer.addSublayer(underline)
     }
     
+    @IBAction func buttonEvent(_ sender: UIButton) {
+        guard let verityTextFieldText = verityTextField.text, let createTime = createTime, let itemName = itemName, let category = category else { return }
+        delegate?.activityVoucherButtonEvent(itemName, category.rawValue, verityTextFieldText, createTime)
+    }
+    
     func setCell(_ commodityVoucherInfo:CommodityVoucherInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             
             self.isUnlocked = commodityVoucherInfo.isUnlocked
             
+            if let category = commodityVoucherInfo.category {
+                self.category = category
+            }
+            
+            if let createTime = commodityVoucherInfo.createTime {
+                self.createTime = createTime
+            }
+                
             if let link = commodityVoucherInfo.link {
                 self.link = link
             }

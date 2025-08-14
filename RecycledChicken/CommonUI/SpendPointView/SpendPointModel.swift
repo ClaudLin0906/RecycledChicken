@@ -41,7 +41,7 @@ struct SpendPointResponse:Codable {
 
 func spendPointAction(_ info: SpendPointInfo, completion: @escaping (Data?, Int?, String?) -> Void){
     let spendPointInfoDic = try? info.asDictionary()
-    NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.buyLottery, parameters: spendPointInfoDic, AuthorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
+    NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.buyLottery, parameters: spendPointInfoDic, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
         completion(data, statusCode, errorMSG)
     }
 }

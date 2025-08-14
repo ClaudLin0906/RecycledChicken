@@ -9,6 +9,7 @@ import UIKit
 
 protocol PartnerMerchantsTableViewTableViewCellDelegate {
     func partnerMerchantsHideImageEvent(_ link:String)
+    func partnerMerchantsHideButtonEvent(_ name:String, _ category:String, _ veriftyCode:String, _ createTime:String)
 }
 
 class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
@@ -42,6 +43,10 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     @IBOutlet weak var verityTextField:UITextField!
     
     @IBOutlet weak var verityLineButton:CustomButton!
+    
+    private var category: CouponsCategory?
+    
+    private var createTime:String?
     
     private var link:String?
     
@@ -156,6 +161,11 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
         }
     }
     
+    @IBAction func buttonEvent(_ sender: UIButton) {
+        guard let verityTextFieldText = verityTextField.text, let createTime = createTime, let itemName = itemName, let category = category else { return }
+        delegate?.partnerMerchantsHideButtonEvent(itemName, category.rawValue, verityTextFieldText, createTime)
+    }
+    
     private func setPlaceholderColor(_ color: UIColor) {
         if let placeholder = verityTextField.placeholder {
             verityTextField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: color]
@@ -177,8 +187,16 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     func setCell(_ commodityVoucherInfo:CommodityVoucherInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
-            
+
             self.isUnlocked = commodityVoucherInfo.isUnlocked
+            
+            if let category = commodityVoucherInfo.category {
+                self.category = category
+            }
+            
+            if let createTime = commodityVoucherInfo.createTime {
+                self.createTime = createTime
+            }
             
             if let productImageURLStr = commodityVoucherInfo.picture, let productImageURL = URL(string: productImageURLStr) {
                 self.imageURL = productImageURL
@@ -187,7 +205,7 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
             if let itemName = commodityVoucherInfo.name {
                 self.itemName = itemName
             }
-            
+                        
             var startTime:String?
             var endTime:String?
             if let eventStartTime = commodityVoucherInfo.start {
