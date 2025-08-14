@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LotteryInfo: Decodable {
+struct LotteryInfo: Codable {
     var itemName:String?
     var createTime:String?
     var productImage:String?
@@ -47,6 +47,28 @@ struct LotteryInfo: Decodable {
         notes = try? container.decodeIfPresent(String.self, forKey: .notes)
         purchaserCount = try? container.decodeIfPresent(Int.self, forKey: .purchaserCount)
         order = try? container.decodeIfPresent(Int.self, forKey: .order)
+    }
+}
+
+struct CheckVerifyApiResult:Codable {
+    var message:String?
+    var status:ApiStatus?
+    var unlockedAt:String?
+    var isUnlocked:Bool?
+    
+    enum CodingKeys:String, CodingKey {
+        case status = "status"
+        case message = "message"
+        case unlockedAt = "unlockedAt"
+        case isUnlocked = "isUnlocked"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        message = try? container.decodeIfPresent(String.self, forKey: .message)
+        status = try? container.decodeIfPresent(ApiStatus.self, forKey: .status)
+        unlockedAt = try? container.decodeIfPresent(String.self, forKey: .unlockedAt)
+        isUnlocked = try? container.decodeIfPresent(Bool.self, forKey: .isUnlocked)
     }
 }
 
