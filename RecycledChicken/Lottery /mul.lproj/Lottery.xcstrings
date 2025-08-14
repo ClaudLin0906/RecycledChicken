@@ -73,6 +73,18 @@
         }
       }
     },
+    "cHg-IZ-1b3.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"請輸入line提供的6碼驗證碼\"; ObjectID = \"cHg-IZ-1b3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請輸入line提供的6碼驗證碼"
+          }
+        }
+      }
+    },
     "e8E-lZ-LzW.text" : {
       "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"e8E-lZ-LzW\";",
       "extractionState" : "extracted_with_value",
@@ -145,6 +157,18 @@
         }
       }
     },
+    "HZE-ic-BSI.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊進行解鎖\"; ObjectID = \"HZE-ic-BSI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請點擊進行解鎖"
+          }
+        }
+      }
+    },
     "IbK-ZD-VhC.text" : {
       "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"IbK-ZD-VhC\";",
       "extractionState" : "extracted_with_value",
@@ -159,6 +183,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "drawTime"
+          }
+        }
+      }
+    },
+    "JDt-fv-bUU.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"duringTime\"; ObjectID = \"JDt-fv-bUU\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "duringTime"
           }
         }
       }
@@ -213,6 +249,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "剩餘數量 0"
+          }
+        }
+      }
+    },
+    "Tz3-j2-eJT.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"Tz3-j2-eJT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
           }
         }
       }

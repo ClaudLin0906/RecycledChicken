@@ -173,12 +173,90 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxL-UQ-gCm">
+                                                    <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-0G-kbI">
+                                                            <rect key="frame" x="10" y="10" width="112" height="84"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="209" id="Spn-Fz-vxC"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="7tZ-Cu-xPV">
+                                                            <rect key="frame" x="126.99999999999999" y="10" width="203.66666666666663" height="84"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tz3-j2-eJT" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="203.66666666666666" height="19.666666666666668"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="14"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duringTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDt-fv-bUU" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="24" width="203.66666666666666" height="3"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="2"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="11"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
+                                                                            <real key="value" value="0.0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入line提供的6碼驗證碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-IZ-1b3" userLabel="Verity TextField">
+                                                                    <rect key="frame" x="0.0" y="30.666666666666664" width="203.66666666666666" height="21.333333333333336"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                </textField>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZE-ic-BSI" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="52" width="203.66666666666666" height="32"/>
+                                                                    <color key="backgroundColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="請點擊進行解鎖">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="7tZ-Cu-xPV" firstAttribute="leading" secondItem="ahw-0G-kbI" secondAttribute="trailing" constant="5" id="UNG-BQ-Bq6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7tZ-Cu-xPV" secondAttribute="trailing" constant="5" id="Yap-u6-bvb"/>
+                                                        <constraint firstItem="7tZ-Cu-xPV" firstAttribute="bottom" secondItem="ahw-0G-kbI" secondAttribute="bottom" id="b9S-Wr-euI"/>
+                                                        <constraint firstItem="7tZ-Cu-xPV" firstAttribute="top" secondItem="ahw-0G-kbI" secondAttribute="top" id="ga4-sa-R7N"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="pxL-UQ-gCm" firstAttribute="centerY" secondItem="jhR-00-Az8" secondAttribute="centerY" id="7qw-Rq-Ud0"/>
                                                 <constraint firstItem="jhR-00-Az8" firstAttribute="width" secondItem="Xsh-kN-7Ky" secondAttribute="width" multiplier="0.9" id="BwB-Ik-0sy"/>
                                                 <constraint firstItem="jhR-00-Az8" firstAttribute="height" secondItem="Xsh-kN-7Ky" secondAttribute="height" multiplier="0.8" id="Cz1-3V-kdf"/>
+                                                <constraint firstItem="ahw-0G-kbI" firstAttribute="bottom" secondItem="4hB-xT-qBm" secondAttribute="bottom" id="Mn7-Vs-H7Z"/>
+                                                <constraint firstItem="pxL-UQ-gCm" firstAttribute="height" secondItem="jhR-00-Az8" secondAttribute="height" id="QzL-7n-G8T"/>
                                                 <constraint firstItem="jhR-00-Az8" firstAttribute="centerY" secondItem="Xsh-kN-7Ky" secondAttribute="centerY" id="VIG-DL-W60"/>
+                                                <constraint firstItem="ahw-0G-kbI" firstAttribute="width" secondItem="HPR-JA-KXE" secondAttribute="width" id="akF-nh-w6k"/>
+                                                <constraint firstItem="pxL-UQ-gCm" firstAttribute="width" secondItem="jhR-00-Az8" secondAttribute="width" id="fE8-9j-NpD"/>
                                                 <constraint firstItem="jhR-00-Az8" firstAttribute="centerX" secondItem="Xsh-kN-7Ky" secondAttribute="centerX" id="fzL-GF-rD4"/>
+                                                <constraint firstItem="pxL-UQ-gCm" firstAttribute="centerX" secondItem="jhR-00-Az8" secondAttribute="centerX" id="x3l-vu-nxY"/>
+                                                <constraint firstItem="ahw-0G-kbI" firstAttribute="leading" secondItem="HPR-JA-KXE" secondAttribute="leading" id="xEO-XO-yfY"/>
+                                                <constraint firstItem="ahw-0G-kbI" firstAttribute="top" secondItem="HPR-JA-KXE" secondAttribute="top" id="zRs-Cq-Ai8"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -192,9 +270,14 @@
                                             <outlet property="drawPeopleLabel" destination="4hB-xT-qBm" id="wJp-M8-w6B"/>
                                             <outlet property="drawTimeLabel" destination="e8E-lZ-LzW" id="Ijt-D7-Si7"/>
                                             <outlet property="duringTimeLabel" destination="Gte-w0-KtV" id="j4C-xY-9Vl"/>
+                                            <outlet property="hideView" destination="pxL-UQ-gCm" id="jG5-UM-JJl"/>
+                                            <outlet property="hideViewDrawTimeLabel" destination="JDt-fv-bUU" id="4e3-Zo-aJg"/>
+                                            <outlet property="hideViewTitleLabel" destination="Tz3-j2-eJT" id="3xZ-lp-7YN"/>
                                             <outlet property="itemImageView" destination="HPR-JA-KXE" id="Caa-Pp-Dgd"/>
                                             <outlet property="itemNameLabel" destination="SKR-pS-7to" id="Kq9-gv-zQj"/>
                                             <outlet property="pointLabel" destination="xmv-EX-kc9" id="Let-VY-hw9"/>
+                                            <outlet property="verityLineButton" destination="HZE-ic-BSI" id="8KR-2T-hru"/>
+                                            <outlet property="verityTextField" destination="cHg-IZ-1b3" id="aBC-hG-nSh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -588,6 +671,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chiw__ 1" width="209" height="203"/>
         <image name="defaultBackground" width="1125" height="2436"/>
         <image name="组 396" width="82" height="82"/>
         <systemColor name="systemBackgroundColor">

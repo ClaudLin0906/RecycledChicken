@@ -106,7 +106,7 @@ class LotteryVC: CustomVC {
             }
         }
     }
-    
+    //抽獎專區
     private func getLotteryData() {
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
             guard let data = data, statusCode == 200 else {
