@@ -348,6 +348,8 @@
 		C9C5B4A52E1B98D200BD682F /* HideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B4A42E1B98D200BD682F /* HideView.swift */; };
 		C9CFBCB92E4DFEC100697743 /* CompleteStoreSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFBCB82E4DFEC100697743 /* CompleteStoreSuccessView.swift */; };
 		C9CFBCBB2E4DFEC800697743 /* CompleteStoreSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CFBCBA2E4DFEC800697743 /* CompleteStoreSuccessView.xib */; };
+		C9CFBCBD2E4E3BB900697743 /* RedeemedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFBCBC2E4E3BB900697743 /* RedeemedView.swift */; };
+		C9CFBCBF2E4E3BC400697743 /* RedeemedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CFBCBE2E4E3BC400697743 /* RedeemedView.xib */; };
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -743,6 +745,8 @@
 		C9C5B4A42E1B98D200BD682F /* HideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideView.swift; sourceTree = "<group>"; };
 		C9CFBCB82E4DFEC100697743 /* CompleteStoreSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteStoreSuccessView.swift; sourceTree = "<group>"; };
 		C9CFBCBA2E4DFEC800697743 /* CompleteStoreSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteStoreSuccessView.xib; sourceTree = "<group>"; };
+		C9CFBCBC2E4E3BB900697743 /* RedeemedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemedView.swift; sourceTree = "<group>"; };
+		C9CFBCBE2E4E3BC400697743 /* RedeemedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemedView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1137,8 +1141,8 @@
 				599216C22B8F0AC30056FFC1 /* ActivityVoucherTableViewCell.swift */,
 				599216C42B8F0B000056FFC1 /* PartnerMerchantsTableViewTableViewCell.swift */,
 				59835DF32A6406DA00678BAF /* LotteryModel.swift */,
-				C9C5B4A22E1B98C400BD682F /* HideView.xib */,
 				C9C5B4A42E1B98D200BD682F /* HideView.swift */,
+				C9C5B4A22E1B98C400BD682F /* HideView.xib */,
 			);
 			path = "Lottery ";
 			sourceTree = "<group>";
@@ -1179,6 +1183,8 @@
 		599495692A0BFC12009F1B2E /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				C9CFBCBC2E4E3BB900697743 /* RedeemedView.swift */,
+				C9CFBCBE2E4E3BC400697743 /* RedeemedView.xib */,
 				59CC8DAB2A6BC0420094CE57 /* SpendPointView */,
 				598F39492A0E078400DA9186 /* SearchView.swift */,
 				59600F652B9EEED8009AFA76 /* SearchView.xib */,
@@ -1708,6 +1714,7 @@
 				5926C5852A04086400FAB49D /* Main.storyboard in Resources */,
 				59C2D9A02A0D37330085724F /* AR.storyboard in Resources */,
 				59600EB32B9EE313009AFA76 /* PersonMessage.storyboard in Resources */,
+				C9CFBCBF2E4E3BC400697743 /* RedeemedView.xib in Resources */,
 				2588F6C12C197C3F00636594 /* ConnectCompanyWebView.storyboard in Resources */,
 				595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */,
 				59600E972B9EE22E009AFA76 /* DeleteAccount.storyboard in Resources */,
@@ -1813,6 +1820,7 @@
 				598F394E2A0E0FA800DA9186 /* StoreListTableViewCell.swift in Sources */,
 				59DBA12D2B70EB9F009E5BBD /* MallCollectionViewCell.swift in Sources */,
 				59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */,
+				C9CFBCBD2E4E3BB900697743 /* RedeemedView.swift in Sources */,
 				59632D482B8B1F680093BE6E /* InvitedTableViewCell.swift in Sources */,
 				C91AD88D2E4DE2C100AF8162 /* CheckStoreNumberVC.swift in Sources */,
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,

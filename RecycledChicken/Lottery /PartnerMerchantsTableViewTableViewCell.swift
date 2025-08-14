@@ -44,6 +44,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var verityLineButton:CustomButton!
     
+    @IBOutlet weak var redeemedView:RedeemedView!
+    
     private var category: CouponsCategory?
     
     private var createTime:String?
@@ -70,6 +72,7 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     itemImageView.kf.setImage(with: newValue)
+                    redeemedView.setImage(imageURL?.absoluteString ?? "")
                 }
             }
         }
@@ -83,6 +86,7 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
                     guard let self = self else { return }
                     itemNameLabel.text = newValue
                     hideViewTitleLabel.text = newValue
+                    redeemedView.setCompleteItemNameLabel(newValue)
                 }
             }
         }
@@ -94,8 +98,10 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    duringTimeLabel.text = newValue
-                    hideViewDrawTimeLabel.text = newValue
+                    let activityTimeText = "activityTime".localized + ":" + newValue
+                    duringTimeLabel.text = activityTimeText
+                    hideViewDrawTimeLabel.text = activityTimeText
+                    redeemedView.setCompleteDuringTimeLabel(getCustomDate(newValue))
                 }
             }
         }
@@ -154,6 +160,13 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     private func addGesture(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideImageViewEvent(_:)))
         hideViewImageView?.addGestureRecognizer(tap)
+    }
+    
+    private func getCustomDate(_ date:String) -> String {
+        if let lastDate = date.components(separatedBy: "~").last {
+            return lastDate
+        }
+        return date
     }
     
     @objc private func hideImageViewEvent(_ tap:UITapGestureRecognizer) {
@@ -226,7 +239,7 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
             }
             
             if let startTime = startTime, let endTime = endTime {
-                self.duringTime = "activityTime".localized + ":" + startTime + "~" + endTime
+                self.duringTime = startTime + "~" + endTime
             }
             
             if let drawDate = commodityVoucherInfo.expire {

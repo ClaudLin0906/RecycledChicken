@@ -85,6 +85,18 @@
         }
       }
     },
+    "cOL-QY-2ZS.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"兌換日期\"; ObjectID = \"cOL-QY-2ZS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "兌換日期"
+          }
+        }
+      }
+    },
     "DEF-Z6-EdV.placeholder" : {
       "comment" : "Class = \"UITextField\"; placeholder = \"請輸入line提供的6碼驗證碼\"; ObjectID = \"DEF-Z6-EdV\";",
       "extractionState" : "extracted_with_value",
@@ -247,6 +259,18 @@
         }
       }
     },
+    "MNC-B7-GVK.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"已兌換\"; ObjectID = \"MNC-B7-GVK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "已兌換"
+          }
+        }
+      }
+    },
     "NKX-2j-gul.normalTitle" : {
       "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊進行解鎖\"; ObjectID = \"NKX-2j-gul\";",
       "extractionState" : "extracted_with_value",
@@ -363,6 +387,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "ItemName"
+          }
+        }
+      }
+    },
+    "v94-hJ-vHO.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"v94-hJ-vHO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
           }
         }
       }

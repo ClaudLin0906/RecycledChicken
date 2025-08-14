@@ -39,6 +39,8 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     @IBOutlet weak var verityTextField:UITextField!
     
     @IBOutlet weak var verityLineButton:CustomButton!
+        
+    @IBOutlet weak var redeemedView:RedeemedView!
     
     private var category: CouponsCategory?
     
@@ -66,6 +68,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     itemImageView.kf.setImage(with: newValue)
+                    redeemedView.setImage(imageURL?.absoluteString ?? "")
                 }
             }
         }
@@ -79,6 +82,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
                     guard let self = self else { return }
                     itemNameLabel.text = newValue
                     hideViewTitleLabel.text = newValue
+                    redeemedView.setCompleteItemNameLabel(newValue)
                 }
             }
         }
@@ -92,6 +96,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
                     guard let self = self else { return }
                     duringTimeLabel.text = newValue
                     hideViewDrawTimeLabel.text = newValue
+                    redeemedView.setCompleteDuringTimeLabel(getCustomDate(newValue))
                 }
             }
         }
@@ -139,6 +144,13 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     private func addGesture(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideImageViewEvent(_:)))
         hideViewImageView?.addGestureRecognizer(tap)
+    }
+    
+    private func getCustomDate(_ date:String) -> String {
+        if let lastDate = date.components(separatedBy: "~").last {
+            return lastDate
+        }
+        return date
     }
     
     @objc private func hideImageViewEvent(_ tap:UITapGestureRecognizer) {

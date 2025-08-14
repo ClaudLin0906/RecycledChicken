@@ -32,7 +32,7 @@ class LotteryTableViewCell: UITableViewCell {
     @IBOutlet weak var verityTextField:UITextField!
     
     @IBOutlet weak var verityLineButton:CustomButton!
-    
+        
     private var imageURL:URL?
     {
         willSet {

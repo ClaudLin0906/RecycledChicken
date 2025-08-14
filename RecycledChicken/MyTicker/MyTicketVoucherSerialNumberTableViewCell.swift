@@ -32,13 +32,7 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     
     @IBOutlet weak var contentGetureView:UIView!
     
-    @IBOutlet weak var completeStackView:UIStackView!
-    
-    @IBOutlet weak var completeItemNameLabel: CustomLabel!
-    
-    @IBOutlet weak var completeItemAlertView: UIView!
-    
-    @IBOutlet weak var completeDuringTimeLabel: CustomLabel!
+    @IBOutlet weak var redeemedView:RedeemedView!
     
     private var info:MyTickertCouponsInfo?
     
@@ -49,6 +43,7 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     itemImageView.kf.setImage(with: newValue)
+                    redeemedView.setImage(imageURL?.absoluteString ?? "")
                 }
             }
         }
@@ -61,7 +56,7 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     itemNameLabel.text = newValue
-                    completeItemNameLabel.text = newValue
+                    redeemedView.setCompleteItemNameLabel(newValue)
                 }
             }
         }
@@ -74,7 +69,7 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     duringTimeLabel.text = "使用期限至 \(newValue)"
-                    completeDuringTimeLabel.text = "兌換日期: \(extractEndDate(newValue))"
+                    redeemedView.setCompleteDuringTimeLabel(extractEndDate(newValue))
                 }
             }
         }
@@ -108,21 +103,18 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
         super.awakeFromNib()
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(_:)))
         contentView.addGestureRecognizer(longPressGesture)
-        completeItemAlertView.layer.borderWidth = 1
-        completeItemAlertView.layer.borderColor = UIColor.white.cgColor
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        completeItemAlertView.layer.cornerRadius = completeItemAlertView.bounds.height / 2
-        completeItemAlertView.layer.masksToBounds = true
+    private func extractEndDate(_ value: String) -> String {
+        let parts = value.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: CharacterSet(charactersIn: "-－—–"))
+        return parts.last?.trimmingCharacters(in: .whitespacesAndNewlines) ?? value
     }
     
     func compeletedAction() {
         let color = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
         itemImageView.backgroundColor = color
         noCompleteStackView.isHidden = true
-        completeStackView.isHidden = false
+        redeemedView.isHidden = false
         contentGetureView.backgroundColor = color
     }
     
@@ -130,7 +122,7 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
         let color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         itemImageView.backgroundColor = color
         noCompleteStackView.isHidden = false
-        completeStackView.isHidden = true
+        redeemedView.isHidden = true
         contentGetureView.backgroundColor = color
     }
 
@@ -150,11 +142,6 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
         itemNameLabel.text = nil
         duringTimeLabel.text = nil
         instructionLabel.text = nil
-    }
-    
-    func extractEndDate(_ value: String) -> String {
-        let parts = value.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: CharacterSet(charactersIn: "-－—–"))
-        return parts.last?.trimmingCharacters(in: .whitespacesAndNewlines) ?? value
     }
     
     func setCell(_ info:MyTickertCouponsInfo) {

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenJyuuGothic-Regular.ttf">
+            <string>GenJyuuGothic-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RedeemedView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="completeDuringTimeLabel" destination="xcW-pT-UbI" id="iel-wQ-TwQ"/>
+                <outlet property="completeImageView" destination="8Ph-fD-J23" id="PRQ-AB-ILS"/>
+                <outlet property="completeItemAlertView" destination="ynX-Hq-nJp" id="lpr-HA-COr"/>
+                <outlet property="completeItemNameLabel" destination="gKa-mL-OjO" id="r0r-X1-jq9"/>
+                <outlet property="completeStackView" destination="LpQ-8m-102" id="qyC-gZ-9fH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="223"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ph-fD-J23">
+                    <rect key="frame" x="10" y="94.666666666666657" width="118" height="117.66666666666666"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8Ph-fD-J23" secondAttribute="height" multiplier="1:1" id="eES-Qo-O1k"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LpQ-8m-102">
+                    <rect key="frame" x="138" y="118" width="245" height="71"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKa-mL-OjO" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="245" height="23.666666666666668"/>
+                            <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynX-Hq-nJp">
+                            <rect key="frame" x="0.0" y="23.666666666666657" width="245" height="23.666666666666671"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 209" translatesAutoresizingMaskIntoConstraints="NO" id="92W-mP-ycf">
+                                    <rect key="frame" x="93.666666666666657" y="5" width="18.666666666666671" height="18.666666666666668"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="92W-mP-ycf" secondAttribute="height" multiplier="1:1" id="sWy-w3-OnZ"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已兌換" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLX-uA-jqy" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                    <rect key="frame" x="122.33333333333331" y="2" width="97.666666666666686" height="19.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="92W-mP-ycf" firstAttribute="trailing" secondItem="pLX-uA-jqy" secondAttribute="leading" constant="-10" id="GpW-oo-fkf"/>
+                                <constraint firstItem="pLX-uA-jqy" firstAttribute="centerY" secondItem="ynX-Hq-nJp" secondAttribute="centerY" id="J6q-pq-BIO"/>
+                                <constraint firstItem="92W-mP-ycf" firstAttribute="top" secondItem="ynX-Hq-nJp" secondAttribute="top" constant="5" id="O84-Q2-Owg"/>
+                                <constraint firstAttribute="trailing" secondItem="pLX-uA-jqy" secondAttribute="trailing" constant="25" id="Qda-mh-RoF"/>
+                                <constraint firstAttribute="bottom" secondItem="92W-mP-ycf" secondAttribute="bottom" id="XUr-GA-YTF"/>
+                                <constraint firstItem="pLX-uA-jqy" firstAttribute="leading" secondItem="ynX-Hq-nJp" secondAttribute="centerX" id="rWH-yF-UB3"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="兌換日期" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcW-pT-UbI" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="47.333333333333343" width="245" height="23.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="11"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ynX-Hq-nJp" firstAttribute="centerX" secondItem="LpQ-8m-102" secondAttribute="centerX" id="8Am-dQ-tku"/>
+                        <constraint firstItem="ynX-Hq-nJp" firstAttribute="centerY" secondItem="LpQ-8m-102" secondAttribute="centerY" id="Xbg-oe-9eL"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.72941176470000002" green="0.36078431370000003" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8Ph-fD-J23" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.3" id="486-lI-Z4T"/>
+                <constraint firstItem="LpQ-8m-102" firstAttribute="centerY" secondItem="8Ph-fD-J23" secondAttribute="centerY" id="Shz-Gu-kd4"/>
+                <constraint firstItem="8Ph-fD-J23" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="UyJ-br-2B7"/>
+                <constraint firstItem="LpQ-8m-102" firstAttribute="leading" secondItem="8Ph-fD-J23" secondAttribute="trailing" constant="10" id="VZl-bk-tzi"/>
+                <constraint firstItem="8Ph-fD-J23" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="kKV-QT-3Qd"/>
+                <constraint firstItem="LpQ-8m-102" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="lVc-TO-JHF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LpQ-8m-102" secondAttribute="trailing" constant="10" id="tdK-m8-MgW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="-138.1679389312977" y="351.76056338028172"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="组 209" width="133.33332824707031" height="132.66667175292969"/>
+    </resources>
+</document>
