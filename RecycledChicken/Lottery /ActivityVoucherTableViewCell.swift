@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol ActivityVoucherTableViewCellDelegate {
+    func activityVoucherHideImageEvent(_ link:String)
+}
+
 class ActivityVoucherTableViewCell: UITableViewCell {
     
     static let identifier = "ActivityVoucherTableViewCell"
+    
+    var delegate:ActivityVoucherTableViewCellDelegate?
     
     @IBOutlet weak var itemImageView: UIImageView!
     
@@ -23,6 +29,8 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     
     @IBOutlet weak var hideView:UIView!
     
+    @IBOutlet weak var hideViewImageView: UIImageView?
+    
     @IBOutlet weak var hideViewTitleLabel:CustomLabel!
     
     @IBOutlet weak var hideViewDrawTimeLabel:CustomLabel!
@@ -31,15 +39,17 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     
     @IBOutlet weak var verityLineButton:CustomButton!
     
+    private var link:String?
+    
     private var isUnlocked:Bool? = nil
     {
         willSet {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 hideView.isHidden = false
-                if let newValue = newValue {
-                    hideView.isHidden = newValue
-                }
+//                if let newValue = newValue {
+//                    hideView.isHidden = newValue
+//                }
             }
         }
     }
@@ -111,13 +121,24 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         let color = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
         setPlaceholderColor(color)
         addUnderlineToVerityTextField(color)
+        addGesture()
         verityLineButton.layer.cornerRadius = verityLineButton.bounds.height / 2
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
+    }
+    
+    private func addGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideImageViewEvent(_:)))
+        hideViewImageView?.addGestureRecognizer(tap)
+    }
+    
+    @objc private func hideImageViewEvent(_ tap:UITapGestureRecognizer) {
+        if let link = link {
+            delegate?.activityVoucherHideImageEvent(link)
+        }
     }
     
     private func setPlaceholderColor(_ color: UIColor) {
@@ -143,6 +164,10 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             
             self.isUnlocked = commodityVoucherInfo.isUnlocked
+            
+            if let link = commodityVoucherInfo.link {
+                self.link = link
+            }
             
             if let productImageURLStr = commodityVoucherInfo.picture, let productImageURL = URL(string: productImageURLStr) {
                 self.imageURL = productImageURL
@@ -179,7 +204,6 @@ class ActivityVoucherTableViewCell: UITableViewCell {
             if let peopleCount = commodityVoucherInfo.remainingQuantity {
                 self.drawPeople = "剩餘數量 \(peopleCount)"
             }
-            
         }
         
     }

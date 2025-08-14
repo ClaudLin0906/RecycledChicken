@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol PartnerMerchantsTableViewTableViewCellDelegate {
+    func partnerMerchantsHideImageEvent(_ link:String)
+}
+
 class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     static let identifier = "PartnerMerchantsTableViewTableViewCell"
+    
+    var delegate:PartnerMerchantsTableViewTableViewCellDelegate?
     
     @IBOutlet weak var itemImageView: UIImageView!
     
@@ -27,6 +33,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var hideView:UIView!
     
+    @IBOutlet weak var hideViewImageView: UIImageView?
+    
     @IBOutlet weak var hideViewTitleLabel:CustomLabel!
     
     @IBOutlet weak var hideViewDrawTimeLabel:CustomLabel!
@@ -35,15 +43,17 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var verityLineButton:CustomButton!
     
+    private var link:String?
+    
     private var isUnlocked:Bool? = nil
     {
         willSet {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 hideView.isHidden = false
-                if let newValue = newValue {
-                    hideView.isHidden = newValue
-                }
+//                if let newValue = newValue {
+//                    hideView.isHidden = newValue
+//                }
             }
         }
     }
@@ -126,13 +136,24 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
         let color = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
         setPlaceholderColor(color)
         addUnderlineToVerityTextField(color)
+        addGesture()
         verityLineButton.layer.cornerRadius = verityLineButton.bounds.height / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+    }
+    
+    private func addGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideImageViewEvent(_:)))
+        hideViewImageView?.addGestureRecognizer(tap)
+    }
+    
+    @objc private func hideImageViewEvent(_ tap:UITapGestureRecognizer) {
+        if let link = link {
+            delegate?.partnerMerchantsHideImageEvent(link)
+        }
     }
     
     private func setPlaceholderColor(_ color: UIColor) {
@@ -200,7 +221,6 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
             if let remainingQuantity = commodityVoucherInfo.remainingQuantity {
                 self.remainingQuantity = remainingQuantity
             }
-            
         }
     }
 }

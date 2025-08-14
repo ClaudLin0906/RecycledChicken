@@ -409,7 +409,7 @@
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrC-FJ-Oyy">
                                                     <rect key="frame" x="18" y="13" width="337" height="104"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="oFp-3n-Cnj">
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="oFp-3n-Cnj">
                                                             <rect key="frame" x="10.666666666666671" y="10" width="112" height="84"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-51-hPR">
@@ -501,6 +501,7 @@
                                             <outlet property="duringTimeLabel" destination="PxJ-LG-vh9" id="hLl-6z-6Td"/>
                                             <outlet property="hideView" destination="BrC-FJ-Oyy" id="CeO-al-cbW"/>
                                             <outlet property="hideViewDrawTimeLabel" destination="kdp-RE-6Dm" id="rED-ad-FkT"/>
+                                            <outlet property="hideViewImageView" destination="oFp-3n-Cnj" id="nyw-eJ-bNO"/>
                                             <outlet property="hideViewTitleLabel" destination="zHf-yC-cMH" id="HP8-MZ-Viw"/>
                                             <outlet property="itemImageView" destination="YlM-Oc-8ru" id="KQb-Tv-cIL"/>
                                             <outlet property="itemNameLabel" destination="4cV-SI-zbG" id="fVf-fo-ldm"/>
@@ -660,7 +661,7 @@
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-d1-sVE">
                                                     <rect key="frame" x="18" y="13" width="337" height="104"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="s6e-HH-yZi">
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="s6e-HH-yZi">
                                                             <rect key="frame" x="10.666666666666671" y="10" width="112" height="84"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Kve-M3-SVH">
@@ -753,6 +754,7 @@
                                             <outlet property="duringTimeLabel" destination="bNL-5b-M5r" id="uwX-Kk-Kp0"/>
                                             <outlet property="hideView" destination="FhV-d1-sVE" id="oHZ-LO-6ST"/>
                                             <outlet property="hideViewDrawTimeLabel" destination="KPh-Jh-O2b" id="TVW-sp-lEX"/>
+                                            <outlet property="hideViewImageView" destination="s6e-HH-yZi" id="uPB-fi-qRL"/>
                                             <outlet property="hideViewTitleLabel" destination="Puh-qP-Kks" id="QRf-lo-gyr"/>
                                             <outlet property="itemImageView" destination="1bB-h7-tT7" id="baY-ba-Y1k"/>
                                             <outlet property="itemNameLabel" destination="tZs-ol-m68" id="J6W-5j-JDm"/>

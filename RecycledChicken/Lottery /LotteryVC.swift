@@ -172,6 +172,7 @@ extension LotteryVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard CurrentUserInfo.shared.isGuest == false else { return }
+        let row = indexPath.row
         if tableView == lotteryTableView {
             if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
                 VC.lotteryInfo = lotteryInfos[indexPath.row]
@@ -180,17 +181,23 @@ extension LotteryVC: UITableViewDelegate {
         }
 
         if tableView == activityVoucherTableView {
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-                VC.commodityVoucherInfo = activityVoucherInfos[indexPath.row]
-                pushVC(targetVC: VC, navigation: navigationController)
-            }
+//            let isUnlocked = activityVoucherInfos[row].isUnlocked ?? true
+//            if isUnlocked {
+//                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+//                    VC.commodityVoucherInfo = activityVoucherInfos[row]
+//                    pushVC(targetVC: VC, navigation: navigationController)
+//                }
+//            }
         }
         
         if tableView == partnerMerchantsTableView  {
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-                VC.commodityVoucherInfo = partnerMerchantsInfos[indexPath.row]
-                pushVC(targetVC: VC, navigation: navigationController)
-            }
+//            let isUnlocked = partnerMerchantsInfos[row].isUnlocked ?? true
+//            if isUnlocked {
+//                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+//                    VC.commodityVoucherInfo = partnerMerchantsInfos[row]
+//                    pushVC(targetVC: VC, navigation: navigationController)
+//                }
+//            }
         }
     }
 
@@ -209,6 +216,7 @@ extension LotteryVC: UITableViewDelegate {
         
         if tableView == activityVoucherTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
+            cell.delegate = self
             let row = indexPath.row
             if let CommodityVoucherInfo = getCommodityVoucherInfo(tableView,row) {
                 cell.setCell(CommodityVoucherInfo)
@@ -218,6 +226,7 @@ extension LotteryVC: UITableViewDelegate {
         
         if tableView == partnerMerchantsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: PartnerMerchantsTableViewTableViewCell.identifier, for: indexPath) as! PartnerMerchantsTableViewTableViewCell
+            cell.delegate = self
             let row = indexPath.row
             if let CommodityVoucherInfo = getCommodityVoucherInfo(tableView,row) {
                 cell.setCell(CommodityVoucherInfo)
@@ -226,6 +235,11 @@ extension LotteryVC: UITableViewDelegate {
         }
         
         return UITableViewCell()
+    }
+    
+    private func openURL(_ link: String){
+        guard let url = URL(string: link) else { return }
+        UIApplication.shared.open(url)
     }
     
 }
@@ -244,4 +258,16 @@ extension LotteryVC: CustomSegmentedControlDelegate {
         }
     }
     
+}
+
+extension LotteryVC: ActivityVoucherTableViewCellDelegate {
+    func activityVoucherHideImageEvent(_ link: String) {
+        openURL(link)
+    }
+}
+
+extension LotteryVC: PartnerMerchantsTableViewTableViewCellDelegate {
+    func partnerMerchantsHideImageEvent(_ link: String) {
+        openURL(link)
+    }
 }
