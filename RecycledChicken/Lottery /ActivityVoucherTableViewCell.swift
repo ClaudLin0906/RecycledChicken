@@ -21,6 +21,16 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         
     @IBOutlet weak var drawPeopleLabel:CustomLabel!
     
+    @IBOutlet weak var hideView:UIView!
+    
+    @IBOutlet weak var hideViewTitleLabel:CustomLabel!
+    
+    @IBOutlet weak var hideViewDrawTimeLabel:CustomLabel!
+    
+    @IBOutlet weak var verityTextField:UITextField!
+    
+    @IBOutlet weak var verityLineButton:CustomButton!
+    
     private var imageURL:URL?
     {
         willSet {
@@ -40,6 +50,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     itemNameLabel.text = newValue
+                    hideViewTitleLabel.text = newValue
                 }
             }
         }
@@ -52,6 +63,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     duringTimeLabel.text = newValue
+                    hideViewDrawTimeLabel.text = newValue
                 }
             }
         }
@@ -83,13 +95,35 @@ class ActivityVoucherTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        let color = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
+        setPlaceholderColor(color)
+        addUnderlineToVerityTextField(color)
+        verityLineButton.layer.cornerRadius = verityLineButton.bounds.height / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func setPlaceholderColor(_ color: UIColor) {
+        if let placeholder = verityTextField.placeholder {
+            verityTextField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: color]
+            )
+        } else {
+            verityTextField.attributedPlaceholder = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor: color])
+        }
+    }
+    
+    private func addUnderlineToVerityTextField(_ color: UIColor) {
+        verityTextField.layer.sublayers?.filter { $0.name == "verityTextFieldUnderline" }.forEach { $0.removeFromSuperlayer() }
+        let underline = CALayer()
+        underline.name = "verityTextFieldUnderline"
+        underline.backgroundColor = color.cgColor
+        let onePixel = 1.0 / UIScreen.main.scale
+        underline.frame = CGRect(x: 0, y: verityTextField.bounds.height - onePixel, width: verityTextField.bounds.width, height: onePixel)
+        verityTextField.layer.addSublayer(underline)
     }
     
     func setCell(_ commodityVoucherInfo:CommodityVoucherInfo) {

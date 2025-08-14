@@ -178,9 +178,6 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-0G-kbI">
                                                             <rect key="frame" x="10" y="10" width="112" height="84"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="209" id="Spn-Fz-vxC"/>
-                                                            </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="7tZ-Cu-xPV">
                                                             <rect key="frame" x="126.99999999999999" y="10" width="203.66666666666663" height="84"/>
@@ -409,12 +406,87 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrC-FJ-Oyy">
+                                                    <rect key="frame" x="18" y="13" width="337" height="104"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="oFp-3n-Cnj">
+                                                            <rect key="frame" x="10.666666666666671" y="10" width="112" height="84"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-51-hPR">
+                                                            <rect key="frame" x="127.66666666666664" y="10" width="204.33333333333337" height="84"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHf-yC-cMH" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="204.33333333333334" height="19.666666666666668"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="14"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duringTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdp-RE-6Dm" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="24" width="204.33333333333334" height="3"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="2"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="11"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
+                                                                            <real key="value" value="0.0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入line提供的6碼驗證碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEF-Z6-EdV" userLabel="Verity TextField">
+                                                                    <rect key="frame" x="0.0" y="30.666666666666657" width="204.33333333333334" height="21.333333333333343"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                </textField>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKX-2j-gul" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="52" width="204.33333333333334" height="32"/>
+                                                                    <color key="backgroundColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="請點擊進行解鎖">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="8bN-51-hPR" firstAttribute="bottom" secondItem="oFp-3n-Cnj" secondAttribute="bottom" id="2pI-xi-iC9"/>
+                                                        <constraint firstItem="8bN-51-hPR" firstAttribute="leading" secondItem="oFp-3n-Cnj" secondAttribute="trailing" constant="5" id="5lk-xX-wO2"/>
+                                                        <constraint firstItem="8bN-51-hPR" firstAttribute="top" secondItem="oFp-3n-Cnj" secondAttribute="top" id="pWG-VL-dU0"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8bN-51-hPR" secondAttribute="trailing" constant="5" id="rMM-Zq-K5O"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="BrC-FJ-Oyy" firstAttribute="leading" secondItem="bpu-eG-XCM" secondAttribute="leadingMargin" constant="-2" id="HPR-BB-758"/>
+                                                <constraint firstItem="oFp-3n-Cnj" firstAttribute="leading" secondItem="YlM-Oc-8ru" secondAttribute="leading" id="JXx-l2-6yZ"/>
                                                 <constraint firstItem="isF-5K-ZWf" firstAttribute="centerY" secondItem="bpu-eG-XCM" secondAttribute="centerY" id="R9I-BK-1eY"/>
+                                                <constraint firstItem="oFp-3n-Cnj" firstAttribute="width" secondItem="YlM-Oc-8ru" secondAttribute="width" id="SYD-dv-si9"/>
+                                                <constraint firstItem="BrC-FJ-Oyy" firstAttribute="top" secondItem="isF-5K-ZWf" secondAttribute="top" id="UeG-ZL-ACa"/>
                                                 <constraint firstItem="isF-5K-ZWf" firstAttribute="height" secondItem="bpu-eG-XCM" secondAttribute="height" multiplier="0.8" id="cgI-Ch-JkP"/>
                                                 <constraint firstItem="isF-5K-ZWf" firstAttribute="centerX" secondItem="bpu-eG-XCM" secondAttribute="centerX" id="nra-8s-wTA"/>
+                                                <constraint firstItem="oFp-3n-Cnj" firstAttribute="top" secondItem="YlM-Oc-8ru" secondAttribute="top" id="oU5-cs-jYZ"/>
+                                                <constraint firstItem="BrC-FJ-Oyy" firstAttribute="bottom" secondItem="isF-5K-ZWf" secondAttribute="bottom" id="pez-Jj-Pvj"/>
+                                                <constraint firstItem="oFp-3n-Cnj" firstAttribute="bottom" secondItem="TuB-5i-Vyf" secondAttribute="bottom" id="sph-wI-9fd"/>
                                                 <constraint firstItem="isF-5K-ZWf" firstAttribute="width" secondItem="bpu-eG-XCM" secondAttribute="width" multiplier="0.9" id="uvA-Iw-7xa"/>
+                                                <constraint firstItem="BrC-FJ-Oyy" firstAttribute="centerX" secondItem="isF-5K-ZWf" secondAttribute="centerX" id="xmT-nn-JgU"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -427,9 +499,14 @@
                                         <connections>
                                             <outlet property="drawPeopleLabel" destination="TuB-5i-Vyf" id="mq9-Lg-T0x"/>
                                             <outlet property="duringTimeLabel" destination="PxJ-LG-vh9" id="hLl-6z-6Td"/>
+                                            <outlet property="hideView" destination="BrC-FJ-Oyy" id="CeO-al-cbW"/>
+                                            <outlet property="hideViewDrawTimeLabel" destination="kdp-RE-6Dm" id="rED-ad-FkT"/>
+                                            <outlet property="hideViewTitleLabel" destination="zHf-yC-cMH" id="HP8-MZ-Viw"/>
                                             <outlet property="itemImageView" destination="YlM-Oc-8ru" id="KQb-Tv-cIL"/>
                                             <outlet property="itemNameLabel" destination="4cV-SI-zbG" id="fVf-fo-ldm"/>
                                             <outlet property="pointLabel" destination="f3U-Nd-p6P" id="8vH-HW-QeE"/>
+                                            <outlet property="verityLineButton" destination="NKX-2j-gul" id="Uyb-3b-dMc"/>
+                                            <outlet property="verityTextField" destination="DEF-Z6-EdV" id="z7x-xO-92E"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -580,12 +657,87 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-d1-sVE">
+                                                    <rect key="frame" x="18" y="13" width="337" height="104"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="s6e-HH-yZi">
+                                                            <rect key="frame" x="10.666666666666671" y="10" width="112" height="84"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Kve-M3-SVH">
+                                                            <rect key="frame" x="127.66666666666664" y="10" width="204.33333333333337" height="84"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Puh-qP-Kks" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="204.33333333333334" height="19.666666666666668"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="14"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duringTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPh-Jh-O2b" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="24" width="204.33333333333334" height="3"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="2"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="11"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
+                                                                            <real key="value" value="0.0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入line提供的6碼驗證碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTW-XG-Mkg" userLabel="Verity TextField">
+                                                                    <rect key="frame" x="0.0" y="30.666666666666664" width="204.33333333333334" height="21.333333333333336"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                </textField>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZA-Gz-St6" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="52" width="204.33333333333334" height="32"/>
+                                                                    <color key="backgroundColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="請點擊進行解鎖">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Kve-M3-SVH" firstAttribute="bottom" secondItem="s6e-HH-yZi" secondAttribute="bottom" id="KH6-zn-xGE"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Kve-M3-SVH" secondAttribute="trailing" constant="5" id="PZB-VU-6n4"/>
+                                                        <constraint firstItem="Kve-M3-SVH" firstAttribute="leading" secondItem="s6e-HH-yZi" secondAttribute="trailing" constant="5" id="U25-fC-hFu"/>
+                                                        <constraint firstItem="Kve-M3-SVH" firstAttribute="top" secondItem="s6e-HH-yZi" secondAttribute="top" id="lSa-kz-hxh"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="s6e-HH-yZi" firstAttribute="leading" secondItem="1bB-h7-tT7" secondAttribute="leading" id="0g7-QE-k0G"/>
+                                                <constraint firstItem="s6e-HH-yZi" firstAttribute="width" secondItem="1bB-h7-tT7" secondAttribute="width" id="Ct7-XG-aYL"/>
                                                 <constraint firstItem="uFD-bf-hS3" firstAttribute="centerX" secondItem="S5N-Ht-YqL" secondAttribute="centerX" id="Lad-eI-xxx"/>
+                                                <constraint firstItem="FhV-d1-sVE" firstAttribute="leading" secondItem="S5N-Ht-YqL" secondAttribute="leadingMargin" constant="-2" id="R6J-66-6Ay"/>
                                                 <constraint firstItem="uFD-bf-hS3" firstAttribute="centerY" secondItem="S5N-Ht-YqL" secondAttribute="centerY" id="Vry-2b-M7M"/>
                                                 <constraint firstItem="uFD-bf-hS3" firstAttribute="width" secondItem="S5N-Ht-YqL" secondAttribute="width" multiplier="0.9" id="aJY-ep-rjm"/>
+                                                <constraint firstItem="FhV-d1-sVE" firstAttribute="top" secondItem="uFD-bf-hS3" secondAttribute="top" id="csg-AP-RCE"/>
                                                 <constraint firstItem="uFD-bf-hS3" firstAttribute="height" secondItem="S5N-Ht-YqL" secondAttribute="height" multiplier="0.8" id="csz-La-upD"/>
+                                                <constraint firstItem="s6e-HH-yZi" firstAttribute="top" secondItem="1bB-h7-tT7" secondAttribute="top" id="i01-ya-SdL"/>
+                                                <constraint firstItem="FhV-d1-sVE" firstAttribute="bottom" secondItem="uFD-bf-hS3" secondAttribute="bottom" id="tRt-gf-D8O"/>
+                                                <constraint firstItem="FhV-d1-sVE" firstAttribute="centerX" secondItem="uFD-bf-hS3" secondAttribute="centerX" id="u5J-VI-3Ga"/>
+                                                <constraint firstItem="s6e-HH-yZi" firstAttribute="bottom" secondItem="6Le-SV-ZJu" secondAttribute="bottom" id="z1b-F4-aYA"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -599,10 +751,15 @@
                                             <outlet property="drawPeopleLabel" destination="6Le-SV-ZJu" id="hVg-n5-UE9"/>
                                             <outlet property="drawTimeLabel" destination="IbK-ZD-VhC" id="Kz2-qa-gYP"/>
                                             <outlet property="duringTimeLabel" destination="bNL-5b-M5r" id="uwX-Kk-Kp0"/>
+                                            <outlet property="hideView" destination="FhV-d1-sVE" id="oHZ-LO-6ST"/>
+                                            <outlet property="hideViewDrawTimeLabel" destination="KPh-Jh-O2b" id="TVW-sp-lEX"/>
+                                            <outlet property="hideViewTitleLabel" destination="Puh-qP-Kks" id="QRf-lo-gyr"/>
                                             <outlet property="itemImageView" destination="1bB-h7-tT7" id="baY-ba-Y1k"/>
                                             <outlet property="itemNameLabel" destination="tZs-ol-m68" id="J6W-5j-JDm"/>
                                             <outlet property="pointLabel" destination="gxS-S4-ZKS" id="kzK-zM-csU"/>
                                             <outlet property="remainingQuantityLabel" destination="6Le-SV-ZJu" id="Y3E-ij-lm4"/>
+                                            <outlet property="verityLineButton" destination="gZA-Gz-St6" id="hTM-s8-Sbo"/>
+                                            <outlet property="verityTextField" destination="oTW-XG-Mkg" id="GMW-Jh-LzP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -85,6 +85,18 @@
         }
       }
     },
+    "DEF-Z6-EdV.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"請輸入line提供的6碼驗證碼\"; ObjectID = \"DEF-Z6-EdV\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請輸入line提供的6碼驗證碼"
+          }
+        }
+      }
+    },
     "e8E-lZ-LzW.text" : {
       "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"e8E-lZ-LzW\";",
       "extractionState" : "extracted_with_value",
@@ -157,6 +169,18 @@
         }
       }
     },
+    "gZA-Gz-St6.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊進行解鎖\"; ObjectID = \"gZA-Gz-St6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請點擊進行解鎖"
+          }
+        }
+      }
+    },
     "HZE-ic-BSI.normalTitle" : {
       "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊進行解鎖\"; ObjectID = \"HZE-ic-BSI\";",
       "extractionState" : "extracted_with_value",
@@ -195,6 +219,66 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "duringTime"
+          }
+        }
+      }
+    },
+    "kdp-RE-6Dm.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"duringTime\"; ObjectID = \"kdp-RE-6Dm\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "duringTime"
+          }
+        }
+      }
+    },
+    "KPh-Jh-O2b.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"duringTime\"; ObjectID = \"KPh-Jh-O2b\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "duringTime"
+          }
+        }
+      }
+    },
+    "NKX-2j-gul.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊進行解鎖\"; ObjectID = \"NKX-2j-gul\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請點擊進行解鎖"
+          }
+        }
+      }
+    },
+    "oTW-XG-Mkg.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"請輸入line提供的6碼驗證碼\"; ObjectID = \"oTW-XG-Mkg\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請輸入line提供的6碼驗證碼"
+          }
+        }
+      }
+    },
+    "Puh-qP-Kks.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"Puh-qP-Kks\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
           }
         }
       }
@@ -297,6 +381,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "350"
+          }
+        }
+      }
+    },
+    "zHf-yC-cMH.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"zHf-yC-cMH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
           }
         }
       }
