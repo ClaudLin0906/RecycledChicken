@@ -56,6 +56,7 @@ struct MyTickertCouponsInfo:Codable {
     var picture:String?
     var expire:String?
     var link:String?
+    var partner:String?
 
     enum CodingKeys:String, CodingKey {
         case code = "code"
@@ -68,6 +69,7 @@ struct MyTickertCouponsInfo:Codable {
         case name = "name"
         case expire = "expire"
         case link = "link"
+        case partner = "partner"
     }
     
     init(from decoder: Decoder) throws {
@@ -82,6 +84,7 @@ struct MyTickertCouponsInfo:Codable {
         name = try? container.decodeIfPresent(String.self, forKey: .name)
         expire = try? container.decodeIfPresent(String.self, forKey: .expire)
         link = try? container.decodeIfPresent(String.self, forKey: .link)
+        partner = try? container.decodeIfPresent(String.self, forKey: .partner)
     }
 }
 

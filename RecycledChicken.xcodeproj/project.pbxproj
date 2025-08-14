@@ -327,6 +327,8 @@
 		59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */; };
 		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
 		59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */; };
+		C91AD88D2E4DE2C100AF8162 /* CheckStoreNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91AD88C2E4DE2C100AF8162 /* CheckStoreNumberVC.swift */; };
+		C91AD88F2E4DE2CF00AF8162 /* CheckStoreNumber.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91AD88E2E4DE2CF00AF8162 /* CheckStoreNumber.storyboard */; };
 		C97633C72DC12FF300150E2A /* TaskTableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */; };
 		C97633C92DC130A500150E2A /* TaskTableSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97633C82DC130A500150E2A /* TaskTableSectionView.xib */; };
 		C981BF892DC1D942008FFC09 /* ReceivePointFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */; };
@@ -718,6 +720,8 @@
 		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
 		59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TutorialVideo.mp4; sourceTree = "<group>"; };
 		B3875E129FF487C1791895B2 /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.debug.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
+		C91AD88C2E4DE2C100AF8162 /* CheckStoreNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStoreNumberVC.swift; sourceTree = "<group>"; };
+		C91AD88E2E4DE2CF00AF8162 /* CheckStoreNumber.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckStoreNumber.storyboard; sourceTree = "<group>"; };
 		C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableSectionView.swift; sourceTree = "<group>"; };
 		C97633C82DC130A500150E2A /* TaskTableSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableSectionView.xib; sourceTree = "<group>"; };
 		C981BF882DC1D942008FFC09 /* ReceivePointFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePointFinishView.swift; sourceTree = "<group>"; };
@@ -866,6 +870,7 @@
 				599495642A0BF9E0009F1B2E /* BuyLottery */,
 				5994954F2A0BE77E009F1B2E /* Lottery  */,
 				599495562A0BF17E009F1B2E /* CommodityVoucher */,
+				C91AD88B2E4DE29D00AF8162 /* CheckStoreNumber */,
 				5994955D2A0BF77E009F1B2E /* MyTicker */,
 				5994956E2A0C8FD9009F1B2E /* BuyCommodity */,
 				5998364B2B945F41003F3B48 /* StationList */,
@@ -1468,6 +1473,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C91AD88B2E4DE29D00AF8162 /* CheckStoreNumber */ = {
+			isa = PBXGroup;
+			children = (
+				C91AD88C2E4DE2C100AF8162 /* CheckStoreNumberVC.swift */,
+				C91AD88E2E4DE2CF00AF8162 /* CheckStoreNumber.storyboard */,
+			);
+			path = CheckStoreNumber;
+			sourceTree = "<group>";
+		};
 		C9C5B3752E17A0D300BD682F /* PointDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1591,6 +1605,7 @@
 				59600EDB2B9EE445009AFA76 /* VerificationCode.storyboard in Resources */,
 				59600F872B9EF004009AFA76 /* ProductAlert.storyboard in Resources */,
 				59600F072B9EE5EF009AFA76 /* ADBannerView.xib in Resources */,
+				C91AD88F2E4DE2CF00AF8162 /* CheckStoreNumber.storyboard in Resources */,
 				59600F0B2B9EE9C9009AFA76 /* ForgetPassword.storyboard in Resources */,
 				597521912A0B905300D0B67C /* CommonPronblem.storyboard in Resources */,
 				595D3CF52BE3493400FE9D85 /* DiscoverChickenView.xib in Resources */,
@@ -1792,6 +1807,7 @@
 				59DBA12D2B70EB9F009E5BBD /* MallCollectionViewCell.swift in Sources */,
 				59A113B32A3AA52E00C8295B /* CustomLabel.swift in Sources */,
 				59632D482B8B1F680093BE6E /* InvitedTableViewCell.swift in Sources */,
+				C91AD88D2E4DE2C100AF8162 /* CheckStoreNumberVC.swift in Sources */,
 				59997A5E2A09EDEA00E9FD7F /* CommonImageButton.swift in Sources */,
 				5975216A2A0B612C00D0B67C /* SettingMenuTableViewCell.swift in Sources */,
 				597521622A0B49D300D0B67C /* SettingMenuVC.swift in Sources */,

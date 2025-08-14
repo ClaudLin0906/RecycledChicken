@@ -102,6 +102,22 @@ class MyTickerVC: CustomVC {
 
 extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if tableView == lotteryTableView {
+            
+        }
+        if tableView == voucherTableView {
+            let myVoucherInfo = myVoucherInfos[row]
+//            if let partner = myVoucherInfo.partner, partner != "" {
+                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CheckStoreNumber", bundle: Bundle.main).instantiateViewController(identifier: "CheckStoreNumber") as? CheckStoreNumberVC {
+                    VC.myTickertCouponsInfo = myVoucherInfo
+                    pushVC(targetVC: VC, navigation: navigationController)
+                }
+//            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         view.safeAreaLayoutGuide.layoutFrame.height * 0.22
     }
