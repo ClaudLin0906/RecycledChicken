@@ -27,7 +27,17 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     
     @IBOutlet weak var instructionLabel: CustomLabel!
     
+    @IBOutlet weak var noCompleteStackView:UIStackView!
+    
     @IBOutlet weak var contentGetureView:UIView!
+    
+    @IBOutlet weak var completeStackView:UIStackView!
+    
+    @IBOutlet weak var completeItemNameLabel: CustomLabel!
+    
+    @IBOutlet weak var completeItemAlertView: UIView!
+    
+    @IBOutlet weak var completeDuringTimeLabel: CustomLabel!
     
     private var info:MyTickertCouponsInfo?
     
@@ -50,6 +60,7 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     itemNameLabel.text = newValue
+                    completeItemNameLabel.text = newValue
                 }
             }
         }
@@ -61,7 +72,8 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    duringTimeLabel.text = newValue
+                    duringTimeLabel.text = "使用期限至 \(newValue)"
+                    completeDuringTimeLabel.text = "兌換日期: \(extractEndDate(newValue))"
                 }
             }
         }
@@ -93,14 +105,25 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(_:)))
         contentView.addGestureRecognizer(longPressGesture)
+        completeItemAlertView.layer.borderWidth = 1
+        completeItemAlertView.layer.borderColor = UIColor.white.cgColor
+        completeItemAlertView.layer.cornerRadius = completeItemAlertView.bounds.height / 2
+        completeItemAlertView.layer.masksToBounds = true
+        compeletedAction()
+    }
+    
+    func compeletedAction(){
+        let color = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
+        itemImageView.backgroundColor = color
+        noCompleteStackView.isHidden = true
+        completeStackView.isHidden = false
+        contentGetureView.backgroundColor = color
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -117,6 +140,11 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
         instructionLabel.text = nil
     }
     
+    func extractEndDate(_ value: String) -> String {
+        let parts = value.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: CharacterSet(charactersIn: "-－—–"))
+        return parts.last?.trimmingCharacters(in: .whitespacesAndNewlines) ?? value
+    }
+    
     func setCell(_ info:MyTickertCouponsInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async { [weak self] in
             guard let self = self else { return }
@@ -131,7 +159,7 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
                 serialNumber = code
             }
             if let expire = info.expire {
-                duringTime = "使用期限至 \(expire)"
+                duringTime = "\(expire)"
             }
             if let instruction = info.instruction {
                 self.instruction = instruction

@@ -55,6 +55,18 @@
         }
       }
     },
+    "caz-P5-0mj.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"已兌換\"; ObjectID = \"caz-P5-0mj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "已兌換"
+          }
+        }
+      }
+    },
     "fNv-to-bHm.text" : {
       "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"fNv-to-bHm\";",
       "extractionState" : "extracted_with_value",
@@ -87,6 +99,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "使用期限"
+          }
+        }
+      }
+    },
+    "MCa-re-MGw.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"兌換日期\"; ObjectID = \"MCa-re-MGw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "兌換日期"
           }
         }
       }
@@ -177,6 +201,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "UUID"
+          }
+        }
+      }
+    },
+    "zAS-Sk-yDh.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"zAS-Sk-yDh\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
           }
         }
       }

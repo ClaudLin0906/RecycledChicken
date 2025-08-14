@@ -109,12 +109,12 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         }
         if tableView == voucherTableView {
             let myVoucherInfo = myVoucherInfos[row]
-//            if let partner = myVoucherInfo.partner, partner != "" {
+            if let partner = myVoucherInfo.partner, partner != "" {
                 if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CheckStoreNumber", bundle: Bundle.main).instantiateViewController(identifier: "CheckStoreNumber") as? CheckStoreNumberVC {
                     VC.myTickertCouponsInfo = myVoucherInfo
                     pushVC(targetVC: VC, navigation: navigationController)
                 }
-//            }
+            }
         }
     }
     
