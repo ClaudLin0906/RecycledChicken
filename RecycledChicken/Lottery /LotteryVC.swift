@@ -26,6 +26,10 @@ class LotteryVC: CustomVC {
     
     private lazy var tableViews = [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView]
     
+    private var currentVisibleTableView: UITableView? {
+        return [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView].first { $0?.isHidden == false } ?? nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "activitiesLuckyDraws".localized
@@ -168,11 +172,7 @@ class LotteryVC: CustomVC {
     }
 }
 
-
-private extension LotteryVC {
-    var currentVisibleTableView: UITableView? {
-        return [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView].first { $0?.isHidden == false } ?? nil
-    }
+extension LotteryVC {
 
     @objc func onKeyboardChange(_ note: Notification) {
         guard let tableView = currentVisibleTableView, let userInfo = note.userInfo, let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval, let curveRaw = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
@@ -278,7 +278,7 @@ extension LotteryVC: UITableViewDelegate {
         
         return UITableViewCell()
     }
-    
+
     private func openURL(_ link: String){
         guard let url = URL(string: link) else { return }
         UIApplication.shared.open(url)
