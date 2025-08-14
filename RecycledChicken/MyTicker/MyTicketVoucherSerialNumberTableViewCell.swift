@@ -11,6 +11,7 @@ import Kingfisher
 protocol MyTicketVoucherSerialNumberTableViewCellDelegate {
     func copySerialNumber(_ serialNumber:String)
 }
+
 class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     
     static let identifier = "MyTicketVoucherSerialNumberTableViewCell"
@@ -109,16 +110,27 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
         contentView.addGestureRecognizer(longPressGesture)
         completeItemAlertView.layer.borderWidth = 1
         completeItemAlertView.layer.borderColor = UIColor.white.cgColor
-        completeItemAlertView.layer.cornerRadius = completeItemAlertView.bounds.height / 2
-        completeItemAlertView.layer.masksToBounds = true
-        compeletedAction()
     }
     
-    func compeletedAction(){
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        completeItemAlertView.layer.cornerRadius = completeItemAlertView.bounds.height / 2
+        completeItemAlertView.layer.masksToBounds = true
+    }
+    
+    func compeletedAction() {
         let color = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
         itemImageView.backgroundColor = color
         noCompleteStackView.isHidden = true
         completeStackView.isHidden = false
+        contentGetureView.backgroundColor = color
+    }
+    
+    func noCompeletedAction() {
+        let color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        itemImageView.backgroundColor = color
+        noCompleteStackView.isHidden = false
+        completeStackView.isHidden = true
         contentGetureView.backgroundColor = color
     }
 
