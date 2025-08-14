@@ -346,6 +346,8 @@
 		C9C5B3832E17B49900BD682F /* PointDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B3822E17B49900BD682F /* PointDetailModel.swift */; };
 		C9C5B4A32E1B98C400BD682F /* HideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C5B4A22E1B98C400BD682F /* HideView.xib */; };
 		C9C5B4A52E1B98D200BD682F /* HideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5B4A42E1B98D200BD682F /* HideView.swift */; };
+		C9CFBCB92E4DFEC100697743 /* CompleteStoreSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFBCB82E4DFEC100697743 /* CompleteStoreSuccessView.swift */; };
+		C9CFBCBB2E4DFEC800697743 /* CompleteStoreSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CFBCBA2E4DFEC800697743 /* CompleteStoreSuccessView.xib */; };
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -739,6 +741,8 @@
 		C9C5B3822E17B49900BD682F /* PointDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailModel.swift; sourceTree = "<group>"; };
 		C9C5B4A22E1B98C400BD682F /* HideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HideView.xib; sourceTree = "<group>"; };
 		C9C5B4A42E1B98D200BD682F /* HideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideView.swift; sourceTree = "<group>"; };
+		C9CFBCB82E4DFEC100697743 /* CompleteStoreSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteStoreSuccessView.swift; sourceTree = "<group>"; };
+		C9CFBCBA2E4DFEC800697743 /* CompleteStoreSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteStoreSuccessView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1478,6 +1482,8 @@
 			children = (
 				C91AD88C2E4DE2C100AF8162 /* CheckStoreNumberVC.swift */,
 				C91AD88E2E4DE2CF00AF8162 /* CheckStoreNumber.storyboard */,
+				C9CFBCB82E4DFEC100697743 /* CompleteStoreSuccessView.swift */,
+				C9CFBCBA2E4DFEC800697743 /* CompleteStoreSuccessView.xib */,
 			);
 			path = CheckStoreNumber;
 			sourceTree = "<group>";
@@ -1644,6 +1650,7 @@
 				59600F232B9EEBC7009AFA76 /* BuyCommodity.storyboard in Resources */,
 				59600F0F2B9EE9E5009AFA76 /* Point.storyboard in Resources */,
 				5985D6C42B6A231B00DE6EBA /* ADBannerCollectionViewCell.xib in Resources */,
+				C9CFBCBB2E4DFEC800697743 /* CompleteStoreSuccessView.xib in Resources */,
 				5960E5C02BA2D6BC007F4AEF /* DeleteMessageContentAlertView.xib in Resources */,
 				335A45312C0A3E69000D2337 /* SignActivityCodeView.xib in Resources */,
 				59600F2B2B9EEC12009AFA76 /* PointRule.storyboard in Resources */,
@@ -1948,6 +1955,7 @@
 				59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */,
 				59C2D99E2A0D37000085724F /* ARVC.swift in Sources */,
 				5985D6C32B6A231B00DE6EBA /* ADBannerCollectionViewCell.swift in Sources */,
+				C9CFBCB92E4DFEC100697743 /* CompleteStoreSuccessView.swift in Sources */,
 				598F39512A0E1F2F00DA9186 /* ProductDescriptionVC.swift in Sources */,
 				59997A402A08E13E00E9FD7F /* CustomCalenderView.swift in Sources */,
 				59F6BE2A2A0762B100D7B3CB /* PasswordTextField.swift in Sources */,

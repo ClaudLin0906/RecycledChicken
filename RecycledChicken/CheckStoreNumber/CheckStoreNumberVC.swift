@@ -137,14 +137,26 @@ class CheckStoreNumberVC: CustomVC {
     }
     
     @IBAction func checkStoreCode(_ btn:CustomButton) {
-//        guard let myTickertCouponsInfo = myTickertCouponsInfo, let partnerCode = myTickertCouponsInfo.partner, let storeCodeText = storeCodeTextField.text else { return }
-//        if partnerCode == storeCodeText {
-//            
-//        }
-//        
-//        if partnerCode != storeCodeText {
+        guard let myTickertCouponsInfo = myTickertCouponsInfo, let partnerCode = myTickertCouponsInfo.partner, let storeCodeText = storeCodeTextField.text, storeCodeText != "" else {
+            if storeCodeTextField.text == "" {
+                showAlert(VC: self, title: "店號不能為空")
+            }
+            return
+        }
+        
+        if partnerCode == storeCodeText {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                let completeStoreSuccessView = CompleteStoreSuccessView(frame: UIScreen.main.bounds)
+                fadeInOutAni(showView: completeStoreSuccessView) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
+        
+        if partnerCode != storeCodeText {
             errorMSGLabel.isHidden = false
-//        }
+        }
     }
         
 }
