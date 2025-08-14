@@ -35,6 +35,19 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var verityLineButton:CustomButton!
     
+    private var isUnlocked:Bool? = nil
+    {
+        willSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                hideView.isHidden = true
+                if let newValue = newValue, newValue {
+                    hideView.isHidden = false
+                }
+            }
+        }
+    }
+    
     private var imageURL:URL?
     {
         willSet {
@@ -143,6 +156,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     func setCell(_ commodityVoucherInfo:CommodityVoucherInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            
+            self.isUnlocked = commodityVoucherInfo.isUnlocked
             
             if let productImageURLStr = commodityVoucherInfo.picture, let productImageURL = URL(string: productImageURLStr) {
                 self.imageURL = productImageURL

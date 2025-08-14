@@ -14,11 +14,11 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     @IBOutlet weak var itemImageView: UIImageView!
     
     @IBOutlet weak var itemNameLabel: CustomLabel!
-        
+    
     @IBOutlet weak var pointLabel: UILabel!
     
     @IBOutlet weak var duringTimeLabel: CustomLabel!
-        
+    
     @IBOutlet weak var drawPeopleLabel:CustomLabel!
     
     @IBOutlet weak var hideView:UIView!
@@ -30,6 +30,19 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     @IBOutlet weak var verityTextField:UITextField!
     
     @IBOutlet weak var verityLineButton:CustomButton!
+    
+    private var isUnlocked:Bool? = nil
+    {
+        willSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                hideView.isHidden = true
+                if let newValue = newValue, newValue {
+                    hideView.isHidden = false
+                }
+            }
+        }
+    }
     
     private var imageURL:URL?
     {
@@ -92,7 +105,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
             }
         }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         let color = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
@@ -100,10 +113,10 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         addUnderlineToVerityTextField(color)
         verityLineButton.layer.cornerRadius = verityLineButton.bounds.height / 2
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -128,6 +141,8 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     
     func setCell(_ commodityVoucherInfo:CommodityVoucherInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            
+            self.isUnlocked = commodityVoucherInfo.isUnlocked
             
             if let productImageURLStr = commodityVoucherInfo.picture, let productImageURL = URL(string: productImageURLStr) {
                 self.imageURL = productImageURL
@@ -156,7 +171,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
             if let startTime = startTime, let endTime = endTime {
                 self.duringTime = "activityTime".localized + ":" + startTime + "~" + endTime
             }
-
+            
             if let infoPoint = commodityVoucherInfo.points {
                 self.point = String(infoPoint)
             }
@@ -168,5 +183,5 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         }
         
     }
-
+    
 }
