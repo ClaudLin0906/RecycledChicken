@@ -46,9 +46,25 @@ class LotteryVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
+        addNotificationKeyboard()
         getLotteryData()
         getEventCouponsData()
         getPartnerCouponsData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeNotificationKeyboard()
+    }
+    
+    private func removeNotificationKeyboard(){
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func addNotificationKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardChange(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func getPartnerCouponsData() {
@@ -149,6 +165,32 @@ class LotteryVC: CustomVC {
             return partnerMerchantsInfos[row]
         }
         return nil
+    }
+}
+
+
+private extension LotteryVC {
+    var currentVisibleTableView: UITableView? {
+        return [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView].first { $0?.isHidden == false } ?? nil
+    }
+
+    @objc func onKeyboardChange(_ note: Notification) {
+        guard let tableView = currentVisibleTableView, let userInfo = note.userInfo, let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval, let curveRaw = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
+        let kbFrameInView = view.convert(endFrame, from: nil)
+        let overlap = max(0, view.bounds.maxY - kbFrameInView.origin.y)
+        let insets = UIEdgeInsets(top: tableView.contentInset.top, left: 0, bottom: overlap, right: 0)
+        UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions(rawValue: curveRaw << 16), animations: {
+            tableView.contentInset = insets
+            tableView.verticalScrollIndicatorInsets = insets
+        })
+    }
+
+    @objc func onKeyboardHide(_ note: Notification) {
+        guard let tableView = currentVisibleTableView, let duration = (note.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval), let curveRaw = (note.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt)else { return }
+        UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions(rawValue: curveRaw << 16), animations: {
+            tableView.contentInset.bottom = 0
+            tableView.verticalScrollIndicatorInsets.bottom = 0
+        })
     }
 }
 

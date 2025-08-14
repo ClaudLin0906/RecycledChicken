@@ -127,6 +127,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         setPlaceholderColor(color)
         addUnderlineToVerityTextField(color)
         addGesture()
+        verityTextField.delegate = self
         verityLineButton.layer.cornerRadius = verityLineButton.bounds.height / 2
     }
     
@@ -224,6 +225,18 @@ class ActivityVoucherTableViewCell: UITableViewCell {
             }
         }
         
+    }
+    
+}
+
+extension ActivityVoucherTableViewCell: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard textField == verityTextField else { return true }
+        let currentText = textField.text ?? ""
+        guard let textRange = Range(range, in: currentText) else { return true }
+        let updated = currentText.replacingCharacters(in: textRange, with: string)
+        return updated.count <= 6
     }
     
 }

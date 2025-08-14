@@ -112,6 +112,7 @@ class LotteryTableViewCell: UITableViewCell {
         let color = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
         setPlaceholderColor(color)
         addUnderlineToVerityTextField(color)
+        verityTextField.delegate = self
         verityLineButton.layer.cornerRadius = verityLineButton.bounds.height / 2
     }
 
@@ -183,5 +184,16 @@ class LotteryTableViewCell: UITableViewCell {
                 self.purchaserCount = purchaserCount
             }
         }
+    }
+}
+
+
+extension LotteryTableViewCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard textField == verityTextField else { return true }
+        let currentText = textField.text ?? ""
+        guard let textRange = Range(range, in: currentText) else { return true }
+        let updated = currentText.replacingCharacters(in: textRange, with: string)
+        return updated.count <= 6
     }
 }
