@@ -36,9 +36,9 @@ class ActivityVoucherTableViewCell: UITableViewCell {
         willSet {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                hideView.isHidden = true
-                if let newValue = newValue, newValue {
-                    hideView.isHidden = false
+                hideView.isHidden = false
+                if let newValue = newValue {
+                    hideView.isHidden = newValue
                 }
             }
         }
