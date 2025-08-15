@@ -350,6 +350,7 @@
 		C9CFBCBB2E4DFEC800697743 /* CompleteStoreSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CFBCBA2E4DFEC800697743 /* CompleteStoreSuccessView.xib */; };
 		C9CFBCBD2E4E3BB900697743 /* RedeemedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFBCBC2E4E3BB900697743 /* RedeemedView.swift */; };
 		C9CFBCBF2E4E3BC400697743 /* RedeemedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CFBCBE2E4E3BC400697743 /* RedeemedView.xib */; };
+		C9CFBCC32E4EC80D00697743 /* LevelCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFBCC22E4EC80D00697743 /* LevelCalculation.swift */; };
 		F02FDA8822772E0569BA60B0 /* Pods_RecycledChicken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3565F3D6BC06E688E593E479 /* Pods_RecycledChicken.framework */; };
 /* End PBXBuildFile section */
 
@@ -747,6 +748,7 @@
 		C9CFBCBA2E4DFEC800697743 /* CompleteStoreSuccessView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteStoreSuccessView.xib; sourceTree = "<group>"; };
 		C9CFBCBC2E4E3BB900697743 /* RedeemedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemedView.swift; sourceTree = "<group>"; };
 		C9CFBCBE2E4E3BC400697743 /* RedeemedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemedView.xib; sourceTree = "<group>"; };
+		C9CFBCC22E4EC80D00697743 /* LevelCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCalculation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -912,6 +914,7 @@
 				59BF293D2A21EC1B00F24286 /* CustomLoginVC.swift */,
 				5926C5812A04086400FAB49D /* ViewController.swift */,
 				5926C5912A0630E200FAB49D /* LogoAnimationVC.swift */,
+				C9CFBCC22E4EC80D00697743 /* LevelCalculation.swift */,
 				5926C5862A04086600FAB49D /* Assets.xcassets */,
 				5926C5882A04086600FAB49D /* LaunchScreen.storyboard */,
 				59F6BE2B2A07639900D7B3CB /* Extension.swift */,
@@ -1895,6 +1898,7 @@
 				599495552A0BE920009F1B2E /* LotteryTableViewCell.swift in Sources */,
 				59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */,
 				33CFA5672C1453740067B5B4 /* CustomerContactVC.swift in Sources */,
+				C9CFBCC32E4EC80D00697743 /* LevelCalculation.swift in Sources */,
 				335A452F2C0A3E5E000D2337 /* SignActivityCodeView.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
 				59A795772A0F770D0031710F /* ConfirmPasswordVC.swift in Sources */,
