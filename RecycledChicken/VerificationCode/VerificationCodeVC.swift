@@ -53,6 +53,11 @@ class VerificationCodeVC: CustomLoginVC {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cancellables.removeAll()
+    }
+    
     private func UIInit(){
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
         if getLanguage() == .english {

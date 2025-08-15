@@ -64,6 +64,11 @@ class ADBannerView: UIView, NibOwnerLoadable {
         removeFromSuperview()
     }
     
+    override func willRemoveSubview(_ subview: UIView) {
+        super.willRemoveSubview(subview)
+        cancellables.removeAll()
+    }
+    
     private func addScrollSubView() {
         guard imageURLs.count > 0 else { return }
         var currentX = 0
