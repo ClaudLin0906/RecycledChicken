@@ -55,7 +55,7 @@ class LotteryVC: CustomVC {
         getEventCouponsData()
         getPartnerCouponsData()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeNotificationKeyboard()
@@ -284,26 +284,27 @@ extension LotteryVC: UITableViewDelegate {
         UIApplication.shared.open(url)
     }
     
-    private func checkVerify(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String, completion: @escaping (Bool) -> Void) {
+    private func checkVerify(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String, completion: @escaping (Bool, String) -> Void) {
         let checkVerifyCode = checkVerifyCode(name: name, createTime: createTime, category: category, unlockCode: veriftyCode)
         let checkVerifyCodeDic = try? checkVerifyCode.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.unlock,  parameters: checkVerifyCodeDic, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
+            guard statusCode == 200 ,let data = data else {
+                if statusCode == 400, let data = data, let checkVerifyApiResult = try? JSONDecoder().decode(CheckVerifyApiResult.self, from: data){
+                    completion(false, checkVerifyApiResult.message ?? "")
+                    return
+                }
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            let checkVerifyApiResult = try? JSONDecoder().decode(CheckVerifyApiResult.self, from: data)
-            if let status = checkVerifyApiResult?.status, status == .success {
-                completion(true)
-            }else {
-                completion(false)
+            if let checkVerifyApiResult = try? JSONDecoder().decode(CheckVerifyApiResult.self, from: data), let status = checkVerifyApiResult.status, status == .success {
+                completion(true, checkVerifyApiResult.message ?? "")
             }
         }
     }
     
-    private func checkHandle(_ isSuccess:Bool, _ category:CouponsCategory) {
+    private func checkHandle(_ isSuccess:Bool, _ category:CouponsCategory, _ message:String) {
         guard isSuccess else {
-            showAlert(VC: self, title: "error".localized, message: "verifyCodeError".localized)
+            showAlert(VC: self, title: message.localized, message: nil)
             return
         }
         switch category {
@@ -336,9 +337,9 @@ extension LotteryVC: CustomSegmentedControlDelegate {
 extension LotteryVC: ActivityVoucherTableViewCellDelegate {
     
     func activityVoucherButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
-        checkVerify(name, category, veriftyCode, createTime) { [weak self] isSuccess in
+        checkVerify(name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG  in
             guard let self = self else { return }
-            checkHandle(isSuccess, .event)
+            checkHandle(isSuccess, .event, MSG)
         }
     }
     
@@ -350,9 +351,9 @@ extension LotteryVC: ActivityVoucherTableViewCellDelegate {
 extension LotteryVC: PartnerMerchantsTableViewTableViewCellDelegate {
     
     func partnerMerchantsHideButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
-        checkVerify(name, category, veriftyCode, createTime) { [weak self] isSuccess in
+        checkVerify(name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG in
             guard let self = self else { return }
-            checkHandle(isSuccess, .partner)
+            checkHandle(isSuccess, .partner, MSG)
         }
     }
     
