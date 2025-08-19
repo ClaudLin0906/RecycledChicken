@@ -44,7 +44,7 @@ class LotteryVC: CustomVC {
         lotteryTableView.setSeparatorLocation()
         activityVoucherTableView.setSeparatorLocation()
         partnerMerchantsTableView.setSeparatorLocation()
-        lotteryTableView.showAnimatedSkeleton()
+        currentVisibleTableView?.showAnimatedSkeleton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
