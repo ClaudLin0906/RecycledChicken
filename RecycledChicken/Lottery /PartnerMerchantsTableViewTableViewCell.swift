@@ -50,7 +50,7 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     
     private var createTime:String?
     
-    private var link:String?
+    private var url:String?
     
     private var isUnlocked:Bool? = nil
     {
@@ -170,8 +170,8 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
     }
     
     @objc private func hideImageViewEvent(_ tap:UITapGestureRecognizer) {
-        if let link = link {
-            delegate?.partnerMerchantsHideImageEvent(link)
+        if let url = url {
+            delegate?.partnerMerchantsHideImageEvent(url)
         }
     }
     
@@ -203,6 +203,10 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
 
             self.isUnlocked = commodityVoucherInfo.isUnlocked
+            
+            if let url = commodityVoucherInfo.url {
+                self.url = url
+            }
             
             if let category = commodityVoucherInfo.category {
                 self.category = category
