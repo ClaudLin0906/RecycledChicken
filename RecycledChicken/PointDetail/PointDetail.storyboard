@@ -32,7 +32,7 @@
                                         <rect key="frame" x="20" y="20" width="293" height="519.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g36-fl-jN3" userLabel="content">
-                                                <rect key="frame" x="0.0" y="0.0" width="293" height="782"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="632"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLZ-Ku-RBM" userLabel="step1">
                                                         <rect key="frame" x="0.0" y="0.0" width="293" height="50"/>
@@ -63,25 +63,51 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dta-ui-Mz8" userLabel="step2">
-                                                        <rect key="frame" x="0.0" y="80" width="293" height="500"/>
+                                                        <rect key="frame" x="0.0" y="80" width="293" height="450"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gf7-WQ-flM" customClass="PointDetailAlertCell" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="500"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="425"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6T-p8-Ja7">
+                                                                <rect key="frame" x="0.0" y="425" width="293" height="25"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔗 更多詳細規則，請點這裡查看完整條款" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUv-S2-hBT" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="293" height="25"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="zUv-S2-hBT" secondAttribute="trailing" id="5EN-6d-L0w"/>
+                                                                    <constraint firstItem="zUv-S2-hBT" firstAttribute="leading" secondItem="d6T-p8-Ja7" secondAttribute="leading" id="RKP-4Y-2zj"/>
+                                                                    <constraint firstAttribute="height" constant="25" id="V54-cH-luV"/>
+                                                                    <constraint firstItem="zUv-S2-hBT" firstAttribute="top" secondItem="d6T-p8-Ja7" secondAttribute="top" id="dT5-Hs-h9O"/>
+                                                                    <constraint firstItem="zUv-S2-hBT" firstAttribute="centerX" secondItem="d6T-p8-Ja7" secondAttribute="centerX" id="kMg-1O-WRn"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="zUv-S2-hBT" secondAttribute="bottom" id="nGc-wr-MNL"/>
+                                                                    <constraint firstItem="zUv-S2-hBT" firstAttribute="centerY" secondItem="d6T-p8-Ja7" secondAttribute="centerY" id="xg3-u2-lGJ"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="F0F-dN-G3H" appends="YES" id="ViJ-E4-b0t"/>
+                                                                </connections>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="500" id="1tG-fr-BwB"/>
+                                                            <constraint firstAttribute="height" constant="450" id="1tG-fr-BwB"/>
                                                             <constraint firstItem="gf7-WQ-flM" firstAttribute="top" secondItem="dta-ui-Mz8" secondAttribute="top" id="4j7-mf-qgI"/>
                                                             <constraint firstAttribute="trailing" secondItem="gf7-WQ-flM" secondAttribute="trailing" id="B6r-jc-Du7"/>
                                                             <constraint firstItem="gf7-WQ-flM" firstAttribute="leading" secondItem="dta-ui-Mz8" secondAttribute="leading" id="KVx-zf-eg8"/>
-                                                            <constraint firstAttribute="bottom" secondItem="gf7-WQ-flM" secondAttribute="bottom" id="shJ-1u-zSM"/>
+                                                            <constraint firstItem="d6T-p8-Ja7" firstAttribute="leading" secondItem="gf7-WQ-flM" secondAttribute="leading" id="WIc-1J-LBh"/>
+                                                            <constraint firstAttribute="bottom" secondItem="d6T-p8-Ja7" secondAttribute="bottom" id="awk-yP-gEQ"/>
+                                                            <constraint firstItem="d6T-p8-Ja7" firstAttribute="trailing" secondItem="gf7-WQ-flM" secondAttribute="trailing" id="gv2-rC-5Mg"/>
+                                                            <constraint firstItem="d6T-p8-Ja7" firstAttribute="top" secondItem="gf7-WQ-flM" secondAttribute="bottom" id="shJ-1u-zSM"/>
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48T-l7-5wy" userLabel="step3">
-                                                        <rect key="frame" x="0.0" y="80" width="293" height="500"/>
+                                                        <rect key="frame" x="0.0" y="80" width="293" height="450"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yB1-eF-R7W" customClass="PointDetailAlertCell" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="500"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="450"/>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
@@ -92,14 +118,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mk3-3b-0Gk" userLabel="line1">
-                                                        <rect key="frame" x="0.0" y="580" width="293" height="1"/>
+                                                        <rect key="frame" x="0.0" y="530" width="293" height="1"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="7Tc-I6-aMt"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBA-hk-Wbv" userLabel="step4">
-                                                        <rect key="frame" x="0.0" y="581" width="293" height="100"/>
+                                                        <rect key="frame" x="0.0" y="531" width="293" height="100"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2n-3m-sUk" customClass="PointsAboutToExpireView" customModule="RecycledChicken" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="293" height="100"/>
@@ -113,18 +139,18 @@
                                                             <constraint firstItem="A2n-3m-sUk" firstAttribute="leading" secondItem="FBA-hk-Wbv" secondAttribute="leading" id="fze-1u-nQ7"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdU-E0-iFk" userLabel="line2">
-                                                        <rect key="frame" x="0.0" y="681" width="293" height="1"/>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdU-E0-iFk" userLabel="line2">
+                                                        <rect key="frame" x="0.0" y="631" width="293" height="1"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="pvX-97-ewo"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsS-sv-EXT" userLabel="step5">
-                                                        <rect key="frame" x="0.0" y="682" width="293" height="100"/>
+                                                        <rect key="frame" x="0.0" y="632" width="293" height="0.0"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcj-sH-yDf" customClass="PointsAboutToExpireView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="100"/>
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcj-sH-yDf" customClass="PointsAboutToExpireView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="293" height="0.0"/>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
@@ -132,6 +158,7 @@
                                                             <constraint firstItem="hcj-sH-yDf" firstAttribute="leading" secondItem="jsS-sv-EXT" secondAttribute="leading" id="9zg-lt-zri"/>
                                                             <constraint firstAttribute="bottom" secondItem="hcj-sH-yDf" secondAttribute="bottom" id="Pkw-sb-ciW"/>
                                                             <constraint firstItem="hcj-sH-yDf" firstAttribute="top" secondItem="jsS-sv-EXT" secondAttribute="top" id="Sya-Oz-qMO"/>
+                                                            <constraint firstAttribute="height" id="kkH-cJ-DaT"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -148,7 +175,6 @@
                                                     <constraint firstItem="Mk3-3b-0Gk" firstAttribute="leading" secondItem="48T-l7-5wy" secondAttribute="leading" id="QzF-BQ-N3b"/>
                                                     <constraint firstItem="PLZ-Ku-RBM" firstAttribute="top" secondItem="g36-fl-jN3" secondAttribute="top" id="Trg-15-kDK"/>
                                                     <constraint firstAttribute="trailing" secondItem="dta-ui-Mz8" secondAttribute="trailing" id="UNJ-A2-fVC"/>
-                                                    <constraint firstItem="jsS-sv-EXT" firstAttribute="height" secondItem="FBA-hk-Wbv" secondAttribute="height" id="aD1-EL-xhg"/>
                                                     <constraint firstAttribute="trailing" secondItem="PLZ-Ku-RBM" secondAttribute="trailing" id="cPX-sd-ouJ"/>
                                                     <constraint firstItem="PLZ-Ku-RBM" firstAttribute="leading" secondItem="g36-fl-jN3" secondAttribute="leading" id="es3-f7-i6r"/>
                                                     <constraint firstItem="Mk3-3b-0Gk" firstAttribute="top" secondItem="dta-ui-Mz8" secondAttribute="bottom" id="fFb-yb-l0K"/>
@@ -217,6 +243,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F0F-dN-G3H">
+                    <connections>
+                        <action selector="tapDetail:" destination="Y6W-OH-hqX" id="O8T-sP-g9G"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1041.9847328244275" y="-2.1126760563380285"/>
         </scene>
@@ -243,7 +274,7 @@
         <image name="defaultBackground" width="1125" height="2436"/>
         <image name="组 396" width="82" height="82"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -294,9 +294,13 @@ class GuestInfo {
     
 }
 
+struct RedirectURL {
+    static let pointDetail = "https://www.buenopartners.com.tw//faq?questionId=92276fa2-b954-46ea-a5e5-e82d63d3e533"
+    static let buenopartners = "https://www.buenopartners.com.tw/formula"
+}
+
 struct APIUrl {
     static let domainName = "https://useries.buenooptics.com:8443/app/v2"
-    static let buenopartners = "https://www.buenopartners.com.tw/formula"
     static let register = "/auth/register"
     static let login = "/auth/login"
     static let changePWD = "/reset"

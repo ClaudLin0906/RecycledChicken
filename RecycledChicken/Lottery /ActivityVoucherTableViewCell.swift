@@ -46,7 +46,7 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     
     private var createTime:String?
     
-    private var link:String?
+    private var url:String?
     
     private var isUnlocked:Bool? = nil
     {
@@ -154,8 +154,8 @@ class ActivityVoucherTableViewCell: UITableViewCell {
     }
     
     @objc private func hideImageViewEvent(_ tap:UITapGestureRecognizer) {
-        if let link = link {
-            delegate?.activityVoucherHideImageEvent(link)
+        if let url = url {
+            delegate?.activityVoucherHideImageEvent(url)
         }
     }
     
@@ -196,8 +196,8 @@ class ActivityVoucherTableViewCell: UITableViewCell {
                 self.createTime = createTime
             }
                 
-            if let link = commodityVoucherInfo.link {
-                self.link = link
+            if let url = commodityVoucherInfo.url {
+                self.url = url
             }
             
             if let productImageURLStr = commodityVoucherInfo.picture, let productImageURL = URL(string: productImageURLStr) {

@@ -281,7 +281,7 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     @IBAction func goBuenopartners(_ sender:UIButton) {
-        if let url = URL(string:APIUrl.buenopartners) {
+        if let url = URL(string:RedirectURL.buenopartners) {
             UIApplication.shared.open(url)
         }
     }

@@ -72,7 +72,7 @@ struct CommodityVoucherInfo: Codable {
     var description: String?
     var start: String?
     var isUnlocked: Bool?
-    var link: String?
+    var url: String?
     
     enum CodingKeys: String, CodingKey {
         case total = "total"
@@ -90,7 +90,7 @@ struct CommodityVoucherInfo: Codable {
         case description = "description"
         case start = "start"
         case isUnlocked = "isUnlocked"
-        case link = "link"
+        case url = "url"
     }
     
     init(from decoder: Decoder) throws {
@@ -110,7 +110,7 @@ struct CommodityVoucherInfo: Codable {
         description = try? container.decodeIfPresent(String.self, forKey: .description)
         start = try? container.decodeIfPresent(String.self, forKey: .start)
         isUnlocked = try? container.decodeIfPresent(Bool.self, forKey: .isUnlocked)
-        link = try? container.decodeIfPresent(String.self, forKey: .link)
+        url = try? container.decodeIfPresent(String.self, forKey: .url)
     }
 }
 
