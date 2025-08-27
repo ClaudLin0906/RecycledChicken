@@ -329,7 +329,7 @@ extension LotteryVC: LotteryTableViewCellDelegate {
     func lotteryButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
         checkVerify(APIUrl.domainName + APIUrl.lotteryUnlock, name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG  in
             guard let self = self else { return }
-            checkHandle(isSuccess, .event, MSG)
+            checkHandle(isSuccess, .ticket, MSG)
         }
     }
 
@@ -339,8 +339,6 @@ extension LotteryVC: LotteryTableViewCellDelegate {
     }
     
 }
-
-
 
 extension LotteryVC: ActivityVoucherTableViewCellDelegate {
     

@@ -69,13 +69,7 @@ class HomeVC: CustomRootVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
-        if getLanguage() == .english {
-            accountLabel.font = accountLabel.font.withSize(12)
-            messageLabel.font = messageLabel.font.withSize(12)
-            settingLabel.font = settingLabel.font.withSize(12)
-            chickenLevelLabel.font = chickenLevelLabel.font.withSize(11)
-            carbonReductionLogBtnWidth.constant = 180
-        }
+        configureLanguageUI()
 //        NotificationCenter.default.addObserver(self, selector: #selector(receiveCalenderCell(_:)), name: .calenderCellOnCilck, object: nil)
     }
     
@@ -148,6 +142,15 @@ class HomeVC: CustomRootVC {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         cancellables.removeAll()
+    }
+    
+    private func configureLanguageUI() {
+        guard getLanguage() == .english else { return }
+        accountLabel.font = accountLabel.font.withSize(12)
+        messageLabel.font = messageLabel.font.withSize(12)
+        settingLabel.font = settingLabel.font.withSize(12)
+        chickenLevelLabel.font = chickenLevelLabel.font.withSize(11)
+        carbonReductionLogBtnWidth.constant = 180
     }
     
     private func checkChickenLevel() {

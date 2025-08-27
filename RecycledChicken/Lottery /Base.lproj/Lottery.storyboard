@@ -179,7 +179,7 @@
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxL-UQ-gCm">
                                                     <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-0G-kbI">
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="click" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-0G-kbI">
                                                             <rect key="frame" x="10" y="10" width="112" height="84"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="7tZ-Cu-xPV">
@@ -471,7 +471,7 @@
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrC-FJ-Oyy">
                                                     <rect key="frame" x="18" y="13" width="337" height="104"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="oFp-3n-Cnj">
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="click" translatesAutoresizingMaskIntoConstraints="NO" id="oFp-3n-Cnj">
                                                             <rect key="frame" x="10.666666666666671" y="10" width="112" height="84"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-51-hPR">
@@ -746,7 +746,7 @@
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-d1-sVE">
                                                     <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="s6e-HH-yZi">
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="click" translatesAutoresizingMaskIntoConstraints="NO" id="s6e-HH-yZi">
                                                             <rect key="frame" x="10" y="10" width="112" height="84"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Kve-M3-SVH">
@@ -938,7 +938,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chiw__ 1" width="209" height="203"/>
+        <image name="click" width="246" height="246"/>
         <image name="defaultBackground" width="1125" height="2436"/>
         <image name="组 209" width="133.33332824707031" height="132.66667175292969"/>
         <image name="组 396" width="82" height="82"/>
