@@ -18,6 +18,7 @@ struct LotteryInfo: Codable {
     var description:String?
     var notes:String?
     var purchaserCount:Int?
+    var category: CouponsCategory = .ticket
     var isUnlocked: Bool?
     var url: String?
     var order:Int?

@@ -201,9 +201,12 @@ extension LotteryVC: UITableViewDelegate {
         guard CurrentUserInfo.shared.isGuest == false else { return }
         let row = indexPath.row
         if tableView == lotteryTableView {
-            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
-                VC.lotteryInfo = lotteryInfos[indexPath.row]
-                pushVC(targetVC: VC, navigation: navigationController)
+            let isUnlocked = lotteryInfos[row].isUnlocked ?? true
+            if isUnlocked {
+                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
+                    VC.lotteryInfo = lotteryInfos[indexPath.row]
+                    pushVC(targetVC: VC, navigation: navigationController)
+                }
             }
         }
         
@@ -236,6 +239,7 @@ extension LotteryVC: UITableViewDelegate {
         
         if tableView == lotteryTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: LotteryTableViewCell.identifier, for: indexPath) as! LotteryTableViewCell
+            cell.delegate = self
             let row = indexPath.row
             cell.setCell(lotteryInfos[row])
             return cell
@@ -269,10 +273,10 @@ extension LotteryVC: UITableViewDelegate {
         UIApplication.shared.open(url)
     }
     
-    private func checkVerify(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String, completion: @escaping (Bool, String) -> Void) {
+    private func checkVerify(_ url:String , _ name: String, _ category: String, _ veriftyCode: String, _ createTime: String, completion: @escaping (Bool, String) -> Void) {
         let checkVerifyCode = checkVerifyCode(name: name, createTime: createTime, category: category, unlockCode: veriftyCode)
         let checkVerifyCodeDic = try? checkVerifyCode.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.unlock,  parameters: checkVerifyCodeDic, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+        NetworkManager.shared.requestWithJSONBody(urlString:url,  parameters: checkVerifyCodeDic, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
             guard statusCode == 200 ,let data = data else {
                 if statusCode == 400, let data = data, let checkVerifyApiResult = try? JSONDecoder().decode(CheckVerifyApiResult.self, from: data){
                     completion(false, checkVerifyApiResult.message ?? "")
@@ -294,7 +298,7 @@ extension LotteryVC: UITableViewDelegate {
         }
         switch category {
         case .ticket:
-            break
+            getLotteryData()
         case .event:
             getEventCouponsData()
         case .partner:
@@ -319,10 +323,29 @@ extension LotteryVC: CustomSegmentedControlDelegate {
     
 }
 
+
+extension LotteryVC: LotteryTableViewCellDelegate {
+    
+    func lotteryButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
+        checkVerify(APIUrl.domainName + APIUrl.lotteryUnlock, name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG  in
+            guard let self = self else { return }
+            checkHandle(isSuccess, .event, MSG)
+        }
+    }
+
+    
+    func lotteryHideImageEvent(_ link: String) {
+        openURL(link)
+    }
+    
+}
+
+
+
 extension LotteryVC: ActivityVoucherTableViewCellDelegate {
     
     func activityVoucherButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
-        checkVerify(name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG  in
+        checkVerify(APIUrl.domainName + APIUrl.couponsUnlock, name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG  in
             guard let self = self else { return }
             checkHandle(isSuccess, .event, MSG)
         }
@@ -336,7 +359,7 @@ extension LotteryVC: ActivityVoucherTableViewCellDelegate {
 extension LotteryVC: PartnerMerchantsTableViewTableViewCellDelegate {
     
     func partnerMerchantsHideButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
-        checkVerify(name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG in
+        checkVerify(APIUrl.domainName + APIUrl.couponsUnlock, name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG in
             guard let self = self else { return }
             checkHandle(isSuccess, .partner, MSG)
         }

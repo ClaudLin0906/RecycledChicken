@@ -7,9 +7,17 @@
 
 import UIKit
 import Kingfisher
+
+protocol LotteryTableViewCellDelegate {
+    func lotteryHideImageEvent(_ link:String)
+    func lotteryButtonEvent(_ name:String, _ category:String, _ veriftyCode:String, _ createTime:String)
+}
+
 class LotteryTableViewCell: UITableViewCell {
     
     static let identifier = "LotteryTableViewCell"
+    
+    var delegate:LotteryTableViewCellDelegate?
 
     @IBOutlet weak var itemImageView: UIImageView!
     
@@ -25,6 +33,8 @@ class LotteryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var hideView:UIView!
     
+    @IBOutlet weak var hideViewImageView: UIImageView?
+    
     @IBOutlet weak var hideViewTitleLabel:CustomLabel!
     
     @IBOutlet weak var hideViewDrawTimeLabel:CustomLabel!
@@ -33,6 +43,10 @@ class LotteryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var verityLineButton:CustomButton!
     
+    private var category: CouponsCategory?
+    
+    private var createTime:String?
+        
     private var url:String?
     
     private var isUnlocked:Bool? = nil
@@ -127,8 +141,25 @@ class LotteryTableViewCell: UITableViewCell {
         let color = #colorLiteral(red: 0.5607843137, green: 0.7411764706, blue: 0.6705882353, alpha: 1)
         setPlaceholderColor(color)
         addUnderlineToVerityTextField(color)
+        addGesture()
         verityTextField.delegate = self
         verityLineButton.layer.cornerRadius = verityLineButton.bounds.height / 2
+    }
+    
+    private func addGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideImageViewEvent(_:)))
+        hideViewImageView?.addGestureRecognizer(tap)
+    }
+    
+    @objc private func hideImageViewEvent(_ tap:UITapGestureRecognizer) {
+        if let url = url {
+            delegate?.lotteryHideImageEvent(url)
+        }
+    }
+    
+    @IBAction func buttonEvent(_ sender: UIButton) {
+        guard let verityTextFieldText = verityTextField.text, let createTime = createTime, let itemName = itemName, let category = category else { return }
+        delegate?.lotteryButtonEvent(itemName, category.rawValue, verityTextFieldText, createTime)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -158,6 +189,12 @@ class LotteryTableViewCell: UITableViewCell {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
             
             self.isUnlocked = lotteryInfo.isUnlocked
+            
+            self.category = lotteryInfo.category
+
+            if let createTime = lotteryInfo.createTime {
+                self.createTime = createTime
+            }
             
             if let url = lotteryInfo.url {
                 self.url = url

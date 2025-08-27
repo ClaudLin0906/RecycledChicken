@@ -179,7 +179,7 @@
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxL-UQ-gCm">
                                                     <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-0G-kbI">
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw__ 1" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-0G-kbI">
                                                             <rect key="frame" x="10" y="10" width="112" height="84"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="7tZ-Cu-xPV">
@@ -226,6 +226,9 @@
                                                                     <state key="normal" title="請點擊進行解鎖">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="buttonEvent:" destination="6ya-wo-JM8" eventType="touchUpInside" id="vD1-70-dof"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -272,6 +275,7 @@
                                             <outlet property="duringTimeLabel" destination="Gte-w0-KtV" id="j4C-xY-9Vl"/>
                                             <outlet property="hideView" destination="pxL-UQ-gCm" id="jG5-UM-JJl"/>
                                             <outlet property="hideViewDrawTimeLabel" destination="JDt-fv-bUU" id="4e3-Zo-aJg"/>
+                                            <outlet property="hideViewImageView" destination="ahw-0G-kbI" id="H7u-KC-9Yg"/>
                                             <outlet property="hideViewTitleLabel" destination="Tz3-j2-eJT" id="3xZ-lp-7YN"/>
                                             <outlet property="itemImageView" destination="HPR-JA-KXE" id="Caa-Pp-Dgd"/>
                                             <outlet property="itemNameLabel" destination="SKR-pS-7to" id="Kq9-gv-zQj"/>
