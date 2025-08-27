@@ -262,6 +262,7 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
 }
 
 extension PartnerMerchantsTableViewTableViewCell: UITextFieldDelegate {
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard textField == verityTextField else { return true }
         let currentText = textField.text ?? ""
@@ -269,4 +270,6 @@ extension PartnerMerchantsTableViewTableViewCell: UITextFieldDelegate {
         let updated = currentText.replacingCharacters(in: textRange, with: string)
         return updated.count <= 6
     }
+     
 }
+
