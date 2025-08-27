@@ -13,7 +13,7 @@ class LotteryVC: CustomVC {
     @IBOutlet weak var lotteryTableView:UITableView!
     
     @IBOutlet weak var activityVoucherTableView:UITableView!
-        
+    
     @IBOutlet weak var partnerMerchantsTableView:UITableView!
     
     @IBOutlet weak var segmentedControl:CustomSegmentedControl!
@@ -29,7 +29,7 @@ class LotteryVC: CustomVC {
     private var currentVisibleTableView: UITableView? {
         return [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView].first { $0?.isHidden == false } ?? nil
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "activitiesLuckyDraws".localized
@@ -52,16 +52,14 @@ class LotteryVC: CustomVC {
     private func tableViewSetSeparatorLocation() {
         tableViews.forEach{ $0?.setSeparatorLocation() }
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn2()
         addNotificationKeyboard()
-        getLotteryData()
-        getEventCouponsData()
-        getPartnerCouponsData()
+        loadAllData()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeNotificationKeyboard()
@@ -77,80 +75,61 @@ class LotteryVC: CustomVC {
         NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    private func loadAllData() {
+        getLotteryData()
+        getEventCouponsData()
+        getPartnerCouponsData()
+    }
+    
+    private func getLotteryData() {
+        fetchData( url: APIUrl.domainName + APIUrl.checkLotteryItem, dataType: [LotteryInfo].self) { [weak self] lotteryInfos in
+            self?.lotteryInfos.removeAll()
+            self?.lotteryInfos.append(contentsOf: lotteryInfos)
+            self?.reloadTableViewWithAnimation(self?.lotteryTableView)
+        }
+    }
+    
+    private func getEventCouponsData() {
+        getCouponsData(category: .event, tableView: activityVoucherTableView) { [weak self] commodityVoucherInfos in
+            self?.activityVoucherInfos = commodityVoucherInfos
+        }
+    }
+
     private func getPartnerCouponsData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.partnerCoupons, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
-            guard let self = self, let data = data, statusCode == 200 else {
+        getCouponsData(category: .partner, tableView: partnerMerchantsTableView) { [weak self] commodityVoucherInfos in
+            self?.partnerMerchantsInfos = commodityVoucherInfos
+        }
+    }
+    
+    private func getCouponsData(category: CouponsCategory, tableView: UITableView, completion: @escaping ([CommodityVoucherInfo]) -> Void) {
+        let urlString = category == .event ? APIUrl.domainName + APIUrl.eventCoupons : APIUrl.domainName + APIUrl.partnerCoupons
+        fetchData(url: urlString, dataType: [CommodityVoucherInfo].self) { [weak self] commodityVoucherInfos in
+            let filteredData = commodityVoucherInfos.filter { $0.category == category }
+            completion(filteredData)
+            self?.reloadTableViewWithAnimation(tableView)
+        }
+    }
+    
+    private func fetchData<T: Decodable>(url: String, dataType: T.Type, completion: @escaping (T) -> Void) {
+        NetworkManager.shared.getJSONBody(urlString: url, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+            guard let data = data, statusCode == 200 else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
-            partnerMerchantsInfos.removeAll()
-            if let commodityVoucherInfos = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: data) {
-                commodityVoucherInfos.forEach { commodityVoucherInfo in
-                    guard let category = commodityVoucherInfo.category else { return }
-                    switch category {
-                    case .partner:
-                        self.partnerMerchantsInfos.append(commodityVoucherInfo)
-                    default:
-                        break
-                    }
-                }
+            
+            if let decodedData = try? JSONDecoder().decode(dataType, from: data) {
                 DispatchQueue.main.async {
-                    self.partnerMerchantsTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.partnerMerchantsTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
-                    })
+                    completion(decodedData)
                 }
             }
         }
     }
     
-    private func getEventCouponsData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.eventCoupons, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
-            guard let self = self, let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            activityVoucherInfos.removeAll()
-            if let commodityVoucherInfos = try? JSONDecoder().decode([CommodityVoucherInfo].self, from: data) {
-                commodityVoucherInfos.forEach { commodityVoucherInfo in
-                    guard let category = commodityVoucherInfo.category else { return }
-                    switch category {
-                    case .event:
-                        self.activityVoucherInfos.append(commodityVoucherInfo)
-                    default:
-                        break
-                    }
-                }
-                DispatchQueue.main.async {
-                    self.activityVoucherTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.activityVoucherTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
-                    })
-                }
-            }
-        }
-    }
-    //抽獎專區
-    private func getLotteryData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.checkLotteryItem, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let lotteryInfos = try? JSONDecoder().decode([LotteryInfo].self, from: data) {
-                self.lotteryInfos.removeAll()
-                self.lotteryInfos.append(contentsOf: lotteryInfos)
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    lotteryTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.lotteryTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
-                    })
-                }
-            }
+    private func reloadTableViewWithAnimation(_ tableView: UITableView?) {
+        tableView?.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            tableView?.stopSkeletonAnimation()
+            self.view.hideSkeleton()
         }
     }
     
@@ -179,7 +158,7 @@ class LotteryVC: CustomVC {
 }
 
 extension LotteryVC {
-
+    
     @objc func onKeyboardChange(_ note: Notification) {
         guard let tableView = currentVisibleTableView, let userInfo = note.userInfo, let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval, let curveRaw = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
         let kbFrameInView = view.convert(endFrame, from: nil)
@@ -190,7 +169,7 @@ extension LotteryVC {
             tableView.verticalScrollIndicatorInsets = insets
         })
     }
-
+    
     @objc func onKeyboardHide(_ note: Notification) {
         guard let tableView = currentVisibleTableView, let duration = (note.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval), let curveRaw = (note.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt)else { return }
         UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions(rawValue: curveRaw << 16), animations: {
@@ -227,7 +206,7 @@ extension LotteryVC: UITableViewDelegate {
                 pushVC(targetVC: VC, navigation: navigationController)
             }
         }
-
+        
         if tableView == activityVoucherTableView {
             let isUnlocked = activityVoucherInfos[row].isUnlocked ?? true
             if isUnlocked {
@@ -248,11 +227,11 @@ extension LotteryVC: UITableViewDelegate {
             }
         }
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         getNumberOfRowsInSection(tableView)
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if tableView == lotteryTableView {
@@ -284,7 +263,7 @@ extension LotteryVC: UITableViewDelegate {
         
         return UITableViewCell()
     }
-
+    
     private func openURL(_ link: String){
         guard let url = URL(string: link) else { return }
         UIApplication.shared.open(url)
