@@ -37,14 +37,20 @@ class LotteryVC: CustomVC {
         // Do any additional setup after loading the view.
     }
     
-    private func UIInit(){
+    private func segmentedControlSetup(){
         segmentedControl.type = .singleType
         segmentedControl.setButtonTitles(LotterySegmentedControlTitles)
         segmentedControl.delegate = self
-        lotteryTableView.setSeparatorLocation()
-        activityVoucherTableView.setSeparatorLocation()
-        partnerMerchantsTableView.setSeparatorLocation()
+    }
+    
+    private func UIInit(){
+        segmentedControlSetup()
+        tableViewSetSeparatorLocation()
         currentVisibleTableView?.showAnimatedSkeleton()
+    }
+    
+    private func tableViewSetSeparatorLocation() {
+        tableViews.forEach{ $0?.setSeparatorLocation() }
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -18,6 +18,8 @@ struct LotteryInfo: Codable {
     var description:String?
     var notes:String?
     var purchaserCount:Int?
+    var isUnlocked: Bool?
+    var url: String?
     var order:Int?
     
     enum CodingKeys:String, CodingKey {
@@ -31,6 +33,8 @@ struct LotteryInfo: Codable {
         case description = "description"
         case notes = "notes"
         case purchaserCount = "purchaserCount"
+        case isUnlocked = "isUnlocked"
+        case url = "url"
         case order = "order"
     }
     
@@ -46,6 +50,8 @@ struct LotteryInfo: Codable {
         description = try? container.decodeIfPresent(String.self, forKey: .description)
         notes = try? container.decodeIfPresent(String.self, forKey: .notes)
         purchaserCount = try? container.decodeIfPresent(Int.self, forKey: .purchaserCount)
+        isUnlocked = try? container.decodeIfPresent(Bool.self, forKey: .isUnlocked)
+        url = try? container.decodeIfPresent(String.self, forKey: .url)
         order = try? container.decodeIfPresent(Int.self, forKey: .order)
     }
 }

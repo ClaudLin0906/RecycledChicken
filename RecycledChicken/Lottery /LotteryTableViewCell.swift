@@ -32,6 +32,21 @@ class LotteryTableViewCell: UITableViewCell {
     @IBOutlet weak var verityTextField:UITextField!
     
     @IBOutlet weak var verityLineButton:CustomButton!
+    
+    private var url:String?
+    
+    private var isUnlocked:Bool? = nil
+    {
+        willSet {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                hideView.isHidden = true
+                if let newValue = newValue {
+                    hideView.isHidden = newValue
+                }
+            }
+        }
+    }
         
     private var imageURL:URL?
     {
@@ -141,6 +156,12 @@ class LotteryTableViewCell: UITableViewCell {
     
     func setCell(_ lotteryInfo:LotteryInfo) {
         DispatchQueue(label: "com.geek-is-stupid.queue.configure-cell").async {
+            
+            self.isUnlocked = lotteryInfo.isUnlocked
+            
+            if let url = lotteryInfo.url {
+                self.url = url
+            }
             
             if let productImageURLStr = lotteryInfo.productImage, let productImageURL = URL(string: productImageURLStr) {
                 self.imageURL = productImageURL
