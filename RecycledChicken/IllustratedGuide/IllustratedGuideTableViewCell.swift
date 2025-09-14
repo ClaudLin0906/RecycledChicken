@@ -15,6 +15,8 @@ class IllustratedGuideTableViewCell: UITableViewCell {
     
     @IBOutlet weak var illustratedGuideImageView:UIImageView!
     
+    private var illustratedGuideTableData:IllustratedGuideTableData?
+    
     private var guideImageView:UIImageView = {
         let imageView = UIImageView( )
         imageView.isUserInteractionEnabled = true
@@ -23,17 +25,6 @@ class IllustratedGuideTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private var illustratedGuideTableData:IllustratedGuideTableData?
-    
-    private var scrollView:UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.isScrollEnabled = false
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -41,12 +32,13 @@ class IllustratedGuideTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        illustratedGuideImageView.image = nil
+        guideImageView.removeFromSuperview()
     }
     
     func setCell(_ illustratedGuideTableData:IllustratedGuideTableData) {
@@ -64,22 +56,6 @@ class IllustratedGuideTableViewCell: UITableViewCell {
             guideImageView.widthAnchor.constraint(equalTo: illustratedGuideImageView.widthAnchor).isActive = true
             guideImageView.heightAnchor.constraint(equalTo: illustratedGuideImageView.heightAnchor).isActive = true
         }
-    }
-    
-}
-
-extension IllustratedGuideTableViewCell: IllustratedGuideFirstInfoViewDelegate {
-    
-    func rightBtnPress(_ sender: UIButton) {
-        scrollView.setContentOffset(CGPoint(x: content.frame.width, y: 0), animated: true)
-    }
-    
-}
-
-extension IllustratedGuideTableViewCell: IllustratedGuideSecondInfoViewDelegate {
-    
-    func leftBtnOnCilck(_ sender: UIButton) {
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
 }

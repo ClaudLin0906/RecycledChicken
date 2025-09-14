@@ -51,8 +51,6 @@ enum IllustratedGuideModelLevel: Int, CaseIterable, Codable {
     case ten = 10
 }
 
-// MARK: - 資料配置
-
 private struct LevelConfig {
     let level: IllustratedGuideModelLevel
     let nameKey: String
