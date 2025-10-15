@@ -61,6 +61,8 @@ class HomeVC: CustomRootVC {
     private var itemInfos:[ItemInfo] = []
     
     private var cancellables: Set<AnyCancellable> = []
+    
+    private var bannerTimer: Timer?
 
     @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: "") var displayToday:String
         
@@ -131,10 +133,15 @@ class HomeVC: CustomRootVC {
             getADBannerInfos {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
+                    if adBannerInfos.count > 0 {
+                        startBannerTimer()
+                    }
                     pageControl.numberOfPages = adBannerInfos.count
+                    setupBannerSubscription()
                     addScrollSubView()
                 }
             }
+
             NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
     }
@@ -142,6 +149,8 @@ class HomeVC: CustomRootVC {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         cancellables.removeAll()
+        bannerTimer?.invalidate()
+        bannerTimer = nil
     }
     
     private func configureLanguageUI() {
@@ -268,6 +277,16 @@ class HomeVC: CustomRootVC {
         leftGesture.direction = .right
         scrollView.addGestureRecognizer(leftGesture)
         scrollView.addGestureRecognizer(rightGesture)
+    }
+    
+    private func startBannerTimer() {
+        bannerTimer?.invalidate()
+        bannerTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
+            self?.changeBanner()
+        }
+    }
+    
+    private func setupBannerSubscription() {
         self.currentIndexSubject
             .sink { [weak self] index in
                 guard let self = self, adBannerInfos.count > 0 else { return }
@@ -277,10 +296,6 @@ class HomeVC: CustomRootVC {
                 }
             }
             .store(in: &self.cancellables)
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true){ _ in
-            self.changeBanner()
-        }
-
     }
     
     private func addScrollSubView() {

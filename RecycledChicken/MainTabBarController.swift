@@ -59,8 +59,8 @@ class MainTabBarController: UITabBarController {
         tabBarAppearance.backgroundColor = CommonColor.shared.color5
         tabBarAppearance.backgroundImage = UIImage(named: "bottom")
         if #available(iOS 15.0, *) {
-            tabBarAppearance.stackedLayoutAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
-            tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 15)
+            tabBarAppearance.stackedLayoutAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 10)
+            tabBarAppearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 10)
             tabBar.scrollEdgeAppearance = tabBarAppearance
         }
         tabBar.standardAppearance = tabBarAppearance
@@ -70,7 +70,7 @@ class MainTabBarController: UITabBarController {
     private func setupItems() {
         for (index,value) in tabbarTitle.enumerated(){
             let noSelectImageSize = CGSize(width: 40, height: 40)
-            let SelectImageSize = CGSize(width: 55, height: 55)
+            let SelectImageSize = CGSize(width: 40, height: 40)
             let noSelectImage = noSelectImages[index]!.resize(targetSize: noSelectImageSize).withRenderingMode(.alwaysOriginal)
             let SelectImage = selectImages[index]!.resize(targetSize: SelectImageSize).withRenderingMode(.alwaysOriginal)
             if let nc = viewControllers![index] as? UINavigationController {
