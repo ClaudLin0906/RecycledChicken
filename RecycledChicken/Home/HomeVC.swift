@@ -130,6 +130,9 @@ class HomeVC: CustomRootVC {
                     keyWindow?.addSubview(adbannerView)
                 }
             }
+            NotificationCenter.default.post(name: .removeBackground, object: nil)
+        }
+        if LoginSuccess {
             getADBannerInfos {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
@@ -141,8 +144,6 @@ class HomeVC: CustomRootVC {
                     addScrollSubView()
                 }
             }
-
-            NotificationCenter.default.post(name: .removeBackground, object: nil)
         }
     }
     
