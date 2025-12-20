@@ -38,8 +38,8 @@ class MyTickerVC: CustomVC {
     }
     
     private func getVoucherData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingCoupons, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard statusCode == 200, let data = data else {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingCoupons, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+            guard statusCode == 200, let data = data, let self = self else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
@@ -58,8 +58,8 @@ class MyTickerVC: CustomVC {
     }
     
     private func getLotteryData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingLottery, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
+        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingLottery, authorizationToken: CommonKey.shared.authToken) { [weak self] (data, statusCode, errorMSG) in
+            guard statusCode == 200, let self = self else {
                 showAlert(VC: self, title: "error".localized, message: errorMSG)
                 return
             }
@@ -132,12 +132,11 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
             cell.setCell(myTickertInfos[indexPath.row])
             return cell
         }
-        
         if tableView == voucherTableView {
             let row = indexPath.row
             let myVoucherInfo = myVoucherInfos[row]
             if myVoucherInfo.link != nil {
-                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerYiRuiTableViewCell.identifier, for: indexPath) as! MyTickerYiRuiTableViewCell
                 cell.setCell(myVoucherInfo)
                 return cell
             } else {

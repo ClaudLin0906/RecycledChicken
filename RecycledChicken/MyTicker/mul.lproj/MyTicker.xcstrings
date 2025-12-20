@@ -1,6 +1,18 @@
 {
   "sourceLanguage" : "zh-Hant-TW",
   "strings" : {
+    "4FM-SU-07i.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"使用期限\"; ObjectID = \"4FM-SU-07i\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "使用期限"
+          }
+        }
+      }
+    },
     "8VD-FP-4Iw.normalTitle" : {
       "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊開啟票劵\"; ObjectID = \"8VD-FP-4Iw\";",
       "extractionState" : "extracted_with_value",
@@ -91,6 +103,18 @@
         }
       }
     },
+    "o4a-1v-zUx.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"o4a-1v-zUx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
     "qKJ-yo-O3i.text" : {
       "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"qKJ-yo-O3i\";",
       "extractionState" : "extracted_with_value",
@@ -159,6 +183,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "itemName"
+          }
+        }
+      }
+    },
+    "Yeb-C6-btm.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊開啟票劵\"; ObjectID = \"Yeb-C6-btm\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請點擊開啟票劵"
           }
         }
       }

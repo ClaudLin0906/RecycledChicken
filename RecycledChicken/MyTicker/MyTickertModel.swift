@@ -48,7 +48,8 @@ struct MyTickertLotteryInfo:Codable {
 struct MyTickertCouponsInfo:Codable {
     var name:String?
     var code:String?
-    var reward:Int?
+    var reward:String?
+    var pwd:String?
     var data:String?
     var instruction:String?
     var buyTime:String?
@@ -61,6 +62,7 @@ struct MyTickertCouponsInfo:Codable {
     enum CodingKeys:String, CodingKey {
         case code = "code"
         case reward = "reward"
+        case pwd = "pwd"
         case instruction = "instruction"
         case data = "data"
         case buyTime = "buyTime"
@@ -75,8 +77,9 @@ struct MyTickertCouponsInfo:Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         code = try? container.decodeIfPresent(String.self, forKey: .code)
-        reward = try? container.decodeIfPresent(Int.self, forKey: .reward)
+        reward = try? container.decodeIfPresent(String.self, forKey: .reward)
         instruction = try? container.decodeIfPresent(String.self, forKey: .instruction)
+        pwd = try? container.decodeIfPresent(String.self, forKey: .pwd)
         data = try? container.decodeIfPresent(String.self, forKey: .data)
         buyTime = try? container.decodeIfPresent(String.self, forKey: .buyTime)
         point = try? container.decodeIfPresent(Int.self, forKey: .point)

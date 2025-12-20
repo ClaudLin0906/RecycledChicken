@@ -93,17 +93,7 @@ class TaskVC: CustomRootVC {
             completion()
         }
     }
-    
-    private func filterTaskInfoDate(completion: @escaping () -> Void) {
-        self.taskInfos = self.taskInfos.filter {
-            if let startTime = $0.startTime, let startDate = dateFromString(startTime), let endTime = $0.endTime, let endDate = dateFromString(endTime) {
-                return isDateWithinInterval(date: Date(), start: startDate, end: endDate)
-            }
-            return false
-        }
-        completion()
-    }
-    
+
     private func classification() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -134,7 +124,7 @@ class TaskVC: CustomRootVC {
                     return
                 }
                 if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
-                    self.clearTableViewData()
+                    self.clearClassificationData()
                     self.addStatus(taskInfos) {
                         completion()
                     }
@@ -143,12 +133,8 @@ class TaskVC: CustomRootVC {
         }
     }
     
-    private func clearTableViewData() {
-        taskInfos.removeAll()
-        clearClassificationData()
-    }
-    
     private func clearClassificationData() {
+        taskInfos.removeAll()
         shareTaskInfos.removeAll()
         advertiseTaskInfos.removeAll()
         recycledTaskInfos.removeAll()
