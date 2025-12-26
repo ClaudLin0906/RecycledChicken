@@ -79,7 +79,7 @@ struct CheckVerifyApiResult:Codable {
     }
 }
 
-struct checkVerifyCode:Codable {
+struct CheckVerifyCode:Codable {
     var name:String
     var createTime:String
     var category:String

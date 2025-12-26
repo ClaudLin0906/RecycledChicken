@@ -274,7 +274,7 @@ extension LotteryVC: UITableViewDelegate {
     }
     
     private func checkVerify(_ url:String , _ name: String, _ category: String, _ veriftyCode: String, _ createTime: String, completion: @escaping (Bool, String) -> Void) {
-        let checkVerifyCode = checkVerifyCode(name: name, createTime: createTime, category: category, unlockCode: veriftyCode)
+        let checkVerifyCode = CheckVerifyCode(name: name, createTime: createTime, category: category, unlockCode: veriftyCode)
         let checkVerifyCodeDic = try? checkVerifyCode.asDictionary()
         NetworkManager.shared.requestWithJSONBody(urlString:url,  parameters: checkVerifyCodeDic, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
             guard statusCode == 200 ,let data = data else {
