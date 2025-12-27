@@ -35,11 +35,12 @@ class SignLoginVC: CustomLoginVC {
     }
     
     private func checkVersion() {
+        // 使用舊的 API，因為這是外部 API，返回格式可能不同
         NetworkManager.shared.getJSONBody(urlString: APIUrl.checkAppleStoreVersion) { data, statusCode, errosMSG in
             guard let data = data, statusCode == 200 else { return }
-            if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any], let results = json["results"] as? [[String: Any]] {
+            if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let results = json["results"] as? [[String: Any]] {
                 if let appleStoreVersion = results[0]["version"] as? String, let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                    let compareResult = self.compareVersions( currentVersion, appleStoreVersion)
+                    let compareResult = self.compareVersions(currentVersion, appleStoreVersion)
                     switch compareResult {
                     case .orderedAscending:
                         self.showUpdateAppAlertView()
@@ -109,20 +110,21 @@ class SignLoginVC: CustomLoginVC {
         }
     }
     
-    @IBAction func guestBtnAction(_ sender:UIButton) {
+    @IBAction func guestBtnAction(_ sender: UIButton) {
         let loginInfo = AccountInfo(userPhoneNumber: GuestInfo.shared.guestAccount, userPassword: GuestInfo.shared.guestPassword)
         let loginInfoDic = try? loginInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: nil)
-                return
-            }
-            if let data = data {
-                let json = NetworkManager.shared.dataToDictionary(data: data)
-                if let token = json["token"] as? String {
-                    CommonKey.shared.authToken = ""
-                    CommonKey.shared.authToken = token
-                    self.loginSuccess()
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.login,
+                                    parameters: loginInfoDic,
+                                    authorizationToken: "",
+                                    responseType: LoginResponse.self) { [weak self] result in
+            switch result {
+            case .success(let response):
+                CommonKey.shared.authToken = ""
+                CommonKey.shared.authToken = response.token
+                self?.loginSuccess()
+            case .failure:
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: nil)
                 }
             }
         }

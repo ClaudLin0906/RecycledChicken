@@ -111,15 +111,17 @@ class LotteryVC: CustomVC {
     }
     
     private func fetchData<T: Decodable>(url: String, dataType: T.Type, completion: @escaping (T) -> Void) {
-        NetworkManager.shared.getJSONBody(urlString: url, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            
-            if let decodedData = try? JSONDecoder().decode(dataType, from: data) {
+        NetworkManager.shared.get(url: url, 
+                                  authorizationToken: CommonKey.shared.authToken,
+                                  responseType: dataType) { [weak self] result in
+            switch result {
+            case .success(let data):
                 DispatchQueue.main.async {
-                    completion(decodedData)
+                    completion(data)
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }
@@ -273,20 +275,25 @@ extension LotteryVC: UITableViewDelegate {
         UIApplication.shared.open(url)
     }
     
-    private func checkVerify(_ url:String , _ name: String, _ category: String, _ veriftyCode: String, _ createTime: String, completion: @escaping (Bool, String) -> Void) {
+    private func checkVerify(_ url: String, _ name: String, _ category: String, _ veriftyCode: String, _ createTime: String, completion: @escaping (Bool, String) -> Void) {
         let checkVerifyCode = CheckVerifyCode(name: name, createTime: createTime, category: category, unlockCode: veriftyCode)
         let checkVerifyCodeDic = try? checkVerifyCode.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString:url,  parameters: checkVerifyCodeDic, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
-            guard statusCode == 200 ,let data = data else {
-                if statusCode == 400, let data = data, let checkVerifyApiResult = try? JSONDecoder().decode(CheckVerifyApiResult.self, from: data){
-                    completion(false, checkVerifyApiResult.message ?? "")
-                    return
+        NetworkManager.shared.post(url: url, parameters: checkVerifyCodeDic, authorizationToken: CommonKey.shared.authToken, responseType: CheckVerifyApiResult.self) { [weak self] result in
+            switch result {
+            case .success(let apiResult):
+                if let status = apiResult.status, status == .success {
+                    completion(true, apiResult.message ?? "")
+                } else {
+                    completion(false, apiResult.message ?? "")
                 }
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let checkVerifyApiResult = try? JSONDecoder().decode(CheckVerifyApiResult.self, from: data), let status = checkVerifyApiResult.status, status == .success {
-                completion(true, checkVerifyApiResult.message ?? "")
+            case .failure(let error):
+                if case .httpError(let statusCode, let message) = error, statusCode == 400 {
+                    completion(false, message ?? "")
+                } else {
+                    DispatchQueue.main.async {
+                        showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                    }
+                }
             }
         }
     }
@@ -367,3 +374,4 @@ extension LotteryVC: PartnerMerchantsTableViewTableViewCellDelegate {
         openURL(link)
     }
 }
+

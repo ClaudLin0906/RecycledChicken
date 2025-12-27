@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct AccountInfo:Codable {
-    var userPhoneNumber:String
-    var userPassword:String
+struct AccountInfo: Codable {
+    var userPhoneNumber: String
+    var userPassword: String
+}
+
+struct LoginResponse: Codable {
+    var token: String
 }

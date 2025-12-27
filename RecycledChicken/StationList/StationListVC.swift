@@ -173,25 +173,28 @@ class StationListVC: CustomVC {
         }
     }
     
-    private func getStoreInfo(){
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                self.mapInfos.removeAll()
-                self.filterMapInfos.removeAll()
-                self.areasDropDown.dataSource.removeAll()
-                self.mapInfos = mapInfos
-                self.sortDisanceAction()
-                self.addDropDownData()
+    private func getStoreInfo() {
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.machineStatus,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [MapInfo].self) { [weak self] result in
+            switch result {
+            case .success(let mapInfos):
+                self?.mapInfos.removeAll()
+                self?.filterMapInfos.removeAll()
+                self?.areasDropDown.dataSource.removeAll()
+                self?.mapInfos = mapInfos
+                self?.sortDisanceAction()
+                self?.addDropDownData()
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self?.tableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.tableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
+                        self?.tableView.stopSkeletonAnimation()
+                        self?.view.hideSkeleton()
                     })
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }

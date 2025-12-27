@@ -116,11 +116,15 @@ class PointVC: CustomRootVC {
         }
     }
     
-    private func getBtnImage(finishAction: @escaping ((PointBtnImage)->())) {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.uiPoint, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else { return }
-            if let pointBtnImage = try? JSONDecoder().decode(PointBtnImage.self, from: data) {
+    private func getBtnImage(finishAction: @escaping ((PointBtnImage) -> ())) {
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.uiPoint,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: PointBtnImage.self) { result in
+            switch result {
+            case .success(let pointBtnImage):
                 finishAction(pointBtnImage)
+            case .failure:
+                break
             }
         }
     }

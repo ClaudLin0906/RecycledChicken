@@ -85,22 +85,24 @@ class LoginVC: CustomLoginVC {
         }
     }
     
-    private func loginAction(phone:String, password:String){
+    private func loginAction(phone: String, password: String) {
         let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
-//        let loginInfo = testLoginInfo
         let loginInfoDic = try? loginInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.login, parameters: loginInfoDic) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "帳號密碼有誤", message: nil)
-                return
-            }
-            let json = NetworkManager.shared.dataToDictionary(data: data)
-            if let token = json["token"] as? String {
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.login,
+                                    parameters: loginInfoDic,
+                                    authorizationToken: "",
+                                    responseType: LoginResponse.self) { [weak self] result in
+            switch result {
+            case .success(let response):
                 CommonKey.shared.authToken = ""
-                CommonKey.shared.authToken = token
+                CommonKey.shared.authToken = response.token
                 CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber = phone
                 CurrentUserInfo.shared.currentAccountInfo.userPassword = password
-                self.loginSuccess()
+                self?.loginSuccess()
+            case .failure:
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "帳號密碼有誤", message: nil)
+                }
             }
         }
     }

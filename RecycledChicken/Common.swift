@@ -380,7 +380,7 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
-func getRecords(_ sites:[String]? = nil, _ startTime:String, _ endTime:String, completion: @escaping (_ statusCode:Int?, _ errorMSG:String?,  _ useRecordInfos:[UseRecordInfo]?, _ battery:Int?, _ bottle:Int?, _ colorledBottle:Int?, _ colorlessBottle:Int?, _ can:Int?, _ cup:Int?) -> Void){
+func getRecords(_ sites: [String]? = nil, _ startTime: String, _ endTime: String, completion: @escaping (_ statusCode: Int?, _ errorMSG: String?, _ useRecordInfos: [UseRecordInfo]?, _ battery: Int?, _ bottle: Int?, _ colorledBottle: Int?, _ colorlessBottle: Int?, _ can: Int?, _ cup: Int?) -> Void) {
     guard !CommonKey.shared.authToken.isEmpty else { return }
     var urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     if let sites = sites {
@@ -388,18 +388,17 @@ func getRecords(_ sites:[String]? = nil, _ startTime:String, _ endTime:String, c
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sitesStr)"
     }
     print(urlStr)
-    NetworkManager.shared.getJSONBody(urlString: urlStr, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-        guard let data = data, statusCode == 200 else {
-            completion(statusCode, errorMSG, nil, nil, nil, nil, nil, nil, nil)
-            return
-        }
-        if let useRecordInfos = try? JSONDecoder().decode([UseRecordInfo].self, from: data) {
-            var batteryInt:Int?
-            var bottleInt:Int?
-            var colorledBottleInt:Int?
-            var colorlessBottleInt:Int?
-            var canInt:Int?
-            var cupInt:Int?
+    NetworkManager.shared.get(url: urlStr,
+                               authorizationToken: CommonKey.shared.authToken,
+                               responseType: [UseRecordInfo].self) { result in
+        switch result {
+        case .success(let useRecordInfos):
+            var batteryInt: Int?
+            var bottleInt: Int?
+            var colorledBottleInt: Int?
+            var colorlessBottleInt: Int?
+            var canInt: Int?
+            var cupInt: Int?
             useRecordInfos.forEach { useRecordInfo in
                 if let recycleDetails = useRecordInfo.recycleDetails {
                     if let battery = recycleDetails.battery {
@@ -428,7 +427,13 @@ func getRecords(_ sites:[String]? = nil, _ startTime:String, _ endTime:String, c
                     }
                 }
             }
-            completion(statusCode, errorMSG, useRecordInfos, batteryInt, bottleInt, colorledBottleInt, colorlessBottleInt, canInt, cupInt)
+            completion(200, nil, useRecordInfos, batteryInt, bottleInt, colorledBottleInt, colorlessBottleInt, canInt, cupInt)
+        case .failure(let error):
+            let statusCode = (error as? NetworkError).flatMap { 
+                if case .httpError(let code, _) = $0 { return code }
+                return nil
+            }
+            completion(statusCode, error.localizedDescription, nil, nil, nil, nil, nil, nil, nil)
         }
     }
 }
@@ -472,14 +477,13 @@ func changeFormat(_ dateStr:String)-> String {
     return dateStr
 }
 
-func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
+func getUserNewInfo(VC: UIViewController, finishAction: (() -> ())?) {
     guard !CommonKey.shared.authToken.isEmpty else { return }
-    NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.profile, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-        guard let data = data, statusCode == 200 else {
-            showAlert(VC: VC, title: "error".localized, message: errorMSG)
-            return
-        }
-        if let profileNewInfo = try? JSONDecoder().decode(ProfileNewInfo.self, from: data) {
+    NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.profile,
+                               authorizationToken: CommonKey.shared.authToken,
+                               responseType: ProfileNewInfo.self) { result in
+        switch result {
+        case .success(let profileNewInfo):
             var userInfo = profileNewInfo
             if let experiencePoint = profileNewInfo.experiencePoint {
                 userInfo.levelInfo = LevelCalculation().getLevelInfo(experiencePoint)
@@ -488,6 +492,10 @@ func getUserNewInfo(VC:UIViewController, finishAction:(()->())?){
             CurrentUserInfo.shared.currentProfileNewInfo = userInfo
             if let finishAction = finishAction {
                 finishAction()
+            }
+        case .failure(let error):
+            DispatchQueue.main.async {
+                showAlert(VC: VC, title: "error".localized, message: error.localizedDescription)
             }
         }
     }

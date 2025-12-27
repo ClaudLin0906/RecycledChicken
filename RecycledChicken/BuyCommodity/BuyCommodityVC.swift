@@ -55,21 +55,22 @@ extension BuyCommodityVC: SpendPointAlertViewDelegate {
     
     func confirm(_ sender: UIButton, info: SpendPointInfo) {
         let spendPointInfoDic = try? info.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.couponsBuy, parameters: spendPointInfoDic, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let spendPointResponse = try? JSONDecoder().decode(SpendPointResponse.self, from: data) {
-                getUserNewInfo(VC: self) {
-                    DispatchQueue.main.async { [weak self] in
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.couponsBuy, parameters: spendPointInfoDic, authorizationToken: CommonKey.shared.authToken, responseType: SpendPointResponse.self) { [weak self] result in
+            switch result {
+            case .success:
+                getUserNewInfo(VC: self!) {
+                    DispatchQueue.main.async {
                         guard let self = self else { return }
                         let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
                         fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)
-                        if let navigationController = navigationController {
+                        if let navigationController = self.navigationController {
                             navigationController.popToRootViewController(animated: true)
                         }
                     }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }

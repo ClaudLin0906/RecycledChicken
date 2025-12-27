@@ -82,7 +82,6 @@
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
 		593CDE2A2A7F5E13007E1D10 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593CDE292A7F5E13007E1D10 /* DeleteModel.swift */; };
 		5950BF1E2A381C1000EEB21C /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */; };
-		5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */; };
 		595406B82BC2749B00D214BF /* ColorFillTypeThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */; };
 		595406BA2BC274A100D214BF /* ColorFillTypeThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */; };
 		595406C02BC27B8400D214BF /* ColorFillTypeFourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */; };
@@ -408,7 +407,6 @@
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		593CDE292A7F5E13007E1D10 /* DeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModel.swift; sourceTree = "<group>"; };
 		5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
-		5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		595406B72BC2749B00D214BF /* ColorFillTypeThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeThreeView.swift; sourceTree = "<group>"; };
 		595406B92BC274A100D214BF /* ColorFillTypeThreeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFillTypeThreeView.xib; sourceTree = "<group>"; };
 		595406BF2BC27B8400D214BF /* ColorFillTypeFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFillTypeFourView.swift; sourceTree = "<group>"; };
@@ -907,7 +905,6 @@
 				59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */,
 				5933F1332A273954008D5FF7 /* CustomTabbar.swift */,
 				5950BF1D2A381C1000EEB21C /* URLSessionManager.swift */,
-				5950BF1F2A381CAA00EEB21C /* AlamofireManager.swift */,
 				59CDA3492A42DBA100E3F74E /* KeyChainManager.swift */,
 				5926C5932A0630F700FAB49D /* MainRootVC.swift */,
 				5926C5A12A06364800FAB49D /* Common.swift */,
@@ -1867,7 +1864,6 @@
 				59DBA12F2B71EEA8009E5BBD /* DropDownView.swift in Sources */,
 				5998DD4F2B8B3D0C00C99A8C /* PointRecordTableViewCell.swift in Sources */,
 				59C73F482A702B400019E87D /* CarbonReductionLogModel.swift in Sources */,
-				5950BF202A381CAA00EEB21C /* AlamofireManager.swift in Sources */,
 				5996ADF72B89D32100D6F6CF /* DeleteMessageAlertView.swift in Sources */,
 				5926C5942A0630F700FAB49D /* MainRootVC.swift in Sources */,
 				2537419B2C103F8500FA0933 /* MallProductVC.swift in Sources */,
@@ -2821,6 +2817,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "請您提供相機權限，才能使用AR功能";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "請您提供生物辨識權限，方便之後做快速登入";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "請您提供定位權限，才能讓地圖上顯示跟炭竹雞的距離";
@@ -2867,6 +2864,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecycledChicken/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "碳竹雞";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "請您提供相機權限，才能使用AR功能";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "請您提供生物辨識權限，方便之後做快速登入";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "請您提供定位權限，才能讓地圖上顯示跟炭竹雞的距離";

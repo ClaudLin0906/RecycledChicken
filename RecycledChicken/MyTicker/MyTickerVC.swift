@@ -38,40 +38,46 @@ class MyTickerVC: CustomVC {
     }
     
     private func getVoucherData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingCoupons, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
-            guard statusCode == 200, let data = data, let self = self else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let myTickertCouponsInfos = try? JSONDecoder().decode([MyTickertCouponsInfo].self, from: data) {
-                self.myVoucherInfos.removeAll()
-                self.myVoucherInfos.append(contentsOf: myTickertCouponsInfos)
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.havingCoupons,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [MyTickertCouponsInfo].self) { [weak self] result in
+            switch result {
+            case .success(let myTickertCouponsInfos):
+                self?.myVoucherInfos.removeAll()
+                self?.myVoucherInfos.append(contentsOf: myTickertCouponsInfos)
                 DispatchQueue.main.async {
-                    self.voucherTableView.reloadData()
+                    self?.voucherTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.voucherTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
+                        self?.voucherTableView.stopSkeletonAnimation()
+                        self?.view.hideSkeleton()
                     })
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }
     }
     
     private func getLotteryData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.havingLottery, authorizationToken: CommonKey.shared.authToken) { [weak self] (data, statusCode, errorMSG) in
-            guard statusCode == 200, let self = self else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let data = data, let myTickertLotteryInfo = try? JSONDecoder().decode([MyTickertLotteryInfo].self, from: data) {
-                self.myTickertInfos.removeAll()
-                self.myTickertInfos.append(contentsOf: myTickertLotteryInfo)
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.havingLottery,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [MyTickertLotteryInfo].self) { [weak self] result in
+            switch result {
+            case .success(let myTickertLotteryInfo):
+                self?.myTickertInfos.removeAll()
+                self?.myTickertInfos.append(contentsOf: myTickertLotteryInfo)
                 DispatchQueue.main.async {
-                    self.lotteryTableView.reloadData()
+                    self?.lotteryTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.lotteryTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
+                        self?.lotteryTableView.stopSkeletonAnimation()
+                        self?.view.hideSkeleton()
                     })
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }

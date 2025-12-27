@@ -49,17 +49,24 @@ class PointRecordVC: CustomVC {
     }
     
     private func getPointRecord() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.pointRecords + "?startTime=2023-01-01", authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let pointRecords = try? JSONDecoder().decode([PointRecord].self, from: data) {
-                self.pointRecords.removeAll()
-                self.filterPointRecords.removeAll()
-                self.pointRecords.append(contentsOf: pointRecords)
-                self.filterPointRecords.append(contentsOf: pointRecords)
-                self.tableView.reloadData()
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.pointRecords + "?startTime=2023-01-01",
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [PointRecord].self) { [weak self] result in
+            switch result {
+            case .success(let pointRecords):
+                self?.pointRecords.removeAll()
+                self?.filterPointRecords.removeAll()
+                self?.pointRecords.append(contentsOf: pointRecords)
+                self?.filterPointRecords.append(contentsOf: pointRecords)
+                DispatchQueue.main.async {
+                    self?.tableView.stopSkeletonAnimation()
+                    self?.view.hideSkeleton()
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                }
             }
         }
     }

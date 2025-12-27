@@ -43,26 +43,30 @@ class StoreMapVC: CustomRootVC {
         } else {
            locationManager.requestWhenInUseAuthorization()
         }
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { [weak self] (data, statusCode, errorMSG) in
-            guard let self = self, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            
-            if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                mapInfosData.removeAll()
-                currentMapInfos.removeAll()
-                mapInfos.forEach({ mapInfo in
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.machineStatus,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [MapInfo].self) { [weak self] result in
+            switch result {
+            case .success(let mapInfos):
+                self?.mapInfosData.removeAll()
+                self?.currentMapInfos.removeAll()
+                mapInfos.forEach { mapInfo in
                     var newMapInfo = mapInfo
                     if newMapInfo.machineStatus == nil, let machineRemaining = newMapInfo.machineRemaining {
                         if machineRemaining.battery ?? 0 > 0 || machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorlessBottle ?? 0 > 0 || machineRemaining.coloredBottle ?? 0 > 0 || machineRemaining.can ?? 0 > 0 || machineRemaining.cup ?? 0 > 0 {
                             newMapInfo.machineStatus = .submit
                         }
                     }
-                    self.mapInfosData.append(newMapInfo)
-                })
-                currentMapInfos = mapInfosData
-                addMarker(currentMapInfos)
+                    self?.mapInfosData.append(newMapInfo)
+                }
+                self?.currentMapInfos = self?.mapInfosData ?? []
+                DispatchQueue.main.async {
+                    self?.addMarker(self?.currentMapInfos ?? [])
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                }
             }
         }
     }

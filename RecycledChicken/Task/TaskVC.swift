@@ -126,18 +126,19 @@ class TaskVC: CustomRootVC {
     }
     
     private func getTaskInfo(completion: @escaping () -> Void) {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken) { [weak self] data, statusCode, errorMSG in
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.quest,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [TaskInfo].self) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                guard let data = data, statusCode == 200 else {
-                    showAlert(VC: self, title: "error".localized, message: errorMSG)
-                    return
-                }
-                if let taskInfos = try? JSONDecoder().decode([TaskInfo].self, from: data) {
+                switch result {
+                case .success(let taskInfos):
                     self.clearTableViewData()
                     self.addStatus(taskInfos) {
                         completion()
                     }
+                case .failure(let error):
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }
@@ -191,30 +192,31 @@ class TaskVC: CustomRootVC {
         }
     }
     
-    private func finishTaskAction(_ taskInfo:TaskInfo?) {
+    private func finishTaskAction(_ taskInfo: TaskInfo?) {
         guard let taskInfo = taskInfo, let createTime = taskInfo.createTime, let type = taskInfo.type else { return }
         let finishTaskInfo = FinishTaskInfo(createTime: createTime, type: type.rawValue)
         let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.questComplete, parameters: finishTaskInfoDic, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                if statusCode == 304 {
-                    self.successTaskAction(taskInfo)
-                    return
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.questComplete,
+                                    parameters: finishTaskInfoDic,
+                                    authorizationToken: CommonKey.shared.authToken,
+                                    responseType: ApiResult.self) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let apiResult):
+                if let status = apiResult.status {
+                    switch status {
+                    case .success:
+                        self.successTaskAction(taskInfo)
+                    case .failure:
+                        break
+                    }
                 }
-                var apiErrorMessage = "不知名的錯誤"
-                if let data = data,let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data), let message = apiResult.message {
-                    apiErrorMessage = message
-                }
-                showAlert(VC: self, title: errorMSG ?? apiErrorMessage)
-                return
-            }
-            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
-            if let status = apiResult?.status {
-                switch status {
-                case .success:
+            case .failure(let error):
+                if case .httpError(let statusCode, _) = error, statusCode == 304 {
                     self.successTaskAction(taskInfo)
-                case .failure:
-                    break
+                } else {
+                    let errorMessage = error.localizedDescription
+                    showAlert(VC: self, title: errorMessage)
                 }
             }
         }

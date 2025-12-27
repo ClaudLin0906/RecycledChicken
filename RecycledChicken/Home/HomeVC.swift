@@ -181,44 +181,49 @@ class HomeVC: CustomRootVC {
     
     private func getItems() {
         guard !CommonKey.shared.authToken.isEmpty else { return }
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.items, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let itemInfos = try? JSONDecoder().decode([ItemInfo].self, from: data) {
-                self.itemInfos.removeAll()
-                self.itemInfos.append(contentsOf: itemInfos)
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.items,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [ItemInfo].self) { [weak self] result in
+            switch result {
+            case .success(let itemInfos):
+                self?.itemInfos.removeAll()
+                self?.itemInfos.append(contentsOf: itemInfos)
                 DispatchQueue.main.async {
-                    self.mallHeight.constant = CGFloat(itemInfos.count / 3 ) * 150 + 70
-                    self.mallCollectionView.reloadData()
+                    self?.mallHeight.constant = CGFloat(itemInfos.count / 3) * 150 + 70
+                    self?.mallCollectionView.reloadData()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }
     }
     
     private func getPopUpData(completion: @escaping ([String]) -> Void) {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getPopBanner, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                print(errorMSG?.localized ?? "something error")
-                return
-            }
-            if let imageURLs = try? JSONDecoder().decode([String].self, from: data) {
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.getPopBanner,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [String].self) { result in
+            switch result {
+            case .success(let imageURLs):
                 completion(imageURLs)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
     
     private func getADBannerInfos(completion: @escaping () -> Void) {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAdBanner, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                print(errorMSG?.localized ?? "something error")
-                return
-            }
-            if let adBannerInfos = try? JSONDecoder().decode([ADBannerInfo].self, from: data) {
-                self.adBannerInfos.removeAll()
-                self.adBannerInfos.append(contentsOf: adBannerInfos)
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.getAdBanner,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [ADBannerInfo].self) { [weak self] result in
+            switch result {
+            case .success(let adBannerInfos):
+                self?.adBannerInfos.removeAll()
+                self?.adBannerInfos.append(contentsOf: adBannerInfos)
                 completion()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

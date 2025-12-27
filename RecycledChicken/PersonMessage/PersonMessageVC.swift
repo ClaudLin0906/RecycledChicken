@@ -42,20 +42,23 @@ class PersonMessageVC: CustomVC {
     }
 
     private func getData() {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.message, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let data = data, let personMessageInfos = try? JSONDecoder().decode([PersonMessageInfo].self, from: data) {
-                self.personMessageInfos.removeAll()
-                self.personMessageInfos = personMessageInfos
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.message,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [PersonMessageInfo].self) { [weak self] result in
+            switch result {
+            case .success(let personMessageInfos):
+                self?.personMessageInfos.removeAll()
+                self?.personMessageInfos = personMessageInfos
                 DispatchQueue.main.async {
-                    self.personMessageTableView.reloadData()
+                    self?.personMessageTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.personMessageTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
+                        self?.personMessageTableView.stopSkeletonAnimation()
+                        self?.view.hideSkeleton()
                     })
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }
@@ -99,21 +102,31 @@ extension PersonMessageVC: UITableViewDelegate, SkeletonTableViewDataSource {
         return cell
     }
     
-    private func deleteMessage(_ personMessageInfosDic:[[String:Any]]) {
+    private func deleteMessage(_ personMessageInfosDic: [[String: Any]]) {
         guard personMessageInfosDic.count > 0 else { return }
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete, parametersArray: personMessageInfosDic, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard statusCode == 200, let data = data else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data), let status = apiResult.status {
-                switch status {
-                case .success:
-                    if let navigationController = self.navigationController {
-                        navigationController.popViewController(animated: true)
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.messageDelete,
+                                    parametersArray: personMessageInfosDic,
+                                    authorizationToken: CommonKey.shared.authToken,
+                                    responseType: ApiResult.self) { [weak self] result in
+            switch result {
+            case .success(let apiResult):
+                if let status = apiResult.status {
+                    switch status {
+                    case .success:
+                        DispatchQueue.main.async {
+                            if let navigationController = self?.navigationController {
+                                navigationController.popViewController(animated: true)
+                            }
+                        }
+                    case .failure:
+                        DispatchQueue.main.async {
+                            showAlert(VC: self, title: apiResult.message ?? "")
+                        }
                     }
-                case .failure:
-                    showAlert(VC: self, title: apiResult.message ?? "")
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }

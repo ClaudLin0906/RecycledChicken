@@ -28,21 +28,23 @@ class StoreListVC: CustomVC {
         // Do any additional setup after loading the view.
     }
     
-    private func getStoreInfo(){
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName+APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            
-            if let data = data, let mapInfos = try? JSONDecoder().decode([MapInfo].self, from: data) {
-                self.mapInfos = mapInfos
+    private func getStoreInfo() {
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.machineStatus,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: [MapInfo].self) { [weak self] result in
+            switch result {
+            case .success(let mapInfos):
+                self?.mapInfos = mapInfos
                 DispatchQueue.main.async {
-                    self.storeListTableView.reloadData()
+                    self?.storeListTableView.reloadData()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self.storeListTableView.stopSkeletonAnimation()
-                        self.view.hideSkeleton()
+                        self?.storeListTableView.stopSkeletonAnimation()
+                        self?.view.hideSkeleton()
                     })
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }

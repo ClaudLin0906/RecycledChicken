@@ -267,15 +267,18 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     private func getCarbonReductionRecords(completion: @escaping () -> Void) {
-        NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.carbonReductionRecords, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data,statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let carbonReductionLogInfo = try? JSONDecoder().decode(CarbonReductionLogInfo.self, from: data) {
-                self.carbonReductionLogInfo = nil
-                self.carbonReductionLogInfo = carbonReductionLogInfo
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.carbonReductionRecords,
+                                   authorizationToken: CommonKey.shared.authToken,
+                                   responseType: CarbonReductionLogInfo.self) { [weak self] result in
+            switch result {
+            case .success(let carbonReductionLogInfo):
+                self?.carbonReductionLogInfo = nil
+                self?.carbonReductionLogInfo = carbonReductionLogInfo
                 completion()
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                }
             }
         }
     }

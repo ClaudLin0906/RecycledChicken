@@ -99,17 +99,24 @@ class SignActivityCodeView: UIView, NibOwnerLoadable {
         errorMSGLabel.isHidden = false
     }
     
-    private func  enterCodeAction(_ parameters: [String:Any], urlString:String, _ compeletion: @escaping(Bool, String)->()) {
-        NetworkManager.shared.requestWithJSONBody(urlString: urlString, parameters: parameters) { data, statusCode, errorMSG in
-            guard statusCode == 200 else {
+    private func enterCodeAction(_ parameters: [String: Any], urlString: String, _ completion: @escaping (Bool, String) -> ()) {
+        NetworkManager.shared.post(url: urlString,
+                                    parameters: parameters,
+                                    authorizationToken: "",
+                                    responseType: ApiResult.self) { result in
+            switch result {
+            case .success:
+                completion(true, "")
+            case .failure(let error):
                 var errorMSG = "發生不明錯誤"
-                if let data = data, let ApiResult = try? JSONDecoder().decode(ApiResult.self, from: data),  let apiResponseMessage = ApiResult.message {
-                    errorMSG = apiResponseMessage
+                if case .httpError(_, let message) = error, let msg = message {
+                    errorMSG = msg
+                } else if case .decodingError = error {
+                    // 嘗試從錯誤中提取訊息
+                    errorMSG = error.localizedDescription
                 }
-                compeletion(false, errorMSG)
-                return
+                completion(false, errorMSG)
             }
-            compeletion(true, "")
         }
     }
     

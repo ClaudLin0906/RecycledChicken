@@ -102,20 +102,25 @@ class ProfileVC: CustomVC {
         view.endEditing(true)
     }
     
-    func updateUserInfo(_ profilePostInfo:ProfilePostInfo) {
+    func updateUserInfo(_ profilePostInfo: ProfilePostInfo) {
         let profilePostInfoDic = try? profilePostInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.updateProfile, parameters: profilePostInfoDic, authorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            let ApiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
-            if let status = ApiResult?.status {
-                switch status {
-                case .success:
-                    self.showProfileUpdateView()
-                case .failure:
-                    break
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.updateProfile,
+                                    parameters: profilePostInfoDic,
+                                    authorizationToken: CommonKey.shared.authToken,
+                                    responseType: ApiResult.self) { [weak self] result in
+            switch result {
+            case .success(let apiResult):
+                if let status = apiResult.status {
+                    switch status {
+                    case .success:
+                        self?.showProfileUpdateView()
+                    case .failure:
+                        break
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }

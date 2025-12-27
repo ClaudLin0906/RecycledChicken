@@ -67,19 +67,29 @@ extension PersonMessageContentVC: DeleteMessageContentAlertViewDelegate {
                 personMessageInfosDic.append(infoDic)
             }
         }
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.messageDelete, parametersArray: personMessageInfosDic, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard statusCode == 200, let data = data else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data), let status = apiResult.status {
-                switch status {
-                case .success:
-                    if let navigationController = self.navigationController {
-                        navigationController.popViewController(animated: true)
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.messageDelete,
+                                    parametersArray: personMessageInfosDic,
+                                    authorizationToken: CommonKey.shared.authToken,
+                                    responseType: ApiResult.self) { [weak self] result in
+            switch result {
+            case .success(let apiResult):
+                if let status = apiResult.status {
+                    switch status {
+                    case .success:
+                        DispatchQueue.main.async {
+                            if let navigationController = self?.navigationController {
+                                navigationController.popViewController(animated: true)
+                            }
+                        }
+                    case .failure:
+                        DispatchQueue.main.async {
+                            showAlert(VC: self, title: apiResult.message ?? "")
+                        }
                     }
-                case .failure:
-                    showAlert(VC: self, title: apiResult.message ?? "")
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }

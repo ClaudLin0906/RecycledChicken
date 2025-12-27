@@ -78,18 +78,24 @@ class ConnectCompanyVC: CustomVC {
         }
     }
     
-    private func sendEmailAction(content:String, email:String){
+    private func sendEmailAction(content: String, email: String) {
         let username = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
         let identity = identityLabel.text ?? ""
         let sendEmailInfo = SendEmailInfo(recipient: identity, content: content, email: email, userName: username)
         let sendEmailDic = try? sendEmailInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.sendEmail, parameters: sendEmailDic, authorizationToken: CommonKey.shared.authToken){ data, statusCode, errorMSG in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            if data != nil {
-                self.showConnectSuccessView()
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.sendEmail,
+                                    parameters: sendEmailDic,
+                                    authorizationToken: CommonKey.shared.authToken,
+                                    responseType: ApiResult.self) { [weak self] result in
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    self?.showConnectSuccessView()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                }
             }
         }
     }

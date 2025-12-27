@@ -7,6 +7,40 @@
 
 import Foundation
 
+// MARK: - Network Error
+enum NetworkError: Error, LocalizedError {
+    case invalidURL
+    case invalidResponse
+    case httpError(statusCode: Int, message: String?)
+    case decodingError(Error)
+    case encodingError(Error)
+    case noData
+    case unknown(Error?)
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "Invalid URL"
+        case .invalidResponse:
+            return "Invalid response"
+        case .httpError(let statusCode, let message):
+            return message ?? "HTTP Error: \(statusCode)"
+        case .decodingError(let error):
+            return "Decoding error: \(error.localizedDescription)"
+        case .encodingError(let error):
+            return "Encoding error: \(error.localizedDescription)"
+        case .noData:
+            return "No data received"
+        case .unknown(let error):
+            return error?.localizedDescription ?? "Unknown error"
+        }
+    }
+}
+
+// MARK: - Network Result
+typealias NetworkResult<T> = Result<T, NetworkError>
+
+// MARK: - Network Manager
 class NetworkManager: NSObject {
     
     static let shared = NetworkManager()
@@ -16,11 +50,13 @@ class NetworkManager: NSObject {
     private override init() {
         super.init()
         let configuration = URLSessionConfiguration.default
-        session = URLSession(configuration: configuration, delegate: self, delegateQueue:OperationQueue.main)
+        session = URLSession(configuration: configuration, delegate: self, delegateQueue: OperationQueue.main)
     }
     
-    func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data?, Int?, String?) -> Void){
-        let task = session.dataTask(with: request){(data,response,error) in
+    // MARK: - Legacy Methods (保持向後兼容)
+    
+    func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data?, Int?, String?) -> Void) {
+        let task = session.dataTask(with: request) { (data, response, error) in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(nil, nil, error?.localizedDescription)
                 return
@@ -33,39 +69,52 @@ class NetworkManager: NSObject {
         }
         task.resume()
     }
-
-
-    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, parametersArray: [[String: Any]]? = nil, authorizationToken:String = "", completion: @escaping (Data?, Int?, String?) -> Void){
-        let url = URL(string: urlString.urlEncoded())!
+    
+    func requestWithJSONBody(urlString: String, parameters: [String: Any]? = nil, parametersArray: [[String: Any]]? = nil, authorizationToken: String = "", completion: @escaping (Data?, Int?, String?) -> Void) {
+        guard let url = URL(string: urlString.urlEncoded()) else {
+            completion(nil, nil, "Invalid URL")
+            return
+        }
         var request = URLRequest(url: url)
-        if parameters != nil {
-            do{
+        if let parameters = parameters {
+            do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions())
-            }catch let error{
-                print(error)
+            } catch let error {
+                print("Encoding error: \(error)")
+                completion(nil, nil, error.localizedDescription)
+                return
             }
         }
-        if parametersArray != nil {
-            do{
+        if let parametersArray = parametersArray {
+            do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parametersArray, options: JSONSerialization.WritingOptions())
-            }catch let error{
-                print(error)
+            } catch let error {
+                print("Encoding error: \(error)")
+                completion(nil, nil, error.localizedDescription)
+                return
             }
         }
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(authorizationToken)", forHTTPHeaderField: "Authorization")
+        if !authorizationToken.isEmpty {
+            request.addValue("Bearer \(authorizationToken)", forHTTPHeaderField: "Authorization")
+        }
         fetchedDataByDataTask(from: request, completion: completion)
-     }
-
-    func getJSONBody(urlString: String, parameters: [String: Any]? = nil, authorizationToken:String? = nil, completion: @escaping (Data?, Int?, String?) -> Void){
-        let url = URL(string: urlString.urlEncoded())!
+    }
+    
+    func getJSONBody(urlString: String, parameters: [String: Any]? = nil, authorizationToken: String? = nil, completion: @escaping (Data?, Int?, String?) -> Void) {
+        guard let url = URL(string: urlString.urlEncoded()) else {
+            completion(nil, nil, "Invalid URL")
+            return
+        }
         var request = URLRequest(url: url)
-        if parameters != nil {
-            do{
+        if let parameters = parameters {
+            do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions())
-            }catch let error{
-                print(error)
+            } catch let error {
+                print("Encoding error: \(error)")
+                completion(nil, nil, error.localizedDescription)
+                return
             }
         }
         request.httpMethod = "GET"
@@ -74,18 +123,111 @@ class NetworkManager: NSObject {
             request.addValue("Bearer \(authorizationToken)", forHTTPHeaderField: "Authorization")
         }
         fetchedDataByDataTask(from: request, completion: completion)
-     }
-
-    func dataToDictionary(data:Data) -> Dictionary<String,Any>{
-        var dic = Dictionary<String,Any>()
+    }
+    
+    func dataToDictionary(data: Data) -> Dictionary<String, Any> {
+        var dic = Dictionary<String, Any>()
         do {
-            let json = try JSONSerialization.jsonObject(with:data, options: .mutableContainers)
-            dic = json as! Dictionary<String,Any>
-        } catch  {
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            dic = json as! Dictionary<String, Any>
+        } catch {
             print("\(error)")
         }
         return dic
     }
+    
+    // MARK: - Modern API Methods (優化後的新方法)
+    
+    /// 發送 GET 請求並解碼為指定類型
+    func get<T: Decodable>(url: String, parameters: [String: Any]? = nil, authorizationToken: String? = nil, responseType: T.Type, completion: @escaping (NetworkResult<T>) -> Void) {
+        guard let url = URL(string: url.urlEncoded()) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let token = authorizationToken {
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        if let parameters = parameters {
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            } catch {
+                completion(.failure(.encodingError(error)))
+                return
+            }
+        }
+        
+        performRequest(request: request, responseType: responseType, completion: completion)
+    }
+    
+    func post<T: Decodable>(url: String, parameters: [String: Any]? = nil, parametersArray: [[String: Any]]? = nil, authorizationToken: String = "", responseType: T.Type, completion: @escaping (NetworkResult<T>) -> Void) {
+        guard let url = URL(string: url.urlEncoded()) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if !authorizationToken.isEmpty {
+            request.addValue("Bearer \(authorizationToken)", forHTTPHeaderField: "Authorization")
+        }
+        
+        if let parameters = parameters {
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            } catch {
+                completion(.failure(.encodingError(error)))
+                return
+            }
+        } else if let parametersArray = parametersArray {
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: parametersArray, options: [])
+            } catch {
+                completion(.failure(.encodingError(error)))
+                return
+            }
+        }
+        performRequest(request: request, responseType: responseType, completion: completion)
+    }
+    
+    private func performRequest<T: Decodable>(request: URLRequest, responseType: T.Type, completion: @escaping (NetworkResult<T>) -> Void) {
+        let task = session.dataTask(with: request) { data, response, error in
+            // 處理錯誤
+            if let error = error {
+                completion(.failure(.unknown(error)))
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            guard (200...299).contains(httpResponse.statusCode) else {
+                let errorMessage = data.flatMap { String(data: $0, encoding: .utf8) }
+                completion(.failure(.httpError(statusCode: httpResponse.statusCode, message: errorMessage)))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            do {
+                let decoded = try JSONDecoder().decode(responseType, from: data)
+                completion(.success(decoded))
+            } catch {
+                completion(.failure(.decodingError(error)))
+            }
+        }
+        task.resume()
+    }
+    
+    // MARK: - Certificate Handling
     
     private func extractIdentity() -> IdentityAndTrust? {
         print("URLSessionDelegate 获取客户端证书相关信息")
@@ -104,7 +246,7 @@ class NetworkManager: NSObject {
         print("PKCS12Data size: \(PKCS12Data.length)")
         // iOS 17 兼容的多重尝试策略
         let importOptions: [[String: Any]] = [
-            [kSecImportExportPassphrase as String: "claud"] 
+            [kSecImportExportPassphrase as String: "claud"]
         ]
         
         var items: CFArray?
@@ -207,47 +349,9 @@ class NetworkManager: NSObject {
             return false
         }
     }
-    
-    
-    func request<T: Decodable>(url: URL?, completion: @escaping (_ data: T?, _ error: Error?)-> ()) {
-        
-        guard let url else {
-            print("cannot form url")
-            return
-        }
-        
-        session.dataTask(with: url) { data, response, error in
-            
-            if let error {
-                if error.localizedDescription == "cancelled" {
-                    completion(nil, NSError.init(domain: "", code: -999, userInfo: [NSLocalizedDescriptionKey:"SSL Pinning Failed"]))
-                    return
-                }
-                completion(nil, error)
-                return
-            }
-            
-            guard let data else {
-                completion(nil, NSError.init(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:"something went wrong"]))
-                print("something went wrong")
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let response = try decoder.decode(T.self, from: data)
-                completion(response, nil)
-            } catch {
-                completion(nil, error)
-            }
-        }.resume()
-        
-    }
-    
-    
 }
 
+// MARK: - URLSessionDelegate
 extension NetworkManager: URLSessionDelegate {
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
@@ -328,6 +432,7 @@ extension NetworkManager: URLSessionDelegate {
     }
 }
 
+// MARK: - IdentityAndTrust
 //定义一个结构体，存储认证相关信息
 struct IdentityAndTrust {
     var identityRef: SecIdentity
@@ -339,5 +444,4 @@ struct IdentityAndTrust {
         // 可以添加额外的验证逻辑
         return true
     }
-    
 }

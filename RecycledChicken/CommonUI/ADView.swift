@@ -93,7 +93,8 @@ class ADView: UIView, NibOwnerLoadable {
         }
     }
     
-    private func homeAction(){
+    private func homeAction() {
+        // 使用舊的 API，因為返回的是純文本 URL 字符串，不是 JSON
         NetworkManager.shared.getJSONBody(urlString: APIUrl.domainName + APIUrl.getAd) { data, statusCode, errorMSG in
             guard let data = data, let urlStr = String(data: data, encoding: .utf8), let url = URL(string: urlStr) else {
                 return

@@ -104,19 +104,24 @@ class VerificationCodeVC: CustomLoginVC {
         }
         let smsInfo = SMSInfo(userPhoneNumber: phone)
         let smsInfoDic = try? smsInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.smsCode, parameters: smsInfoDic) { (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "發生錯誤", message: errorMSG, alertAction: nil)
-                return
-            }
-            let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data)
-            if let status = apiResult?.status {
-                switch status {
-                case .success:
-                    self.startCountdown()
-                    self.addReSendVerificationCodeView()
-                case .failure:
-                    break
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.smsCode,
+                                    parameters: smsInfoDic,
+                                    authorizationToken: "",
+                                    responseType: ApiResult.self) { [weak self] result in
+            switch result {
+            case .success(let apiResult):
+                if let status = apiResult.status {
+                    switch status {
+                    case .success:
+                        self?.startCountdown()
+                        self?.addReSendVerificationCodeView()
+                    case .failure:
+                        break
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "發生錯誤", message: error.localizedDescription, alertAction: nil)
                 }
             }
         }
@@ -126,24 +131,27 @@ class VerificationCodeVC: CustomLoginVC {
         sendSMS()
     }
     
-    private func signUpAction(_ smsCode:String){
+    private func signUpAction(_ smsCode: String) {
         guard smsCode.count == 4 else { return }
         let signUpInfo = SignUpInfo(userPhoneNumber: phone, userPassword: password, smsCode: smsCode)
         let signUpInfoDic = try? signUpInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.register, parameters: signUpInfoDic) { (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            DispatchQueue.main.async {
-                let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
-                signActivityCodeView.delegate = self
-                signActivityCodeView.setUserID(self.phone)
-                keyWindow?.addSubview(signActivityCodeView)
-//                let alertAction = UIAlertAction(title: "確定", style: .default) { _ in
-//                    self.goToLoginVC()
-//                }
-//                showAlert(VC: self, title: "註冊成功, 請重新登入", alertAction: alertAction)
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.register,
+                                    parameters: signUpInfoDic,
+                                    authorizationToken: "",
+                                    responseType: ApiResult.self) { [weak self] result in
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
+                    signActivityCodeView.delegate = self
+                    signActivityCodeView.setUserID(self.phone)
+                    keyWindow?.addSubview(signActivityCodeView)
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                }
             }
         }
     }
@@ -158,26 +166,31 @@ class VerificationCodeVC: CustomLoginVC {
         }
     }
     
-    private func forgetPasswordAction(_ smsCode:String){
+    private func forgetPasswordAction(_ smsCode: String) {
         guard smsCode.count == 4, var info = info else { return }
         info.smsCode = smsCode
         let forgetPasswordInfo = info
         let forgetPasswordInfoDic = try? forgetPasswordInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.forgotPassword, parameters: forgetPasswordInfoDic) { (data, statusCode, errorMSG) in
-            guard let data = data, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            let completetChangePWDView = CompletetChangePWDView(frame: UIScreen.main.bounds)
-            fadeInOutAni(showView: completetChangePWDView) {
-                let json = NetworkManager.shared.dataToDictionary(data: data)
-                print(json)
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: view.frame)
-                    fadeInOutAni(showView: updatePasswordSuccessView) {
-                        self.goToLoginVC()
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.forgotPassword,
+                                    parameters: forgetPasswordInfoDic,
+                                    authorizationToken: "",
+                                    responseType: ApiResult.self) { [weak self] result in
+            switch result {
+            case .success(let apiResult):
+                let completetChangePWDView = CompletetChangePWDView(frame: UIScreen.main.bounds)
+                fadeInOutAni(showView: completetChangePWDView) {
+                    print("API Result: \(apiResult)")
+                    DispatchQueue.main.async {
+                        guard let self = self else { return }
+                        let updatePasswordSuccessView = UpdatePasswordSuccessView(frame: self.view.frame)
+                        fadeInOutAni(showView: updatePasswordSuccessView) {
+                            self.goToLoginVC()
+                        }
                     }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }

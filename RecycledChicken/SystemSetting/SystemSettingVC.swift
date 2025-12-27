@@ -142,12 +142,16 @@ extension SystemSettingVC:InvitationCodeViewDelegate {
         }
         let inviteRequestInfo = InviteRequestInfo(inviteCode: invitationCode)
         let inviteRequestInfoDic = try? inviteRequestInfo.asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName + APIUrl.enterInviteCode, parameters: inviteRequestInfoDic, authorizationToken: CommonKey.shared.authToken) { data, statusCode, errorMSG in
-            guard let data = data, let apiResult = try? JSONDecoder().decode(ApiResult.self, from: data) else {
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.enterInviteCode,
+                                    parameters: inviteRequestInfoDic,
+                                    authorizationToken: CommonKey.shared.authToken,
+                                    responseType: ApiResult.self) { result in
+            switch result {
+            case .success(let apiResult):
+                finishAction?(apiResult)
+            case .failure:
                 finishAction?(nil)
-                return
             }
-            finishAction?(apiResult)
         }
     }
     

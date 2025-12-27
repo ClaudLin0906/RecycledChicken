@@ -47,21 +47,27 @@ class DeleteAccountAlertVC: UIViewController {
         }
     }
 
-    private func deleteAccountAction(_ password:String){
+    private func deleteAccountAction(_ password: String) {
         let deleteDic = try? DeleteInfo(password: password).asDictionary()
-        NetworkManager.shared.requestWithJSONBody(urlString: APIUrl.domainName+APIUrl.delete, parameters: deleteDic, authorizationToken: CommonKey.shared.authToken){ (data, statusCode, errorMSG) in
-            guard statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized, message: errorMSG)
-                return
-            }
-            loginOutRemoveObject()
-            DispatchQueue.main.async {
-                self.dismiss(animated: true) {
-                    if let VC = UIStoryboard(name: "SignLogin", bundle: nil).instantiateViewController(withIdentifier: "SignLogin") as? SignLoginVC, let topVC = getTopController() {
-                        self.superVC?.navigationController?.popToRootViewController(animated: false)
-                        VC.modalPresentationStyle = .fullScreen
-                        topVC.present(VC, animated: true)
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.delete,
+                                    parameters: deleteDic,
+                                    authorizationToken: CommonKey.shared.authToken,
+                                    responseType: ApiResult.self) { [weak self] result in
+            switch result {
+            case .success:
+                loginOutRemoveObject()
+                DispatchQueue.main.async {
+                    self?.dismiss(animated: true) {
+                        if let VC = UIStoryboard(name: "SignLogin", bundle: nil).instantiateViewController(withIdentifier: "SignLogin") as? SignLoginVC, let topVC = getTopController() {
+                            self?.superVC?.navigationController?.popToRootViewController(animated: false)
+                            VC.modalPresentationStyle = .fullScreen
+                            topVC.present(VC, animated: true)
+                        }
                     }
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
                 }
             }
         }
