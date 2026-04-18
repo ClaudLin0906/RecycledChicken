@@ -22,22 +22,10 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var chickenLevelLabel:CustomLabel!
     
     @IBOutlet weak var trendChartImageView:UIImageView!
-    
-    @IBOutlet weak var petItemView:RecycledItemView!
-        
-    @IBOutlet weak var batteryItemView:RecycledItemView!
-    
-    @IBOutlet weak var papperCubItemView:RecycledItemView!
-    
-    @IBOutlet weak var aluminumCanItemView:RecycledItemView!
-    
-    @IBOutlet weak var milkCanItemView:RecycledItemView!
-    
-    @IBOutlet weak var foilPackItemView:RecycledItemView!
-    
-    @IBOutlet weak var paperCartonItemView:RecycledItemView!
-    
-    @IBOutlet weak var recycleScrollView:UIScrollView!
+
+    @IBOutlet weak var recycleScrollView: UIScrollView!
+
+    @IBOutlet weak var recycleStackView: UIStackView!
     
     @IBOutlet weak var mallCollectionView:UICollectionView!
     
@@ -52,7 +40,9 @@ class HomeVC: CustomRootVC {
     @IBOutlet weak var mallHeight:NSLayoutConstraint!
     
     @IBOutlet weak var bannerView:UIView!
-        
+    
+    private var itemViews: [RecycleItem: RecycledItemView] = [:]
+
     private var scrollView:UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,38 +62,40 @@ class HomeVC: CustomRootVC {
     
     private var bannerTimer: Timer?
 
+    private var isScrollThumbConfigured = false
+
     @UserDefault(UserDefaultKey.shared.displayToday, defaultValue: "") var displayToday:String
         
     @UserDefault(UserDefaultKey.shared.oldChickenLevel, defaultValue: nil) var oldChickenLevel:Int?
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setupScrollbarAppearance()
+        configureScrollThumbIfNeeded()
     }
 
-    private func setupScrollbarAppearance() {
-        // 軌道
-        if recycleScrollView.viewWithTag(9901) == nil {
-            let trackView = UIView()
-            trackView.tag = 9901
-            trackView.backgroundColor = UIColor(hex: "#D2C3B2")
-            trackView.layer.cornerRadius = 1.5
-            trackView.translatesAutoresizingMaskIntoConstraints = false
-            recycleScrollView.superview?.insertSubview(trackView, belowSubview: recycleScrollView)
-            NSLayoutConstraint.activate([
-                trackView.leadingAnchor.constraint(equalTo: recycleScrollView.leadingAnchor),
-                trackView.trailingAnchor.constraint(equalTo: recycleScrollView.trailingAnchor),
-                trackView.bottomAnchor.constraint(equalTo: recycleScrollView.bottomAnchor, constant: -2),
-                trackView.heightAnchor.constraint(equalToConstant: 3)
-            ])
+    private func setupScrollTrack() {
+        let trackView = UIView()
+        trackView.backgroundColor = UIColor(hex: "#D2C3B2")
+        trackView.layer.cornerRadius = 1.5
+        trackView.translatesAutoresizingMaskIntoConstraints = false
+        recycleScrollView.superview?.insertSubview(trackView, belowSubview: recycleScrollView)
+        NSLayoutConstraint.activate([
+            trackView.leadingAnchor.constraint(equalTo: recycleScrollView.leadingAnchor),
+            trackView.trailingAnchor.constraint(equalTo: recycleScrollView.trailingAnchor),
+            trackView.bottomAnchor.constraint(equalTo: recycleScrollView.bottomAnchor, constant: -2),
+            trackView.heightAnchor.constraint(equalToConstant: 3)
+        ])
+    }
+
+    private func configureScrollThumbIfNeeded() {
+        guard !isScrollThumbConfigured else { return }
+        let thumbViews = recycleScrollView.subviews.filter { $0 is UIImageView }
+        guard !thumbViews.isEmpty else { return }
+        thumbViews.forEach {
+            $0.backgroundColor = UIColor(hex: "#AC9A84")
+            $0.layer.cornerRadius = 1.5
         }
-        // 滑塊
-        recycleScrollView.subviews.forEach { subview in
-            if subview is UIImageView {
-                subview.backgroundColor = UIColor(hex: "#AC9A84")
-                subview.layer.cornerRadius = 1.5
-            }
-        }
+        isScrollThumbConfigured = true
     }
 
     override func viewDidLoad() {
@@ -136,13 +128,13 @@ class HomeVC: CustomRootVC {
                 switch result {
                 case .success(let records):
                     let petItemCount = (records.bottle ?? 0) + (records.coloredBottle ?? 0) + (records.colorlessBottle ?? 0)
-                    petItemView.setAmount(petItemCount)
-                    batteryItemView.setAmount(records.battery ?? 0)
-                    papperCubItemView.setAmount(records.cup ?? 0)
-                    aluminumCanItemView.setAmount(records.can ?? 0)
-                    milkCanItemView.setAmount(0)
-                    foilPackItemView.setAmount(0)
-                    paperCartonItemView.setAmount(0)
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        self.itemViews[.bottle]?.setAmount(petItemCount)
+                        self.itemViews[.battery]?.setAmount(records.battery ?? 0)
+                        self.itemViews[.papperCub]?.setAmount(records.cup ?? 0)
+                        self.itemViews[.aluminumCan]?.setAmount(records.can ?? 0)
+                    }
                 case .failure:
                     showAlert(VC: self, title: "error".localized)
                 }
@@ -170,7 +162,7 @@ class HomeVC: CustomRootVC {
             getADBannerInfos {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    if adBannerInfos.count > 0 {
+                    if !adBannerInfos.isEmpty {
                         startBannerTimer()
                     }
                     pageControl.numberOfPages = adBannerInfos.count
@@ -263,47 +255,16 @@ class HomeVC: CustomRootVC {
     }
     
     private func getTrendChart() -> UIImage? {
-        if let levelInfo = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo {
-            var image:UIImage?
-            switch levelInfo.progress {
-            case 1:
-                image = UIImage(named: "RecycledLevel1")
-            case 2:
-                image = UIImage(named: "RecycledLevel2")
-            case 3:
-                image = UIImage(named: "RecycledLevel3")
-            case 4:
-                image = UIImage(named: "RecycledLevel4")
-            case 5:
-                image = UIImage(named: "RecycledLevel5")
-            case 6:
-                image = UIImage(named: "RecycledLevel6")
-            case 7:
-                image = UIImage(named: "RecycledLevel7")
-            case 8:
-                image = UIImage(named: "RecycledLevel8")
-            case 9:
-                image = UIImage(named: "RecycledLevel9")
-            case 10:
-                image = UIImage(named: "RecycledLevel10")
-            default:
-                image = nil
-            }
-            return image
-        }
-        return nil
+        guard let progress = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.progress,
+              (1...10).contains(progress) else { return nil }
+        return UIImage(named: "RecycledLevel\(progress)")
     }
     
     private func UIInit(){
         carbonReductionLogBtn.layer.borderWidth = 1
         carbonReductionLogBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        petItemView.setInfo(.bottle)
-        batteryItemView.setInfo(.battery)
-        papperCubItemView.setInfo(.papperCub)
-        aluminumCanItemView.setInfo(.aluminumCan)
-        milkCanItemView.setInfo(.milkCan)
-        foilPackItemView.setInfo(.foilPack)
-        paperCartonItemView.setInfo(.paperCarton)
+        buildRecycleItemViews()
+        setupScrollTrack()
         mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 10, height: UIScreen.main.bounds.size.height / 8)
         mallCollectionViewFlowLayout.estimatedItemSize = .zero
         mallCollectionViewFlowLayout.minimumInteritemSpacing = 0
@@ -322,6 +283,17 @@ class HomeVC: CustomRootVC {
         scrollView.addGestureRecognizer(rightGesture)
     }
     
+    private func buildRecycleItemViews() {
+        RecycleItem.allCases.forEach { item in
+            let view = RecycledItemView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            view.setInfo(item)
+            recycleStackView.addArrangedSubview(view)
+            itemViews[item] = view
+        }
+    }
+
     private func startBannerTimer() {
         bannerTimer?.invalidate()
         bannerTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
@@ -344,26 +316,22 @@ class HomeVC: CustomRootVC {
     private func addScrollSubView() {
         guard adBannerInfos.count > 0 else { return }
         scrollView.subviews.forEach { v in
-            if v is UIImageView {
-                v.removeFromSuperview()
-            }
+            if v is UIImageView { v.removeFromSuperview() }
         }
-        var currentX = 0
-        let scrollViewWidth:Int = Int(bannerView.frame.width)
-        let scrollViewHeight:Int = Int(bannerView.frame.height)
-        for i in 0...adBannerInfos.count - 1 {
-            let imageView = UIImageView(frame: CGRect(x: currentX, y: 0, width: scrollViewWidth, height: scrollViewHeight))
+        let scrollViewWidth = Int(bannerView.frame.width)
+        let scrollViewHeight = Int(bannerView.frame.height)
+        for (i, info) in adBannerInfos.enumerated() {
+            let imageView = UIImageView(frame: CGRect(x: scrollViewWidth * i, y: 0, width: scrollViewWidth, height: scrollViewHeight))
             imageView.layer.masksToBounds = true
             imageView.layer.cornerRadius = 10
             imageView.isUserInteractionEnabled = true
             imageView.tag = i
-            imageView.kf.setImage(with: URL(string: adBannerInfos[i].image ?? ""))
+            imageView.kf.setImage(with: URL(string: info.image ?? ""))
             let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
             imageView.addGestureRecognizer(tap)
             scrollView.addSubview(imageView)
-            currentX += scrollViewWidth
         }
-        scrollView.contentSize = CGSize(width: currentX, height: scrollViewHeight)
+        scrollView.contentSize = CGSize(width: scrollViewWidth * adBannerInfos.count, height: scrollViewHeight)
     }
     
     func updateCurrentDateInfo(){
@@ -396,7 +364,7 @@ class HomeVC: CustomRootVC {
         changeBanner()
     }
     
-    @objc private func tapGesture(_ gesture:UISwipeGestureRecognizer) {
+    @objc private func tapGesture(_ gesture: UITapGestureRecognizer) {
         if let v = gesture.view, let imageView = v as? UIImageView {
             let index = imageView.tag
             if let urlStr = adBannerInfos[index].URL, let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {

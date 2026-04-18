@@ -193,51 +193,7 @@
                                                         <rect key="frame" x="0.0" y="30" width="333" height="100"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rw1-Aa-stk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="595" height="85"/>
-                                                                <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCY-M4-tmv" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="85"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="pet-wd-001"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ro-Ce-PZi" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                        <rect key="frame" x="85" y="0.0" width="80" height="85"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="bat-wd-002"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRo-HE-eBj" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                        <rect key="frame" x="170" y="0.0" width="80" height="85"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="cup-wd-003"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJC-Uk-RPw" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                        <rect key="frame" x="255" y="0.0" width="80" height="85"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="can-wd-004"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlk-Cn-001" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                        <rect key="frame" x="340" y="0.0" width="80" height="85"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="mlk-wd-005"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fol-Pk-002" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                        <rect key="frame" x="425" y="0.0" width="80" height="85"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="fol-wd-006"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppr-Ct-003" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                        <rect key="frame" x="510" y="0.0" width="80" height="85"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="ppr-wd-007"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                </subviews>
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="85"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="85" id="Q9a-Nq-vvS"/>
                                                                 </constraints>
@@ -582,9 +538,7 @@
                     <navigationItem key="navigationItem" id="qsC-tK-K4C"/>
                     <connections>
                         <outlet property="accountLabel" destination="gcO-Mb-bsb" id="R1n-mX-pgT"/>
-                        <outlet property="aluminumCanItemView" destination="AJC-Uk-RPw" id="gqK-af-Y5B"/>
                         <outlet property="bannerView" destination="jyL-ic-FtB" id="W2x-ED-so4"/>
-                        <outlet property="batteryItemView" destination="3Ro-Ce-PZi" id="Xmd-3m-3e4"/>
                         <outlet property="carbonReductionLogBtn" destination="ybu-Dt-ZtI" id="pXO-R6-ZAh"/>
                         <outlet property="carbonReductionLogBtnWidth" destination="YfZ-s6-F39" id="Og1-dz-jeW"/>
                         <outlet property="chickenLevelImageView" destination="Ktv-ZA-eLX" id="4kz-gn-FfF"/>
@@ -595,11 +549,7 @@
                         <outlet property="messageLabel" destination="uFO-hx-dt1" id="xee-MF-wbc"/>
                         <outlet property="pageControl" destination="EZ8-g4-AaR" id="IlV-6p-Y1K"/>
                         <outlet property="recycleScrollView" destination="nOR-Wy-FTy" id="rcl-sv-001"/>
-                        <outlet property="milkCanItemView" destination="mlk-Cn-001" id="mlk-ot-001"/>
-                        <outlet property="foilPackItemView" destination="fol-Pk-002" id="fol-ot-002"/>
-                        <outlet property="paperCartonItemView" destination="ppr-Ct-003" id="ppr-ot-003"/>
-                        <outlet property="papperCubItemView" destination="vRo-HE-eBj" id="rlg-PJ-4lA"/>
-                        <outlet property="petItemView" destination="TCY-M4-tmv" id="6iw-Li-qqJ"/>
+                        <outlet property="recycleStackView" destination="rw1-Aa-stk" id="rcl-stk-001"/>
                         <outlet property="settingLabel" destination="7wA-1Y-6h3" id="4if-Iv-UGr"/>
                         <outlet property="trendChartImageView" destination="khi-Bw-h8S" id="jyA-JY-P2E"/>
                         <outlet property="welcomeLabel" destination="afR-qR-YjO" id="6Fq-gU-8dQ"/>
