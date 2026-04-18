@@ -9,6 +9,29 @@ import UIKit
 import DropDown
 import MKRingProgressView
 import OverlayContainer
+
+protocol ColorFillTypeDelegate {
+    func tapImage(_ imageView: UIImageView, userdefultKey: String, colorFillView: ColorFillView)
+    func tapBackground(_ backgroundView: UIView, userdefultKey: String, colorFillView: ColorFillView)
+}
+
+enum Notch: Int, CaseIterable {
+    case minimum, medium, maximum
+}
+
+enum ColorFillView {
+    case ColorFillTypeOneView
+    case ColorFillTypeTwoView
+    case ColorFillTypeThreeView
+    case ColorFillTypeFourView
+}
+
+private struct ChooseObject {
+    var imageView: UIImageView?
+    var backgroundView: UIView?
+    var userdefultKey: String
+}
+
 class CarbonReductionLogVC: CustomVC {
         
     @IBOutlet weak var recycleBtn:UIButton!
@@ -69,7 +92,7 @@ class CarbonReductionLogVC: CustomVC {
     private var colorFillScroViewIndex = 0
     {
         didSet {
-            handeleChangeColorFillScroView()
+            handleChangeColorFillScrollView()
         }
     }
             
@@ -83,21 +106,14 @@ class CarbonReductionLogVC: CustomVC {
         return dropDown
     }()
     
-    private var batteryCount = 0
-    
-    private var bottleCount = 0
-    
-    private var colorlessBottle = 0
-    
-    private var colorlessBatteryCount = 0
-        
-//    private var cupCount = 0
-    
-    private var canCount = 0
-    
-//    private var publicTransportCount = 0
-    
-    private var chooseObject:ChooseObject?
+    private lazy var itemCellViewMap: [RecycleItem: CarbonReductionItemCellView] = [
+        .bottle: bottleItemCellView,
+        .battery: batteryItemCellView,
+        .papperCub: papperCubItemCellView,
+        .aluminumCan: aluminumCanItemCellView
+    ]
+
+    private var chooseObject: ChooseObject?
     
     private var lastSelectedColor:UIColor?
     
@@ -131,14 +147,9 @@ class CarbonReductionLogVC: CustomVC {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
         getCarbonReductionRecords(completion: { [weak self] in
-            guard let self = self, let carbonReductionLogInfo = self.carbonReductionLogInfo else { return }
-            var itemNames:[String] = []
-            carbonReductionLogInfo.personalRecycleAmountAndTarget?.forEach({ if let itemName = $0.itemName {
-                itemNames.append(itemName)
-                self.currentPersonalRecyleAmountAndTargetInfo = $0
-            }})
-            itemDropDown.dataSource.removeAll()
-            itemDropDown.dataSource.append(contentsOf: itemNames)
+            guard let self = self, let items = self.carbonReductionLogInfo?.personalRecycleAmountAndTarget else { return }
+            itemDropDown.dataSource = items.compactMap { $0.itemName }
+            currentPersonalRecyleAmountAndTargetInfo = items.last
             changeType()
             reloadItemCellViewValue()
             setConvertValueLabelText()
@@ -158,22 +169,8 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     private func reloadItemCellViewValue() {
-        if let numberOfColorsCounts = getNumberOfColorsCounts() {
-            numberOfColorsCounts.forEach { numberOfColorsCount in
-                let count = numberOfColorsCount.count
-                switch numberOfColorsCount.recycleType {
-                case .bottle:
-                    bottleItemCellView.setCount(count)
-                case .battery:
-                    batteryItemCellView.setCount(count)
-                case .papperCub:
-                    papperCubItemCellView.setCount(count)
-                case .aluminumCan:
-                    aluminumCanItemCellView.setCount(count)
-                default:
-                    break
-                }
-            }
+        getNumberOfColorsCounts()?.forEach { numberOfColorsCount in
+            itemCellViewMap[numberOfColorsCount.recycleType]?.setCount(numberOfColorsCount.count)
         }
     }
     
@@ -203,55 +200,43 @@ class CarbonReductionLogVC: CustomVC {
         batteryItemCellView.setType(.battery)
         aluminumCanItemCellView.setType(.aluminumCan)
         papperCubItemCellView.setType(.papperCub)
-//        publicTransportItemCellView.setType(.publicTransport)
         recycledRingInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
         recycledRingInfoView.layer.shadowOpacity = 0.2
-        if let frame = colorFillScrollView.subviews.first?.subviews[0].frame {
-            colorFillViews.forEach { v in
-                v.frame = frame
-                if v == colorFillTypeTwoView, let colorFillView = v as? ColorFillTypeTwoView {
-                    colorFillView.delegate = self
-                    colorFillScrollView.subviews.first?.subviews[0].addSubview(colorFillTypeTwoView)
-                }
-                if v == colorFillTypeThreeView, let colorFillView = v as? ColorFillTypeThreeView {
-                    colorFillView.delegate = self
-                    colorFillScrollView.subviews.first?.subviews[1].addSubview(colorFillTypeThreeView)
-                }
-                if v == colorFillTypeFourView, let colorFillView = v as? ColorFillTypeFourView {
-                    colorFillView.delegate = self
-                    colorFillScrollView.subviews.first?.subviews[2].addSubview(colorFillTypeFourView)
-                }
-                if v == colorFillTypeOneView, let colorFillView = v as? ColorFillTypeOneView, let contentVoew = colorFillScrollView.subviews.first {
-                    colorFillView.delegate = self
-                    contentVoew.subviews[3].addSubview(colorFillView)
-                    colorFillView.translatesAutoresizingMaskIntoConstraints = false
-                    colorFillView.centerXAnchor.constraint(equalTo: contentVoew.subviews[3].centerXAnchor).isActive = true
-                    colorFillView.centerYAnchor.constraint(equalTo: contentVoew.subviews[3].centerYAnchor).isActive = true
-                    colorFillView.widthAnchor.constraint(equalTo: contentVoew.subviews[3].heightAnchor).isActive = true
-                    colorFillView.heightAnchor.constraint(equalTo: contentVoew.subviews[3].heightAnchor).isActive = true
-
-                }
-            }
-        }
+        setupColorFillViews()
         itemDropDown.anchorView = dropDownView
         itemDropDown.bottomOffset = CGPoint(x: 0, y: dropDownView.bounds.height)
         itemDropDown.selectionAction = { [weak self] (index, item) in
             guard let self = self, let carbonReductionLogInfo = carbonReductionLogInfo else { return }
-            currentPersonalRecyleAmountAndTargetInfo = nil
-            currentPersonalRecyleAmountAndTargetInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first(where: { personalRecyleAmountAndTargetInfo in
-                if let itemName = personalRecyleAmountAndTargetInfo.itemName {
-                    return itemName == item
-                }
-                return false
-            })
+            currentPersonalRecyleAmountAndTargetInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first { $0.itemName == item }
             changeType()
         }
-        
         if getLanguage() == .english {
             recycleBtnWidth.constant = 200
             bottomLineSpace.constant = -5
         }
         keyWindow?.addSubview(maskView)
+    }
+
+    private func setupColorFillViews() {
+        guard let contentView = colorFillScrollView.subviews.first,
+              let frame = contentView.subviews.first?.frame else { return }
+        colorFillViews.forEach { $0.frame = frame }
+        colorFillTypeTwoView.delegate = self
+        contentView.subviews[0].addSubview(colorFillTypeTwoView)
+        colorFillTypeThreeView.delegate = self
+        contentView.subviews[1].addSubview(colorFillTypeThreeView)
+        colorFillTypeFourView.delegate = self
+        contentView.subviews[2].addSubview(colorFillTypeFourView)
+        colorFillTypeOneView.delegate = self
+        let container = contentView.subviews[3]
+        container.addSubview(colorFillTypeOneView)
+        colorFillTypeOneView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            colorFillTypeOneView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            colorFillTypeOneView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            colorFillTypeOneView.widthAnchor.constraint(equalTo: container.heightAnchor),
+            colorFillTypeOneView.heightAnchor.constraint(equalTo: container.heightAnchor)
+        ])
     }
     
     private func getCarbonReductionRecords(completion: @escaping () -> Void) {
@@ -283,7 +268,7 @@ class CarbonReductionLogVC: CustomVC {
         }
     }
     
-    private func handeleChangeColorFillScroView() {
+    private func handleChangeColorFillScrollView() {
         colorFillScrollView.contentOffset = CGPoint(x: Int(colorFillScrollView.frame.width) * colorFillScroViewIndex, y: 0)
         colorFillTitleLabel.text = "\("restorationOfCoopland".localized)\(colorFillScroViewIndex + 1)"
     }
@@ -304,7 +289,7 @@ class CarbonReductionLogVC: CustomVC {
         itemDropDown.show()
     }
     
-    private func startViewHanle(_ v:UIView?, _ imageView:UIImageView?, _ userdefultKey: String) {
+    private func startViewHandle(_ v: UIView?, _ imageView: UIImageView?, _ userdefultKey: String) {
         chooseObject = nil
         lastSelectedColor = nil
         lastSelectedImage = nil
@@ -327,9 +312,7 @@ class CarbonReductionLogVC: CustomVC {
         guard let carbonReductionLogInfo = carbonReductionLogInfo, let personalRecycleAmountAndTargets = carbonReductionLogInfo.personalRecycleAmountAndTarget else { return nil }
         var numberOfColorsCounts: [NumberOfColorsCount] = []
         personalRecycleAmountAndTargets.forEach { info in
-            guard let totalRecycled = info.totalRecycled, totalRecycled > 0,
-                  let itemName = info.itemName,
-                  let recycleItem = RecycleItem.from(apiName: itemName) else { return }
+            guard let totalRecycled = info.totalRecycled, totalRecycled > 0, let itemName = info.itemName, let recycleItem = RecycleItem.from(apiName: itemName) else { return }
             let colorCount = totalRecycled / 20
             let useCount: Int
             switch recycleItem {
@@ -360,9 +343,7 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     private func getConvertValue(_ useRecyceledSort: RecycleItem) {
-        guard let carbonReductionLogInfo = self.carbonReductionLogInfo, let recycleInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first(where: {$0.itemName == useRecyceledSort.apiName}) else { return }
-        let colorRecycledValue = recycleInfo.getColorRecycledValue()
-        let resultValue = colorRecycledValue / 1000
+        let resultValue = useRecyceledSort.colorRecycledValue / 1000
         switch currentColorFillView {
         case .ColorFillTypeOneView:
             colorFillTypeOneViewCo2Value += Double(resultValue)
@@ -376,20 +357,9 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     private func setConvertValueLabelText() {
-        var resultValue:Double = 0
-        switch colorFillScroViewIndex {
-            case 0:
-                resultValue = colorFillTypeTwoViewCo2Value
-            case 1:
-                resultValue = colorFillTypeThreeViewCo2Value
-            case 2:
-                resultValue = colorFillTypeFourViewCo2Value
-            case 3:
-                resultValue = colorFillTypeOneViewCo2Value
-            default:
-                break
-        }
-        convertValueLabel.text = String(resultValue)
+        let co2Values = [colorFillTypeTwoViewCo2Value, colorFillTypeThreeViewCo2Value, colorFillTypeFourViewCo2Value, colorFillTypeOneViewCo2Value]
+        guard colorFillScroViewIndex < co2Values.count else { return }
+        convertValueLabel.text = String(co2Values[colorFillScroViewIndex])
     }
     
     @IBAction func showColoringTutorialVideo(_ sender:UIButton) {
@@ -450,13 +420,13 @@ extension CarbonReductionLogVC: ColorFillTypeDelegate {
     
     func tapImage(_ imageView: UIImageView, userdefultKey: String, colorFillView: ColorFillView) {
         currentColorFillView = colorFillView
-        startViewHanle(nil, imageView, userdefultKey)
+        startViewHandle(nil, imageView, userdefultKey)
         goChooseColorVC()
     }
     
     func tapBackground(_ backgroundView: UIView, userdefultKey: String, colorFillView: ColorFillView) {
         currentColorFillView = colorFillView
-        startViewHanle(backgroundView, nil, userdefultKey)
+        startViewHandle(backgroundView, nil, userdefultKey)
         goChooseColorVC()
     }
     
@@ -466,18 +436,9 @@ extension CarbonReductionLogVC: OverlayTransitioningDelegate, OverlayContainerVi
     
     func overlayContainerViewController(_ containerViewController: OverlayContainer.OverlayContainerViewController, heightForNotchAt index: Int, availableSpace: CGFloat) -> CGFloat {
         150
-//        switch Notch.allCases[index] {
-//        case .minimum:
-//            return 150
-//        case .medium:
-//            return 300
-//        case .maximum:
-//            return availableSpace - 200
-//        }
     }
     
     func numberOfNotches(in containerViewController: OverlayContainerViewController) -> Int {
-//        Notch.allCases.count
         1
     }
     

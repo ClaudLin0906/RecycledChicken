@@ -168,6 +168,16 @@ enum RecycleItem: CaseIterable {
         }
     }
 
+    var colorRecycledValue: CGFloat {
+        switch self {
+        case .bottle:      return 1260
+        case .battery:     return 182000
+        case .aluminumCan: return 120100
+        case .papperCub:   return 9060
+        default:           return 0
+        }
+    }
+
     var recycleUnit: String {
         switch self {
         case .bottle:                                           return "瓶"
