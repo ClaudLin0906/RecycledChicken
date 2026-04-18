@@ -132,7 +132,7 @@
 		59600F1F2B9EEB81009AFA76 /* MyTicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F212B9EEB81009AFA76 /* MyTicker.storyboard */; };
 		59600F232B9EEBC7009AFA76 /* BuyCommodity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F252B9EEBC7009AFA76 /* BuyCommodity.storyboard */; };
 		59600F272B9EEBD2009AFA76 /* StationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F292B9EEBD2009AFA76 /* StationList.storyboard */; };
-		599836542B946EC6003F3B48 /* RecycleCount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599836552B946EC6003F3B48 /* RecycleCount.xib */; };
+		599836542B946EC6003F3B48 /* RecycleCountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599836552B946EC6003F3B48 /* RecycleCountView.xib */; };
 		59600F2B2B9EEC12009AFA76 /* PointRule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F2D2B9EEC12009AFA76 /* PointRule.storyboard */; };
 		59600F2F2B9EECF7009AFA76 /* StoreMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59600F312B9EECF7009AFA76 /* StoreMap.storyboard */; };
 		59600F332B9EED12009AFA76 /* IconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59600F352B9EED12009AFA76 /* IconView.xib */; };
@@ -501,7 +501,7 @@
 		59600F242B9EEBC7009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BuyCommodity.storyboard; sourceTree = "<group>"; };
 		59600F262B9EEBC7009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/BuyCommodity.xcstrings; sourceTree = "<group>"; };
 		59600F282B9EEBD2009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StationList.storyboard; sourceTree = "<group>"; };
-		599836552B946EC6003F3B48 /* RecycleCount.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecycleCount.xib; path = Base.lproj/RecycleCount.xib; sourceTree = "<group>"; };
+		599836552B946EC6003F3B48 /* RecycleCountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecycleCountView.xib; path = Base.lproj/RecycleCountView.xib; sourceTree = "<group>"; };
 		59600F2A2B9EEBD2009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/StationList.xcstrings; sourceTree = "<group>"; };
 		59600F2C2B9EEC12009AFA76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PointRule.storyboard; sourceTree = "<group>"; };
 		59600F2E2B9EEC12009AFA76 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/PointRule.xcstrings; sourceTree = "<group>"; };
@@ -1270,7 +1270,7 @@
 				59600F292B9EEBD2009AFA76 /* StationList.storyboard */,
 				599836502B946EC6003F3B48 /* StationListTableViewCell.swift */,
 				599836532B946EC6003F3B48 /* RecycleCountView.swift */,
-				599836552B946EC6003F3B48 /* RecycleCount.xib */,
+				599836552B946EC6003F3B48 /* RecycleCountView.xib */,
 			);
 			path = StationList;
 			sourceTree = "<group>";

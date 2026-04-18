@@ -25,11 +25,19 @@ class MapIconView: UIView, NibOwnerLoadable {
     
     private func customInit(){
         loadNibContent()
+        stackView.distribution = .fill
+        stackView.spacing = 2
     }
     
-    func addImageView(_ image:UIImage) {
+    func addImageView(_ image: UIImage, size: CGFloat = 10) {
         let imageView = UIImageView()
         imageView.image = image
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: size),
+            imageView.heightAnchor.constraint(equalToConstant: size)
+        ])
         stackView.addArrangedSubview(imageView)
     }
     

@@ -21,8 +21,9 @@ class RecycleCountView: UIView, NibOwnerLoadable {
         loadNibContent()
     }
 
-    func configure(item: RecycleItem, count: Int) {
+    func setValue(item: RecycleItem, count: Int) {
         iconImageView.image = UIImage(named: item.iconName)
         countLabel.text = "\(count)"
     }
+    
 }

@@ -92,78 +92,40 @@ class StoreMapVC: CustomRootVC {
         }
     }
     
-    private func getMakerIcon(_ info:MapInfo) -> UIImage? {
-        var image:UIImage?
-        var isSpecial = false
-        if info.description != nil, info.description != "" {
-            isSpecial = true
+    private func getMakerIcon(_ info: MapInfo) -> UIImage? {
+        let isSpecial = info.description != nil && info.description != ""
+        let markerSize = CGSize(width: 50, height: 60)
+
+        let baseName = info.machineStatus == .submit
+            ? (isSpecial ? "ic_special_mark" : "ic_normal_mark")
+            : (isSpecial ? "ch-51" : "ch-50")
+
+        guard let baseImage = UIImage(named: baseName) else { return nil }
+
+        let availableItems: [RecycleItem]
+        if info.machineStatus == .submit, let remaining = info.machineRemaining {
+            availableItems = RecycleItem.allCases.filter { $0.remaining(from: remaining) != nil }
+            print("[\(info.name ?? "")] remaining: \(remaining), availableItems: \(availableItems)")
+        } else {
+            availableItems = []
         }
-        switch info.machineStatus {
-        case .submit:
-            // remainBottle remainBattery remainCan remainCup isSpecial colorBottle
-            let imageMap: [String: UIImage] = [
-                "false,false,false,true,false,false": #imageLiteral(resourceName: "ch-34"),
-                "false,false,false,true,true,false": #imageLiteral(resourceName: "ch-48"),
-                "false,false,true,false,false,false": #imageLiteral(resourceName: "ch-33"),
-                "false,false,true,false,true,false": #imageLiteral(resourceName: "ch-47"),
-                "false,false,true,true,false,false": #imageLiteral(resourceName: "ch-29"),
-                "false,false,true,true,true,false": #imageLiteral(resourceName: "ch-43"),
-                "false,true,false,false,false,false": #imageLiteral(resourceName: "ch-31"),
-                "false,true,false,false,true,false": #imageLiteral(resourceName: "ch-45"),
-                "false,true,false,true,false,false": #imageLiteral(resourceName: "ch-27"),
-                "false,true,false,true,true,false": #imageLiteral(resourceName: "ch-41"),
-                "false,true,true,false,false,false": #imageLiteral(resourceName: "ch-26"),
-                "false,true,true,false,true,false": #imageLiteral(resourceName: "ch-40"),
-                "false,true,true,true,false,false": #imageLiteral(resourceName: "ch-24"),
-                "false,true,true,true,true,false": #imageLiteral(resourceName: "ch-38"),
-                "true,false,false,false,false,false": #imageLiteral(resourceName: "ch-32"),
-                "true,false,false,false,true,false": #imageLiteral(resourceName: "ch-46"),
-                "true,false,false,true,false,false": #imageLiteral(resourceName: "ch-28"),
-                "true,true,false,false,false,true": #imageLiteral(resourceName: "ch-35"),
-                "true,false,false,true,true,false": #imageLiteral(resourceName: "ch-42"),
-                "true,false,true,false,false,false": #imageLiteral(resourceName: "ch-30"),
-                "true,false,true,false,true,false": #imageLiteral(resourceName: "ch-44"),
-                "true,true,false,false,false,false": #imageLiteral(resourceName: "ch-25"),
-                "true,true,false,false,true,false": #imageLiteral(resourceName: "ch-39"),
-                "true,true,false,true,false,false": #imageLiteral(resourceName: "ch-23"),
-                "true,true,false,true,true,false": #imageLiteral(resourceName: "ch-37"),
-                "true,true,true,false,false,false": #imageLiteral(resourceName: "ch-22"),
-                "true,true,true,false,true,false": #imageLiteral(resourceName: "ch-36"),
-                "true,true,false,false,true,true": #imageLiteral(resourceName: "ch-49")
-            ]
 
-            if let machineRemaining = info.machineRemaining {
-                var remainBottle = false
-                var remainBattery = false
-                var remainColorBottle = false
-                var remainCan = false
-                var remainCup = false
-                if machineRemaining.battery != nil {
-                    remainBattery = true
-                }
-                if  machineRemaining.bottle != nil || machineRemaining.coloredBottle != nil  {
-                    remainBottle = true
-                }
-                if machineRemaining.colorlessBottle != nil  {
-                    remainColorBottle = true
-                }
-                if machineRemaining.can != nil  {
-                    remainCan = true
-                }
-                if machineRemaining.cup != nil  {
-                    remainCup = true
-                }
-
-                let key = "\(remainBottle),\(remainBattery),\(remainCan),\(remainCup),\(isSpecial),\(remainColorBottle)"
-                
-                if let imageChicken = imageMap[key] {
-                    image = imageChicken
-                }
+        UIGraphicsBeginImageContextWithOptions(markerSize, false, 0)
+        defer { UIGraphicsEndImageContext() }
+        baseImage.draw(in: CGRect(origin: .zero, size: markerSize))
+        if !availableItems.isEmpty {
+            let iconWidth: CGFloat = 6
+            let iconHeight: CGFloat = 10
+            let spacing: CGFloat = 4
+            let totalWidth = CGFloat(availableItems.count) * iconWidth + CGFloat(availableItems.count - 1) * spacing
+            let startX = (markerSize.width - totalWidth) / 2
+            let iconY = markerSize.height * 0.42
+            availableItems.enumerated().forEach { i, item in
+                let x = startX + CGFloat(i) * (iconWidth + spacing)
+                UIImage(named: item.iconName)?.draw(in: CGRect(x: x, y: iconY, width: iconWidth, height: iconHeight))
             }
-        default:
-            image = isSpecial ? #imageLiteral(resourceName: "ch-51") : #imageLiteral(resourceName: "ch-50")
         }
-        return imageWithImage(image:image, scaledToSize: CGSize(width: 50, height: 50))
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
     
     private func isLocationServicesEnabled() -> Bool {

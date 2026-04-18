@@ -52,7 +52,7 @@ class StationListTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        recycleItemsStackView.distribution = .fillEqually
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -102,7 +102,7 @@ class StationListTableViewCell: UITableViewCell {
         RecycleItem.allCases.forEach { item in
             guard let count = item.remaining(from: remaining) else { return }
             let recycleCountView = RecycleCountView()
-            recycleCountView.configure(item: item, count: count)
+            recycleCountView.setValue(item: item, count: count)
             recycleItemsStackView.addArrangedSubview(recycleCountView)
         }
     }
