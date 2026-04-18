@@ -86,7 +86,6 @@ class StoreMapVC: CustomRootVC {
                 let maker = GMSMarker()
                 maker.position = coordinate
                 maker.map = self.mapView
-                maker.icon = imageWithImage(image: UIImage(named: "组 265")!, scaledToSize: CGSize(width: 50, height: 50))
                 maker.icon = self.getMakerIcon(info)
                 maker.title = info.name
             }
@@ -265,11 +264,9 @@ extension StoreMapVC: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        print("Current location: <\(coordinate.latitude), \(coordinate.longitude)>")
     }
     
     func mapView(_ mapView: GMSMapView, didTapMyLocation location: CLLocationCoordinate2D) {
-        print("Current location: <\(location.latitude), \(location.longitude)>")
     }
 
 }
@@ -278,8 +275,8 @@ extension StoreMapVC:CLLocationManagerDelegate {
     
     //Location Manager delegates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
+        guard let location = locations.last else { return }
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 17.0)
         self.mapView?.animate(to: camera)
         locationManager.stopUpdatingLocation()
     }

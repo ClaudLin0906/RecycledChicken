@@ -31,6 +31,14 @@ class HomeVC: CustomRootVC {
     
     @IBOutlet weak var aluminumCanItemView:RecycledItemView!
     
+    @IBOutlet weak var milkCanItemView:RecycledItemView!
+    
+    @IBOutlet weak var foilPackItemView:RecycledItemView!
+    
+    @IBOutlet weak var paperCartonItemView:RecycledItemView!
+    
+    @IBOutlet weak var recycleScrollView:UIScrollView!
+    
     @IBOutlet weak var mallCollectionView:UICollectionView!
     
     @IBOutlet weak var mallCollectionViewFlowLayout: UICollectionViewFlowLayout!
@@ -68,6 +76,36 @@ class HomeVC: CustomRootVC {
         
     @UserDefault(UserDefaultKey.shared.oldChickenLevel, defaultValue: nil) var oldChickenLevel:Int?
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupScrollbarAppearance()
+    }
+
+    private func setupScrollbarAppearance() {
+        // 軌道
+        if recycleScrollView.viewWithTag(9901) == nil {
+            let trackView = UIView()
+            trackView.tag = 9901
+            trackView.backgroundColor = UIColor(hex: "#D2C3B2")
+            trackView.layer.cornerRadius = 1.5
+            trackView.translatesAutoresizingMaskIntoConstraints = false
+            recycleScrollView.superview?.insertSubview(trackView, belowSubview: recycleScrollView)
+            NSLayoutConstraint.activate([
+                trackView.leadingAnchor.constraint(equalTo: recycleScrollView.leadingAnchor),
+                trackView.trailingAnchor.constraint(equalTo: recycleScrollView.trailingAnchor),
+                trackView.bottomAnchor.constraint(equalTo: recycleScrollView.bottomAnchor, constant: -2),
+                trackView.heightAnchor.constraint(equalToConstant: 3)
+            ])
+        }
+        // 滑塊
+        recycleScrollView.subviews.forEach { subview in
+            if subview is UIImageView {
+                subview.backgroundColor = UIColor(hex: "#AC9A84")
+                subview.layer.cornerRadius = 1.5
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
@@ -93,25 +131,21 @@ class HomeVC: CustomRootVC {
         }
         getItems()
         if let (startTime, endTime) = getStartAndEndDateOfMonth() {
-            getRecords(nil, startTime, endTime) { [weak self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-                guard let self = self, let statusCode = statusCode, statusCode == 200 else {
+            getRecords(nil, startTime, endTime) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let records):
+                    let petItemCount = (records.bottle ?? 0) + (records.coloredBottle ?? 0) + (records.colorlessBottle ?? 0)
+                    petItemView.setAmount(petItemCount)
+                    batteryItemView.setAmount(records.battery ?? 0)
+                    papperCubItemView.setAmount(records.cup ?? 0)
+                    aluminumCanItemView.setAmount(records.can ?? 0)
+                    milkCanItemView.setAmount(0)
+                    foilPackItemView.setAmount(0)
+                    paperCartonItemView.setAmount(0)
+                case .failure:
                     showAlert(VC: self, title: "error".localized)
-                    return
                 }
-                var petItemCount:Int = 0
-                if let bottle = bottle {
-                    petItemCount += bottle
-                }
-                if let colorledBottle = colorledBottle {
-                    petItemCount += colorledBottle
-                }
-                if let colorlessBottle = colorlessBottle {
-                    petItemCount += colorlessBottle
-                }
-                petItemView.setAmount(petItemCount)
-                batteryItemView.setAmount(battery ?? 0)
-                papperCubItemView.setAmount(cup ?? 0)
-                aluminumCanItemView.setAmount(can ?? 0)
             }
         }
     }
@@ -267,6 +301,9 @@ class HomeVC: CustomRootVC {
         batteryItemView.setInfo(.battery)
         papperCubItemView.setInfo(.papperCub)
         aluminumCanItemView.setInfo(.aluminumCan)
+        milkCanItemView.setInfo(.milkCan)
+        foilPackItemView.setInfo(.foilPack)
+        paperCartonItemView.setInfo(.paperCarton)
         mallCollectionViewFlowLayout.itemSize = CGSize(width: mallCollectionView.frame.size.width / 3 - 10, height: UIScreen.main.bounds.size.height / 8)
         mallCollectionViewFlowLayout.estimatedItemSize = .zero
         mallCollectionViewFlowLayout.minimumInteritemSpacing = 0

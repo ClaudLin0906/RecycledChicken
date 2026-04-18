@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ChooseColorVCDelete {
-    func comfirm( _ useRecyceledSort:RecyceledSort )
+    func comfirm( _ useRecyceledSort: RecycleItem )
     func chooseColor(_ color:UIColor )
     func cancel()
 }
@@ -23,7 +23,7 @@ class ChooseColorVC: UIViewController {
     
     private var numberOfColorsCounts:[NumberOfColorsCount] = []
     
-    private var selectedRecyceledSort:RecyceledSort?
+    private var selectedRecyceledSort: RecycleItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,9 +80,9 @@ class ChooseColorVC: UIViewController {
 }
 
 extension ChooseColorVC:CarbonReductionItemCellViewDelegate {
-    func tapItem(_ useRecyceledSort: RecyceledSort) {
+    func tapItem(_ useRecyceledSort: RecycleItem) {
         selectedRecyceledSort = nil
         selectedRecyceledSort = useRecyceledSort
-        delegate?.chooseColor(useRecyceledSort.getInfo().color)
+        delegate?.chooseColor(useRecyceledSort.color)
     }
 }

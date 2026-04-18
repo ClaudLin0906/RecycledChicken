@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CarbonReductionItemCellViewDelegate {
-    func tapItem(_ useRecyceledSort:RecyceledSort)
+    func tapItem(_ useRecyceledSort: RecycleItem)
 }
 
 class CarbonReductionItemCellView: UIView, NibOwnerLoadable {
@@ -19,11 +19,11 @@ class CarbonReductionItemCellView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var countLabel:UILabel!
     
-    private var type:RecyceledSort?
+    private var type: RecycleItem?
     {
         willSet {
             if let newValue = newValue {
-                imageView.image = UIImage(named: newValue.getInfo().iconName)
+                imageView.image = UIImage(named: newValue.iconName)
             }
         }
     }
@@ -49,7 +49,7 @@ class CarbonReductionItemCellView: UIView, NibOwnerLoadable {
         delegate?.tapItem(type)
     }
     
-    func setType(_ type:RecyceledSort) {
+    func setType(_ type: RecycleItem) {
         self.type = type
     }
     

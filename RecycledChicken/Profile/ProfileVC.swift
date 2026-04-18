@@ -94,7 +94,7 @@ class ProfileVC: CustomVC {
         }()
         let year = components.year
         let cells = cellsForTableView(tableView: profileTableView)
-        if let birthdayCell = cells.filter({ return $0.tag == 3})[0] as? ProfileTableViewCell {
+        if let birthdayCell = cells.first(where: { $0.tag == 3 }) as? ProfileTableViewCell {
             birthdayCell.info.text = "\(year!)/\(month)/\(day)"
             birthdayCell.phoneNumberCheckBox.checkState = .checked
             birthdayCell.info.isEnabled = false
@@ -167,7 +167,6 @@ class ProfileVC: CustomVC {
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("123")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

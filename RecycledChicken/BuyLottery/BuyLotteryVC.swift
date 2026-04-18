@@ -57,8 +57,9 @@ extension BuyLotteryVC: SpendPointAlertViewDelegate {
         NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.lotteryBuy, parameters: spendPointInfoDic, authorizationToken: CommonKey.shared.authToken, responseType: SpendPointResponse.self) { [weak self] result in
             switch result {
             case .success:
-                getUserNewInfo(VC: self!) {
-                    DispatchQueue.main.async {
+                guard let self = self else { return }
+                getUserNewInfo(VC: self) {
+                    DispatchQueue.main.async { [weak self] in
                         guard let self = self else { return }
                         let completeTaskAlertView = SpendPointCompleteAlertView(frame: UIScreen.main.bounds)
                         fadeInOutAni(showView: completeTaskAlertView, finishAction: nil)

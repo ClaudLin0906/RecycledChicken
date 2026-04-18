@@ -189,26 +189,67 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nOR-Wy-FTy">
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOR-Wy-FTy">
                                                         <rect key="frame" x="0.0" y="30" width="333" height="100"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCY-M4-tmv" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="100"/>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ro-Ce-PZi" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="84.666666666666686" y="0.0" width="79.333333333333314" height="100"/>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRo-HE-eBj" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="169" y="0.0" width="79.666666666666686" height="100"/>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJC-Uk-RPw" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="253.66666666666671" y="0.0" width="79.333333333333343" height="100"/>
-                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rw1-Aa-stk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="595" height="85"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCY-M4-tmv" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="85"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="pet-wd-001"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ro-Ce-PZi" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="85" y="0.0" width="80" height="85"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="bat-wd-002"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRo-HE-eBj" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="170" y="0.0" width="80" height="85"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="cup-wd-003"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJC-Uk-RPw" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="255" y="0.0" width="80" height="85"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="can-wd-004"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlk-Cn-001" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="340" y="0.0" width="80" height="85"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="mlk-wd-005"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fol-Pk-002" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="425" y="0.0" width="80" height="85"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="fol-wd-006"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppr-Ct-003" customClass="RecycledItemView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                        <rect key="frame" x="510" y="0.0" width="80" height="85"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="ppr-wd-007"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="85" id="Q9a-Nq-vvS"/>
+                                                                </constraints>
+                                                            </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="Q9a-Nq-vvS"/>
+                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="leading" secondItem="nOR-Wy-FTy" secondAttribute="leading" id="scv-ld-001"/>
+                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="trailing" secondItem="nOR-Wy-FTy" secondAttribute="trailing" id="scv-tr-002"/>
+                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="top" secondItem="nOR-Wy-FTy" secondAttribute="top" id="scv-tp-003"/>
+                                                            <constraint firstAttribute="height" constant="100" id="scv-ht-005"/>
                                                         </constraints>
-                                                    </stackView>
+                                                    </scrollView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -553,6 +594,10 @@
                         <outlet property="mallHeight" destination="mq2-jT-HQc" id="H7a-ED-2dU"/>
                         <outlet property="messageLabel" destination="uFO-hx-dt1" id="xee-MF-wbc"/>
                         <outlet property="pageControl" destination="EZ8-g4-AaR" id="IlV-6p-Y1K"/>
+                        <outlet property="recycleScrollView" destination="nOR-Wy-FTy" id="rcl-sv-001"/>
+                        <outlet property="milkCanItemView" destination="mlk-Cn-001" id="mlk-ot-001"/>
+                        <outlet property="foilPackItemView" destination="fol-Pk-002" id="fol-ot-002"/>
+                        <outlet property="paperCartonItemView" destination="ppr-Ct-003" id="ppr-ot-003"/>
                         <outlet property="papperCubItemView" destination="vRo-HE-eBj" id="rlg-PJ-4lA"/>
                         <outlet property="petItemView" destination="TCY-M4-tmv" id="6iw-Li-qqJ"/>
                         <outlet property="settingLabel" destination="7wA-1Y-6h3" id="4if-Iv-UGr"/>

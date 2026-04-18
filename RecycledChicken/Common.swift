@@ -110,43 +110,91 @@ class CommonColor {
 }
 
 
-enum RecyceledSort: CaseIterable {
-    
+enum RecycleItem: CaseIterable {
+
     case bottle
     case battery
     case papperCub
     case aluminumCan
-//    case publicTransport
-    
-    func getInfo() -> RecyceledSortInfo {
-        let bottleColor = #colorLiteral(red: 0.8862745098, green: 0.7607843137, blue: 0.4901960784, alpha: 1)
-        let batteryColor = #colorLiteral(red: 0.2666666667, green: 0.4901960784, blue: 0.4156862745, alpha: 1)
-        let papperCubColor = #colorLiteral(red: 0.6862745098, green: 0.5764705882, blue: 0.4431372549, alpha: 1)
-        let aluminumCanColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
-//        let publicTransportColor = #colorLiteral(red: 0.5882352941, green: 0.5882352941, blue: 0.5882352941, alpha: 1)
+    case milkCan
+    case foilPack
+    case paperCarton
+
+    var chineseName: String {
         switch self {
-        case .bottle:
-            return RecyceledSortInfo(chineseName: "bottle".localized, englishName: "PET", iconName: "Pet", color: bottleColor, recycleUnit: "瓶")
-        case .battery:
-            return RecyceledSortInfo(chineseName: "battery".localized, englishName: "BATTERY", iconName: "battery", color: batteryColor, recycleUnit: "顆")
-        case .papperCub:
-            return RecyceledSortInfo(chineseName: "papperCup".localized, englishName: "PAPPER CUB", iconName: "papperCub", color: papperCubColor, recycleUnit: "個")
-        case .aluminumCan:
-            return RecyceledSortInfo(chineseName: "aluminumCan".localized, englishName: "ALUMINUM CAN", iconName: "aluminumCan", color:aluminumCanColor, recycleUnit: "個")
-//        case .publicTransport:
-//            return RecyceledSortInfo(chineseName: "大眾運輸", englishName: "publicTransport", iconName: "bus", color: publicTransportColor, recycleUnit: "次", oUnit: "gCO2e")
+        case .bottle:      return "bottle".localized
+        case .battery:     return "battery".localized
+        case .papperCub:   return "papperCup".localized
+        case .aluminumCan: return "aluminumCan".localized
+        case .milkCan:     return "牛奶罐"
+        case .foilPack:    return "鋁箔包"
+        case .paperCarton: return "紙盒包"
         }
     }
-    
+
+    var englishName: String {
+        switch self {
+        case .bottle:      return "PET"
+        case .battery:     return "BATTERY"
+        case .papperCub:   return "PAPPER CUB"
+        case .aluminumCan: return "ALUMINUM CAN"
+        case .milkCan:     return "MILK CAN"
+        case .foilPack:    return "FOIL PACK"
+        case .paperCarton: return "PAPER CARTON"
+        }
+    }
+
+    var iconName: String {
+        switch self {
+        case .bottle:      return "Pet"
+        case .battery:     return "battery"
+        case .papperCub:   return "papperCub"
+        case .aluminumCan: return "aluminumCan"
+        case .milkCan:     return "milkCan"
+        case .foilPack:    return "foilPack"
+        case .paperCarton: return "paperCarton"
+        }
+    }
+
+    var color: UIColor {
+        switch self {
+        case .bottle:      return #colorLiteral(red: 0.8862745098, green: 0.7607843137, blue: 0.4901960784, alpha: 1)
+        case .battery:     return #colorLiteral(red: 0.2666666667, green: 0.4901960784, blue: 0.4156862745, alpha: 1)
+        case .papperCub:   return #colorLiteral(red: 0.6862745098, green: 0.5764705882, blue: 0.4431372549, alpha: 1)
+        case .aluminumCan: return #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
+        case .milkCan:     return #colorLiteral(red: 0.4745098039, green: 0.6392156863, blue: 0.7176470588, alpha: 1)
+        case .foilPack:    return #colorLiteral(red: 0.5568627451, green: 0.5019607843, blue: 0.6745098039, alpha: 1)
+        case .paperCarton: return #colorLiteral(red: 0.4862745098, green: 0.6196078431, blue: 0.4509803922, alpha: 1)
+        }
+    }
+
+    var recycleUnit: String {
+        switch self {
+        case .bottle:                                           return "瓶"
+        case .battery:                                          return "顆"
+        case .papperCub, .aluminumCan, .milkCan, .foilPack, .paperCarton: return "個"
+        }
+    }
+
+    /// 後端回傳的中文品項名稱
+    var apiName: String {
+        switch self {
+        case .bottle:      return "寶特瓶"
+        case .battery:     return "電池"
+        case .papperCub:   return "紙杯"
+        case .aluminumCan: return "鋁罐"
+        case .milkCan:     return "牛奶罐"
+        case .foilPack:    return "鋁箔包"
+        case .paperCarton: return "紙盒包"
+        }
+    }
+
+    static func from(apiName: String) -> RecycleItem? {
+        return allCases.first { $0.apiName == apiName }
+    }
 }
 
-struct RecyceledSortInfo {
-    var chineseName: String
-    var englishName: String
-    var iconName: String
-    var color:UIColor
-    var recycleUnit:String
-}
+typealias RecyceledSort = RecycleItem
 
 enum WeightUnit: String {
     case gram = "gCO₂e"
@@ -259,17 +307,6 @@ class CurrentUserInfo {
         }
     }()
     
-    var currentProfileInfo:ProfileNewInfo?
-    {
-        willSet{
-            if let newValue = newValue, newValue.userPhoneNumber == "0000000000" {
-                isGuest = true
-            }else{
-                isGuest = false
-            }
-        }
-    }
-    
     var currentProfileNewInfo:ProfileNewInfo?
     {
         willSet{
@@ -380,14 +417,23 @@ protocol NibOwnerLoadable: AnyObject {
     static var nib: UINib { get }
 }
 
-func getRecords(_ sites: [String]? = nil, _ startTime: String, _ endTime: String, completion: @escaping (_ statusCode: Int?, _ errorMSG: String?, _ useRecordInfos: [UseRecordInfo]?, _ battery: Int?, _ bottle: Int?, _ colorledBottle: Int?, _ colorlessBottle: Int?, _ can: Int?, _ cup: Int?) -> Void) {
+struct RecordsResult {
+    let useRecordInfos: [UseRecordInfo]
+    let battery: Int?
+    let bottle: Int?
+    let coloredBottle: Int?
+    let colorlessBottle: Int?
+    let can: Int?
+    let cup: Int?
+}
+
+func getRecords(_ sites: [String]? = nil, _ startTime: String, _ endTime: String, completion: @escaping (Result<RecordsResult, Error>) -> Void) {
     guard !CommonKey.shared.authToken.isEmpty else { return }
     var urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00"
     if let sites = sites {
         let sitesStr = sites.joined(separator: ",")
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sitesStr)"
     }
-    print(urlStr)
     NetworkManager.shared.get(url: urlStr,
                                authorizationToken: CommonKey.shared.authToken,
                                responseType: [UseRecordInfo].self) { result in
@@ -395,45 +441,44 @@ func getRecords(_ sites: [String]? = nil, _ startTime: String, _ endTime: String
         case .success(let useRecordInfos):
             var batteryInt: Int?
             var bottleInt: Int?
-            var colorledBottleInt: Int?
+            var coloredBottleInt: Int?
             var colorlessBottleInt: Int?
             var canInt: Int?
             var cupInt: Int?
             useRecordInfos.forEach { useRecordInfo in
                 if let recycleDetails = useRecordInfo.recycleDetails {
                     if let battery = recycleDetails.battery {
-                        batteryInt = batteryInt ?? 0
-                        batteryInt! += battery
+                        batteryInt = (batteryInt ?? 0) + battery
                     }
                     if let bottle = recycleDetails.bottle {
-                        bottleInt = bottleInt ?? 0
-                        bottleInt! += bottle
+                        bottleInt = (bottleInt ?? 0) + bottle
                     }
                     if let coloredBottle = recycleDetails.coloredBottle {
-                        colorledBottleInt = colorledBottleInt ?? 0
-                        colorledBottleInt! += coloredBottle
+                        coloredBottleInt = (coloredBottleInt ?? 0) + coloredBottle
                     }
                     if let colorlessBottle = recycleDetails.colorlessBottle {
-                        colorlessBottleInt = colorlessBottleInt ?? 0
-                        colorlessBottleInt! += colorlessBottle
+                        colorlessBottleInt = (colorlessBottleInt ?? 0) + colorlessBottle
                     }
                     if let can = recycleDetails.can {
-                        canInt = canInt ?? 0
-                        canInt! += can
+                        canInt = (canInt ?? 0) + can
                     }
                     if let cup = recycleDetails.cup {
-                        cupInt = cupInt ?? 0
-                        cupInt! += cup
+                        cupInt = (cupInt ?? 0) + cup
                     }
                 }
             }
-            completion(200, nil, useRecordInfos, batteryInt, bottleInt, colorledBottleInt, colorlessBottleInt, canInt, cupInt)
+            let recordsResult = RecordsResult(
+                useRecordInfos: useRecordInfos,
+                battery: batteryInt,
+                bottle: bottleInt,
+                coloredBottle: coloredBottleInt,
+                colorlessBottle: colorlessBottleInt,
+                can: canInt,
+                cup: cupInt
+            )
+            completion(.success(recordsResult))
         case .failure(let error):
-            let statusCode = (error as? NetworkError).flatMap { 
-                if case .httpError(let code, _) = $0 { return code }
-                return nil
-            }
-            completion(statusCode, error.localizedDescription, nil, nil, nil, nil, nil, nil, nil)
+            completion(.failure(error))
         }
     }
 }

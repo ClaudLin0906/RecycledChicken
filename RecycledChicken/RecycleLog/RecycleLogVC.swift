@@ -51,20 +51,19 @@ class RecycleLogVC: CustomVC {
         guard let dateLastYear = dateLastYearSameDay() else { return }
         let startTime = dateFromStringISO8601(date: dateLastYear)
         let endTime = dateFromStringISO8601(date: Date())
-        getRecords(nil, startTime, endTime) { statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-            guard let statusCode = statusCode, statusCode == 200 else {
-                showAlert(VC: self, title: "error".localized)
-                return
-            }
-            if let useRecordInfos = useRecordInfos {
-                self.useRecordInfoHandle(useRecordInfos)
+        getRecords(nil, startTime, endTime) { result in
+            switch result {
+            case .success(let records):
+                self.useRecordInfoHandle(records.useRecordInfos)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         self.tableView.stopSkeletonAnimation()
                         self.view.hideSkeleton()
-                    })
+                    }
                 }
+            case .failure:
+                showAlert(VC: self, title: "error".localized)
             }
         }
     }

@@ -194,28 +194,19 @@ class TaskTableViewCell: UITableViewCell {
         
         if !taskInfo.isFinish {
             if let type = taskInfo.type, type == .battery || type == .bottle || type == .cup || type == .can, let startTime = taskInfo.startTime, let endTime = taskInfo.endTime, let formattedStartDate = convertDateFormat(inputDateString: startTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd"), let formattedEndDate = convertDateFormat(inputDateString: endTime, inputFormat: "yyyy/MM/dd", outputFormat: "yyyy-MM-dd") {
-                getRecords(taskInfo.sites, formattedStartDate, formattedEndDate) { [weak self] statusCode, errorMSG, useRecordInfos, battery, bottle, colorledBottle, colorlessBottle, can, cup in
-                    guard let self = self else { return }
+                getRecords(taskInfo.sites, formattedStartDate, formattedEndDate) { [weak self] result in
+                    guard let self = self, case .success(let records) = result else { return }
                     DispatchQueue.main.async {
                         switch type {
                         case .battery:
-                            self.requiredAmountHandle(battery ?? 0)
+                            self.requiredAmountHandle(records.battery ?? 0)
                         case .bottle:
-                            var bottleCount = 0
-                            if let bottle = bottle {
-                                bottleCount += bottle
-                            }
-                            if let colorledBottle = colorledBottle {
-                                bottleCount += colorledBottle
-                            }
-                            if let colorlessBottle = colorlessBottle {
-                                bottleCount += colorlessBottle
-                            }
+                            let bottleCount = (records.bottle ?? 0) + (records.coloredBottle ?? 0) + (records.colorlessBottle ?? 0)
                             self.requiredAmountHandle(bottleCount)
                         case .can:
-                            self.requiredAmountHandle(can ?? 0)
+                            self.requiredAmountHandle(records.can ?? 0)
                         case .cup:
-                            self.requiredAmountHandle(cup ?? 0)
+                            self.requiredAmountHandle(records.cup ?? 0)
                         default:
                             break
                         }

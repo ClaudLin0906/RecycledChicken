@@ -8,11 +8,11 @@
 import Foundation
 
 struct NumberOfColorsCount {
-    var recycleType:RecyceledSort
-    var count:Int
+    var recycleType: RecycleItem
+    var count: Int
 }
 
 struct NumberOfColorsUsed {
-    var recycleType:RecyceledSort
-    var useCount:Int
+    var recycleType: RecycleItem
+    var useCount: Int
 }

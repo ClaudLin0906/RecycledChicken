@@ -170,35 +170,23 @@ class CarbonReductionLogVC: CustomVC {
                     papperCubItemCellView.setCount(count)
                 case .aluminumCan:
                     aluminumCanItemCellView.setCount(count)
+                default:
+                    break
                 }
             }
         }
     }
     
-    private func getRecyceledSortInfo(_ itemName:String) -> RecyceledSort? {
-        var result:RecyceledSort?
-        switch itemName {
-        case "寶特瓶":
-            result = .bottle
-        case "電池":
-            result = .battery
-        case "鋁罐":
-            result = .aluminumCan
-        case "紙杯":
-            result = .papperCub
-//        case "大眾運輸":
-//            result = .publicTransport
-        default :
-            break
-        }
-        return result
-    }
-    
     private func changeType() {
-        guard let personalRecyleAmountAndTargetInfo = currentPersonalRecyleAmountAndTargetInfo, let itemName = personalRecyleAmountAndTargetInfo.itemName, let recyceledSort = getRecyceledSortInfo(itemName), let totalRecycled = personalRecyleAmountAndTargetInfo.totalRecycled, let target = personalRecyleAmountAndTargetInfo.target, let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate else { return }
-        dropDownView.sortLabel.text = recyceledSort.getInfo().chineseName
+        guard let personalRecyleAmountAndTargetInfo = currentPersonalRecyleAmountAndTargetInfo,
+              let itemName = personalRecyleAmountAndTargetInfo.itemName,
+              let recycleItem = RecycleItem.from(apiName: itemName),
+              let totalRecycled = personalRecyleAmountAndTargetInfo.totalRecycled,
+              let target = personalRecyleAmountAndTargetInfo.target,
+              let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate else { return }
+        dropDownView.sortLabel.text = recycleItem.chineseName
         let (resultValue, resultUnit) = getCO2(Double(totalRecycled), conversionRate)
-        recycledRingInfoView.setRecycledRingInfo(totalRecycled, recyceledSort.getInfo().recycleUnit, resultValue, resultUnit, Double(target), recyceledSort.getInfo().color)
+        recycledRingInfoView.setRecycledRingInfo(totalRecycled, recycleItem.recycleUnit, resultValue, resultUnit, Double(target), recycleItem.color)
     }
     
     private func getCO2(_ totalRecycled:Double, _ conversionRate:Double) -> (String, String) {
@@ -337,22 +325,21 @@ class CarbonReductionLogVC: CustomVC {
     
     private func getNumberOfColorsCounts() -> [NumberOfColorsCount]? {
         guard let carbonReductionLogInfo = carbonReductionLogInfo, let personalRecycleAmountAndTargets = carbonReductionLogInfo.personalRecycleAmountAndTarget else { return nil }
-        var numberOfColorsCounts:[NumberOfColorsCount] = []
+        var numberOfColorsCounts: [NumberOfColorsCount] = []
         personalRecycleAmountAndTargets.forEach { info in
-            guard let totalRecycled = info.totalRecycled, totalRecycled > 0, let itemName = info.itemName, let recyceledSort = getRecyceledSortInfo(itemName) else { return }
-            var total = 0
+            guard let totalRecycled = info.totalRecycled, totalRecycled > 0,
+                  let itemName = info.itemName,
+                  let recycleItem = RecycleItem.from(apiName: itemName) else { return }
             let colorCount = totalRecycled / 20
-            switch recyceledSort {
-            case .bottle:
-                total = colorCount - colorBottleUseCount
-            case .battery:
-                total = colorCount - colorBatteryUseCount
-            case .papperCub:
-                total = colorCount - colorPapperCubUseCount
-            case .aluminumCan:
-                total = colorCount - colorAluminumCanUseCount
+            let useCount: Int
+            switch recycleItem {
+            case .bottle:      useCount = colorBottleUseCount
+            case .battery:     useCount = colorBatteryUseCount
+            case .papperCub:   useCount = colorPapperCubUseCount
+            case .aluminumCan: useCount = colorAluminumCanUseCount
+            default:           useCount = 0
             }
-            let numberOfColorsCount = NumberOfColorsCount(recycleType: recyceledSort, count: total)
+            let numberOfColorsCount = NumberOfColorsCount(recycleType: recycleItem, count: colorCount - useCount)
             numberOfColorsCounts.append(numberOfColorsCount)
         }
         return numberOfColorsCounts
@@ -372,8 +359,8 @@ class CarbonReductionLogVC: CustomVC {
         }
     }
     
-    private func getConvertValue(_ useRecyceledSort:RecyceledSort) {
-        guard let carbonReductionLogInfo = self.carbonReductionLogInfo, let recycleInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first(where: {$0.itemName == useRecyceledSort.getInfo().chineseName}) else { return }
+    private func getConvertValue(_ useRecyceledSort: RecycleItem) {
+        guard let carbonReductionLogInfo = self.carbonReductionLogInfo, let recycleInfo = carbonReductionLogInfo.personalRecycleAmountAndTarget?.first(where: {$0.itemName == useRecyceledSort.apiName}) else { return }
         let colorRecycledValue = recycleInfo.getColorRecycledValue()
         let resultValue = colorRecycledValue / 1000
         switch currentColorFillView {
@@ -414,10 +401,10 @@ class CarbonReductionLogVC: CustomVC {
 
 extension CarbonReductionLogVC: ChooseColorVCDelete {
     
-    func comfirm(_ useRecyceledSort: RecyceledSort) {
+    func comfirm(_ useRecyceledSort: RecycleItem) {
         finishViewHandle()
         guard let chooseObject = chooseObject else { return }
-        UserDefaults().setColor(useRecyceledSort.getInfo().color, forKey: chooseObject.userdefultKey)
+        UserDefaults().setColor(useRecyceledSort.color, forKey: chooseObject.userdefultKey)
         switch useRecyceledSort {
         case .bottle:
             colorBottleUseCount += 1
@@ -427,6 +414,8 @@ extension CarbonReductionLogVC: ChooseColorVCDelete {
             colorPapperCubUseCount += 1
         case .aluminumCan:
             colorAluminumCanUseCount += 1
+        default:
+            break
         }
         reloadItemCellViewValue()
         getConvertValue(useRecyceledSort)

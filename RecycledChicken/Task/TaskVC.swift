@@ -73,17 +73,13 @@ class TaskVC: CustomRootVC {
     private func addStatus(_ responseTaskInfos:[TaskInfo], completion: @escaping () -> Void) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            let finishSet = Set(self.currentFinishTasks)
+            let receiveSet = Set(self.currentReceiveTasks)
             responseTaskInfos.forEach { taskInfo in
                 var newTaskInfo = taskInfo
-                self.currentFinishTasks.forEach { finishTask in
-                    if let createTime = newTaskInfo.createTime, createTime == finishTask {
-                        newTaskInfo.isFinish = true
-                    }
-                }
-                self.currentReceiveTasks.forEach { finishTask in
-                    if let createTime = newTaskInfo.createTime, createTime == finishTask {
-                        newTaskInfo.isReceive = true
-                    }
+                if let createTime = newTaskInfo.createTime {
+                    newTaskInfo.isFinish = finishSet.contains(createTime)
+                    newTaskInfo.isReceive = receiveSet.contains(createTime)
                 }
                 if let sites = newTaskInfo.sites, sites.count > 0 {
                     newTaskInfo.isSpecifiedLocation = true
@@ -331,7 +327,7 @@ extension TaskVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let finishTasks = UserDefaults.standard.array(forKey: UserDefaultKey.shared.finishTasks) as? [String] ?? []
+        let finishTasks = currentFinishTasks
         let taskInfo = getSectionInfos(for: indexPath.section)[indexPath.row]
         return dequeueAndConfigureCell(for: tableView, info: taskInfo, section: indexPath.section, finishTasks: finishTasks)
     }
