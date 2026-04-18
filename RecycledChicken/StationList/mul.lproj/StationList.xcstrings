@@ -91,6 +91,18 @@
         }
       }
     },
+    "rcl-can-lbl.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"可投：\"; ObjectID = \"rcl-can-lbl\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "可投："
+          }
+        }
+      }
+    },
     "t04-TS-uf4.text" : {
       "comment" : "Class = \"UILabel\"; text = \"0.0km\"; ObjectID = \"t04-TS-uf4\";",
       "extractionState" : "extracted_with_value",

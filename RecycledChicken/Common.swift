@@ -192,6 +192,19 @@ enum RecycleItem: CaseIterable {
     static func from(apiName: String) -> RecycleItem? {
         return allCases.first { $0.apiName == apiName }
     }
+
+    func remaining(from machineRemaining: MachineRemaining) -> Int? {
+        switch self {
+        case .bottle:
+            let hasBottle = machineRemaining.bottle != nil || machineRemaining.coloredBottle != nil || machineRemaining.colorlessBottle != nil
+            guard hasBottle else { return nil }
+            return (machineRemaining.bottle ?? 0) + (machineRemaining.coloredBottle ?? 0) + (machineRemaining.colorlessBottle ?? 0)
+        case .battery:     return machineRemaining.battery
+        case .papperCub:   return machineRemaining.cup
+        case .aluminumCan: return machineRemaining.can
+        case .milkCan, .foilPack, .paperCarton: return nil
+        }
+    }
 }
 
 typealias RecyceledSort = RecycleItem

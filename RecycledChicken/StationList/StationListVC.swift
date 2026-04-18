@@ -174,9 +174,7 @@ class StationListVC: CustomVC {
     }
     
     private func getStoreInfo() {
-        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.machineStatus,
-                                   authorizationToken: CommonKey.shared.authToken,
-                                   responseType: [MapInfo].self) { [weak self] result in
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.machineStatus, authorizationToken: CommonKey.shared.authToken, responseType: [MapInfo].self) { [weak self] result in
             switch result {
             case .success(let mapInfos):
                 self?.mapInfos.removeAll()

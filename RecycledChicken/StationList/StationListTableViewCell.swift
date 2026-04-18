@@ -20,7 +20,9 @@ class StationListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var distanceLabel:UILabel!
     
-    @IBOutlet weak var stationStatusStackView:UIStackView!
+    @IBOutlet weak var stationStatusStackView: UIStackView!
+
+    @IBOutlet weak var recycleItemsStackView: UIStackView!
     
     private var name:String?
     {
@@ -61,9 +63,7 @@ class StationListTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        if let name = name, name.contains("中興里") {
-            setMachineStatus()
-        }
+        clearRecycleItemViews()
     }
     
     private func setMachineStatus() {
@@ -83,12 +83,28 @@ class StationListTableViewCell: UITableViewCell {
         }
     }
     
-    func setCell(_ info:MapInfo, _ currentLocation:CLLocation?) {
+    func setCell(_ info: MapInfo, _ currentLocation: CLLocation?) {
         self.info = info
         self.setMachineStatus()
         self.name = info.name
         self.address = info.address
         self.getDisance(currentLocation)
+        self.setupRecycleItems(info.machineRemaining)
+    }
+
+    private func clearRecycleItemViews() {
+        recycleItemsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+    }
+
+    private func setupRecycleItems(_ remaining: MachineRemaining?) {
+        clearRecycleItemViews()
+        guard let remaining = remaining else { return }
+        RecycleItem.allCases.forEach { item in
+            guard let count = item.remaining(from: remaining) else { return }
+            let recycleCountView = RecycleCountView()
+            recycleCountView.configure(item: item, count: count)
+            recycleItemsStackView.addArrangedSubview(recycleCountView)
+        }
     }
     
     private func getDisance(_ currentLocation: CLLocation?) {
