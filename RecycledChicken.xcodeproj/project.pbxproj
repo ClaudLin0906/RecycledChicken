@@ -339,6 +339,8 @@
 		AA00182C00001800AAAAAAAA /* PersonMessageModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00082C00000800AAAAAAAA /* PersonMessageModelTests.swift */; };
 		AA00192C00001900AAAAAAAA /* ModelDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00092C00000900AAAAAAAA /* ModelDecodingTests.swift */; };
 		AA001A2C00001A00AAAAAAAA /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000A2C00000A00AAAAAAAA /* NetworkErrorTests.swift */; };
+		AA001B2C00001B00AAAAAAAA /* LotteryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000B2C00000B00AAAAAAAA /* LotteryModelTests.swift */; };
+		AA001C2C00001C00AAAAAAAA /* MyTickerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000C2C00000C00AAAAAAAA /* MyTickerModelTests.swift */; };
 		C91AD88D2E4DE2C100AF8162 /* CheckStoreNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91AD88C2E4DE2C100AF8162 /* CheckStoreNumberVC.swift */; };
 		C91AD88F2E4DE2CF00AF8162 /* CheckStoreNumber.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91AD88E2E4DE2CF00AF8162 /* CheckStoreNumber.storyboard */; };
 		C97633C72DC12FF300150E2A /* TaskTableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97633C62DC12FF300150E2A /* TaskTableSectionView.swift */; };
@@ -761,6 +763,8 @@
 		AA00082C00000800AAAAAAAA /* PersonMessageModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageModelTests.swift; sourceTree = "<group>"; };
 		AA00092C00000900AAAAAAAA /* ModelDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDecodingTests.swift; sourceTree = "<group>"; };
 		AA000A2C00000A00AAAAAAAA /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
+		AA000B2C00000B00AAAAAAAA /* LotteryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryModelTests.swift; sourceTree = "<group>"; };
+		AA000C2C00000C00AAAAAAAA /* MyTickerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTickerModelTests.swift; sourceTree = "<group>"; };
 		AA00312C00003100AAAAAAAA /* RecycledChickenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycledChickenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3875E129FF487C1791895B2 /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecycledChicken.debug.xcconfig"; path = "Target Support Files/Pods-RecycledChicken/Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
 		C91AD88C2E4DE2C100AF8162 /* CheckStoreNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStoreNumberVC.swift; sourceTree = "<group>"; };
@@ -1556,6 +1560,8 @@
 				AA00082C00000800AAAAAAAA /* PersonMessageModelTests.swift */,
 				AA00092C00000900AAAAAAAA /* ModelDecodingTests.swift */,
 				AA000A2C00000A00AAAAAAAA /* NetworkErrorTests.swift */,
+				AA000B2C00000B00AAAAAAAA /* LotteryModelTests.swift */,
+				AA000C2C00000C00AAAAAAAA /* MyTickerModelTests.swift */,
 			);
 			path = RecycledChickenTests;
 			sourceTree = "<group>";
@@ -2141,6 +2147,8 @@
 				AA00182C00001800AAAAAAAA /* PersonMessageModelTests.swift in Sources */,
 				AA00192C00001900AAAAAAAA /* ModelDecodingTests.swift in Sources */,
 				AA001A2C00001A00AAAAAAAA /* NetworkErrorTests.swift in Sources */,
+				AA001B2C00001B00AAAAAAAA /* LotteryModelTests.swift in Sources */,
+				AA001C2C00001C00AAAAAAAA /* MyTickerModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

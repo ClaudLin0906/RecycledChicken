@@ -41,6 +41,7 @@ struct ProfileNewInfo: Codable {
         case point = "point"
         case expirePoint = "expirePoint"
         case experiencePoint = "experiencePoint"
+        case levelInfo = "levelInfo"
     }
     
     init(from decoder: Decoder) throws {
@@ -55,6 +56,7 @@ struct ProfileNewInfo: Codable {
         point = try? container.decodeIfPresent(Int.self, forKey: .point)
         expirePoint = try? container.decodeIfPresent(Int.self, forKey: .expirePoint)
         experiencePoint = try? container.decodeIfPresent(Int.self, forKey: .experiencePoint)
+        levelInfo = try? container.decodeIfPresent(LevelInfo.self, forKey: .levelInfo)
     }
 }
 

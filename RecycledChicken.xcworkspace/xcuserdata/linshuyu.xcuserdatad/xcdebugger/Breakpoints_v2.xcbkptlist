@@ -32,36 +32,6 @@
             endingLineNumber = "209"
             landmarkName = "performRequest(request:responseType:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6E735C61-C48B-48DD-BC2A-873A510485F2 - 76e3b0f029b2128e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RecycledChicken.NetworkManager.performRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Foundation.URLRequest, responseType: &#x3c4;_0_0.Type, completion: (Swift.Result&lt;&#x3c4;_0_0, RecycledChicken.NetworkError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "RecycledChicken.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linshuyu/Desktop/Work/RecycledChicken/RecycledChicken/URLSessionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "209"
-                  endingLineNumber = "209">
-               </Location>
-               <Location
-                  uuid = "6E735C61-C48B-48DD-BC2A-873A510485F2 - 76e3b0f029b2128e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in RecycledChicken.NetworkManager.performRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(request: Foundation.URLRequest, responseType: &#x3c4;_0_0.Type, completion: (Swift.Result&lt;&#x3c4;_0_0, RecycledChicken.NetworkError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "RecycledChicken.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linshuyu/Desktop/Work/RecycledChicken/RecycledChicken/URLSessionManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "209"
-                  endingLineNumber = "209">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -98,6 +98,34 @@ final class ModelDecodingTests: XCTestCase {
         XCTAssertNil(info.experiencePoint)
     }
 
+    func test_profileNewInfo_decodesLevelInfo() throws {
+        // 驗證 levelInfo 有被正確解碼（修正前此欄位永遠為 nil）
+        let json = """
+        {
+            "userEmail": "test@example.com",
+            "experiencePoint": 25000,
+            "levelInfo": {
+                "progress": 5,
+                "chickenLevel": 3
+            }
+        }
+        """.data(using: .utf8)!
+
+        let info = try JSONDecoder().decode(ProfileNewInfo.self, from: json)
+        XCTAssertNotNil(info.levelInfo, "levelInfo 應該能被解碼，不應為 nil")
+        XCTAssertEqual(info.levelInfo?.progress, 5)
+        XCTAssertEqual(info.levelInfo?.chickenLevel, .three)
+    }
+
+    func test_profileNewInfo_missingLevelInfo_isNil() throws {
+        let json = """
+        { "userEmail": "test@example.com" }
+        """.data(using: .utf8)!
+
+        let info = try JSONDecoder().decode(ProfileNewInfo.self, from: json)
+        XCTAssertNil(info.levelInfo)
+    }
+
     // MARK: - LevelInfo
 
     func test_levelInfo_encodesAndDecodes() throws {
@@ -205,7 +233,7 @@ final class ModelDecodingTests: XCTestCase {
     }
 
     func test_pointRecord_emptyJSON_allNil() throws {
-        let record = try JSONDecoder().decode(PointRecord.self, from: "{}".data(using: .utf8)!")
+        let record = try JSONDecoder().decode(PointRecord.self, from: "{}".data(using: .utf8)!)
         XCTAssertNil(record.userID)
         XCTAssertNil(record.point)
     }
