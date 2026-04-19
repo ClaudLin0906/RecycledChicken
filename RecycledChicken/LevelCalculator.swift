@@ -19,12 +19,14 @@ struct LevelCalculator {
     /// - Parameter experiencePoint: 經驗值
     /// - Returns: 包含等級和進度的 LevelInfo
     static func getLevelInfo(_ experiencePoint: Int) -> LevelInfo {
-        // 計算等級：找到經驗值所在的等級區間
-        let levelIndex = (levelThresholds.lastIndex(where: { experiencePoint >= $0 }) ?? 0)
+        // 計算等級：找到經驗值所在的等級區間，並 clamp 到最高等級（10）
+        let rawLevelIndex = levelThresholds.lastIndex(where: { experiencePoint >= $0 }) ?? 0
+        let levelIndex = min(rawLevelIndex, levelThresholds.count - 2)
         let level = IllustratedGuideModelLevel(rawValue: levelIndex + 1) ?? .one
         
-        // 計算進度：找到經驗值所在的進度區間
-        let progressIndex = (progressThresholds.lastIndex(where: { experiencePoint >= $0 }) ?? 0)
+        // 計算進度：找到經驗值所在的進度區間，並 clamp 到最大格數（10）
+        let rawProgressIndex = progressThresholds.lastIndex(where: { experiencePoint >= $0 }) ?? 0
+        let progressIndex = min(rawProgressIndex, progressThresholds.count - 2)
         let progress = progressIndex + 1
         
         return LevelInfo(progress: progress, chickenLevel: level)
@@ -44,7 +46,8 @@ struct LevelCalculator {
     /// - Returns: 該等級的最大經驗值
     static func getMaxExperience(for level: IllustratedGuideModelLevel) -> Int {
         let index = level.rawValue
-        guard index >= 0 && index < levelThresholds.count else { return 0 }
+        // 使用 count - 1：最後一個 threshold 是 level 10 的上限標記，不屬於任何下一等級
+        guard index >= 0 && index < levelThresholds.count - 1 else { return 0 }
         return levelThresholds[index] - 1
     }
     
@@ -52,7 +55,7 @@ struct LevelCalculator {
     /// - Parameter currentExperience: 當前經驗值
     /// - Returns: 距離下一等級的經驗值
     static func getExperienceToNextLevel(_ currentExperience: Int) -> Int {
-        let currentLevel = getLevelInfo(currentExperience).chickenLevel
+        let currentLevel = getLevelInfo(currentExperience).chickenLevel ?? .one
         let nextLevel = IllustratedGuideModelLevel(rawValue: currentLevel.rawValue + 1) ?? .ten
         
         let nextLevelThreshold = getExperienceThreshold(for: nextLevel)
@@ -63,7 +66,7 @@ struct LevelCalculator {
     /// - Parameter currentExperience: 當前經驗值
     /// - Returns: 進度百分比 (0.0 - 1.0)
     static func getProgressPercentage(_ currentExperience: Int) -> Double {
-        let currentLevel = getLevelInfo(currentExperience).chickenLevel
+        let currentLevel = getLevelInfo(currentExperience).chickenLevel ?? .one
         let levelStart = getExperienceThreshold(for: currentLevel)
         let levelEnd = getMaxExperience(for: currentLevel)
         
@@ -88,7 +91,7 @@ extension LevelCalculator {
         
         for experience in testCases {
             let levelInfo = getLevelInfo(experience)
-            print("經驗值 \(experience) -> 等級 \(levelInfo.chickenLevel.rawValue), 進度 \(levelInfo.progress)")
+            print("經驗值 \(experience) -> 等級 \(levelInfo.chickenLevel?.rawValue ?? 0), 進度 \(levelInfo.progress ?? 0)")
         }
         
         print("\n=== 進度計算範例 ===")
@@ -99,7 +102,7 @@ extension LevelCalculator {
         for experience in progressTests {
             let percentage = getProgressPercentage(experience)
             let levelInfo = getLevelInfo(experience)
-            print("經驗值 \(experience) -> 等級 \(levelInfo.chickenLevel.rawValue), 進度百分比: \(String(format: "%.1f%%", percentage * 100))")
+            print("經驗值 \(experience) -> 等級 \(levelInfo.chickenLevel?.rawValue ?? 0), 進度百分比: \(String(format: "%.1f%%", percentage * 100.0))")
         }
         
         print("\n=== 下一等級計算範例 ===")
@@ -110,7 +113,7 @@ extension LevelCalculator {
         for experience in nextLevelTests {
             let needed = getExperienceToNextLevel(experience)
             let levelInfo = getLevelInfo(experience)
-            print("等級 \(levelInfo.chickenLevel.rawValue) (經驗值 \(experience)) -> 距離下一等級還需要 \(needed) 經驗值")
+            print("等級 \(levelInfo.chickenLevel?.rawValue ?? 0) (經驗值 \(experience)) -> 距離下一等級還需要 \(needed) 經驗值")
         }
     }
 }

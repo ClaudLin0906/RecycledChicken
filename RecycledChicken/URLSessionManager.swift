@@ -50,22 +50,27 @@ class NetworkManager: NSObject {
     private override init() {
         super.init()
         let configuration = URLSessionConfiguration.default
-        session = URLSession(configuration: configuration, delegate: self, delegateQueue: OperationQueue.main)
+        session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
     }
     
     // MARK: - Legacy Methods (保持向後兼容)
     
     func fetchedDataByDataTask(from request: URLRequest, completion: @escaping (Data?, Int?, String?) -> Void) {
         let task = session.dataTask(with: request) { (data, response, error) in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(nil, nil, error?.localizedDescription)
-                return
+            // 在 background thread 處理完後，切回 main thread 回傳
+            let result: (Data?, Int?, String?)
+            if let httpResponse = response as? HTTPURLResponse {
+                if error == nil && httpResponse.statusCode == 200 {
+                    result = (data, httpResponse.statusCode, nil)
+                } else {
+                    result = (data, httpResponse.statusCode, error?.localizedDescription)
+                }
+            } else {
+                result = (nil, nil, error?.localizedDescription)
             }
-            guard error == nil, httpResponse.statusCode == 200 else {
-                completion(data, httpResponse.statusCode, error?.localizedDescription)
-                return
+            DispatchQueue.main.async {
+                completion(result.0, result.1, result.2)
             }
-            completion(data, httpResponse.statusCode, nil)
         }
         task.resume()
     }
@@ -199,29 +204,31 @@ class NetworkManager: NSObject {
     
     private func performRequest<T: Decodable>(request: URLRequest, responseType: T.Type, completion: @escaping (NetworkResult<T>) -> Void) {
         let task = session.dataTask(with: request) { data, response, error in
-            // 處理錯誤
+            // 在 background thread 解析，完成後切回 main thread 回傳
+            let result: NetworkResult<T>
             if let error = error {
-                completion(.failure(.unknown(error)))
-                return
+                result = .failure(.unknown(error))
+            } else if let httpResponse = response as? HTTPURLResponse {
+                if (200...299).contains(httpResponse.statusCode) {
+                    if let data = data {
+                        do {
+                            let decoded = try JSONDecoder().decode(responseType, from: data)
+                            result = .success(decoded)
+                        } catch {
+                            result = .failure(.decodingError(error))
+                        }
+                    } else {
+                        result = .failure(.noData)
+                    }
+                } else {
+                    let errorMessage = data.flatMap { String(data: $0, encoding: .utf8) }
+                    result = .failure(.httpError(statusCode: httpResponse.statusCode, message: errorMessage))
+                }
+            } else {
+                result = .failure(.invalidResponse)
             }
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(.invalidResponse))
-                return
-            }
-            guard (200...299).contains(httpResponse.statusCode) else {
-                let errorMessage = data.flatMap { String(data: $0, encoding: .utf8) }
-                completion(.failure(.httpError(statusCode: httpResponse.statusCode, message: errorMessage)))
-                return
-            }
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            do {
-                let decoded = try JSONDecoder().decode(responseType, from: data)
-                completion(.success(decoded))
-            } catch {
-                completion(.failure(.decodingError(error)))
+            DispatchQueue.main.async {
+                completion(result)
             }
         }
         task.resume()

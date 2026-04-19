@@ -12,4 +12,5 @@ struct PointRecord: Codable {
     var time: String?
     var reason: String?
     var point: Int?
+    var prevPoint: Int?
 }

@@ -49,9 +49,7 @@ class PointRecordVC: CustomVC {
     }
     
     private func getPointRecord() {
-        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.pointRecords + "?startTime=2023-01-01",
-                                   authorizationToken: CommonKey.shared.authToken,
-                                   responseType: [PointRecord].self) { [weak self] result in
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.pointRecords + "?startTime=2023-01-01", authorizationToken: CommonKey.shared.authToken, responseType: [PointRecord].self) { [weak self] result in
             switch result {
             case .success(let pointRecords):
                 self?.pointRecords.removeAll()

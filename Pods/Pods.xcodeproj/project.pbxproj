@@ -61,6 +61,7 @@
 		4C452C6A890836D0962AEB98907A21A0 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2C1F995B6E4A4FC35F034BA3679A2 /* M13CheckboxRadioPathGenerator.swift */; };
 		4F15B1269DB58AA1F8EB4AC226748A7D /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E754FDD6E617ADD5841993A07C3A508 /* DefaultValues.swift */; };
 		4FFFC54F31E58269EC4E9D35D9F6FF2E /* MKRingProgressView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E463EA654DD852F4738A25C676F34A /* MKRingProgressView-dummy.m */; };
+		53A6BCE9D7B0529E5A012F87EFB5C40E /* Pods-RecycledChickenTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 807C3D7B4DD0174E6C5DDFCC34DF8A75 /* Pods-RecycledChickenTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		560CEEB2B821881CB864D5418AC664BC /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C69429E781474C2AB7D15E2BEB76D /* DropDownCell.swift */; };
 		565D96110DE15E6BD25CB59CED2BBCBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39334284EDD4B7908E4C7048D0299F99 /* Foundation.framework */; };
 		58BCB2AC6589976913109628DC5999FE /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD0ABDCB9DF356C546916CAA7D2F6F9 /* M13CheckboxCheckPathGenerator.swift */; };
@@ -72,6 +73,7 @@
 		6014A6C640C2C813B5B80AD009C6AA0E /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030665DC8A92F9927B5F86B62708182 /* SessionDelegate.swift */; };
 		65AB5E9B8C55090E9AF51D30FD831931 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935283A54CF38F3948229F60C4AD8FBC /* Alamofire.swift */; };
 		6625A78B3A18879756DFC814E6CFDE81 /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69477FD385A5F4E0586B91BFEAB813A6 /* M13CheckboxDisclosurePathGenerator.swift */; };
+		679F5F42AAEFB09D2362A4B810FD9C4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39334284EDD4B7908E4C7048D0299F99 /* Foundation.framework */; };
 		6A8CEAC3326863F09F8D79464BBA2C3D /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869412F8FAEBDA5C11EF52139A38B033 /* DropDown+Appearance.swift */; };
 		6CA608B4EB67F5BD91BBD105DA9DC16B /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB128166D42F67C8499291C79D75312 /* AlamofireExtended.swift */; };
 		6E1BAABA84CD3DEB742D17055672525A /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14695EE071C2130867C24E66301BDF0 /* M13CheckboxFadeController.swift */; };
@@ -99,8 +101,9 @@
 		BBEC193A3762016BB0D2CFF0A13AD3F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39334284EDD4B7908E4C7048D0299F99 /* Foundation.framework */; };
 		BD015568F688B601FA8BAE2B07EE3CB3 /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5576E2198EE287DB76F3042DA593E514 /* CachedResponseHandler.swift */; };
 		BFEBF862742D7EBA876E8677FA36E95D /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FD4F106336ACD5383835BF70C10171 /* HTTPHeaders.swift */; };
-		C358B9CB930A2E689A508362FEC05EC7 /* Pods-RecycledChicken-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EED45F60F58A535780669AD9E904B1 /* Pods-RecycledChicken-dummy.m */; };
-		C6955C4116A6EDD6A49A7AA761AE3E0E /* Pods-RecycledChicken-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E89087010B638FE08096D70701C299D /* Pods-RecycledChicken-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C358B9CB930A2E689A508362FEC05EC7 /* Pods-RecycledChicken-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A59A6103E69094373964E0D0A7EEA7 /* Pods-RecycledChicken-dummy.m */; };
+		C6955C4116A6EDD6A49A7AA761AE3E0E /* Pods-RecycledChicken-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99F47E7BBE8898C81B9DF0768CBA36CE /* Pods-RecycledChicken-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C838E1EB7F685E7C6AB5748584FADEDC /* Pods-RecycledChickenTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1920E7C76D9291C91B5A75D866A68E /* Pods-RecycledChickenTests-dummy.m */; };
 		C8BC942FEA08053CDA298385EFE8FEFA /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4F721F14F09B66C2632382D474B87 /* DispatchQueue+Alamofire.swift */; };
 		C982F748A87DE66F38221CB72B248A58 /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E78CA238FC418E6AA6D8189FF25B3 /* M13CheckboxAddRemovePathGenerator.swift */; };
 		CAB8A59002716E67C12D91E625BCAF82 /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ADE08DC484B4B82EDB1838CCBEB5E34 /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -171,9 +174,17 @@
 			remoteGlobalIDString = A7F9119A842E66F127E010A97169E4F4;
 			remoteInfo = SwiftGifOrigin;
 		};
+		F8B9F2DC8FE7041A7F9F3FA6DC716CF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E042ED2B8AB10FA491BD8A107EEA91B6;
+			remoteInfo = "Pods-RecycledChicken";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00A59A6103E69094373964E0D0A7EEA7 /* Pods-RecycledChicken-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RecycledChicken-dummy.m"; sourceTree = "<group>"; };
 		00AF97C680C89F46F51A8908E75F72F3 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
 		01E955A1447ADC1512927857BF982731 /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
 		034C2F721F3A9DDE60438BB95EA2BB9D /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
@@ -191,20 +202,20 @@
 		12419A130CF09F88514A5243CDE48E58 /* MKRingProgressView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MKRingProgressView.debug.xcconfig; sourceTree = "<group>"; };
 		12C703F14366D34331780CE2FE255782 /* GooglePlaces.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GooglePlaces.xcframework; path = Frameworks/GooglePlaces.xcframework; sourceTree = "<group>"; };
 		15FED11C4CA8B79318EEEFF1B0264B2C /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Concurrency.swift; sourceTree = "<group>"; };
+		19568DEE6596B8ED988AA4A9638094BE /* Pods-RecycledChicken.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RecycledChicken.modulemap"; sourceTree = "<group>"; };
 		19CFA154D4C7BDFCF7D75FD7EC50E060 /* GooglePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.debug.xcconfig; sourceTree = "<group>"; };
 		1A90A5A67DD066A8A92F1D72C1605B54 /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
-		1B149C7179C84F520C661D90F633850E /* Pods-RecycledChicken-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RecycledChicken-frameworks.sh"; sourceTree = "<group>"; };
 		1F448877F2049EF55E477A2A76286131 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		2030665DC8A92F9927B5F86B62708182 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		20AAEFB6C8A28645F331453792C49584 /* DropDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.debug.xcconfig; sourceTree = "<group>"; };
 		250B47EA21437EBAF825DC596F0EEEDC /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		25D4F353667ADEC6F1BE4B45B0854623 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		2636A8D83CAD3BCE910E5D2E768F05E8 /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
 		268F74F491C830F467FE0A174C2B237E /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		26CB4BCBC62F449E563400AC49D96CE8 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
 		2710F53F3FDB59B16E34559B5E321170 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		2771A16B27B06ADAE5EE60DDAD128C70 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
 		27F1BF288B23E25DB19DBDF13205FF98 /* GooglePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.release.xcconfig; sourceTree = "<group>"; };
+		29CD690E952DEBC85A4565EC667EFCC6 /* Pods-RecycledChickenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RecycledChickenTests.release.xcconfig"; sourceTree = "<group>"; };
 		2EB5F3DB76AE818872272399BECBCA9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		327A2620CB5B12E4D53AA74F751D86C6 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		35C31E21F54DC52E4C8375F85C02AD69 /* MKRingProgressView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MKRingProgressView.modulemap; sourceTree = "<group>"; };
@@ -219,8 +230,8 @@
 		4A3FC58586B7E6A28C5AF5807F53A051 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		4A639037B90625975C4873DD9AA0E4E6 /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
 		4B7175F7A02C253298018FDD1B416631 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
-		4C1D9C5032F929DF0577F3B5881A4D28 /* Pods-RecycledChicken-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RecycledChicken-resources.sh"; sourceTree = "<group>"; };
 		4E754FDD6E617ADD5841993A07C3A508 /* DefaultValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultValues.swift; path = Sources/DefaultValues.swift; sourceTree = "<group>"; };
+		504947C01B2B2B18946527C05484F62C /* Pods-RecycledChicken-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecycledChicken-acknowledgements.plist"; sourceTree = "<group>"; };
 		50716DF8F5BF657B47BA9FE916DE84A5 /* MKRingProgressView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKRingProgressView-umbrella.h"; sourceTree = "<group>"; };
 		50AC188439E519ED1AE6CF7FC4CA7AC1 /* GoogleMaps-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GoogleMaps-xcframeworks.sh"; sourceTree = "<group>"; };
 		528D9C81148BC0198B3ACD3CC058BC2A /* SwiftGifOrigin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftGifOrigin-dummy.m"; sourceTree = "<group>"; };
@@ -232,7 +243,9 @@
 		59E1A0909DDED51E6D7CF9324E6745C4 /* M13Checkbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.debug.xcconfig; sourceTree = "<group>"; };
 		5CE79C5BF20743404E59BEFD080A364D /* M13Checkbox */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F7CFA463862EFEFF1C8C94AAEF8A77D /* Pods-RecycledChickenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RecycledChickenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		62B1BB08A3C142912B8F6CD131E8719A /* DropDown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropDown-Info.plist"; sourceTree = "<group>"; };
+		669EF9BD0248E370B19948D1D7BCE249 /* Pods-RecycledChickenTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecycledChickenTests-Info.plist"; sourceTree = "<group>"; };
 		69477FD385A5F4E0586B91BFEAB813A6 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
 		69CC2B450997C94E0586A19B8B2DB44A /* MKRingProgressView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MKRingProgressView-Info.plist"; sourceTree = "<group>"; };
 		6AEB65C32364283DA0087C043B25DE54 /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
@@ -243,26 +256,30 @@
 		765A773DEB0D45D486B4DADFAEDBA1B7 /* GoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.release.xcconfig; sourceTree = "<group>"; };
 		77E463EA654DD852F4738A25C676F34A /* MKRingProgressView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKRingProgressView-dummy.m"; sourceTree = "<group>"; };
 		787D0CD21018FD7AA1458F21AF3D736A /* MKRingProgressLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRingProgressLayer.swift; path = MKRingProgressView/MKRingProgressLayer.swift; sourceTree = "<group>"; };
-		7AD0867B43617F935CD66B0D6FE60985 /* Pods-RecycledChicken.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RecycledChicken.modulemap"; sourceTree = "<group>"; };
 		7B76C1F1B59FC0174DF0015829FE98F0 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		7E1920E7C76D9291C91B5A75D866A68E /* Pods-RecycledChickenTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RecycledChickenTests-dummy.m"; sourceTree = "<group>"; };
+		807C3D7B4DD0174E6C5DDFCC34DF8A75 /* Pods-RecycledChickenTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RecycledChickenTests-umbrella.h"; sourceTree = "<group>"; };
 		838E78CA238FC418E6AA6D8189FF25B3 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
 		869412F8FAEBDA5C11EF52139A38B033 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		885A08424CF23354B4AAD78E0A6B07C6 /* Pods-RecycledChickenTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RecycledChickenTests"; path = Pods_RecycledChickenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		895693FD9BE5BE6B60BF7ADC9440288A /* Pods-RecycledChicken-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RecycledChicken-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8AAAB449B079D26D2EF4F6BD51F198B4 /* Pods-RecycledChicken-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RecycledChicken-frameworks.sh"; sourceTree = "<group>"; };
 		8BC00EFB64F1373C32144A263B6B4C77 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftGifOrigin; path = SwiftGifOrigin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2258387A85556E91B912245D3D3496 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Maps/Frameworks/GoogleMaps.xcframework/ios-arm64_x86_64-simulator/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
-		8E89087010B638FE08096D70701C299D /* Pods-RecycledChicken-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RecycledChicken-umbrella.h"; sourceTree = "<group>"; };
 		8F0FE3FE0612AE37323F1E5FD6257DB9 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		91093D9DA6D578B9F07C5DE0C0704ACE /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
 		935283A54CF38F3948229F60C4AD8FBC /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		96EA3BD9CA90F577325E3F66439F9A87 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		99F47E7BBE8898C81B9DF0768CBA36CE /* Pods-RecycledChicken-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RecycledChicken-umbrella.h"; sourceTree = "<group>"; };
 		9AAB4FBD54E610BC72D65BF0157F64A3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		9ADE08DC484B4B82EDB1838CCBEB5E34 /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
 		9B6725B782188F18CB76A740433F14E4 /* DropDown */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B875B4A3E4520B9CF03FBAF4FA31EC2 /* Pods-RecycledChicken-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecycledChicken-Info.plist"; sourceTree = "<group>"; };
 		9BE9839B1C11ECD7A2B9FCADA4042CA7 /* MKRingProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKRingProgressView.swift; path = MKRingProgressView/MKRingProgressView.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DFBDB40782F16692C299403360474F8 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		9EF2C1F995B6E4A4FC35F034BA3679A2 /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
+		A22F277F3B2D64F41486481771CAF9C2 /* Pods-RecycledChicken-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecycledChicken-Info.plist"; sourceTree = "<group>"; };
 		A540E64D351BA4C02F47CC2FCE7B326E /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
 		A7A6C3A27FBD387451BC6439E2C7C34C /* DropDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.release.xcconfig; sourceTree = "<group>"; };
 		A7DA1D424BD568A0F84C65A4566E19CF /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
@@ -271,13 +288,16 @@
 		ABC91ACA7B2B7C34849A16BC2B75217A /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		AC80FF7A30A02D34999F974A1E615D4C /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		ACA539745BB71A4760AA9A4B4EC9BDEB /* SwiftGifOrigin-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftGifOrigin-Info.plist"; sourceTree = "<group>"; };
-		AD3D99B26C7B34CDCCBBA54668E1A6E5 /* Pods-RecycledChicken-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RecycledChicken-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AF60551FCD8C3433713EF47B4C2AEBBD /* Pods-RecycledChickenTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RecycledChickenTests.modulemap"; sourceTree = "<group>"; };
 		B10A0EDC24BA7657B18DDA692161B2EA /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropDown.modulemap; sourceTree = "<group>"; };
 		B14695EE071C2130867C24E66301BDF0 /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
 		B22978756B16647FDD5FAE53E6851833 /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
+		B36ADF03145989A34F3F255EDC81C2A1 /* Pods-RecycledChickenTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecycledChickenTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B551CC99D636091B9BFECCC7276FD55D /* GoogleMaps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMaps.xcframework; path = Maps/Frameworks/GoogleMaps.xcframework; sourceTree = "<group>"; };
+		B5DC0EF9699EC55ED6F1C54A6183D76C /* Pods-RecycledChickenTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RecycledChickenTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B8CE22FA48CE50F095B60D778C6558C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BFD0ABDCB9DF356C546916CAA7D2F6F9 /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
+		C1D35D1732867F3382CFB07BCBE836B7 /* Pods-RecycledChicken-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RecycledChicken-resources.sh"; sourceTree = "<group>"; };
 		C6D40FEADFDCB5E6F8B2ED295905B72D /* GooglePlaces-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "GooglePlaces-xcframeworks.sh"; sourceTree = "<group>"; };
 		C9353B54738DE4BC19AC6EC5D9A1354A /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		C98126DB9FB6D0F39FFDBFE1C277F2A6 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
@@ -286,7 +306,6 @@
 		D101DBD592F1926E0DB10107DE1FCAB6 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
 		D1270102EF00A17FB3AF241824165E50 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		D1876A8506EC7E3B1DA05680CDFF4921 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
-		D23502555F6B003DAE9BEFB6E5B26D1D /* Pods-RecycledChicken-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecycledChicken-acknowledgements.plist"; sourceTree = "<group>"; };
 		D4B345C0D63E7C3D576EE422C9AAF0FA /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		D5A31A3DDD0902BBC173F38164D37EC8 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "Maps/Frameworks/GoogleMaps.xcframework/ios-arm64/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		D76F661D29D6EEB6A49836E2C344DA2D /* SwiftGifOrigin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-prefix.pch"; sourceTree = "<group>"; };
@@ -297,7 +316,6 @@
 		E02E556DC727A59329A4F34688ED673D /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
 		E5952E02277C82BAE6D757CF06C6820A /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
 		E927F448A26C18338AA5944DAAA3D9B4 /* M13Checkbox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "M13Checkbox-Info.plist"; sourceTree = "<group>"; };
-		EB7378BFA000435A5117356160DDF648 /* Pods-RecycledChicken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RecycledChicken.release.xcconfig"; sourceTree = "<group>"; };
 		EE783F8A77A9E73AA71085D9C17D3A39 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		EFEDBE3D94491B9B9AD57C2901A0AACD /* MKGradientGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKGradientGenerator.swift; path = MKRingProgressView/MKGradientGenerator.swift; sourceTree = "<group>"; };
 		F079C5F518BA446753BA6845F3858677 /* M13Checkbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.release.xcconfig; sourceTree = "<group>"; };
@@ -305,9 +323,10 @@
 		F214853AB24B5A42DC8AAE173250022D /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
 		F2EEF8005E24E9827FF7F5A624DFC41E /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		F4CA01D9C9866F471B9026F80AEB659A /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = GoogleMapsBase.xcframework; path = Base/Frameworks/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
+		F577EA949EED06CF24D740BFB68775E3 /* Pods-RecycledChicken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RecycledChicken.release.xcconfig"; sourceTree = "<group>"; };
 		F6A73A2F8C5F1E97E83A75DBF7AE0507 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		F7EF1F9972CC9CF53914510F05FB5749 /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
-		F9EED45F60F58A535780669AD9E904B1 /* Pods-RecycledChicken-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RecycledChicken-dummy.m"; sourceTree = "<group>"; };
+		FDBB3891758E4AB993F458A844E9FF5D /* Pods-RecycledChicken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RecycledChicken.debug.xcconfig"; sourceTree = "<group>"; };
 		FFC2095E760B9300AE80AA42B072BE8B /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
 		FFC52EA3E2C5E8278013CE6F8E205A08 /* RequestCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestCompression.swift; path = Source/RequestCompression.swift; sourceTree = "<group>"; };
 		FFE45696C1EBF7CC2DF75D51F344C6AB /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
@@ -366,6 +385,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F54E513A7A39C67AA6F4A985ED18450B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				679F5F42AAEFB09D2362A4B810FD9C4F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -417,24 +444,6 @@
 			path = "../Target Support Files/MKRingProgressView";
 			sourceTree = "<group>";
 		};
-		1B8FC68B45F14EFFA4C60B9163290341 /* Pods-RecycledChicken */ = {
-			isa = PBXGroup;
-			children = (
-				7AD0867B43617F935CD66B0D6FE60985 /* Pods-RecycledChicken.modulemap */,
-				AD3D99B26C7B34CDCCBBA54668E1A6E5 /* Pods-RecycledChicken-acknowledgements.markdown */,
-				D23502555F6B003DAE9BEFB6E5B26D1D /* Pods-RecycledChicken-acknowledgements.plist */,
-				F9EED45F60F58A535780669AD9E904B1 /* Pods-RecycledChicken-dummy.m */,
-				1B149C7179C84F520C661D90F633850E /* Pods-RecycledChicken-frameworks.sh */,
-				9B875B4A3E4520B9CF03FBAF4FA31EC2 /* Pods-RecycledChicken-Info.plist */,
-				4C1D9C5032F929DF0577F3B5881A4D28 /* Pods-RecycledChicken-resources.sh */,
-				8E89087010B638FE08096D70701C299D /* Pods-RecycledChicken-umbrella.h */,
-				2636A8D83CAD3BCE910E5D2E768F05E8 /* Pods-RecycledChicken.debug.xcconfig */,
-				EB7378BFA000435A5117356160DDF648 /* Pods-RecycledChicken.release.xcconfig */,
-			);
-			name = "Pods-RecycledChicken";
-			path = "Target Support Files/Pods-RecycledChicken";
-			sourceTree = "<group>";
-		};
 		2BD59E8BF223C8B293E08F09251883C0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +457,20 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		2E20EE6BBAD87C07C80E8E571F343091 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
+				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
+				5CE79C5BF20743404E59BEFD080A364D /* M13Checkbox */,
+				DFFF396A7283A65507AFF68552B0BAE7 /* MKRingProgressView */,
+				0E6F6B818B9732780858CCDCA6764E3C /* Pods-RecycledChicken */,
+				885A08424CF23354B4AAD78E0A6B07C6 /* Pods-RecycledChickenTests */,
+				8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		2F11CB2C901E0BD3494014E5E1E0CB8B /* Support Files */ = {
@@ -465,6 +488,24 @@
 			path = "../Target Support Files/M13Checkbox";
 			sourceTree = "<group>";
 		};
+		305BE028BBEFE1E76D1B50A1FED5F7ED /* Pods-RecycledChicken */ = {
+			isa = PBXGroup;
+			children = (
+				19568DEE6596B8ED988AA4A9638094BE /* Pods-RecycledChicken.modulemap */,
+				895693FD9BE5BE6B60BF7ADC9440288A /* Pods-RecycledChicken-acknowledgements.markdown */,
+				504947C01B2B2B18946527C05484F62C /* Pods-RecycledChicken-acknowledgements.plist */,
+				00A59A6103E69094373964E0D0A7EEA7 /* Pods-RecycledChicken-dummy.m */,
+				8AAAB449B079D26D2EF4F6BD51F198B4 /* Pods-RecycledChicken-frameworks.sh */,
+				A22F277F3B2D64F41486481771CAF9C2 /* Pods-RecycledChicken-Info.plist */,
+				C1D35D1732867F3382CFB07BCBE836B7 /* Pods-RecycledChicken-resources.sh */,
+				99F47E7BBE8898C81B9DF0768CBA36CE /* Pods-RecycledChicken-umbrella.h */,
+				FDBB3891758E4AB993F458A844E9FF5D /* Pods-RecycledChicken.debug.xcconfig */,
+				F577EA949EED06CF24D740BFB68775E3 /* Pods-RecycledChicken.release.xcconfig */,
+			);
+			name = "Pods-RecycledChicken";
+			path = "Target Support Files/Pods-RecycledChicken";
+			sourceTree = "<group>";
+		};
 		334B876A798E53BA733B7087AFF3F872 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,12 +517,20 @@
 			path = "../Target Support Files/GoogleMaps";
 			sourceTree = "<group>";
 		};
-		5A444130C0223125D37B586C70CBC14D /* Targets Support Files */ = {
+		559B86F8CDAF2B0956D06CAD1A0B73E3 /* Pods-RecycledChickenTests */ = {
 			isa = PBXGroup;
 			children = (
-				1B8FC68B45F14EFFA4C60B9163290341 /* Pods-RecycledChicken */,
+				AF60551FCD8C3433713EF47B4C2AEBBD /* Pods-RecycledChickenTests.modulemap */,
+				B5DC0EF9699EC55ED6F1C54A6183D76C /* Pods-RecycledChickenTests-acknowledgements.markdown */,
+				B36ADF03145989A34F3F255EDC81C2A1 /* Pods-RecycledChickenTests-acknowledgements.plist */,
+				7E1920E7C76D9291C91B5A75D866A68E /* Pods-RecycledChickenTests-dummy.m */,
+				669EF9BD0248E370B19948D1D7BCE249 /* Pods-RecycledChickenTests-Info.plist */,
+				807C3D7B4DD0174E6C5DDFCC34DF8A75 /* Pods-RecycledChickenTests-umbrella.h */,
+				5F7CFA463862EFEFF1C8C94AAEF8A77D /* Pods-RecycledChickenTests.debug.xcconfig */,
+				29CD690E952DEBC85A4565EC667EFCC6 /* Pods-RecycledChickenTests.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-RecycledChickenTests";
+			path = "Target Support Files/Pods-RecycledChickenTests";
 			sourceTree = "<group>";
 		};
 		5B79ACF71969C31E1EEC2FE10E1D7BF6 /* DropDown */ = {
@@ -509,19 +558,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		625D8E2728D7EEA50808BB9C25868397 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
-				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
-				5CE79C5BF20743404E59BEFD080A364D /* M13Checkbox */,
-				DFFF396A7283A65507AFF68552B0BAE7 /* MKRingProgressView */,
-				0E6F6B818B9732780858CCDCA6764E3C /* Pods-RecycledChicken */,
-				8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		69A457F46FE1F4FAECD1DE06D9B6BD2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +580,15 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftGifOrigin";
+			sourceTree = "<group>";
+		};
+		87AD1669C69BAE4DAF8863D159621E7A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				305BE028BBEFE1E76D1B50A1FED5F7ED /* Pods-RecycledChicken */,
+				559B86F8CDAF2B0956D06CAD1A0B73E3 /* Pods-RecycledChickenTests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		881CFC82BF68F4A64D92A51CDF2D5340 /* Maps */ = {
@@ -653,8 +698,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				0C87177E85ABA865056C8C10CEF6250C /* Pods */,
-				625D8E2728D7EEA50808BB9C25868397 /* Products */,
-				5A444130C0223125D37B586C70CBC14D /* Targets Support Files */,
+				2E20EE6BBAD87C07C80E8E571F343091 /* Products */,
+				87AD1669C69BAE4DAF8863D159621E7A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -775,6 +820,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADA6CC7EE505342EA63EC876FF0EEDB0 /* DropDown-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A158263CB98A9E0FC70F80E9367E870D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53A6BCE9D7B0529E5A012F87EFB5C40E /* Pods-RecycledChickenTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +973,25 @@
 			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */;
 			productType = "com.apple.product-type.framework";
 		};
+		FBDF80F647CD38C011A7E77E07C41901 /* Pods-RecycledChickenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 360D411289FBE285E2F25951B17DB3FB /* Build configuration list for PBXNativeTarget "Pods-RecycledChickenTests" */;
+			buildPhases = (
+				A158263CB98A9E0FC70F80E9367E870D /* Headers */,
+				662DAF6789EBF8151E236498903D7530 /* Sources */,
+				F54E513A7A39C67AA6F4A985ED18450B /* Frameworks */,
+				2DE61A4762D5A5E22357E896D56B9FAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				385E6A0682DFA9EED9F67579F410B3BC /* PBXTargetDependency */,
+			);
+			name = "Pods-RecycledChickenTests";
+			productName = Pods_RecycledChickenTests;
+			productReference = 885A08424CF23354B4AAD78E0A6B07C6 /* Pods-RecycledChickenTests */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -940,7 +1012,7 @@
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 625D8E2728D7EEA50808BB9C25868397 /* Products */;
+			productRefGroup = 2E20EE6BBAD87C07C80E8E571F343091 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -951,6 +1023,7 @@
 				7111E54EAE43E89F451A75076C3525ED /* M13Checkbox */,
 				72C70A12E17485B41B7A7C5DA5AA071C /* MKRingProgressView */,
 				E042ED2B8AB10FA491BD8A107EEA91B6 /* Pods-RecycledChicken */,
+				FBDF80F647CD38C011A7E77E07C41901 /* Pods-RecycledChickenTests */,
 				A7F9119A842E66F127E010A97169E4F4 /* SwiftGifOrigin */,
 			);
 		};
@@ -972,6 +1045,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		18E8C314CFD6683F535DFADC02C56816 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE61A4762D5A5E22357E896D56B9FAB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1145,6 +1225,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		662DAF6789EBF8151E236498903D7530 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C838E1EB7F685E7C6AB5748584FADEDC /* Pods-RecycledChickenTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C119EB9FCA97C04C2D3E0071558C8CDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1157,6 +1245,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		385E6A0682DFA9EED9F67579F410B3BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RecycledChicken";
+			target = E042ED2B8AB10FA491BD8A107EEA91B6 /* Pods-RecycledChicken */;
+			targetProxy = F8B9F2DC8FE7041A7F9F3FA6DC716CF3 /* PBXContainerItemProxy */;
+		};
 		68E60EA443E33AEF7576E2B509296B83 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleMaps;
@@ -1202,6 +1296,45 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		04EC1B256D4B8F11F2B280862E64BEC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F7CFA463862EFEFF1C8C94AAEF8A77D /* Pods-RecycledChickenTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-RecycledChickenTests/Pods-RecycledChickenTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RecycledChickenTests/Pods-RecycledChickenTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		084B5CF739C5BDD29076EEE980599A5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52F15F724D9CC811D1CFB0B287AC5DA6 /* SwiftGifOrigin.debug.xcconfig */;
@@ -1374,9 +1507,49 @@
 			};
 			name = Release;
 		};
+		55514E2441F1C564827537B8264BD5B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29CD690E952DEBC85A4565EC667EFCC6 /* Pods-RecycledChickenTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-RecycledChickenTests/Pods-RecycledChickenTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RecycledChickenTests/Pods-RecycledChickenTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		572814543711B620FE8D59A27922F4E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB7378BFA000435A5117356160DDF648 /* Pods-RecycledChicken.release.xcconfig */;
+			baseConfigurationReference = F577EA949EED06CF24D740BFB68775E3 /* Pods-RecycledChicken.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1416,7 +1589,7 @@
 		};
 		5873B442D9CFDCE264C2C687D805D76A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2636A8D83CAD3BCE910E5D2E768F05E8 /* Pods-RecycledChicken.debug.xcconfig */;
+			baseConfigurationReference = FDBB3891758E4AB993F458A844E9FF5D /* Pods-RecycledChicken.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1887,6 +2060,15 @@
 			buildConfigurations = (
 				7D4589C996ADDBB336AAE29ACFAF0300 /* Debug */,
 				B0959BD6CA5C4333E03962F5D9E7C422 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		360D411289FBE285E2F25951B17DB3FB /* Build configuration list for PBXNativeTarget "Pods-RecycledChickenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04EC1B256D4B8F11F2B280862E64BEC6 /* Debug */,
+				55514E2441F1C564827537B8264BD5B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

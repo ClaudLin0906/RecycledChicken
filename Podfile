@@ -13,6 +13,10 @@ target 'RecycledChicken' do
   pod 'MKRingProgressView'
   pod 'Alamofire'
   pod 'SwiftGifOrigin', '~> 1.7.0'
+
+  target 'RecycledChickenTests' do
+    inherit! :search_paths
+  end
 end
 
 post_install do |installer|
