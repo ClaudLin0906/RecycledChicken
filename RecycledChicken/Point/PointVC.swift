@@ -50,12 +50,7 @@ class PointVC: CustomRootVC {
     }
     
     private func signAlert(){
-        let alertAction = UIAlertAction(title: "sign".localized, style: .default) { _ in
-            loginOutRemoveObject()
-            goToSignVC()
-        }
-        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
-        showAlert(VC: self, title: "加入修復計畫，即可獲得來自泥滑島贈與的金幣！", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+        showSignAlert(VC: self, title: "加入修復計畫，即可獲得來自泥滑島贈與的金幣！")
     }
     
     override func viewWillAppear(_ animated: Bool) {

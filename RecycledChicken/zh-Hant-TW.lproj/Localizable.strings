@@ -119,3 +119,5 @@
 "siteList" = "門市列表";
 "copySuccess" = "複製成功";
 "verifyCodeError" = "驗證碼錯誤";
+"tokenExpired" = "登入已失效";
+"pleaseLoginAgain" = "請重新登入";

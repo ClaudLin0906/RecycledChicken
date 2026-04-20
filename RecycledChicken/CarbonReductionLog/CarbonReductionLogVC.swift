@@ -249,9 +249,7 @@ class CarbonReductionLogVC: CustomVC {
                 self?.carbonReductionLogInfo = carbonReductionLogInfo
                 completion()
             case .failure(let error):
-                DispatchQueue.main.async {
-                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
-                }
+                self?.handleNetworkError(error)
             }
         }
     }

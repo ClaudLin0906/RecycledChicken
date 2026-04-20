@@ -20,12 +20,7 @@ class CustomLoginVC: UIViewController {
     }
     
     @objc func goSignLoginVC(_ sender:CustomButton){
-        self.dismiss(animated: false) {
-            if let VC = UIStoryboard(name: "SignLogin", bundle: nil).instantiateViewController(withIdentifier: "SignLogin") as? SignLoginVC, let topVC = getTopController() {
-                VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: true)
-            }
-        }
+        dismissAndPresent(from: self, storyboard: "SignLogin", identifier: "SignLogin")
     }
 
 }

@@ -35,8 +35,8 @@ class MainRootVC: UIViewController {
         backgroundView?.removeFromSuperview()
         NotificationCenter.default.removeObserver(self, name: .removeBackground, object: nil)
     }
-    
-    private func showSignLoginVC(){
+
+    func showSignLoginVC(){
         if let VC = UIStoryboard(name: "SignLogin", bundle: nil).instantiateViewController(withIdentifier: "SignLogin") as? SignLoginVC {
             VC.modalPresentationStyle = .fullScreen
             present(VC, animated: false)

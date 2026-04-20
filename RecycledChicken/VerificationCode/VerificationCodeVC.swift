@@ -149,20 +149,15 @@ class VerificationCodeVC: CustomLoginVC {
                     keyWindow?.addSubview(signActivityCodeView)
                 }
             case .failure(let error):
-                DispatchQueue.main.async {
-                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
-                }
+                self?.handleNetworkError(error)
             }
         }
     }
     
     private func goToConfirmVC(){
-        self.dismiss(animated: true) {
-            if let VC = UIStoryboard(name: "ConfirmPassword", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPassword") as? ConfirmPasswordVC, let topVC = getTopController() {
-                VC.phone = self.phone
-                VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: true)
-            }
+        let currentPhone = phone
+        dismissAndPresent(from: self, storyboard: "ConfirmPassword", identifier: "ConfirmPassword") { (vc: ConfirmPasswordVC) in
+            vc.phone = currentPhone
         }
     }
     
@@ -189,20 +184,13 @@ class VerificationCodeVC: CustomLoginVC {
                     }
                 }
             case .failure(let error):
-                DispatchQueue.main.async {
-                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
-                }
+                self?.handleNetworkError(error)
             }
         }
     }
     
     func goToLoginVC() {
-        self.dismiss(animated: false) {
-            if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
-                VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: true)
-            }
-        }
+        dismissAndPresent(from: self, storyboard: "Login", identifier: "Login")
     }
 }
 

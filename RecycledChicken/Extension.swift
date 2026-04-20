@@ -75,10 +75,8 @@ extension Array where Element: Hashable  {
 
 extension UIViewController {
     
-    // With this extension you can access the MainViewController from the child view controllers.
     func revealViewController() -> CustomRootVC? {
         var viewController: UIViewController? = self
-        
         if viewController != nil && viewController is CustomRootVC {
             return viewController! as? CustomRootVC
         }
@@ -89,6 +87,31 @@ extension UIViewController {
             return viewController as? CustomRootVC
         }
         return nil
+    }
+
+    func handleNetworkError(_ error: Error) {
+        DispatchQueue.main.async { [weak self] in
+            if case NetworkError.httpError(let statusCode, _) = error, statusCode == 401 {
+                let action = UIAlertAction(title: "confirm".localized, style: .default) { _ in
+                    loginOutRemoveObject()
+                    if let windowScene = UIApplication.shared.connectedScenes
+                        .compactMap({ $0 as? UIWindowScene })
+                        .first(where: { $0.activationState == .foregroundActive }),
+                       let window = windowScene.windows.first(where: { $0.isKeyWindow }),
+                       let mainRootVC = window.rootViewController?.presentedViewController as? MainRootVC,
+                       let tabBarController = mainRootVC.children.first as? MainTabBarController {
+                        tabBarController.selectedIndex = 2
+                        tabBarController.viewControllers?.forEach { vc in
+                            (vc as? UINavigationController)?.popToRootViewController(animated: false)
+                        }
+                    }
+                    goToSignLoginVC()
+                }
+                showAlert(VC: self, title: "tokenExpired".localized, message: "pleaseLoginAgain".localized, alertAction: action)
+            } else {
+                showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+            }
+        }
     }
     
 }
@@ -188,17 +211,28 @@ extension NSLayoutConstraint {
 
 extension String {
 
-  var localized: String {
-    return NSLocalizedString(self, comment: "\(self)_comment")
-  }
-  
-  func localized(_ args: [CVarArg]) -> String {
-    return localized(args)
-  }
-  
-  func localized(_ args: CVarArg...) -> String {
-    return String(format: localized, args)
-  }
+    var localized: String {
+        return NSLocalizedString(self, comment: "\(self)_comment")
+    }
+    
+    func localized(_ args: [CVarArg]) -> String {
+        return localized(args)
+    }
+    
+    func localized(_ args: CVarArg...) -> String {
+        return String(format: localized, args)
+    }
+    
+    static var uniqueString: String {
+        UUID().uuidString.replacingOccurrences(of: "-", with: "")
+    }
+    
+    func urlEncoded() -> String {
+        var encodeUrlString = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        encodeUrlString = encodeUrlString?.replacingOccurrences(of: "+", with: "%2B")
+        return encodeUrlString ?? ""
+    }
+
 }
 
 extension Encodable {
@@ -227,32 +261,7 @@ extension Encodable {
     
 }
 
-extension String {
-    
-    static var uniqueString: String {
-        UUID().uuidString.replacingOccurrences(of: "-", with: "")
-    }
-    
-    func urlEncoded() -> String {
-        var encodeUrlString = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        encodeUrlString = encodeUrlString?.replacingOccurrences(of: "+", with: "%2B")
-        return encodeUrlString ?? ""
-    }
-    
-}
-
 extension UIView {
-    
-    func asImage() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        context.saveGState()
-        layer.render(in: context)
-        context.restoreGState()
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
-        UIGraphicsEndImageContext()
-        return image
-    }
     
     var parentViewController: UIViewController? {
         var parentResponder: UIResponder? = self.next

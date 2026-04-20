@@ -61,9 +61,7 @@ class ForgetPasswordVC: CustomLoginVC {
     
     @IBAction func goToConfirmForgetPassword(_ sender:UIButton){
         var alertMsg = ""
-        
         phone = phoneTextfield.text
-        
         if phone == "" {
             alertMsg += "phoneCannotBeEmpty".localized
         } else if !validateCellPhone(text: phone!) {
@@ -74,33 +72,22 @@ class ForgetPasswordVC: CustomLoginVC {
             showErrorMSG(alertMsg)
             return
         }
-        self.dismiss(animated: true) {
-            if let VC = UIStoryboard(name: "ConfirmPassword", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPassword") as? ConfirmPasswordVC, let topVC = getTopController() {
-                VC.modalPresentationStyle = .fullScreen
-                VC.phone = self.phone ?? ""
-                topVC.present(VC, animated: true)
-            }
+        let currentPhone = phone ?? ""
+        dismissAndPresent(from: self, storyboard: "ConfirmPassword", identifier: "ConfirmPassword") { (vc: ConfirmPasswordVC) in
+            vc.phone = currentPhone
         }
     }
     
     private func goToVerificationCode(){
-        self.dismiss(animated: true) {
-            if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC, let topVC = getTopController() {
-                VC.currentType = .forgetPassword
-                VC.modalPresentationStyle = .fullScreen
-                VC.phone = self.phone ?? ""
-                topVC.present(VC, animated: true)
-            }
+        let currentPhone = phone ?? ""
+        dismissAndPresent(from: self, storyboard: "VerificationCode", identifier: "VerificationCode") { (vc: VerificationCodeVC) in
+            vc.currentType = .forgetPassword
+            vc.phone = currentPhone
         }
     }
     
-    private func goToConfirmPassword(phone:String){
-        self.dismiss(animated: true) {
-            if let VC = UIStoryboard(name: "ConfirmPassword", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPassword") as? ConfirmPasswordVC, let topVC = getTopController() {
-                VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: true)
-            }
-        }
+    private func goToConfirmPassword(phone: String){
+        dismissAndPresent(from: self, storyboard: "ConfirmPassword", identifier: "ConfirmPassword")
     }
 
 }

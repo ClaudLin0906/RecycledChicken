@@ -35,6 +35,11 @@ class StoreMapVC: CustomRootVC {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        CommonKey.shared.authToken = ""  // 測試用：模擬 token 失效
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -64,9 +69,7 @@ class StoreMapVC: CustomRootVC {
                     self?.addMarker(self?.currentMapInfos ?? [])
                 }
             case .failure(let error):
-                DispatchQueue.main.async {
-                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
-                }
+                self?.handleNetworkError(error)
             }
         }
     }

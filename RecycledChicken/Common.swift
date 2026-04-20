@@ -562,9 +562,7 @@ func getUserNewInfo(VC: UIViewController, finishAction: (() -> ())?) {
                 finishAction()
             }
         case .failure(let error):
-            DispatchQueue.main.async {
-                showAlert(VC: VC, title: "error".localized, message: error.localizedDescription)
-            }
+            VC.handleNetworkError(error)
         }
     }
 }
@@ -622,6 +620,53 @@ func showAlert(VC:UIViewController?, title:String?, message:String? = nil, alert
             alertVC.addAction(cancelAction)
         }
         VC.present(alertVC, animated: false)
+    }
+}
+
+func showSignAlert(VC: UIViewController?, title: String) {
+    let alertAction = UIAlertAction(title: "sign".localized, style: .default) { _ in
+        loginOutRemoveObject()
+        goToSignVC()
+    }
+    let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
+    showAlert(VC: VC, title: title, message: nil, alertAction: alertAction, cancelAction: cancelAction)
+}
+
+func dismissAndPresent(from vc: UIViewController, storyboard: String, identifier: String, animated: Bool = true) {
+    vc.dismiss(animated: false) {
+        guard let topVC = getTopController() else { return }
+        let newVC = UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: identifier)
+        newVC.modalPresentationStyle = .fullScreen
+        topVC.present(newVC, animated: animated)
+    }
+}
+
+func dismissAndPresent<T: UIViewController>(from vc: UIViewController, storyboard: String, identifier: String, animated: Bool = true, configure: @escaping (T) -> Void) {
+    vc.dismiss(animated: false) {
+        guard let newVC = UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: identifier) as? T,
+              let topVC = getTopController() else { return }
+        newVC.modalPresentationStyle = .fullScreen
+        configure(newVC)
+        topVC.present(newVC, animated: animated)
+    }
+}
+
+func goToSignLoginVC() {
+    DispatchQueue.main.async {
+        guard let windowScene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first(where: { $0.activationState == .foregroundActive }),
+              let window = windowScene.windows.first(where: { $0.isKeyWindow }),
+              let mainRootVC = window.rootViewController?.presentedViewController as? MainRootVC
+        else { return }
+
+        if let presented = mainRootVC.presentedViewController {
+            presented.dismiss(animated: false) {
+                mainRootVC.showSignLoginVC()
+            }
+        } else {
+            mainRootVC.showSignLoginVC()
+        }
     }
 }
 
@@ -722,15 +767,6 @@ func dateFromStringISO8601(date:Date) -> String {
     dateFormatter.timeZone = TimeZone(secondsFromGMT: 8 * 60 * 60)
     let dateString = dateFormatter.string(from: date)
     return dateString
-}
-
-func imageWithImage(image:UIImage?, scaledToSize newSize:CGSize) -> UIImage? {
-    guard let image = image else { return nil }
-    UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
-    image.draw(in: CGRectMake(0, 0, newSize.width, newSize.height))
-    let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-    UIGraphicsEndImageContext()
-    return newImage
 }
 
 func convertDateFormat(inputDateString: String, inputFormat: String, outputFormat: String) -> String? {

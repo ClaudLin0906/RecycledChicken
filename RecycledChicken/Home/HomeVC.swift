@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+
 class HomeVC: CustomRootVC {
     
     @IBOutlet weak var pageControl:UIPageControl!
@@ -61,6 +62,8 @@ class HomeVC: CustomRootVC {
     private var cancellables: Set<AnyCancellable> = []
     
     private var bannerTimer: Timer?
+
+    private var popupBannerTimer: Timer?
 
     private var isScrollThumbConfigured = false
 
@@ -135,8 +138,8 @@ class HomeVC: CustomRootVC {
                         self.itemViews[.papperCub]?.setAmount(records.cup ?? 0)
                         self.itemViews[.aluminumCan]?.setAmount(records.can ?? 0)
                     }
-                case .failure:
-                    showAlert(VC: self, title: "error".localized)
+                case .failure(let error):
+                    self.handleNetworkError(error)
                 }
             }
         }
@@ -146,12 +149,14 @@ class HomeVC: CustomRootVC {
         super.viewWillAppear(animated)
         if FirstTime && LoginSuccess {
             FirstTime = false
-            getPopUpData { imageURLs in
+            getPopUpData { [weak self] imageURLs in
                 DispatchQueue.main.async {
+                    guard let self else { return }
                     let adbannerView = ADBannerView(frame: UIScreen.main.bounds)
                     adbannerView.imageURLs.append(contentsOf: imageURLs)
-                    Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
-                        adbannerView.changeBanner()
+                    self.popupBannerTimer?.invalidate()
+                    self.popupBannerTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak adbannerView] _ in
+                        adbannerView?.changeBanner()
                     }
                     keyWindow?.addSubview(adbannerView)
                 }
@@ -178,6 +183,8 @@ class HomeVC: CustomRootVC {
         cancellables.removeAll()
         bannerTimer?.invalidate()
         bannerTimer = nil
+        popupBannerTimer?.invalidate()
+        popupBannerTimer = nil
     }
     
     private func configureLanguageUI() {
@@ -212,16 +219,14 @@ class HomeVC: CustomRootVC {
                                    responseType: [ItemInfo].self) { [weak self] result in
             switch result {
             case .success(let itemInfos):
-                self?.itemInfos.removeAll()
-                self?.itemInfos.append(contentsOf: itemInfos)
+                self?.itemInfos = itemInfos
                 DispatchQueue.main.async {
-                    self?.mallHeight.constant = CGFloat(itemInfos.count / 3) * 150 + 70
+                    let rows = Int(ceil(Double(itemInfos.count) / 3.0))
+                    self?.mallHeight.constant = CGFloat(rows) * 150 + 70
                     self?.mallCollectionView.reloadData()
                 }
             case .failure(let error):
-                DispatchQueue.main.async {
-                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
-                }
+                self?.handleNetworkError(error)
             }
         }
     }
@@ -245,8 +250,7 @@ class HomeVC: CustomRootVC {
                                    responseType: [ADBannerInfo].self) { [weak self] result in
             switch result {
             case .success(let adBannerInfos):
-                self?.adBannerInfos.removeAll()
-                self?.adBannerInfos.append(contentsOf: adBannerInfos)
+                self?.adBannerInfos = adBannerInfos
                 completion()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -365,12 +369,11 @@ class HomeVC: CustomRootVC {
     }
     
     @objc private func tapGesture(_ gesture: UITapGestureRecognizer) {
-        if let v = gesture.view, let imageView = v as? UIImageView {
-            let index = imageView.tag
-            if let urlStr = adBannerInfos[index].URL, let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-            }
-        }
+        guard let imageView = gesture.view as? UIImageView,
+              let urlStr = adBannerInfos[imageView.tag].URL,
+              let url = URL(string: urlStr),
+              UIApplication.shared.canOpenURL(url) else { return }
+        UIApplication.shared.open(url)
     }
     
     private func changeBanner(_ changeIndex:Int = 1) {

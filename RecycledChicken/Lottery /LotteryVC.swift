@@ -120,9 +120,7 @@ class LotteryVC: CustomVC {
                     completion(data)
                 }
             case .failure(let error):
-                DispatchQueue.main.async {
-                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
-                }
+                self?.handleNetworkError(error)
             }
         }
     }

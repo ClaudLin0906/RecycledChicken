@@ -134,7 +134,7 @@ class TaskVC: CustomRootVC {
                         completion()
                     }
                 case .failure(let error):
-                    showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                    self.handleNetworkError(error)
                 }
             }
         }
@@ -153,12 +153,7 @@ class TaskVC: CustomRootVC {
     }
     
     private func signAlert() {
-        let alertAction = UIAlertAction(title: "註冊", style: .default) { _ in
-            loginOutRemoveObject()
-            goToSignVC()
-        }
-        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel)
-        showAlert(VC: self, title: "碳員招募中！一起探索泥滑島的秘密", message: nil, alertAction: alertAction, cancelAction: cancelAction)
+        showSignAlert(VC: self, title: "碳員招募中！一起探索泥滑島的秘密")
     }
     
     private func successTaskAction(_ taskInfo:TaskInfo) {

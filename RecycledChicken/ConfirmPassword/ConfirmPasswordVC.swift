@@ -75,15 +75,11 @@ class ConfirmPasswordVC: CustomLoginVC {
     }
     
     private func goToVerificationCode(){
-        self.dismiss(animated: true) { [weak self] in
-            guard let self = self else { return }
-            if let VC = UIStoryboard(name: "VerificationCode", bundle: nil).instantiateViewController(withIdentifier: "VerificationCode") as? VerificationCodeVC, let topVC = getTopController() {
-                VC.currentType = .forgetPassword
-                VC.modalPresentationStyle = .fullScreen
-                info = forgetPasswordInfo(userPhoneNumber: phone , newPassword: newPassword, smsCode: "")
-                VC.info = info
-                topVC.present(VC, animated: true)
-            }
+        info = forgetPasswordInfo(userPhoneNumber: phone, newPassword: newPassword, smsCode: "")
+        let currentInfo = info
+        dismissAndPresent(from: self, storyboard: "VerificationCode", identifier: "VerificationCode") { (vc: VerificationCodeVC) in
+            vc.currentType = .forgetPassword
+            vc.info = currentInfo
         }
     }
 }

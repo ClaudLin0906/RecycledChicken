@@ -88,12 +88,7 @@ class SignLoginVC: CustomLoginVC {
     }
     
     @IBAction func LoginBtnAction(_ sender:UIButton) {
-        self.dismiss(animated: false) {
-            if let VC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as? LoginVC, let topVC = getTopController() {
-                VC.modalPresentationStyle = .fullScreen
-                topVC.present(VC, animated: true)
-            }
-        }
+        dismissAndPresent(from: self, storyboard: "Login", identifier: "Login")
     }
     
     @IBAction func SignUpBtnAction(_ sender:UIButton) {
