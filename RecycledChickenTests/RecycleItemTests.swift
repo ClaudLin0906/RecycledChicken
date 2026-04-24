@@ -71,21 +71,36 @@ final class RecycleItemTests: XCTestCase {
         XCTAssertNil(RecycleItem.aluminumCan.remaining(from: remaining))
     }
 
-    // MARK: - remaining(from:) - milkCan / foilPack / paperCarton always nil
+    // MARK: - remaining(from:) - hdpeBottle / foilPack / cartonBox
 
-    func test_milkCan_remaining_alwaysNil() {
-        let remaining = MachineRemaining.make(battery: 5, bottle: 5, can: 5, cup: 5)
-        XCTAssertNil(RecycleItem.milkCan.remaining(from: remaining))
+    func test_hdpeBottle_remaining_returnsValue() {
+        let remaining = MachineRemaining.make(hdpeBottle: 7)
+        XCTAssertEqual(RecycleItem.hdpeBottle.remaining(from: remaining), 7)
     }
 
-    func test_foilPack_remaining_alwaysNil() {
+    func test_hdpeBottle_remaining_nilWhenAbsent() {
+        let remaining = MachineRemaining.make(battery: 5, bottle: 5, can: 5, cup: 5)
+        XCTAssertNil(RecycleItem.hdpeBottle.remaining(from: remaining))
+    }
+
+    func test_foilPack_remaining_returnsValue() {
+        let remaining = MachineRemaining.make(foilPack: 3)
+        XCTAssertEqual(RecycleItem.foilPack.remaining(from: remaining), 3)
+    }
+
+    func test_foilPack_remaining_nilWhenAbsent() {
         let remaining = MachineRemaining.make(battery: 5, bottle: 5, can: 5, cup: 5)
         XCTAssertNil(RecycleItem.foilPack.remaining(from: remaining))
     }
 
-    func test_paperCarton_remaining_alwaysNil() {
+    func test_cartonBox_remaining_returnsValue() {
+        let remaining = MachineRemaining.make(cartonBox: 10)
+        XCTAssertEqual(RecycleItem.cartonBox.remaining(from: remaining), 10)
+    }
+
+    func test_cartonBox_remaining_nilWhenAbsent() {
         let remaining = MachineRemaining.make(battery: 5, bottle: 5, can: 5, cup: 5)
-        XCTAssertNil(RecycleItem.paperCarton.remaining(from: remaining))
+        XCTAssertNil(RecycleItem.cartonBox.remaining(from: remaining))
     }
 
     // MARK: - from(apiName:)
@@ -106,16 +121,16 @@ final class RecycleItemTests: XCTestCase {
         XCTAssertEqual(RecycleItem.from(apiName: "鋁罐"), .aluminumCan)
     }
 
-    func test_fromApiName_milkCan() {
-        XCTAssertEqual(RecycleItem.from(apiName: "牛奶罐"), .milkCan)
+    func test_fromApiName_hdpeBottle() {
+        XCTAssertEqual(RecycleItem.from(apiName: "hdpe瓶"), .hdpeBottle)
     }
 
     func test_fromApiName_foilPack() {
         XCTAssertEqual(RecycleItem.from(apiName: "鋁箔包"), .foilPack)
     }
 
-    func test_fromApiName_paperCarton() {
-        XCTAssertEqual(RecycleItem.from(apiName: "紙盒包"), .paperCarton)
+    func test_fromApiName_cartonBox() {
+        XCTAssertEqual(RecycleItem.from(apiName: "紙盒屋"), .cartonBox)
     }
 
     func test_fromApiName_unknownReturnsNil() {
@@ -166,9 +181,9 @@ final class RecycleItemTests: XCTestCase {
     }
 
     func test_colorRecycledValue_untracked_isZero() {
-        XCTAssertEqual(RecycleItem.milkCan.colorRecycledValue, 0)
+        XCTAssertEqual(RecycleItem.hdpeBottle.colorRecycledValue, 0)
         XCTAssertEqual(RecycleItem.foilPack.colorRecycledValue, 0)
-        XCTAssertEqual(RecycleItem.paperCarton.colorRecycledValue, 0)
+        XCTAssertEqual(RecycleItem.cartonBox.colorRecycledValue, 0)
     }
 
     // MARK: - availableItems filter (mirrors StoreMapVC.getMakerIcon logic)
@@ -186,9 +201,9 @@ final class RecycleItemTests: XCTestCase {
         XCTAssertTrue(availableItems.contains(.bottle))
         XCTAssertTrue(availableItems.contains(.aluminumCan))
         XCTAssertTrue(availableItems.contains(.papperCub))
-        XCTAssertFalse(availableItems.contains(.milkCan))
+        XCTAssertFalse(availableItems.contains(.hdpeBottle))
         XCTAssertFalse(availableItems.contains(.foilPack))
-        XCTAssertFalse(availableItems.contains(.paperCarton))
+        XCTAssertFalse(availableItems.contains(.cartonBox))
     }
 
     func test_availableItems_emptyWhenNoRemaining() {

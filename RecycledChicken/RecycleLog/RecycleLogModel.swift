@@ -14,6 +14,10 @@ struct RecycleLogInfo:Codable {
     var colorlessBottle:Int = 0
     var coloredBottle:Int = 0
     var can:Int = 0
+    var cup:Int = 0
+    var hdpeBottle:Int = 0
+    var foilPack:Int = 0
+    var cartonBox:Int = 0
 }
 
 

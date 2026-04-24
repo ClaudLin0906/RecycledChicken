@@ -24,6 +24,15 @@ struct MapInfo: Codable {
         case description = "description"
     }
     
+    init(name: String?, machineRemaining: MachineRemaining? = nil, machineStatus: MachineStatus? = nil, machineLocation: MachineLocation? = nil, address: String? = nil, description: String? = nil) {
+        self.name = name
+        self.machineRemaining = machineRemaining
+        self.machineStatus = machineStatus
+        self.machineLocation = machineLocation
+        self.address = address
+        self.description = description
+    }
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try? container.decodeIfPresent(String.self, forKey: .name)
@@ -48,6 +57,9 @@ struct MachineRemaining:Codable {
     var colorlessBottle:Int?
     var can:Int?
     var cup:Int?
+    var hdpeBottle:Int?
+    var foilPack:Int?
+    var cartonBox:Int?
     
     enum CodingKeys:String, CodingKey {
         case battery = "battery"
@@ -56,8 +68,23 @@ struct MachineRemaining:Codable {
         case colorlessBottle = "colorlessBottle"
         case can = "can"
         case cup = "cup"
+        case hdpeBottle = "hdpeBottle"
+        case foilPack = "foilPack"
+        case cartonBox = "cartonBox"
     }
     
+    init(battery: Int? = nil, bottle: Int? = nil, coloredBottle: Int? = nil, colorlessBottle: Int? = nil, can: Int? = nil, cup: Int? = nil, hdpeBottle: Int? = nil, foilPack: Int? = nil, cartonBox: Int? = nil) {
+        self.battery = battery
+        self.bottle = bottle
+        self.coloredBottle = coloredBottle
+        self.colorlessBottle = colorlessBottle
+        self.can = can
+        self.cup = cup
+        self.hdpeBottle = hdpeBottle
+        self.foilPack = foilPack
+        self.cartonBox = cartonBox
+    }
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         battery = try? container.decodeIfPresent(Int.self, forKey: .battery)
@@ -66,11 +93,19 @@ struct MachineRemaining:Codable {
         colorlessBottle = try? container.decodeIfPresent(Int.self, forKey: .colorlessBottle)
         can = try? container.decodeIfPresent(Int.self, forKey: .can)
         cup = try? container.decodeIfPresent(Int.self, forKey: .cup)
+        hdpeBottle = try? container.decodeIfPresent(Int.self, forKey: .hdpeBottle)
+        foilPack = try? container.decodeIfPresent(Int.self, forKey: .foilPack)
+        cartonBox = try? container.decodeIfPresent(Int.self, forKey: .cartonBox)
     }
 }
-struct MachineLocation:Codable {
-    var latitude:String?
-    var longitude:String?
+struct MachineLocation: Codable {
+    var latitude: String?
+    var longitude: String?
+
+    init(latitude: String?, longitude: String?) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }
 
 struct RemainingProcessableInfo: Codable {

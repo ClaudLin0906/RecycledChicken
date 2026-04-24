@@ -135,13 +135,10 @@ class VerificationCodeVC: CustomLoginVC {
         guard smsCode.count == 4 else { return }
         let signUpInfo = SignUpInfo(userPhoneNumber: phone, userPassword: password, smsCode: smsCode)
         let signUpInfoDic = try? signUpInfo.asDictionary()
-        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.register,
-                                    parameters: signUpInfoDic,
-                                    authorizationToken: "",
-                                    responseType: ApiResult.self) { [weak self] result in
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.register, parameters: signUpInfoDic, authorizationToken: "", responseType: ApiResult.self) { [weak self] result in
             switch result {
             case .success:
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     let signActivityCodeView = SignActivityCodeView(frame: UIScreen.main.bounds)
                     signActivityCodeView.delegate = self

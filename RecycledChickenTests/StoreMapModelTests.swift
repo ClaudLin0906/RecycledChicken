@@ -35,7 +35,10 @@ extension MachineRemaining {
         coloredBottle: Int? = nil,
         colorlessBottle: Int? = nil,
         can: Int? = nil,
-        cup: Int? = nil
+        cup: Int? = nil,
+        hdpeBottle: Int? = nil,
+        foilPack: Int? = nil,
+        cartonBox: Int? = nil
     ) -> MachineRemaining {
         var r = try! JSONDecoder().decode(MachineRemaining.self, from: "{}".data(using: .utf8)!)
         r.battery = battery
@@ -44,6 +47,9 @@ extension MachineRemaining {
         r.colorlessBottle = colorlessBottle
         r.can = can
         r.cup = cup
+        r.hdpeBottle = hdpeBottle
+        r.foilPack = foilPack
+        r.cartonBox = cartonBox
         return r
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5P2-Sd-Osb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5P2-Sd-Osb">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYp-ML-4l6" userLabel="Top1">
-                                <rect key="frame" x="0.0" y="103" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="172" width="393" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afR-qR-YjO">
                                         <rect key="frame" x="30" y="0.0" width="363" height="40"/>
@@ -48,7 +48,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au5-fR-Nsa" userLabel="Top2">
-                                <rect key="frame" x="0.0" y="143" width="393" height="50"/>
+                                <rect key="frame" x="0.0" y="212" width="393" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ehYnxi" translatesAutoresizingMaskIntoConstraints="NO" id="fdY-cx-ofk">
                                         <rect key="frame" x="30" y="15" width="20" height="20"/>
@@ -150,11 +150,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-ay-1wo" userLabel="backgoundView">
-                                <rect key="frame" x="0.0" y="193" width="393" height="709"/>
+                                <rect key="frame" x="0.0" y="262" width="393" height="640"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.9137254901960784" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-uo-lLA">
-                                <rect key="frame" x="20" y="213" width="353" height="605"/>
+                                <rect key="frame" x="20" y="282" width="353" height="502"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nh5-zu-93u" userLabel="content">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="840"/>
@@ -189,10 +189,10 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOR-Wy-FTy">
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOR-Wy-FTy">
                                                         <rect key="frame" x="0.0" y="30" width="333" height="100"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rw1-Aa-stk">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rw1-Aa-stk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="85"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="85" id="Q9a-Nq-vvS"/>
@@ -200,10 +200,11 @@
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="leading" secondItem="nOR-Wy-FTy" secondAttribute="leading" id="scv-ld-001"/>
-                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="trailing" secondItem="nOR-Wy-FTy" secondAttribute="trailing" id="scv-tr-002"/>
-                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="top" secondItem="nOR-Wy-FTy" secondAttribute="top" id="scv-tp-003"/>
                                                             <constraint firstAttribute="height" constant="100" id="scv-ht-005"/>
+                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="leading" secondItem="nOR-Wy-FTy" secondAttribute="leading" id="scv-ld-001"/>
+                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="top" secondItem="nOR-Wy-FTy" secondAttribute="top" id="scv-tp-003"/>
+                                                            <constraint firstItem="rw1-Aa-stk" firstAttribute="trailing" secondItem="nOR-Wy-FTy" secondAttribute="trailing" id="scv-tr-002"/>
+                                                            <constraint firstAttribute="bottom" secondItem="rw1-Aa-stk" secondAttribute="bottom" constant="15" id="uu6-cx-XZ6"/>
                                                         </constraints>
                                                     </scrollView>
                                                 </subviews>
@@ -567,7 +568,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5P2-Sd-Osb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xWn-PK-f6H">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

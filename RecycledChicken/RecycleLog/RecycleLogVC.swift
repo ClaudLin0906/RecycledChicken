@@ -69,46 +69,72 @@ class RecycleLogVC: CustomVC {
     }
     
     private func useRecordInfoHandle(_ data:[UseRecordInfo]) {
-        
-        var integratedDict: [Date: (battery: Int, bottle: Int, coloredBottle:Int, colorlessBottle: Int, can: Int)] = [:]
-        
+        typealias DayTotals = (battery: Int, bottle: Int, coloredBottle: Int, colorlessBottle: Int, can: Int, cup: Int, hdpeBottle: Int, foilPack: Int, cartonBox: Int)
+        var integratedDict: [Date: DayTotals] = [:]
+
         data.forEach { datum in
-            if let datmTime = datum.time, let date = dateFromString(datmTime) {
-                let dayComponent = Calendar.current.startOfDay(for: date)
-                if var existingValues = integratedDict[dayComponent] {
-                    existingValues.battery += datum.recycleDetails?.battery ?? 0
-                    existingValues.bottle += datum.recycleDetails?.bottle ?? 0
-                    existingValues.colorlessBottle += datum.recycleDetails?.colorlessBottle ?? 0
-                    existingValues.coloredBottle += datum.recycleDetails?.coloredBottle ?? 0
-                    existingValues.can += datum.recycleDetails?.can ?? 0
-                    integratedDict[dayComponent] = existingValues
-                } else {
-                    integratedDict[dayComponent] = (battery: datum.recycleDetails?.battery ?? 0, bottle: datum.recycleDetails?.bottle ?? 0, coloredBottle:datum.recycleDetails?.coloredBottle ?? 0, colorlessBottle: datum.recycleDetails?.colorlessBottle ?? 0, datum.recycleDetails?.can ?? 0)
-                }
+            guard let datmTime = datum.time, let date = dateFromString(datmTime) else { return }
+            let dayComponent = Calendar.current.startOfDay(for: date)
+            let d = datum.recycleDetails
+            if var e = integratedDict[dayComponent] {
+                e.battery      += d?.battery      ?? 0
+                e.bottle       += d?.bottle       ?? 0
+                e.coloredBottle   += d?.coloredBottle   ?? 0
+                e.colorlessBottle += d?.colorlessBottle ?? 0
+                e.can          += d?.can          ?? 0
+                e.cup          += d?.cup          ?? 0
+                e.hdpeBottle   += d?.hdpeBottle   ?? 0
+                e.foilPack     += d?.foilPack     ?? 0
+                e.cartonBox    += d?.cartonBox    ?? 0
+                integratedDict[dayComponent] = e
+            } else {
+                integratedDict[dayComponent] = (
+                    battery:      d?.battery      ?? 0,
+                    bottle:       d?.bottle       ?? 0,
+                    coloredBottle:   d?.coloredBottle   ?? 0,
+                    colorlessBottle: d?.colorlessBottle ?? 0,
+                    can:          d?.can          ?? 0,
+                    cup:          d?.cup          ?? 0,
+                    hdpeBottle:   d?.hdpeBottle   ?? 0,
+                    foilPack:     d?.foilPack     ?? 0,
+                    cartonBox:    d?.cartonBox    ?? 0
+                )
             }
         }
-        
+
         integratedDict.keys.forEach { dateKey in
-            if let info = integratedDict[dateKey] {
-                if info.battery > 0 {
-                    var recycleLogInfo = RecycleLogInfo(time: dateKey)
-                    recycleLogInfo.battery = info.battery
-                    recycleLogInfos.append(recycleLogInfo)
-                }
-                if info.bottle > 0 || info.coloredBottle > 0 || info.colorlessBottle > 0 {
-                    var recycleLogInfo = RecycleLogInfo(time: dateKey)
-                    let count = info.bottle + info.coloredBottle + info.coloredBottle
-                    recycleLogInfo.bottle = count
-                    recycleLogInfos.append(recycleLogInfo)
-                }
-                if info.can > 0 {
-                    var recycleLogInfo = RecycleLogInfo(time: dateKey)
-                    recycleLogInfo.can = info.can
-                    recycleLogInfos.append(recycleLogInfo)
-                }
+            guard let info = integratedDict[dateKey] else { return }
+            if info.battery > 0 {
+                var log = RecycleLogInfo(time: dateKey); log.battery = info.battery
+                recycleLogInfos.append(log)
+            }
+            if info.bottle > 0 || info.coloredBottle > 0 || info.colorlessBottle > 0 {
+                var log = RecycleLogInfo(time: dateKey)
+                log.bottle = info.bottle + info.coloredBottle + info.colorlessBottle
+                recycleLogInfos.append(log)
+            }
+            if info.can > 0 {
+                var log = RecycleLogInfo(time: dateKey); log.can = info.can
+                recycleLogInfos.append(log)
+            }
+            if info.cup > 0 {
+                var log = RecycleLogInfo(time: dateKey); log.cup = info.cup
+                recycleLogInfos.append(log)
+            }
+            if info.hdpeBottle > 0 {
+                var log = RecycleLogInfo(time: dateKey); log.hdpeBottle = info.hdpeBottle
+                recycleLogInfos.append(log)
+            }
+            if info.foilPack > 0 {
+                var log = RecycleLogInfo(time: dateKey); log.foilPack = info.foilPack
+                recycleLogInfos.append(log)
+            }
+            if info.cartonBox > 0 {
+                var log = RecycleLogInfo(time: dateKey); log.cartonBox = info.cartonBox
+                recycleLogInfos.append(log)
             }
         }
-        recycleLogInfos.sort{$0.time > $1.time }
+        recycleLogInfos.sort { $0.time > $1.time }
         filterUseRecordInfos = recycleLogInfos
     }
     

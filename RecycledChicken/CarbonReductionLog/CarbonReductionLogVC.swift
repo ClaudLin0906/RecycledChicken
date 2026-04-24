@@ -42,17 +42,9 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var dropDownView:DropDownView!
     
-    @IBOutlet weak var bottleItemCellView:CarbonReductionItemCellView!
-    
-    @IBOutlet weak var batteryItemCellView:CarbonReductionItemCellView!
-    
-    @IBOutlet weak var papperCubItemCellView:CarbonReductionItemCellView!
-    
-    @IBOutlet weak var aluminumCanItemCellView:CarbonReductionItemCellView!
-    
-    @IBOutlet weak var publicTransportItemCellView:CarbonReductionItemCellView!
-    
-    @IBOutlet weak var colorFillScrollView:UIScrollView!
+    @IBOutlet weak var itemStackView:UIStackView!
+
+        @IBOutlet weak var colorFillScrollView:UIScrollView!
     
     @IBOutlet weak var colorFillTitleLabel:CustomLabel!
     
@@ -106,12 +98,7 @@ class CarbonReductionLogVC: CustomVC {
         return dropDown
     }()
     
-    private lazy var itemCellViewMap: [RecycleItem: CarbonReductionItemCellView] = [
-        .bottle: bottleItemCellView,
-        .battery: batteryItemCellView,
-        .papperCub: papperCubItemCellView,
-        .aluminumCan: aluminumCanItemCellView
-    ]
+    private var itemCellViewMap: [RecycleItem: CarbonReductionItemCellView] = [:]
 
     private var chooseObject: ChooseObject?
     
@@ -128,6 +115,12 @@ class CarbonReductionLogVC: CustomVC {
     @UserDefault(UserDefaultKey.shared.colorPapperCubUseCount, defaultValue: 0) var colorPapperCubUseCount:Int
     
     @UserDefault(UserDefaultKey.shared.colorAluminumCanUseCount, defaultValue: 0) var colorAluminumCanUseCount:Int
+
+    @UserDefault(UserDefaultKey.shared.colorHdpeBottleUseCount, defaultValue: 0) var colorHdpeBottleUseCount:Int
+
+    @UserDefault(UserDefaultKey.shared.colorFoilPackUseCount, defaultValue: 0) var colorFoilPackUseCount:Int
+
+    @UserDefault(UserDefaultKey.shared.colorCartonBoxUseCount, defaultValue: 0) var colorCartonBoxUseCount:Int
     
     @UserDefault(UserDefaultKey.shared.colorFillTypeOneViewCo2Value, defaultValue: 0) var colorFillTypeOneViewCo2Value:Double
     
@@ -149,7 +142,7 @@ class CarbonReductionLogVC: CustomVC {
         getCarbonReductionRecords(completion: { [weak self] in
             guard let self = self, let items = self.carbonReductionLogInfo?.personalRecycleAmountAndTarget else { return }
             itemDropDown.dataSource = items.compactMap { $0.itemName }
-            currentPersonalRecyleAmountAndTargetInfo = items.last
+            currentPersonalRecyleAmountAndTargetInfo = items.first { $0.itemName == RecycleItem.bottle.apiName }
             changeType()
             reloadItemCellViewValue()
             setConvertValueLabelText()
@@ -183,7 +176,7 @@ class CarbonReductionLogVC: CustomVC {
               let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate else { return }
         dropDownView.sortLabel.text = recycleItem.chineseName
         let (resultValue, resultUnit) = getCO2(Double(totalRecycled), conversionRate)
-        recycledRingInfoView.setRecycledRingInfo(totalRecycled, recycleItem.recycleUnit, resultValue, resultUnit, Double(target), recycleItem.color)
+        recycledRingInfoView.setRecycledRingInfo(totalRecycled, recycleItem.recycleUnit, resultValue, resultUnit, Double(target), recycleItem.color.start, recycleItem.color.end)
     }
     
     private func getCO2(_ totalRecycled:Double, _ conversionRate:Double) -> (String, String) {
@@ -196,10 +189,7 @@ class CarbonReductionLogVC: CustomVC {
     private func UIInit() {
         recycleBtn.layer.borderWidth = 1
         recycleBtn.layer.borderColor = #colorLiteral(red: 0.7647058964, green: 0.7647058964, blue: 0.7647058964, alpha: 1)
-        bottleItemCellView.setType(.bottle)
-        batteryItemCellView.setType(.battery)
-        aluminumCanItemCellView.setType(.aluminumCan)
-        papperCubItemCellView.setType(.papperCub)
+        buildItemCellViews()
         recycledRingInfoView.layer.shadowOffset = CGSize(width: 1, height: 1)
         recycledRingInfoView.layer.shadowOpacity = 0.2
         setupColorFillViews()
@@ -215,6 +205,16 @@ class CarbonReductionLogVC: CustomVC {
             bottomLineSpace.constant = -5
         }
         keyWindow?.addSubview(maskView)
+    }
+
+    private func buildItemCellViews() {
+        RecycleItem.allCases.forEach { item in
+            let cellView = CarbonReductionItemCellView()
+            cellView.translatesAutoresizingMaskIntoConstraints = false
+            cellView.setType(item)
+            itemStackView.addArrangedSubview(cellView)
+            itemCellViewMap[item] = cellView
+        }
     }
 
     private func setupColorFillViews() {
@@ -240,9 +240,7 @@ class CarbonReductionLogVC: CustomVC {
     }
     
     private func getCarbonReductionRecords(completion: @escaping () -> Void) {
-        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.carbonReductionRecords,
-                                   authorizationToken: CommonKey.shared.authToken,
-                                   responseType: CarbonReductionLogInfo.self) { [weak self] result in
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.carbonReductionRecords, authorizationToken: CommonKey.shared.authToken, responseType: CarbonReductionLogInfo.self) { [weak self] result in
             switch result {
             case .success(let carbonReductionLogInfo):
                 self?.carbonReductionLogInfo = nil
@@ -318,7 +316,9 @@ class CarbonReductionLogVC: CustomVC {
             case .battery:     useCount = colorBatteryUseCount
             case .papperCub:   useCount = colorPapperCubUseCount
             case .aluminumCan: useCount = colorAluminumCanUseCount
-            default:           useCount = 0
+            case .hdpeBottle:  useCount = colorHdpeBottleUseCount
+            case .foilPack:    useCount = colorFoilPackUseCount
+            case .cartonBox:   useCount = colorCartonBoxUseCount
             }
             let numberOfColorsCount = NumberOfColorsCount(recycleType: recycleItem, count: colorCount - useCount)
             numberOfColorsCounts.append(numberOfColorsCount)
@@ -372,7 +372,7 @@ extension CarbonReductionLogVC: ChooseColorVCDelete {
     func comfirm(_ useRecyceledSort: RecycleItem) {
         finishViewHandle()
         guard let chooseObject = chooseObject else { return }
-        UserDefaults().setColor(useRecyceledSort.color, forKey: chooseObject.userdefultKey)
+        UserDefaults().setColor(useRecyceledSort.color.start, forKey: chooseObject.userdefultKey)
         switch useRecyceledSort {
         case .bottle:
             colorBottleUseCount += 1
@@ -382,8 +382,12 @@ extension CarbonReductionLogVC: ChooseColorVCDelete {
             colorPapperCubUseCount += 1
         case .aluminumCan:
             colorAluminumCanUseCount += 1
-        default:
-            break
+        case .hdpeBottle:
+            colorHdpeBottleUseCount += 1
+        case .foilPack:
+            colorFoilPackUseCount += 1
+        case .cartonBox:
+            colorCartonBoxUseCount += 1
         }
         reloadItemCellViewValue()
         getConvertValue(useRecyceledSort)

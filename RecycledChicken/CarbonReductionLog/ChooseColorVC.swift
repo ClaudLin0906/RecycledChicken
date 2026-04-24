@@ -83,6 +83,6 @@ extension ChooseColorVC:CarbonReductionItemCellViewDelegate {
     func tapItem(_ useRecyceledSort: RecycleItem) {
         selectedRecyceledSort = nil
         selectedRecyceledSort = useRecyceledSort
-        delegate?.chooseColor(useRecyceledSort.color)
+        delegate?.chooseColor(useRecyceledSort.color.start)
     }
 }

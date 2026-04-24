@@ -60,12 +60,27 @@ class AmountView: UIView, NibOwnerLoadable {
             }
             
             if let can = machineRemaining.can {
-                let label = labelInit("鋁罐還可投入\(can)")
+                let label = labelInit("鋁罐還可投入：\(can)")
                 stackView.addArrangedSubview(label)
             }
             
             if let cup = machineRemaining.cup {
-                let label = labelInit("紙杯還可投入:\(cup)")
+                let label = labelInit("紙杯還可投入：\(cup)")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let hdpeBottle = machineRemaining.hdpeBottle {
+                let label = labelInit("牛奶瓶還可投入：\(hdpeBottle)")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let foilPack = machineRemaining.foilPack {
+                let label = labelInit("利樂包還可投入：\(foilPack)")
+                stackView.addArrangedSubview(label)
+            }
+            
+            if let cartonBox = machineRemaining.cartonBox {
+                let label = labelInit("紙盒屋還可投入：\(cartonBox)")
                 stackView.addArrangedSubview(label)
             }
         }

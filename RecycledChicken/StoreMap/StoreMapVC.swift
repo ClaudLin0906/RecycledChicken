@@ -35,10 +35,6 @@ class StoreMapVC: CustomRootVC {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        CommonKey.shared.authToken = ""  // 測試用：模擬 token 失效
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -55,7 +51,8 @@ class StoreMapVC: CustomRootVC {
             case .success(let mapInfos):
                 self?.mapInfosData.removeAll()
                 self?.currentMapInfos.removeAll()
-                mapInfos.forEach { mapInfo in
+                let allMapInfos = mapInfos
+                allMapInfos.forEach { mapInfo in
                     var newMapInfo = mapInfo
                     if newMapInfo.machineStatus == nil, let machineRemaining = newMapInfo.machineRemaining {
                         if machineRemaining.battery ?? 0 > 0 || machineRemaining.bottle ?? 0 > 0 || machineRemaining.colorlessBottle ?? 0 > 0 || machineRemaining.coloredBottle ?? 0 > 0 || machineRemaining.can ?? 0 > 0 || machineRemaining.cup ?? 0 > 0 {
@@ -116,11 +113,18 @@ class StoreMapVC: CustomRootVC {
         UIGraphicsBeginImageContextWithOptions(markerSize, false, 0)
         defer { UIGraphicsEndImageContext() }
         baseImage.draw(in: CGRect(origin: .zero, size: markerSize))
-        if !availableItems.isEmpty {
-            let iconWidth: CGFloat = 6
-            let iconHeight: CGFloat = 10
-            let spacing: CGFloat = 4
-            let totalWidth = CGFloat(availableItems.count) * iconWidth + CGFloat(availableItems.count - 1) * spacing
+            if !availableItems.isEmpty {
+            let count = CGFloat(availableItems.count)
+            let defaultIconWidth: CGFloat = 6
+            let defaultIconHeight: CGFloat = 10
+            let defaultSpacing: CGFloat = 4
+            let maxAreaWidth = markerSize.width * 0.85
+            let defaultTotalWidth = count * defaultIconWidth + (count - 1) * defaultSpacing
+            let scale = defaultTotalWidth > maxAreaWidth ? maxAreaWidth / defaultTotalWidth : 1.0
+            let iconWidth = defaultIconWidth * scale
+            let iconHeight = defaultIconHeight * scale
+            let spacing = defaultSpacing * scale
+            let totalWidth = count * iconWidth + (count - 1) * spacing
             let startX = (markerSize.width - totalWidth) / 2
             let iconY = markerSize.height * 0.42
             availableItems.enumerated().forEach { i, item in
@@ -255,4 +259,5 @@ extension StoreMapVC:SpecialTaskViewDelegate {
     }
     
 }
+
 

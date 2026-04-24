@@ -331,17 +331,21 @@ final class ModelDecodingTests: XCTestCase {
         XCTAssertEqual(RecycleType.colorlessBottle.rawValue, "colorlessBottle")
         XCTAssertEqual(RecycleType.can.rawValue, "can")
         XCTAssertEqual(RecycleType.cup.rawValue, "cup")
+        XCTAssertEqual(RecycleType.hdpeBottle.rawValue, "hdpeBottle")
+        XCTAssertEqual(RecycleType.foilPack.rawValue, "foilPack")
+        XCTAssertEqual(RecycleType.cartonBox.rawValue, "cartonBox")
     }
 
-    func test_recycleType_allCasesCountIsSix() {
-        XCTAssertEqual(RecycleType.allCases.count, 6)
+    func test_recycleType_allCasesCountIsNine() {
+        XCTAssertEqual(RecycleType.allCases.count, 9)
     }
 
     func test_recycleDetails_decodesAllFields() throws {
         let json = """
         {
             "battery": 1, "bottle": 2, "coloredBottle": 3,
-            "colorlessBottle": 4, "can": 5, "cup": 6
+            "colorlessBottle": 4, "can": 5, "cup": 6,
+            "hdpeBottle": 7, "foilPack": 8, "cartonBox": 9
         }
         """.data(using: .utf8)!
 
@@ -352,5 +356,8 @@ final class ModelDecodingTests: XCTestCase {
         XCTAssertEqual(details.colorlessBottle, 4)
         XCTAssertEqual(details.can, 5)
         XCTAssertEqual(details.cup, 6)
+        XCTAssertEqual(details.hdpeBottle, 7)
+        XCTAssertEqual(details.foilPack, 8)
+        XCTAssertEqual(details.cartonBox, 9)
     }
 }

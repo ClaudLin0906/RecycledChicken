@@ -116,9 +116,9 @@ enum RecycleItem: CaseIterable {
     case battery
     case papperCub
     case aluminumCan
-    case milkCan
+    case hdpeBottle
     case foilPack
-    case paperCarton
+    case cartonBox
 
     var chineseName: String {
         switch self {
@@ -126,9 +126,9 @@ enum RecycleItem: CaseIterable {
         case .battery:     return "battery".localized
         case .papperCub:   return "papperCup".localized
         case .aluminumCan: return "aluminumCan".localized
-        case .milkCan:     return "牛奶罐"
-        case .foilPack:    return "鋁箔包"
-        case .paperCarton: return "紙盒包"
+        case .hdpeBottle:  return "hdpeBottle".localized
+        case .foilPack:    return "foilPack".localized
+        case .cartonBox:   return "cartonBox".localized
         }
     }
 
@@ -138,9 +138,9 @@ enum RecycleItem: CaseIterable {
         case .battery:     return "BATTERY"
         case .papperCub:   return "PAPPER CUB"
         case .aluminumCan: return "ALUMINUM CAN"
-        case .milkCan:     return "MILK CAN"
+        case .hdpeBottle:  return "HDPE BOTTLE"
         case .foilPack:    return "FOIL PACK"
-        case .paperCarton: return "PAPER CARTON"
+        case .cartonBox:   return "CARTON BOX"
         }
     }
 
@@ -150,23 +150,24 @@ enum RecycleItem: CaseIterable {
         case .battery:     return "battery"
         case .papperCub:   return "papperCub"
         case .aluminumCan: return "aluminumCan"
-        case .milkCan:     return "milkCan"
+        case .hdpeBottle:  return "milkCan"
         case .foilPack:    return "foilPack"
-        case .paperCarton: return "paperCarton"
+        case .cartonBox:   return "paperCarton"
         }
     }
 
-    var color: UIColor {
+    var color: (start: UIColor, end: UIColor) {
         switch self {
-        case .bottle:      return #colorLiteral(red: 0.8862745098, green: 0.7607843137, blue: 0.4901960784, alpha: 1)
-        case .battery:     return #colorLiteral(red: 0.2666666667, green: 0.4901960784, blue: 0.4156862745, alpha: 1)
-        case .papperCub:   return #colorLiteral(red: 0.6862745098, green: 0.5764705882, blue: 0.4431372549, alpha: 1)
-        case .aluminumCan: return #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
-        case .milkCan:     return #colorLiteral(red: 0.4745098039, green: 0.6392156863, blue: 0.7176470588, alpha: 1)
-        case .foilPack:    return #colorLiteral(red: 0.5568627451, green: 0.5019607843, blue: 0.6745098039, alpha: 1)
-        case .paperCarton: return #colorLiteral(red: 0.4862745098, green: 0.6196078431, blue: 0.4509803922, alpha: 1)
+        case .bottle:      return (#colorLiteral(red: 0.9373, green: 0.7647, blue: 0.4157, alpha: 1), #colorLiteral(red: 0.9412, green: 0.8745, blue: 0.6549, alpha: 1))
+        case .battery:     return (#colorLiteral(red: 0.2667, green: 0.4902, blue: 0.4157, alpha: 1), #colorLiteral(red: 0.5843, green: 0.7725, blue: 0.7098, alpha: 1))
+        case .papperCub:   return (#colorLiteral(red: 0.6118, green: 0.4275, blue: 0.2824, alpha: 1), #colorLiteral(red: 0.6863, green: 0.5765, blue: 0.4431, alpha: 1))
+        case .aluminumCan: return (#colorLiteral(red: 0.7294, green: 0.3608, blue: 0.1490, alpha: 1), #colorLiteral(red: 0.8706, green: 0.6196, blue: 0.4745, alpha: 1))
+        case .hdpeBottle:  return (#colorLiteral(red: 0.4118, green: 0.7961, blue: 0.9020, alpha: 1), #colorLiteral(red: 0.3804, green: 0.5529, blue: 0.8118, alpha: 1))
+        case .foilPack:    return (#colorLiteral(red: 0.5255, green: 0.8471, blue: 0.4196, alpha: 1), #colorLiteral(red: 0.7490, green: 0.9137, blue: 0.5647, alpha: 1))
+        case .cartonBox:   return (#colorLiteral(red: 0.2392, green: 0.3333, blue: 0.5647, alpha: 1), #colorLiteral(red: 0.0902, green: 0.1765, blue: 0.3922, alpha: 1))
         }
     }
+
 
     var colorRecycledValue: CGFloat {
         switch self {
@@ -182,20 +183,20 @@ enum RecycleItem: CaseIterable {
         switch self {
         case .bottle:                                           return "瓶"
         case .battery:                                          return "顆"
-        case .papperCub, .aluminumCan, .milkCan, .foilPack, .paperCarton: return "個"
+        case .papperCub, .aluminumCan, .hdpeBottle, .foilPack, .cartonBox: return "個"
         }
     }
 
-    /// 後端回傳的中文品項名稱
+    /// 後端 API 使用的品項識別名稱
     var apiName: String {
         switch self {
         case .bottle:      return "寶特瓶"
         case .battery:     return "電池"
         case .papperCub:   return "紙杯"
         case .aluminumCan: return "鋁罐"
-        case .milkCan:     return "牛奶罐"
+        case .hdpeBottle:  return "hdpe瓶"
         case .foilPack:    return "鋁箔包"
-        case .paperCarton: return "紙盒包"
+        case .cartonBox:   return "紙盒屋"
         }
     }
 
@@ -212,7 +213,9 @@ enum RecycleItem: CaseIterable {
         case .battery:     return machineRemaining.battery
         case .papperCub:   return machineRemaining.cup
         case .aluminumCan: return machineRemaining.can
-        case .milkCan, .foilPack, .paperCarton: return nil
+        case .hdpeBottle:  return machineRemaining.hdpeBottle
+        case .foilPack:    return machineRemaining.foilPack
+        case .cartonBox:   return machineRemaining.cartonBox
         }
     }
 }
@@ -260,6 +263,9 @@ class UserDefaultKey {
     let colorBatteryUseCount = "colorBatteryUseCount"
     let colorPapperCubUseCount = "colorPapperCubUseCount"
     let colorAluminumCanUseCount = "colorAluminumCanUseCount"
+    let colorHdpeBottleUseCount = "colorHdpeBottleUseCount"
+    let colorFoilPackUseCount = "colorFoilPackUseCount"
+    let colorCartonBoxUseCount = "colorCartonBoxUseCount"
     let oneCellViewImageViewOfColorFillTypeOneView = "oneCellViewImageViewOfColorFillTypeOneView"
     let oneCellViewBackgroundOfColorFillTypeOneView = "oneCellViewBackgroundOfColorFillTypeOneView"
     let twoCellViewImageViewOfColorFillTypeOneView = "twoCellViewImageViewOfColorFillTypeOneView"
@@ -448,6 +454,9 @@ struct RecordsResult {
     let colorlessBottle: Int?
     let can: Int?
     let cup: Int?
+    let hdpeBottle: Int?
+    let foilPack: Int?
+    let cartonBox: Int?
 }
 
 func getRecords(_ sites: [String]? = nil, _ startTime: String, _ endTime: String, completion: @escaping (Result<RecordsResult, Error>) -> Void) {
@@ -457,9 +466,7 @@ func getRecords(_ sites: [String]? = nil, _ startTime: String, _ endTime: String
         let sitesStr = sites.joined(separator: ",")
         urlStr = APIUrl.domainName + APIUrl.records + "?startTime=\(startTime)T00:00:00.000+08:00&endTime=\(endTime)T23:59:59.999+08:00&sites=\(sitesStr)"
     }
-    NetworkManager.shared.get(url: urlStr,
-                               authorizationToken: CommonKey.shared.authToken,
-                               responseType: [UseRecordInfo].self) { result in
+    NetworkManager.shared.get(url: urlStr, authorizationToken: CommonKey.shared.authToken, responseType: [UseRecordInfo].self) { result in
         switch result {
         case .success(let useRecordInfos):
             var batteryInt: Int?
@@ -468,26 +475,20 @@ func getRecords(_ sites: [String]? = nil, _ startTime: String, _ endTime: String
             var colorlessBottleInt: Int?
             var canInt: Int?
             var cupInt: Int?
+            var hdpeBottleInt: Int?
+            var foilPackInt: Int?
+            var cartonBoxInt: Int?
             useRecordInfos.forEach { useRecordInfo in
                 if let recycleDetails = useRecordInfo.recycleDetails {
-                    if let battery = recycleDetails.battery {
-                        batteryInt = (batteryInt ?? 0) + battery
-                    }
-                    if let bottle = recycleDetails.bottle {
-                        bottleInt = (bottleInt ?? 0) + bottle
-                    }
-                    if let coloredBottle = recycleDetails.coloredBottle {
-                        coloredBottleInt = (coloredBottleInt ?? 0) + coloredBottle
-                    }
-                    if let colorlessBottle = recycleDetails.colorlessBottle {
-                        colorlessBottleInt = (colorlessBottleInt ?? 0) + colorlessBottle
-                    }
-                    if let can = recycleDetails.can {
-                        canInt = (canInt ?? 0) + can
-                    }
-                    if let cup = recycleDetails.cup {
-                        cupInt = (cupInt ?? 0) + cup
-                    }
+                    if let battery = recycleDetails.battery { batteryInt = (batteryInt ?? 0) + battery }
+                    if let bottle = recycleDetails.bottle { bottleInt = (bottleInt ?? 0) + bottle }
+                    if let coloredBottle = recycleDetails.coloredBottle { coloredBottleInt = (coloredBottleInt ?? 0) + coloredBottle }
+                    if let colorlessBottle = recycleDetails.colorlessBottle { colorlessBottleInt = (colorlessBottleInt ?? 0) + colorlessBottle }
+                    if let can = recycleDetails.can { canInt = (canInt ?? 0) + can }
+                    if let cup = recycleDetails.cup { cupInt = (cupInt ?? 0) + cup }
+                    if let hdpeBottle = recycleDetails.hdpeBottle { hdpeBottleInt = (hdpeBottleInt ?? 0) + hdpeBottle }
+                    if let foilPack = recycleDetails.foilPack { foilPackInt = (foilPackInt ?? 0) + foilPack }
+                    if let cartonBox = recycleDetails.cartonBox { cartonBoxInt = (cartonBoxInt ?? 0) + cartonBox }
                 }
             }
             let recordsResult = RecordsResult(
@@ -497,7 +498,10 @@ func getRecords(_ sites: [String]? = nil, _ startTime: String, _ endTime: String
                 coloredBottle: coloredBottleInt,
                 colorlessBottle: colorlessBottleInt,
                 can: canInt,
-                cup: cupInt
+                cup: cupInt,
+                hdpeBottle: hdpeBottleInt,
+                foilPack: foilPackInt,
+                cartonBox: cartonBoxInt
             )
             completion(.success(recordsResult))
         case .failure(let error):
@@ -920,6 +924,9 @@ enum RecycleType: String, Codable, CaseIterable {
     case colorlessBottle = "colorlessBottle"
     case can = "can"
     case cup = "cup"
+    case hdpeBottle = "hdpeBottle"
+    case foilPack = "foilPack"
+    case cartonBox = "cartonBox"
 }
 
 struct RecycleDetails:Codable {
@@ -929,6 +936,9 @@ struct RecycleDetails:Codable {
     var colorlessBottle:Int?
     var can:Int?
     var cup:Int?
+    var hdpeBottle:Int?
+    var foilPack:Int?
+    var cartonBox:Int?
 }
 
 struct ApiResult:Codable {

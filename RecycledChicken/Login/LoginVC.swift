@@ -85,8 +85,8 @@ class LoginVC: CustomLoginVC {
     }
     
     private func loginAction(phone: String, password: String) {
-//        let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
-        let loginInfo = testLoginInfo
+        let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
+//        let loginInfo = testLoginInfo
         let loginInfoDic = try? loginInfo.asDictionary()
         NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.login, parameters: loginInfoDic, authorizationToken: "", responseType: LoginResponse.self) { [weak self] result in
             switch result {
@@ -104,19 +104,19 @@ class LoginVC: CustomLoginVC {
     }
     
     @IBAction func login(_ sender: UIButton) {
-//        guard let phone = phoneTextfield.text, !phone.isEmpty else {
-//            showAlert(VC: self, title: nil, message: "電話不能為空")
-//            return
-//        }
-//        guard validateCellPhone(text: phone) else {
-//            showAlert(VC: self, title: nil, message: "電話格式不對")
-//            return
-//        }
-//        guard let password = passwordTextfield.text, !password.isEmpty else {
-//            showAlert(VC: self, title: nil, message: "密碼不能為空")
-//            return
-//        }
-//        loginAction(phone: phone, password: password)
+        guard let phone = phoneTextfield.text, !phone.isEmpty else {
+            showAlert(VC: self, title: nil, message: "電話不能為空")
+            return
+        }
+        guard validateCellPhone(text: phone) else {
+            showAlert(VC: self, title: nil, message: "電話格式不對")
+            return
+        }
+        guard let password = passwordTextfield.text, !password.isEmpty else {
+            showAlert(VC: self, title: nil, message: "密碼不能為空")
+            return
+        }
+        loginAction(phone: phone, password: password)
         loginAction(phone: "", password: "")
     }
     

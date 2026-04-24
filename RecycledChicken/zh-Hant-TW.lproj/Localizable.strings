@@ -13,6 +13,9 @@
 "battery" = "電池";
 "papperCup" = "紙杯";
 "aluminumCan" = "鋁罐";
+"hdpeBottle" = "hdpe瓶";
+"foilPack" = "鋁箔包";
+"cartonBox" = "紙盒屋";
 "pointDetail" = "點數詳情";
 "error" = "發生錯誤";
 "userName" = "用戶名稱";

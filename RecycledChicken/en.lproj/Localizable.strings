@@ -12,6 +12,9 @@
 "bottle" = "BOTTLE";
 "battery" = "BATTERY";
 "papperCup" = "PAPPER CUP";
+"hdpeBottle" = "HDPE BOTTLE";
+"foilPack" = "FOIL PACK";
+"cartonBox" = "CARTON BOX";
 "pointDetail" = "PointDetail";
 "verifyCodeError" = "Verification code error";
 "aluminumCan" = "ALUMINUM CAN";

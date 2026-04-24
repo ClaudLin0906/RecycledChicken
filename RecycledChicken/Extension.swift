@@ -109,7 +109,13 @@ extension UIViewController {
                 }
                 showAlert(VC: self, title: "tokenExpired".localized, message: "pleaseLoginAgain".localized, alertAction: action)
             } else {
-                showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                let message: String
+                if case NetworkError.httpError(_, let apiMessage) = error, let apiMessage = apiMessage, !apiMessage.isEmpty {
+                    message = apiMessage
+                } else {
+                    message = "error".localized
+                }
+                showAlert(VC: self, title: message, message: nil)
             }
         }
     }

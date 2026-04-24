@@ -39,6 +39,14 @@ struct PersonalRecycleAmountAndTargetInfo: Codable  {
         case infoLink = "infoLink"
     }
     
+    init(itemName: String?, target: Int? = 0, totalRecycled: Int? = 0, conversionRate: Double? = 0, infoLink: String? = nil) {
+        self.itemName = itemName
+        self.target = target
+        self.totalRecycled = totalRecycled
+        self.conversionRate = conversionRate
+        self.infoLink = infoLink
+    }
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         itemName = try? container.decodeIfPresent(String.self, forKey: .itemName)
