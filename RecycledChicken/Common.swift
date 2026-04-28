@@ -194,9 +194,9 @@ enum RecycleItem: CaseIterable {
         case .battery:     return "電池"
         case .papperCub:   return "紙杯"
         case .aluminumCan: return "鋁罐"
-        case .hdpeBottle:  return "hdpe瓶"
+        case .hdpeBottle:  return "牛奶罐"
         case .foilPack:    return "鋁箔包"
-        case .cartonBox:   return "紙盒屋"
+        case .cartonBox:   return "紙盒包"
         }
     }
 

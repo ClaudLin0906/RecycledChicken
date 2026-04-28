@@ -37,6 +37,10 @@ class AmountView: UIView, NibOwnerLoadable {
         stackView.removeFullyAllArrangedSubviews()
         self.isHidden = false
         storeName.text = info.name
+        if let status = info.machineStatus, status != .submit {
+            stackView.addArrangedSubview(statusRowView())
+            return
+        }
         if let machineRemaining = info.machineRemaining {
             
             if let battery = machineRemaining.battery {
@@ -80,12 +84,49 @@ class AmountView: UIView, NibOwnerLoadable {
             }
             
             if let cartonBox = machineRemaining.cartonBox {
-                let label = labelInit("紙盒屋還可投入：\(cartonBox)")
+                let label = labelInit("紙盒包還可投入：\(cartonBox)")
                 stackView.addArrangedSubview(label)
             }
         }
     }
     
+    private func statusRowView() -> UIView {
+        let row = UIStackView()
+        row.axis = .horizontal
+        row.spacing = 4
+        row.alignment = .center
+
+        let icon = UIImageView()
+        if #available(iOS 13.0, *) {
+            icon.image = UIImage(systemName: "exclamationmark.circle.fill")
+        }
+        icon.tintColor = .systemRed
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            icon.widthAnchor.constraint(equalToConstant: 18),
+            icon.heightAnchor.constraint(equalToConstant: 18)
+        ])
+
+        let label = UILabel()
+        label.font = storeName.font
+        label.text = "滿位/維護"
+        label.textColor = .systemRed
+        label.textAlignment = .center
+
+        row.addArrangedSubview(icon)
+        row.addArrangedSubview(label)
+
+        let wrapper = UIView()
+        wrapper.addSubview(row)
+        row.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            row.centerXAnchor.constraint(equalTo: wrapper.centerXAnchor),
+            row.topAnchor.constraint(equalTo: wrapper.topAnchor),
+            row.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor)
+        ])
+        return wrapper
+    }
+
     private func labelInit(_ textCount:String) -> UILabel {
         let label = UILabel()
         label.font = storeName.font

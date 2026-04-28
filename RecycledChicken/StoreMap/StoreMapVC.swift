@@ -94,7 +94,8 @@ class StoreMapVC: CustomRootVC {
     
     private func getMakerIcon(_ info: MapInfo) -> UIImage? {
         let isSpecial = info.description != nil && info.description != ""
-        let markerSize = CGSize(width: 50, height: 60)
+        let isActive = info.machineStatus == .submit
+        let markerSize = isActive ? CGSize(width: 50, height: 60) : CGSize(width: 44, height: 44)
 
         let baseName = info.machineStatus == .submit
             ? (isSpecial ? "ic_special_mark" : "ic_normal_mark")
@@ -209,7 +210,7 @@ extension StoreMapVC: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         let mapInfo = currentMapInfos.first { mapInfo in
             if let title = marker.title {
-                if title == mapInfo.name, let machineStatus = mapInfo.machineStatus, machineStatus == .submit {
+                if title == mapInfo.name {
                     return true
                 }
             }

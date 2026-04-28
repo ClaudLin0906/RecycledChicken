@@ -122,7 +122,7 @@ final class RecycleItemTests: XCTestCase {
     }
 
     func test_fromApiName_hdpeBottle() {
-        XCTAssertEqual(RecycleItem.from(apiName: "hdpe瓶"), .hdpeBottle)
+        XCTAssertEqual(RecycleItem.from(apiName: "牛奶罐"), .hdpeBottle)
     }
 
     func test_fromApiName_foilPack() {
@@ -130,7 +130,7 @@ final class RecycleItemTests: XCTestCase {
     }
 
     func test_fromApiName_cartonBox() {
-        XCTAssertEqual(RecycleItem.from(apiName: "紙盒屋"), .cartonBox)
+        XCTAssertEqual(RecycleItem.from(apiName: "紙盒包"), .cartonBox)
     }
 
     func test_fromApiName_unknownReturnsNil() {

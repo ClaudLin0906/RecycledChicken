@@ -117,7 +117,7 @@ class LoginVC: CustomLoginVC {
             return
         }
         loginAction(phone: phone, password: password)
-        loginAction(phone: "", password: "")
+//        loginAction(phone: "", password: "")
     }
     
     @IBAction func forgetPassword(_ sender:UIButton){
