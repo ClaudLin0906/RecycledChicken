@@ -73,6 +73,9 @@ enum TaskType: String, Codable {
     case bottle = "bottle"
     case can = "can"
     case cup = "cup"
+    case hdpeBottle = "hdpeBottle"
+    case foilPack = "foilPack"
+    case cartonBox = "cartonBox"
 }
 
 struct ActiveTime: Codable {

@@ -137,6 +137,9 @@ class HomeVC: CustomRootVC {
                         self.itemViews[.battery]?.setAmount(records.battery ?? 0)
                         self.itemViews[.papperCub]?.setAmount(records.cup ?? 0)
                         self.itemViews[.aluminumCan]?.setAmount(records.can ?? 0)
+                        self.itemViews[.hdpeBottle]?.setAmount(records.hdpeBottle ?? 0)
+                        self.itemViews[.foilPack]?.setAmount(records.foilPack ?? 0)
+                        self.itemViews[.cartonBox]?.setAmount(records.cartonBox ?? 0)
                     }
                 case .failure(let error):
                     self.handleNetworkError(error)

@@ -200,19 +200,24 @@ extension RecycleLogVC: UITableViewDelegate, SkeletonTableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecycleLogTableViewCell.identifier, for: indexPath) as! RecycleLogTableViewCell
         let info = filterUseRecordInfos[indexPath.row]
+        
         if info.bottle > 0 || info.colorlessBottle > 0 || info.coloredBottle > 0 {
             let count = info.bottle + info.colorlessBottle + info.coloredBottle
-            cell.setCell(info.time, bottle: count, battery: nil, can: nil)
-            return cell
+            cell.setCell(info.time, bottle: count)
+        } else if info.battery > 0 {
+            cell.setCell(info.time, battery: info.battery)
+        } else if info.can > 0 {
+            cell.setCell(info.time, can: info.can)
+        } else if info.cup > 0 {
+            cell.setCell(info.time, cup: info.cup)
+        } else if info.hdpeBottle > 0 {
+            cell.setCell(info.time, hdpeBottle: info.hdpeBottle)
+        } else if info.foilPack > 0 {
+            cell.setCell(info.time, foilPack: info.foilPack)
+        } else if info.cartonBox > 0 {
+            cell.setCell(info.time, cartonBox: info.cartonBox)
         }
-        if info.battery > 0 {
-            cell.setCell(info.time, bottle: nil, battery: info.battery, can: nil)
-            return cell
-        }
-        if info.can > 0 {
-            cell.setCell(info.time, bottle: nil, battery: nil, can: info.can)
-            return cell
-        }
+        
         return cell
     }
     

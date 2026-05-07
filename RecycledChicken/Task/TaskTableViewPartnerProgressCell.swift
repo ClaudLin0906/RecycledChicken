@@ -150,6 +150,12 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
                                 self.requiredAmountHandle(records.can ?? 0)
                             case .cup:
                                 self.requiredAmountHandle(records.cup ?? 0)
+                            case .hdpeBottle:
+                                self.requiredAmountHandle(records.hdpeBottle ?? 0)
+                            case .foilPack:
+                                self.requiredAmountHandle(records.foilPack ?? 0)
+                            case .cartonBox:
+                                self.requiredAmountHandle(records.cartonBox ?? 0)
                             default:
                                 break
                             }

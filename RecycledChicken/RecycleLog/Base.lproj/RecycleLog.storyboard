@@ -73,8 +73,11 @@
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mII-21-EXa" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                                                    <rect key="frame" x="299" y="0.0" width="34" height="50"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="點數" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mII-21-EXa" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="299" y="0.0" width="90" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="90" id="amt-width-fix"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
