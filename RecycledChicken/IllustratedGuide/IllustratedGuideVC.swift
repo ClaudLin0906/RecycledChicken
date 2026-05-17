@@ -57,7 +57,10 @@ extension IllustratedGuideVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IllustratedGuideTableViewCell", for: indexPath) as! IllustratedGuideTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "IllustratedGuideTableViewCell", for: indexPath) as? IllustratedGuideTableViewCell else {
+            assertionFailure("IllustratedGuideTableViewCell is not configured correctly")
+            return UITableViewCell()
+        }
         let row = indexPath.row
         cell.setCell(tableViewDatas[row])
         return cell

@@ -140,7 +140,8 @@ extension SystemSettingVC:InvitationCodeViewDelegate {
             showAlert(VC: self, title: nil, message: alertMsg, alertAction: nil)
             return
         }
-        let inviteRequestInfo = InviteRequestInfo(inviteCode: invitationCode)
+        let userID = CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber ?? CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber
+        let inviteRequestInfo = InviteRequestInfo(userID: userID, inviteCode: invitationCode)
         let inviteRequestInfoDic = try? inviteRequestInfo.asDictionary()
         NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.enterInviteCode,
                                     parameters: inviteRequestInfoDic,

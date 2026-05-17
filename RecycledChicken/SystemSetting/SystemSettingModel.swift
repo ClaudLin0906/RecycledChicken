@@ -24,5 +24,6 @@ struct InviteInfo {
 
 
 struct InviteRequestInfo:Codable {
+    var userID:String
     var inviteCode:String
 }
