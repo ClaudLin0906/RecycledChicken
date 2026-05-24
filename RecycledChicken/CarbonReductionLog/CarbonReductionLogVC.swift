@@ -36,6 +36,8 @@ class CarbonReductionLogVC: CustomVC {
         
     @IBOutlet weak var recycleBtn:UIButton!
     
+    @IBOutlet weak var personalRecycleTitleLabel:UILabel!
+    
     @IBOutlet weak var recycleBtnWidth:NSLayoutConstraint!
     
     @IBOutlet weak var recycledRingInfoView:RecycledRingInfoView!
@@ -146,6 +148,9 @@ class CarbonReductionLogVC: CustomVC {
             changeType()
             reloadItemCellViewValue()
             setConvertValueLabelText()
+            if let userName = CurrentUserInfo.shared.currentProfileNewInfo?.userName, !userName.isEmpty {
+                personalRecycleTitleLabel.text = "\(userName)的回收量與目標"
+            }
         })
     }
      
@@ -176,7 +181,7 @@ class CarbonReductionLogVC: CustomVC {
               let conversionRate = personalRecyleAmountAndTargetInfo.conversionRate else { return }
         dropDownView.sortLabel.text = recycleItem.chineseName
         let (resultValue, resultUnit) = getCO2(Double(totalRecycled), conversionRate)
-        recycledRingInfoView.setRecycledRingInfo(totalRecycled, recycleItem.recycleUnit, resultValue, resultUnit, Double(target), recycleItem.color.start, recycleItem.color.end)
+        recycledRingInfoView.setRecycledRingInfo(totalRecycled, recycleItem.recycleUnit, resultValue, resultUnit, Double(target), recycleItem.color.start, recycleItem.color.end, recycleItem: recycleItem)
     }
     
     private func getCO2(_ totalRecycled:Double, _ conversionRate:Double) -> (String, String) {

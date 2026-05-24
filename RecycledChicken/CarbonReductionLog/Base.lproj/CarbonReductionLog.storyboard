@@ -435,6 +435,7 @@
                         <outlet property="recycleBtn" destination="iZZ-lD-1hs" id="N2W-4X-CQe"/>
                         <outlet property="recycleBtnWidth" destination="evP-Ln-4UD" id="3Dn-6h-paf"/>
                         <outlet property="recycledRingInfoView" destination="cvR-A6-eH4" id="1K6-Ik-Dc4"/>
+                        <outlet property="personalRecycleTitleLabel" destination="rlC-Jl-2oQ" id="A1B-2C-3DE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

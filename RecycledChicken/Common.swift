@@ -156,6 +156,10 @@ enum RecycleItem: CaseIterable {
         }
     }
 
+    var achievedIconName: String {
+        return iconName + "_achieved"
+    }
+
     var color: (start: UIColor, end: UIColor) {
         switch self {
         case .bottle:      return (#colorLiteral(red: 0.9373, green: 0.7647, blue: 0.4157, alpha: 1), #colorLiteral(red: 0.9412, green: 0.8745, blue: 0.6549, alpha: 1))
