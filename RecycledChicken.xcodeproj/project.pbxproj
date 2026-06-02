@@ -329,6 +329,10 @@
 		59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE2E2A078D9D00D7B3CB /* SignVC.swift */; };
 		59F6BE3E2A07B82800D7B3CB /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */; };
 		59F6BE422A07C00B00D7B3CB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */; };
+		59F6BE9F2A078D9D00D7B3CB /* PrivacyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BE9E2A078D9D00D7B3CB /* PrivacyAlertView.swift */; };
+		59F6BEA12A078D9D00D7B3CB /* PrivacyAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BEA02A078D9D00D7B3CB /* PrivacyAlertView.xib */; };
+		59F6BEA32A078D9D00D7B3CB /* GenderSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6BEA22A078D9D00D7B3CB /* GenderSelectionView.swift */; };
+		59F6BEA52A078D9D00D7B3CB /* GenderSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F6BEA42A078D9D00D7B3CB /* GenderSelectionView.xib */; };
 		59FE25F52A2B1EE500E7D3A3 /* CircularCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */; };
 		59FE25F72A2B247000E7D3A3 /* TutorialVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */; };
 		76C4B2146605DBD55D624CDD /* IllustratedGuidePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6D3025900EDA8E58B9A2D9 /* IllustratedGuidePageView.swift */; };
@@ -760,6 +764,10 @@
 		59F6BE2E2A078D9D00D7B3CB /* SignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC.swift; sourceTree = "<group>"; };
 		59F6BE3D2A07B82800D7B3CB /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
 		59F6BE412A07C00B00D7B3CB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		59F6BE9E2A078D9D00D7B3CB /* PrivacyAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAlertView.swift; sourceTree = "<group>"; };
+		59F6BEA02A078D9D00D7B3CB /* PrivacyAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyAlertView.xib; sourceTree = "<group>"; };
+		59F6BEA22A078D9D00D7B3CB /* GenderSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectionView.swift; sourceTree = "<group>"; };
+		59F6BEA42A078D9D00D7B3CB /* GenderSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectionView.xib; sourceTree = "<group>"; };
 		59FE25F42A2B1EE500E7D3A3 /* CircularCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCameraView.swift; sourceTree = "<group>"; };
 		59FE25F62A2B247000E7D3A3 /* TutorialVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TutorialVideo.mp4; sourceTree = "<group>"; };
 		5EBFEB36E50C7177099FCDA3 /* GuideOverlayView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = GuideOverlayView.xib; sourceTree = "<group>"; };
@@ -1537,11 +1545,15 @@
 		59F6BE2D2A078D7100D7B3CB /* Sign */ = {
 			isa = PBXGroup;
 			children = (
+				59F6BE9E2A078D9D00D7B3CB /* PrivacyAlertView.swift */,
+				59F6BEA02A078D9D00D7B3CB /* PrivacyAlertView.xib */,
 				59F6BE2E2A078D9D00D7B3CB /* SignVC.swift */,
 				59600E912B9EE192009AFA76 /* Sign.storyboard */,
 				59CDA34D2A42DEB700E3F74E /* SignModel.swift */,
 				335A452E2C0A3E5D000D2337 /* SignActivityCodeView.swift */,
 				335A45302C0A3E69000D2337 /* SignActivityCodeView.xib */,
+				59F6BEA22A078D9D00D7B3CB /* GenderSelectionView.swift */,
+				59F6BEA42A078D9D00D7B3CB /* GenderSelectionView.xib */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -1786,6 +1798,8 @@
 				C9CFBCBB2E4DFEC800697743 /* CompleteStoreSuccessView.xib in Resources */,
 				5960E5C02BA2D6BC007F4AEF /* DeleteMessageContentAlertView.xib in Resources */,
 				335A45312C0A3E69000D2337 /* SignActivityCodeView.xib in Resources */,
+				59F6BEA52A078D9D00D7B3CB /* GenderSelectionView.xib in Resources */,
+				59F6BEA12A078D9D00D7B3CB /* PrivacyAlertView.xib in Resources */,
 				59600F2B2B9EEC12009AFA76 /* PointRule.storyboard in Resources */,
 				59600F3F2B9EED51009AFA76 /* Task.storyboard in Resources */,
 				C9C5B3712E1796F600BD682F /* PointDetailView.xib in Resources */,
@@ -2106,6 +2120,8 @@
 				59997A5A2A09E4E400E9FD7F /* RecycleLogVC.swift in Sources */,
 				59CC8DB32A6D11980094CE57 /* CommodityVoucherModel.swift in Sources */,
 				59F6BE2F2A078D9D00D7B3CB /* SignVC.swift in Sources */,
+				59F6BEA32A078D9D00D7B3CB /* GenderSelectionView.swift in Sources */,
+				59F6BE9F2A078D9D00D7B3CB /* PrivacyAlertView.swift in Sources */,
 				595D3CEE2BE325FE00FE9D85 /* SiteListVC.swift in Sources */,
 				59CC8D9C2A67B3940094CE57 /* DeleteAccountAlertVC.swift in Sources */,
 				5960E5BB2BA29DC5007F4AEF /* MyTicketVoucherSerialNumberTableViewCell.swift in Sources */,

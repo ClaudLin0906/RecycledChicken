@@ -16,19 +16,20 @@ class SignVC: CustomLoginVC {
     
     @IBOutlet weak var goHomeBtn:CustomButton!
     
+    @IBOutlet weak var registerBtn:CustomButton!
+    
     @IBOutlet weak var birthdayTextfield: UITextField!
     
-    @IBOutlet weak var maleCheckBox: M13Checkbox!
+    @IBOutlet weak var genderSelectionView: GenderSelectionView!
     
-    @IBOutlet weak var femaleCheckBox: M13Checkbox!
-    
-    @IBOutlet weak var lgbtqCheckBox: M13Checkbox!
+    private let privacyCheckBox = M13Checkbox()
+    private let privacyStackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
         setupDatePicker()
-        setupCheckboxes()
+        setupPrivacyCheckbox()
     }
     
     private func UIInit(){
@@ -57,15 +58,6 @@ class SignVC: CustomLoginVC {
         birthdayTextfield.inputAccessoryView = toolbar
     }
     
-    private func setupCheckboxes() {
-        [maleCheckBox, femaleCheckBox, lgbtqCheckBox].forEach { cb in
-            cb?.boxType = .square
-            cb?.stateChangeAnimation = .fill
-            cb?.tintColor = UIColor(red: 0.827, green: 0.690, blue: 0.416, alpha: 1.0)
-            cb?.addTarget(self, action: #selector(checkboxChanged(_:)), for: .valueChanged)
-        }
-    }
-    
     @objc private func dateChanged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
@@ -77,20 +69,6 @@ class SignVC: CustomLoginVC {
             dateChanged(datePicker)
         }
         view.endEditing(true)
-    }
-    
-    @objc private func checkboxChanged(_ sender: M13Checkbox) {
-        guard sender.checkState == .checked else { return }
-        if sender == maleCheckBox {
-            femaleCheckBox.checkState = .unchecked
-            lgbtqCheckBox.checkState = .unchecked
-        } else if sender == femaleCheckBox {
-            maleCheckBox.checkState = .unchecked
-            lgbtqCheckBox.checkState = .unchecked
-        } else if sender == lgbtqCheckBox {
-            maleCheckBox.checkState = .unchecked
-            femaleCheckBox.checkState = .unchecked
-        }
     }
     
     private func goToVerificationCode(phone:String, password:String, birth: String?, gender: Gender? ){
@@ -133,19 +111,74 @@ class SignVC: CustomLoginVC {
         
         let birth = birthdayTextfield.text?.isEmpty == false ? birthdayTextfield.text : nil
         
-        let gender: Gender
-        if maleCheckBox.checkState == .checked {
-            gender = .male
-        } else if femaleCheckBox.checkState == .checked {
-            gender = .female
-        } else if lgbtqCheckBox.checkState == .checked {
-            gender = .LGBTQ
-        } else {
+        guard let gender = genderSelectionView.selectedGender else {
             showAlert(VC: self, title: nil, message: "性別不能為空", alertAction: nil)
             return nil
         }
         
+        guard privacyCheckBox.checkState == .checked else {
+            showAlert(VC: self, title: nil, message: "請閱讀並同意隱私政策", alertAction: nil)
+            return nil
+        }
+        
         return (phone, password, birth, gender)
+    }
+    
+    private func setupPrivacyCheckbox() {
+        privacyCheckBox.boxType = .square
+        privacyCheckBox.stateChangeAnimation = .fill
+        privacyCheckBox.tintColor = #colorLiteral(red: 0.8274509804, green: 0.6901960784, blue: 0.4156862745, alpha: 1)
+        privacyCheckBox.isUserInteractionEnabled = false
+        privacyCheckBox.translatesAutoresizingMaskIntoConstraints = false
+        
+        let privacyLabel = UILabel()
+        privacyLabel.text = "閱讀隱私政策並同意"
+        privacyLabel.font = UIFont(name: "GenJyuuGothic-Medium", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        privacyLabel.textColor = .black
+        privacyLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        privacyStackView.axis = .horizontal
+        privacyStackView.spacing = 8
+        privacyStackView.alignment = .center
+        privacyStackView.distribution = .fill
+        privacyStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        privacyStackView.addArrangedSubview(privacyCheckBox)
+        privacyStackView.addArrangedSubview(privacyLabel)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(privacyTapped))
+        privacyStackView.addGestureRecognizer(tap)
+        privacyStackView.isUserInteractionEnabled = true
+        
+        view.addSubview(privacyStackView)
+        
+        var backgroundView: UIView? = nil
+        if let oldConstraint = view.constraints.first(where: {
+            ($0.firstItem as? UIView == registerBtn && $0.firstAttribute == .top)
+        }) {
+            backgroundView = oldConstraint.secondItem as? UIView
+            oldConstraint.isActive = false
+        }
+        
+        NSLayoutConstraint.activate([
+            privacyCheckBox.widthAnchor.constraint(equalToConstant: 18),
+            privacyCheckBox.heightAnchor.constraint(equalToConstant: 18),
+            
+            privacyStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            privacyStackView.topAnchor.constraint(equalTo: backgroundView?.bottomAnchor ?? view.topAnchor, constant: 10),
+            registerBtn.topAnchor.constraint(equalTo: privacyStackView.bottomAnchor, constant: 15)
+        ])
+    }
+    
+    @objc private func privacyTapped() {
+        let privacyView = PrivacyAlertView(frame: UIScreen.main.bounds)
+        privacyView.onAgree = { [weak self] in
+            self?.privacyCheckBox.checkState = .checked
+        }
+        privacyView.onCancel = { [weak self] in
+            self?.privacyCheckBox.checkState = .unchecked
+        }
+        keyWindow?.addSubview(privacyView)
     }
 
 }
