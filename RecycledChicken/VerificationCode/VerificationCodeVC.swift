@@ -40,6 +40,10 @@ class VerificationCodeVC: CustomLoginVC {
     
     var info:forgetPasswordInfo?
     
+    var userBirth: String?
+    
+    var gender: Gender?
+    
     private var cancellables: Set<AnyCancellable> = []
     
     private var reSendVerificationCodeView = ReSendVerificationCodeView()
@@ -104,10 +108,7 @@ class VerificationCodeVC: CustomLoginVC {
         }
         let smsInfo = SMSInfo(userPhoneNumber: phone)
         let smsInfoDic = try? smsInfo.asDictionary()
-        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.smsCode,
-                                    parameters: smsInfoDic,
-                                    authorizationToken: "",
-                                    responseType: ApiResult.self) { [weak self] result in
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.smsCode, parameters: smsInfoDic, authorizationToken: "", responseType: ApiResult.self) { [weak self] result in
             switch result {
             case .success(let apiResult):
                 if let status = apiResult.status {
@@ -133,7 +134,7 @@ class VerificationCodeVC: CustomLoginVC {
     
     private func signUpAction(_ smsCode: String) {
         guard smsCode.count == 4 else { return }
-        let signUpInfo = SignUpInfo(userPhoneNumber: phone, userPassword: password, smsCode: smsCode)
+        let signUpInfo = SignUpInfo(userPhoneNumber: phone, userPassword: password, smsCode: smsCode, userBirth: userBirth, gender: gender)
         let signUpInfoDic = try? signUpInfo.asDictionary()
         NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.register, parameters: signUpInfoDic, authorizationToken: "", responseType: ApiResult.self) { [weak self] result in
             switch result {
@@ -163,10 +164,7 @@ class VerificationCodeVC: CustomLoginVC {
         info.smsCode = smsCode
         let forgetPasswordInfo = info
         let forgetPasswordInfoDic = try? forgetPasswordInfo.asDictionary()
-        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.forgotPassword,
-                                    parameters: forgetPasswordInfoDic,
-                                    authorizationToken: "",
-                                    responseType: ApiResult.self) { [weak self] result in
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.forgotPassword, parameters: forgetPasswordInfoDic, authorizationToken: "", responseType: ApiResult.self) { [weak self] result in
             switch result {
             case .success(let apiResult):
                 let completetChangePWDView = CompletetChangePWDView(frame: UIScreen.main.bounds)

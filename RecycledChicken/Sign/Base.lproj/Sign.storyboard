@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,32 +25,32 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HotAirBalloon" translatesAutoresizingMaskIntoConstraints="NO" id="6M6-V4-6D3">
-                                <rect key="frame" x="293" y="58.999999999999993" width="100" height="83.333333333333314"/>
+                                <rect key="frame" x="293" y="118" width="100" height="83.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6M6-V4-6D3" secondAttribute="height" multiplier="1.2:1" id="St7-2h-r9j"/>
                                     <constraint firstAttribute="width" constant="100" id="siR-29-bwf"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle1093" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-Ho-EVo">
-                                <rect key="frame" x="0.0" y="172.33333333333337" width="393" height="350"/>
+                                <rect key="frame" x="0.0" y="231.33333333333337" width="393" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="2sI-bB-nV2"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OvW-WF-2Nr">
-                                <rect key="frame" x="86.666666666666686" y="272.33333333333331" width="220" height="150"/>
+                                <rect key="frame" x="86.666666666666686" y="311.33333333333331" width="220" height="190"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5a-fu-Tik" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="37.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="38"/>
                                         <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rw-Hz-rWC">
-                                        <rect key="frame" x="0.0" y="37.666666666666686" width="220" height="37.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="38" width="220" height="38"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WF-qx-4wi">
-                                                <rect key="frame" x="0.0" y="8.6666666666666874" width="30" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="9.333333333333373" width="30" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="JHI-IN-SYs"/>
                                                 </constraints>
@@ -59,13 +59,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y3m-Cj-QiS">
-                                                <rect key="frame" x="30" y="0.0" width="190" height="37.333333333333336"/>
+                                                <rect key="frame" x="30" y="0.0" width="190" height="38"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-dg-MqN" userLabel="underLine">
-                                                <rect key="frame" x="0.0" y="36.333333333333314" width="220" height="1"/>
+                                                <rect key="frame" x="0.0" y="37" width="220" height="1"/>
                                                 <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="JpN-My-lBq"/>
@@ -87,10 +87,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKk-wP-wvO">
-                                        <rect key="frame" x="0.0" y="75" width="220" height="37.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="76" width="220" height="38"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohB-Ws-xaS">
-                                                <rect key="frame" x="0.0" y="9.0000000000000018" width="30" height="19.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="9.333333333333373" width="30" height="19.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="LCp-qn-srX"/>
                                                 </constraints>
@@ -99,13 +99,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼為8-12位英文數字" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-kE-ci9" customClass="PasswordTextField" customModule="RecycledChicken" customModuleProvider="target">
-                                                <rect key="frame" x="30" y="0.0" width="190" height="37.666666666666664"/>
+                                                <rect key="frame" x="30" y="0.0" width="190" height="38"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9s-DI-ogr" userLabel="underLine">
-                                                <rect key="frame" x="0.0" y="36.666666666666686" width="220" height="1"/>
+                                                <rect key="frame" x="0.0" y="37" width="220" height="1"/>
                                                 <color key="backgroundColor" red="0.68627450980392157" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="84P-4E-3BO"/>
@@ -126,23 +126,145 @@
                                             <constraint firstItem="hU2-kE-ci9" firstAttribute="top" secondItem="sKk-wP-wvO" secondAttribute="top" id="vCX-sT-1mp"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rt5-g3-6Ga">
-                                        <rect key="frame" x="0.0" y="112.66666666666667" width="220" height="37.333333333333329"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="row-Birthday">
+                                        <rect key="frame" x="0.0" y="114" width="220" height="38"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生日" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-Birthday">
+                                                <rect key="frame" x="0.0" y="9.333333333333373" width="30" height="19.666666666666671"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="w-BirthdayLabel"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請選擇生日" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tf-Birthday">
+                                                <rect key="frame" x="30" y="0.0" width="190" height="38"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="underLine-Birthday" userLabel="underLine">
+                                                <rect key="frame" x="0.0" y="37" width="220" height="1"/>
+                                                <color key="backgroundColor" red="0.68627450980000004" green="0.57647058819999997" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="h-BirthdayLine"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="underLine-Birthday" secondAttribute="bottom" id="b-BirthdayLine"/>
+                                            <constraint firstAttribute="bottom" secondItem="tf-Birthday" secondAttribute="bottom" id="b-BirthdayTextField"/>
+                                            <constraint firstItem="lbl-Birthday" firstAttribute="centerY" secondItem="row-Birthday" secondAttribute="centerY" id="cy-BirthdayLabel"/>
+                                            <constraint firstItem="tf-Birthday" firstAttribute="centerY" secondItem="lbl-Birthday" secondAttribute="centerY" id="cy-BirthdayTextField"/>
+                                            <constraint firstItem="lbl-Birthday" firstAttribute="leading" secondItem="row-Birthday" secondAttribute="leading" id="l-BirthdayLabel2"/>
+                                            <constraint firstItem="underLine-Birthday" firstAttribute="leading" secondItem="row-Birthday" secondAttribute="leading" id="l-BirthdayLine1"/>
+                                            <constraint firstItem="tf-Birthday" firstAttribute="leading" secondItem="lbl-Birthday" secondAttribute="trailing" id="l-BirthdayTextField2"/>
+                                            <constraint firstAttribute="trailing" secondItem="underLine-Birthday" secondAttribute="trailing" id="t-BirthdayLine2"/>
+                                            <constraint firstAttribute="trailing" secondItem="tf-Birthday" secondAttribute="trailing" id="t-BirthdayTextField1"/>
+                                            <constraint firstItem="tf-Birthday" firstAttribute="top" secondItem="row-Birthday" secondAttribute="top" id="t-BirthdayTextField3"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="row-Gender">
+                                        <rect key="frame" x="0.0" y="152" width="220" height="38"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="stack-Gender">
+                                                <rect key="frame" x="26" y="9.333333333333373" width="168" height="19.666666666666671"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="row-Male">
+                                                        <rect key="frame" x="0.0" y="0.0" width="34" height="19.666666666666668"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cb-Male" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                                <rect key="frame" x="0.0" y="1.6666666666666288" width="16" height="16"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="16" id="h-MaleCB"/>
+                                                                    <constraint firstAttribute="width" constant="16" id="w-MaleCB"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="Square"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBMarkType" value="Radio"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBStateChangeAnimation" value="Fill"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-Male">
+                                                                <rect key="frame" x="19.999999999999986" y="0.0" width="14" height="19.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="row-Female">
+                                                        <rect key="frame" x="45.999999999999986" y="0.0" width="34" height="19.666666666666668"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cb-Female" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                                <rect key="frame" x="0.0" y="1.6666666666666288" width="16" height="16"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="16" id="h-FemaleCB"/>
+                                                                    <constraint firstAttribute="width" constant="16" id="w-FemaleCB"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="Square"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBMarkType" value="Radio"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBStateChangeAnimation" value="Fill"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-Female">
+                                                                <rect key="frame" x="20" y="0.0" width="14" height="19.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="row-LGBTQ">
+                                                        <rect key="frame" x="92" y="0.0" width="76" height="19.666666666666668"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cb-LGBTQ" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                                <rect key="frame" x="0.0" y="1.6666666666666288" width="16" height="16"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="16" id="h-LGBTQCB"/>
+                                                                    <constraint firstAttribute="width" constant="16" id="w-LGBTQCB"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="Square"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBMarkType" value="Radio"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_IBStateChangeAnimation" value="Fill"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="多元性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-LGBTQ">
+                                                                <rect key="frame" x="20" y="0.0" width="56" height="19.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="stack-Gender" firstAttribute="centerX" secondItem="row-Gender" secondAttribute="centerX" id="cx-GenderStack"/>
+                                            <constraint firstItem="stack-Gender" firstAttribute="centerY" secondItem="row-Gender" secondAttribute="centerY" id="cy-GenderStack"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="Uw5-ih-4dk"/>
-                                    <constraint firstAttribute="height" constant="150" id="b5k-Bb-Peq"/>
+                                    <constraint firstAttribute="height" constant="190" id="b5k-Bb-Peq"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWk-Ny-o8a" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="96.666666666666686" y="537.33333333333337" width="200" height="40"/>
+                                <rect key="frame" x="140.66666666666666" y="596.33333333333337" width="112" height="40"/>
                                 <color key="backgroundColor" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BeP-Qg-aJL"/>
-                                    <constraint firstAttribute="width" constant="200" id="f12-tC-IQG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -157,7 +279,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAT-vs-MVL" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="96.666666666666686" y="587.33333333333337" width="200" height="40"/>
+                                <rect key="frame" x="140.66666666666666" y="646.33333333333337" width="112" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -171,7 +293,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="OzJ-Qt-v3n">
-                                <rect key="frame" x="0.0" y="685" width="393" height="167"/>
+                                <rect key="frame" x="0.0" y="705.33333333333337" width="393" height="146.66666666666663"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="04P-DB-9WE"/>
@@ -201,12 +323,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="birthdayTextfield" destination="tf-Birthday" id="out-BirthdayTextfield"/>
+                        <outlet property="femaleCheckBox" destination="cb-Female" id="out-FemaleCheckbox"/>
                         <outlet property="goHomeBtn" destination="eAT-vs-MVL" id="DCq-xw-YQ8"/>
-                        <outlet property="mobileLabelWidth" destination="JHI-IN-SYs" id="JjF-V3-r4J"/>
-                        <outlet property="passwordLabelWidth" destination="LCp-qn-srX" id="dWN-wc-QfZ"/>
+                        <outlet property="lgbtqCheckBox" destination="cb-LGBTQ" id="out-LgbtqCheckbox"/>
+                        <outlet property="maleCheckBox" destination="cb-Male" id="out-MaleCheckbox"/>
                         <outlet property="passwordTextfield" destination="hU2-kE-ci9" id="eSR-Wk-iHI"/>
                         <outlet property="phoneTextfield" destination="Y3m-Cj-QiS" id="n3F-wj-KIz"/>
-                        <outlet property="signUpBtnWidth" destination="f12-tC-IQG" id="VH5-Do-UOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -214,17 +337,6 @@
             <point key="canvasLocation" x="-175" y="4"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="J5a-fu-Tik">
-            <size key="intrinsicContentSize" width="50" height="19.666666666666668"/>
-        </designable>
-        <designable name="eAT-vs-MVL">
-            <size key="intrinsicContentSize" width="30" height="32"/>
-        </designable>
-        <designable name="xWk-Ny-o8a">
-            <size key="intrinsicContentSize" width="30" height="32"/>
-        </designable>
-    </designables>
     <resources>
         <image name="HotAirBalloon" width="445.33334350585938" height="453"/>
         <image name="circle1093" width="1012" height="1012"/>

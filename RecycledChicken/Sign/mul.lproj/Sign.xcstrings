@@ -73,6 +73,54 @@
         }
       }
     },
+    "lbl-Birthday.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"生日\"; ObjectID = \"lbl-Birthday\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "生日"
+          }
+        }
+      }
+    },
+    "lbl-Female.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"女\"; ObjectID = \"lbl-Female\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "女"
+          }
+        }
+      }
+    },
+    "lbl-LGBTQ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"多元性別\"; ObjectID = \"lbl-LGBTQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "多元性別"
+          }
+        }
+      }
+    },
+    "lbl-Male.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"男\"; ObjectID = \"lbl-Male\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "男"
+          }
+        }
+      }
+    },
     "ohB-Ws-xaS.text" : {
       "comment" : "Class = \"UILabel\"; text = \"密碼\"; ObjectID = \"ohB-Ws-xaS\";",
       "extractionState" : "extracted_with_value",
@@ -87,6 +135,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "密碼"
+          }
+        }
+      }
+    },
+    "tf-Birthday.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"請選擇生日\"; ObjectID = \"tf-Birthday\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請選擇生日"
           }
         }
       }
