@@ -80,6 +80,8 @@
 		5926C5962A06325700FAB49D /* CustomRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5952A06325700FAB49D /* CustomRootVC.swift */; };
 		5926C5992A0632AB00FAB49D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5982A0632AB00FAB49D /* HomeVC.swift */; };
 		5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C59D2A06342B00FAB49D /* LoginVC.swift */; };
+		5926C59E2A06342B00FAB49F /* MissingInfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C59E2A06342B00FAB49E /* MissingInfoAlertView.swift */; };
+		5926C59E2A06342B00FAB4A0 /* MissingInfoAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5926C59E2A06342B00FAB4A1 /* MissingInfoAlertView.xib */; };
 		5926C5A22A06364800FAB49D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5A12A06364800FAB49D /* Common.swift */; };
 		5926C5C32A065CCA00FAB49D /* SignLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */; };
 		5933F1342A273954008D5FF7 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933F1332A273954008D5FF7 /* CustomTabbar.swift */; };
@@ -443,6 +445,8 @@
 		5926C5952A06325700FAB49D /* CustomRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRootVC.swift; sourceTree = "<group>"; };
 		5926C5982A0632AB00FAB49D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5926C59D2A06342B00FAB49D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5926C59E2A06342B00FAB49E /* MissingInfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingInfoAlertView.swift; sourceTree = "<group>"; };
+		5926C59E2A06342B00FAB4A1 /* MissingInfoAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissingInfoAlertView.xib; sourceTree = "<group>"; };
 		5926C5A12A06364800FAB49D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5926C5C22A065CCA00FAB49D /* SignLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignLoginVC.swift; sourceTree = "<group>"; };
 		5933F1332A273954008D5FF7 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
@@ -1048,6 +1052,8 @@
 			children = (
 				5926C59D2A06342B00FAB49D /* LoginVC.swift */,
 				59600E952B9EE1EE009AFA76 /* Login.storyboard */,
+				5926C59E2A06342B00FAB49E /* MissingInfoAlertView.swift */,
+				5926C59E2A06342B00FAB4A1 /* MissingInfoAlertView.xib */,
 				59CDA34F2A42FC5000E3F74E /* LoginModel.swift */,
 			);
 			path = Login;
@@ -1849,6 +1855,7 @@
 				5982A9542BBD315300CB2B08 /* ColorFillTypeOneView.xib in Resources */,
 				59600EF72B9EE5B3009AFA76 /* CustomCalenderScrollView.xib in Resources */,
 				59600EBB2B9EE32F009AFA76 /* DeleteMessageAlertView.xib in Resources */,
+				5926C59E2A06342B00FAB4A0 /* MissingInfoAlertView.xib in Resources */,
 				5982A95C2BBE752B00CB2B08 /* ColorFillTypeTwoView.xib in Resources */,
 				C9C5B3812E17AF6900BD682F /* PointsAboutToExpireView.xib in Resources */,
 				5960E5E12BA2E19F007F4AEF /* UpdateAppAlertView.xib in Resources */,
@@ -2076,6 +2083,7 @@
 				BB00012C00000100BBBBBBBB /* LevelCalculator.swift in Sources */,
 				335A452F2C0A3E5E000D2337 /* SignActivityCodeView.swift in Sources */,
 				5926C59E2A06342B00FAB49D /* LoginVC.swift in Sources */,
+				5926C59E2A06342B00FAB49F /* MissingInfoAlertView.swift in Sources */,
 				59A795772A0F770D0031710F /* ConfirmPasswordVC.swift in Sources */,
 				59A113BB2A3ADFCF00C8295B /* CustomButton.swift in Sources */,
 				59CDA3542A4589C600E3F74E /* ForgetPasswordModel.swift in Sources */,

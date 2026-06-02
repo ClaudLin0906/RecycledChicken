@@ -94,10 +94,101 @@ class LoginVC: CustomLoginVC {
                 CommonKey.shared.authToken = response.token
                 CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber = phone
                 CurrentUserInfo.shared.currentAccountInfo.userPassword = password
-                self?.loginSuccess()
+                if let self = self {
+                    getUserNewInfo(VC: self) {
+                        DispatchQueue.main.async {
+                            self.checkProfileAndProceed()
+                        }
+                    }
+                }
             case .failure:
                 DispatchQueue.main.async {
                     showAlert(VC: self, title: "帳號密碼有誤", message: nil)
+                }
+            }
+        }
+    }
+    
+    private func checkProfileAndProceed() {
+        let profile = CurrentUserInfo.shared.currentProfileNewInfo
+        let isGenderMissing = (profile?.gender == nil)
+        let isBirthMissing = (profile?.userBirth == nil || profile?.userBirth?.isEmpty == true)
+        
+        if isGenderMissing || isBirthMissing {
+            self.showMissingInfoAlert()
+        } else {
+            self.loginSuccess()
+        }
+    }
+    
+    private func showMissingInfoAlert() {
+        let missingInfoView = MissingInfoAlertView(frame: UIScreen.main.bounds)
+        
+        let profile = CurrentUserInfo.shared.currentProfileNewInfo
+        if let birth = profile?.userBirth, !birth.isEmpty {
+            missingInfoView.birthdayTextField.text = birth
+        }
+        if let gender = profile?.gender {
+            missingInfoView.genderSelectionView.selectedGender = gender
+        }
+        
+        missingInfoView.onConfirm = { [weak self, weak missingInfoView] birth, gender in
+            self?.updateProfileInfo(gender: gender, birth: birth) { success in
+                if success {
+                    DispatchQueue.main.async {
+                        missingInfoView?.removeFromSuperview()
+                    }
+                }
+            }
+        }
+        
+        missingInfoView.onCancel = { [weak missingInfoView] in
+            DispatchQueue.main.async {
+                missingInfoView?.removeFromSuperview()
+            }
+        }
+        
+        self.view.addSubview(missingInfoView)
+    }
+    
+    private func updateProfileInfo(gender: Gender?, birth: String?, completion: ((Bool) -> Void)? = nil) {
+        let profile = CurrentUserInfo.shared.currentProfileNewInfo
+        let userName = profile?.userName ?? ""
+        let userEmail = profile?.userEmail ?? ""
+        let userBirth = birth ?? profile?.userBirth ?? ""
+        
+        let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth, gender: gender)
+        
+        guard let profilePostInfoDic = try? profilePostInfo.asDictionary() else {
+            completion?(false)
+            self.loginSuccess()
+            return
+        }
+        
+        NetworkManager.shared.post(
+            url: APIUrl.domainName + APIUrl.updateProfile,
+            parameters: profilePostInfoDic,
+            authorizationToken: CommonKey.shared.authToken,
+            responseType: ApiResult.self
+        ) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let apiResult):
+                    if apiResult.status == .success {
+                        if let gender = gender {
+                            CurrentUserInfo.shared.currentProfileNewInfo?.gender = gender
+                        }
+                        if let birth = birth {
+                            CurrentUserInfo.shared.currentProfileNewInfo?.userBirth = birth
+                        }
+                        completion?(true)
+                    } else {
+                        completion?(false)
+                    }
+                    self?.loginSuccess()
+                case .failure:
+                    completion?(false)
+                    self?.loginSuccess()
                 }
             }
         }

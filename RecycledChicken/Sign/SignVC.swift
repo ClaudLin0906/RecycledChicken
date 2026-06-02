@@ -90,7 +90,7 @@ class SignVC: CustomLoginVC {
         goToVerificationCode(phone: inputs.phone, password: inputs.password, birth: inputs.birth, gender: inputs.gender)
     }
     
-    private func getValidatedInputs() -> (phone: String, password: String, birth: String?, gender: Gender)? {
+    private func getValidatedInputs() -> (phone: String, password: String, birth: String, gender: Gender)? {
         guard let phone = phoneTextfield.text, !phone.isEmpty else {
             showAlert(VC: self, title: nil, message: "電話不能為空", alertAction: nil)
             return nil
@@ -109,7 +109,10 @@ class SignVC: CustomLoginVC {
             return nil
         }
         
-        let birth = birthdayTextfield.text?.isEmpty == false ? birthdayTextfield.text : nil
+        guard let birth = birthdayTextfield.text, !birth.isEmpty else {
+            showAlert(VC: self, title: nil, message: "生日不能為空", alertAction: nil)
+            return nil
+        }
         
         guard let gender = genderSelectionView.selectedGender else {
             showAlert(VC: self, title: nil, message: "性別不能為空", alertAction: nil)

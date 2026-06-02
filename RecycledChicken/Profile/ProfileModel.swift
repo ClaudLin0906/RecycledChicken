@@ -12,9 +12,17 @@ struct ProfilePostInfo:Codable {
     var userName:String
     var userEmail:String
     var userBirth:String
-    var systemType = "iOS"
-    var systemVersion = UIDevice.current.systemVersion
-    var appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    var systemType: String = "iOS"
+    var systemVersion: String = "iOS\(UIDevice.current.systemVersion)"
+    var appVersion: String = "v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")"
+    var gender: Gender?
+    
+    init(userName: String, userEmail: String, userBirth: String, gender: Gender? = nil) {
+        self.userName = userName
+        self.userEmail = userEmail
+        self.userBirth = userBirth
+        self.gender = gender
+    }
 }
 
 struct ProfileNewInfo: Codable {
@@ -29,6 +37,7 @@ struct ProfileNewInfo: Codable {
     var expirePoint:Int?
     var experiencePoint:Int?
     var levelInfo:LevelInfo?
+    var gender:Gender?
     
     enum CodingKeys:String, CodingKey {
         case userEmail = "userEmail"
@@ -42,6 +51,7 @@ struct ProfileNewInfo: Codable {
         case expirePoint = "expirePoint"
         case experiencePoint = "experiencePoint"
         case levelInfo = "levelInfo"
+        case gender = "gender"
     }
     
     init(from decoder: Decoder) throws {
@@ -57,6 +67,7 @@ struct ProfileNewInfo: Codable {
         expirePoint = try? container.decodeIfPresent(Int.self, forKey: .expirePoint)
         experiencePoint = try? container.decodeIfPresent(Int.self, forKey: .experiencePoint)
         levelInfo = try? container.decodeIfPresent(LevelInfo.self, forKey: .levelInfo)
+        gender = try? container.decodeIfPresent(Gender.self, forKey: .gender)
     }
 }
 
