@@ -46,13 +46,15 @@ class CarbonReductionLogVC: CustomVC {
     
     @IBOutlet weak var itemStackView:UIStackView!
 
-        @IBOutlet weak var colorFillScrollView:UIScrollView!
+    @IBOutlet weak var colorFillScrollView:UIScrollView!
     
     @IBOutlet weak var colorFillTitleLabel:CustomLabel!
     
     @IBOutlet weak var bottomLineSpace:NSLayoutConstraint!
     
     @IBOutlet weak var convertValueLabel:UILabel!
+    
+    @IBOutlet weak var illustratedGuidePageView: IllustratedGuidePageView!
         
     private var colorFillTypeOneView = ColorFillTypeOneView()
     
@@ -141,6 +143,7 @@ class CarbonReductionLogVC: CustomVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultNavigationBackBtn()
+        illustratedGuidePageView.reload()
         getCarbonReductionRecords(completion: { [weak self] in
             guard let self = self, let items = self.carbonReductionLogInfo?.personalRecycleAmountAndTarget else { return }
             itemDropDown.dataSource = items.compactMap { $0.itemName }

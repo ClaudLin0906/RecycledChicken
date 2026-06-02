@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IllustratedGuidePageView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="pageContainerView" destination="pgv-ct-001" id="pgv-ot-001"/>
+                <outlet property="pageControl" destination="PgC-xb-001" id="PgC-ot-xb1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgv-ct-001" userLabel="pageContainerView">
+                    <rect key="frame" x="0.0" y="118" width="393" height="342"/>
+                </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="0" translatesAutoresizingMaskIntoConstraints="NO" id="PgC-xb-001">
+                    <rect key="frame" x="171" y="470" width="51" height="20"/>
+                    <color key="pageIndicatorTintColor" red="0.74901960784313729" green="0.74901960784313729" blue="0.74901960784313729" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="pgv-ct-001" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pgv-ld-001"/>
+                <constraint firstItem="pgv-ct-001" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="pgv-tr-001"/>
+                <constraint firstItem="pgv-ct-001" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pgv-tp-001"/>
+                <constraint firstItem="pgv-ct-001" firstAttribute="bottom" secondItem="PgC-xb-001" secondAttribute="top" constant="-8" id="pgv-bt-001"/>
+                <constraint firstItem="PgC-xb-001" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PgC-cx-xb1"/>
+                <constraint firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="PgC-xb-001" secondAttribute="bottom" constant="8" id="PgC-bt-xb1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131" y="-11"/>
+        </view>
+    </objects>
+</document>

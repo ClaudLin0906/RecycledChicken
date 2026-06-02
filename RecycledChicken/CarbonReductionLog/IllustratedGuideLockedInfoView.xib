@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GenJyuuGothic-Regular.ttf">
+            <string>GenJyuuGothic-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IllustratedGuideLockedInfoView" customModule="RecycledChicken" customModuleProvider="target">
+            <connections>
+                <outlet property="experienceLabel" destination="c8N-0O-rB2" id="1h3-tU-Xv7"/>
+                <outlet property="silhouetteImageView" destination="b2x-8c-jR6" id="5i2-hK-Nn3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="446" height="342"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chiw 3" translatesAutoresizingMaskIntoConstraints="NO" id="b2x-8c-jR6">
+                    <rect key="frame" x="0.0" y="118" width="446" height="156"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="經驗值介紹：10,000 回收物進入下一個等級" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8N-0O-rB2" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                    <rect key="frame" x="88" y="254.33333333333334" width="270" height="19.666666666666657"/>
+                    <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="b2x-8c-jR6" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="W2j-KV-Tzn"/>
+                <constraint firstItem="iN0-l3-epB" firstAttribute="top" secondItem="b2x-8c-jR6" secondAttribute="top" id="Zyv-WS-CeK"/>
+                <constraint firstItem="c8N-0O-rB2" firstAttribute="centerX" secondItem="b2x-8c-jR6" secondAttribute="centerX" id="ckm-Kr-98i"/>
+                <constraint firstItem="c8N-0O-rB2" firstAttribute="bottom" secondItem="b2x-8c-jR6" secondAttribute="bottom" id="edu-V0-HzI"/>
+                <constraint firstItem="b2x-8c-jR6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ml7-7F-l2f"/>
+                <constraint firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="b2x-8c-jR6" secondAttribute="trailing" id="qw7-Jm-AjO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="170.99236641221373" y="-77.464788732394368"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chiw 3" width="900" height="252"/>
+    </resources>
+</document>

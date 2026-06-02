@@ -45,6 +45,10 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOv-rL-mZ1" customClass="GuideOverlayView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="334.33333333333331" height="99"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -52,6 +56,10 @@
                                                                 <constraint firstAttribute="bottom" secondItem="tR1-nj-Eou" secondAttribute="bottom" id="6Gz-Xo-Crm"/>
                                                                 <constraint firstAttribute="trailing" secondItem="tR1-nj-Eou" secondAttribute="trailing" id="Xzh-M0-lPh"/>
                                                                 <constraint firstItem="tR1-nj-Eou" firstAttribute="top" secondItem="sov-cG-xug" secondAttribute="top" id="dVy-b7-bmr"/>
+                                                                <constraint firstItem="gOv-rL-mZ1" firstAttribute="top" secondItem="tR1-nj-Eou" secondAttribute="top" id="aA1-bB-cC2"/>
+                                                                <constraint firstItem="gOv-rL-mZ1" firstAttribute="leading" secondItem="tR1-nj-Eou" secondAttribute="leading" id="dD3-eE-fF4"/>
+                                                                <constraint firstAttribute="trailing" secondItem="gOv-rL-mZ1" secondAttribute="trailing" id="gG5-hH-iI6" constant="-0"/>
+                                                                <constraint firstAttribute="bottom" secondItem="gOv-rL-mZ1" secondAttribute="bottom" id="jJ7-kK-lL8"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -80,6 +88,7 @@
                                         <connections>
                                             <outlet property="content" destination="sov-cG-xug" id="gG9-PK-Pu6"/>
                                             <outlet property="illustratedGuideImageView" destination="tR1-nj-Eou" id="HMa-OZ-x4s"/>
+                                            <outlet property="guideOverlayView" destination="gOv-rL-mZ1" id="mN8-oO-pP9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
