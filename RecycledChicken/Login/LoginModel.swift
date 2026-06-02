@@ -10,9 +10,9 @@ import UIKit
 struct AccountInfo: Codable {
     var userPhoneNumber: String
     var userPassword: String
-    var systemType: String = "iOS"
-    var systemVersion: String = "iOS\(UIDevice.current.systemVersion)"
-    var appVersion: String = "v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")"
+    var systemType: String = AppDeviceInfo.systemType
+    var systemVersion: String = AppDeviceInfo.systemVersion
+    var appVersion: String = AppDeviceInfo.appVersion
     
     enum CodingKeys: String, CodingKey {
         case userPhoneNumber
@@ -31,9 +31,9 @@ struct AccountInfo: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         userPhoneNumber = try container.decode(String.self, forKey: .userPhoneNumber)
         userPassword = try container.decode(String.self, forKey: .userPassword)
-        systemType = (try? container.decode(String.self, forKey: .systemType)) ?? "IOS"
-        systemVersion = (try? container.decode(String.self, forKey: .systemVersion)) ?? "IOS\(UIDevice.current.systemVersion)"
-        appVersion = (try? container.decode(String.self, forKey: .appVersion)) ?? "v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")"
+        systemType = (try? container.decode(String.self, forKey: .systemType)) ?? AppDeviceInfo.systemType
+        systemVersion = (try? container.decode(String.self, forKey: .systemVersion)) ?? AppDeviceInfo.systemVersion
+        appVersion = (try? container.decode(String.self, forKey: .appVersion)) ?? AppDeviceInfo.appVersion
     }
 }
 

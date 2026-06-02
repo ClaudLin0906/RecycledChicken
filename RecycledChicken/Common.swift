@@ -15,6 +15,16 @@ class Setting {
     var language:Language? = getLanguage()
 }
 
+class AppDeviceInfo {
+    static let systemType = "iOS"
+    static var systemVersion: String {
+        "iOS\(UIDevice.current.systemVersion)"
+    }
+    static var appVersion: String {
+        "v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")"
+    }
+}
+
 func getLanguage() -> Language? {
     if let appleLanguagesArr = UserDefaults.standard.object(forKey: "AppleLanguages") as? [String] {
         let appleLanguages = appleLanguagesArr[0]
