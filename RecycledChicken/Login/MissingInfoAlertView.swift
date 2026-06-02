@@ -11,33 +11,31 @@ import M13Checkbox
 class MissingInfoAlertView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var birthdayTextField: UITextField!
-    
-    @IBOutlet weak var genderLabel: UILabel!
-    
     @IBOutlet weak var genderSelectionView: GenderSelectionView!
-    
     @IBOutlet weak var privacyCheckBox: M13Checkbox!
-    
     @IBOutlet weak var privacyStackView: UIStackView!
-    
     @IBOutlet weak var confirmBtn: CustomButton!
     
-    @IBOutlet weak var backBtn: CustomButton!
+    private static let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy/MM/dd"
+        df.calendar = Calendar(identifier: .gregorian)
+        df.locale = Locale(identifier: "zh_TW")
+        return df
+    }()
     
-    private let datePicker: UIDatePicker = {
+    private lazy var datePicker: UIDatePicker = {
         let dp = UIDatePicker()
         dp.datePickerMode = .date
         dp.preferredDatePickerStyle = .wheels
         dp.locale = Locale(identifier: "zh_TW")
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        if let defaultDate = formatter.date(from: "2000/01/01") {
-            dp.date = defaultDate
-        }
+        dp.calendar = Calendar(identifier: .gregorian)
+        dp.date = dp.calendar.date(from: DateComponents(year: 2000, month: 1, day: 1)) ?? Date()
         return dp
     }()
     
     var onConfirm: ((String, Gender) -> Void)?
+    
     var onCancel: (() -> Void)?
     
     override init(frame: CGRect) {
@@ -58,17 +56,13 @@ class MissingInfoAlertView: UIView, NibOwnerLoadable {
     private func setupUI() {
         setupDatePicker()
         setupPrivacyTap()
-        setupButtons()
-        birthdayTextField.textColor = .gray
-        birthdayTextField.attributedPlaceholder = NSAttributedString(
-            string: "生日",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
-        )
-        genderLabel.textColor = .gray
+        changeLabelsToGray(in: genderSelectionView)
+        birthdayTextField.changePlaceholder(placeholder: "請選擇生日", color: .systemGray)
         
-        genderSelectionView.subviews.forEach { subview in
-            changeLabelsToGray(in: subview)
+        genderSelectionView.onGenderChanged = { [weak self] _ in
+            self?.validateInputs()
         }
+        validateInputs()
     }
     
     private func changeLabelsToGray(in view: UIView) {
@@ -80,10 +74,19 @@ class MissingInfoAlertView: UIView, NibOwnerLoadable {
         }
     }
     
+    private func validateInputs() {
+        let isBirthFilled = !(birthdayTextField.text ?? "").isEmpty
+        let isGenderFilled = genderSelectionView.selectedGender != nil
+        let isPrivacyAgreed = privacyCheckBox.checkState == .checked
+        
+        let isValid = isBirthFilled && isGenderFilled && isPrivacyAgreed
+        confirmBtn.isEnabled = isValid
+        confirmBtn.backgroundColor = isValid ? #colorLiteral(red: 0.8274509804, green: 0.6901960784, blue: 0.4156862745, alpha: 1) : #colorLiteral(red: 0.5333333333, green: 0.5333333333, blue: 0.5333333333, alpha: 1)
+    }
+    
     private func setupDatePicker() {
         datePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
         birthdayTextField.inputView = datePicker
-        birthdayTextField.tintColor = .clear
         
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -94,9 +97,8 @@ class MissingInfoAlertView: UIView, NibOwnerLoadable {
     }
     
     @objc private func dateChanged(_ sender: UIDatePicker) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        birthdayTextField.text = formatter.string(from: sender.date)
+        birthdayTextField.text = Self.dateFormatter.string(from: sender.date)
+        validateInputs()
     }
     
     @objc private func doneClick() {
@@ -107,11 +109,8 @@ class MissingInfoAlertView: UIView, NibOwnerLoadable {
     }
     
     private func setupPrivacyTap() {
-        privacyCheckBox.boxType = .square
-        privacyCheckBox.stateChangeAnimation = .fill
-        privacyCheckBox.tintColor = #colorLiteral(red: 0.8274509804, green: 0.6901960784, blue: 0.4156862745, alpha: 1)
         privacyCheckBox.isUserInteractionEnabled = false
-        
+        privacyStackView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(privacyTapped))
         privacyStackView.addGestureRecognizer(tap)
     }
@@ -120,21 +119,16 @@ class MissingInfoAlertView: UIView, NibOwnerLoadable {
         let privacyView = PrivacyAlertView(frame: UIScreen.main.bounds)
         privacyView.onAgree = { [weak self] in
             self?.privacyCheckBox.checkState = .checked
+            self?.validateInputs()
         }
         privacyView.onCancel = { [weak self] in
             self?.privacyCheckBox.checkState = .unchecked
+            self?.validateInputs()
         }
-        if let topVC = getTopController() {
-            topVC.view.addSubview(privacyView)
-        }
+        keyWindow?.addSubview(privacyView)
     }
     
-    private func setupButtons() {
-        confirmBtn.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
-        backBtn.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-    }
-    
-    @objc private func confirmTapped() {
+    @IBAction private func confirmTapped(_ sender: Any) {
         guard let birth = birthdayTextField.text, !birth.isEmpty else {
             if let topVC = getTopController() {
                 showAlert(VC: topVC, title: nil, message: "生日不能為空", alertAction: nil)
@@ -157,7 +151,7 @@ class MissingInfoAlertView: UIView, NibOwnerLoadable {
         onConfirm?(birth, gender)
     }
     
-    @objc private func backTapped() {
+    @IBAction private func backTapped(_ sender: Any) {
         onCancel?()
     }
 }

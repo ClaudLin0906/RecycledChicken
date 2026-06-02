@@ -11,10 +11,10 @@ import M13Checkbox
 class GenderSelectionView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var maleCheckBox: M13Checkbox!
-    
     @IBOutlet weak var femaleCheckBox: M13Checkbox!
-    
     @IBOutlet weak var lgbtqCheckBox: M13Checkbox!
+    
+    var onGenderChanged: ((Gender?) -> Void)?
     
     var selectedGender: Gender? {
         get {
@@ -59,7 +59,10 @@ class GenderSelectionView: UIView, NibOwnerLoadable {
     }
     
     @objc private func checkboxChanged(_ sender: M13Checkbox) {
-        guard sender.checkState == .checked else { return }
+        guard sender.checkState == .checked else {
+            onGenderChanged?(selectedGender)
+            return
+        }
         if sender == maleCheckBox {
             femaleCheckBox.checkState = .unchecked
             lgbtqCheckBox.checkState = .unchecked
@@ -70,5 +73,6 @@ class GenderSelectionView: UIView, NibOwnerLoadable {
             maleCheckBox.checkState = .unchecked
             femaleCheckBox.checkState = .unchecked
         }
+        onGenderChanged?(selectedGender)
     }
 }

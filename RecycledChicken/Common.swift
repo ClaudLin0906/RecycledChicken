@@ -565,9 +565,7 @@ func changeFormat(_ dateStr:String)-> String {
 
 func getUserNewInfo(VC: UIViewController, finishAction: (() -> ())?) {
     guard !CommonKey.shared.authToken.isEmpty else { return }
-    NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.profile,
-                               authorizationToken: CommonKey.shared.authToken,
-                               responseType: ProfileNewInfo.self) { result in
+    NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.profile, authorizationToken: CommonKey.shared.authToken,responseType: ProfileNewInfo.self) { result in
         switch result {
         case .success(let profileNewInfo):
             var userInfo = profileNewInfo

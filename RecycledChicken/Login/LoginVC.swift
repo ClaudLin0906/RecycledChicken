@@ -86,7 +86,6 @@ class LoginVC: CustomLoginVC {
     
     private func loginAction(phone: String, password: String) {
         let loginInfo = AccountInfo(userPhoneNumber: phone, userPassword: password)
-//        let loginInfo = testLoginInfo
         let loginInfoDic = try? loginInfo.asDictionary()
         NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.login, parameters: loginInfoDic, authorizationToken: "", responseType: LoginResponse.self) { [weak self] result in
             switch result {
@@ -111,19 +110,15 @@ class LoginVC: CustomLoginVC {
     
     private func checkProfileAndProceed() {
         let profile = CurrentUserInfo.shared.currentProfileNewInfo
-        let isGenderMissing = (profile?.gender == nil)
-        let isBirthMissing = (profile?.userBirth == nil || profile?.userBirth?.isEmpty == true)
-        
-        if isGenderMissing || isBirthMissing {
-            self.showMissingInfoAlert()
+        if profile?.gender == nil || (profile?.userBirth ?? "").isEmpty {
+            showMissingInfoAlert()
         } else {
-            self.loginSuccess()
+            loginSuccess()
         }
     }
     
     private func showMissingInfoAlert() {
         let missingInfoView = MissingInfoAlertView(frame: UIScreen.main.bounds)
-        
         let profile = CurrentUserInfo.shared.currentProfileNewInfo
         if let birth = profile?.userBirth, !birth.isEmpty {
             missingInfoView.birthdayTextField.text = birth
@@ -132,21 +127,21 @@ class LoginVC: CustomLoginVC {
             missingInfoView.genderSelectionView.selectedGender = gender
         }
         
-        missingInfoView.onConfirm = { [weak self, weak missingInfoView] birth, gender in
-            self?.updateProfileInfo(gender: gender, birth: birth) { success in
-                if success {
-                    DispatchQueue.main.async {
-                        missingInfoView?.removeFromSuperview()
-                    }
-                }
-            }
-        }
-        
-        missingInfoView.onCancel = { [weak missingInfoView] in
+        let dismissAlert = { [weak missingInfoView] in
             DispatchQueue.main.async {
                 missingInfoView?.removeFromSuperview()
             }
         }
+        
+        missingInfoView.onConfirm = { [weak self] birth, gender in
+            self?.updateProfileInfo(gender: gender, birth: birth) { success in
+                if success {
+                    dismissAlert()
+                }
+            }
+        }
+        
+        missingInfoView.onCancel = dismissAlert
         
         self.view.addSubview(missingInfoView)
     }
@@ -164,28 +159,23 @@ class LoginVC: CustomLoginVC {
             self.loginSuccess()
             return
         }
-        
-        NetworkManager.shared.post(
-            url: APIUrl.domainName + APIUrl.updateProfile,
-            parameters: profilePostInfoDic,
-            authorizationToken: CommonKey.shared.authToken,
-            responseType: ApiResult.self
-        ) { [weak self] result in
+        NetworkManager.shared.post( url: APIUrl.domainName + APIUrl.updateProfile, parameters: profilePostInfoDic, authorizationToken: CommonKey.shared.authToken, responseType: ApiResult.self) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let apiResult):
                     if apiResult.status == .success {
-                        if let gender = gender {
-                            CurrentUserInfo.shared.currentProfileNewInfo?.gender = gender
+                        if let self = self {
+                            getUserNewInfo(VC: self) {
+                                completion?(true)
+                                self.loginSuccess()
+                            }
+                        } else {
+                            completion?(true)
                         }
-                        if let birth = birth {
-                            CurrentUserInfo.shared.currentProfileNewInfo?.userBirth = birth
-                        }
-                        completion?(true)
                     } else {
                         completion?(false)
+                        self?.loginSuccess()
                     }
-                    self?.loginSuccess()
                 case .failure:
                     completion?(false)
                     self?.loginSuccess()
@@ -208,7 +198,6 @@ class LoginVC: CustomLoginVC {
             return
         }
         loginAction(phone: phone, password: password)
-//        loginAction(phone: "", password: "")
     }
     
     @IBAction func forgetPassword(_ sender:UIButton){

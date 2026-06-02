@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,10 +16,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MissingInfoAlertView" customModule="RecycledChicken" customModuleProvider="target">
             <connections>
-                <outlet property="backBtn" destination="back-btn-id" id="back-btn-conn"/>
                 <outlet property="birthdayTextField" destination="birth-tf-id" id="birth-tf-conn"/>
                 <outlet property="confirmBtn" destination="confirm-btn-id" id="confirm-btn-conn"/>
-                <outlet property="genderLabel" destination="gender-lbl-id" id="gender-lbl-conn"/>
                 <outlet property="genderSelectionView" destination="gender-view-id" id="gender-view-conn"/>
                 <outlet property="privacyCheckBox" destination="privacy-cb-id" id="privacy-cb-conn"/>
                 <outlet property="privacyStackView" destination="privacy-stack-id" id="privacy-stack-conn"/>
@@ -57,17 +56,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="birth-container-id">
                     <rect key="frame" x="40" y="402" width="313" height="47"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="生日" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="birth-tf-id">
-                            <rect key="frame" x="0.0" y="5" width="313" height="30"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="birth-lbl-id">
+                            <rect key="frame" x="0.0" y="13.666666666666686" width="40" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="birth-lbl-h"/>
+                                <constraint firstAttribute="width" constant="40" id="birth-lbl-w"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                            <color key="textColor" systemColor="systemGrayColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="birth-tf-id">
+                            <rect key="frame" x="50" y="8.6666666666666856" width="263" height="30"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="birth-tf-h"/>
                             </constraints>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="systemGrayColor"/>
                             <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="line-id">
-                            <rect key="frame" x="0.0" y="37" width="313" height="1"/>
+                            <rect key="frame" x="0.0" y="38.666666666666686" width="313" height="1"/>
                             <color key="backgroundColor" red="0.56078431370000004" green="0.74117647060000003" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="line-h"/>
@@ -76,12 +86,14 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="birth-lbl-id" firstAttribute="centerY" secondItem="birth-container-id" secondAttribute="centerY" id="bc-lbl-cy"/>
+                        <constraint firstItem="birth-lbl-id" firstAttribute="leading" secondItem="birth-container-id" secondAttribute="leading" id="bc-lbl-l"/>
                         <constraint firstItem="line-id" firstAttribute="leading" secondItem="birth-container-id" secondAttribute="leading" id="bc-line-l"/>
                         <constraint firstAttribute="trailing" secondItem="line-id" secondAttribute="trailing" id="bc-line-r"/>
-                        <constraint firstItem="line-id" firstAttribute="top" secondItem="birth-tf-id" secondAttribute="bottom" constant="2" id="bc-line-t"/>
-                        <constraint firstItem="birth-tf-id" firstAttribute="leading" secondItem="birth-container-id" secondAttribute="leading" id="bc-tf-l"/>
+                        <constraint firstItem="line-id" firstAttribute="top" secondItem="birth-tf-id" secondAttribute="bottom" id="bc-line-t"/>
+                        <constraint firstItem="birth-tf-id" firstAttribute="centerY" secondItem="birth-container-id" secondAttribute="centerY" id="bc-tf-cy"/>
+                        <constraint firstItem="birth-tf-id" firstAttribute="leading" secondItem="birth-lbl-id" secondAttribute="trailing" constant="10" id="bc-tf-l"/>
                         <constraint firstAttribute="trailing" secondItem="birth-tf-id" secondAttribute="trailing" id="bc-tf-r"/>
-                        <constraint firstItem="birth-tf-id" firstAttribute="top" secondItem="birth-container-id" secondAttribute="top" constant="5" id="bc-tf-t"/>
                         <constraint firstAttribute="height" constant="47" id="birth-container-h"/>
                     </constraints>
                 </view>
@@ -95,7 +107,7 @@
                                 <constraint firstAttribute="width" constant="40" id="g-lbl-w"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="systemGrayColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gender-view-id" customClass="GenderSelectionView" customModule="RecycledChicken" customModuleProvider="target">
@@ -136,6 +148,14 @@
                                 <constraint firstAttribute="height" constant="18" id="privacy-cb-h"/>
                                 <constraint firstAttribute="width" constant="18" id="privacy-cb-w"/>
                             </constraints>
+                            <userInteractionEnabled key="userInteractionEnabled" value="NO"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="_IBBoxType" value="Square"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="_IBStateChangeAnimation" value="Fill"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                    <color key="value" red="0.82745098039999998" green="0.69019607839999997" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="閱讀隱私政策並同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="privacy-lbl-id">
                             <rect key="frame" x="25.999999999999986" y="0.33333333333337123" width="126.00000000000001" height="19.666666666666668"/>
@@ -165,6 +185,9 @@
                             <integer key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="confirmTapped:" destination="-1" eventType="touchUpInside" id="confirm-act"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="back-btn-id" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
                     <rect key="frame" x="96.666666666666686" y="631" width="200" height="40"/>
@@ -183,6 +206,9 @@
                             <integer key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="back-act"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -214,5 +240,8 @@
     </objects>
     <resources>
         <image name="组 1662" width="598.33331298828125" height="388.66665649414062"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
