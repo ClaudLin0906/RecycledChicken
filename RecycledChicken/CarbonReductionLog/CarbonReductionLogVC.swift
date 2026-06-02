@@ -213,6 +213,14 @@ class CarbonReductionLogVC: CustomVC {
             bottomLineSpace.constant = -5
         }
         keyWindow?.addSubview(maskView)
+        
+        illustratedGuidePageView.didTapChicken = { [weak self] level in
+            guard let self = self else { return }
+            if let navigationController = self.navigationController, let VC = UIStoryboard(name: "IllustratedContent", bundle: Bundle.main).instantiateViewController(identifier: "IllustratedContent") as? IllustratedContentVC {
+                VC.illustratedGuideModelLevel = level
+                pushVC(targetVC: VC, navigation: navigationController)
+            }
+        }
     }
 
     private func buildItemCellViews() {

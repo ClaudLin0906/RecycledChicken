@@ -23,6 +23,9 @@ class IllustratedGuidePageView: UIView, NibOwnerLoadable {
     
     @IBOutlet weak var pageControl: UIPageControl!
 
+    // MARK: - Callbacks
+    var didTapChicken: ((IllustratedGuideModelLevel) -> Void)?
+
     // MARK: - Private
 
     private var currentIndexSubject = PassthroughSubject<Int, Never>()
@@ -45,7 +48,19 @@ class IllustratedGuidePageView: UIView, NibOwnerLoadable {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        let shouldScroll = !isPagesBuilt
         addPageSubViews()
+        if shouldScroll {
+            self.layoutIfNeeded()
+            let offset = CGFloat(currentIndex) * scrollView.frame.width
+            scrollView.contentOffset = CGPoint(x: offset, y: 0)
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                let finalOffset = CGFloat(self.currentIndex) * self.scrollView.frame.width
+                self.scrollView.contentOffset = CGPoint(x: finalOffset, y: 0)
+            }
+        }
     }
 
     // MARK: - Setup（同 ADBannerView customInit 結構）
@@ -166,8 +181,14 @@ class IllustratedGuidePageView: UIView, NibOwnerLoadable {
         
         infoCard.layer.cornerRadius = 20
         infoCard.clipsToBounds = true
+        infoCard.isUserInteractionEnabled = false // Let tap gestures pass through to the pageView
         pageView.addSubview(infoCard)
         infoCard.translatesAutoresizingMaskIntoConstraints = false
+        
+        if data.isRead {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handlePageTap(_:)))
+            pageView.addGestureRecognizer(tapGesture)
+        }
         
         NSLayoutConstraint.activate([
             infoCard.leadingAnchor.constraint(equalTo: pageView.leadingAnchor),
@@ -189,6 +210,13 @@ class IllustratedGuidePageView: UIView, NibOwnerLoadable {
         changePage(-1)
     }
 
+    @objc private func handlePageTap(_ gesture: UITapGestureRecognizer) {
+        guard currentIndex < pageDatas.count else { return }
+        let data = pageDatas[currentIndex]
+        guard data.isRead else { return }
+        didTapChicken?(data.illustratedGuideModelLevel)
+    }
+
     // MARK: - Public
 
     /// 切換頁面，changeIndex: 1 = 下一頁，-1 = 上一頁（同 ADBannerView changeBanner）
@@ -205,7 +233,8 @@ class IllustratedGuidePageView: UIView, NibOwnerLoadable {
         loadAllLevelData()
         scrollView.subviews.forEach { $0.removeFromSuperview() }
         isPagesBuilt = false
-        currentIndex = 0
+        let userLevel = CurrentUserInfo.shared.currentProfileNewInfo?.levelInfo?.chickenLevel ?? .one
+        currentIndex = userLevel.rawValue - 1
         currentIndexSubject.send(currentIndex)
         setNeedsLayout()
     }
