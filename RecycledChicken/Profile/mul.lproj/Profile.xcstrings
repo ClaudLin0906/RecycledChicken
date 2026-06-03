@@ -55,6 +55,18 @@
         }
       }
     },
+    "gender-lbl-title-id.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"gender-lbl-title-id\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
     "iBq-rz-Qe2.text" : {
       "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"iBq-rz-Qe2\";",
       "extractionState" : "extracted_with_value",

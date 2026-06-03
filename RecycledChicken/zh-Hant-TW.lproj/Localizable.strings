@@ -124,3 +124,8 @@
 "verifyCodeError" = "驗證碼錯誤";
 "tokenExpired" = "登入已失效";
 "pleaseLoginAgain" = "請重新登入";
+"birthday" = "生日";
+"gender" = "性別";
+"email" = "信箱";
+"nameCannotBeEmpty" = "用戶名稱不能為空";
+"genderCannotBeEmpty" = "性別不能為空";

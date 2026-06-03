@@ -19,16 +19,46 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var profileImageView:UIImageView!
     
-    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "invitationCode".localized, "marketplace".localized]
-//    private let profileInfoArr:[String] = ["userName".localized, "cellPhoneNumber".localized, "marketplace".localized]
+    private let profileInfoArr:[String] = [
+        "userName".localized,
+        "cellPhoneNumber".localized,
+        "birthday".localized,
+        "gender".localized,
+        "email".localized,
+        "invitationCode".localized,
+        "marketplace".localized
+    ]
 
     private let datePicker:UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.maximumDate = Date()
+        datePicker.locale = Locale(identifier: "zh_TW")
+        datePicker.calendar = Calendar(identifier: .gregorian)
         return datePicker
     }()
         
     private let rightNow = Date()
+
+    private func getRequiredFieldTitle(for title: String) -> NSAttributedString {
+        let asterisk = " *"
+        let fullText = title + asterisk
+        let attributedString = NSMutableAttributedString(string: fullText)
+        let range = (fullText as NSString).range(of: asterisk)
+        if range.location != NSNotFound {
+            attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        }
+        return attributedString
+    }
+    
+    private func getFieldTitle(for row: Int) -> NSAttributedString {
+        let title = profileInfoArr[row]
+        let requiredRows = [0, 1, 2, 3]
+        if requiredRows.contains(row) {
+            return getRequiredFieldTitle(for: title)
+        } else {
+            return NSAttributedString(string: title)
+        }
+    }
     
     private var profileUserInfo = CurrentUserInfo.shared.currentProfileNewInfo
     {
@@ -67,8 +97,9 @@ class ProfileVC: CustomVC {
     private func createDatePicker(_ textfield:UITextField) {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed(_:)))
-        toolbar.setItems([doneBtn], animated: true)
+        let doneBtn = UIBarButtonItem(title: "完成", style: .plain, target: self, action: #selector(donePressed(_:)))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([space, doneBtn], animated: true)
         datePicker.frame = CGRect(x: 0, y: 0, width: view.safeAreaLayoutGuide.layoutFrame.width, height: 200)
         textfield.inputAccessoryView = toolbar
         textfield.inputView = datePicker
@@ -94,11 +125,10 @@ class ProfileVC: CustomVC {
         }()
         let year = components.year
         let cells = cellsForTableView(tableView: profileTableView)
-        if let birthdayCell = cells.first(where: { $0.tag == 3 }) as? ProfileTableViewCell {
+        if let birthdayCell = cells.first(where: { $0.tag == 2 }) as? ProfileTableViewCell {
             birthdayCell.info.text = "\(year!)/\(month)/\(day)"
-            birthdayCell.phoneNumberCheckBox.checkState = .checked
-            birthdayCell.info.isEnabled = false
         }
+        self.profileUserInfo?.userBirth = "\(year!)/\(month)/\(day)"
         view.endEditing(true)
     }
     
@@ -108,18 +138,22 @@ class ProfileVC: CustomVC {
                                     parameters: profilePostInfoDic,
                                     authorizationToken: CommonKey.shared.authToken,
                                     responseType: ApiResult.self) { [weak self] result in
-            switch result {
-            case .success(let apiResult):
-                if let status = apiResult.status {
-                    switch status {
-                    case .success:
-                        self?.showProfileUpdateView()
-                    case .failure:
-                        break
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let apiResult):
+                    if let status = apiResult.status {
+                        switch status {
+                        case .success:
+                            self?.showProfileUpdateView()
+                        case .failure:
+                            showAlert(VC: self, title: apiResult.message ?? "error".localized)
+                        }
+                    } else {
+                        showAlert(VC: self, title: "error".localized)
                     }
+                case .failure(let error):
+                    self?.handleNetworkError(error)
                 }
-            case .failure(let error):
-                self?.handleNetworkError(error)
             }
         }
     }
@@ -133,22 +167,38 @@ class ProfileVC: CustomVC {
     @IBAction func confirm(_ sender:CustomButton) {
         guard CurrentUserInfo.shared.isGuest == false else { return } 
         let cells = cellsForTableView(tableView: profileTableView)
-        var userName = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
-        let userEmail = CurrentUserInfo.shared.currentProfileNewInfo?.userEmail ?? ""
-        let userPhoneNumber = CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber ?? ""
-        let userBirth = CurrentUserInfo.shared.currentProfileNewInfo?.userBirth ?? ""
-//        var inviteCode = CurrentUserInfo.shared.currentProfileNewInfo?.inviteCode ?? ""
+        var userName = profileUserInfo?.userName ?? ""
+        var userBirth = profileUserInfo?.userBirth ?? ""
+        var genderStr = profileUserInfo?.gender?.rawValue ?? ""
+        let userEmail = profileUserInfo?.userEmail ?? ""
+        
         for cell in cells {
             if let profileTableViewCell = cell as? ProfileTableViewCell {
                 if profileTableViewCell.tag == 0 {
                     userName = profileTableViewCell.info.text ?? ""
                 }
-//                if profileTableViewCell.tag == 2 {
-//                    inviteCode = profileTableViewCell.info.text ?? ""
-//                }
+                if profileTableViewCell.tag == 2 {
+                    userBirth = profileTableViewCell.info.text ?? ""
+                }
+            } else if let genderCell = cell as? ProfileGenderTableViewCell {
+                genderStr = genderCell.genderSelectionView.selectedGender?.rawValue ?? ""
             }
         }
-        let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth)
+        
+        if userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            showAlert(VC: self, title: "nameCannotBeEmpty".localized)
+            return
+        }
+        if userBirth.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            showAlert(VC: self, title: "birthdayCannotBeEmpty".localized)
+            return
+        }
+        if genderStr.isEmpty {
+            showAlert(VC: self, title: "genderCannotBeEmpty".localized)
+            return
+        }
+        
+        let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth, gender: genderStr)
         updateUserInfo(profilePostInfo)
     }
     
@@ -177,59 +227,67 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
-        cell.tag = row
-        cell.infoTitle.text = profileInfoArr[row]
-        switch row {
-        case 0:
-            cell.info.text = profileUserInfo?.userName
-            if CurrentUserInfo.shared.isGuest {
-                cell.info.isEnabled = false
+        
+        if row == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileGenderTableViewCell.identifier, for: indexPath) as! ProfileGenderTableViewCell
+            cell.infoTitle.attributedText = getFieldTitle(for: row)
+            if let gender = profileUserInfo?.gender {
+                cell.genderSelectionView.selectedGender = gender
+            } else {
+                cell.genderSelectionView.selectedGender = nil
             }
-        case 1:
-//            cell.info.text = profileUserInfo?.userEmail
-//            if CurrentUserInfo.shared.isGuest {
-//                cell.info.isEnabled = false
-//            }
-            if let profileUserInfo = profileUserInfo, let userPhoneNumber = profileUserInfo.userPhoneNumber, userPhoneNumber != "" {
-                cell.info.keyboardType = .numberPad
+            cell.genderSelectionView.onGenderChanged = { [weak self] selectedGender in
+                self?.profileUserInfo?.gender = selectedGender
+            }
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
+            cell.tag = row
+            cell.infoTitle.attributedText = getFieldTitle(for: row)
+            switch row {
+            case 0:
+                cell.info.text = profileUserInfo?.userName
+                if CurrentUserInfo.shared.isGuest {
+                    cell.info.isEnabled = false
+                }
+            case 1:
+                if let profileUserInfo = profileUserInfo, let userPhoneNumber = profileUserInfo.userPhoneNumber, userPhoneNumber != "" {
+                    cell.info.keyboardType = .numberPad
+                    cell.phoneNumberCheckBox.isHidden = false
+                    cell.phoneNumberCheckBox.checkState = .checked
+                    cell.info.isEnabled = false
+                    cell.info.text = profileUserInfo.userPhoneNumber
+                }
+            case 2:
+                cell.info.text = profileUserInfo?.userBirth
+                cell.info.placeholder = "2000/11/11"
+                if CurrentUserInfo.shared.isGuest {
+                    cell.info.isEnabled = false
+                } else {
+                    createDatePicker(cell.info)
+                }
+            case 4:
+                cell.info.text = profileUserInfo?.userEmail
+                cell.info.isEnabled = false
+            case 5:
+                if let profileUserInfo = profileUserInfo, let inviteCode = profileUserInfo.inviteCode, inviteCode != "" {
+                    cell.info.isEnabled = false
+                    cell.info.text = inviteCode
+                    cell.delegate = self
+                }
+            case 6:
                 cell.phoneNumberCheckBox.isHidden = false
-                cell.phoneNumberCheckBox.checkState = .checked
+                cell.phoneNumberCheckBox.checkState = .unchecked
+                if let linkedToBuenoMart = profileUserInfo?.linkedToBuenoMart, linkedToBuenoMart {
+                    cell.phoneNumberCheckBox.checkState = .checked
+                }
                 cell.info.isEnabled = false
-                cell.info.text = profileUserInfo.userPhoneNumber
+                cell.info.text = "BUENO COOP 連動"
+            default:
+                break
             }
-
-        case 2:
-            if let profileUserInfo = profileUserInfo, let inviteCode = profileUserInfo.inviteCode, inviteCode != "" {
-                cell.info.isEnabled = false
-                cell.info.text = inviteCode
-                cell.delegate = self
-            }
-        case 3:
-            cell.phoneNumberCheckBox.isHidden = false
-            cell.phoneNumberCheckBox.checkState = .unchecked
-            if let linkedToBuenoMart = profileUserInfo?.linkedToBuenoMart, linkedToBuenoMart {
-                cell.phoneNumberCheckBox.checkState = .checked
-            }
-            cell.info.isEnabled = false
-            cell.info.text = "BUENO COOP 連動"
-//            cell.info.placeholder = "2000/11/11"
-//            cell.phoneNumberCheckBox.isHidden = false
-//
-//            if let userBirth = profileUserInfo?.userBirth, userBirth != ""{
-//                cell.phoneNumberCheckBox.checkState = .checked
-//                cell.info.isEnabled = false
-//                cell.info.text = profileUserInfo?.userBirth
-//            }
-//
-//            if CurrentUserInfo.shared.isGuest {
-//                cell.info.isEnabled = false
-//            }
-//            createDatePicker(cell.info)
-        default:
-            break
+            return cell
         }
-        return cell
     }
     
     

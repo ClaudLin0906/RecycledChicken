@@ -124,3 +124,8 @@
 "copySuccess" = "CopySuccess";
 "tokenExpired" = "Session Expired";
 "pleaseLoginAgain" = "Please log in again";
+"birthday" = "Birthday";
+"gender" = "Gender";
+"email" = "Email";
+"nameCannotBeEmpty" = "Username cannot be empty";
+"genderCannotBeEmpty" = "Gender cannot be empty";

@@ -257,6 +257,7 @@
 		59997A602A09FB2800E9FD7F /* RecycleLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A5F2A09FB2800E9FD7F /* RecycleLogTableViewCell.swift */; };
 		59997A652A0A0CD900E9FD7F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A642A0A0CD900E9FD7F /* ProfileVC.swift */; };
 		59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A682A0A230700E9FD7F /* ProfileTableViewCell.swift */; };
+		59997A792A0A230700E9FD7F /* ProfileGenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A782A0A230700E9FD7F /* ProfileGenderTableViewCell.swift */; };
 		59997A6B2A0A420C00E9FD7F /* ProfileUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A6A2A0A420C00E9FD7F /* ProfileUpdateView.swift */; };
 		59997A702A0A4A1500E9FD7F /* PersonMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A6F2A0A4A1500E9FD7F /* PersonMessageVC.swift */; };
 		59997A742A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */; };
@@ -694,6 +695,7 @@
 		59997A5F2A09FB2800E9FD7F /* RecycleLogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleLogTableViewCell.swift; sourceTree = "<group>"; };
 		59997A642A0A0CD900E9FD7F /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		59997A682A0A230700E9FD7F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		59997A782A0A230700E9FD7F /* ProfileGenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGenderTableViewCell.swift; sourceTree = "<group>"; };
 		59997A6A2A0A420C00E9FD7F /* ProfileUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateView.swift; sourceTree = "<group>"; };
 		59997A6F2A0A4A1500E9FD7F /* PersonMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageVC.swift; sourceTree = "<group>"; };
 		59997A732A0A4DEB00E9FD7F /* PersonMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -1442,6 +1444,7 @@
 				59997A642A0A0CD900E9FD7F /* ProfileVC.swift */,
 				59600EC12B9EE34C009AFA76 /* Profile.storyboard */,
 				59997A682A0A230700E9FD7F /* ProfileTableViewCell.swift */,
+				59997A782A0A230700E9FD7F /* ProfileGenderTableViewCell.swift */,
 				59997A6A2A0A420C00E9FD7F /* ProfileUpdateView.swift */,
 				59600EC52B9EE35B009AFA76 /* ProfileUpdateView.xib */,
 				59A795872A0F8F2B0031710F /* UpdateDateAlertView.swift */,
@@ -2023,6 +2026,7 @@
 				5994955F2A0BF7B4009F1B2E /* MyTickerVC.swift in Sources */,
 				5999F0632A134BEF002F08D8 /* WelcomeView.swift in Sources */,
 				59997A692A0A230700E9FD7F /* ProfileTableViewCell.swift in Sources */,
+				59997A792A0A230700E9FD7F /* ProfileGenderTableViewCell.swift in Sources */,
 				593CDE2A2A7F5E13007E1D10 /* DeleteModel.swift in Sources */,
 				59A7957B2A0F78F20031710F /* UpdatePasswordSuccessView.swift in Sources */,
 				59CDA34A2A42DBA100E3F74E /* KeyChainManager.swift in Sources */,

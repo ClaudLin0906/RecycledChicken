@@ -155,6 +155,40 @@
                                                                     <outlet property="phoneNumberCheckBox" destination="jcO-kY-mB3" id="nD7-v9-OCM"/>
                                                                 </connections>
                                                             </tableViewCell>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileGenderTableViewCell" id="gender-cell-id" customClass="ProfileGenderTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                                                <rect key="frame" x="20" y="78.333332061767578" width="333" height="52"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gender-cell-id" id="gender-cv-id">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="52"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gender-lbl-title-id" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                            <rect key="frame" x="9.9999999999999964" y="14" width="44.666666666666657" height="24"/>
+                                                                            <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gender-sel-view-id" customClass="GenderSelectionView" customModule="RecycledChicken" customModuleProvider="target">
+                                                                            <rect key="frame" x="93" y="7" width="230" height="38"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="38" id="gender-sel-h"/>
+                                                                                <constraint firstAttribute="width" constant="230" id="gender-sel-w"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="gender-lbl-title-id" firstAttribute="centerY" secondItem="gender-cv-id" secondAttribute="centerY" id="gender-lbl-cy"/>
+                                                                        <constraint firstItem="gender-lbl-title-id" firstAttribute="leading" secondItem="gender-cv-id" secondAttribute="leading" constant="10" id="gender-lbl-l"/>
+                                                                        <constraint firstItem="gender-sel-view-id" firstAttribute="centerY" secondItem="gender-cv-id" secondAttribute="centerY" id="gender-sel-cy"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="gender-sel-view-id" secondAttribute="trailing" constant="10" id="gender-sel-r"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="genderSelectionView" destination="gender-sel-view-id" id="gender-outlet-view"/>
+                                                                    <outlet property="infoTitle" destination="gender-lbl-title-id" id="gender-outlet-title"/>
+                                                                </connections>
+                                                            </tableViewCell>
                                                         </prototypes>
                                                         <connections>
                                                             <outlet property="dataSource" destination="Y6W-OH-hqX" id="EdP-Z4-zFM"/>
@@ -174,12 +208,13 @@
                                                 <rect key="frame" x="10" y="750" width="373" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aBB-RB-KHd">
-                                                        <rect key="frame" x="111.66666666666669" y="3" width="150" height="74"/>
+                                                        <rect key="frame" x="111.66666666666669" y="-5" width="150" height="90"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJc-KV-3fg" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
                                                                 <color key="backgroundColor" red="0.3411764705882353" green="0.44705882352941173" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="nRT-Aa-tCJ"/>
                                                                     <constraint firstAttribute="width" constant="150" id="ttz-LH-0SL"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
@@ -197,7 +232,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84C-bX-L6L" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="42" width="150" height="32"/>
+                                                                <rect key="frame" x="0.0" y="50" width="150" height="40"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -215,6 +250,7 @@
                                                             </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="84C-bX-L6L" firstAttribute="height" secondItem="rJc-KV-3fg" secondAttribute="height" id="PvK-xk-lwP"/>
                                                             <constraint firstItem="84C-bX-L6L" firstAttribute="width" secondItem="rJc-KV-3fg" secondAttribute="width" id="Vdf-YW-CtG"/>
                                                         </constraints>
                                                     </stackView>
