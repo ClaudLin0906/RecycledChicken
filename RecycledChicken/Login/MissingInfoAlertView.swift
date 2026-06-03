@@ -57,7 +57,7 @@ class MissingInfoAlertView: UIView, NibOwnerLoadable {
         setupDatePicker()
         setupPrivacyTap()
         changeLabelsToGray(in: genderSelectionView)
-        birthdayTextField.changePlaceholder(placeholder: "請選擇生日", color: .systemGray)
+        birthdayTextField.changePlaceholder(placeholder: "請選擇生日", color: .lightGray)
         
         genderSelectionView.onGenderChanged = { [weak self] _ in
             self?.validateInputs()
