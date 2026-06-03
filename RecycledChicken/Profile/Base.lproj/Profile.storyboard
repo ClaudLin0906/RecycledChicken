@@ -311,6 +311,7 @@
                     <connections>
                         <outlet property="barCodeView" destination="yx5-2y-hqd" id="0Wc-0M-axy"/>
                         <outlet property="chickenLeverLabel" destination="EkI-dE-dcd" id="CtZ-MW-e3l"/>
+                        <outlet property="confirmBtn" destination="rJc-KV-3fg" id="confirm-btn-outlet-id"/>
                         <outlet property="profileImageView" destination="BMI-vw-Elp" id="RhW-PT-Wy8"/>
                         <outlet property="profileTableView" destination="E3E-OG-Vgl" id="uO6-Eq-WRq"/>
                     </connections>

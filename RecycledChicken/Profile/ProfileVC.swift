@@ -19,6 +19,8 @@ class ProfileVC: CustomVC {
     
     @IBOutlet weak var profileImageView:UIImageView!
     
+    @IBOutlet weak var confirmBtn:CustomButton!
+    
     private let profileInfoArr:[String] = [
         "userName".localized,
         "cellPhoneNumber".localized,
@@ -65,6 +67,7 @@ class ProfileVC: CustomVC {
         didSet{
             DispatchQueue.main.async {
                 self.profileTableView.reloadData()
+                self.validateInputs()
             }
         }
     }
@@ -92,6 +95,50 @@ class ProfileVC: CustomVC {
         chickenLeverLabel.text = "\("currentLevel".localized):\(illustratedGuide.name)"
         profileImageView.image = illustratedGuide.iconImage
         barCodeView.setBarCodeValue(CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber)
+    }
+    
+    @objc private func usernameChanged(_ sender: UITextField) {
+        validateInputs()
+    }
+    
+    private func validateInputs() {
+        guard CurrentUserInfo.shared.isGuest == false else {
+            confirmBtn?.isEnabled = false
+            confirmBtn?.backgroundColor = #colorLiteral(red: 0.5333333333, green: 0.5333333333, blue: 0.5333333333, alpha: 1)
+            return
+        }
+        let cells = cellsForTableView(tableView: profileTableView)
+        var userName = ""
+        var userBirth = ""
+        var genderStr = ""
+        
+        for cell in cells {
+            if let profileTableViewCell = cell as? ProfileTableViewCell {
+                if profileTableViewCell.tag == 0 {
+                    userName = profileTableViewCell.info.text ?? ""
+                }
+                if profileTableViewCell.tag == 2 {
+                    userBirth = profileTableViewCell.info.text ?? ""
+                }
+            } else if let genderCell = cell as? ProfileGenderTableViewCell {
+                genderStr = genderCell.genderSelectionView.selectedGender?.rawValue ?? ""
+            }
+        }
+        
+        if cells.isEmpty {
+            userName = profileUserInfo?.userName ?? ""
+            userBirth = profileUserInfo?.userBirth ?? ""
+            genderStr = profileUserInfo?.gender?.rawValue ?? ""
+        }
+        
+        let isUserNameValid = !userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isUserBirthValid = !userBirth.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isGenderValid = !genderStr.isEmpty
+        
+        let isValid = isUserNameValid && isUserBirthValid && isGenderValid
+        
+        confirmBtn?.isEnabled = isValid
+        confirmBtn?.backgroundColor = isValid ? #colorLiteral(red: 0.3411764706, green: 0.4470588235, blue: 0.4078431373, alpha: 1) : #colorLiteral(red: 0.5333333333, green: 0.5333333333, blue: 0.5333333333, alpha: 1)
     }
     
     private func createDatePicker(_ textfield:UITextField) {
@@ -129,6 +176,7 @@ class ProfileVC: CustomVC {
             birthdayCell.info.text = "\(year!)/\(month)/\(day)"
         }
         self.profileUserInfo?.userBirth = "\(year!)/\(month)/\(day)"
+        validateInputs()
         view.endEditing(true)
     }
     
@@ -238,6 +286,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
             }
             cell.genderSelectionView.onGenderChanged = { [weak self] selectedGender in
                 self?.profileUserInfo?.gender = selectedGender
+                self?.validateInputs()
             }
             return cell
         } else {
@@ -249,6 +298,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
                 cell.info.text = profileUserInfo?.userName
                 if CurrentUserInfo.shared.isGuest {
                     cell.info.isEnabled = false
+                } else {
+                    cell.info.removeTarget(self, action: nil, for: .editingChanged)
+                    cell.info.addTarget(self, action: #selector(usernameChanged(_:)), for: .editingChanged)
                 }
             case 1:
                 if let profileUserInfo = profileUserInfo, let userPhoneNumber = profileUserInfo.userPhoneNumber, userPhoneNumber != "" {
