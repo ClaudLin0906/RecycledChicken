@@ -81,7 +81,7 @@ class MissingInfoAlertView: UIView, NibOwnerLoadable {
         
         let isValid = isBirthFilled && isGenderFilled && isPrivacyAgreed
         confirmBtn.isEnabled = isValid
-        confirmBtn.backgroundColor = isValid ? #colorLiteral(red: 0.8274509804, green: 0.6901960784, blue: 0.4156862745, alpha: 1) : #colorLiteral(red: 0.5333333333, green: 0.5333333333, blue: 0.5333333333, alpha: 1)
+        confirmBtn.backgroundColor = isValid ? #colorLiteral(red: 0.2745098039, green: 0.3764705882, blue: 0.3333333333, alpha: 1) : #colorLiteral(red: 0.5333333333, green: 0.5333333333, blue: 0.5333333333, alpha: 1)
     }
     
     private func setupDatePicker() {

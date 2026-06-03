@@ -151,12 +151,11 @@ class LoginVC: CustomLoginVC {
         let userName = profile?.userName ?? ""
         let userEmail = profile?.userEmail ?? ""
         let userBirth = birth ?? profile?.userBirth ?? ""
-        
-        let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth, gender: gender)
-        
+        let genderStr = gender?.rawValue ?? ""
+        let profilePostInfo = ProfilePostInfo(userName: userName, userEmail: userEmail, userBirth: userBirth, gender: genderStr)
         guard let profilePostInfoDic = try? profilePostInfo.asDictionary() else {
             completion?(false)
-            self.loginSuccess()
+            showAlert(VC: self, title: "資料格式錯誤", message: "請重新嘗試")
             return
         }
         NetworkManager.shared.post( url: APIUrl.domainName + APIUrl.updateProfile, parameters: profilePostInfoDic, authorizationToken: CommonKey.shared.authToken, responseType: ApiResult.self) { [weak self] result in
@@ -174,11 +173,13 @@ class LoginVC: CustomLoginVC {
                         }
                     } else {
                         completion?(false)
-                        self?.loginSuccess()
+                        if let self = self {
+                            showAlert(VC: self, title: "更新失敗", message: apiResult.message ?? "請稍後再試")
+                        }
                     }
-                case .failure:
+                case .failure(let error):
                     completion?(false)
-                    self?.loginSuccess()
+                    self?.handleNetworkError(error)
                 }
             }
         }

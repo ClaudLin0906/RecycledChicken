@@ -134,8 +134,8 @@ class ProfileVC: CustomVC {
         guard CurrentUserInfo.shared.isGuest == false else { return } 
         let cells = cellsForTableView(tableView: profileTableView)
         var userName = CurrentUserInfo.shared.currentProfileNewInfo?.userName ?? ""
-        var userEmail = CurrentUserInfo.shared.currentProfileNewInfo?.userEmail ?? ""
-        var userPhoneNumber = CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber ?? ""
+        let userEmail = CurrentUserInfo.shared.currentProfileNewInfo?.userEmail ?? ""
+        let userPhoneNumber = CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber ?? ""
         let userBirth = CurrentUserInfo.shared.currentProfileNewInfo?.userBirth ?? ""
 //        var inviteCode = CurrentUserInfo.shared.currentProfileNewInfo?.inviteCode ?? ""
         for cell in cells {

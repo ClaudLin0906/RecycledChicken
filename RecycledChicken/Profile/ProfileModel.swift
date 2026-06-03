@@ -15,9 +15,9 @@ struct ProfilePostInfo:Codable {
     var systemType: String = "iOS"
     var systemVersion: String = "iOS\(UIDevice.current.systemVersion)"
     var appVersion: String = "v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")"
-    var gender: Gender?
+    var gender: String
     
-    init(userName: String, userEmail: String, userBirth: String, gender: Gender? = nil) {
+    init(userName: String, userEmail: String, userBirth: String, gender: String = "") {
         self.userName = userName
         self.userEmail = userEmail
         self.userBirth = userBirth
