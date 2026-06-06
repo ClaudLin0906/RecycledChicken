@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol MyTickerYiRuiTableViewCellDelegate {
+    func button(_ sender:UIButton, info:MyTickertCouponsInfo)
+}
+
 class MyTickerYiRuiTableViewCell: UITableViewCell {
     
     static let identifier = "MyTickerYiRuiTableViewCell"
+    
+    var delegate:MyTickerYiRuiTableViewCellDelegate?
     
     @IBOutlet weak var itemImageView: UIImageView!
     
@@ -81,10 +87,12 @@ class MyTickerYiRuiTableViewCell: UITableViewCell {
     }
     
     @IBAction func btnOnClick(_ sender:UIButton) {
-        guard let info = info, let link = info.link, let url = URL(string: link) else { return }
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-        }
+//        guard let info = info, let link = info.link, let url = URL(string: link) else { return }
+//        if UIApplication.shared.canOpenURL(url) {
+//            UIApplication.shared.open(url)
+//        }
+        guard let info = info else { return }
+        delegate?.button(sender, info: info)
     }
     
     override func prepareForReuse() {

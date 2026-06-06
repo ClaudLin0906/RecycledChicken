@@ -38,44 +38,76 @@ class MyTickerVC: CustomVC {
     }
     
     private func getVoucherData() {
-        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.havingCoupons,
-                                   authorizationToken: CommonKey.shared.authToken,
-                                   responseType: [MyTickertCouponsInfo].self) { [weak self] result in
-            switch result {
-            case .success(let myTickertCouponsInfos):
-                self?.myVoucherInfos.removeAll()
-                self?.myVoucherInfos.append(contentsOf: myTickertCouponsInfos)
-                DispatchQueue.main.async {
-                    self?.voucherTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self?.voucherTableView.stopSkeletonAnimation()
-                        self?.view.hideSkeleton()
-                    })
+        Task {
+            do {
+                let voucherInfos = try await fetchVoucherDataAsync()
+                await MainActor.run {
+                    self.myVoucherInfos = voucherInfos
+                    self.reloadTableViewWithAnimation(self.voucherTableView)
                 }
-            case .failure(let error):
-                self?.handleNetworkError(error)
+            } catch {
+                await MainActor.run {
+                    if let netError = error as? NetworkError {
+                        self.handleNetworkError(netError)
+                    } else {
+                        showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                    }
+                }
             }
         }
     }
     
     private func getLotteryData() {
-        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.havingLottery,
-                                   authorizationToken: CommonKey.shared.authToken,
-                                   responseType: [MyTickertLotteryInfo].self) { [weak self] result in
-            switch result {
-            case .success(let myTickertLotteryInfo):
-                self?.myTickertInfos.removeAll()
-                self?.myTickertInfos.append(contentsOf: myTickertLotteryInfo)
-                DispatchQueue.main.async {
-                    self?.lotteryTableView.reloadData()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        self?.lotteryTableView.stopSkeletonAnimation()
-                        self?.view.hideSkeleton()
-                    })
+        Task {
+            do {
+                let lotteryInfos = try await fetchLotteryDataAsync()
+                await MainActor.run {
+                    self.myTickertInfos = lotteryInfos
+                    self.reloadTableViewWithAnimation(self.lotteryTableView)
                 }
-            case .failure(let error):
-                self?.handleNetworkError(error)
+            } catch {
+                await MainActor.run {
+                    if let netError = error as? NetworkError {
+                        self.handleNetworkError(netError)
+                    } else {
+                        showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                    }
+                }
             }
+        }
+    }
+    
+    private func fetchLotteryDataAsync() async throws -> [MyTickertLotteryInfo] {
+        try await withCheckedThrowingContinuation { continuation in
+            NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.havingLottery,authorizationToken: CommonKey.shared.authToken, responseType: [MyTickertLotteryInfo].self) { result in
+                switch result {
+                case .success(let data):
+                    continuation.resume(returning: data)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
+    private func fetchVoucherDataAsync() async throws -> [MyTickertCouponsInfo] {
+        try await withCheckedThrowingContinuation { continuation in
+            NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.havingCoupons, authorizationToken: CommonKey.shared.authToken, responseType: [MyTickertCouponsInfo].self) { result in
+                switch result {
+                case .success(let data):
+                    continuation.resume(returning: data)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
+    private func reloadTableViewWithAnimation(_ tableView: UITableView?) {
+        tableView?.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            tableView?.stopSkeletonAnimation()
+            self.view.hideSkeleton()
         }
     }
     
@@ -139,6 +171,7 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
             let myVoucherInfo = myVoucherInfos[row]
             if myVoucherInfo.link != nil {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerYiRuiTableViewCell.identifier, for: indexPath) as! MyTickerYiRuiTableViewCell
+                cell.delegate = self
                 cell.setCell(myVoucherInfo)
                 return cell
             } else {
@@ -198,3 +231,13 @@ extension MyTickerVC: MyTicketVoucherSerialNumberTableViewCellDelegate {
         showAlert(VC: self, title: "copySuccess".localized)
     }
 }
+
+extension MyTickerVC: MyTickerYiRuiTableViewCellDelegate {
+    
+    func button(_ sender: UIButton, info: MyTickertCouponsInfo) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
+}
+    
