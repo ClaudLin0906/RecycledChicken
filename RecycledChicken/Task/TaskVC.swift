@@ -122,9 +122,7 @@ class TaskVC: CustomRootVC {
     }
     
     private func getTaskInfo(completion: @escaping () -> Void) {
-        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.quest,
-                                   authorizationToken: CommonKey.shared.authToken,
-                                   responseType: [TaskInfo].self) { [weak self] result in
+        NetworkManager.shared.get(url: APIUrl.domainName + APIUrl.quest, authorizationToken: CommonKey.shared.authToken, responseType: [TaskInfo].self) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
@@ -187,10 +185,7 @@ class TaskVC: CustomRootVC {
         guard let taskInfo = taskInfo, let createTime = taskInfo.createTime, let type = taskInfo.type else { return }
         let finishTaskInfo = FinishTaskInfo(createTime: createTime, type: type.rawValue)
         let finishTaskInfoDic = try? finishTaskInfo.asDictionary()
-        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.questComplete,
-                                    parameters: finishTaskInfoDic,
-                                    authorizationToken: CommonKey.shared.authToken,
-                                    responseType: ApiResult.self) { [weak self] result in
+        NetworkManager.shared.post(url: APIUrl.domainName + APIUrl.questComplete,parameters: finishTaskInfoDic,authorizationToken: CommonKey.shared.authToken, responseType: ApiResult.self) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let apiResult):

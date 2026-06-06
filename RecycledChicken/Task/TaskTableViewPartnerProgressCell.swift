@@ -102,6 +102,9 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
             default:
                 if let requiredAmount = taskInfo.requiredAmount {
                     self.taskProgressView.setPercent(submitted, denominator: requiredAmount)
+                    if submitted >= requiredAmount {
+                        self.taskInfo?.isFinish = true
+                    }
                 }
             }
         }
@@ -111,6 +114,9 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
         if taskInfo.isSpecifiedLocation {
             if let title = taskInfo.title {
                 self.title = title
+                if title.contains("台北京站"){
+                    print(taskInfo.isReceive)
+                }
             }
         }
         if let taskDescription = taskInfo.description {
