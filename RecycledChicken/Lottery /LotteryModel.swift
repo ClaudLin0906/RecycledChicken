@@ -86,6 +86,9 @@ struct CheckVerifyCode:Codable {
     var unlockCode:String
 }
 
-var LotterySegmentedControlTitles = ["raffleTicket".localized, "activityAward".localized, "merchants".localized]
+//var LotterySegmentedControlTitles = ["raffleTicket".localized, "activityAward".localized, "merchants".localized]
+
+var LotterySegmentedControlTitles = ["raffleTicket".localized, "merchants".localized]
+
 
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L3q-rm-ziV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L3q-rm-ziV">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,17 +32,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9h-sa-jcd" customClass="CustomSegmentedControl" customModule="RecycledChicken" customModuleProvider="target">
-                                <rect key="frame" x="29.333333333333343" y="162" width="334.33333333333326" height="50"/>
+                                <rect key="frame" x="29.333333333333343" y="172" width="334.33333333333326" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="61y-A7-Vb6"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-Xb-UDn">
-                                <rect key="frame" x="10" y="212" width="373" height="572"/>
+                                <rect key="frame" x="10" y="222" width="373" height="562"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LotteryTableViewCell" rowHeight="130" id="6ya-wo-JM8" customClass="LotteryTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="130"/>
+                                        <rect key="frame" x="0.0" y="50.333333969116211" width="373" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ya-wo-JM8" id="Xsh-kN-7Ky">
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="130"/>
@@ -213,7 +213,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入line提供的6碼驗證碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-IZ-1b3" userLabel="Verity TextField">
-                                                                    <rect key="frame" x="0.0" y="30.666666666666664" width="203.66666666666666" height="21.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="30" width="203.66666666666666" height="22"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -293,12 +293,12 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="8NQ-CL-NEd"/>
                                 </connections>
                             </tableView>
-                            <tableView hidden="YES" clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uVj-hn-gtb">
-                                <rect key="frame" x="10" y="212" width="373" height="572"/>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uVj-hn-gtb">
+                                <rect key="frame" x="10" y="222" width="373" height="562"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityVoucherTableViewCell" rowHeight="130" id="XJJ-mi-zpa" customClass="ActivityVoucherTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="130"/>
+                                        <rect key="frame" x="0.0" y="50.333333969116211" width="373" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XJJ-mi-zpa" id="bpu-eG-XCM">
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="130"/>
@@ -505,7 +505,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入line提供的6碼驗證碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEF-Z6-EdV" userLabel="Verity TextField">
-                                                                    <rect key="frame" x="0.0" y="30.666666666666664" width="204.33333333333334" height="21.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="30" width="204.33333333333334" height="22"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -604,12 +604,12 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="MFI-0I-QXH"/>
                                 </connections>
                             </tableView>
-                            <tableView hidden="YES" clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="475-m6-Bzp">
-                                <rect key="frame" x="10" y="212" width="373" height="572"/>
+                            <tableView hidden="YES" clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="475-m6-Bzp">
+                                <rect key="frame" x="10" y="222" width="373" height="562"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PartnerMerchantsTableViewTableViewCell" rowHeight="130" id="anQ-ov-nKk" customClass="PartnerMerchantsTableViewTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="130"/>
+                                        <rect key="frame" x="0.0" y="50.333333969116211" width="373" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="anQ-ov-nKk" id="S5N-Ht-YqL">
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="130"/>
@@ -780,7 +780,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入line提供的6碼驗證碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTW-XG-Mkg" userLabel="Verity TextField">
-                                                                    <rect key="frame" x="0.0" y="30.666666666666664" width="203.66666666666666" height="21.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="30" width="203.66666666666666" height="22"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -872,6 +872,304 @@
                                             <outlet property="verityTextField" destination="oTW-XG-Mkg" id="GMW-Jh-LzP"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityVoucherTableViewCell" rowHeight="130" id="KQP-WV-oHH" customClass="ActivityVoucherTableViewCell" customModule="RecycledChicken" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180.33333396911621" width="373" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KQP-WV-oHH" id="2xG-sX-obf">
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbk-NZ-Nde" userLabel="step1">
+                                                    <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Dz-qQ-FIY">
+                                                            <rect key="frame" x="10" y="10" width="112" height="59"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="0Dz-qQ-FIY" secondAttribute="height" multiplier="1:1" id="5xI-X5-zh5"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩餘數量 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taA-Bw-DH3" userLabel="drawPeople" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="74" width="112" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="5Jl-bJ-SPT"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="11"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 396" translatesAutoresizingMaskIntoConstraints="NO" id="Ten-IU-ddV">
+                                                            <rect key="frame" x="127" y="-0.33333333333333393" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="9M9-MN-4Sq"/>
+                                                                <constraint firstAttribute="width" secondItem="Ten-IU-ddV" secondAttribute="height" multiplier="1:1" id="nU5-rl-RBo"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dl-Tl-KF6" userLabel="point">
+                                                            <rect key="frame" x="162" y="2.3333333333333339" width="163.66666666666663" height="24.666666666666664"/>
+                                                            <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-t8-Pyi" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="126.99999999999999" y="34.666666666666664" width="198.66666666666663" height="39.999999999999993"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="e5U-Qb-72D"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drawTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttw-8C-u2c" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                            <rect key="frame" x="126.99999999999999" y="84" width="198.66666666666663" height="10"/>
+                                                            <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="7"/>
+                                                            <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                    <real key="value" value="11"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hV6-jq-F7x">
+                                                            <rect key="frame" x="126.99999999999999" y="-0.3333333333333357" width="134.33333333333331" height="94.333333333333343"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvN-xn-kDW" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="134.33333333333334" height="31.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Z0-fL-HF1">
+                                                                    <rect key="frame" x="0.0" y="31.333333333333336" width="134.33333333333334" height="31.666666666666664"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="组 209" translatesAutoresizingMaskIntoConstraints="NO" id="MF1-KI-3VH">
+                                                                            <rect key="frame" x="30.666666666666686" y="5.0000000000000018" width="26.333333333333329" height="26.666666666666671"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="MF1-KI-3VH" secondAttribute="height" multiplier="1:1" id="La0-fr-vCV"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已兌換" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4u-H6-T6B" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                            <rect key="frame" x="67" y="6" width="42.333333333333343" height="19.666666666666668"/>
+                                                                            <fontDescription key="fontDescription" name="GenJyuuGothic-Regular" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="d4u-H6-T6B" firstAttribute="leading" secondItem="4Z0-fL-HF1" secondAttribute="centerX" id="1AV-pc-gda"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="d4u-H6-T6B" secondAttribute="trailing" constant="25" id="UdT-Ox-gja"/>
+                                                                        <constraint firstItem="d4u-H6-T6B" firstAttribute="centerY" secondItem="4Z0-fL-HF1" secondAttribute="centerY" id="csW-SC-env"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="MF1-KI-3VH" secondAttribute="bottom" id="fdb-15-8o6"/>
+                                                                        <constraint firstItem="MF1-KI-3VH" firstAttribute="top" secondItem="4Z0-fL-HF1" secondAttribute="top" constant="5" id="hwL-A9-O7F"/>
+                                                                        <constraint firstItem="MF1-KI-3VH" firstAttribute="trailing" secondItem="d4u-H6-T6B" secondAttribute="leading" constant="-10" id="qFh-Qk-Ixg"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="兌換日期" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-82-l2M" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="63.000000000000007" width="134.33333333333334" height="31.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="11"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="4Z0-fL-HF1" firstAttribute="centerY" secondItem="hV6-jq-F7x" secondAttribute="centerY" id="Qop-2t-Enm"/>
+                                                                <constraint firstItem="4Z0-fL-HF1" firstAttribute="centerX" secondItem="hV6-jq-F7x" secondAttribute="centerX" id="XlQ-XP-H85"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="hV6-jq-F7x" firstAttribute="top" secondItem="Ten-IU-ddV" secondAttribute="top" id="1qE-Hc-UGE"/>
+                                                        <constraint firstItem="taA-Bw-DH3" firstAttribute="trailing" secondItem="0Dz-qQ-FIY" secondAttribute="trailing" id="3am-nG-nMY"/>
+                                                        <constraint firstItem="hV6-jq-F7x" firstAttribute="leading" secondItem="Ten-IU-ddV" secondAttribute="leading" id="Aev-jZ-wcZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0Dl-Tl-KF6" secondAttribute="trailing" constant="10" id="J4Q-oP-4hT"/>
+                                                        <constraint firstItem="0Dl-Tl-KF6" firstAttribute="leading" secondItem="Ten-IU-ddV" secondAttribute="trailing" constant="5" id="KQa-zE-NrQ"/>
+                                                        <constraint firstItem="taA-Bw-DH3" firstAttribute="leading" secondItem="0Dz-qQ-FIY" secondAttribute="leading" id="NHT-hz-g7B"/>
+                                                        <constraint firstItem="0Dl-Tl-KF6" firstAttribute="centerY" secondItem="Ten-IU-ddV" secondAttribute="centerY" id="Noh-0B-J7x"/>
+                                                        <constraint firstItem="0Dz-qQ-FIY" firstAttribute="top" secondItem="Mbk-NZ-Nde" secondAttribute="top" constant="10" id="Py3-cy-0CM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ttw-8C-u2c" secondAttribute="trailing" constant="10.000000000000114" id="QoY-Ld-vio"/>
+                                                        <constraint firstItem="hV6-jq-F7x" firstAttribute="bottom" secondItem="Ttw-8C-u2c" secondAttribute="bottom" id="SRa-8G-Nci"/>
+                                                        <constraint firstItem="0Dz-qQ-FIY" firstAttribute="width" secondItem="Mbk-NZ-Nde" secondAttribute="width" multiplier="0.3333" id="Sx8-8j-8KA"/>
+                                                        <constraint firstItem="0Dz-qQ-FIY" firstAttribute="leading" secondItem="Mbk-NZ-Nde" secondAttribute="leading" constant="10" id="Yma-Dn-ht9"/>
+                                                        <constraint firstItem="Ttw-8C-u2c" firstAttribute="trailing" secondItem="0Dl-Tl-KF6" secondAttribute="trailing" id="YtI-rp-Smv"/>
+                                                        <constraint firstItem="Ttw-8C-u2c" firstAttribute="leading" secondItem="Ten-IU-ddV" secondAttribute="leading" id="ZGZ-ax-wmm"/>
+                                                        <constraint firstItem="qEW-t8-Pyi" firstAttribute="trailing" secondItem="Ttw-8C-u2c" secondAttribute="trailing" id="fNG-me-kSC"/>
+                                                        <constraint firstItem="Ten-IU-ddV" firstAttribute="bottom" secondItem="0Dz-qQ-FIY" secondAttribute="centerY" constant="-10" id="g92-vr-rmV"/>
+                                                        <constraint firstItem="taA-Bw-DH3" firstAttribute="top" secondItem="0Dz-qQ-FIY" secondAttribute="bottom" constant="5" id="gdo-z8-uo2"/>
+                                                        <constraint firstItem="Ten-IU-ddV" firstAttribute="leading" secondItem="0Dz-qQ-FIY" secondAttribute="trailing" constant="5" id="iU1-n7-ukd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="taA-Bw-DH3" secondAttribute="bottom" constant="10" id="jSK-LQ-ngT"/>
+                                                        <constraint firstItem="Ttw-8C-u2c" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qEW-t8-Pyi" secondAttribute="bottom" id="koZ-pA-0zv"/>
+                                                        <constraint firstItem="qEW-t8-Pyi" firstAttribute="leading" secondItem="Ttw-8C-u2c" secondAttribute="leading" id="tep-kx-Z8i"/>
+                                                        <constraint firstItem="qEW-t8-Pyi" firstAttribute="top" secondItem="Ten-IU-ddV" secondAttribute="bottom" constant="5" id="x3Q-Bc-Rc6"/>
+                                                        <constraint firstItem="Ttw-8C-u2c" firstAttribute="bottom" secondItem="taA-Bw-DH3" secondAttribute="bottom" id="z4P-YD-vxf"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="1" height="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.40000000000000002"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-Eg-G8E">
+                                                    <rect key="frame" x="18" y="13" width="337" height="104"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="click" translatesAutoresizingMaskIntoConstraints="NO" id="aRt-7x-ZQv">
+                                                            <rect key="frame" x="10.666666666666671" y="10" width="112" height="84"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="cst-Jr-fEx">
+                                                            <rect key="frame" x="127.66666666666664" y="10" width="204.33333333333337" height="84"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItemName" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnQ-hE-qtQ" userLabel="ItemName" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="204.33333333333334" height="19.666666666666668"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="14"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duringTime" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ner-C4-kH0" userLabel="duringTime" customClass="CustomLabel" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="24" width="204.33333333333334" height="3"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="2"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                            <real key="value" value="11"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="kernSize">
+                                                                            <real key="value" value="0.0"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入line提供的6碼驗證碼" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BdZ-T9-bhE" userLabel="Verity TextField">
+                                                                    <rect key="frame" x="0.0" y="30" width="204.33333333333334" height="22"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                </textField>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiL-n0-gDr" customClass="CustomButton" customModule="RecycledChicken" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="52" width="204.33333333333334" height="32"/>
+                                                                    <color key="backgroundColor" red="0.27450980390000002" green="0.37647058820000001" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="請點擊進行解鎖">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="buttonEvent:" destination="KQP-WV-oHH" eventType="touchUpInside" id="fWJ-m1-24b"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.3411764706" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="cst-Jr-fEx" firstAttribute="leading" secondItem="aRt-7x-ZQv" secondAttribute="trailing" constant="5" id="HcG-m9-odg"/>
+                                                        <constraint firstItem="cst-Jr-fEx" firstAttribute="bottom" secondItem="aRt-7x-ZQv" secondAttribute="bottom" id="Q7C-cc-NzI"/>
+                                                        <constraint firstItem="cst-Jr-fEx" firstAttribute="top" secondItem="aRt-7x-ZQv" secondAttribute="top" id="Ti9-OF-rND"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cst-Jr-fEx" secondAttribute="trailing" constant="5" id="Y61-1V-cLw"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ma8-w6-Bb8" customClass="RedeemedView" customModule="RecycledChicken" customModuleProvider="target">
+                                                    <rect key="frame" x="18.666666666666657" y="13" width="335.66666666666674" height="104"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="1" height="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.40000000000000002"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ma8-w6-Bb8" firstAttribute="bottom" secondItem="Mbk-NZ-Nde" secondAttribute="bottom" id="6Rc-ib-4hc"/>
+                                                <constraint firstItem="aRt-7x-ZQv" firstAttribute="leading" secondItem="0Dz-qQ-FIY" secondAttribute="leading" id="8yc-w2-xfS"/>
+                                                <constraint firstItem="Mbk-NZ-Nde" firstAttribute="width" secondItem="2xG-sX-obf" secondAttribute="width" multiplier="0.9" id="BPX-gs-WLw"/>
+                                                <constraint firstItem="Mbk-NZ-Nde" firstAttribute="height" secondItem="2xG-sX-obf" secondAttribute="height" multiplier="0.8" id="ByR-XU-xxg"/>
+                                                <constraint firstItem="Qic-Eg-G8E" firstAttribute="bottom" secondItem="Mbk-NZ-Nde" secondAttribute="bottom" id="RL4-pd-je8"/>
+                                                <constraint firstItem="ma8-w6-Bb8" firstAttribute="top" secondItem="Mbk-NZ-Nde" secondAttribute="top" id="Tjg-HO-znn"/>
+                                                <constraint firstItem="Mbk-NZ-Nde" firstAttribute="centerX" secondItem="2xG-sX-obf" secondAttribute="centerX" id="Xyq-1f-e6H"/>
+                                                <constraint firstItem="ma8-w6-Bb8" firstAttribute="trailing" secondItem="Mbk-NZ-Nde" secondAttribute="trailing" id="aLr-nk-YvZ"/>
+                                                <constraint firstItem="Qic-Eg-G8E" firstAttribute="centerX" secondItem="Mbk-NZ-Nde" secondAttribute="centerX" id="b6U-DT-aha"/>
+                                                <constraint firstItem="aRt-7x-ZQv" firstAttribute="top" secondItem="0Dz-qQ-FIY" secondAttribute="top" id="b70-Qe-gMR"/>
+                                                <constraint firstItem="ma8-w6-Bb8" firstAttribute="leading" secondItem="Mbk-NZ-Nde" secondAttribute="leading" id="fd5-n8-sYE"/>
+                                                <constraint firstItem="Qic-Eg-G8E" firstAttribute="leading" secondItem="2xG-sX-obf" secondAttribute="leadingMargin" constant="-2" id="g0x-FJ-8PC"/>
+                                                <constraint firstItem="aRt-7x-ZQv" firstAttribute="bottom" secondItem="taA-Bw-DH3" secondAttribute="bottom" id="jKw-S4-mHd"/>
+                                                <constraint firstItem="Qic-Eg-G8E" firstAttribute="top" secondItem="Mbk-NZ-Nde" secondAttribute="top" id="kNP-OQ-hZR"/>
+                                                <constraint firstItem="Mbk-NZ-Nde" firstAttribute="centerY" secondItem="2xG-sX-obf" secondAttribute="centerY" id="vSY-OY-DmI"/>
+                                                <constraint firstItem="aRt-7x-ZQv" firstAttribute="width" secondItem="0Dz-qQ-FIY" secondAttribute="width" id="zdY-us-o4M"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="drawPeopleLabel" destination="taA-Bw-DH3" id="oCb-e2-3Ig"/>
+                                            <outlet property="duringTimeLabel" destination="Ttw-8C-u2c" id="GqJ-tA-Blg"/>
+                                            <outlet property="hideView" destination="Qic-Eg-G8E" id="dgR-Hg-d5Z"/>
+                                            <outlet property="hideViewDrawTimeLabel" destination="ner-C4-kH0" id="VIa-tw-JW2"/>
+                                            <outlet property="hideViewImageView" destination="aRt-7x-ZQv" id="5sP-jU-CQh"/>
+                                            <outlet property="hideViewTitleLabel" destination="vnQ-hE-qtQ" id="P1M-cc-Pgr"/>
+                                            <outlet property="itemImageView" destination="0Dz-qQ-FIY" id="paO-ih-I5a"/>
+                                            <outlet property="itemNameLabel" destination="qEW-t8-Pyi" id="NvL-3r-juG"/>
+                                            <outlet property="pointLabel" destination="0Dl-Tl-KF6" id="fCr-Ws-rsy"/>
+                                            <outlet property="redeemedView" destination="ma8-w6-Bb8" id="9cX-lW-i8t"/>
+                                            <outlet property="verityLineButton" destination="aiL-n0-gDr" id="4Bv-jU-uoW"/>
+                                            <outlet property="verityTextField" destination="BdZ-T9-bhE" id="dnv-Z5-fzQ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -924,7 +1222,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="L3q-rm-ziV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dyN-9c-Ijq">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

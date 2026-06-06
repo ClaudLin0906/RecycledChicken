@@ -20,16 +20,22 @@ class LotteryVC: CustomVC {
     
     private var lotteryInfos:[LotteryInfo] = []
     
-    private var activityVoucherInfos:[CommodityVoucherInfo] = []
+    //    private var activityVoucherInfos:[CommodityVoucherInfo] = []
     
     private var partnerMerchantsInfos:[CommodityVoucherInfo] = []
     
-    private lazy var tableViews = [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView]
+    //    private lazy var tableViews = [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView]
+    
+    private lazy var tableViews = [lotteryTableView, partnerMerchantsTableView]
+    
+    //    private var currentVisibleTableView: UITableView? {
+    //        return [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView].first { $0?.isHidden == false } ?? nil
+    //    }
     
     private var currentVisibleTableView: UITableView? {
-        return [lotteryTableView, activityVoucherTableView, partnerMerchantsTableView].first { $0?.isHidden == false } ?? nil
+        return [lotteryTableView, partnerMerchantsTableView].first { $0?.isHidden == false } ?? nil
     }
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "activitiesLuckyDraws".localized
@@ -77,7 +83,7 @@ class LotteryVC: CustomVC {
     
     private func loadAllData() {
         getLotteryData()
-        getEventCouponsData()
+        //        getEventCouponsData()
         getPartnerCouponsData()
     }
     
@@ -89,29 +95,57 @@ class LotteryVC: CustomVC {
         }
     }
     
-    private func getEventCouponsData() {
-        getCouponsData(category: .event, tableView: activityVoucherTableView) { [weak self] commodityVoucherInfos in
-            self?.activityVoucherInfos = commodityVoucherInfos
-        }
-    }
-
+    //    private func getEventCouponsData() {
+    //        getCouponsData(category: .event, tableView: activityVoucherTableView) { [weak self] commodityVoucherInfos in
+    //            self?.activityVoucherInfos = commodityVoucherInfos
+    //        }
+    //    }
+    
     private func getPartnerCouponsData() {
-        getCouponsData(category: .partner, tableView: partnerMerchantsTableView) { [weak self] commodityVoucherInfos in
-            self?.partnerMerchantsInfos = commodityVoucherInfos
+        Task {
+            do {
+                // Fetch event coupons using async await
+                let eventVouchers = try await fetchCouponsAsync(urlString: APIUrl.domainName + APIUrl.eventCoupons)
+                    .filter { $0.category == .event }
+                
+                // Fetch partner coupons using async await
+                let partnerVouchers = try await fetchCouponsAsync(urlString: APIUrl.domainName + APIUrl.partnerCoupons)
+                    .filter { $0.category == .partner }
+                
+                // Merge and update UI on MainActor
+                await MainActor.run {
+                    self.partnerMerchantsInfos = (eventVouchers + partnerVouchers).sorted { ($0.order ?? 0) < ($1.order ?? 0) }
+                    self.reloadTableViewWithAnimation(self.partnerMerchantsTableView)
+                }
+            } catch {
+                await MainActor.run {
+                    if let netError = error as? NetworkError {
+                        self.handleNetworkError(netError)
+                    } else {
+                        showAlert(VC: self, title: "error".localized, message: error.localizedDescription)
+                    }
+                }
+            }
         }
     }
     
-    private func getCouponsData(category: CouponsCategory, tableView: UITableView, completion: @escaping ([CommodityVoucherInfo]) -> Void) {
-        let urlString = category == .event ? APIUrl.domainName + APIUrl.eventCoupons : APIUrl.domainName + APIUrl.partnerCoupons
-        fetchData(url: urlString, dataType: [CommodityVoucherInfo].self) { [weak self] commodityVoucherInfos in
-            let filteredData = commodityVoucherInfos.filter { $0.category == category }
-            completion(filteredData)
-            self?.reloadTableViewWithAnimation(tableView)
+    private func fetchCouponsAsync(urlString: String) async throws -> [CommodityVoucherInfo] {
+        try await withCheckedThrowingContinuation { continuation in
+            NetworkManager.shared.get(url: urlString,
+                                      authorizationToken: CommonKey.shared.authToken,
+                                      responseType: [CommodityVoucherInfo].self) { result in
+                switch result {
+                case .success(let data):
+                    continuation.resume(returning: data)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
         }
     }
     
     private func fetchData<T: Decodable>(url: String, dataType: T.Type, completion: @escaping (T) -> Void) {
-        NetworkManager.shared.get(url: url, 
+        NetworkManager.shared.get(url: url,
                                   authorizationToken: CommonKey.shared.authToken,
                                   responseType: dataType) { [weak self] result in
             switch result {
@@ -137,9 +171,9 @@ class LotteryVC: CustomVC {
         if tableView == lotteryTableView {
             return lotteryInfos.count
         }
-        if tableView == activityVoucherTableView {
-            return activityVoucherInfos.count
-        }
+//        if tableView == activityVoucherTableView {
+//            return activityVoucherInfos.count
+//        }
         if tableView == partnerMerchantsTableView {
             return partnerMerchantsInfos.count
         }
@@ -147,9 +181,9 @@ class LotteryVC: CustomVC {
     }
     
     private func getCommodityVoucherInfo(_ tableView:UITableView, _ row:Int) -> CommodityVoucherInfo? {
-        if tableView == activityVoucherTableView {
-            return activityVoucherInfos[row]
-        }
+        //        if tableView == activityVoucherTableView {
+        //            return activityVoucherInfos[row]
+        //        }
         if tableView == partnerMerchantsTableView {
             return partnerMerchantsInfos[row]
         }
@@ -210,15 +244,15 @@ extension LotteryVC: UITableViewDelegate {
             }
         }
         
-        if tableView == activityVoucherTableView {
-            let isUnlocked = activityVoucherInfos[row].isUnlocked ?? true
-            if isUnlocked {
-                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
-                    VC.commodityVoucherInfo = activityVoucherInfos[row]
-                    pushVC(targetVC: VC, navigation: navigationController)
-                }
-            }
-        }
+        //        if tableView == activityVoucherTableView {
+        //            let isUnlocked = activityVoucherInfos[row].isUnlocked ?? true
+        //            if isUnlocked {
+        //                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyCommodity", bundle: Bundle.main).instantiateViewController(identifier: "BuyCommodity") as? BuyCommodityVC {
+        //                    VC.commodityVoucherInfo = activityVoucherInfos[row]
+        //                    pushVC(targetVC: VC, navigation: navigationController)
+        //                }
+        //            }
+        //        }
         
         if tableView == partnerMerchantsTableView  {
             let isUnlocked = partnerMerchantsInfos[row].isUnlocked ?? true
@@ -245,15 +279,15 @@ extension LotteryVC: UITableViewDelegate {
             return cell
         }
         
-        if tableView == activityVoucherTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
-            cell.delegate = self
-            let row = indexPath.row
-            if let CommodityVoucherInfo = getCommodityVoucherInfo(tableView,row) {
-                cell.setCell(CommodityVoucherInfo)
-            }
-            return cell
-        }
+        //        if tableView == activityVoucherTableView {
+        //            let cell = tableView.dequeueReusableCell(withIdentifier: ActivityVoucherTableViewCell.identifier, for: indexPath) as! ActivityVoucherTableViewCell
+        //            cell.delegate = self
+        //            let row = indexPath.row
+        //            if let CommodityVoucherInfo = getCommodityVoucherInfo(tableView,row) {
+        //                cell.setCell(CommodityVoucherInfo)
+        //            }
+        //            return cell
+        //        }
         
         if tableView == partnerMerchantsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: PartnerMerchantsTableViewTableViewCell.identifier, for: indexPath) as! PartnerMerchantsTableViewTableViewCell
@@ -304,9 +338,7 @@ extension LotteryVC: UITableViewDelegate {
         switch category {
         case .ticket:
             getLotteryData()
-        case .event:
-            getEventCouponsData()
-        case .partner:
+        case .event, .partner:
             getPartnerCouponsData()
         }
     }
@@ -337,7 +369,7 @@ extension LotteryVC: LotteryTableViewCellDelegate {
             checkHandle(isSuccess, .ticket, MSG)
         }
     }
-
+    
     
     func lotteryHideImageEvent(_ link: String) {
         openURL(link)
@@ -350,7 +382,8 @@ extension LotteryVC: ActivityVoucherTableViewCellDelegate {
     func activityVoucherButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
         checkVerify(APIUrl.domainName + APIUrl.couponsUnlock, name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG  in
             guard let self = self else { return }
-            checkHandle(isSuccess, .event, MSG)
+            let couponCategory = CouponsCategory(rawValue: category) ?? .event
+            checkHandle(isSuccess, couponCategory, MSG)
         }
     }
     
@@ -364,7 +397,8 @@ extension LotteryVC: PartnerMerchantsTableViewTableViewCellDelegate {
     func partnerMerchantsHideButtonEvent(_ name: String, _ category: String, _ veriftyCode: String, _ createTime: String) {
         checkVerify(APIUrl.domainName + APIUrl.couponsUnlock, name, category, veriftyCode, createTime) { [weak self] isSuccess, MSG in
             guard let self = self else { return }
-            checkHandle(isSuccess, .partner, MSG)
+            let couponCategory = CouponsCategory(rawValue: category) ?? .partner
+            checkHandle(isSuccess, couponCategory, MSG)
         }
     }
     

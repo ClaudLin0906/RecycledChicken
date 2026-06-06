@@ -1,6 +1,30 @@
 {
   "sourceLanguage" : "zh-Hant-TW",
   "strings" : {
+    "0Dl-Tl-KF6.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"350\"; ObjectID = \"0Dl-Tl-KF6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "350"
+          }
+        }
+      }
+    },
+    "3Og-82-l2M.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"兌換日期\"; ObjectID = \"3Og-82-l2M\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "兌換日期"
+          }
+        }
+      }
+    },
     "4cV-SI-zbG.text" : {
       "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"4cV-SI-zbG\";",
       "extractionState" : "extracted_with_value",
@@ -55,6 +79,30 @@
         }
       }
     },
+    "aiL-n0-gDr.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊進行解鎖\"; ObjectID = \"aiL-n0-gDr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請點擊進行解鎖"
+          }
+        }
+      }
+    },
+    "BdZ-T9-bhE.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"請輸入line提供的6碼驗證碼\"; ObjectID = \"BdZ-T9-bhE\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請輸入line提供的6碼驗證碼"
+          }
+        }
+      }
+    },
     "bNL-5b-M5r.text" : {
       "comment" : "Class = \"UILabel\"; text = \"duringTime\"; ObjectID = \"bNL-5b-M5r\";",
       "extractionState" : "extracted_with_value",
@@ -93,6 +141,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "兌換日期"
+          }
+        }
+      }
+    },
+    "d4u-H6-T6B.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"已兌換\"; ObjectID = \"d4u-H6-T6B\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "已兌換"
           }
         }
       }
@@ -193,6 +253,18 @@
         }
       }
     },
+    "HvN-xn-kDW.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Label\"; ObjectID = \"HvN-xn-kDW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Label"
+          }
+        }
+      }
+    },
     "HZE-ic-BSI.normalTitle" : {
       "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊進行解鎖\"; ObjectID = \"HZE-ic-BSI\";",
       "extractionState" : "extracted_with_value",
@@ -271,6 +343,18 @@
         }
       }
     },
+    "ner-C4-kH0.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"duringTime\"; ObjectID = \"ner-C4-kH0\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "duringTime"
+          }
+        }
+      }
+    },
     "NKX-2j-gul.normalTitle" : {
       "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊進行解鎖\"; ObjectID = \"NKX-2j-gul\";",
       "extractionState" : "extracted_with_value",
@@ -325,6 +409,18 @@
         }
       }
     },
+    "qEW-t8-Pyi.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"qEW-t8-Pyi\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
+          }
+        }
+      }
+    },
     "SKR-pS-7to.text" : {
       "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"SKR-pS-7to\";",
       "extractionState" : "extracted_with_value",
@@ -339,6 +435,30 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "ItemName"
+          }
+        }
+      }
+    },
+    "taA-Bw-DH3.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"剩餘數量 0\"; ObjectID = \"taA-Bw-DH3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "剩餘數量 0"
+          }
+        }
+      }
+    },
+    "Ttw-8C-u2c.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"drawTime\"; ObjectID = \"Ttw-8C-u2c\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "drawTime"
           }
         }
       }
@@ -399,6 +519,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Label"
+          }
+        }
+      }
+    },
+    "vnQ-hE-qtQ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"ItemName\"; ObjectID = \"vnQ-hE-qtQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ItemName"
           }
         }
       }
