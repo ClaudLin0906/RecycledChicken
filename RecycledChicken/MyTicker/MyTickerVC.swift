@@ -131,6 +131,13 @@ class MyTickerVC: CustomVC {
     @IBAction func longPressAction(_ LPGesutre:UILongPressGestureRecognizer) {
         
     }
+    
+    private func pushToCheckStoreNumberVC(_ info: MyTickertCouponsInfo) {
+        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CheckStoreNumber", bundle: Bundle.main).instantiateViewController(identifier: "CheckStoreNumber") as? CheckStoreNumberVC {
+            VC.myTickertCouponsInfo = info
+            pushVC(targetVC: VC, navigation: navigationController)
+        }
+    }
 
 }
 
@@ -143,11 +150,8 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         }
         if tableView == voucherTableView {
             let myVoucherInfo = myVoucherInfos[row]
-            if let partner = myVoucherInfo.partner, partner != "" {
-                if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CheckStoreNumber", bundle: Bundle.main).instantiateViewController(identifier: "CheckStoreNumber") as? CheckStoreNumberVC {
-                    VC.myTickertCouponsInfo = myVoucherInfo
-                    pushVC(targetVC: VC, navigation: navigationController)
-                }
+            if let partner = myVoucherInfo.partner, !partner.isEmpty {
+                pushToCheckStoreNumberVC(myVoucherInfo)
             }
         }
     }
@@ -235,9 +239,7 @@ extension MyTickerVC: MyTicketVoucherSerialNumberTableViewCellDelegate {
 extension MyTickerVC: MyTickerYiRuiTableViewCellDelegate {
     
     func button(_ sender: UIButton, info: MyTickertCouponsInfo) {
-        if let navigationController = self.navigationController, let VC = UIStoryboard(name: "BuyLottery", bundle: Bundle.main).instantiateViewController(identifier: "BuyLottery") as? BuyLotteryVC {
-            pushVC(targetVC: VC, navigation: navigationController)
-        }
+        pushToCheckStoreNumberVC(info)
     }
 }
     
