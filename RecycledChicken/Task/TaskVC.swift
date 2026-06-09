@@ -101,19 +101,16 @@ class TaskVC: CustomRootVC {
     }
     
     private func classification() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            let share = self.taskInfos.filter { $0.type == .share }
-            let advertise = self.taskInfos.filter { $0.type == .advertise }
-            let specified = self.taskInfos.filter { $0.isSpecifiedLocation }
-            let remaining = self.taskInfos.filter { task in
-                task.type != .share && task.type != .advertise && !task.isSpecifiedLocation
-            }
-            self.shareTaskInfos.append(contentsOf: share)
-            self.advertiseTaskInfos.append(contentsOf: advertise)
-            self.specifiedLocationTaskInfos.append(contentsOf: specified)
-            self.recycledTaskInfos.append(contentsOf: remaining)
+        let share = self.taskInfos.filter { $0.type == .share }
+        let advertise = self.taskInfos.filter { $0.type == .advertise }
+        let specified = self.taskInfos.filter { $0.isSpecifiedLocation }
+        let remaining = self.taskInfos.filter { task in
+            task.type != .share && task.type != .advertise && !task.isSpecifiedLocation
         }
+        self.shareTaskInfos.append(contentsOf: share)
+        self.advertiseTaskInfos.append(contentsOf: advertise)
+        self.specifiedLocationTaskInfos.append(contentsOf: specified)
+        self.recycledTaskInfos.append(contentsOf: remaining)
     }
     
     private func classificationAction() {
@@ -173,12 +170,9 @@ class TaskVC: CustomRootVC {
     }
     
     private func reloadTableView() {
-        DispatchQueue.main.async {[weak self] in
-            guard let self = self else { return }
-            taskTableView.beginUpdates()
-            taskTableView.reloadSections(IndexSet(0...sectionCount - 1), with: .automatic)
-            taskTableView.endUpdates()
-        }
+        taskTableView.beginUpdates()
+        taskTableView.reloadSections(IndexSet(0...sectionCount - 1), with: .automatic)
+        taskTableView.endUpdates()
     }
     
     private func finishTaskAction(_ taskInfo: TaskInfo?) {

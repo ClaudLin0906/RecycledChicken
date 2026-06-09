@@ -78,7 +78,11 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // 預設隱藏所有狀態相關 view，避免 XIB 初始狀態造成重疊
+        comfirmButton.isHidden = true
+        receivePointFinishView.isHidden = true
+        getTicketView.isHidden = true
+        taskProgressView.isHidden = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -114,9 +118,6 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
         if taskInfo.isSpecifiedLocation {
             if let title = taskInfo.title {
                 self.title = title
-                if title.contains("台北京站"){
-                    print(taskInfo.isReceive)
-                }
             }
         }
         if let taskDescription = taskInfo.description {
@@ -187,25 +188,23 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     }
     
     private func receiveFinishUIAction() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            labelStackViewUIInit()
-            if let titleLabel = titleLabel {
-                titleLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        labelStackViewUIInit()
+        if let titleLabel = titleLabel {
+            titleLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
+        background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
+        titleLabel.textColor = .white
+        descriptionLabel.textColor = .white
+        taskProgressView.isHidden = true
+        comfirmButton.isHidden = true
+        if let taskInfo = self.taskInfo, let reward = taskInfo.reward, let type = reward.type {
+            if type != .point {
+                getTicketView.isHidden = false
+                receivePointFinishView.isHidden = true
             }
-            background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
-            titleLabel.textColor = .white
-            descriptionLabel.textColor = .white
-            taskProgressView.isHidden = true
-            if let taskInfo = self.taskInfo, let reward = taskInfo.reward, let type = reward.type {
-                if type != .point {
-                    getTicketView.isHidden = false
-                    receivePointFinishView.isHidden = true
-                }
-                if type == .point {
-                    getTicketView.isHidden = true
-                    receivePointFinishView.isHidden = false
-                }
+            if type == .point {
+                getTicketView.isHidden = true
+                receivePointFinishView.isHidden = false
             }
         }
     }
@@ -219,19 +218,16 @@ class TaskTableViewPartnerProgressCell: UITableViewCell {
     }
     
     private func updateNoReceiveUI(showConfirmButton: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            labelStackViewUIInit()
-            background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            if let titleLabel = titleLabel {
-                titleLabel.textColor = .black
-            }
-            descriptionLabel.textColor = .black
-            getTicketView.isHidden = true
-            receivePointFinishView.isHidden = true
-            taskProgressView.isHidden = showConfirmButton
-            comfirmButton.isHidden = !showConfirmButton
+        labelStackViewUIInit()
+        background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        if let titleLabel = titleLabel {
+            titleLabel.textColor = .black
         }
+        descriptionLabel.textColor = .black
+        getTicketView.isHidden = true
+        receivePointFinishView.isHidden = true
+        taskProgressView.isHidden = showConfirmButton
+        comfirmButton.isHidden = !showConfirmButton
     }
     
     private func labelStackViewUIInit() {

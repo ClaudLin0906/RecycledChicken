@@ -82,8 +82,14 @@ class TaskTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // 預設隱藏所有狀態相關 view，避免 XIB 初始狀態造成重疊
+        comfirmButton.isHidden = true
+        receivePointFinishView.isHidden = true
+        getTicketView.isHidden = true
+        taskProgressView.isHidden = false
+        pointFinishView.isHidden = true
     }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -101,27 +107,24 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     private func receiveFinishUIAction() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            labelStackViewUIInit()
-            if let titleLabel = titleLabel {
-                titleLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        labelStackViewUIInit()
+        if let titleLabel = titleLabel {
+            titleLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
+        background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
+        descriptionLabel.textColor = .white
+        pointLabel.textColor = .white
+        comfirmButton.isHidden = true
+        taskProgressView.isHidden = true
+        if let taskInfo = self.taskInfo, let reward = taskInfo.reward, let type = reward.type {
+            pointFinishView.isHidden = true
+            if type != .point {
+                getTicketView.isHidden = false
+                receivePointFinishView.isHidden = true
             }
-            background.backgroundColor = #colorLiteral(red: 0.7294117647, green: 0.3607843137, blue: 0.1490196078, alpha: 1)
-            descriptionLabel.textColor = .white
-            pointLabel.textColor = .white
-            comfirmButton.isHidden = true
-            taskProgressView.isHidden = true
-            if let taskInfo = self.taskInfo, let reward = taskInfo.reward, let type = reward.type {
-                pointFinishView.isHidden = true
-                if type != .point {
-                    getTicketView.isHidden = false
-                    receivePointFinishView.isHidden = true
-                }
-                if type == .point {
-                    getTicketView.isHidden = true
-                    receivePointFinishView.isHidden = false
-                }
+            if type == .point {
+                getTicketView.isHidden = true
+                receivePointFinishView.isHidden = false
             }
         }
     }
@@ -135,22 +138,19 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     private func updateNoReceiveUI(showConfirmButton: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            if let titleLabel = titleLabel {
-                titleLabel.textColor = #colorLiteral(red: 0.3215686275, green: 0.4862745098, blue: 0.4196078431, alpha: 1)
-            }
-            labelStackViewUIInit()
-            background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            descriptionLabel.textColor = .black
-            pointLabel.textColor = .black
-            getTicketView.isHidden = true
-            receivePointFinishView.isHidden = true
-            taskProgressView.isHidden = showConfirmButton
-            pointView.isHidden = false
-            pointFinishView.isHidden = true
-            comfirmButton.isHidden = !showConfirmButton
+        if let titleLabel = titleLabel {
+            titleLabel.textColor = #colorLiteral(red: 0.3215686275, green: 0.4862745098, blue: 0.4196078431, alpha: 1)
         }
+        labelStackViewUIInit()
+        background.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        descriptionLabel.textColor = .black
+        pointLabel.textColor = .black
+        getTicketView.isHidden = true
+        receivePointFinishView.isHidden = true
+        taskProgressView.isHidden = showConfirmButton
+        pointView.isHidden = false
+        pointFinishView.isHidden = true
+        comfirmButton.isHidden = !showConfirmButton
     }
     
     private func labelStackViewUIInit() {
