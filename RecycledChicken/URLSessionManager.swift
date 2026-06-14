@@ -381,33 +381,38 @@ extension NetworkManager: URLSessionDelegate {
     
     private func handleServerTrustChallenge(challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         
-        guard let serverTrust = challenge.protectionSpace.serverTrust,
-              let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0) else {
+        guard let serverTrust = challenge.protectionSpace.serverTrust else {
             completionHandler(.cancelAuthenticationChallenge, nil)
             return
         }
         
-        let remoteCertificateData = SecCertificateCopyData(certificate)
+        var isPinnedCorrectly = false
         
-        guard let cerPath = Bundle.main.path(forResource: "cert", ofType: "cer"),
-              let localCertificateData = try? Data(contentsOf: URL(fileURLWithPath: cerPath)) else {
-            completionHandler(.cancelAuthenticationChallenge, nil)
-            return
+        // 獲取伺服器證書鏈中的葉子證書 (Leaf Certificate)
+        let certificate: SecCertificate?
+        if let certificates = SecTrustCopyCertificateChain(serverTrust) as? [SecCertificate] {
+            certificate = certificates.first
+        } else {
+            certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)
         }
         
-        let remoteCertificateDataNS = CFBridgingRetain(remoteCertificateData) as! NSData
+        if let certificate = certificate {
+            let remoteCertificateData = SecCertificateCopyData(certificate) as Data
+            if let cerPath = Bundle.main.path(forResource: "cert", ofType: "cer"),
+               let localCertificateData = try? Data(contentsOf: URL(fileURLWithPath: cerPath)) {
+                if remoteCertificateData == localCertificateData {
+                    isPinnedCorrectly = true
+                }
+            }
+        }
         
-        if remoteCertificateDataNS.isEqual(to: localCertificateData) {
+        if isPinnedCorrectly {
             let credential = URLCredential(trust: serverTrust)
             completionHandler(.useCredential, credential)
         } else {
-            // iOS 17 中可能需要更宽松的处理
-            if #available(iOS 17.0, *) {
-                // 可以选择继续默认处理而不是直接取消
-                completionHandler(.performDefaultHandling, nil)
-            } else {
-                completionHandler(.cancelAuthenticationChallenge, nil)
-            }
+            // 當憑證不匹配、無法讀取或舊版 iOS API 限制時，執行系統預設的安全驗證。
+            // 這可以避免因為憑證更新或系統 API 行為改變，導致請求被錯誤取消。
+            completionHandler(.performDefaultHandling, nil)
         }
     }
     

@@ -64,36 +64,6 @@
             endingLineNumber = "131"
             landmarkName = "getTaskInfo(completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A8BC41C2-46AB-4741-81F3-EC1154916A0A - 83e348b06cc78d71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;RecycledChicken.TaskInfo&gt;, RecycledChicken.NetworkError&gt;) -&gt; () in RecycledChicken.TaskVC.getTaskInfo(completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "RecycledChicken.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linshuyu/Desktop/Work/RecycledChicken/RecycledChicken/Task/TaskVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131">
-               </Location>
-               <Location
-                  uuid = "A8BC41C2-46AB-4741-81F3-EC1154916A0A - 22df48d77e8ddf7a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;RecycledChicken.TaskInfo&gt;, RecycledChicken.NetworkError&gt;) -&gt; () in RecycledChicken.TaskVC.getTaskInfo(completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "RecycledChicken.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linshuyu/Desktop/Work/RecycledChicken/RecycledChicken/Task/TaskVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
