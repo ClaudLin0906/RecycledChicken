@@ -7,52 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "87E3F9DF-F899-4F26-8079-E27F1729B4C9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Task/TaskVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "addStatus(_:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "87E3F9DF-F899-4F26-8079-E27F1729B4C9 - f35c74cd89c45444"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in RecycledChicken.TaskVC.addStatus(_: Swift.Array&lt;RecycledChicken.TaskInfo&gt;, completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "RecycledChicken.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linshuyu/Desktop/Work/RecycledChicken/RecycledChicken/Task/TaskVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78">
-               </Location>
-               <Location
-                  uuid = "87E3F9DF-F899-4F26-8079-E27F1729B4C9 - b363c17ab9c00c18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RecycledChicken.TaskInfo) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in RecycledChicken.TaskVC.addStatus(_: Swift.Array&lt;RecycledChicken.TaskInfo&gt;, completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "RecycledChicken.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/linshuyu/Desktop/Work/RecycledChicken/RecycledChicken/Task/TaskVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A8BC41C2-46AB-4741-81F3-EC1154916A0A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

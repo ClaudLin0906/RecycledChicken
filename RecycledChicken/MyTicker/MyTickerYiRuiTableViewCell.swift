@@ -9,6 +9,7 @@ import UIKit
 
 protocol MyTickerYiRuiTableViewCellDelegate {
     func button(_ sender:UIButton, info:MyTickertCouponsInfo)
+    func copyPassword(_ password:String)
 }
 
 class MyTickerYiRuiTableViewCell: UITableViewCell {
@@ -77,7 +78,13 @@ class MyTickerYiRuiTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(_:)))
+        contentView.addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc private func longPressAction(_ longPress:UILongPressGestureRecognizer) {
+        guard longPress.state == .began, let pwd = info?.pwd else { return }
+        delegate?.copyPassword(pwd)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

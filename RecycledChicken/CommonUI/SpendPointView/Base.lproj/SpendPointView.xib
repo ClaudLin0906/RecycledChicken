@@ -117,7 +117,6 @@
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="ZNE-HK-Agt" firstAttribute="centerY" secondItem="wvo-DS-aMQ" secondAttribute="centerY" id="3bB-LR-YhJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZNE-HK-Agt" secondAttribute="trailing" constant="157.66666666666666" id="7ht-de-gYp"/>
                                                 <constraint firstItem="6u4-S6-Kd9" firstAttribute="leading" secondItem="K6d-MY-JI1" secondAttribute="leading" id="8Td-0n-qn7"/>
                                                 <constraint firstItem="wvo-DS-aMQ" firstAttribute="leading" secondItem="q3P-1c-HL2" secondAttribute="trailing" constant="10" id="9VE-C1-zGR"/>
                                                 <constraint firstItem="jXL-v5-5gH" firstAttribute="bottom" secondItem="q3P-1c-HL2" secondAttribute="bottom" id="9ks-gN-xwQ"/>
@@ -127,7 +126,7 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jGA-hq-HmR" secondAttribute="trailing" constant="20" symbolic="YES" id="WOo-jS-j8R"/>
                                                 <constraint firstItem="q3P-1c-HL2" firstAttribute="leading" secondItem="nN2-B3-wLp" secondAttribute="leading" constant="10" id="ZSe-n1-3ks"/>
                                                 <constraint firstItem="6u4-S6-Kd9" firstAttribute="trailing" secondItem="K6d-MY-JI1" secondAttribute="trailing" id="aDH-iU-c4J"/>
-                                                <constraint firstItem="ZNE-HK-Agt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wvo-DS-aMQ" secondAttribute="trailing" symbolic="YES" id="cyh-bS-ss8"/>
+                                                <constraint firstItem="ZNE-HK-Agt" firstAttribute="leading" secondItem="wvo-DS-aMQ" secondAttribute="trailing" constant="4" id="cyh-bS-ss8"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jXL-v5-5gH" secondAttribute="trailing" constant="20" symbolic="YES" id="fyP-ak-nGF"/>
                                                 <constraint firstItem="K6d-MY-JI1" firstAttribute="top" secondItem="q3P-1c-HL2" secondAttribute="bottom" constant="10" id="koX-z5-tEg"/>
                                                 <constraint firstItem="jGA-hq-HmR" firstAttribute="leading" secondItem="wvo-DS-aMQ" secondAttribute="leading" id="mqI-z2-5sO"/>
@@ -218,7 +217,7 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLY-4r-Iz8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="YES" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rLY-4r-Iz8">
                                                     <rect key="frame" x="86" y="4" width="49.333333333333343" height="19.666666666666668"/>
                                                     <fontDescription key="fontDescription" name="jf-openhuninn-2.0" family="jf-openhuninn-2.0" pointSize="20"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -242,6 +241,7 @@
                                             <color key="backgroundColor" red="0.27450980392156865" green="0.37647058823529411" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="gzp-00-njQ"/>
+                                                <constraint firstAttribute="width" constant="200" id="btn-width-confirm"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="GenJyuuGothic-Medium" family="Gen Jyuu Gothic" pointSize="14"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>

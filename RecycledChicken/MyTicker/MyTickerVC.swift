@@ -150,6 +150,7 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         }
         if tableView == voucherTableView {
             let myVoucherInfo = myVoucherInfos[row]
+            if let link = myVoucherInfo.link, !link.isEmpty { return }
             if let partner = myVoucherInfo.partner, !partner.isEmpty {
                 pushToCheckStoreNumberVC(myVoucherInfo)
             }
@@ -173,14 +174,13 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == voucherTableView {
             let row = indexPath.row
             let myVoucherInfo = myVoucherInfos[row]
-            if myVoucherInfo.link != nil {
+            if myVoucherInfo.pwd != nil {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerYiRuiTableViewCell.identifier, for: indexPath) as! MyTickerYiRuiTableViewCell
                 cell.delegate = self
                 cell.setCell(myVoucherInfo)
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
-                cell.delegate = self
                 cell.setCell(myVoucherInfo)
                 return cell
             }
@@ -229,17 +229,19 @@ extension MyTickerVC: CustomSegmentedControlDelegate {
     
 }
 
-extension MyTickerVC: MyTicketVoucherSerialNumberTableViewCellDelegate {
-    func copySerialNumber(_ serialNumber: String) {
-        UIPasteboard.general.string = serialNumber
-        showAlert(VC: self, title: "copySuccess".localized)
-    }
-}
-
 extension MyTickerVC: MyTickerYiRuiTableViewCellDelegate {
     
     func button(_ sender: UIButton, info: MyTickertCouponsInfo) {
-        pushToCheckStoreNumberVC(info)
+        guard let link = info.link, let url = URL(string: link) else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func copyPassword(_ password: String) {
+        UIPasteboard.general.string = password
+        showAlert(VC: self, title: "copySuccess".localized)
     }
 }
     
+
