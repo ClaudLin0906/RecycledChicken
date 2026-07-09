@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A8BC41C2-46AB-4741-81F3-EC1154916A0A"
+            uuid = "CB15B8F7-30BE-4EB4-B5DA-183E43327230"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Task/TaskVC.swift"
+            filePath = "RecycledChicken/URLSessionManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "getTaskInfo(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BD56D5BE-5902-4A52-98B6-DAF10E379CD9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecycledChicken/Task/TaskTableViewPartnerProgressCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "setCell(_:)"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "performRequest(request:responseType:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

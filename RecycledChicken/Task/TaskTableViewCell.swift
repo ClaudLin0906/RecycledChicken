@@ -155,12 +155,9 @@ class TaskTableViewCell: UITableViewCell {
     
     private func labelStackViewUIInit() {
         if let taskInfo = taskInfo {
-            titleLabel.isHidden = !taskInfo.isSpecifiedLocation
-            if !taskInfo.isSpecifiedLocation {
-                self.labelStackView.spacing = 0
-            } else {
-                self.labelStackView.spacing = 8
-            }
+            let hasTitle = taskInfo.isSpecifiedLocation || taskInfo.type != nil
+            titleLabel.isHidden = !hasTitle
+            self.labelStackView.spacing = hasTitle ? 8 : 0
         }
     }
     
@@ -168,6 +165,18 @@ class TaskTableViewCell: UITableViewCell {
         if taskInfo.isSpecifiedLocation {
             if let title = taskInfo.title {
                 self.title = title
+            }
+        } else if let type = taskInfo.type {
+            switch type {
+            case .bottle:    self.title = "投遞寶特瓶任務"
+            case .can:       self.title = "投遞鋁罐任務"
+            case .battery:   self.title = "投遞電池任務"
+            case .cup:       self.title = "投遞紙杯任務"
+            case .hdpeBottle: self.title = "投遞HDPE瓶任務"
+            case .foilPack:  self.title = "投遞鋁箔包任務"
+            case .cartonBox: self.title = "投遞紙箱任務"
+            case .share:     self.title = "分享任務"
+            case .advertise: self.title = "廣告任務"
             }
         }
         
