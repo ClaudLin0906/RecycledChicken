@@ -74,7 +74,9 @@ final class MyTickerModelTests: XCTestCase {
             "picture": "https://example.com/pic.png",
             "expire": "2024-12-31",
             "link": "https://example.com",
-            "partner": "Avier"
+            "partner": "Avier",
+            "redeemType": "QRCode",
+            "status": "complete"
         }
         """.data(using: .utf8)!
 
@@ -89,6 +91,8 @@ final class MyTickerModelTests: XCTestCase {
         XCTAssertEqual(info.expire, "2024-12-31")
         XCTAssertEqual(info.link, "https://example.com")
         XCTAssertEqual(info.partner, "Avier")
+        XCTAssertEqual(info.redeemType, "QRCode")
+        XCTAssertEqual(info.status, "complete")
     }
 
     func test_couponsInfo_emptyJSON_allNil() throws {

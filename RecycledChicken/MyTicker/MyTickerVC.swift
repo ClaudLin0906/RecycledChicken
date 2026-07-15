@@ -138,6 +138,75 @@ class MyTickerVC: CustomVC {
             pushVC(targetVC: VC, navigation: navigationController)
         }
     }
+    
+    private func showQRCodeBottomSheet(_ info: MyTickertCouponsInfo) {
+        let centerImage = UIImage(named: "ic_normal_mark")
+        guard let payload = makeQRCodePayload(info), let qrImage = generateQRCode(from: payload, centerImage: centerImage) else {
+            showAlert(VC: self, title: "error".localized)
+            return
+        }
+        let vc = CouponQRCodeBottomSheetVC(qrImage: qrImage)
+        vc.modalPresentationStyle = .pageSheet
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        present(vc, animated: true)
+    }
+    
+    private func makeQRCodePayload(_ info: MyTickertCouponsInfo) -> String? {
+        guard let name = info.name, let code = info.code else { return nil }
+        let userID = CurrentUserInfo.shared.currentProfileNewInfo?.userPhoneNumber ?? CurrentUserInfo.shared.currentAccountInfo.userPhoneNumber
+        guard !userID.isEmpty else { return nil }
+        let payload = CouponQRCodePayload(name: name, userID: userID, code: code)
+        let encoder = JSONEncoder()
+        guard let data = try? encoder.encode(payload) else { return nil }
+        return String(data: data, encoding: .utf8)
+    }
+    
+    private func generateQRCode(from string: String, centerImage: UIImage?) -> UIImage? {
+        guard let data = string.data(using: .utf8),
+              let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
+        filter.setValue(data, forKey: "inputMessage")
+        filter.setValue("H", forKey: "inputCorrectionLevel")
+        guard let outputImage = filter.outputImage else { return nil }
+        let backgroundColor = UIColor(red: 0.95, green: 0.93, blue: 0.84, alpha: 1)
+        let coloredImage = outputImage.applyingFilter("CIFalseColor", parameters: [
+            "inputColor0": CIColor(color: .black),
+            "inputColor1": CIColor(color: backgroundColor)
+        ])
+        let transformedImage = coloredImage.transformed(by: CGAffineTransform(scaleX: 12, y: 12))
+        let context = CIContext()
+        guard let cgImage = context.createCGImage(transformedImage, from: transformedImage.extent) else { return nil }
+        let qrImage = UIImage(cgImage: cgImage)
+        guard let centerImage = centerImage else { return qrImage }
+        return drawCenterImage(centerImage, on: qrImage)
+    }
+    
+    private func drawCenterImage(_ centerImage: UIImage, on qrImage: UIImage) -> UIImage {
+        let backgroundColor = UIColor(red: 0.95, green: 0.93, blue: 0.84, alpha: 1)
+        let renderer = UIGraphicsImageRenderer(size: qrImage.size)
+        return renderer.image { context in
+            qrImage.draw(in: CGRect(origin: .zero, size: qrImage.size))
+            
+            let imageSide = qrImage.size.width * 0.12
+            let padding = imageSide * 0.16
+            let backgroundSide = imageSide + padding * 2
+            let backgroundRect = CGRect(
+                x: (qrImage.size.width - backgroundSide) / 2,
+                y: (qrImage.size.height - backgroundSide) / 2,
+                width: backgroundSide,
+                height: backgroundSide
+            )
+            let imageRect = backgroundRect.insetBy(dx: padding, dy: padding)
+            
+            context.cgContext.saveGState()
+            UIBezierPath(roundedRect: backgroundRect, cornerRadius: backgroundSide * 0.2).addClip()
+            backgroundColor.setFill()
+            UIRectFill(backgroundRect)
+            centerImage.draw(in: imageRect)
+            context.cgContext.restoreGState()
+        }
+    }
 
 }
 
@@ -150,7 +219,13 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         }
         if tableView == voucherTableView {
             let myVoucherInfo = myVoucherInfos[row]
-            if let link = myVoucherInfo.link, !link.isEmpty { return }
+            if myVoucherInfo.redeemType != nil {
+                showQRCodeBottomSheet(myVoucherInfo)
+                return
+            }
+            if let link = myVoucherInfo.link, !link.isEmpty {
+                return
+            }
             if let partner = myVoucherInfo.partner, !partner.isEmpty {
                 pushToCheckStoreNumberVC(myVoucherInfo)
             }
@@ -174,7 +249,12 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == voucherTableView {
             let row = indexPath.row
             let myVoucherInfo = myVoucherInfos[row]
-            if myVoucherInfo.pwd != nil {
+            if let link = myVoucherInfo.link, !link.isEmpty {
+                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
+                cell.setCell(myVoucherInfo)
+                return cell
+            }
+            if let pwd = myVoucherInfo.pwd, !pwd.isEmpty {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerYiRuiTableViewCell.identifier, for: indexPath) as! MyTickerYiRuiTableViewCell
                 cell.delegate = self
                 cell.setCell(myVoucherInfo)
@@ -243,5 +323,45 @@ extension MyTickerVC: MyTickerYiRuiTableViewCellDelegate {
         showAlert(VC: self, title: "copySuccess".localized)
     }
 }
+
+private struct CouponQRCodePayload: Encodable {
+    let name: String
+    let userID: String
+    let code: String
+}
+
+private final class CouponQRCodeBottomSheetVC: UIViewController {
     
+    private let qrImage: UIImage
+    
+    init(qrImage: UIImage) {
+        self.qrImage = qrImage
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 0.95, green: 0.93, blue: 0.84, alpha: 1)
+        setupUI()
+    }
+    
+    private func setupUI() {
+        let imageView = UIImageView(image: qrImage)
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = view.backgroundColor
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(imageView)
+        
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            imageView.widthAnchor.constraint(lessThanOrEqualTo: view.layoutMarginsGuide.widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+        ])
+    }
+}
 
