@@ -128,10 +128,6 @@ class MyTickerVC: CustomVC {
         return 0
     }
     
-    @IBAction func longPressAction(_ LPGesutre:UILongPressGestureRecognizer) {
-        
-    }
-    
     private func pushToCheckStoreNumberVC(_ info: MyTickertCouponsInfo) {
         if let navigationController = self.navigationController, let VC = UIStoryboard(name: "CheckStoreNumber", bundle: Bundle.main).instantiateViewController(identifier: "CheckStoreNumber") as? CheckStoreNumberVC {
             VC.myTickertCouponsInfo = info
@@ -141,11 +137,11 @@ class MyTickerVC: CustomVC {
     
     private func showQRCodeBottomSheet(_ info: MyTickertCouponsInfo) {
         let centerImage = UIImage(named: "ic_normal_mark")
-        guard let payload = makeQRCodePayload(info), let qrImage = generateQRCode(from: payload, centerImage: centerImage) else {
+        guard let code = info.code, let payload = makeQRCodePayload(info), let qrImage = generateQRCode(from: payload, centerImage: centerImage) else {
             showAlert(VC: self, title: "error".localized)
             return
         }
-        let vc = CouponQRCodeBottomSheetVC(qrImage: qrImage)
+        let vc = CouponQRCodeBottomSheetVC(qrImage: qrImage, code: code)
         vc.modalPresentationStyle = .pageSheet
         if let sheet = vc.sheetPresentationController {
             sheet.detents = [.medium()]
@@ -213,22 +209,8 @@ class MyTickerVC: CustomVC {
 extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
         if tableView == lotteryTableView {
             
-        }
-        if tableView == voucherTableView {
-            let myVoucherInfo = myVoucherInfos[row]
-            if myVoucherInfo.redeemType != nil {
-                showQRCodeBottomSheet(myVoucherInfo)
-                return
-            }
-            if let link = myVoucherInfo.link, !link.isEmpty {
-                return
-            }
-            if let partner = myVoucherInfo.partner, !partner.isEmpty {
-                pushToCheckStoreNumberVC(myVoucherInfo)
-            }
         }
     }
     
@@ -261,7 +243,13 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
+                cell.delegate = self
                 cell.setCell(myVoucherInfo)
+                if myVoucherInfo.status == "complete" {
+                    cell.compeletedAction()
+                } else {
+                    cell.noCompeletedAction()
+                }
                 return cell
             }
         }
@@ -312,6 +300,14 @@ extension MyTickerVC: CustomSegmentedControlDelegate {
 extension MyTickerVC: MyTickerYiRuiTableViewCellDelegate {
     
     func button(_ sender: UIButton, info: MyTickertCouponsInfo) {
+        if info.redeemType != nil {
+            showQRCodeBottomSheet(info)
+            return
+        }
+        if let partner = info.partner, !partner.isEmpty {
+            pushToCheckStoreNumberVC(info)
+            return
+        }
         guard let link = info.link, let url = URL(string: link) else { return }
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
@@ -324,6 +320,8 @@ extension MyTickerVC: MyTickerYiRuiTableViewCellDelegate {
     }
 }
 
+extension MyTickerVC: MyTicketVoucherSerialNumberTableViewCellDelegate {}
+
 private struct CouponQRCodePayload: Encodable {
     let name: String
     let userID: String
@@ -333,9 +331,11 @@ private struct CouponQRCodePayload: Encodable {
 private final class CouponQRCodeBottomSheetVC: UIViewController {
     
     private let qrImage: UIImage
+    private let code: String
     
-    init(qrImage: UIImage) {
+    init(qrImage: UIImage, code: String) {
         self.qrImage = qrImage
+        self.code = code
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -356,12 +356,43 @@ private final class CouponQRCodeBottomSheetVC: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
         
+        let codeLabel = UILabel()
+        codeLabel.text = code
+        codeLabel.font = .systemFont(ofSize: 15, weight: .medium)
+        codeLabel.textColor = .darkGray
+        codeLabel.textAlignment = .center
+        codeLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(codeLabel)
+        
+        let closeButton = UIButton(type: .system)
+        let symbolConfig = UIImage.SymbolConfiguration(pointSize: 28, weight: .medium)
+        closeButton.setImage(UIImage(systemName: "xmark.circle.fill", withConfiguration: symbolConfig), for: .normal)
+        closeButton.tintColor = .darkGray
+        closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(closeButton)
+        
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            imageView.widthAnchor.constraint(lessThanOrEqualTo: view.layoutMarginsGuide.widthAnchor),
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -16),
+            imageView.topAnchor.constraint(greaterThanOrEqualTo: closeButton.bottomAnchor, constant: 8),
+            imageView.widthAnchor.constraint(lessThanOrEqualTo: view.layoutMarginsGuide.widthAnchor, multiplier: 0.85),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor),
+            
+            codeLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 12),
+            codeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            codeLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.layoutMarginsGuide.leadingAnchor),
+            codeLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.layoutMarginsGuide.trailingAnchor),
+            
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            closeButton.widthAnchor.constraint(equalToConstant: 40),
+            closeButton.heightAnchor.constraint(equalToConstant: 40)
         ])
+    }
+    
+    @objc private func closeAction() {
+        dismiss(animated: true)
     }
 }
 

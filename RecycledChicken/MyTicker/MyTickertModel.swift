@@ -88,12 +88,22 @@ struct MyTickertCouponsInfo:Codable {
         buyTime = try? container.decodeIfPresent(String.self, forKey: .buyTime)
         point = try? container.decodeIfPresent(Int.self, forKey: .point)
         picture = try? container.decodeIfPresent(String.self, forKey: .picture)
-        name = try? container.decodeIfPresent(String.self, forKey: .name)
+        let rawName = try? container.decodeIfPresent(String.self, forKey: .name)
+        name = rawName.map(convertCouponName)
         expire = try? container.decodeIfPresent(String.self, forKey: .expire)
         link = try? container.decodeIfPresent(String.self, forKey: .link)
         partner = try? container.decodeIfPresent(String.self, forKey: .partner)
         redeemType = try? container.decodeIfPresent(String.self, forKey: .redeemType)
         status = try? container.decodeIfPresent(String.self, forKey: .status)
+    }
+}
+
+func convertCouponName(_ name: String) -> String {
+    switch name {
+    case "plastic bag":
+        return "新竹市限定狗便清潔袋"
+    default:
+        return name
     }
 }
 

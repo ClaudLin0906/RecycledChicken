@@ -33,7 +33,7 @@
     },
     "22L-AI-Lz2.text" : {
       "comment" : "Class = \"UILabel\"; text = \"000000\"; ObjectID = \"22L-AI-Lz2\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -51,7 +51,7 @@
     },
     "Bn5-kX-crv.text" : {
       "comment" : "Class = \"UILabel\"; text = \"使用序號\"; ObjectID = \"Bn5-kX-crv\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -133,6 +133,18 @@
         }
       }
     },
+    "qtB-01-btn.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"請點擊開啟票劵\"; ObjectID = \"qtB-01-btn\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "請點擊開啟票劵"
+          }
+        }
+      }
+    },
     "RaX-i3-GcF.text" : {
       "comment" : "Class = \"UILabel\"; text = \"UUID\"; ObjectID = \"RaX-i3-GcF\";",
       "extractionState" : "extracted_with_value",
@@ -147,6 +159,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "UUID"
+          }
+        }
+      }
+    },
+    "ser-01-lbl.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"使用序號\"; ObjectID = \"ser-01-lbl\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "使用序號"
           }
         }
       }

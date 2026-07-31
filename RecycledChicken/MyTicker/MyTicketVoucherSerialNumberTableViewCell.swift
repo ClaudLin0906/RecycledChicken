@@ -8,19 +8,28 @@
 import UIKit
 import Kingfisher
 
+protocol MyTicketVoucherSerialNumberTableViewCellDelegate {
+    func button(_ sender: UIButton, info: MyTickertCouponsInfo)
+    func copyPassword(_ password: String)
+}
+
 class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     
     static let identifier = "MyTicketVoucherSerialNumberTableViewCell"
     
-    @IBOutlet weak var itemImageView: UIImageView!
+    var delegate: MyTicketVoucherSerialNumberTableViewCellDelegate?
     
-    @IBOutlet weak var serialNumberLabel:UILabel!
+    @IBOutlet weak var itemImageView: UIImageView!
     
     @IBOutlet weak var itemNameLabel: CustomLabel!
     
     @IBOutlet weak var duringTimeLabel: CustomLabel!
     
     @IBOutlet weak var instructionLabel: CustomLabel!
+    
+    @IBOutlet weak var actionButton: UIButton!
+    
+    @IBOutlet weak var serialNumberLabel: CustomLabel!
     
     @IBOutlet weak var noCompleteStackView:UIStackView!
     
@@ -72,10 +81,14 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     private var serialNumber:String?
     {
         willSet {
-            if let newValue = newValue {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    serialNumberLabel.text = newValue
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                if let newValue = newValue {
+                    self.serialNumberLabel.text = "使用序號\(newValue)"
+                    self.serialNumberLabel.isHidden = false
+                } else {
+                    self.serialNumberLabel.text = nil
+                    self.serialNumberLabel.isHidden = true
                 }
             }
         }
@@ -95,6 +108,18 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(_:)))
+        contentGetureView.addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc private func longPressAction(_ longPress: UILongPressGestureRecognizer) {
+        guard longPress.state == .began, let code = info?.code else { return }
+        delegate?.copyPassword(code)
+    }
+    
+    @IBAction func btnOnClick(_ sender: UIButton) {
+        guard let info = info else { return }
+        delegate?.button(sender, info: info)
     }
     
     private func extractEndDate(_ value: String) -> String {
@@ -126,10 +151,12 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         itemImageView.image = nil
-        serialNumberLabel.text = nil
         itemNameLabel.text = nil
         duringTimeLabel.text = nil
         instructionLabel.text = nil
+        actionButton.isHidden = true
+        serialNumberLabel.text = nil
+        serialNumberLabel.isHidden = true
     }
     
     func setCell(_ info:MyTickertCouponsInfo) {
@@ -142,14 +169,20 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
             if let name = info.name {
                 itemName = name
             }
-            if let code = info.code {
-                serialNumber = code
-            }
             if let expire = info.expire {
                 duringTime = "\(expire)"
             }
             if let instruction = info.instruction {
                 self.instruction = instruction
+            }
+            let needsActionButton = info.redeemType != nil || !(info.partner ?? "").isEmpty
+            DispatchQueue.main.async {
+                self.actionButton.isHidden = !needsActionButton
+            }
+            if !needsActionButton, let code = info.code {
+                serialNumber = code
+            } else {
+                serialNumber = nil
             }
         }
     }
