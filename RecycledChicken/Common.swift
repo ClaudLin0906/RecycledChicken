@@ -379,10 +379,143 @@ struct RedirectURL {
     static let buenopartners = "https://www.buenopartners.com.tw/formula"
 }
 
+/// 新竹通 OAuth 2.0 登入。OAuth 交握全部由我方後端處理。
+/// 主要路徑：App 內 `WKWebView`（`HsinchuTongLoginWebVC`）載入起始網址，攔截 callback 的 `login_code`。
+/// 備援路徑：Universal Link 導回 App → `SceneDelegate` → `handleIncomingURL`（需 AASA 才會生效）。
+///
+/// 流程：
+/// 1. App 點「使用新竹通登入」→ WKWebView 載入 `loginStartURL`
+/// 2. 後端把使用者導向新竹通登入頁，使用者完成登入後由後端 redirect
+/// 3. 被導向 `callbackURLString`，fragment 帶回 `login_code` 與 `provider`（固定 hsinchu）：
+///    <callbackURLString>#login_code={LOGIN_CODE}&provider=hsinchu
+/// 4. `HsinchuTongLoginWebVC` 於 navigation 攔到 → 解析 `login_code` → 回呼 `SignVC`
+/// 5. `SignVC` 帶 `login_code` 打 `POST /app/v2/oauth/login-result` 換會員資料 → 帶入註冊頁
+///
+/// 網址已由實際 redirect chain 驗證：
+///  - 登入起始 / callback 走 `https://useries.buenooptics.com`（443，無 /app/v2）
+///  - 換資料 `POST` 走 `https://useries.buenooptics.com:8443/app/v2`（= APIUrl.domainName）
+///  - 起始網址會 302 到新竹通 SSO `https://id.hccg.gov.tw/oauth/authorize`
+enum HsinchuTongOAuth {
+    /// OAuth 登入 / callback 用的 base（443）
+    static let oauthBase = "https://useries.buenooptics.com"
+
+    /// OAuth 登入流程起始點（WebView 載入這個網址）
+    static let loginStartURL = "\(oauthBase)/api/partner/hsinchu/login"
+    /// 後端導回 App 的 callback 網址（不含 fragment）
+    static let callbackURLString = "\(oauthBase)/oauth/callback"
+    /// iOS Universal Link / Android App Link 共用的 Redirect URI（若之後改回 Universal Link 方案才需要）
+    static let redirectURI = callbackURLString
+    /// callback 內 provider 參數的固定值
+    static let expectedProvider = "hsinchu"
+
+    static let authorizationCodeDidReceive = Notification.Name("HsinchuTongOAuth.authorizationCodeDidReceive")
+
+    /// 除錯用 log，只在 DEBUG build 輸出。Console 以 `[HsinchuTong]` 過濾。
+    static func log(_ message: @autoclosure () -> String) {
+        #if DEBUG
+        print("[HsinchuTong] \(message())")
+        #endif
+    }
+
+    /// 這個 URL 是不是導回的 callback（比對 scheme+host+path，忽略 query / fragment）。
+    static func isCallbackURL(_ url: URL) -> Bool {
+        guard let target = URLComponents(string: callbackURLString),
+              let comps = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return false }
+        return comps.scheme?.lowercased() == target.scheme?.lowercased()
+            && comps.host?.lowercased() == target.host?.lowercased()
+            && comps.port == target.port
+            && comps.path == target.path
+    }
+
+    /// 從導回的 callback URL 取出 `login_code`；不是有效 callback 或 provider 不符時回傳 nil。
+    static func loginCode(from url: URL) -> String? {
+        guard isCallbackURL(url) else { return nil }
+        let params = callbackParameters(from: url)
+        log("命中 callback：\(url.absoluteString)　解析參數=\(params)")
+        guard let loginCode = params["login_code"], !loginCode.isEmpty else {
+            log("callback 沒有 login_code")
+            return nil
+        }
+        if let provider = params["provider"], provider != expectedProvider {
+            log("provider 不符：\(provider)")
+            return nil
+        }
+        return loginCode
+    }
+
+    @discardableResult
+    static func handleIncomingUserActivity(_ userActivity: NSUserActivity) -> Bool {
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+              let url = userActivity.webpageURL else {
+            return false
+        }
+        return handleIncomingURL(url)
+    }
+
+    /// Universal Link 導回 App 時由 SceneDelegate 呼叫，解析 login_code 後發通知。
+    @discardableResult
+    static func handleIncomingURL(_ url: URL) -> Bool {
+        guard let loginCode = loginCode(from: url) else { return false }
+        NotificationCenter.default.post(
+            name: authorizationCodeDidReceive,
+            object: nil,
+            userInfo: ["login_code": loginCode, "provider": expectedProvider]
+        )
+        return true
+    }
+
+    /// 先讀 fragment，找不到再退回 query，容錯不同實作。
+    private static func callbackParameters(from url: URL) -> [String: String] {
+        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        let raw = components?.fragment ?? components?.query
+        guard let raw = raw, !raw.isEmpty else { return [:] }
+
+        var result: [String: String] = [:]
+        for pair in raw.components(separatedBy: "&") {
+            let kv = pair.components(separatedBy: "=")
+            guard kv.count == 2, !kv[0].isEmpty else { continue }
+            result[kv[0]] = kv[1].removingPercentEncoding ?? kv[1]
+        }
+        return result
+    }
+}
+
+/// `POST /app/v2/oauth/login-result` 成功回應。
+/// provider = hsinchu 時，會員基本資料在 `member` 物件內。
+/// 註：新竹通不提供性別，性別仍由使用者於註冊頁自行選擇。
+struct HsinchuTongLoginResult: Codable {
+    let status: String?
+    let provider: String?
+    let member: Member?
+
+    var isSuccess: Bool { status?.lowercased() == "success" }
+
+    struct Member: Codable {
+        /// 新竹通會員唯一識別碼
+        let openid: String?
+        /// 會員姓名
+        let name: String?
+        /// 生日（格式依新竹通，帶入註冊頁前會正規化為 yyyy/MM/dd）
+        let birthday: String?
+        /// 電子郵件
+        let email: String?
+        /// 電話號碼
+        let phoneNumber: String?
+
+        enum CodingKeys: String, CodingKey {
+            case openid, name, birthday, email
+            case phoneNumber = "phone_number"
+        }
+    }
+}
+
 struct APIUrl {
     static let domainName = "https://useries.buenooptics.com:8443/app/v2"
     static let register = "/auth/register"
     static let login = "/auth/login"
+    /// 以新竹通 login_code 換取會員基本資料。
+    /// 完整路徑 = domainName + 此值 = https://useries.buenooptics.com:8443/app/v2/oauth/login-result
+    static let hsinchuTongExchange = "/oauth/login-result"
     static let changePWD = "/reset"
     static let smsCode = "/auth/generateSmsCode"
     static let useRecord = "/useRecord"
