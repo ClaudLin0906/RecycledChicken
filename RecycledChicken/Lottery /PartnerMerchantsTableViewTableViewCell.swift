@@ -78,15 +78,18 @@ class PartnerMerchantsTableViewTableViewCell: UITableViewCell {
         }
     }
     
+    // Stores the raw name (used for unlock verification requests); only the
+    // labels below use the display-friendly converted name.
     private var itemName:String?
     {
         willSet {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    itemNameLabel.text = newValue
-                    hideViewTitleLabel.text = newValue
-                    redeemedView.setCompleteItemNameLabel(newValue)
+                    let displayName = convertCouponName(newValue)
+                    itemNameLabel.text = displayName
+                    hideViewTitleLabel.text = displayName
+                    redeemedView.setCompleteItemNameLabel(displayName)
                 }
             }
         }

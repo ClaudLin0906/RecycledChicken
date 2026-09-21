@@ -37,6 +37,30 @@
         }
       }
     },
+    "gLg-in-02b.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"訪客登入\"; ObjectID = \"gLg-in-02b\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "訪客登入"
+          }
+        }
+      }
+    },
+    "hdr-lb-01.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"或者使用其他帳戶登入\"; ObjectID = \"hdr-lb-01\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "或者使用其他帳戶登入"
+          }
+        }
+      }
+    },
     "hMQ-3Y-3fH.normalTitle" : {
       "comment" : "Class = \"UIButton\"; normalTitle = \"會員註冊\"; ObjectID = \"hMQ-3Y-3fH\";",
       "extractionState" : "extracted_with_value",
@@ -51,6 +75,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "會員註冊"
+          }
+        }
+      }
+    },
+    "hnt-lb-01.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"新竹通用戶登入前需完成電話認證\"; ObjectID = \"hnt-lb-01\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "新竹通用戶登入前需完成電話認證"
           }
         }
       }

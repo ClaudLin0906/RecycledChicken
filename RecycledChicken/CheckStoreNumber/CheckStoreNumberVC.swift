@@ -43,7 +43,7 @@ class CheckStoreNumberVC: CustomVC {
             itemImageView.kf.setImage(with: imageURL)
         }
         
-        itemNameLabel.text = myTickertCouponsInfo.name
+        itemNameLabel.text = myTickertCouponsInfo.name.map(convertCouponName)
         
         if let code = myTickertCouponsInfo.code {
             serialNumberLabel.text = "使用序號\(code)"

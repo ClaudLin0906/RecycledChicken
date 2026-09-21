@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import UserNotifications
 import FirebaseMessaging
+import WebKit
 
 class Setting {
     static let shared = Setting()
@@ -408,6 +409,10 @@ enum HsinchuTongOAuth {
     /// callback 內 provider 參數的固定值
     static let expectedProvider = "hsinchu"
 
+    /// 新竹通官方會員入口（網頁標題即為「新竹通」），與 SSO 同網域。
+    /// 換資料成功但缺電話號碼時，導使用者去這裡（外部瀏覽器）自行完成電話認證。
+    static let memberPortalURL = "https://id.hccg.gov.tw/"
+
     static let authorizationCodeDidReceive = Notification.Name("HsinchuTongOAuth.authorizationCodeDidReceive")
 
     /// 除錯用 log，只在 DEBUG build 輸出。Console 以 `[HsinchuTong]` 過濾。
@@ -480,32 +485,180 @@ enum HsinchuTongOAuth {
     }
 }
 
-/// `POST /app/v2/oauth/login-result` 成功回應。
-/// provider = hsinchu 時，會員基本資料在 `member` 物件內。
+/// `POST /app/v2/oauth/login-result` 成功回應：欄位為扁平結構（無外層 status/member 包裝），
+/// 例如 `{"openid":"...","name":"...","birthday":"1986/09/06","email":"...","phone_number":null}`。
 /// 註：新竹通不提供性別，性別仍由使用者於註冊頁自行選擇。
 struct HsinchuTongLoginResult: Codable {
-    let status: String?
-    let provider: String?
-    let member: Member?
+    /// 新竹通會員唯一識別碼；有值即代表換資料成功。
+    var openid: String?
+    var name: String?
+    var birthday: String?
+    var email: String?
+    var phoneNumber: String?
 
-    var isSuccess: Bool { status?.lowercased() == "success" }
+    enum CodingKeys: String, CodingKey {
+        case openid = "openid"
+        case name = "name"
+        case birthday = "birthday"
+        case email = "email"
+        case phoneNumber = "phone_number"
+    }
 
-    struct Member: Codable {
-        /// 新竹通會員唯一識別碼
-        let openid: String?
-        /// 會員姓名
-        let name: String?
-        /// 生日（格式依新竹通，帶入註冊頁前會正規化為 yyyy/MM/dd）
-        let birthday: String?
-        /// 電子郵件
-        let email: String?
-        /// 電話號碼
-        let phoneNumber: String?
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        openid = try? container.decodeIfPresent(String.self, forKey: .openid)
+        name = try? container.decodeIfPresent(String.self, forKey: .name)
+        birthday = try? container.decodeIfPresent(String.self, forKey: .birthday)
+        email = try? container.decodeIfPresent(String.self, forKey: .email)
+        phoneNumber = try? container.decodeIfPresent(String.self, forKey: .phoneNumber)
+    }
+}
 
-        enum CodingKeys: String, CodingKey {
-            case openid, name, birthday, email
-            case phoneNumber = "phone_number"
+// MARK: - 新竹通登入 WebView
+
+/// 在 App 內以 WKWebView 跑新竹通 OAuth 登入頁，攔截後端導回 callback 網址中的 `login_code`。
+/// 不需要 AASA / custom scheme；風險是 id.hccg.gov.tw SSO 可能擋內嵌 webview。
+final class HsinchuTongLoginWebVC: UIViewController {
+
+    /// 完成回呼：帶回 login_code；使用者取消或載入失敗時回傳 nil。
+    var onComplete: ((String?) -> Void)?
+
+    private let webView = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
+    private let progressView = UIActivityIndicatorView(style: .large)
+    private var barBottomAnchor: NSLayoutYAxisAnchor?
+    private var didFinishFlow = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        setupBar()
+        setupWebView()
+        loadLoginStart()
+    }
+
+    private func setupBar() {
+        let bar = UIView()
+        bar.backgroundColor = #colorLiteral(red: 0.2039215686, green: 0.3529411765, blue: 0.3098039216, alpha: 1)
+        bar.translatesAutoresizingMaskIntoConstraints = false
+
+        let titleLabel = UILabel()
+        titleLabel.text = "新竹通登入"
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont(name: "GenJyuuGothic-Medium", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .medium)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        let closeBtn = UIButton(type: .system)
+        closeBtn.setTitle("關閉", for: .normal)
+        closeBtn.setTitleColor(.white, for: .normal)
+        closeBtn.titleLabel?.font = UIFont(name: "GenJyuuGothic-Medium", size: 15) ?? UIFont.systemFont(ofSize: 15)
+        closeBtn.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+        closeBtn.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(bar)
+        bar.addSubview(titleLabel)
+        bar.addSubview(closeBtn)
+        NSLayoutConstraint.activate([
+            bar.topAnchor.constraint(equalTo: view.topAnchor),
+            bar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 44),
+
+            titleLabel.centerXAnchor.constraint(equalTo: bar.centerXAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: bar.bottomAnchor, constant: -10),
+
+            closeBtn.trailingAnchor.constraint(equalTo: bar.trailingAnchor, constant: -16),
+            closeBtn.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
+        ])
+        barBottomAnchor = bar.bottomAnchor
+    }
+
+    private func setupWebView() {
+        webView.navigationDelegate = self
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.hidesWhenStopped = true
+
+        view.addSubview(webView)
+        view.addSubview(progressView)
+        NSLayoutConstraint.activate([
+            webView.topAnchor.constraint(equalTo: barBottomAnchor ?? view.safeAreaLayoutGuide.topAnchor),
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+            progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progressView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+
+    private func loadLoginStart() {
+        guard let url = URL(string: HsinchuTongOAuth.loginStartURL) else {
+            HsinchuTongOAuth.log("loginStartURL 無效：\(HsinchuTongOAuth.loginStartURL)")
+            finish(with: nil)
+            return
         }
+        HsinchuTongOAuth.log("WebView 載入起始頁：\(url.absoluteString)")
+        webView.load(URLRequest(url: url))
+    }
+
+    private func finish(with loginCode: String?) {
+        guard !didFinishFlow else { return }
+        didFinishFlow = true
+        HsinchuTongOAuth.log("流程結束　login_code=\(loginCode ?? "nil（取消或失敗）")")
+        let handler = onComplete
+        dismiss(animated: true) { handler?(loginCode) }
+    }
+
+    @objc private func closeTapped() {
+        finish(with: nil)
+    }
+}
+
+extension HsinchuTongLoginWebVC: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        let url = navigationAction.request.url
+        HsinchuTongOAuth.log("導航 → \(url?.absoluteString ?? "nil")")
+        if let url = url, let code = HsinchuTongOAuth.loginCode(from: url) {
+            HsinchuTongOAuth.log("攔到 callback，取消導航，login_code=\(code)")
+            decisionHandler(.cancel)
+            finish(with: code)
+            return
+        }
+        decisionHandler(.allow)
+    }
+
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        progressView.startAnimating()
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        progressView.stopAnimating()
+        HsinchuTongOAuth.log("頁面載入完成：\(webView.url?.absoluteString ?? "nil")")
+        // 備援：callback 若以 client-side 方式補上 #fragment，decidePolicyFor 不會再觸發。
+        if let url = webView.url, let code = HsinchuTongOAuth.loginCode(from: url) {
+            finish(with: code)
+        }
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        progressView.stopAnimating()
+        HsinchuTongOAuth.log("didFail：\(error)")
+    }
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        progressView.stopAnimating()
+        HsinchuTongOAuth.log("didFailProvisionalNavigation：\(error)　didFinishFlow=\(didFinishFlow)")
+        // 我方主動 .cancel（攔到 callback）也會走到這裡，且流程結束後不需再提示。
+        // NSURLErrorCancelled(-999) 或 WebKitErrorDomain 102（frame load interrupted）都是取消造成的。
+        let ns = error as NSError
+        let isCancel = ns.code == NSURLErrorCancelled || (ns.domain == "WebKitErrorDomain" && ns.code == 102)
+        if didFinishFlow || isCancel { return }
+        showAlert(VC: self, title: nil, message: "無法開啟新竹通登入頁，請稍後再試", alertAction: UIAlertAction(title: "確定", style: .default) { [weak self] _ in
+            self?.finish(with: nil)
+        })
     }
 }
 
@@ -516,6 +669,9 @@ struct APIUrl {
     /// 以新竹通 login_code 換取會員基本資料。
     /// 完整路徑 = domainName + 此值 = https://useries.buenooptics.com:8443/app/v2/oauth/login-result
     static let hsinchuTongExchange = "/oauth/login-result"
+    /// TODO: 等後端補上「新竹通已完成電話認證 → 直接發 token 登入」的 API 後，改成正式路徑。
+    /// 目前為暫定路徑，request/response 格式（是否為 openid + provider → { token }）也待後端確認後調整。
+    static let hsinchuTongLogin = "/oauth/hsinchu/login"
     static let changePWD = "/reset"
     static let smsCode = "/auth/generateSmsCode"
     static let useRecord = "/useRecord"

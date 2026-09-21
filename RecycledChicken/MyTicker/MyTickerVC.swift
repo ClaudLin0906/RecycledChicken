@@ -231,27 +231,33 @@ extension MyTickerVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == voucherTableView {
             let row = indexPath.row
             let myVoucherInfo = myVoucherInfos[row]
-            if let link = myVoucherInfo.link, !link.isEmpty {
-                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
-                cell.setCell(myVoucherInfo)
-                return cell
-            }
+            // `pwd` must win over `link`: a voucher can have both a redemption
+            // password AND a link (opened from the password cell's own button),
+            // so checking `link` first would silently hide the password.
             if let pwd = myVoucherInfo.pwd, !pwd.isEmpty {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerYiRuiTableViewCell.identifier, for: indexPath) as! MyTickerYiRuiTableViewCell
                 cell.delegate = self
                 cell.setCell(myVoucherInfo)
                 return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
-                cell.delegate = self
+            }
+            // `MyTickerVoucherTableViewCell` only opens `link` directly and has
+            // no redeemType/partner handling, so it must only be used when none
+            // of those richer behaviors are needed.
+            let needsActionHandling = myVoucherInfo.redeemType != nil || !(myVoucherInfo.partner ?? "").isEmpty
+            if !needsActionHandling, let link = myVoucherInfo.link, !link.isEmpty {
+                let cell = tableView.dequeueReusableCell(withIdentifier: MyTickerVoucherTableViewCell.identifier, for: indexPath) as! MyTickerVoucherTableViewCell
                 cell.setCell(myVoucherInfo)
-                if myVoucherInfo.status == "complete" {
-                    cell.compeletedAction()
-                } else {
-                    cell.noCompeletedAction()
-                }
                 return cell
             }
+            let cell = tableView.dequeueReusableCell(withIdentifier: MyTicketVoucherSerialNumberTableViewCell.identifier, for: indexPath) as! MyTicketVoucherSerialNumberTableViewCell
+            cell.delegate = self
+            cell.setCell(myVoucherInfo)
+            if myVoucherInfo.status == "complete" {
+                cell.compeletedAction()
+            } else {
+                cell.noCompeletedAction()
+            }
+            return cell
         }
         return UITableViewCell()
     }

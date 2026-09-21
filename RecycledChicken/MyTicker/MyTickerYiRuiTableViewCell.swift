@@ -46,7 +46,7 @@ class MyTickerYiRuiTableViewCell: UITableViewCell {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    itemNameLabel.text = newValue
+                    itemNameLabel.text = convertCouponName(newValue)
                 }
             }
         }

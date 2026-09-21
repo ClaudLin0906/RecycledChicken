@@ -88,8 +88,7 @@ struct MyTickertCouponsInfo:Codable {
         buyTime = try? container.decodeIfPresent(String.self, forKey: .buyTime)
         point = try? container.decodeIfPresent(Int.self, forKey: .point)
         picture = try? container.decodeIfPresent(String.self, forKey: .picture)
-        let rawName = try? container.decodeIfPresent(String.self, forKey: .name)
-        name = rawName.map(convertCouponName)
+        name = try? container.decodeIfPresent(String.self, forKey: .name)
         expire = try? container.decodeIfPresent(String.self, forKey: .expire)
         link = try? container.decodeIfPresent(String.self, forKey: .link)
         partner = try? container.decodeIfPresent(String.self, forKey: .partner)
@@ -98,6 +97,9 @@ struct MyTickertCouponsInfo:Codable {
     }
 }
 
+// Display-only name mapping. Never apply this to values sent to the backend
+// (unlock verification, purchase requests, QR code payloads, etc.) since the
+// server still expects the original raw name.
 func convertCouponName(_ name: String) -> String {
     switch name {
     case "plastic bag":

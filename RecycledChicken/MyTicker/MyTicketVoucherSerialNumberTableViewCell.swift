@@ -58,8 +58,9 @@ class MyTicketVoucherSerialNumberTableViewCell: UITableViewCell {
             if let newValue = newValue {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
-                    itemNameLabel.text = newValue
-                    redeemedView.setCompleteItemNameLabel(newValue)
+                    let displayName = convertCouponName(newValue)
+                    itemNameLabel.text = displayName
+                    redeemedView.setCompleteItemNameLabel(displayName)
                 }
             }
         }

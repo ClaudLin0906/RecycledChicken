@@ -97,7 +97,7 @@ class SpendPointView: UIView, NibOwnerLoadable {
             }
             
             if let name = commodityVoucherInfo.name {
-                itemNameLabel.text = name
+                itemNameLabel.text = convertCouponName(name)
             }
             
             if let points = commodityVoucherInfo.points {
