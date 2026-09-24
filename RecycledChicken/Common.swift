@@ -485,32 +485,45 @@ enum HsinchuTongOAuth {
     }
 }
 
-/// `POST /app/v2/oauth/login-result` 成功回應：欄位為扁平結構（無外層 status/member 包裝），
-/// 例如 `{"openid":"...","name":"...","birthday":"1986/09/06","email":"...","phone_number":null}`。
-/// 註：新竹通不提供性別，性別仍由使用者於註冊頁自行選擇。
+/// `POST /app/v2/oauth/login-result` 成功回應。
+/// 依該新竹通帳號是否已是我方會員，回傳內容不同：
+/// - 已是會員：只有 `status`／`provider`／`token`，`member` 為 nil，可直接拿 token 登入。
+/// - 尚未成為會員：沒有 `token`，`member` 帶回會員基本資料。
+/// 真實回應範例（尚未成為會員）：
+/// `{"status":"success","provider":"hsinchu","member":{"request_id":"...","openid":"...","name":"林書郁",
+/// "verify_status":false,"birthday":"1986/09/06","email":"...","email_verified":true,"phone_number":null,"phone_number_verified":false}}`
+/// 註：`verify_status`／`phone_number_verified`／`email_verified` 實際回應是布林值（文件範例誤寫為字串）。
+/// 新竹通不提供性別，性別仍由使用者於註冊頁自行選擇。
 struct HsinchuTongLoginResult: Codable {
-    /// 新竹通會員唯一識別碼；有值即代表換資料成功。
-    var openid: String?
-    var name: String?
-    var birthday: String?
-    var email: String?
-    var phoneNumber: String?
+    var status: String?
+    var provider: String?
+    var token: String?
+    var member: Member?
 
-    enum CodingKeys: String, CodingKey {
-        case openid = "openid"
-        case name = "name"
-        case birthday = "birthday"
-        case email = "email"
-        case phoneNumber = "phone_number"
-    }
+    struct Member: Codable {
+        /// 此次登入請求識別碼。
+        var requestId: String?
+        /// 新竹通會員唯一識別碼。
+        var openid: String?
+        var name: String?
+        var verifyStatus: Bool?
+        var birthday: String?
+        var email: String?
+        var emailVerified: Bool?
+        var phoneNumber: String?
+        var phoneNumberVerified: Bool?
 
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        openid = try? container.decodeIfPresent(String.self, forKey: .openid)
-        name = try? container.decodeIfPresent(String.self, forKey: .name)
-        birthday = try? container.decodeIfPresent(String.self, forKey: .birthday)
-        email = try? container.decodeIfPresent(String.self, forKey: .email)
-        phoneNumber = try? container.decodeIfPresent(String.self, forKey: .phoneNumber)
+        enum CodingKeys: String, CodingKey {
+            case requestId = "request_id"
+            case openid
+            case name
+            case verifyStatus = "verify_status"
+            case birthday
+            case email
+            case emailVerified = "email_verified"
+            case phoneNumber = "phone_number"
+            case phoneNumberVerified = "phone_number_verified"
+        }
     }
 }
 
@@ -616,9 +629,7 @@ final class HsinchuTongLoginWebVC: UIViewController {
 
 extension HsinchuTongLoginWebVC: WKNavigationDelegate {
 
-    func webView(_ webView: WKWebView,
-                 decidePolicyFor navigationAction: WKNavigationAction,
-                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let url = navigationAction.request.url
         HsinchuTongOAuth.log("導航 → \(url?.absoluteString ?? "nil")")
         if let url = url, let code = HsinchuTongOAuth.loginCode(from: url) {
@@ -668,10 +679,8 @@ struct APIUrl {
     static let login = "/auth/login"
     /// 以新竹通 login_code 換取會員基本資料。
     /// 完整路徑 = domainName + 此值 = https://useries.buenooptics.com:8443/app/v2/oauth/login-result
+    /// 已是會員時，這支會直接在成功回應裡回 token；尚未成為會員則回 member 資料，不需要另一支登入 API。
     static let hsinchuTongExchange = "/oauth/login-result"
-    /// TODO: 等後端補上「新竹通已完成電話認證 → 直接發 token 登入」的 API 後，改成正式路徑。
-    /// 目前為暫定路徑，request/response 格式（是否為 openid + provider → { token }）也待後端確認後調整。
-    static let hsinchuTongLogin = "/oauth/hsinchu/login"
     static let changePWD = "/reset"
     static let smsCode = "/auth/generateSmsCode"
     static let useRecord = "/useRecord"
@@ -975,9 +984,22 @@ func goToSignLoginVC() {
     }
 }
 
-func goToSignVC(){
+/// `prefilled*` 皆可選填，供新竹通登入流程（尚未成為會員但已有電話號碼）帶資料進註冊頁使用；
+/// 一般「會員註冊」入口不帶參數，行為不變。
+func goToSignVC(
+    prefilledPhone: String? = nil,
+    prefilledBirthday: String? = nil,
+    prefilledName: String? = nil,
+    prefilledEmail: String? = nil,
+    prefilledOpenid: String? = nil
+) {
     if let VC = UIStoryboard(name: "Sign", bundle: nil).instantiateViewController(withIdentifier: "Sign") as? SignVC, let topVC = getTopController() {
         VC.modalPresentationStyle = .fullScreen
+        VC.prefilledPhone = prefilledPhone
+        VC.prefilledBirthday = prefilledBirthday
+        VC.prefilledName = prefilledName
+        VC.prefilledEmail = prefilledEmail
+        VC.prefilledOpenid = prefilledOpenid
         topVC.present(VC, animated: true)
     }
 }

@@ -211,6 +211,13 @@ class NetworkManager: NSObject {
             } else if let httpResponse = response as? HTTPURLResponse {
                 if (200...299).contains(httpResponse.statusCode) {
                     if let data = data {
+                        #if DEBUG
+                        // 只針對新竹通換資料這支印「未經 Codable 解碼」的原始回應，方便確認後端到底有沒有吐出對應欄位。
+                        if let urlString = request.url?.absoluteString, urlString.lowercased().contains("login-result"),
+                           let raw = String(data: data, encoding: .utf8) {
+                            print("[HsinchuTong] 原始回應（未解碼）← \(raw)")
+                        }
+                        #endif
                         do {
                             let decoded = try JSONDecoder().decode(responseType, from: data)
                             result = .success(decoded)

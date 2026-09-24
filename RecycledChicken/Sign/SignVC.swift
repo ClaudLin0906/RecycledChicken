@@ -21,17 +21,27 @@ class SignVC: CustomLoginVC {
     @IBOutlet weak var birthdayTextfield: UITextField!
     
     @IBOutlet weak var genderSelectionView: GenderSelectionView!
-    
+
     private let privacyCheckBox = M13Checkbox()
     private let privacyStackView = UIStackView()
+
+    // MARK: - 從新竹通帶入的資料
+    // 由呼叫端（例如 goToSignVC(prefilledPhone:...)）在 present 之前設定。
+    // 註冊頁目前只有電話／生日有對應輸入欄位；name/email/openid 沒有欄位，先暫存，待註冊流程串接。
+    var prefilledPhone: String?
+    var prefilledBirthday: String?
+    var prefilledName: String?
+    var prefilledEmail: String?
+    var prefilledOpenid: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         UIInit()
         setupDatePicker()
         setupPrivacyCheckbox()
+        applyPrefilledHsinchuTongData()
     }
-    
+
     private func UIInit(){
         goHomeBtn.addTarget(self, action: #selector(goSignLoginVC(_:)), for: .touchUpInside)
         if getLanguage() == .english {
@@ -40,6 +50,33 @@ class SignVC: CustomLoginVC {
             let attributedPlaceholder = NSAttributedString(string: passwordTextfield.placeholder ?? "", attributes: attributes)
             passwordTextfield.attributedPlaceholder = attributedPlaceholder
         }
+    }
+
+    /// 把新竹通帶回來的資料填進表單；性別新竹通不提供，仍由使用者自行選擇。
+    private func applyPrefilledHsinchuTongData() {
+        if let phone = prefilledPhone, !phone.isEmpty {
+            phoneTextfield.text = phone
+        }
+        if let birthday = prefilledBirthday, !birthday.isEmpty {
+            birthdayTextfield.text = normalizedBirthday(birthday)
+        }
+    }
+
+    /// 把新竹通生日字串正規化為註冊頁使用的 yyyy/MM/dd；無法解析時回傳原字串。
+    private func normalizedBirthday(_ raw: String) -> String {
+        let output = DateFormatter()
+        output.locale = Locale(identifier: "en_US_POSIX")
+        output.dateFormat = "yyyy/MM/dd"
+
+        for format in ["yyyy-MM-dd", "yyyy/MM/dd", "yyyyMMdd", "yyyy-MM-dd'T'HH:mm:ss"] {
+            let input = DateFormatter()
+            input.locale = Locale(identifier: "en_US_POSIX")
+            input.dateFormat = format
+            if let date = input.date(from: raw) {
+                return output.string(from: date)
+            }
+        }
+        return raw
     }
     
     private func setupDatePicker() {

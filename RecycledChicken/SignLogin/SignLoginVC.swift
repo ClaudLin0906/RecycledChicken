@@ -226,59 +226,55 @@ class SignLoginVC: CustomLoginVC {
         setHsinchuTongLoading(true)
         let exchangeURL = APIUrl.domainName + APIUrl.hsinchuTongExchange
         HsinchuTongOAuth.log("換資料請求 → POST \(exchangeURL)　login_code=\(loginCode)")
-        NetworkManager.shared.post(
-            url: exchangeURL,
-            parameters: ["login_code": loginCode, "provider": HsinchuTongOAuth.expectedProvider],
-            responseType: HsinchuTongLoginResult.self
+        NetworkManager.shared.post(url: exchangeURL, parameters: ["login_code": loginCode, "provider": HsinchuTongOAuth.expectedProvider], responseType: HsinchuTongLoginResult.self
         ) { [weak self] result in
             guard let self = self else { return }
             self.isExchangingHsinchuTong = false
             self.setHsinchuTongLoading(false)
-
-            switch result {
-            case .success(let member):
-                // 新竹通帳號尚未完成電話認證：導去外部瀏覽器讓使用者到新竹通官網補電話號碼，
-                // 完成後由使用者自行回到 App 重新按一次「新竹通」登入。
-                guard let phone = member.phoneNumber, !phone.isEmpty else {
-                    HsinchuTongOAuth.log("新竹通資料缺少電話號碼，導去外部瀏覽器讓使用者完成電話認證")
-                    let openPortalAction = UIAlertAction(title: "confirm".localized, style: .default) { _ in
-                        guard let url = URL(string: HsinchuTongOAuth.memberPortalURL) else { return }
-                        UIApplication.shared.open(url)
-                    }
-                    showAlert(VC: self, title: nil, message: "此新竹通帳號尚未完成電話認證，請先至新竹通補上電話號碼後再重新登入", alertAction: openPortalAction)
-                    return
-                }
-                HsinchuTongOAuth.log("解析成功　phone=\(phone)　name=\(member.name ?? "nil")　email=\(member.email ?? "nil")　birthday=\(member.birthday ?? "nil")　openid=\(member.openid ?? "nil")")
-                self.loginWithHsinchuTong(member)
-            case .failure(let error):
-                HsinchuTongOAuth.log("換資料失敗：\(error.localizedDescription)")
-                showAlert(VC: self, title: nil, message: "登入失敗，請稍後再試")
-            }
+            self.handleHsinchuTongExchangeResult(result)
         }
     }
 
-    /// 電話號碼已驗證：走「新竹通直接登入」API 直接換 token。
-    /// TODO: 等後端補上 `APIUrl.hsinchuTongLogin` 後移除此註解；request/response 格式若與 LoginResponse（{ token }）不同，
-    /// 需同步調整這裡的 parameters 與 responseType。
-    private func loginWithHsinchuTong(_ member: HsinchuTongLoginResult) {
-        let loginURL = APIUrl.domainName + APIUrl.hsinchuTongLogin
-        HsinchuTongOAuth.log("新竹通登入請求 → POST \(loginURL)　openid=\(member.openid ?? "nil")")
-        NetworkManager.shared.post(
-            url: loginURL,
-            parameters: ["openid": member.openid ?? "", "provider": HsinchuTongOAuth.expectedProvider],
-            responseType: LoginResponse.self
-        ) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let response):
-                HsinchuTongOAuth.log("新竹通登入成功")
+    private func handleHsinchuTongExchangeResult(_ result: NetworkResult<HsinchuTongLoginResult>) {
+        switch result {
+        case .success(let response):
+            // 已是會員：這支 API 直接回 token，不需要再打第二支登入 API。
+            if let token = response.token, !token.isEmpty {
+                HsinchuTongOAuth.log("已是會員，登入成功　provider=\(response.provider ?? "nil")")
                 CommonKey.shared.authToken = ""
-                CommonKey.shared.authToken = response.token
+                CommonKey.shared.authToken = token
                 self.loginSuccess()
-            case .failure(let error):
-                HsinchuTongOAuth.log("新竹通登入失敗：\(error.localizedDescription)")
-                showAlert(VC: self, title: nil, message: "登入失敗，請稍後再試")
+                return
             }
+            let member = response.member
+            HsinchuTongOAuth.log("尚未成為會員　openid=\(member?.openid ?? "nil")　name=\(member?.name ?? "nil")　email=\(member?.email ?? "nil")　birthday=\(member?.birthday ?? "nil")　phone=\(member?.phoneNumber ?? "nil")　phoneVerified=\(member?.phoneNumberVerified.map(String.init) ?? "nil")")
+
+            // 沒有電話號碼：導去外部瀏覽器讓使用者到新竹通官網補電話號碼，
+            // 完成後由使用者自行回到 App 重新按一次「新竹通」登入。
+            guard let phone = member?.phoneNumber, !phone.isEmpty else {
+                HsinchuTongOAuth.log("缺少電話號碼，導去外部瀏覽器讓使用者完成電話認證")
+                let openPortalAction = UIAlertAction(title: "confirm".localized, style: .default) { _ in
+                    guard let url = URL(string: HsinchuTongOAuth.memberPortalURL) else { return }
+                    UIApplication.shared.open(url)
+                }
+                showAlert(VC: self, title: nil, message: "此新竹通帳號尚未完成電話認證，請先至新竹通補上電話號碼後再重新登入", alertAction: openPortalAction)
+                return
+            }
+
+            // 有電話號碼、但還不是會員：關掉登入頁，導去一般註冊頁，並把新竹通資料帶進去。
+            HsinchuTongOAuth.log("已有電話號碼但尚未成為會員，導去註冊頁並帶入資料　phone=\(phone)")
+            self.dismiss(animated: false) {
+                goToSignVC(
+                    prefilledPhone: phone,
+                    prefilledBirthday: member?.birthday,
+                    prefilledName: member?.name,
+                    prefilledEmail: member?.email,
+                    prefilledOpenid: member?.openid
+                )
+            }
+        case .failure(let error):
+            HsinchuTongOAuth.log("換資料失敗：\(error.localizedDescription)")
+            showAlert(VC: self, title: nil, message: "登入失敗，請稍後再試")
         }
     }
 }
